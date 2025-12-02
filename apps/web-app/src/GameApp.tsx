@@ -24,8 +24,9 @@ import LeaderboardPage from './pages/LeaderboardPage';
 import SyncSettingsPage from './pages/SyncSettingsPage';
 import DailyChallengesPage from './pages/DailyChallengesPage';
 import SkillTreePage from './pages/SkillTreePage';
+import StatsPage from './pages/StatsPage';
 
-type PageType = 'dashboard' | 'disciplines' | 'achievements' | 'profile' | 'study' | 'leaderboard' | 'sync' | 'challenges' | 'skilltree';
+type PageType = 'dashboard' | 'disciplines' | 'achievements' | 'profile' | 'study' | 'leaderboard' | 'sync' | 'challenges' | 'skilltree' | 'stats';
 
 interface StudySession {
   skillId: string;
@@ -42,6 +43,7 @@ const navItems: NavItem[] = [
   { id: 'dashboard', label: 'Dashboard', icon: '🏠' },
   { id: 'disciplines', label: 'Disciplinas', icon: '📚' },
   { id: 'skilltree', label: 'Árvore', icon: '🌳' },
+  { id: 'stats', label: 'Estatísticas', icon: '📊' },
   { id: 'leaderboard', label: 'Ranking', icon: '🏅' },
   { id: 'achievements', label: 'Conquistas', icon: '🏆' },
   { id: 'profile', label: 'Perfil', icon: '👤' },
@@ -432,6 +434,10 @@ const GameAppContent: React.FC = () => {
 
           {currentPage === 'sync' && (
             <SyncSettingsPage onNavigate={handleNavigate} />
+          )}
+
+          {currentPage === 'stats' && (
+            <StatsPage theme={currentTheme} />
           )}
         </ErrorBoundary>
       </PageTransition>

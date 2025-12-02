@@ -20,3 +20,6 @@ export * from './Onboarding';
 export * from './ErrorBoundary';
 export * from './Skeleton';
 export * from './PageTransition';
+export * from './StatsCard';
+export * from './ProgressChart';
+export * from './HeatmapCalendar';
