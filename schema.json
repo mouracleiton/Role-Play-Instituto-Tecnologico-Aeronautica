@@ -1,0 +1,877 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/ita-curriculum-schema.json",
+  "title": "ITA Curriculum Data Schema",
+  "description": "Schema para dados de currículo educacional do ITA com habilidades atômicas, quizzes e flashcards",
+  "version": "2.0",
+  "type": "object",
+  "required": ["formatVersion", "exportDate", "appVersion", "curriculumData"],
+  "$defs": {
+    "quizQuestion": {
+      "type": "object",
+      "description": "Pergunta de quiz para avaliação de conhecimento",
+      "required": ["id", "type", "question", "options", "correctIndex", "explanation", "difficulty"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único da pergunta",
+          "example": "q-37.1.1.1.1.1-001"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["multiple_choice", "true_false", "fill_blank", "order_steps"],
+          "description": "Tipo da pergunta",
+          "example": "multiple_choice"
+        },
+        "question": {
+          "type": "string",
+          "description": "Texto da pergunta",
+          "example": "Qual é a complexidade média do QuickSort?"
+        },
+        "options": {
+          "type": "array",
+          "description": "Opções de resposta",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 2,
+          "maxItems": 6,
+          "example": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"]
+        },
+        "correctIndex": {
+          "type": "integer",
+          "description": "Índice da resposta correta (0-based)",
+          "minimum": 0,
+          "example": 0
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Explicação da resposta correta",
+          "example": "QuickSort tem complexidade média O(n log n) devido à divisão balanceada do array."
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"],
+          "description": "Nível de dificuldade da pergunta",
+          "example": "intermediate"
+        },
+        "topic": {
+          "type": "string",
+          "description": "Tópico relacionado à pergunta",
+          "example": "complexity-analysis"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Tags para categorização",
+          "items": {
+            "type": "string"
+          },
+          "example": ["algorithms", "sorting", "complexity"]
+        },
+        "hints": {
+          "type": "array",
+          "description": "Dicas progressivas para ajudar o estudante",
+          "items": {
+            "type": "string"
+          },
+          "example": ["Pense na estratégia de divisão e conquista", "O pivô divide o array em duas partes"]
+        }
+      }
+    },
+    "flashcard": {
+      "type": "object",
+      "description": "Cartão de memorização para revisão espaçada",
+      "required": ["id", "front", "back", "difficulty"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Identificador único do flashcard",
+          "example": "fc-37.1.1.1.1.1-001"
+        },
+        "front": {
+          "type": "string",
+          "description": "Lado frontal do cartão (pergunta/conceito)",
+          "example": "Qual é a complexidade de tempo média do QuickSort?"
+        },
+        "back": {
+          "type": "string",
+          "description": "Lado traseiro do cartão (resposta/explicação)",
+          "example": "O(n log n) - O algoritmo divide o array em duas partes aproximadamente iguais em cada recursão."
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced"],
+          "description": "Nível de dificuldade",
+          "example": "intermediate"
+        },
+        "category": {
+          "type": "string",
+          "description": "Categoria do flashcard",
+          "example": "Análise de Complexidade"
+        },
+        "tags": {
+          "type": "array",
+          "description": "Tags para categorização",
+          "items": {
+            "type": "string"
+          },
+          "example": ["algorithms", "complexity", "quicksort"]
+        },
+        "relatedConcepts": {
+          "type": "array",
+          "description": "IDs de conceitos relacionados",
+          "items": {
+            "type": "string"
+          },
+          "example": ["37.1.1.2.1.1", "37.1.1.3.1.1"]
+        },
+        "mediaUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL de mídia adicional (imagem, diagrama)",
+          "example": "https://example.com/quicksort-diagram.png"
+        },
+        "codeSnippet": {
+          "type": "object",
+          "description": "Trecho de código relacionado",
+          "properties": {
+            "language": {
+              "type": "string",
+              "description": "Linguagem de programação",
+              "example": "python"
+            },
+            "code": {
+              "type": "string",
+              "description": "Código fonte",
+              "example": "def quicksort(arr):\\n    if len(arr) <= 1:\\n        return arr"
+            }
+          }
+        }
+      }
+    },
+    "spacedRepetitionData": {
+      "type": "object",
+      "description": "Dados de revisão espaçada (SM-2 algorithm)",
+      "required": ["skillId", "easeFactor", "interval", "repetitions", "nextReviewDate"],
+      "properties": {
+        "skillId": {
+          "type": "string",
+          "description": "ID da habilidade",
+          "example": "37.1.1.1.1.1"
+        },
+        "easeFactor": {
+          "type": "number",
+          "description": "Fator de facilidade (1.3 a 2.5)",
+          "minimum": 1.3,
+          "maximum": 2.5,
+          "default": 2.5,
+          "example": 2.5
+        },
+        "interval": {
+          "type": "integer",
+          "description": "Dias até a próxima revisão",
+          "minimum": 1,
+          "example": 7
+        },
+        "repetitions": {
+          "type": "integer",
+          "description": "Número de revisões consecutivas bem-sucedidas",
+          "minimum": 0,
+          "example": 3
+        },
+        "nextReviewDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Data da próxima revisão",
+          "example": "2025-12-10"
+        },
+        "lastReviewDate": {
+          "type": ["string", "null"],
+          "format": "date",
+          "description": "Data da última revisão",
+          "example": "2025-12-03"
+        },
+        "lastPerformance": {
+          "type": "integer",
+          "description": "Última avaliação de performance (0-5)",
+          "minimum": 0,
+          "maximum": 5,
+          "example": 4
+        },
+        "totalReviews": {
+          "type": "integer",
+          "description": "Total de revisões realizadas",
+          "minimum": 0,
+          "example": 5
+        },
+        "averagePerformance": {
+          "type": "number",
+          "description": "Média de performance histórica",
+          "minimum": 0,
+          "maximum": 5,
+          "example": 3.8
+        },
+        "masteryLevel": {
+          "type": "string",
+          "enum": ["new", "learning", "reviewing", "mastered"],
+          "description": "Nível de maestria da habilidade",
+          "example": "reviewing"
+        }
+      }
+    },
+    "quizConfig": {
+      "type": "object",
+      "description": "Configuração para geração de quizzes",
+      "properties": {
+        "numberOfQuestions": {
+          "type": "integer",
+          "description": "Número de perguntas no quiz",
+          "minimum": 1,
+          "maximum": 50,
+          "default": 5,
+          "example": 10
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["beginner", "intermediate", "advanced", "adaptive"],
+          "description": "Dificuldade do quiz",
+          "default": "adaptive",
+          "example": "intermediate"
+        },
+        "includeExplanations": {
+          "type": "boolean",
+          "description": "Incluir explicações após cada resposta",
+          "default": true
+        },
+        "timeLimit": {
+          "type": "integer",
+          "description": "Limite de tempo em segundos por pergunta",
+          "minimum": 10,
+          "maximum": 600,
+          "example": 60
+        },
+        "shuffleOptions": {
+          "type": "boolean",
+          "description": "Embaralhar opções de resposta",
+          "default": true
+        },
+        "showHints": {
+          "type": "boolean",
+          "description": "Permitir dicas durante o quiz",
+          "default": false
+        },
+        "passingScore": {
+          "type": "integer",
+          "description": "Pontuação mínima para aprovação (%)",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 70,
+          "example": 70
+        }
+      }
+    }
+  },
+  "properties": {
+    "formatVersion": {
+      "type": "string",
+      "description": "Versão do formato do schema",
+      "example": "1.0"
+    },
+    "exportDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data e hora da exportação",
+      "example": "2025-11-29T10:30:00.000-0300"
+    },
+    "appVersion": {
+      "type": "string",
+      "description": "Versão da aplicação",
+      "example": "1.0"
+    },
+    "curriculumData": {
+      "type": "object",
+      "required": ["metadata", "areas"],
+      "properties": {
+        "metadata": {
+          "type": "object",
+          "required": ["startDate", "duration", "dailyStudyHours", "totalAtomicSkills", "version", "lastUpdated", "institution", "basedOn"],
+          "properties": {
+            "startDate": {
+              "type": "string",
+              "format": "date",
+              "description": "Data de início do curso",
+              "example": "2025-01-01"
+            },
+            "duration": {
+              "type": "string",
+              "description": "Duração do curso",
+              "example": "1 Semestre"
+            },
+            "dailyStudyHours": {
+              "type": "string",
+              "description": "Horas de estudo diárias",
+              "example": "6-8 hours"
+            },
+            "totalAtomicSkills": {
+              "type": "integer",
+              "description": "Total de habilidades atômicas",
+              "minimum": 0,
+              "example": 355
+            },
+            "version": {
+              "type": "string",
+              "description": "Versão do currículo",
+              "example": "1.0 - ITA Catalog 2025 Based"
+            },
+            "lastUpdated": {
+              "type": "string",
+              "format": "date",
+              "description": "Data da última atualização",
+              "example": "2025-11-29"
+            },
+            "institution": {
+              "type": "string",
+              "description": "Nome da instituição",
+              "example": "Instituto Tecnológico de Aeronáutica (ITA)"
+            },
+            "basedOn": {
+              "type": "string",
+              "description": "Referência base do currículo",
+              "example": "Catálogo dos Cursos de Graduação 2025 - CC201"
+            }
+          }
+        },
+        "areas": {
+          "type": "array",
+          "description": "Lista de áreas/disciplinas do currículo",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "description", "totalSkills", "percentage", "disciplines"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "Identificador único da área",
+                "pattern": "^[0-9]+$",
+                "example": "37"
+              },
+              "name": {
+                "type": "string",
+                "description": "Nome da área",
+                "example": "Algoritmos e Estruturas de Dados"
+              },
+              "description": {
+                "type": "string",
+                "description": "Descrição da área",
+                "example": "Projeto e análise de algoritmos eficientes"
+              },
+              "totalSkills": {
+                "type": "integer",
+                "description": "Total de habilidades nesta área",
+                "minimum": 0,
+                "example": 355
+              },
+              "percentage": {
+                "type": "number",
+                "description": "Percentual do total",
+                "minimum": 0,
+                "maximum": 100,
+                "example": 100
+              },
+              "disciplines": {
+                "type": "array",
+                "description": "Lista de disciplinas na área",
+                "items": {
+                  "type": "object",
+                  "required": ["id", "name", "description", "totalSkills", "mainTopics"],
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "Identificador único da disciplina",
+                      "pattern": "^[0-9]+\\.[0-9]+$",
+                      "example": "37.1"
+                    },
+                    "name": {
+                      "type": "string",
+                      "description": "Nome da disciplina",
+                      "example": "Algoritmos"
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Descrição da disciplina",
+                      "example": "Ordenação, busca e algoritmos gulosos"
+                    },
+                    "totalSkills": {
+                      "type": "integer",
+                      "description": "Total de habilidades nesta disciplina",
+                      "minimum": 0,
+                      "example": 180
+                    },
+                    "mainTopics": {
+                      "type": "array",
+                      "description": "Tópicos principais da disciplina",
+                      "items": {
+                        "type": "object",
+                        "required": ["id", "name", "description", "totalSkills", "atomicTopics"],
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "description": "Identificador único do tópico",
+                            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+                            "example": "37.1.1"
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Nome do tópico",
+                            "example": "Ordenação"
+                          },
+                          "description": {
+                            "type": "string",
+                            "description": "Descrição do tópico",
+                            "example": "Algoritmos de ordenação e análise de complexidade"
+                          },
+                          "totalSkills": {
+                            "type": "integer",
+                            "description": "Total de habilidades neste tópico",
+                            "minimum": 0,
+                            "example": 90
+                          },
+                          "atomicTopics": {
+                            "type": "array",
+                            "description": "Tópicos atômicos",
+                            "items": {
+                              "type": "object",
+                              "required": ["id", "name", "description", "individualConcepts"],
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "description": "Identificador único do tópico atômico",
+                                  "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$",
+                                  "example": "37.1.1.1"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "description": "Nome do tópico atômico",
+                                  "example": "QuickSort"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "description": "Descrição do tópico atômico",
+                                  "example": "Algoritmo de ordenação rápida"
+                                },
+                                "individualConcepts": {
+                                  "type": "array",
+                                  "description": "Conceitos individuais",
+                                  "items": {
+                                    "type": "object",
+                                    "required": ["id", "name", "description", "specificSkills"],
+                                    "properties": {
+                                      "id": {
+                                        "type": "string",
+                                        "description": "Identificador único do conceito",
+                                        "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$",
+                                        "example": "37.1.1.1.1"
+                                      },
+                                      "name": {
+                                        "type": "string",
+                                        "description": "Nome do conceito",
+                                        "example": "Implementar QuickSort"
+                                      },
+                                      "description": {
+                                        "type": "string",
+                                        "description": "Descrição do conceito",
+                                        "example": "Desenvolver e analisar o algoritmo"
+                                      },
+                                      "specificSkills": {
+                                        "type": "array",
+                                        "description": "Habilidades específicas",
+                                        "items": {
+                                          "type": "object",
+                                          "required": ["id", "name", "description", "atomicExpansion", "estimatedTime", "difficulty", "status", "prerequisites"],
+                                          "properties": {
+                                            "id": {
+                                              "type": "string",
+                                              "description": "Identificador único da habilidade",
+                                              "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+$",
+                                              "example": "37.1.1.1.1.1"
+                                            },
+                                            "name": {
+                                              "type": "string",
+                                              "description": "Nome da habilidade",
+                                              "example": "Analisar complexidade"
+                                            },
+                                            "description": {
+                                              "type": "string",
+                                              "description": "Descrição da habilidade",
+                                              "example": "Calcular tempo médio O(n log n) e pior caso O(n²)"
+                                            },
+                                            "atomicExpansion": {
+                                              "type": "object",
+                                              "required": ["steps", "practicalExample", "finalVerifications", "assessmentCriteria", "crossCurricularConnections", "realWorldApplication"],
+                                              "properties": {
+                                                "steps": {
+                                                  "type": "array",
+                                                  "description": "Passos de aprendizado",
+                                                  "items": {
+                                                    "type": "object",
+                                                    "required": ["stepNumber", "title", "subSteps", "verification", "estimatedTime", "materials", "tips", "learningObjective", "commonMistakes"],
+                                                    "properties": {
+                                                      "stepNumber": {
+                                                        "type": "integer",
+                                                        "description": "Número do passo",
+                                                        "minimum": 1,
+                                                        "example": 1
+                                                      },
+                                                      "title": {
+                                                        "type": "string",
+                                                        "description": "Título do passo",
+                                                        "example": "Compreender estrutura do QuickSort"
+                                                      },
+                                                      "subSteps": {
+                                                        "type": "array",
+                                                        "description": "Sub-passos",
+                                                        "items": {
+                                                          "type": "string",
+                                                          "example": "Entender o conceito de divisão e conquista (divide and conquer)"
+                                                        }
+                                                      },
+                                                      "verification": {
+                                                        "type": "string",
+                                                        "description": "Critério de verificação",
+                                                        "example": "Explica corretamente o funcionamento geral do QuickSort"
+                                                      },
+                                                      "estimatedTime": {
+                                                        "type": "string",
+                                                        "description": "Tempo estimado",
+                                                        "example": "30 minutos"
+                                                      },
+                                                      "materials": {
+                                                        "type": "array",
+                                                        "description": "Materiais necessários",
+                                                        "items": {
+                                                          "type": "string",
+                                                          "example": "Material didático sobre QuickSort"
+                                                        }
+                                                      },
+                                                      "tips": {
+                                                        "type": "string",
+                                                        "description": "Dicas de aprendizado",
+                                                        "example": "Assista a visualizações animadas do QuickSort para entender o processo visualmente"
+                                                      },
+                                                      "learningObjective": {
+                                                        "type": "string",
+                                                        "description": "Objetivo de aprendizado",
+                                                        "example": "Compreender a estratégia fundamental do algoritmo QuickSort"
+                                                      },
+                                                      "commonMistakes": {
+                                                        "type": "array",
+                                                        "description": "Erros comuns",
+                                                        "items": {
+                                                          "type": "string",
+                                                          "example": "Confundir com MergeSort"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "practicalExample": {
+                                                  "type": "string",
+                                                  "description": "Exemplo prático",
+                                                  "example": "Array [5,2,8,1,9,3,7,4,6]. Escolhendo pivô=5..."
+                                                },
+                                                "finalVerifications": {
+                                                  "type": "array",
+                                                  "description": "Verificações finais",
+                                                  "items": {
+                                                    "type": "string",
+                                                    "example": "Implementação ordena corretamente arrays de diferentes tamanhos"
+                                                  }
+                                                },
+                                                "assessmentCriteria": {
+                                                  "type": "array",
+                                                  "description": "Critérios de avaliação",
+                                                  "items": {
+                                                    "type": "string",
+                                                    "example": "Implementa corretamente função de partição"
+                                                  }
+                                                },
+                                                "crossCurricularConnections": {
+                                                  "type": "array",
+                                                  "description": "Conexões interdisciplinares",
+                                                  "items": {
+                                                    "type": "string",
+                                                    "example": "Análise de Algoritmos"
+                                                  }
+                                                },
+                                                "realWorldApplication": {
+                                                  "type": "string",
+                                                  "description": "Aplicação no mundo real",
+                                                  "example": "QuickSort é usado em bibliotecas padrão de muitas linguagens..."
+                                                }
+                                              }
+                                            },
+                                            "estimatedTime": {
+                                              "type": "string",
+                                              "description": "Tempo estimado total",
+                                              "example": "6-8 horas"
+                                            },
+                                            "difficulty": {
+                                              "type": "string",
+                                              "enum": ["beginner", "intermediate", "advanced"],
+                                              "description": "Nível de dificuldade",
+                                              "example": "intermediate"
+                                            },
+                                            "status": {
+                                              "type": "string",
+                                              "enum": ["not_started", "in_progress", "completed", "cancelled"],
+                                              "description": "Status da habilidade",
+                                              "example": "not_started"
+                                            },
+                                            "prerequisites": {
+                                              "type": "array",
+                                              "description": "Pré-requisitos (IDs de habilidades)",
+                                              "items": {
+                                                "type": "string",
+                                                "example": "37.1.1.1.1.1"
+                                              }
+                                            },
+                                            "quizQuestions": {
+                                              "type": "array",
+                                              "description": "Perguntas de quiz para esta habilidade",
+                                              "items": {
+                                                "$ref": "#/$defs/quizQuestion"
+                                              }
+                                            },
+                                            "flashcards": {
+                                              "type": "array",
+                                              "description": "Flashcards para memorização desta habilidade",
+                                              "items": {
+                                                "$ref": "#/$defs/flashcard"
+                                              }
+                                            },
+                                            "spacedRepetition": {
+                                              "$ref": "#/$defs/spacedRepetitionData",
+                                              "description": "Dados de revisão espaçada para esta habilidade"
+                                            },
+                                            "quizConfig": {
+                                              "$ref": "#/$defs/quizConfig",
+                                              "description": "Configuração personalizada de quiz para esta habilidade"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "infographics": {
+          "type": ["null", "object"],
+          "description": "Dados de infográficos (opcional)",
+          "default": null
+        },
+        "settings": {
+          "type": ["null", "object"],
+          "description": "Configurações (opcional)",
+          "default": null
+        }
+      }
+    }
+  },
+  "examples": [
+    {
+      "formatVersion": "2.0",
+      "exportDate": "2025-12-02T10:30:00.000-0300",
+      "appVersion": "2.0",
+      "curriculumData": {
+        "metadata": {
+          "startDate": "2025-01-01",
+          "duration": "1 Semestre",
+          "dailyStudyHours": "6-8 hours",
+          "totalAtomicSkills": 355,
+          "version": "1.0 - ITA Catalog 2025 Based",
+          "lastUpdated": "2025-11-29",
+          "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+          "basedOn": "Catálogo dos Cursos de Graduação 2025 - CC201"
+        },
+        "areas": [
+          {
+            "id": "37",
+            "name": "Algoritmos e Estruturas de Dados",
+            "description": "Projeto e análise de algoritmos eficientes",
+            "totalSkills": 355,
+            "percentage": 100,
+            "disciplines": [
+              {
+                "id": "37.1",
+                "name": "Algoritmos",
+                "description": "Ordenação, busca e algoritmos gulosos",
+                "totalSkills": 180,
+                "mainTopics": [
+                  {
+                    "id": "37.1.1",
+                    "name": "Ordenação",
+                    "description": "Algoritmos de ordenação e análise de complexidade",
+                    "totalSkills": 90,
+                    "atomicTopics": [
+                      {
+                        "id": "37.1.1.1",
+                        "name": "QuickSort",
+                        "description": "Algoritmo de ordenação rápida",
+                        "individualConcepts": [
+                          {
+                            "id": "37.1.1.1.1",
+                            "name": "Implementar QuickSort",
+                            "description": "Desenvolver e analisar o algoritmo",
+                            "specificSkills": [
+                              {
+                                "id": "37.1.1.1.1.1",
+                                "name": "Analisar complexidade",
+                                "description": "Calcular tempo médio O(n log n) e pior caso O(n²)",
+                                "atomicExpansion": {
+                                  "steps": [
+                                    {
+                                      "stepNumber": 1,
+                                      "title": "Compreender estrutura do QuickSort",
+                                      "subSteps": [
+                                        "Entender o conceito de divisão e conquista (divide and conquer)",
+                                        "Reconhecer que QuickSort particiona o array em torno de um pivô",
+                                        "Compreender que elementos menores que o pivô vão à esquerda e maiores à direita"
+                                      ],
+                                      "verification": "Explica corretamente o funcionamento geral do QuickSort",
+                                      "estimatedTime": "30 minutos",
+                                      "materials": ["Material didático sobre QuickSort", "Visualizações animadas do algoritmo"],
+                                      "tips": "Assista a visualizações animadas do QuickSort para entender o processo visualmente",
+                                      "learningObjective": "Compreender a estratégia fundamental do algoritmo QuickSort",
+                                      "commonMistakes": ["Confundir com MergeSort", "Não entender o papel do pivô"]
+                                    }
+                                  ],
+                                  "practicalExample": "Array [5,2,8,1,9,3,7,4,6]. Escolhendo pivô=5 (primeiro elemento). Partição: [2,1,3,4] + [5] + [8,9,7,6].",
+                                  "finalVerifications": [
+                                    "Implementação ordena corretamente arrays de diferentes tamanhos e configurações",
+                                    "Complexidade de tempo O(n log n) no caso médio verificada experimentalmente"
+                                  ],
+                                  "assessmentCriteria": [
+                                    "Implementa corretamente função de partição",
+                                    "Calcula complexidade de tempo para caso médio e pior caso"
+                                  ],
+                                  "crossCurricularConnections": ["Análise de Algoritmos", "Estruturas de Dados", "Matemática Discreta"],
+                                  "realWorldApplication": "QuickSort é usado em bibliotecas padrão de muitas linguagens (C++ std::sort, Java Arrays.sort para tipos primitivos) devido à sua eficiência no caso médio e implementação in-place"
+                                },
+                                "estimatedTime": "6-8 horas",
+                                "difficulty": "intermediate",
+                                "status": "not_started",
+                                "prerequisites": [],
+                                "quizQuestions": [
+                                  {
+                                    "id": "q-37.1.1.1.1.1-001",
+                                    "type": "multiple_choice",
+                                    "question": "Qual é a complexidade de tempo média do QuickSort?",
+                                    "options": ["O(n log n)", "O(n²)", "O(n)", "O(log n)"],
+                                    "correctIndex": 0,
+                                    "explanation": "QuickSort tem complexidade média O(n log n) porque, em média, o pivô divide o array em duas partes aproximadamente iguais, resultando em log n níveis de recursão.",
+                                    "difficulty": "intermediate",
+                                    "topic": "complexity-analysis",
+                                    "tags": ["algorithms", "sorting", "complexity"],
+                                    "hints": ["Pense na estratégia de divisão e conquista", "Quantas vezes o array é dividido?"]
+                                  },
+                                  {
+                                    "id": "q-37.1.1.1.1.1-002",
+                                    "type": "multiple_choice",
+                                    "question": "Qual é a complexidade de tempo no pior caso do QuickSort?",
+                                    "options": ["O(n²)", "O(n log n)", "O(n)", "O(2^n)"],
+                                    "correctIndex": 0,
+                                    "explanation": "O pior caso O(n²) ocorre quando o pivô escolhido é sempre o menor ou maior elemento, resultando em partições desbalanceadas.",
+                                    "difficulty": "intermediate",
+                                    "topic": "complexity-analysis",
+                                    "tags": ["algorithms", "sorting", "worst-case"]
+                                  },
+                                  {
+                                    "id": "q-37.1.1.1.1.1-003",
+                                    "type": "true_false",
+                                    "question": "O QuickSort é um algoritmo de ordenação in-place.",
+                                    "options": ["Verdadeiro", "Falso"],
+                                    "correctIndex": 0,
+                                    "explanation": "QuickSort é considerado in-place pois requer apenas O(log n) espaço adicional para a pilha de recursão.",
+                                    "difficulty": "beginner"
+                                  }
+                                ],
+                                "flashcards": [
+                                  {
+                                    "id": "fc-37.1.1.1.1.1-001",
+                                    "front": "Qual é a complexidade de tempo média do QuickSort?",
+                                    "back": "O(n log n) - O algoritmo divide o array em duas partes aproximadamente iguais em cada nível de recursão, resultando em log n níveis com O(n) trabalho em cada nível.",
+                                    "difficulty": "intermediate",
+                                    "category": "Análise de Complexidade",
+                                    "tags": ["quicksort", "complexity", "time-complexity"]
+                                  },
+                                  {
+                                    "id": "fc-37.1.1.1.1.1-002",
+                                    "front": "O que é o pivô no QuickSort?",
+                                    "back": "O pivô é o elemento usado para particionar o array. Elementos menores vão à esquerda e maiores à direita. A escolha do pivô afeta a eficiência do algoritmo.",
+                                    "difficulty": "beginner",
+                                    "category": "Conceitos Fundamentais",
+                                    "tags": ["quicksort", "partition", "pivot"]
+                                  },
+                                  {
+                                    "id": "fc-37.1.1.1.1.1-003",
+                                    "front": "Quando ocorre o pior caso do QuickSort?",
+                                    "back": "O pior caso O(n²) ocorre quando o pivô escolhido é sempre o menor ou maior elemento do array, criando partições extremamente desbalanceadas (ex: array já ordenado com pivô no início).",
+                                    "difficulty": "intermediate",
+                                    "category": "Casos Especiais",
+                                    "tags": ["quicksort", "worst-case", "performance"],
+                                    "codeSnippet": {
+                                      "language": "python",
+                                      "code": "# Pior caso: array já ordenado com pivô no início\narr = [1, 2, 3, 4, 5]  # pivô=1 cria partição []+[1]+[2,3,4,5]"
+                                    }
+                                  }
+                                ],
+                                "spacedRepetition": {
+                                  "skillId": "37.1.1.1.1.1",
+                                  "easeFactor": 2.5,
+                                  "interval": 1,
+                                  "repetitions": 0,
+                                  "nextReviewDate": "2025-12-03",
+                                  "lastReviewDate": null,
+                                  "lastPerformance": 0,
+                                  "totalReviews": 0,
+                                  "averagePerformance": 0,
+                                  "masteryLevel": "new"
+                                },
+                                "quizConfig": {
+                                  "numberOfQuestions": 5,
+                                  "difficulty": "adaptive",
+                                  "includeExplanations": true,
+                                  "timeLimit": 60,
+                                  "shuffleOptions": true,
+                                  "showHints": false,
+                                  "passingScore": 70
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "infographics": null,
+        "settings": null
+      }
+    }
+  ]
+}
+
