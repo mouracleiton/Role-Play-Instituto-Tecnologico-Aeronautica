@@ -2,16 +2,16 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" href="icons/icon-192x192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#00d4ff" />
     <meta name="description" content="Jogo educacional gamificado para preparação do ITA" />
 
     <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
 
     <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" href="icons/icon-192x192.png" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="ITA Game" />
@@ -135,7 +135,15 @@
       // Service Worker Registration
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/sw.js')
+          // Get base path from document location for GitHub Pages support
+          var basePath = document.querySelector('base')?.href || window.location.pathname.replace(/\/[^\/]*$/, '/') || '/';
+          // For GitHub Pages, extract repo path
+          var pathParts = window.location.pathname.split('/').filter(Boolean);
+          var swPath = pathParts.length > 0 && window.location.hostname.includes('github.io')
+            ? '/' + pathParts[0] + '/sw.js'
+            : '/sw.js';
+
+          navigator.serviceWorker.register(swPath)
             .then(function(registration) {
               console.log('[PWA] Service Worker registered:', registration.scope);
 

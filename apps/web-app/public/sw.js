@@ -3,23 +3,34 @@
  * Enables offline functionality and caching
  */
 
-const CACHE_NAME = 'ita-rp-game-v1';
-const DYNAMIC_CACHE = 'ita-rp-dynamic-v1';
+const CACHE_NAME = 'ita-rp-game-v2';
+const DYNAMIC_CACHE = 'ita-rp-dynamic-v2';
 
-// Assets to cache on install
-const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/icons/icon-72x72.png',
-  '/icons/icon-96x96.png',
-  '/icons/icon-128x128.png',
-  '/icons/icon-144x144.png',
-  '/icons/icon-152x152.png',
-  '/icons/icon-192x192.png',
-  '/icons/icon-384x384.png',
-  '/icons/icon-512x512.png',
-];
+// Get base path from service worker scope (handles GitHub Pages subdirectory)
+const getBasePath = () => {
+  const scope = self.registration?.scope || self.location.href;
+  const url = new URL(scope);
+  // Return pathname without trailing slash, then add it back
+  return url.pathname.replace(/\/$/, '') + '/';
+};
+
+// Assets to cache on install (relative to base path)
+const getStaticAssets = () => {
+  const base = getBasePath();
+  return [
+    base,
+    base + 'index.html',
+    base + 'manifest.json',
+    base + 'icons/icon-72x72.png',
+    base + 'icons/icon-96x96.png',
+    base + 'icons/icon-128x128.png',
+    base + 'icons/icon-144x144.png',
+    base + 'icons/icon-152x152.png',
+    base + 'icons/icon-192x192.png',
+    base + 'icons/icon-384x384.png',
+    base + 'icons/icon-512x512.png',
+  ];
+};
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
@@ -29,7 +40,9 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('[SW] Caching static assets');
-        return cache.addAll(STATIC_ASSETS);
+        const assets = getStaticAssets();
+        console.log('[SW] Assets to cache:', assets);
+        return cache.addAll(assets);
       })
       .then(() => {
         console.log('[SW] Static assets cached');
@@ -121,7 +134,7 @@ self.addEventListener('fetch', (event) => {
             // Network failed and not in cache
             // Return offline fallback for navigation requests
             if (request.mode === 'navigate') {
-              return caches.match('/');
+              return caches.match(getBasePath());
             }
 
             // Return empty response for other requests
@@ -256,11 +269,12 @@ function clearPendingSyncData(storeName) {
 self.addEventListener('push', (event) => {
   console.log('[SW] Push notification received');
 
+  const base = getBasePath();
   let data = {
     title: 'ITA RP Game',
     body: 'Você tem uma notificação!',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/icon-72x72.png',
+    icon: base + 'icons/icon-192x192.png',
+    badge: base + 'icons/icon-72x72.png',
   };
 
   if (event.data) {
@@ -289,17 +303,19 @@ self.addEventListener('notificationclick', (event) => {
 
   event.notification.close();
 
+  const base = getBasePath();
+
   // Handle action buttons
   if (event.action === 'study') {
     event.waitUntil(
-      clients.openWindow('/?page=disciplines')
+      clients.openWindow(base + '?page=disciplines')
     );
     return;
   }
 
   if (event.action === 'challenges') {
     event.waitUntil(
-      clients.openWindow('/?page=challenges')
+      clients.openWindow(base + '?page=challenges')
     );
     return;
   }
@@ -315,7 +331,7 @@ self.addEventListener('notificationclick', (event) => {
           }
         }
         // Otherwise open new window
-        return clients.openWindow('/');
+        return clients.openWindow(base);
       })
   );
 });

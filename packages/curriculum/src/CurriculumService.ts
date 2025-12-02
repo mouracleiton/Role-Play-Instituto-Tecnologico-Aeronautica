@@ -21,40 +21,47 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
 
     try {
       // Load all JSON files from the public/curriculum directory
+      // Note: Filenames must match exactly what's in apps/web-app/public/curriculum/
       const curriculumFiles = [
         // Matemática
         'MAT-13 - Cálculo Diferencial e Integral I.json',
-        // Estatística
+        // Estatística (ED = Estatística e Decisão)
         'ED-13 - 13 - Probabilidade e Estatística.json',
-        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',
+        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',  // double spaces in original
         'ED-17 - 17 - Análise de Séries Temporais (Nota 6).json',
         'ED-18 - 18 - Estatística Aplicada a Experimentos (Nota 6).json',
-        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',
-        // Física
-        'IS-15 - 15 - Mecânica  I.json',
+        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',  // double spaces in original
+        // Física (IS = Instituto de Ciências)
+        'IS-15 - 15 - Mecânica  I.json',  // double spaces in original
         'IS-16 - 16 - Física Experimental I (Nota 4).json',
         'IS-27 - 27 - Mecânica II.json',
-        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',
+        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',  // double spaces in original
         'IS-32 - 32 - Eletricidade e Magnetismo.json',
-        'IS-46 - 46 - Ondas  e  Física  Moderna.json',
+        'IS-46 - 46 - Ondas  e  Física  Moderna.json',  // double spaces in original
         'IS-50 - 50 - Introdução à Física Moderna.json',
-        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',
+        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',  // double spaces in original
         'IS-71 - 71 - Fundamentos de Gases Ionizados.json',
         'IS-80 - 80 - Fundamentos de Anatomia e Fisiologia Humanas para Engenheiros.json',
       ];
 
       const areas: any[] = [];
 
+      // Get base URL for GitHub Pages or local deployment
+      // Vite sets import.meta.env.BASE_URL based on vite.config.ts base option
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const meta = import.meta as any;
+      const baseUrl = meta?.env?.BASE_URL || '/';
+      console.log('[CurriculumService] Using base URL:', baseUrl);
+
       for (const filename of curriculumFiles) {
         try {
           // Extract discipline code from filename (e.g., 'MAT-13', 'ED-13', 'IS-15')
           const disciplineCode = filename.split(' ')[0];
 
-          // Use import.meta.env.BASE_URL to handle GitHub Pages deployment
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const meta = import.meta as any;
-          const baseUrl = meta?.env?.BASE_URL || '/';
-          const response = await fetch(`${baseUrl}curriculum/${filename}`);
+          // Construct the full URL for the curriculum file
+          const fileUrl = `${baseUrl}curriculum/${encodeURIComponent(filename)}`;
+          console.log('[CurriculumService] Fetching:', fileUrl);
+          const response = await fetch(fileUrl);
           if (!response.ok) {
             console.warn(`Failed to load ${filename}: ${response.statusText}`);
             continue;
