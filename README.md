@@ -1,8 +1,8 @@
-# 🚀 ITA RP Game - Reimplementação Moderna
+# 🚀 ENEM RP Game - Reimplementação Moderna
 
 ## 📋 Visão Geral
 
-O ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes do ITA a acompanhar seu progresso acadêmico através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.
+O ENEM RP Game é uma plataforma educacional gamificada desenvolvida para ajudar estudantes a se prepararem para o ENEM através de um sistema inspirado em patentes da Aeronáutica Brasileira. Esta reimplementação completa utiliza tecnologias modernas para proporcionar uma experiência imersiva e motivadora.
 
 ### 🎯 Objetivos Principais
 
@@ -16,7 +16,7 @@ O ITA RP Game é uma plataforma educacional gamificada desenvolvida para ajudar 
 ### Estrutura do Monorepo
 
 ```
-ita-rp-game/
+enem-rp-game/
 ├── packages/                 # Pacotes compartilhados
 │   ├── core-engine/         # Motor de jogos Phaser 3
 │   ├── game-logic/          # Lógica de negócio e gamificação
@@ -104,7 +104,7 @@ ita-rp-game/
 ```bash
 # Clone o repositório
 git clone <repository-url>
-cd ita-rp-game
+cd enem-rp-game
 
 # Instale dependências
 npm install
@@ -355,8 +355,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 - **Issues**: [GitHub Issues](https://github.com/your-repo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/your-repo/discussions)
-- **Email**: contact@ita-rp-game.com
+- **Email**: contact@enem-rp-game.com
 
 ---
 
-**🚀 Pronto para revolucionar o aprendizado no ITA!**
+**🚀 Pronto para revolucionar o aprendizado para o ENEM!**# RP-ENEM
