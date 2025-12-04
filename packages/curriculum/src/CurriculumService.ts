@@ -33,7 +33,7 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
         'ED-25 - 25 - Tópicos  em  Marketing  Analítico  (Nota  6).json',
         'ED-26 - 26 - Pesquisa  Operacional.json',
         'ED-45 - 45 - Gestão de Operações.json',
-        'ED-51 - 51 - Fundamentos em Inovação, Empreendedorismo, Desenvolvimento de Produtos e Serviços.json',
+        'ED-51 - 51 - Fundamentos em Inovacao Empreendedorismo Desenvolvimento de Produtos e Servicos.json',
         'ED-53 - 53 - Gestão  Estratégica  da  Inovação  Tecnológica.json',
         'ED-61 - 61 - Administração em  Engenharia.json',
         'ED-62 - 62 - Pensamento  Estratégico.json',
