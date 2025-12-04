@@ -173,7 +173,7 @@ export interface StudySession {
 }
 
 export interface GameEvent {
-  type: 'skill_completed' | 'level_up' | 'achievement_unlocked' | 'streak_updated';
+  type: 'skill_completed' | 'level_up' | 'achievement_unlocked' | 'streak_updated' | 'discipline_completed';
   payload: any;
   timestamp: Date;
 }

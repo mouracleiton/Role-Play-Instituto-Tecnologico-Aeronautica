@@ -690,17 +690,9 @@ export class AchievementSystem {
       throw new Error(`Achievement with id '${id}' not found`);
     }
     return achievement;
-  }
+   }
 
-  /**
-   * Conta habilidades perfeitas (precisaria de mais dados do jogador)
-   */
-  private static countPerfectSkills(player: PlayerState): number {
-    // Implementação simplificada - precisaria armazenar performance por skill
-    return Math.floor(player.completedSkills.length * 0.1); // Exemplo: 10% das skills
-  }
-
-  /**
+   /**
    * Desbloqueia uma conquista para o jogador
    */
   static unlockAchievement(playerId: string, achievementId: string): Achievement {
