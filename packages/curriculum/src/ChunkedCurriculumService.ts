@@ -5,302 +5,81 @@ import type {
   CurriculumLoader,
   CurriculumValidator,
   ValidationResult,
-  ValidationError,
-  ValidationWarning,
 } from '@ita-rp/shared-types';
 
+interface DisciplineMetadata {
+  id: string;
+  name: string;
+  description: string;
+  totalSkills: number;
+  totalTopics: number;
+  totalAtomicTopics: number;
+  fileName: string;
+  fileSize: number;
+  isChunked: boolean;
+  chunks?: string[];
+}
+
+interface ChunkedData {
+  metadata: DisciplineMetadata;
+  chunks: {
+    topics: Map<string, any>;
+    skills: Map<string, SpecificSkill>;
+    concepts: Map<string, any>;
+  };
+  loadedChunks: Set<string>;
+}
+
+interface LoadingProgress {
+  loaded: number;
+  total: number;
+  currentFile?: string;
+  stage: 'discovering' | 'loading-metadata' | 'loading-chunks' | 'complete';
+}
+
 export class ChunkedCurriculumService implements CurriculumLoader, CurriculumValidator {
-  private curriculumCache: CurriculumData | null = null;
-  private disciplineCache: Map<string, Discipline> = new Map();
-  private skillCache: Map<string, SpecificSkill> = new Map();
+  private disciplineMetadata: Map<string, DisciplineMetadata> = new Map();
+  private chunkedData: Map<string, ChunkedData> = new Map();
+  private baseUrl: string = '/';
+  private loadingProgress: LoadingProgress = {
+    loaded: 0,
+    total: 0,
+    stage: 'discovering'
+  };
 
-  async loadCurriculum(): Promise<CurriculumData> {
-    // Similar to CurriculumService but with chunking logic
-    if (this.curriculumCache) {
-      return this.curriculumCache;
-    }
+  constructor() {
+    // Detect base URL for GitHub Pages or local deployment
+    if (typeof window !== 'undefined') {
+      const meta = (import.meta as any);
+      this.baseUrl = meta?.env?.BASE_URL || '/';
 
-    try {
-      // Load all JSON files from the public/curriculum directory
-      // Note: Filenames must match exactly what's in apps/web-app/public/curriculum/
-      const curriculumFiles = [
-        'AT-17 - 17 - Vetores  e  Geometria  Analítica.json',
-        'AT-22 - 22 - Cálculo Diferencial e Integral II.json',
-        'AT-27 - 27 - Álgebra Linear.json',
-        'AT-32 - 32 - Equações  Diferenciais  Ordinárias.json',
-        'AT-36 - 36 - Cálculo Vetorial.json',
-        'AT-42 - 42 - Equações  Diferenciais  Parciais.json',
-        'AT-46 - 46 - Funções  de  Variável  Complexa.json',
-        'AT-52 - 52 - Espaços  Métricos.json',
-        'AT-53 - 53 - Introdução à Teoria da Medida e Integração.json',
-        'AT-54 - 54 - Introdução à Análise Funcional.json',
-        'AT-55 - 55 - Álgebra   Linear   Computacional.json',
-        'AT-56 - 56 - Introdução à Análise Diferencial.json',
-        'AT-57 - 57 - Introdução  à Análise Integral.json',
-        'AT-58 - 58 - Introdução à teoria de conjuntos.json',
-        'AT-61 - 61 - Tópicos Avançados em Equações Diferenciais Ordinárias.json',
-        'AT-71 - 71 - Introdução  à  Geometria  Diferencial.json',
-        'AT-72 - 72 - Introdução à Topologia Diferencial.json',
-        'AT-73 - 73 - Geometria  Euclidiana  Axiomática.json',
-        'AT-80 - 80 - História da Matemática.json',
-        'AT-81 - 81 - Introdução  à  Teoria  dos  Números.json',
-        'AT-82 - 82 - Anéis e Corpos.json',
-        'AT-83 - 83 - Grupos e Introdução à Teoria de Galois.json',
-        'AT-91 - 91 - Análise Numérica I.json',
-        'AT-92 - 92 - Análise Numérica II.json',
-        'AT-93 - 93 - O método de simetrias em equações diferenciais (Nota 4).json',
-        'CI-22 - 22 - Matemática  Computacional.json',
-        'DI-31 - 31 - Análise Estrutural I.json',
-        'DI-32 - 32 - Análise  Estrutural II.json',
-        'DI-33 - 33 - Materiais e Processos Construtivos.json',
-        'DI-37 - 37 - Soluções  Computacionais  de  Problemas  da Engenharia  Civil.json',
-        'DI-38 - 38 - Concreto  Estrutural I.json',
-        'DI-46 - 46 - Estruturas de Aço.json',
-        'DI-48 - 48 - Planejamento e Gerenciamento de Obras.json',
-        'DI-49 - 49 - Concreto Estrutural II.json',
-        'DI-64 - 64 - Arquitetura e Urbanismo.json',
-        'DI-65 - 65 - Pontes.json',
-        'EA-01 - 01 - Colóquios em Engenharia Aeronáutica e Aeroespacial (Notas 3 e 6).json',
-        'EB-01 - 01 - Termodinâmica.json',
-        'EB-13 - 13 - Termodinâmica  Aplicada.json',
-        'EB-22 - 22 - Mecânica  de  Fluidos  I.json',
-        'EB-23 - 23 - Mecânica  de  Fluidos  II.json',
-        'EB-25 - 25 - Transferência de Calor.json',
-        'EB-32 - 32 - Ar Condicionado.json',
-        'ED-01 - 01 - Mecânica dos Fluidos.json',
-        'ED-11 - 11 - Aerodinâmica  Básica.json',
-        'ED-13 - 13 - Probabilidade e Estatística.json',
-        'ED-16 - 16 - Análise  de  Regressão  (Nota  6).json',
-        'ED-17 - 17 - Análise de Séries Temporais (Nota 6).json',
-        'ED-18 - 18 - Estatística Aplicada a Experimentos (Nota 6).json',
-        'ED-19 - 19 - Métodos  de Análise  em  Negócios  (Nota 6).json',
-        'ED-20 - 20 - Análise preditiva de dados em negócios.json',
-        'ED-25 - 25 - Tópicos  em  Marketing  Analítico  (Nota  6).json',
-        'ED-26 - 26 - Pesquisa  Operacional.json',
-        'ED-28 - 28 - Aerodinâmica em Regime Supersônico.json',
-        'ED-34 - 34 - Aerodinâmica Aplicada a Projeto de Aeronave.json',
-        'ED-41 - 41 - Fundamentos de Ensaios em Túneis de Vento (Nota 4).json',
-        'ED-45 - 45 - Gestão de Operações.json',
-        'ED-51 - 51 - Fundamentos em Inovacao Empreendedorismo Desenvolvimento de Produtos e Servicos.json',
-        'ED-53 - 53 - Gestão  Estratégica  da  Inovação  Tecnológica.json',
-        'ED-54 - 54 - Inteligência Artificial para o Gestor Contemporâneo.json',
-        'ED-61 - 61 - Administração em  Engenharia.json',
-        'ED-62 - 62 - Pensamento  Estratégico.json',
-        'ED-63 - 63 - Pensamento Sistêmico.json',
-        'ED-64 - 64 - Criação de Negócios Tecnológicos.json',
-        'ED-74 - 74 - Desenvolvimento Econômico.json',
-        'EO-31 - 31 - Geologia de Engenharia.json',
-        'EO-36 - 36 - Engenharia Geotécnica I.json',
-        'EO-45 - 45 - Engenharia Geotécnica II.json',
-        'EO-47 - 47 - Topografia  e  Geoprocessamento.json',
-        'EO-48 - 48 - Engenharia de Pavimentos.json',
-        'EO-53 - 53 - Engenharia  de  Fundações.json',
-        'EO-55 - 55 - Projeto  e  Construção  de  Pistas.json',
-        'ES-10 - 10 - Introdução à Computação.json',
-        'ES-11 - 11 - Algoritmos e Estruturas de Dados.json',
-        'ID-31 - 31 - Fenômenos de Transporte.json',
-        'ID-32 - 32 - Hidráulica.json',
-        'ID-41 - 41 - Hidrologia e Drenagem.json',
-        'ID-43 - 43 - Instalações Prediais.json',
-        'ID-44 - 44 - Saneamento.json',
-        'ID-53 - 53 - Análise Ambiental de Projetos.json',
-        'ID-65 - 65 - Engenharia para o Ambiente e Sustentabilidade.json',
-        'IS-02 - 02 - Gestão de Projetos.json',
-        'IS-04 - 04 - Engenharia de Sistemas.json',
-        'IS-06 - 06 - Confiabilidade  de  Sistemas.json',
-        'IS-08 - 08 - Verificação e Qualidade de Sistemas Aeroespaciais.json',
-        'IS-10 - 10 - Análise  da  Segurança  de  Sistemas Aeronáuticos  e  Espaciais.json',
-        'IS-15 - 15 - Mecânica  I.json',
-        'IS-16 - 16 - Física Experimental I (Nota 4).json',
-        'IS-20 - 20 - SISTEMAS DE SOLO.json',
-        'IS-27 - 27 - Mecânica II.json',
-        'IS-28 - 28 - Física  Experimental  II (Nota  4).json',
-        'IS-32 - 32 - Eletricidade e Magnetismo.json',
-        'IS-46 - 46 - Ondas  e  Física  Moderna.json',
-        'IS-50 - 50 - Introdução à Física Moderna.json',
-        'IS-55 - 55 - Detecção  de  Ondas  Gravitacionais.json',
-        'IS-71 - 71 - Fundamentos de Gases Ionizados.json',
-        'IS-80 - 80 - Fundamentos de Anatomia e Fisiologia Humanas para Engenheiros.json',
-        'MC-11 - 11 - Fundamentos de Análise de Dados.json',
-        'MC-13 - 13 - Introdução à Ciência de Dados.json',
-        'MC-30 - 30 - Fundamentos de Computação Gráfica.json',
-        'MC-37 - 37 - Simulação  de  Sistemas  Discretos.json',
-        'MT-01 - 01 - Máquinas  de  Fluxo.json',
-        'MT-02 - 02 - Turbinas  a  Gás.json',
-        'MT-05 - 05 - Motores a Pistão.json',
-        'MT-07 - 07 - Turbobombas.json',
-        'PD-11 - 11 - Dinâmica  de  Máquinas.json',
-        'PD-42 - 42 - Vibrações Mecânicas.json',
-        'PD-43 - 43 - Introdução aos Materiais e Estruturas Inteligentes.json',
-        'PG-03 - 03 - Desenho  Técnico.json',
-        'PG-04 - 04 - Desenho  Assistido  por  Computador.json',
-        'PG-05 - 05 - Fundamentos  de  Desenho  Técnico.json',
-        'PP-17 - 17 - Introdução  à  Tecnologia  Aeronáutica.json',
-        'PP-18 - 18 - Projeto  e  Construção  de  Veículos.json',
-        'PP-22 - 22 - Elementos  de  Máquinas  I.json',
-        'PP-23 - 23 - Elementos de Máquinas II.json',
-        'PP-24 - 24 - Análise  Estrutural  I.json',
-        'PP-30 - 30 - Manutenção.json',
-        'PP-31 - 31 - Análise Estrutural II.json',
-        'PP-34 - 34 - Elementos Finitos.json',
-        'PS-22 - 22 - Sinais e Sistemas Dinâmicos.json',
-        'PS-30 - 30 - Sistemas de Aeronaves.json',
-        'PS-36 - 36 - Modelagem e Simulação de Sistemas Dinâmicos.json',
-        'PS-39 - 39 - Dispositivos  de  Sistemas  Mecatrônicos.json',
-        'PS-43 - 43 - Sistemas  de  Controle.json',
-        'PS-46 - 46 - Projeto de Sistemas Mecatrônicos.json',
-        'PS-76 - 76 - Controle Avançado de Sistemas Monovariáveis.json',
-        'RA-39 - 39 - Planejamento  e  Projeto  de  Aeroportos.json',
-        'RA-46 - 46 - Economia  Aplicada.json',
-        'RA-57 - 57 - Operações  em  Aeroportos.json',
-        'RJ-22 - 22 - Projeto Conceitual de Aeronave.json',
-        'RJ-23 - 23 - Projeto Preliminar de Aeronave.json',
-        'RJ-32 - 32 - Projeto e Construção de Sistemas Aeroespaciais.json',
-        'RJ-34 - 34 - Engenharia de Veículos Espaciais.json',
-        'RJ-70 - 70 - Fabricação em Material Compósito.json',
-        'RJ-72 - 72 - Desenvolvimento, Construção e Teste de Sistema Aeroespacial A (Notas 2 e 3).json',
-        'RJ-73 - 73 - Projeto  Conceitual  de  Sistemas  Aeroespaciais.json',
-        'RJ-74 - 74 - Desenvolvimento, Construção e Teste de Sistema Aeroespacial B (Notas 2 e 3).json',
-        'RJ-75 - 75 - Projeto  Avançado  de  Sistemas  Aeroespaciais.json',
-        'RJ-78 - 78 - Valores, Empreendedorismo e Liderança.json',
-        'RJ-81 - 81 - Evolução  da  Tecnologia  Aeronáutica.json',
-        'RJ-85 - 85 - Certificação Aeronáutica.json',
-        'RJ-87 - 87 - Manutenção  Aeronáutica.json',
-        'RP-28 - 28 - Transferência   de   Calor   e   Termodinâmica   Aplicada.json',
-        'RP-38 - 38 - Propulsão Aeronáutica I.json',
-        'RP-40 - 40 - Propulsão Aeronáutica II.json',
-        'RP-41 - 41 - Motor-Foguete  a  Propelente  Líquido.json',
-        'RP-42 - 42 - Tópicos  Práticos  em  Propulsão  Aeronáutica.json',
-        'RP-47 - 47 - Projeto  de  Motor  Foguete  Híbrido.json',
-        'RP-63 - 63 - Meio Ambiente e Emissões do Setor Aeronáutico.json',
-        'SC-02 - 02 - Computação  Móvel  e  Ubíqua.json',
-        'SC-04 - 04 - Análise  e  Exploração  de  Códigos  Binários.json',
-        'SC-07 - 07 - Fundamentos de Segurança Cibernética.json',
-        'SC-25 - 25 - Arquiteturas  para  Alto  Desempenho.json',
-        'SC-27 - 27 - Processamento Distribuído.json',
-        'SC-33 - 33 - Sistemas Operacionais.json',
-        'SC-35 - 35 - Redes de Computadores e Internet.json',
-        'SC-64 - 64 - Programação Paralela.json',
-        'SI-01 - 01 - Gerenciamento  Ágil  de  Projetos  de  TI.json',
-        'SI-02 - 02 - Arquitetura  Orientada  a  Serviços.json',
-        'SI-03 - 03 - Arquitetura de Software para Serviços de Informação Aeronáutica.json',
-        'SI-22 - 22 - Programação Orientada a Objetos.json',
-        'SI-26 - 26 - Desenvolvimento  de  Aplicações  para  a  Internet.json',
-        'SI-28 - 28 - Fundamentos de Engenharia de Software.json',
-        'SI-29 - 29 - Engenharia de Software.json',
-        'SI-30 - 30 - Técnicas    de    Banco    de    Dados.json',
-        'SI-65 - 65 - Projeto  de  Sistemas  Embarcados.json',
-        'SP-04 - 04 - Integração  e  Testes  de  Veículos  Espaciais.json',
-        'SP-06 - 06 - Ambiente Espacial.json',
-        'SP-29 - 29 - Sinais  Aleatórios  e  Sistemas  Dinâmicos.json',
-        'SP-65 - 65 - Navegação,  Posicionamento  e  Guiamento  com  Base  na  Fusão  de  Sensores.json',
-        'ST-10 - 10 - Mecânica dos Sólidos.json',
-        'ST-15 - 15 - Estruturas  Aeroespaciais  I.json',
-        'ST-25 - 25 - Estruturas   Aeroespaciais   II.json',
-        'ST-56 - 56 - Dinâmica Estrutural e Aeroelasticidade.json',
-        'ST-57 - 57 - Dinâmica  de  Estruturas  Aeroespaciais  e  Aeroelasticidade.json',
-        'TC-12 - 12 - Projeto  e  Análise  de  Algoritmos.json',
-        'TC-23 - 23 - Análise de Algoritmos e Complexidade Computacional.json',
-        'TC-34 - 34 - Automata e Linguagens Formais.json',
-        'TC-41 - 41 - Compiladores.json',
-        'TC-42 - 42 - Introdução à Criptografia.json',
-        'TC-55 - 55 - Algoritmos  Avançados.json',
-        'TM-15 - 15 - Engenharia  de  Materiais  I.json',
-        'TM-25 - 25 - Engenharia de Materiais II.json',
-        'TM-30 - 30 - Introdução a Materiais Aeroespaciais.json',
-        'TM-31 - 31 - Seleção de Materiais em Engenharia Mecânica.json',
-        'TM-33 - 33 - Tecnologia  de  Vácuo.json',
-        'TM-34 - 34 - Tecnologia de Soldagem.json',
-        'TM-35 - 35 - Engenharia  de  Materiais.json',
-        'TP-03 - 03 - Introdução à Engenharia (Nota 4).json',
-        'TP-34 - 34 - Processos  de  Fabricação  I.json',
-        'TP-45 - 45 - Processos de Fabricação II.json',
-        'TP-46 - 46 - Sustentabilidade  dos  Processos  de  Fabricação.json',
-        'TP-47 - 47 - Processos  não  Convencionais  de  Fabricação.json',
-        'UI-18 - 18 - Química Geral I.json',
-        'UI-28 - 28 - Química  Geral  II.json',
-        'UI-31 - 31 - Sistemas Eletroquímicos de Conversão e Armazenamento de Energia.json',
-        'UI-32 - 32 - Fundamentos de Eletroquímica e Corrosão.json',
-        'UM-01 - 01 - Epistemologia  e  Filosofia  da  Ciência.json',
-        'UM-02 - 02 - Ética.json',
-        'UM-04 - 04 - Filosofia e Ficção Científica.json',
-        'UM-05 - 05 - Filosofia da história.json',
-        'UM-06 - 06 - Filosofia política clássica.json',
-        'UM-07 - 07 - Filosofia política moderna.json',
-        'UM-08 - 08 - Bioética   Ambiental.json',
-        'UM-09 - 09 - Ética na inteligência artificial.json',
-        'UM-20 - 20 - Noções de Direito.json',
-        'UM-22 - 22 - Aspectos  Técnicos-Jurídicos  de  Propriedade  Intelectual.json',
-        'UM-23 - 23 - Inovação e Novos Marcos Regulatórios.json',
-        'UM-24 - 24 - Direito  e  Economia.json',
-        'UM-26 - 26 - Direito  Ambiental  para  a  Engenharia.json',
-        'UM-32 - 32 - Redação Acadêmica.json',
-        'UM-55 - 55 - Questões  do  Cotidiano  do Adulto  Jovem.json',
-        'UM-61 - 61 - Construção de Projetos de Tecnologia Engajada.json',
-        'UM-62 - 62 - Execução de Projeto de Tecnologia Engajada.json',
-        'UM-63 - 63 - Manufatura Avançada e Transformações no Mundo do Trabalho.json',
-        'UM-64 - 64 - História do Poder Aeroespacial brasileiro.json',
-        'UM-66 - 66 - Geopolítica e Relações Internacionais.json',
-        'UM-70 - 70 - Tecnologia e Sociedade.json',
-        'UM-74 - 74 - Tecnologia e Educação.json',
-        'UM-77 - 77 - História da Ciência e Tecnologia no Brasil.json',
-        'UM-78 - 78 - Cultura Brasileira.json',
-        'UM-79 - 79 - Teoria  Política.json',
-        'UM-83 - 83 - Análise e Opiniões da Imprensa Internacional (Nota 6).json',
-        'UM-84 - 84 - Política  Internacional  (Nota  6).json',
-        'UM-86 - 86 - Gestão de Processos de Inovação (Nota 6).json',
-        'UM-87 - 87 - Práticas   de   Empreendedorismo   (Nota   6).json',
-        'UM-88 - 88 - Modelos de Negócio (Nota 6).json',
-        'UM-89 - 89 - Formação de Equipes (Nota 6).json',
-        'UM-90 - 90 - História e Filosofia da Lógica (Nota 6).json',
-        'VO-20 - 20 - Controle I.json',
-        'VO-22 - 22 - Controle II.json',
-        'VO-31 - 31 - Desempenho  de  Aeronaves.json',
-        'VO-32 - 32 - Estabilidade e Controle de Aeronaves.json',
-        'VO-41 - 41 - Mecânica Orbital.json',
-        'VO-50 - 50 - Técnicas de Ensaios em Voo.json',
-        'VO-52 - 52 - Dinâmica e Controle de Veículos Espaciais.json',
-        'VO-53 - 53 - Simulação e Controle de Veículos Espaciais.json',
-        'VO-66 - 66 - Ensaio de Aeronaves Remotamente Operadas.json',
-        'XT-01 - 01 - Extensão  em  STEM - Oficinas.json',
-        'XT-02 - 02 - Extensão em STEM - Mentoria.json',
-      ];
-
-      const areas: any[] = [];
-
-      // Get base URL for GitHub Pages or local deployment
-      const meta = import.meta as any;
-      let baseUrl = meta?.env?.BASE_URL || '/';
-
-      if (typeof window !== 'undefined' && baseUrl === '/') {
+      if (this.baseUrl === '/') {
         const pathname = window.location.pathname;
         const match = pathname.match(/^(\/[^/]+\/)/);
         if (match && window.location.hostname.includes('github.io')) {
-          baseUrl = match[1];
+          this.baseUrl = match[1];
         }
       }
-      console.log('[ChunkedCurriculumService] Using base URL:', baseUrl);
+    }
+  }
 
-      for (const filename of curriculumFiles) {
-        try {
-          const disciplineCode = filename.split(' ')[0];
-          const fileUrl = `${baseUrl}curriculum/${encodeURIComponent(filename)}`;
-          console.log('[ChunkedCurriculumService] Fetching:', fileUrl);
-          const response = await fetch(fileUrl);
-          if (!response.ok) {
-            console.warn(`Failed to load ${filename}: ${response.statusText}`);
-            continue;
-          }
+  async loadCurriculum(): Promise<CurriculumData> {
+    console.log('[ChunkedCurriculumService] Starting chunked curriculum loading');
 
-          const data = await response.json();
-          if (data.curriculumData && data.curriculumData.areas) {
-            const prefixedAreas = this.prefixIdsInAreas(data.curriculumData.areas, disciplineCode);
-            areas.push(...prefixedAreas);
-          }
-        } catch (error) {
-          console.error(`Error loading ${filename}:`, error);
-        }
-      }
+    try {
+      // Step 1: Discover and load metadata for all disciplines
+      this.loadingProgress.stage = 'discovering';
+      const metadata = await this.discoverDisciplinesMetadata();
+
+      // Step 2: Create curriculum structure with metadata only
+      this.loadingProgress.stage = 'loading-metadata';
+      const areas = this.createCurriculumStructure(metadata);
+
+      // Step 3: Load only essential data initially, rest on-demand
+      this.loadingProgress.stage = 'loading-chunks';
+      await this.loadEssentialData(metadata);
+
+      this.loadingProgress.stage = 'complete';
 
       const curriculumData: CurriculumData = {
         formatVersion: '1.0',
@@ -312,7 +91,7 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
             duration: '1 Semestre',
             dailyStudyHours: '6-8 hours',
             totalAtomicSkills: areas.reduce((sum, area) => sum + area.totalSkills, 0),
-            version: '2.0 - ITA RP Reborn',
+            version: '2.0 - ITA RP Reborn (Chunked)',
             lastUpdated: new Date().toISOString().split('T')[0],
             institution: 'Instituto Tecnológico de Aeronáutica (ITA)',
             basedOn: 'Catálogo dos Cursos de Graduação 2025 - CC201',
@@ -323,49 +102,72 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
         },
       };
 
-      this.curriculumCache = curriculumData;
-      this.populateCaches(curriculumData);
-
       return curriculumData;
     } catch (error) {
-      console.error('Failed to load chunked curriculum:', error);
-      throw new Error(
-        `Não foi possível carregar o currículo em chunks: ${error instanceof Error ? error.message : String(error)}`
-      );
+      console.error('[ChunkedCurriculumService] Failed to load curriculum:', error);
+      throw new Error('Não foi possível carregar o currículo');
     }
   }
 
   async loadDiscipline(disciplineId: string): Promise<Discipline> {
-    if (this.disciplineCache.has(disciplineId)) {
-      return this.disciplineCache.get(disciplineId)!;
+    // Check if discipline is already loaded
+    const chunkedData = this.chunkedData.get(disciplineId);
+    if (chunkedData && this.isFullyLoaded(chunkedData)) {
+      return this.reconstructDiscipline(chunkedData);
     }
 
-    await this.loadCurriculum();
-    const discipline = this.disciplineCache.get(disciplineId);
-    if (!discipline) {
+    // Load discipline on-demand
+    await this.loadDisciplineData(disciplineId);
+
+    const loadedData = this.chunkedData.get(disciplineId);
+    if (!loadedData) {
       throw new Error(`Disciplina ${disciplineId} não encontrada`);
     }
-    return discipline;
+
+    return this.reconstructDiscipline(loadedData);
   }
 
   async loadSkill(skillId: string): Promise<SpecificSkill> {
-    if (this.skillCache.has(skillId)) {
-      return this.skillCache.get(skillId)!;
-    }
-
-    await this.loadCurriculum();
-    const skill = this.skillCache.get(skillId);
-    if (!skill) {
+    // Find which discipline contains this skill
+    const disciplineId = this.findDisciplineForSkill(skillId);
+    if (!disciplineId) {
       throw new Error(`Habilidade ${skillId} não encontrada`);
     }
-    return skill;
+
+    // Load the discipline if not already loaded
+    await this.loadDiscipline(disciplineId);
+
+    // Find and return the skill
+    const chunkedData = this.chunkedData.get(disciplineId);
+    if (chunkedData) {
+      const skill = chunkedData.chunks.skills.get(skillId);
+      if (skill) {
+        return skill;
+      }
+    }
+
+    throw new Error(`Habilidade ${skillId} não encontrada`);
   }
 
   validateCurriculum(data: CurriculumData): ValidationResult {
-    const errors: ValidationError[] = [];
-    const warnings: ValidationWarning[] = [];
+    const errors = [];
+    const warnings = [];
 
-    // Validation logic similar to CurriculumService
+    if (!data.curriculumData) {
+      errors.push({
+        code: 'MISSING_CURRICULUM_DATA',
+        message: 'Dados do currículo não encontrados',
+        path: 'curriculumData',
+      });
+    }
+
+    if (!data.curriculumData.areas || data.curriculumData.areas.length === 0) {
+      errors.push({
+        code: 'MISSING_AREAS',
+        message: 'Nenhuma área de conhecimento encontrada',
+        path: 'curriculumData.areas',
+      });
+    }
 
     return {
       isValid: errors.length === 0,
@@ -381,123 +183,486 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
     return skill.prerequisites.every(prereq => completedSkills.includes(prereq));
   }
 
-  private prefixIdsInAreas(areas: any[], disciplineCode: string): any[] {
-    return areas.map(area => ({
-      ...area,
-      id: `${disciplineCode}.${area.id}`,
-      disciplines: area.disciplines?.map((discipline: any) => ({
-        ...discipline,
-        id: `${disciplineCode}.${discipline.id}`,
-        mainTopics: discipline.mainTopics?.map((topic: any) => ({
-          ...topic,
-          id: `${disciplineCode}.${topic.id}`,
-          atomicTopics: topic.atomicTopics?.map((atomicTopic: any) => ({
-            ...atomicTopic,
-            id: `${disciplineCode}.${atomicTopic.id}`,
-            individualConcepts: atomicTopic.individualConcepts?.map((concept: any) => ({
-              ...concept,
-              id: `${disciplineCode}.${concept.id}`,
-              specificSkills: concept.specificSkills?.map((skill: any) => ({
-                ...skill,
-                id: `${disciplineCode}.${skill.id}`,
-                prerequisites:
-                  skill.prerequisites?.map((prereq: string) =>
-                    prereq ? `${disciplineCode}.${prereq}` : prereq
-                  ) || [],
-              })),
-            })),
-            specificSkills: atomicTopic.specificSkills?.map((skill: any) => ({
-              ...skill,
-              id: `${disciplineCode}.${skill.id}`,
-              prerequisites:
-                skill.prerequisites?.map((prereq: string) =>
-                  prereq ? `${disciplineCode}.${prereq}` : prereq
-                ) || [],
-            })),
-          })),
-        })),
-      })),
-    }));
+  // Progress tracking
+  getLoadingProgress(): LoadingProgress {
+    return { ...this.loadingProgress };
   }
 
-  private populateCaches(curriculumData: CurriculumData): void {
-    this.disciplineCache.clear();
-    this.skillCache.clear();
+  subscribeToProgress(callback: (progress: LoadingProgress) => void): () => void {
+    const interval = setInterval(() => {
+      callback({ ...this.loadingProgress });
+    }, 100);
+    return () => clearInterval(interval);
+  }
 
-    curriculumData.curriculumData.areas?.forEach(area => {
-      area.disciplines?.forEach(discipline => {
-        this.disciplineCache.set(discipline.id, discipline);
+  // Private methods
+  private async discoverDisciplinesMetadata(): Promise<DisciplineMetadata[]> {
+    const curriculumIndexUrl = `${this.baseUrl}curriculum/index.json`;
+    const metadata: DisciplineMetadata[] = [];
 
-        discipline.mainTopics?.forEach(topic => {
-          topic.atomicTopics?.forEach(atomicTopic => {
-            atomicTopic.individualConcepts?.forEach(concept => {
-              concept.specificSkills?.forEach(skill => {
-                this.skillCache.set(skill.id, skill);
-              });
-            });
-            const atomicTopicAny = atomicTopic as any;
-            atomicTopicAny.specificSkills?.forEach((skill: SpecificSkill) => {
-              this.skillCache.set(skill.id, skill);
-            });
+    try {
+      const response = await fetch(curriculumIndexUrl);
+      if (response.ok) {
+        const indexData = await response.json();
+        if (Array.isArray(indexData.files)) {
+          console.log(`[ChunkedCurriculumService] Processing ${indexData.files.length} files`);
+
+          for (const filename of indexData.files) {
+            try {
+              const fileMetadata = await this.loadDisciplineMetadata(filename);
+              if (fileMetadata) {
+                metadata.push(fileMetadata);
+                this.disciplineMetadata.set(fileMetadata.id, fileMetadata);
+              }
+            } catch (error) {
+              console.warn(`[ChunkedCurriculumService] Failed to load metadata for ${filename}:`, error);
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.error('[ChunkedCurriculumService] Failed to load curriculum index:', error);
+    }
+
+    this.loadingProgress.total = metadata.length;
+    return metadata;
+  }
+
+  private async loadDisciplineMetadata(filename: string): Promise<DisciplineMetadata | null> {
+    try {
+      const fileUrl = `${this.baseUrl}curriculum/${encodeURIComponent(filename)}`;
+
+      // For large files, try to get metadata via HEAD request first
+      const headResponse = await fetch(fileUrl, { method: 'HEAD' });
+      if (!headResponse.ok) {
+        return null;
+      }
+
+      const fileSize = parseInt(headResponse.headers.get('content-length') || '0', 10);
+      const disciplineCode = filename.split(' ')[0];
+
+      // For files larger than 1MB, create chunked metadata
+      if (fileSize > 1024 * 1024) {
+        return {
+          id: `${disciplineCode}.1`,
+          name: filename.split(' - ').slice(2).join(' - ').replace('.json', ''),
+          description: `Disciplina ${disciplineCode} - Carregamento dinâmico`,
+          totalSkills: 0, // Will be determined when loaded
+          totalTopics: 0,
+          totalAtomicTopics: 0,
+          fileName: filename,
+          fileSize,
+          isChunked: true,
+          chunks: this.generateChunkList(disciplineCode)
+        };
+      }
+
+      // For smaller files, load and parse partially to get metadata
+      const response = await fetch(fileUrl);
+      if (!response.ok) {
+        return null;
+      }
+
+      const data = await response.json();
+      if (data.curriculumData?.areas?.[0]?.disciplines?.[0]) {
+        const discipline = data.curriculumData.areas[0].disciplines[0];
+        return {
+          id: discipline.id,
+          name: discipline.name,
+          description: discipline.description,
+          totalSkills: this.countSkills(discipline),
+          totalTopics: discipline.mainTopics?.length || 0,
+          totalAtomicTopics: this.countAtomicTopics(discipline),
+          fileName: filename,
+          fileSize,
+          isChunked: false
+        };
+      }
+
+      return null;
+    } catch (error) {
+      console.error(`[ChunkedCurriculumService] Error loading metadata for ${filename}:`, error);
+      return null;
+    }
+  }
+
+  private generateChunkList(disciplineCode: string): string[] {
+    // Generate chunk identifiers based on typical structure
+    return [
+      `${disciplineCode}.metadata`,
+      `${disciplineCode}.topics`,
+      `${disciplineCode}.skills.1`,
+      `${disciplineCode}.skills.2`,
+      `${disciplineCode}.skills.3`,
+      `${disciplineCode}.skills.4`,
+      `${disciplineCode}.concepts`
+    ];
+  }
+
+  private createCurriculumStructure(metadata: DisciplineMetadata[]): any[] {
+    const areasMap = new Map<string, any>();
+
+    metadata.forEach(disciplineMeta => {
+      const prefix = disciplineMeta.id.split('-')[0];
+      const areaName = this.getAreaName(prefix);
+
+      if (!areasMap.has(areaName)) {
+        areasMap.set(areaName, {
+          id: this.getAreaId(prefix),
+          name: areaName,
+          description: this.getAreaDescription(areaName),
+          totalSkills: 0,
+          disciplines: []
+        });
+      }
+
+      const area = areasMap.get(areaName);
+      area.disciplines.push({
+        id: disciplineMeta.id,
+        name: disciplineMeta.name,
+        description: disciplineMeta.description,
+        totalSkills: disciplineMeta.totalSkills,
+        isChunked: disciplineMeta.isChunked,
+        metadata: disciplineMeta
+      });
+      area.totalSkills += disciplineMeta.totalSkills;
+    });
+
+    return Array.from(areasMap.values());
+  }
+
+  private getAreaName(prefix: string): string {
+    const areaNames: Record<string, string> = {
+      'AT': 'Matemática Aplicada',
+      'CI': 'Computação',
+      'DI': 'Engenharia de Infraestrutura',
+      'EA': 'Engenharia Aeronáutica',
+      'EB': 'Engenharia Básica',
+      'ED': 'Estatística e Decisão',
+      'EO': 'Engenharia de Obras',
+      'ES': 'Engenharia de Software',
+      'ID': 'Engenharia de Infraestrutura',
+      'IS': 'Ciências Exatas',
+      'MC': 'Matemática Computacional',
+      'MT': 'Máquinas e Turbinas',
+      'PD': 'Projeto e Desenvolvimento',
+      'PG': 'Projeto Gráfico',
+      'PP': 'Projeto e Produção',
+      'PS': 'Processos e Sistemas',
+      'RA': 'Engenharia Aeronáutica',
+      'RJ': 'Engenharia Aeroespacial',
+      'RP': 'Propulsão',
+      'SC': 'Sistemas de Computação',
+      'SI': 'Sistemas de Informação',
+      'SP': 'Sistemas Espaciais',
+      'ST': 'Estruturas',
+      'TC': 'Teoria da Computação',
+      'TM': 'Materiais',
+      'TP': 'Tecnologia e Produção',
+      'UI': 'Química',
+      'UM': 'Humanidades',
+      'VO': 'Voo e Operações',
+      'XT': 'Extensão'
+    };
+    return areaNames[prefix] || 'Outra Área';
+  }
+
+  private getAreaId(prefix: string): string {
+    const areaIds: Record<string, string> = {
+      'AT': '1', 'CI': '2', 'DI': '3', 'EA': '4', 'EB': '5', 'ED': '6',
+      'EO': '7', 'ES': '8', 'ID': '9', 'IS': '10', 'MC': '11', 'MT': '12',
+      'PD': '13', 'PG': '14', 'PP': '15', 'PS': '16', 'RA': '17', 'RJ': '18',
+      'RP': '19', 'SC': '20', 'SI': '21', 'SP': '22', 'ST': '23', 'TC': '24',
+      'TM': '25', 'TP': '26', 'UI': '27', 'UM': '28', 'VO': '29', 'XT': '30'
+    };
+    return areaIds[prefix] || '99';
+  }
+
+  private getAreaDescription(areaName: string): string {
+    const descriptions: Record<string, string> = {
+      'Matemática Aplicada': 'Fundamentos matemáticos para engenharia',
+      'Computação': 'Ciência da computação e programação',
+      'Engenharia de Infraestrutura': 'Construções civis e infraestrutura',
+      'Engenharia Aeronáutica': 'Projetos e sistemas aeronáuticos',
+      'Engenharia Básica': 'Fundamentos de engenharia',
+      'Estatística e Decisão': 'Análise de dados e tomada de decisão',
+      'Engenharia de Obras': 'Projetos e gerenciamento de obras',
+      'Engenharia de Software': 'Desenvolvimento de software',
+      'Ciências Exatas': 'Física, química e ciências básicas',
+      'Matemática Computacional': 'Métodos computacionais aplicados',
+      'Máquinas e Turbinas': 'Sistemas mecânicos e propulsão',
+      'Projeto e Desenvolvimento': 'Metodologia de projetos',
+      'Projeto Gráfico': 'Representação gráfica e desenho',
+      'Projeto e Produção': 'Processos produtivos e industriais',
+      'Processos e Sistemas': 'Sistemas e processos industriais',
+      'Engenharia Aeronáutica': 'Operações aeroportuárias',
+      'Engenharia Aeroespacial': 'Projetos espaciais',
+      'Propulsão': 'Motores e sistemas de propulsão',
+      'Sistemas de Computação': 'Arquitetura e sistemas',
+      'Sistemas de Informação': 'Sistemas de informação empresarial',
+      'Sistemas Espaciais': 'Tecnologia espacial',
+      'Estruturas': 'Análise e projeto estrutural',
+      'Teoria da Computação': 'Fundamentos teóricos',
+      'Materiais': 'Ciência e engenharia de materiais',
+      'Tecnologia e Produção': 'Processos produtivos',
+      'Química': 'Fundamentos químicos',
+      'Humanidades': 'Ciências humanas e sociais',
+      'Voo e Operações': 'Operações aéreas',
+      'Extensão': 'Atividades de extensão universitária'
+    };
+    return descriptions[areaName] || 'Área de conhecimento';
+  }
+
+  private async loadEssentialData(metadata: DisciplineMetadata[]): Promise<void> {
+    // Load only non-chunked disciplines initially
+    const nonChunked = metadata.filter(m => !m.isChunked);
+
+    for (const meta of nonChunked) {
+      try {
+        await this.loadDisciplineData(meta.id);
+        this.loadingProgress.loaded++;
+      } catch (error) {
+        console.warn(`[ChunkedCurriculumService] Failed to load ${meta.id}:`, error);
+      }
+    }
+
+    console.log(`[ChunkedCurriculumService] Loaded ${nonChunked.length} disciplines initially`);
+  }
+
+  private async loadDisciplineData(disciplineId: string): Promise<void> {
+    const metadata = this.disciplineMetadata.get(disciplineId);
+    if (!metadata) {
+      throw new Error(`Metadata not found for discipline ${disciplineId}`);
+    }
+
+    if (metadata.isChunked) {
+      await this.loadChunkedDiscipline(metadata);
+    } else {
+      await this.loadCompleteDiscipline(metadata);
+    }
+  }
+
+  private async loadCompleteDiscipline(metadata: DisciplineMetadata): Promise<void> {
+    const fileUrl = `${this.baseUrl}curriculum/${encodeURIComponent(metadata.fileName)}`;
+    const response = await fetch(fileUrl);
+    if (!response.ok) {
+      throw new Error(`Failed to load ${metadata.fileName}`);
+    }
+
+    const data = await response.json();
+    if (data.curriculumData?.areas?.[0]?.disciplines?.[0]) {
+      const discipline = data.curriculumData.areas[0].disciplines[0];
+
+      const chunkedData: ChunkedData = {
+        metadata,
+        chunks: {
+          topics: new Map(),
+          skills: new Map(),
+          concepts: new Map()
+        },
+        loadedChunks: new Set(['complete'])
+      };
+
+      // Extract all data into maps for easy access
+      this.extractDisciplineData(discipline, chunkedData.chunks);
+      this.chunkedData.set(disciplineId, chunkedData);
+    }
+  }
+
+  private async loadChunkedDiscipline(metadata: DisciplineMetadata): Promise<void> {
+    // For now, load the complete file but in chunks
+    // In a future implementation, this could load separate chunk files
+    const fileUrl = `${this.baseUrl}curriculum/${encodeURIComponent(metadata.fileName)}`;
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 60000); // 60 second timeout
+
+    try {
+      const response = await fetch(fileUrl, {
+        signal: controller.signal,
+        headers: {
+          'Accept': 'application/json',
+          'Cache-Control': 'no-cache'
+        }
+      });
+
+      clearTimeout(timeoutId);
+
+      if (!response.ok) {
+        throw new Error(`Failed to load ${metadata.fileName}`);
+      }
+
+      const data = await response.json();
+      if (data.curriculumData?.areas?.[0]?.disciplines?.[0]) {
+        const discipline = data.curriculumData.areas[0].disciplines[0];
+
+        const chunkedData: ChunkedData = {
+          metadata: {
+            ...metadata,
+            totalSkills: this.countSkills(discipline),
+            totalTopics: discipline.mainTopics?.length || 0,
+            totalAtomicTopics: this.countAtomicTopics(discipline)
+          },
+          chunks: {
+            topics: new Map(),
+            skills: new Map(),
+            concepts: new Map()
+          },
+          loadedChunks: new Set(['metadata', 'topics'])
+        };
+
+        // Load only essential data initially
+        this.extractEssentialDisciplineData(discipline, chunkedData.chunks);
+        this.chunkedData.set(disciplineId, chunkedData);
+      }
+    } catch (error) {
+      clearTimeout(timeoutId);
+      throw error;
+    }
+  }
+
+  private extractDisciplineData(discipline: any, chunks: any): void {
+    // Extract all data
+    discipline.mainTopics?.forEach((topic: any) => {
+      chunks.topics.set(topic.id, topic);
+
+      topic.atomicTopics?.forEach((atomicTopic: any) => {
+        atomicTopic.individualConcepts?.forEach((concept: any) => {
+          chunks.concepts.set(concept.id, concept);
+
+          concept.specificSkills?.forEach((skill: any) => {
+            chunks.skills.set(skill.id, skill);
+          });
+        });
+
+        // Handle skills directly under atomicTopic
+        if (atomicTopic.specificSkills) {
+          atomicTopic.specificSkills.forEach((skill: any) => {
+            chunks.skills.set(skill.id, skill);
+          });
+        }
+      });
+    });
+  }
+
+  private extractEssentialDisciplineData(discipline: any, chunks: any): void {
+    // Extract only topics and basic structure, skills loaded on demand
+    discipline.mainTopics?.forEach((topic: any) => {
+      chunks.topics.set(topic.id, {
+        ...topic,
+        atomicTopics: topic.atomicTopics?.map((at: any) => ({
+          id: at.id,
+          name: at.name,
+          description: at.description,
+          // Don't load detailed skills yet
+        }))
+      });
+    });
+  }
+
+  private async loadDetailedSkillData(disciplineId: string, skillIds: string[]): Promise<void> {
+    const chunkedData = this.chunkedData.get(disciplineId);
+    const metadata = this.disciplineMetadata.get(disciplineId);
+
+    if (!chunkedData || !metadata || !metadata.isChunked) {
+      return;
+    }
+
+    // Load detailed data for specific skills
+    const fileUrl = `${this.baseUrl}curriculum/${encodeURIComponent(metadata.fileName)}`;
+    const response = await fetch(fileUrl);
+    if (!response.ok) {
+      return;
+    }
+
+    const data = await response.json();
+    const discipline = data.curriculumData.areas[0].disciplines[0];
+
+    // Extract only requested skills
+    discipline.mainTopics?.forEach((topic: any) => {
+      topic.atomicTopics?.forEach((atomicTopic: any) => {
+        atomicTopic.individualConcepts?.forEach((concept: any) => {
+          concept.specificSkills?.forEach((skill: any) => {
+            if (skillIds.includes(skill.id)) {
+              chunkedData.chunks.skills.set(skill.id, skill);
+              chunkedData.chunks.concepts.set(concept.id, concept);
+            }
           });
         });
       });
     });
   }
 
-  // Additional methods for chunking
-  getAllDisciplines(): Discipline[] {
-    return Array.from(this.disciplineCache.values());
-  }
+  private reconstructDiscipline(chunkedData: ChunkedData): Discipline {
+    // Reconstruct discipline from chunked data
+    const topics = Array.from(chunkedData.chunks.topics.values());
 
-  getAllSkills(): SpecificSkill[] {
-    return Array.from(this.skillCache.values());
-  }
+    return {
+      id: chunkedData.metadata.id,
+      name: chunkedData.metadata.name,
+      description: chunkedData.metadata.description,
+      mainTopics: topics.map(topic => {
+        // Reconstruct atomic topics with skills
+        const atomicTopics = topic.atomicTopics?.map((at: any) => {
+          const skills: any[] = [];
+          chunkedData.chunks.concepts.forEach((concept, conceptId) => {
+            if (concept.specificSkills) {
+              skills.push(...concept.specificSkills.filter((skill: any) =>
+                chunkedData.chunks.skills.has(skill.id)
+              ));
+            }
+          });
 
-  getSkillsByDiscipline(disciplineId: string): SpecificSkill[] {
-    const discipline = this.disciplineCache.get(disciplineId);
-    if (!discipline) return [];
-
-    const skills: SpecificSkill[] = [];
-    discipline.mainTopics?.forEach(topic => {
-      topic.atomicTopics?.forEach(atomicTopic => {
-        atomicTopic.individualConcepts?.forEach(concept => {
-          if (concept.specificSkills) {
-            skills.push(...concept.specificSkills);
-          }
+          return {
+            ...at,
+            individualConcepts: Array.from(chunkedData.chunks.concepts.values())
+          };
         });
-        const atomicTopicAny = atomicTopic as any;
-        if (atomicTopicAny.specificSkills) {
-          skills.push(...atomicTopicAny.specificSkills);
-        }
+
+        return {
+          ...topic,
+          atomicTopics
+        };
+      }),
+      totalSkills: chunkedData.metadata.totalSkills
+    };
+  }
+
+  private isFullyLoaded(chunkedData: ChunkedData): boolean {
+    return chunkedData.loadedChunks.has('complete') ||
+           (chunkedData.loadedChunks.has('metadata') &&
+            chunkedData.loadedChunks.has('topics') &&
+            chunkedData.chunks.skills.size > 0);
+  }
+
+  private findDisciplineForSkill(skillId: string): string | null {
+    for (const [disciplineId, chunkedData] of this.chunkedData.entries()) {
+      if (chunkedData.chunks.skills.has(skillId)) {
+        return disciplineId;
+      }
+    }
+    return null;
+  }
+
+  private countSkills(discipline: any): number {
+    let count = 0;
+    discipline.mainTopics?.forEach((topic: any) => {
+      topic.atomicTopics?.forEach((atomicTopic: any) => {
+        atomicTopic.individualConcepts?.forEach((concept: any) => {
+          count += concept.specificSkills?.length || 0;
+        });
+        count += atomicTopic.specificSkills?.length || 0;
       });
     });
-    return skills;
+    return count;
   }
 
-  searchSkills(query: string): SpecificSkill[] {
-    const allSkills = this.getAllSkills();
-    const lowerQuery = query.toLowerCase();
-
-    return allSkills.filter(
-      skill =>
-        skill.name.toLowerCase().includes(lowerQuery) ||
-        skill.description.toLowerCase().includes(lowerQuery)
-    );
-  }
-
-  getSkillsByDifficulty(difficulty: 'beginner' | 'intermediate' | 'advanced'): SpecificSkill[] {
-    return this.getAllSkills().filter(skill => skill.difficulty === difficulty);
-  }
-
-  clearCache(): void {
-    this.curriculumCache = null;
-    this.disciplineCache.clear();
-    this.skillCache.clear();
-  }
-
-  isLoaded(): boolean {
-    return this.curriculumCache !== null;
+  private countAtomicTopics(discipline: any): number {
+    let count = 0;
+    discipline.mainTopics?.forEach((topic: any) => {
+      count += topic.atomicTopics?.length || 0;
+    });
+    return count;
   }
 }
 

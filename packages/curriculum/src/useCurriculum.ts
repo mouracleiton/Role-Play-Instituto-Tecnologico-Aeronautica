@@ -8,6 +8,7 @@ interface UseCurriculumReturn {
   isLoading: boolean;
   error: string | null;
   loadCurriculum: () => Promise<void>;
+  refreshCurriculum: () => Promise<void>;
   getSkillsForDiscipline: (disciplineId: string) => SpecificSkill[];
   getFormattedDisciplines: () => ReturnType<typeof curriculumService.getFormattedDisciplines>;
   getFormattedSkills: (disciplineId: string) => ReturnType<typeof curriculumService.getFormattedSkillsForDiscipline>;
@@ -23,8 +24,15 @@ export function useCurriculum(): UseCurriculumReturn {
 
   const loadCurriculum = useCallback(async () => {
     if (curriculumService.isLoaded()) {
-      setCurriculum(curriculumService['curriculumCache']);
-      setDisciplines(curriculumService.getAllDisciplines());
+      // Re-ensure the curriculum is loaded and caches are populated
+      try {
+        const data = await curriculumService.loadCurriculum();
+        setCurriculum(data);
+        setDisciplines(curriculumService.getAllDisciplines());
+      } catch (err) {
+        // If load fails after isLoaded, fallback to setting states with available data
+        setDisciplines(curriculumService.getAllDisciplines());
+      }
       return;
     }
 
@@ -45,6 +53,17 @@ export function useCurriculum(): UseCurriculumReturn {
   useEffect(() => {
     loadCurriculum();
   }, [loadCurriculum]);
+
+  // Add a global refresh method that can be called to reload curriculum
+  const refreshCurriculum = useCallback(async () => {
+    curriculumService.clearCache();
+    await loadCurriculum();
+  }, [loadCurriculum]);
+
+  // Make refresh available globally for debugging
+  if (typeof window !== 'undefined') {
+    (window as any).refreshCurriculum = refreshCurriculum;
+  }
 
   const getSkillsForDiscipline = useCallback((disciplineId: string): SpecificSkill[] => {
     return curriculumService.getSkillsByDiscipline(disciplineId);
@@ -82,6 +101,7 @@ export function useCurriculum(): UseCurriculumReturn {
     getFormattedSkills,
     searchSkills,
     getSkill,
+    refreshCurriculum,
   }), [
     curriculum,
     disciplines,
@@ -93,5 +113,6 @@ export function useCurriculum(): UseCurriculumReturn {
     getFormattedSkills,
     searchSkills,
     getSkill,
+    refreshCurriculum,
   ]);
 }
