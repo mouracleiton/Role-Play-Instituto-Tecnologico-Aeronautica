@@ -22,9 +22,10 @@ export const DisciplinesPage: React.FC<DisciplinesPageProps> = ({
   onStartSkill,
 }) => {
   const { currentTheme } = useTheme();
-  const { isLoading, error, getFormattedDisciplines, getFormattedSkills } = useCurriculum();
+  const { isLoading, error, getFormattedDisciplines, getFormattedSkills, refreshCurriculum } = useCurriculum();
   const [selectedDiscipline, setSelectedDiscipline] = useState<DisciplineData | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [forceRefresh, setForceRefresh] = useState(0);
 
   // Get disciplines from curriculum service
   const disciplines = useMemo((): DisciplineData[] => {
@@ -64,6 +65,17 @@ export const DisciplinesPage: React.FC<DisciplinesPageProps> = ({
 
   const totalProgress = disciplines.reduce((acc, d) => acc + d.completedSkills, 0);
   const totalSkills = disciplines.reduce((acc, d) => acc + d.totalSkills, 0);
+
+  // Auto-refresh if disciplines are empty and not loading/error (to handle race conditions)
+  useEffect(() => {
+    if (!isLoading && !error && disciplines.length === 0 && forceRefresh < 2) {
+      console.log('[DisciplinesPage] No disciplines found, attempting refresh...');
+      setTimeout(() => {
+        setForceRefresh(prev => prev + 1);
+        refreshCurriculum();
+      }, 1000);
+    }
+  }, [disciplines.length, isLoading, error, forceRefresh, refreshCurriculum]);
 
   if (isLoading) {
     return (
@@ -150,6 +162,13 @@ export const DisciplinesPage: React.FC<DisciplinesPageProps> = ({
               <Text variant="body" color={currentTheme.colors.textSecondary} style={{ marginTop: '8px' }}>
                 O currículo ainda está sendo carregado ou não há disciplinas cadastradas.
               </Text>
+              <Button
+                onClick={refreshCurriculum}
+                variant="primary"
+                style={{ marginTop: '16px' }}
+              >
+                🔄 Recarregar Currículo
+              </Button>
             </div>
           </Card>
         ) : (
