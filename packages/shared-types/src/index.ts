@@ -381,13 +381,6 @@ export interface ValidationWarning {
   path: string;
 }
 
-export interface LoadingProgress {
-  loaded: number;
-  total: number;
-  percentage: number;
-  currentItem?: string;
-  status: 'loading' | 'complete' | 'error';
-}
 
 export interface CurriculumFilter {
   discipline?: string;
