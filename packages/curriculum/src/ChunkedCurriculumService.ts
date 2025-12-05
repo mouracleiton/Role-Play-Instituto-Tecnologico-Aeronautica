@@ -5,6 +5,9 @@ import type {
   CurriculumLoader,
   CurriculumValidator,
   ValidationResult,
+  ValidationError,
+  ValidationWarning,
+  LoadingProgress,
 } from '@ita-rp/shared-types';
 
 interface DisciplineMetadata {
@@ -30,12 +33,6 @@ interface ChunkedData {
   loadedChunks: Set<string>;
 }
 
-interface LoadingProgress {
-  loaded: number;
-  total: number;
-  currentFile?: string;
-  stage: 'discovering' | 'loading-metadata' | 'loading-chunks' | 'complete';
-}
 
 export class ChunkedCurriculumService implements CurriculumLoader, CurriculumValidator {
   private disciplineMetadata: Map<string, DisciplineMetadata> = new Map();
@@ -150,8 +147,8 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
   }
 
   validateCurriculum(data: CurriculumData): ValidationResult {
-    const errors = [];
-    const warnings = [];
+    const errors: ValidationError[] = [];
+    const warnings: ValidationWarning[] = [];
 
     if (!data.curriculumData) {
       errors.push({
@@ -395,7 +392,7 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
       'Projeto Gráfico': 'Representação gráfica e desenho',
       'Projeto e Produção': 'Processos produtivos e industriais',
       'Processos e Sistemas': 'Sistemas e processos industriais',
-      'Engenharia Aeronáutica': 'Operações aeroportuárias',
+      'Operações Aeroportuárias': 'Operações aeroportuárias',
       'Engenharia Aeroespacial': 'Projetos espaciais',
       'Propulsão': 'Motores e sistemas de propulsão',
       'Sistemas de Computação': 'Arquitetura e sistemas',
@@ -465,7 +462,7 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
 
       // Extract all data into maps for easy access
       this.extractDisciplineData(discipline, chunkedData.chunks);
-      this.chunkedData.set(disciplineId, chunkedData);
+      this.chunkedData.set(discipline.id, chunkedData);
     }
   }
 
@@ -513,7 +510,7 @@ export class ChunkedCurriculumService implements CurriculumLoader, CurriculumVal
 
         // Load only essential data initially
         this.extractEssentialDisciplineData(discipline, chunkedData.chunks);
-        this.chunkedData.set(disciplineId, chunkedData);
+        this.chunkedData.set(discipline.id, chunkedData);
       }
     } catch (error) {
       clearTimeout(timeoutId);

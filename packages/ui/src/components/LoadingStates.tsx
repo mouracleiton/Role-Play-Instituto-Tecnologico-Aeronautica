@@ -36,7 +36,7 @@ export function CurriculumLoadingProgress({
     <div className="loading-container">
       <div className="loading-header">
         <h3 className="loading-title">Carregando Currículo</h3>
-        {showStage && (
+        {showStage && progress.stage && (
           <p className="loading-stage">{getStageMessage(progress.stage)}</p>
         )}
       </div>
@@ -59,9 +59,9 @@ export function CurriculumLoadingProgress({
         <span className="progress-text">
           {progress.loaded} de {progress.total} disciplinas carregadas
         </span>
-        {progress.currentFile && (
+        {(progress.currentFile || progress.currentItem) && (
           <span className="current-file">
-            {progress.currentFile}
+            {progress.currentFile || progress.currentItem}
           </span>
         )}
       </div>

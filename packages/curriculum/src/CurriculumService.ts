@@ -85,7 +85,7 @@ export class CurriculumService implements CurriculumLoader, CurriculumValidator 
             areas.push(...prefixedAreas);
           }
         } catch (error) {
-          if (error.name === 'AbortError') {
+          if (error instanceof Error && error.name === 'AbortError') {
             console.error(`Timeout loading ${filename}: File too large or server slow`);
           } else if (error instanceof SyntaxError) {
             console.error(`Invalid JSON in ${filename}: Server returned HTML error page`);

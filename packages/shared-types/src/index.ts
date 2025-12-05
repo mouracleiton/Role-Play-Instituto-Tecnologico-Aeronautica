@@ -354,6 +354,16 @@ export interface ValidationResult {
   warnings: ValidationWarning[];
 }
 
+export interface LoadingProgress {
+  loaded: number;
+  total: number;
+  currentFile?: string;
+  currentItem?: string;
+  stage?: 'discovering' | 'loading-metadata' | 'loading-chunks' | 'complete';
+  percentage?: number;
+  status?: string;
+}
+
 export interface ValidationError {
   code: string;
   message: string;

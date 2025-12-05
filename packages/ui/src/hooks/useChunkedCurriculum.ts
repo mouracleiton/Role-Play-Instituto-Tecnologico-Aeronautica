@@ -1,6 +1,15 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { chunkedCurriculumService } from '@ita-rp/curriculum';
-import type { CurriculumData, Discipline, SpecificSkill, LoadingProgress } from '@ita-rp/shared-types';
+import type {
+  CurriculumData,
+  Discipline,
+  SpecificSkill,
+  LoadingProgress,
+  Area,
+  MainTopic,
+  AtomicTopic,
+  IndividualConcept
+} from '@ita-rp/shared-types';
 
 interface UseChunkedCurriculumReturn {
   curriculum: CurriculumData | null;
@@ -307,18 +316,18 @@ export function useCurriculumSearch() {
       const skills: SpecificSkill[] = [];
 
       // Search through areas and disciplines
-      curriculum.curriculumData.areas?.forEach(area => {
-        area.disciplines?.forEach(discipline => {
+      curriculum.curriculumData.areas?.forEach((area: Area) => {
+        area.disciplines?.forEach((discipline: Discipline) => {
           if (discipline.name.toLowerCase().includes(lowerQuery) ||
               discipline.description.toLowerCase().includes(lowerQuery)) {
             disciplines.push(discipline);
           }
 
           // Search in skills if discipline matches or if dedicated skill search
-          discipline.mainTopics?.forEach(topic => {
-            topic.atomicTopics?.forEach(atomicTopic => {
-              atomicTopic.individualConcepts?.forEach(concept => {
-                concept.specificSkills?.forEach(skill => {
+          discipline.mainTopics?.forEach((topic: MainTopic) => {
+            topic.atomicTopics?.forEach((atomicTopic: AtomicTopic) => {
+              atomicTopic.individualConcepts?.forEach((concept: IndividualConcept) => {
+                concept.specificSkills?.forEach((skill: SpecificSkill) => {
                   if (skill.name.toLowerCase().includes(lowerQuery) ||
                       skill.description.toLowerCase().includes(lowerQuery)) {
                     skills.push(skill);

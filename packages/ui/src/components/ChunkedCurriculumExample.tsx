@@ -12,6 +12,7 @@ import {
   LazyLoadWrapper,
   DisciplineCardSkeleton,
   SkillCardSkeleton,
+  TopicCardSkeleton,
   LoadingStates
 } from './LoadingStates';
 import type { Discipline, SpecificSkill } from '@ita-rp/shared-types';
