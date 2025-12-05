@@ -21,7 +21,11 @@ const __dirname = dirname(__filename);
 const scriptDir = __dirname;
 
 // Configuração
-const PDF_PATH = path.join(scriptDir, '..', 'Catálogo dos Cursos de Graduação 2025 - digital Rev.25.07.18-páginas (1).pdf');
+const PDF_PATH = path.join(
+  scriptDir,
+  '..',
+  'Catálogo dos Cursos de Graduação 2025 - digital Rev.25.07.18-páginas (1).pdf'
+);
 const OUTPUT_DIR = path.join(scriptDir, '..', 'packages', 'curriculum');
 const ATOMIC_EXPAND_PROMPT_PATH = path.join(scriptDir, '..', 'ATOMIC_EXPAND_PROMPT.md');
 const SCHEMA_EXAMPLE_PATH = path.join(scriptDir, '..', 'schema.json');
@@ -166,7 +170,7 @@ class CatalogProcessor {
     if (!apiKey && !baseURL) {
       throw new Error(
         'OPENAI_API_KEY ou API_KEY não está definida. Configure a variável de ambiente.\n' +
-        'Para APIs locais (Ollama, etc.), você pode usar apenas BASE_URL sem API_KEY.'
+          'Para APIs locais (Ollama, etc.), você pode usar apenas BASE_URL sem API_KEY.'
       );
     }
 
@@ -201,7 +205,9 @@ class CatalogProcessor {
     try {
       const checkpointContent = await fs.readFile(CHECKPOINT_FILE, 'utf-8');
       this.checkpoint = JSON.parse(checkpointContent) as Checkpoint;
-      console.log(`📋 Checkpoint carregado: ${this.checkpoint.processedDisciplines.length} disciplinas já processadas`);
+      console.log(
+        `📋 Checkpoint carregado: ${this.checkpoint.processedDisciplines.length} disciplinas já processadas`
+      );
       return this.checkpoint;
     } catch (error) {
       if (this.debug) {
@@ -215,7 +221,9 @@ class CatalogProcessor {
     try {
       await fs.writeFile(CHECKPOINT_FILE, JSON.stringify(checkpoint, null, 2), 'utf-8');
       if (this.debug) {
-        console.log(`🔍 [DEBUG] Checkpoint salvo: ${checkpoint.processedDisciplines.length} disciplinas`);
+        console.log(
+          `🔍 [DEBUG] Checkpoint salvo: ${checkpoint.processedDisciplines.length} disciplinas`
+        );
       }
     } catch (error) {
       console.warn(`⚠️  Erro ao salvar checkpoint:`, error);
@@ -231,7 +239,9 @@ class CatalogProcessor {
     // Verifica se o arquivo existe
     try {
       const files = await fs.readdir(OUTPUT_DIR);
-      const matchingFile = files.find((f: string) => f.startsWith(`${disciplineCode} - `) && f.endsWith('.json'));
+      const matchingFile = files.find(
+        (f: string) => f.startsWith(`${disciplineCode} - `) && f.endsWith('.json')
+      );
       if (matchingFile) {
         const filepath = path.join(OUTPUT_DIR, matchingFile);
 
@@ -273,7 +283,7 @@ class CatalogProcessor {
       this.checkpoint = {
         processedDisciplines: [],
         lastUpdate: new Date().toISOString(),
-        totalDisciplines: 0
+        totalDisciplines: 0,
       };
     }
 
@@ -346,7 +356,11 @@ class CatalogProcessor {
           const propSchemaTyped = propSchema as any;
 
           // Validação recursiva para objetos
-          if (propSchemaTyped.type === 'object' && typeof data[key] === 'object' && !Array.isArray(data[key])) {
+          if (
+            propSchemaTyped.type === 'object' &&
+            typeof data[key] === 'object' &&
+            !Array.isArray(data[key])
+          ) {
             const nestedResult = this.validateAgainstSchema(data[key], propSchemaTyped, propPath);
             errors.push(...nestedResult.errors);
             missingFields.push(...nestedResult.missingFields);
@@ -357,7 +371,11 @@ class CatalogProcessor {
             if (propSchemaTyped.items) {
               data[key].forEach((item: any, index: number) => {
                 if (typeof item === 'object') {
-                  const itemResult = this.validateAgainstSchema(item, propSchemaTyped.items, `${propPath}[${index}]`);
+                  const itemResult = this.validateAgainstSchema(
+                    item,
+                    propSchemaTyped.items,
+                    `${propPath}[${index}]`
+                  );
                   errors.push(...itemResult.errors);
                   missingFields.push(...itemResult.missingFields);
                 }
@@ -371,11 +389,13 @@ class CatalogProcessor {
     return {
       valid: errors.length === 0,
       errors,
-      missingFields
+      missingFields,
     };
   }
 
-  async validateExistingJSON(filepath: string): Promise<{ valid: boolean; curriculum: CurriculumJSON | null; missingFields: string[] }> {
+  async validateExistingJSON(
+    filepath: string
+  ): Promise<{ valid: boolean; curriculum: CurriculumJSON | null; missingFields: string[] }> {
     try {
       const content = await fs.readFile(filepath, 'utf-8');
       const curriculum = JSON.parse(content) as CurriculumJSON;
@@ -413,7 +433,10 @@ class CatalogProcessor {
     }
   }
 
-  async fillMissingFieldsWithAI(curriculum: CurriculumJSON, missingFields: string[]): Promise<CurriculumJSON> {
+  async fillMissingFieldsWithAI(
+    curriculum: CurriculumJSON,
+    missingFields: string[]
+  ): Promise<CurriculumJSON> {
     console.log(`🤖 Usando IA para preencher ${missingFields.length} campos faltantes...`);
 
     // Agrupa campos por contexto para processamento mais eficiente
@@ -436,7 +459,12 @@ class CatalogProcessor {
         const parentObject = this.getNestedValue(curriculum, parentPath);
         if (!parentObject) continue;
 
-        const filledFields = await this.generateMissingFields(parentObject, fields, parentPath, curriculum);
+        const filledFields = await this.generateMissingFields(
+          parentObject,
+          fields,
+          parentPath,
+          curriculum
+        );
 
         // Aplica os campos preenchidos
         for (const [fieldName, value] of Object.entries(filledFields)) {
@@ -504,7 +532,10 @@ Retorne APENAS um JSON com os campos preenchidos, sem explicações:
   ${missingFields.map(f => `"${f}": <valor_apropriado>`).join(',\n  ')}
 }`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar conteúdo educacional.');
+    const response = await this.makeAPIRequest(
+      prompt,
+      'Você é um especialista em estruturar conteúdo educacional.'
+    );
 
     try {
       return JSON.parse(response);
@@ -611,7 +642,9 @@ Cada atomicExpansion deve conter:
     }
   }
 
-  async extractDisciplinesFromPDF(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
+  async extractDisciplinesFromPDF(
+    pdfText: string
+  ): Promise<Array<{ code: string; name: string; content: string }>> {
     console.log('🔍 Extraindo disciplinas do texto do PDF...');
 
     if (this.debug) {
@@ -619,7 +652,7 @@ Cada atomicExpansion deve conter:
     }
 
     const disciplinePattern = /([A-Z]{2,4}-\d{2,3})\s*-\s*([^\n]+)/g;
-    const disciplines: Array<{ code: string, name: string, content: string }> = [];
+    const disciplines: Array<{ code: string; name: string; content: string }> = [];
 
     const sections = pdfText.split(/(?=[A-Z]{2,4}-\d{2,3}\s*-)/);
     if (this.debug) {
@@ -638,9 +671,7 @@ Cada atomicExpansion deve conter:
         const name = nameMatch ? nameMatch[1].trim() : restOfLine.split('.')[0].trim();
 
         const contentStart = section.indexOf('\n');
-        const content = contentStart > 0
-          ? section.substring(contentStart + 1).trim()
-          : '';
+        const content = contentStart > 0 ? section.substring(contentStart + 1).trim() : '';
 
         const cleanContent = content
           .split('\n')
@@ -660,7 +691,7 @@ Cada atomicExpansion deve conter:
           disciplines.push({
             code,
             name,
-            content: cleanContent
+            content: cleanContent,
           });
         }
       }
@@ -669,7 +700,10 @@ Cada atomicExpansion deve conter:
     if (this.debug) {
       console.log(`🔍 [DEBUG] Disciplinas encontradas via regex: ${disciplines.length}`);
       if (disciplines.length > 0) {
-        console.log(`🔍 [DEBUG] Primeiras 3 disciplinas:`, disciplines.slice(0, 3).map(d => d.code));
+        console.log(
+          `🔍 [DEBUG] Primeiras 3 disciplinas:`,
+          disciplines.slice(0, 3).map(d => d.code)
+        );
       }
     }
 
@@ -682,13 +716,19 @@ Cada atomicExpansion deve conter:
     return disciplines;
   }
 
-  async extractDisciplinesWithAI(pdfText: string): Promise<Array<{ code: string, name: string, content: string }>> {
+  async extractDisciplinesWithAI(
+    pdfText: string
+  ): Promise<Array<{ code: string; name: string; content: string }>> {
     console.log('🤖 Usando IA para extrair disciplinas...');
 
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Tamanho do texto a processar: ${pdfText.length.toLocaleString()} caracteres`);
+      console.log(
+        `🔍 [DEBUG] Tamanho do texto a processar: ${pdfText.length.toLocaleString()} caracteres`
+      );
       const truncatedText = pdfText.substring(0, 50000);
-      console.log(`🔍 [DEBUG] Usando primeiros ${truncatedText.length.toLocaleString()} caracteres para IA`);
+      console.log(
+        `🔍 [DEBUG] Usando primeiros ${truncatedText.length.toLocaleString()} caracteres para IA`
+      );
     }
 
     const prompt = `Extraia todas as disciplinas do catálogo de cursos do ITA do texto abaixo.
@@ -728,12 +768,13 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
           messages: [
             {
               role: 'system',
-              content: 'Você é um especialista em extrair informações estruturadas de documentos acadêmicos. Sempre retorne JSON válido.'
+              content:
+                'Você é um especialista em extrair informações estruturadas de documentos acadêmicos. Sempre retorne JSON válido.',
             },
             {
               role: 'user',
-              content: prompt
-            }
+              content: prompt,
+            },
           ],
           temperature: 0.1,
         };
@@ -780,11 +821,16 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
           console.log(`🔍 [DEBUG] Tentando fazer parse do JSON...`);
         }
 
-        const result = JSON.parse(jsonContent) as { disciplines: Array<{ code: string, name: string, content: string }> };
+        const result = JSON.parse(jsonContent) as {
+          disciplines: Array<{ code: string; name: string; content: string }>;
+        };
         console.log(`✅ Encontradas ${result.disciplines.length} disciplinas via IA`);
 
         if (this.debug) {
-          console.log(`🔍 [DEBUG] Primeiras 5 disciplinas:`, result.disciplines.slice(0, 5).map(d => `${d.code} - ${d.name}`));
+          console.log(
+            `🔍 [DEBUG] Primeiras 5 disciplinas:`,
+            result.disciplines.slice(0, 5).map(d => `${d.code} - ${d.name}`)
+          );
         }
 
         return result.disciplines;
@@ -799,22 +845,33 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
         }
 
         if (attempts >= this.maxRetries) {
-          console.error(`❌ Erro ao extrair disciplinas com IA após ${this.maxRetries} tentativas:`, error.message);
+          console.error(
+            `❌ Erro ao extrair disciplinas com IA após ${this.maxRetries} tentativas:`,
+            error.message
+          );
           throw error;
         }
         const delay = 2000 * attempts;
-        console.warn(`⚠️  Tentativa ${attempts}/${this.maxRetries} falhou, tentando novamente em ${delay}ms...`);
+        console.warn(
+          `⚠️  Tentativa ${attempts}/${this.maxRetries} falhou, tentando novamente em ${delay}ms...`
+        );
         await new Promise(resolve => setTimeout(resolve, delay));
       }
     }
     throw new Error('Número máximo de tentativas excedido');
   }
 
-  async generateCurriculumJSON(discipline: { code: string, name: string, content: string }): Promise<CurriculumJSON> {
+  async generateCurriculumJSON(discipline: {
+    code: string;
+    name: string;
+    content: string;
+  }): Promise<CurriculumJSON> {
     console.log(`📝 Gerando JSON para ${discipline.code} - ${discipline.name}...`);
 
     if (this.debug) {
-      console.log(`🔍 [DEBUG] Tamanho do conteúdo da disciplina: ${discipline.content.length} caracteres`);
+      console.log(
+        `🔍 [DEBUG] Tamanho do conteúdo da disciplina: ${discipline.content.length} caracteres`
+      );
     }
 
     const schemaExample = await this.loadSchemaExample();
@@ -838,7 +895,9 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
         );
 
         if (this.debug) {
-          console.log(`🔍 [DEBUG] Tópico ${mainTopic.name} processado com ${detailedTopic.atomicTopics.length} tópicos atômicos`);
+          console.log(
+            `🔍 [DEBUG] Tópico ${mainTopic.name} processado com ${detailedTopic.atomicTopics.length} tópicos atômicos`
+          );
         }
 
         return detailedTopic;
@@ -854,7 +913,7 @@ ${pdfText.substring(0, 50000)}${pdfText.length > 50000 ? '\n... (texto truncado)
   }
 
   async generateBasicStructure(
-    discipline: { code: string, name: string, content: string },
+    discipline: { code: string; name: string; content: string },
     schemaExample: CurriculumJSON
   ): Promise<CurriculumJSON> {
     console.log(`  🏗️  Criando estrutura básica...`);
@@ -883,7 +942,10 @@ IMPORTANTE:
 - baseOn: "Catálogo dos Cursos de Graduação 2025 - ${discipline.code}"
 - Retorne APENAS o JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em criar estruturas de currículo educacional.');
+    const response = await this.makeAPIRequest(
+      prompt,
+      'Você é um especialista em criar estruturas de currículo educacional.'
+    );
 
     const structure = JSON.parse(response) as CurriculumJSON;
     structure.exportDate = new Date().toISOString();
@@ -893,9 +955,9 @@ IMPORTANTE:
   }
 
   async identifyMainTopics(
-    discipline: { code: string, name: string, content: string },
+    discipline: { code: string; name: string; content: string },
     structure: CurriculumJSON
-  ): Promise<Array<{ name: string, description: string }>> {
+  ): Promise<Array<{ name: string; description: string }>> {
     console.log(`  🔍 Identificando tópicos principais...`);
 
     const prompt = `Analise o conteúdo da disciplina abaixo e identifique os TÓPICOS PRINCIPAIS (MainTopics).
@@ -929,8 +991,13 @@ IMPORTANTE:
 - Use português
 - Retorne APENAS o JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em análise de currículos educacionais.');
-    const result = JSON.parse(response) as { mainTopics: Array<{ name: string, description: string }> };
+    const response = await this.makeAPIRequest(
+      prompt,
+      'Você é um especialista em análise de currículos educacionais.'
+    );
+    const result = JSON.parse(response) as {
+      mainTopics: Array<{ name: string; description: string }>;
+    };
 
     console.log(`  ✅ Identificados ${result.mainTopics.length} tópicos principais`);
 
@@ -938,8 +1005,8 @@ IMPORTANTE:
   }
 
   async generateDetailedMainTopic(
-    discipline: { code: string, name: string, content: string },
-    mainTopic: { name: string, description: string },
+    discipline: { code: string; name: string; content: string },
+    mainTopic: { name: string; description: string },
     structure: CurriculumJSON,
     topicIndex: number
   ): Promise<MainTopic> {
@@ -954,21 +1021,19 @@ IMPORTANTE:
         const atomicId = `${topicId}.${i + 1}`;
 
         if (this.debug) {
-          console.log(`    🔬 [${i + 1}/${atomicTopics.length}] Processando tópico atômico: ${atomicTopic.name}`);
+          console.log(
+            `    🔬 [${i + 1}/${atomicTopics.length}] Processando tópico atômico: ${atomicTopic.name}`
+          );
         }
 
-        return await this.generateDetailedAtomicTopic(
-          discipline,
-          mainTopic,
-          atomicTopic,
-          atomicId
-        );
+        return await this.generateDetailedAtomicTopic(discipline, mainTopic, atomicTopic, atomicId);
       })
     );
 
     // Calcula totalSkills do mainTopic
     const totalSkills = detailedAtomicTopics.reduce((sum, at) => {
-      const conceptSkills = at.individualConcepts?.reduce((s, ic) => s + ic.specificSkills.length, 0) || 0;
+      const conceptSkills =
+        at.individualConcepts?.reduce((s, ic) => s + ic.specificSkills.length, 0) || 0;
       const directSkills = at.specificSkills?.length || 0;
       return sum + conceptSkills + directSkills;
     }, 0);
@@ -978,15 +1043,15 @@ IMPORTANTE:
       name: mainTopic.name,
       description: mainTopic.description,
       totalSkills,
-      atomicTopics: detailedAtomicTopics
+      atomicTopics: detailedAtomicTopics,
     };
   }
 
   async identifyAtomicTopics(
-    discipline: { code: string, name: string, content: string },
-    mainTopic: { name: string, description: string },
+    discipline: { code: string; name: string; content: string },
+    mainTopic: { name: string; description: string },
     topicId: string
-  ): Promise<Array<{ name: string, description: string }>> {
+  ): Promise<Array<{ name: string; description: string }>> {
     const prompt = `Analise o tópico principal abaixo e identifique os TÓPICOS ATÔMICOS (subtópicos específicos).
 
 Disciplina: ${discipline.code} - ${discipline.name}
@@ -1016,16 +1081,21 @@ IMPORTANTE:
 - Use português
 - Retorne APENAS JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em decomposição de tópicos educacionais.');
-    const result = JSON.parse(response) as { atomicTopics: Array<{ name: string, description: string }> };
+    const response = await this.makeAPIRequest(
+      prompt,
+      'Você é um especialista em decomposição de tópicos educacionais.'
+    );
+    const result = JSON.parse(response) as {
+      atomicTopics: Array<{ name: string; description: string }>;
+    };
 
     return result.atomicTopics;
   }
 
   async generateDetailedAtomicTopic(
-    discipline: { code: string, name: string, content: string },
-    mainTopic: { name: string, description: string },
-    atomicTopic: { name: string, description: string },
+    discipline: { code: string; name: string; content: string },
+    mainTopic: { name: string; description: string },
+    atomicTopic: { name: string; description: string },
     atomicId: string
   ): Promise<AtomicTopic> {
     const prompt = `Crie a estrutura detalhada para um tópico atômico específico.
@@ -1092,15 +1162,21 @@ IMPORTANTE:
 - Use português
 - Retorne APENAS JSON, sem markdown`;
 
-    const response = await this.makeAPIRequest(prompt, 'Você é um especialista em estruturar conteúdo educacional em níveis atômicos.');
-    const result = JSON.parse(response) as { individualConcepts?: IndividualConcept[], specificSkills?: SpecificSkill[] };
+    const response = await this.makeAPIRequest(
+      prompt,
+      'Você é um especialista em estruturar conteúdo educacional em níveis atômicos.'
+    );
+    const result = JSON.parse(response) as {
+      individualConcepts?: IndividualConcept[];
+      specificSkills?: SpecificSkill[];
+    };
 
     return {
       id: atomicId,
       name: atomicTopic.name,
       description: atomicTopic.description,
       individualConcepts: result.individualConcepts,
-      specificSkills: result.specificSkills
+      specificSkills: result.specificSkills,
     };
   }
 
@@ -1116,7 +1192,7 @@ IMPORTANTE:
           model: this.model,
           messages: [
             { role: 'system', content: systemMessage },
-            { role: 'user', content: prompt }
+            { role: 'user', content: prompt },
           ],
           temperature: 0.3,
         };
@@ -1124,7 +1200,9 @@ IMPORTANTE:
         if (this.supportsJsonMode) {
           requestConfig.response_format = { type: 'json_object' };
         } else {
-          requestConfig.messages[1].content = prompt + '\n\nIMPORTANTE: Retorne APENAS um JSON válido, sem markdown, sem explicações.';
+          requestConfig.messages[1].content =
+            prompt +
+            '\n\nIMPORTANTE: Retorne APENAS um JSON válido, sem markdown, sem explicações.';
         }
 
         const startTime = Date.now();
@@ -1132,7 +1210,9 @@ IMPORTANTE:
         const duration = Date.now() - startTime;
 
         if (this.debug) {
-          console.log(`🔍 [DEBUG] Resposta em ${duration}ms, tokens: ${response.usage?.total_tokens || 'N/A'}`);
+          console.log(
+            `🔍 [DEBUG] Resposta em ${duration}ms, tokens: ${response.usage?.total_tokens || 'N/A'}`
+          );
         }
 
         const content = response.choices[0]?.message?.content;
@@ -1160,7 +1240,9 @@ IMPORTANTE:
         }
         const delay = 1000 * attempts;
         if (this.debug) {
-          console.warn(`🔍 [DEBUG] Tentativa ${attempts}/${this.maxRetries} falhou, retry em ${delay}ms...`);
+          console.warn(
+            `🔍 [DEBUG] Tentativa ${attempts}/${this.maxRetries} falhou, retry em ${delay}ms...`
+          );
         }
         await new Promise(resolve => setTimeout(resolve, delay));
       }
@@ -1179,9 +1261,11 @@ IMPORTANTE:
           let topicTotal = 0;
 
           topic.atomicTopics.forEach(atomicTopic => {
-            const conceptSkills = atomicTopic.individualConcepts?.reduce(
-              (sum, concept) => sum + concept.specificSkills.length, 0
-            ) || 0;
+            const conceptSkills =
+              atomicTopic.individualConcepts?.reduce(
+                (sum, concept) => sum + concept.specificSkills.length,
+                0
+              ) || 0;
             const directSkills = atomicTopic.specificSkills?.length || 0;
             topicTotal += conceptSkills + directSkills;
           });
@@ -1198,7 +1282,8 @@ IMPORTANTE:
     });
 
     const grandTotal = curriculum.curriculumData.areas.reduce(
-      (sum, area) => sum + area.totalSkills, 0
+      (sum, area) => sum + area.totalSkills,
+      0
     );
     curriculum.curriculumData.metadata.totalAtomicSkills = grandTotal;
   }
@@ -1206,7 +1291,7 @@ IMPORTANTE:
   async expandAtomicSkills(curriculum: CurriculumJSON): Promise<CurriculumJSON> {
     console.log('🔧 Expandindo habilidades atômicas...');
 
-    const skillsToExpand: Array<{ path: string[], skill: SpecificSkill }> = [];
+    const skillsToExpand: Array<{ path: string[]; skill: SpecificSkill }> = [];
 
     const collectSkills = (
       area: Area,
@@ -1230,7 +1315,7 @@ IMPORTANTE:
           if (needsExpansion(skill.atomicExpansion)) {
             skillsToExpand.push({
               path: [area.name, discipline.name, mainTopic.name, atomicTopic.name, skill.name],
-              skill
+              skill,
             });
           }
         });
@@ -1241,8 +1326,15 @@ IMPORTANTE:
           concept.specificSkills.forEach(skill => {
             if (needsExpansion(skill.atomicExpansion)) {
               skillsToExpand.push({
-                path: [area.name, discipline.name, mainTopic.name, atomicTopic.name, concept.name, skill.name],
-                skill
+                path: [
+                  area.name,
+                  discipline.name,
+                  mainTopic.name,
+                  atomicTopic.name,
+                  concept.name,
+                  skill.name,
+                ],
+                skill,
               });
             }
           });
@@ -1289,7 +1381,8 @@ IMPORTANTE:
           skill.atomicExpansion = expanded;
 
           if (this.debug) {
-            const stepsCount = 'steps' in expanded && Array.isArray(expanded.steps) ? expanded.steps.length : 0;
+            const stepsCount =
+              'steps' in expanded && Array.isArray(expanded.steps) ? expanded.steps.length : 0;
             console.log(`✅ ${progress} Concluído em ${duration}ms (${stepsCount} steps)`);
           }
         } catch (error: any) {
@@ -1368,12 +1461,13 @@ Formato esperado:
           messages: [
             {
               role: 'system',
-              content: 'Você é um especialista em criar planos de aprendizado detalhados e estruturados. Sempre retorne JSON válido.'
+              content:
+                'Você é um especialista em criar planos de aprendizado detalhados e estruturados. Sempre retorne JSON válido.',
             },
             {
               role: 'user',
-              content: prompt
-            }
+              content: prompt,
+            },
           ],
           temperature: 0.5,
         };
@@ -1413,7 +1507,7 @@ Formato esperado:
             finalVerifications: [],
             assessmentCriteria: [],
             crossCurricularConnections: [],
-            realWorldApplication: ''
+            realWorldApplication: '',
           };
         }
         console.warn(`Tentativa ${attempts}/${this.maxRetries} falhou, tentando novamente...`);
@@ -1427,18 +1521,183 @@ Formato esperado:
       finalVerifications: [],
       assessmentCriteria: [],
       crossCurricularConnections: [],
-      realWorldApplication: ''
+      realWorldApplication: '',
     };
   }
 
-  async saveCurriculumJSON(curriculum: CurriculumJSON, disciplineCode: string, disciplineName: string): Promise<string> {
-    const filename = `${disciplineCode} - ${disciplineName}.json`;
+  async saveCurriculumJSON(
+    curriculum: CurriculumJSON,
+    disciplineCode: string,
+    disciplineName: string
+  ): Promise<string> {
+    // Sanitize filename to replace invalid characters
+    const sanitizedName = disciplineName.replace(/[\/:*?"<>|]/g, '-');
+    const filename = `${disciplineCode} - ${sanitizedName}.json`;
     const filepath = path.join(OUTPUT_DIR, filename);
 
     await fs.writeFile(filepath, JSON.stringify(curriculum, null, 2), 'utf-8');
     console.log(`✓ Arquivo salvo: ${filename}`);
 
     return filepath;
+  }
+
+  async readExistingCurriculumFiles(): Promise<
+    Array<{ filepath: string; curriculum: CurriculumJSON }>
+  > {
+    console.log('📂 Lendo arquivos JSON existentes do diretório curriculum...');
+
+    const files = await fs.readdir(OUTPUT_DIR);
+    const jsonFiles = files.filter(
+      f => f.endsWith('.json') && f !== '.process-catalog-checkpoint.json'
+    );
+
+    const curricula: Array<{ filepath: string; curriculum: CurriculumJSON }> = [];
+
+    for (const filename of jsonFiles) {
+      const filepath = path.join(OUTPUT_DIR, filename);
+      try {
+        const content = await fs.readFile(filepath, 'utf-8');
+        const curriculum = JSON.parse(content) as CurriculumJSON;
+        curricula.push({ filepath, curriculum });
+        console.log(`✅ Carregado: ${filename}`);
+      } catch (error: any) {
+        console.warn(`⚠️ Erro ao carregar ${filename}: ${error.message}`);
+      }
+    }
+
+    console.log(`📊 Encontrados ${curricula.length} arquivos JSON válidos`);
+    return curricula;
+  }
+
+  async processExistingCurriculumFiles(): Promise<string[]> {
+    console.log('🚀 === Iniciando processamento de arquivos JSON existentes ===\n');
+
+    const overallStartTime = Date.now();
+
+    // Carrega recursos necessários
+    await this.loadPrompt();
+    await this.loadSchemaExample();
+    await this.loadValidationSchema();
+
+    // Lê todos os arquivos JSON existentes
+    const existingCurricula = await this.readExistingCurriculumFiles();
+
+    if (existingCurricula.length === 0) {
+      console.log('⚠️ Nenhum arquivo JSON encontrado no diretório curriculum');
+      return [];
+    }
+
+    const outputFiles: string[] = [];
+    const errors: Array<{ filename: string; error: string }> = [];
+
+    // Processa arquivos em paralelo
+    await this.processInParallel(
+      existingCurricula,
+      async ({ filepath, curriculum }, index, total) => {
+        const filename = path.basename(filepath);
+        const startTime = Date.now();
+        console.log(`\n📄 [${index + 1}/${total}] Processando ${filename}...`);
+
+        try {
+          // Verifica se precisa expandir skills
+          const needsExpansion = this.checkIfCurriculumNeedsExpansion(curriculum);
+
+          if (needsExpansion) {
+            console.log(`🔧 Expandindo habilidades atômicas em ${filename}...`);
+            const expandedCurriculum = await this.expandAtomicSkills(curriculum);
+
+            // Salva o arquivo atualizado
+            await fs.writeFile(filepath, JSON.stringify(expandedCurriculum, null, 2), 'utf-8');
+            console.log(`✅ Arquivo atualizado: ${filename}`);
+
+            // Recalcula totalSkills
+            this.recalculateTotalSkills(expandedCurriculum);
+            await fs.writeFile(filepath, JSON.stringify(expandedCurriculum, null, 2), 'utf-8');
+          } else {
+            console.log(`⏭️ ${filename} já está completo, pulando...`);
+          }
+
+          outputFiles.push(filepath);
+
+          const duration = Date.now() - startTime;
+          console.log(`✅ ${filename} concluído em ${(duration / 1000).toFixed(1)}s`);
+        } catch (error: any) {
+          const errorMsg = error.message || String(error);
+          console.error(`❌ Erro ao processar ${filename}:`, errorMsg);
+          errors.push({ filename, error: errorMsg });
+
+          if (this.debug) {
+            console.error(`🔍 [DEBUG] Stack trace:`, error.stack);
+          }
+        }
+      },
+      MAX_CONCURRENT_REQUESTS
+    );
+
+    const overallDuration = Date.now() - overallStartTime;
+    console.log(`\n🎉 === Processamento concluído ===`);
+    console.log(`✅ ${outputFiles.length} arquivo(s) processado(s) com sucesso`);
+    if (errors.length > 0) {
+      console.log(`⚠️  ${errors.length} erro(s) encontrado(s):`);
+      errors.forEach(({ filename, error }) => {
+        console.log(`   - ${filename}: ${error}`);
+      });
+    }
+    console.log(`⏱️  Tempo total: ${(overallDuration / 1000 / 60).toFixed(1)} minutos`);
+
+    return outputFiles;
+  }
+
+  checkIfCurriculumNeedsExpansion(curriculum: CurriculumJSON): boolean {
+    let needsExpansion = false;
+
+    const collectSkills = (
+      area: Area,
+      discipline: Discipline,
+      mainTopic: MainTopic,
+      atomicTopic: AtomicTopic,
+      individualConcept?: IndividualConcept
+    ) => {
+      const needsExpansionCheck = (expansion: AtomicExpansion | {} | undefined): boolean => {
+        if (!expansion || Object.keys(expansion).length === 0) {
+          return true;
+        }
+        if ('steps' in expansion && Array.isArray(expansion.steps)) {
+          return expansion.steps.length < 3;
+        }
+        return true;
+      };
+
+      if (atomicTopic.specificSkills) {
+        atomicTopic.specificSkills.forEach(skill => {
+          if (needsExpansionCheck(skill.atomicExpansion)) {
+            needsExpansion = true;
+          }
+        });
+      }
+
+      if (atomicTopic.individualConcepts) {
+        atomicTopic.individualConcepts.forEach(concept => {
+          concept.specificSkills.forEach(skill => {
+            if (needsExpansionCheck(skill.atomicExpansion)) {
+              needsExpansion = true;
+            }
+          });
+        });
+      }
+    };
+
+    curriculum.curriculumData.areas.forEach(area => {
+      area.disciplines.forEach(discipline => {
+        discipline.mainTopics.forEach(mainTopic => {
+          mainTopic.atomicTopics.forEach(atomicTopic => {
+            collectSkills(area, discipline, mainTopic, atomicTopic);
+          });
+        });
+      });
+    });
+
+    return needsExpansion;
   }
 
   async processAllDisciplines(): Promise<string[]> {
@@ -1468,7 +1727,9 @@ Formato esperado:
     if (this.debug) {
       console.log(`🔍 [DEBUG] Prompt carregado: ${this.atomicExpandPrompt.length} caracteres`);
       console.log(`🔍 [DEBUG] Schema exemplo carregado`);
-      console.log(`🔍 [DEBUG] Schema de validação carregado: ${this.validationSchema ? 'sim' : 'não'}`);
+      console.log(
+        `🔍 [DEBUG] Schema de validação carregado: ${this.validationSchema ? 'sim' : 'não'}`
+      );
     }
 
     const pdfText = await this.extractTextFromPDF(PDF_PATH);
@@ -1479,14 +1740,21 @@ Formato esperado:
     }
 
     // Filtra disciplinas já processadas
-    const disciplinesToProcess: Array<{ code: string, name: string, content: string, index: number }> = [];
+    const disciplinesToProcess: Array<{
+      code: string;
+      name: string;
+      content: string;
+      index: number;
+    }> = [];
     for (let i = 0; i < disciplines.length; i++) {
       const discipline = disciplines[i];
       const isProcessed = await this.isDisciplineProcessed(discipline.code);
       if (!isProcessed) {
         disciplinesToProcess.push({ ...discipline, index: i });
       } else {
-        console.log(`⏭️  [${i + 1}/${disciplines.length}] ${discipline.code} já processado, pulando...`);
+        console.log(
+          `⏭️  [${i + 1}/${disciplines.length}] ${discipline.code} já processado, pulando...`
+        );
       }
     }
 
@@ -1495,14 +1763,16 @@ Formato esperado:
       return [];
     }
 
-    console.log(`\n📊 ${disciplinesToProcess.length} disciplina(s) para processar (${disciplines.length - disciplinesToProcess.length} já processada(s))`);
+    console.log(
+      `\n📊 ${disciplinesToProcess.length} disciplina(s) para processar (${disciplines.length - disciplinesToProcess.length} já processada(s))`
+    );
 
     // Atualiza checkpoint com total
     if (!this.checkpoint) {
       this.checkpoint = {
         processedDisciplines: [],
         lastUpdate: new Date().toISOString(),
-        totalDisciplines: disciplines.length
+        totalDisciplines: disciplines.length,
       };
     } else {
       this.checkpoint.totalDisciplines = disciplines.length;
@@ -1510,7 +1780,7 @@ Formato esperado:
     await this.saveCheckpoint(this.checkpoint);
 
     const outputFiles: string[] = [];
-    const errors: Array<{ code: string, error: string }> = [];
+    const errors: Array<{ code: string; error: string }> = [];
 
     // Processa disciplinas em paralelo com controle de concorrência
     await this.processInParallel(
@@ -1518,17 +1788,25 @@ Formato esperado:
       async (discipline, localIndex, total) => {
         const globalIndex = discipline.index + 1;
         const disciplineStartTime = Date.now();
-        console.log(`\n📚 [${localIndex}/${total}] (${globalIndex}/${disciplines.length}) Processando ${discipline.code}...`);
+        console.log(
+          `\n📚 [${localIndex}/${total}] (${globalIndex}/${disciplines.length}) Processando ${discipline.code}...`
+        );
 
         try {
           let curriculum = await this.generateCurriculumJSON(discipline);
           curriculum = await this.expandAtomicSkills(curriculum);
-          const filepath = await this.saveCurriculumJSON(curriculum, discipline.code, discipline.name);
+          const filepath = await this.saveCurriculumJSON(
+            curriculum,
+            discipline.code,
+            discipline.name
+          );
           outputFiles.push(filepath);
           await this.markDisciplineAsProcessed(discipline.code);
 
           const disciplineDuration = Date.now() - disciplineStartTime;
-          console.log(`✅ ${discipline.code} concluído em ${(disciplineDuration / 1000).toFixed(1)}s`);
+          console.log(
+            `✅ ${discipline.code} concluído em ${(disciplineDuration / 1000).toFixed(1)}s`
+          );
 
           if (this.debug) {
             const totalSkills = curriculum.curriculumData.metadata.totalAtomicSkills;
@@ -1562,9 +1840,13 @@ Formato esperado:
       console.log(`\n🔍 [DEBUG] Estatísticas finais:`);
       console.log(`  - Disciplinas processadas: ${outputFiles.length}`);
       console.log(`  - Disciplinas com erro: ${errors.length}`);
-      console.log(`  - Taxa de sucesso: ${((outputFiles.length / disciplinesToProcess.length) * 100).toFixed(1)}%`);
+      console.log(
+        `  - Taxa de sucesso: ${((outputFiles.length / disciplinesToProcess.length) * 100).toFixed(1)}%`
+      );
       if (disciplinesToProcess.length > 0) {
-        console.log(`  - Tempo médio por disciplina: ${(overallDuration / disciplinesToProcess.length / 1000).toFixed(1)}s`);
+        console.log(
+          `  - Tempo médio por disciplina: ${(overallDuration / disciplinesToProcess.length / 1000).toFixed(1)}s`
+        );
       }
     }
 
@@ -1575,16 +1857,30 @@ Formato esperado:
 async function main() {
   try {
     const processor = new CatalogProcessor();
-    const files = await processor.processAllDisciplines();
-    console.log('\nArquivos gerados:');
-    files.forEach(file => console.log(`  - ${file}`));
+
+    // Verifica se deve processar arquivos existentes ou gerar novos do PDF
+    const processExisting =
+      process.env.PROCESS_EXISTING === 'true' || process.argv.includes('--existing');
+
+    if (processExisting) {
+      console.log('🔄 Modo: Processando arquivos JSON existentes');
+      const files = await processor.processExistingCurriculumFiles();
+      console.log('\nArquivos processados:');
+      files.forEach(file => console.log(`  - ${file}`));
+    } else {
+      console.log('📄 Modo: Processando catálogo do PDF');
+      const files = await processor.processAllDisciplines();
+      console.log('\nArquivos gerados:');
+      files.forEach(file => console.log(`  - ${file}`));
+    }
   } catch (error) {
     console.error('Erro fatal:', error);
     process.exit(1);
   }
 }
 
-const isDirectExecution = process.argv[1]?.includes('process-catalog') ||
+const isDirectExecution =
+  process.argv[1]?.includes('process-catalog') ||
   process.argv[1]?.endsWith('process-catalog.ts') ||
   process.argv[1]?.endsWith('process-catalog.js');
 
@@ -1593,4 +1889,3 @@ if (isDirectExecution) {
 }
 
 export { CatalogProcessor };
-

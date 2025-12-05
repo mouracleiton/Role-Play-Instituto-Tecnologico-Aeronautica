@@ -41898,73 +41898,127 @@
                             "atomicExpansion": {
                               "steps": [
                                 {
-                                  "stepNumber": 3,
-                                  "title": "Escrever a soma vetorial nula para o loop",
+                                  "stepNumber": 1,
+                                  "title": "Identificar a topologia do mecanismo planar e o loop de fechamento",
                                   "subSteps": [
-                                    "Some todos os vetores de posição no loop: Σ a_i * (cos θ_i, sin θ_i) = (0,0).",
-                                    "Separe em componentes x e y: Σ a_i cos θ_i = 0 e Σ a_i sin θ_i = 0.",
-                                    "Substitua posições absolutas ou relativas conforme necessário.",
-                                    "Conte o número de equações (2 por loop planar).",
-                                    "Verifique dimensionalidade: 2 equações para mecanismos com 1 DOF."
+                                    "Desenhe o diagrama cinemático do mecanismo, destacando as barras e juntas.",
+                                    "Determine o número de loops independentes (geralmente um para mecanismos simples).",
+                                    "Atribua variáveis de posição (ângulos θ_i para juntas rotacionais).",
+                                    "Defina a origem e oriente o plano cartesiano (x,y).",
+                                    "Rotule os vetores de posição das barras como A_i com magnitudes fixas l_i."
                                   ],
-                                  "verification": "As somas vetoriais resultam em vetores nulos (0,0).",
+                                  "verification": "Confirme que todos os vetores formam um loop fechado e que as variáveis são consistentes.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Papel e lápis ou software de desenho como GeoGebra",
+                                    "Referência do mecanismo (diagrama fornecido)"
+                                  ],
+                                  "tips": "Comece com mecanismos simples como o de quatro barras para praticar.",
+                                  "learningObjective": "Compreender a estrutura geométrica do mecanismo e preparar notação vetorial.",
+                                  "commonMistakes": [
+                                    "Ignorar juntas fixas",
+                                    "Confundir variáveis de entrada/saída",
+                                    "Não definir origem claramente"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Escrever a equação vetorial de soma nula para o loop",
+                                  "subSteps": [
+                                    "Escreva a soma vetorial: Σ A_i = 0, onde A_i = l_i * (cos θ_i + j sin θ_i).",
+                                    "Inclua todas as barras no loop, considerando direções (sentido horário ou anti-horário).",
+                                    "Identifique ângulos conhecidos (fixos) e desconhecidos.",
+                                    "Expresse vetores em forma complexa ou vetorial para clareza.",
+                                    "Verifique dimensionalmente que a soma é um vetor nulo."
+                                  ],
+                                  "verification": "A equação vetorial deve equilibrar-se conceitualmente para qualquer configuração válida.",
                                   "estimatedTime": "25 minutos",
                                   "materials": [
-                                    "Calculadora simbólica como SymPy ou papel para trigonometria"
+                                    "Folha de cálculo",
+                                    "Calculadora gráfica para testes iniciais"
                                   ],
-                                  "tips": "Use convenção consistente de direção (sentido horário/anti-horário).",
-                                  "learningObjective": "Formular a condição de fechamento vetorial.",
+                                  "tips": "Use convenção consistente de sinal para ângulos (ex: positivo anti-horário).",
+                                  "learningObjective": "Formular a restrição geométrica do loop em forma vetorial.",
                                   "commonMistakes": [
-                                    "Erros de sinal em seno/cosseno",
-                                    "Omitir vetores de retorno"
+                                    "Esquecer barras intermediárias",
+                                    "Inverter sinais de vetores",
+                                    "Misturar magnitudes variáveis"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Projetar a equação vetorial nas componentes x e y",
+                                  "subSteps": [
+                                    "Separe a soma em componentes reais (x): Σ l_i cos θ_i = 0.",
+                                    "Separe em componentes imaginárias (y): Σ l_i sin θ_i = 0.",
+                                    "Substitua θ_i conhecidos por valores numéricos ou expressões fixas.",
+                                    "Agrupe termos conhecidos e desconhecidos em cada equação.",
+                                    "Nomeie as equações como f_x(θ) = 0 e f_y(θ) = 0."
+                                  ],
+                                  "verification": "Ambas as equações devem ser escalares e independentes.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Software simbólico como Mathematica ou SymPy (opcional)",
+                                    "Papel quadriculado"
+                                  ],
+                                  "tips": "Use identidades trigonométricas para simplificar se possível.",
+                                  "learningObjective": "Transformar restrição vetorial em duas equações escalares não-lineares.",
+                                  "commonMistakes": [
+                                    "Erro em projeções trigonométricas (cos para x, sin para y)",
+                                    "Perder o sinal ao projetar",
+                                    "Não isolar termos adequadamente"
                                   ]
                                 },
                                 {
                                   "stepNumber": 4,
-                                  "title": "Simplificar e formular as equações escalares finais",
+                                  "title": "Simplificar e validar as equações de fechamento",
                                   "subSteps": [
-                                    "Expanda as equações x e y explicitamente com todas as barras.",
-                                    "Agrupe termos conhecidos e desconhecidos.",
-                                    "Nomeie as equações como f_x(θ) = 0 e f_y(θ) = 0.",
-                                    "Teste com valores conhecidos para validar (ex: posição inicial).",
-                                    "Documente suposições (ex: ângulos em radianos)."
+                                    "Reescreva as equações na forma padrão: f(θ_1, θ_2, ..., θ_n) = 0.",
+                                    "Teste com uma configuração conhecida (ex: posição montada).",
+                                    "Verifique o número de equações (2 para plano) e graus de liberdade.",
+                                    "Documente suposições (ex: barras rígidas, juntas ideais).",
+                                    "Prepare para métodos numéricos (identifique função residual)."
                                   ],
-                                  "verification": "Substitua θ conhecidos e confirme f_x = f_y ≈ 0.",
-                                  "estimatedTime": "30 minutos",
+                                  "verification": "Substitua valores conhecidos e confirme que f_x = 0 e f_y = 0.",
+                                  "estimatedTime": "25 minutos",
                                   "materials": [
-                                    "Software MATLAB/SymPy para expansão simbólica"
+                                    "Exemplo numérico resolvido",
+                                    "Planilha Excel para verificação"
                                   ],
-                                  "tips": "Mantenha equações não-lineares explícitas para análise numérica posterior.",
-                                  "learningObjective": "Obter equações prontas para resolução numérica.",
+                                  "tips": "Sempre normalize ângulos para [0, 2π) para evitar ambiguidades.",
+                                  "learningObjective": "Finalizar equações prontas para análise numérica e validar consistência.",
                                   "commonMistakes": [
-                                    "Linearizar prematuramente",
-                                    "Erros algébricos em expansão"
+                                    "Não testar com posições singulares",
+                                    "Esquecer dependências de entrada",
+                                    "Equações não balanceadas"
                                   ]
                                 }
                               ],
-                              "practicalExample": "Para um mecanismo de quatro barras (O2-A-B-C-O2): Posição A: (a1 cos θ1, a1 sin θ1), B: A + (a2 cos θ2, a2 sin θ2), C: B + (a3 cos θ3, a3 sin θ3), O2: C + (a4 cos θ4, a4 sin θ4) = (0,0). Equações: a1 cos θ1 + a2 cos θ2 + a3 cos θ3 + a4 cos θ4 = 0; a1 sin θ1 + ... = 0.",
+                              "practicalExample": "Para um mecanismo de quatro barras com barras de comprimentos l1=2, l2=3, l3=2.5, l4=3.5, e θ1=0 (fixo), as equações são: 2*cos(0) + 3*cos(θ2) + 2.5*cos(θ3) - 3.5 = 0 (x) e 2*sin(0) + 3*sin(θ2) + 2.5*sin(θ3) = 0 (y).",
                               "finalVerifications": [
-                                "Derivação reproduz soma vetorial nula corretamente.",
-                                "Equações têm exatamente 2 escalares por loop planar.",
-                                "Teste numérico com configuração conhecida satisfaz equações.",
-                                "Diagrama rotulado coincide com vetores definidos.",
-                                "Equações são não-lineares em θ's desconhecidas.",
-                                "Dimensões de barras consistentes nas equações."
+                                "As equações somam vetores a nulo em ambas direções.",
+                                "Número correto de equações (2 para mecanismos planos).",
+                                "Teste numérico em posição conhecida satisfaz f_x=0 e f_y=0.",
+                                "Variáveis independentes corretamente identificadas.",
+                                "Equações não-lineares em ângulos, lineares em comprimentos.",
+                                "Documentação inclui diagrama e suposições."
                               ],
                               "assessmentCriteria": [
-                                "Precisão na identificação de loops e vetorização (30%).",
-                                "Correção matemática das componentes x/y (40%).",
-                                "Clareza e completude das equações finais (20%).",
-                                "Validação com exemplo numérico (10%)."
+                                "Precisão na formulação vetorial (sem erros de sinal).",
+                                "Correta separação em componentes x e y.",
+                                "Validação com exemplo numérico (erro < 1e-6).",
+                                "Clareza na notação e documentação.",
+                                "Identificação de graus de liberdade do mecanismo.",
+                                "Preparação para resolução numérica (forma f(θ)=0)."
                               ],
                               "crossCurricularConnections": [
                                 "Matemática: Trigonometria e equações não-lineares.",
-                                "Física: Cinemática vetorial e leis de movimento.",
-                                "Programação: Implementação em Python/MATLAB para solvers.",
-                                "Design: CAD para visualização de mecanismos.",
-                                "Controle: Base para análise dinâmica."
+                                "Física: Estática vetorial e equilíbrio de forças.",
+                                "Programação: Implementação em Python/MATLAB para solvers numéricos.",
+                                "Desenho Técnico: Representação cinemática CAD.",
+                                "Controle: Base para modelagem de trajetórias em robótica."
                               ],
-                              "realWorldApplication": "Usado no design de linkages em motores automotivos, braços robóticos e mecanismos de suspensão para garantir trajetórias precisas de juntas durante o movimento."
+                              "realWorldApplication": "Essas equações são fundamentais para simular e otimizar mecanismos em robótica industrial (ex: braços robóticos), design de transmissões automotivas e próteses biomecânicas, permitindo análise posicional via métodos como Newton-Raphson."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",

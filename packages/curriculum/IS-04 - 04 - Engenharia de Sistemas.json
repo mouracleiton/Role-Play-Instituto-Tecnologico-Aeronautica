@@ -36828,12 +36828,99 @@
                             "name": "Discutir conformidade com padrões",
                             "description": "Analisar como o controle de configuração garante adesão a normas como as da ECSS e NASA, citando exemplos da bibliografia.",
                             "atomicExpansion": {
-                              "steps": [],
-                              "practicalExample": "",
-                              "finalVerifications": [],
-                              "assessmentCriteria": [],
-                              "crossCurricularConnections": [],
-                              "realWorldApplication": ""
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Compreender os padrões ECSS e NASA para controle de configuração",
+                                  "subSteps": [
+                                    "Identifique os documentos principais: ECSS-M-ST-10C para gerenciamento de configuração e NASA-STD-973 para padrões de CC.",
+                                    "Leia seções relevantes sobre requisitos de conformidade, como baseline management e change control.",
+                                    "Anote definições chave: configuração item, status accounting e interface control.",
+                                    "Compare estruturas de padrões: ECSS enfatiza padronização europeia espacial, NASA foca em missões americanas.",
+                                    "Registre diferenças e semelhanças em uma tabela comparativa."
+                                  ],
+                                  "verification": "Tabela comparativa completa com pelo menos 5 pontos chave de cada padrão.",
+                                  "estimatedTime": "2 horas",
+                                  "materials": "Documentos ECSS-M-ST-10C, NASA-STD-973 (PDFs oficiais), caderno de notas ou ferramenta como Notion.",
+                                  "tips": "Use busca por palavras-chave como 'configuration control' e 'compliance' nos PDFs.",
+                                  "learningObjective": "Dominar os requisitos fundamentais de conformidade nos padrões ECSS e NASA.",
+                                  "commonMistakes": "Confundir padrões (ex: ECSS com ESA vs NASA), ignorar versões atualizadas."
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Mapear processos de controle de configuração aos padrões",
+                                  "subSteps": [
+                                    "Liste processos de CC: identificação, controle de mudanças, status accounting, auditoria e baseline.",
+                                    "Alinhe cada processo a cláusulas específicas dos padrões (ex: ECSS cláusula 5.2 para change control).",
+                                    "Desenhe um diagrama de fluxo mostrando como CC garante adesão.",
+                                    "Identifique mecanismos de enforcement: aprovações, documentação obrigatória e relatórios.",
+                                    "Avalie gaps potenciais em projetos genéricos e como CC os mitiga."
+                                  ],
+                                  "verification": "Diagrama de mapeamento com pelo menos 4 processos ligados a cláusulas dos padrões.",
+                                  "estimatedTime": "3 horas",
+                                  "materials": "Ferramentas de diagramação (Draw.io ou Lucidchart), cópias dos padrões.",
+                                  "tips": "Use cores diferentes para ECSS (azul) e NASA (vermelho) no diagrama para clareza visual.",
+                                  "learningObjective": "Analisar como CC operacionaliza conformidade com padrões regulatórios.",
+                                  "commonMistakes": "Mapeamento superficial sem referências a cláusulas específicas, omitir auditorias."
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Identificar e citar exemplos da bibliografia",
+                                  "subSteps": [
+                                    "Revise bibliografia do curso: livros como 'Configuration Management Standards' de ANSI/EIA-649 ou casos de estudo NASA.",
+                                    "Busque exemplos reais: falha do Mars Climate Orbiter devido a poor CC (NASA relatório).",
+                                    "Encontre casos de sucesso: uso de CC em missões ESA sob ECSS para Artemis.",
+                                    "Extraia citações diretas: 'ECSS garante traceability via status accounting (ECSS-M-ST-10C, p. 15).'",
+                                    "Compile 3-5 exemplos em formato APA ou IEEE."
+                                  ],
+                                  "verification": "Lista de 3-5 citações com exemplos concretos da bibliografia.",
+                                  "estimatedTime": "2.5 horas",
+                                  "materials": "Bibliografia do curso, Zotero ou Mendeley para gerenciamento de referências.",
+                                  "tips": "Priorize exemplos de não-conformidade para ilustrar importância do CC.",
+                                  "learningObjective": "Habilitar suporte evidenciado para discussões sobre conformidade.",
+                                  "commonMistakes": "Citações imprecisas ou inventadas, ignorar contexto histórico dos exemplos."
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Formular discussão analítica integrada",
+                                  "subSteps": [
+                                    "Estruture o texto: introdução aos padrões, mapeamento, exemplos, análise de benefícios e desafios.",
+                                    "Analise: 'CC previne desvios como no caso Mars Orbiter ao impor change boards (NASA-STD-973).'",
+                                    "Discuta escalabilidade: adaptação para projetos espaciais vs outros setores.",
+                                    "Conclua com recomendações para implementação em projetos reais.",
+                                    "Revise por clareza, precisão e fluxo lógico."
+                                  ],
+                                  "verification": "Texto de discussão de 800-1200 palavras com análise crítica e citações.",
+                                  "estimatedTime": "4 horas",
+                                  "materials": "Editor de texto (Google Docs ou LaTeX), dicionário técnico de engenharia.",
+                                  "tips": "Use linguagem ativa e transições como 'portanto' para conectar análise a exemplos.",
+                                  "learningObjective": "Sintetizar conhecimento em uma discussão coerente e persuasiva.",
+                                  "commonMistakes": "Descrição em vez de análise, excesso de citações sem interpretação."
+                                }
+                              ],
+                              "practicalExample": "Em um projeto de satélite CubeSat, discuta como o processo de CC, alinhado à ECSS-M-ST-10C cláusula 4.3, evitou mudanças não autorizadas em interfaces elétricas, citando o relatório NASA do fiasco Mars Orbiter (1999) onde falta de CC levou a perda de US$327 milhões.",
+                              "finalVerifications": [
+                                "Mapeamento completo de pelo menos 4 processos de CC aos padrões ECSS/NASA.",
+                                "Inclusão de 3+ exemplos citados da bibliografia com referências precisas.",
+                                "Análise crítica demonstrando causalidade entre CC e conformidade.",
+                                "Diagrama ou tabela visual apoiando a discussão.",
+                                "Texto final sem erros factuais ou gramaticais.",
+                                "Conclusão com implicações práticas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão técnica: 30% (alinhamento correto aos padrões).",
+                                "Profundidade analítica: 25% (além de descrição, inclui 'por quê' e 'como').",
+                                "Qualidade de citações: 20% (relevância e formatação).",
+                                "Clareza e estrutura: 15% (lógica e visual aids).",
+                                "Originalidade: 10% (insights pessoais baseados em evidências)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Gerenciamento de Projetos: Integração com PMBOK para change control.",
+                                "Gestão da Qualidade: Alinhamento com ISO 9001 e AS9100.",
+                                "Engenharia de Software: CMMI nível 3 para configuração em devops.",
+                                "Direito e Regulamentação: Conformidade contratual em licitações espaciais."
+                              ],
+                              "realWorldApplication": "Em indústrias aeroespacial e defesa, como na Boeing ou Airbus, onde falhas de CC podem custar bilhões; aplicável também em automotiva (IATF 16949) para rastrear mudanças em veículos autônomos."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "advanced",

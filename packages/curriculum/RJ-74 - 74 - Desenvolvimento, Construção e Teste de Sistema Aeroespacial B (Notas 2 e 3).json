@@ -1685,12 +1685,140 @@
                             "name": "Montagem de circuitos impressos",
                             "description": "Soldar componentes SMD e THT em PCBs utilizando estação de solda e multímetro para verificar continuidade e resistência, seguindo esquemáticos de controle de voo ou propulsão.",
                             "atomicExpansion": {
-                              "steps": [],
-                              "practicalExample": "",
-                              "finalVerifications": [],
-                              "assessmentCriteria": [],
-                              "crossCurricularConnections": [],
-                              "realWorldApplication": ""
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Preparação do ambiente e materiais",
+                                  "subSteps": [
+                                    "Ler e interpretar o esquemático do circuito de controle de voo ou propulsão.",
+                                    "Verificar a lista de materiais (BOM) e inspecionar componentes SMD e THT quanto a danos ou polaridade.",
+                                    "Preparar a estação de solda: aquecer à temperatura adequada (300-350°C para SMD, 350-400°C para THT) e limpar o ferro com esponja úmida.",
+                                    "Limpar o PCB com álcool isopropílico e inspecionar visualmente por defeitos.",
+                                    "Organizar componentes em uma área antiestática e usar pulseira de aterramento."
+                                  ],
+                                  "verification": "Checklist completo assinado e estação pronta para uso, com temperatura estável.",
+                                  "estimatedTime": "20-30 minutos",
+                                  "materials": [
+                                    "Esquemático impresso ou digital",
+                                    "Lista BOM",
+                                    "PCB limpo",
+                                    "Álcool isopropílico",
+                                    "Estação de solda",
+                                    "Ferro de solda",
+                                    "Esponja e flux",
+                                    "Pulseira antiestática"
+                                  ],
+                                  "tips": "Sempre use óculos de proteção e trabalhe em superfície ventilada para evitar inalação de fumos.",
+                                  "learningObjective": "Garantir um setup seguro e organizado para evitar erros durante a soldagem.",
+                                  "commonMistakes": [
+                                    "Ignorar polaridade de diodos ou capacitores",
+                                    "Usar PCB sujo ou danificado",
+                                    "Aquecer estação sem calibração"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Soldagem de componentes THT (Through-Hole Technology)",
+                                  "subSteps": [
+                                    "Aplicar flux nas pads do PCB.",
+                                    "Inserir componentes THT nos furos correspondentes conforme esquemático.",
+                                    "Dobrar ligeiramente as pernas dos componentes para fixá-los.",
+                                    "Soldar cada perna: aquecer pad e perna por 2-3 segundos, aplicar solda até formar gota brilhante.",
+                                    "Cortar excessos de pernas com alicate de corte e inspecionar soldas visualmente."
+                                  ],
+                                  "verification": "Todas soldas THT com formato de gota cônica brilhante, sem pontes ou fraturas.",
+                                  "estimatedTime": "30-45 minutos",
+                                  "materials": [
+                                    "Componentes THT (resistores, capacitores, conectores)",
+                                    "Solda com núcleo de flux",
+                                    "Alicate de corte",
+                                    "Sucção de solda (para correções)"
+                                  ],
+                                  "tips": "Mova o ferro em círculos para distribuir o calor uniformemente e evite excesso de solda.",
+                                  "learningObjective": "Dominar técnica de soldagem THT para conexões mecânicas e elétricas robustas.",
+                                  "commonMistakes": [
+                                    "Excesso de solda causando pontes",
+                                    "Aquecimento insuficiente levando a juntas frias",
+                                    "Não cortar pernas próximas à solda"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Soldagem de componentes SMD (Surface-Mount Device)",
+                                  "subSteps": [
+                                    "Aplicar pasta de solda ou flux nas pads com seringa ou stencil.",
+                                    "Posicionar componentes SMD com pinça de precisão conforme esquemático.",
+                                    "Reflow: aquecer pads com ar quente ou ferro fino até solda derreter (evite superaquecimento).",
+                                    "Inspecionar alinhamento e refazer soldas defeituosas.",
+                                    "Limpar resíduos de flux com álcool isopropílico."
+                                  ],
+                                  "verification": "Componentes SMD alinhados, soldas simétricas e sem deslocamentos.",
+                                  "estimatedTime": "45-60 minutos",
+                                  "materials": [
+                                    "Componentes SMD (chips, resistores 0805/0603)",
+                                    "Pasta de solda ou flux SMD",
+                                    "Pinça ESD",
+                                    "Estação de ar quente ou ferro SMD"
+                                  ],
+                                  "tips": "Use magnificador ou microscópio para precisão em componentes pequenos.",
+                                  "learningObjective": "Executar soldagem SMD precisa para densidade alta em PCBs modernos.",
+                                  "commonMistakes": [
+                                    "Desalinhamento de pads",
+                                    "Bolhas de ar na solda",
+                                    "Superaquecimento danificando componentes"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Verificação elétrica e testes finais",
+                                  "subSteps": [
+                                    "Visual inspecionar todo o PCB por soldas frias, pontes ou componentes soltos.",
+                                    "Usar multímetro em modo continuidade para verificar trilhas e conexões.",
+                                    "Medir resistências em pontos chave conforme esquemático.",
+                                    "Testar ausência de curtos-circuitos entre linhas de alimentação e terra.",
+                                    "Realizar teste de alimentação baixa voltagem (se aplicável) e registrar resultados."
+                                  ],
+                                  "verification": "Relatório de testes com todas medições dentro das tolerâncias (±5%).",
+                                  "estimatedTime": "20-30 minutos",
+                                  "materials": [
+                                    "Multímetro digital",
+                                    "Fonte de alimentação regulada",
+                                    "Probes de teste"
+                                  ],
+                                  "tips": "Desligue sempre a alimentação antes de testes e use modo diodo para polaridade.",
+                                  "learningObjective": "Validar funcionalidade elétrica do circuito montado.",
+                                  "commonMistakes": [
+                                    "Não detectar pontes de solda",
+                                    "Medir com alimentação ligada",
+                                    "Ignorar tolerâncias em resistências"
+                                  ]
+                                }
+                              ],
+                              "practicalExample": "Montar um PCB de controle de voo para um drone FPV, soldando resistores THT para filtros, capacitores SMD de desacoplamento e um conector para ESC de propulsão, verificando continuidade nas trilhas de sinal PWM.",
+                              "finalVerifications": [
+                                "Todas trilhas com continuidade confirmada pelo multímetro.",
+                                "Sem curtos-circuitos entre VCC, GND e sinais.",
+                                "Resistências medidas dentro de ±10% dos valores nominais.",
+                                "Soldas visualmente perfeitas sem juntas frias ou excessos.",
+                                "PCB limpo e pronto para encapsulamento.",
+                                "Teste de alimentação sem aquecimento anormal."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e qualidade das soldas (brilho, forma cônica, sem bolhas).",
+                                "Correta interpretação e seguimento do esquemático.",
+                                "Eficiência no tempo estimado sem retrabalho excessivo.",
+                                "Segurança observada (EPI, ventilação, antiestática).",
+                                "Relatório de verificações completo e preciso.",
+                                "Ausência de danos a componentes ou PCB."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Princípios de condutividade, resistência e continuidade elétrica.",
+                                "Matemática: Cálculo de valores de resistores em série/paralelo e tolerâncias.",
+                                "Desenho Técnico: Leitura de esquemáticos e símbolos elétricos.",
+                                "Segurança do Trabalho: Normas NR-10 para eletricidade e manuseio de solda.",
+                                "Química: Propriedades de flux e solda (ligas Sn-Pb ou sem chumbo)."
+                              ],
+                              "realWorldApplication": "Na engenharia aeronáutica, essa habilidade é essencial para montar PCBs em sistemas de controle de voo autônomo de drones, flight controllers de aviões RC e placas de propulsão em foguetes amadores, garantindo confiabilidade em ambientes de alta vibração e temperatura."
                             },
                             "estimatedTime": "5 horas",
                             "difficulty": "advanced",

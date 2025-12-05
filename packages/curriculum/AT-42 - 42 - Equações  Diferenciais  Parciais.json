@@ -20406,52 +20406,141 @@
                             "atomicExpansion": {
                               "steps": [
                                 {
-                                  "stepNumber": 4,
-                                  "title": "Aplicar a Função Não-Polinomial f(x)=|x| e Aproximar Série",
+                                  "stepNumber": 1,
+                                  "title": "Revisar Polinômios de Legendre e suas Propriedades",
                                   "subSteps": [
-                                    "Para n=0: c_0 = (1/2) ∫_{-1}^1 |x| dx = (1/2)*1 = 1/2",
-                                    "Para n=1: c_1 = (3/2) ∫_{-1}^1 |x| x dx = 0 (ímpar)",
-                                    "Para n=2: c_2 = (5/2) ∫_{-1}^1 |x| (3x^2-1)/2 dx = calcular ∫_0^1 x(3x^2-1) dx *2 = -1/5",
-                                    "Computar até n=4 e plotar soma parcial vs |x|",
-                                    "Avaliar erro de truncamento L2"
+                                    "Estude a definição recursiva dos polinômios de Legendre: P_0(x) = 1, P_1(x) = x, P_{n+1}(x) = ((2n+1)x P_n(x) - n P_{n-1}(x))/(n+1).",
+                                    "Gere explicitamente P_0(x), P_1(x), P_2(x) e P_3(x) usando a recursão.",
+                                    "Verifique a propriedade de ortogonalidade: ∫_{-1}^1 P_m(x) P_n(x) dx = 2/(2n+1) δ_{mn}.",
+                                    "Pratique normalização: o fator (2n+1)/2 surge da ortogonalidade.",
+                                    "Liste propriedades chave: paridade, valores em x=±1."
                                   ],
-                                  "verification": "Coeficientes corretos até n=3 (c_0=1/2, c_1=0, c_2=-1/5, c_3=0) e gráfico convergente",
-                                  "estimatedTime": "2.5 horas",
+                                  "verification": "Gere P_0 a P_3 corretamente e confirme ∫ P_2^2 dx = 2/5.",
+                                  "estimatedTime": "1-2 hours",
                                   "materials": [
-                                    "SymPy/Mathematica para integrais numéricas se exata difícil",
-                                    "Software de plotagem como Matplotlib"
+                                    "Tabela de polinômios de Legendre",
+                                    "Calculadora simbólica como SymPy ou Mathematica",
+                                    "Papel e lápis para recursão manual"
                                   ],
-                                  "tips": "Aproveite simetria par de |x| para integrar só [0,1] e dobrar",
-                                  "learningObjective": "Generalizar cálculo para funções não-suaves e avaliar aproximação",
+                                  "tips": [
+                                    "Comece com n baixos para intuitar padrões.",
+                                    "Use software para plotar P_n(x) e visualizar oscilações."
+                                  ],
+                                  "learningObjective": "Compreender a geração e ortogonalidade dos polinômios de Legendre como base para expansões.",
                                   "commonMistakes": [
-                                    "Não tratar |x| piecewise [-1,0] e [0,1]",
-                                    "Ignorar convergência lenta perto de x=0",
-                                    "Erros em limites de integração piecewise"
+                                    "Confundir recursão de Legendre com outros polinômios (ex: Chebyshev).",
+                                    "Esquecer limites de integração [-1,1].",
+                                    "Ignorar paridade: P_n par para n par."
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Derivar a Fórmula dos Coeficientes c_n",
+                                  "subSteps": [
+                                    "Parta da expansão f(x) = ∑ c_n P_n(x) e multiplique por P_m(x), integrando de -1 a 1.",
+                                    "Aplique ortogonalidade para isolar c_m = ((2m+1)/2) ∫_{-1}^1 f(x) P_m(x) dx.",
+                                    "Justifique o fator (2m+1)/2 usando ∫ P_m^2 dx = 2/(2m+1).",
+                                    "Discuta convergência para funções suaves em [-1,1].",
+                                    "Escreva a fórmula geral e prepare para exemplos."
+                                  ],
+                                  "verification": "Derive a fórmula corretamente a partir da ortogonalidade, sem consultar referências.",
+                                  "estimatedTime": "1 hour",
+                                  "materials": [
+                                    "Notas de análise de Fourier",
+                                    "Livro de equações diferenciais parciais (ex: Haberman)",
+                                    "SymPy para verificação simbólica"
+                                  ],
+                                  "tips": [
+                                    "Visualize como 'projeção' de f sobre P_n.",
+                                    "Memorize o fator como 'norma inversa'."
+                                  ],
+                                  "learningObjective": "Dominar a origem da fórmula c_n via ortogonalidade, preparando cálculos diretos.",
+                                  "commonMistakes": [
+                                    "Usar integral de 0 a 1 em vez de -1 a 1.",
+                                    "Esquecer o (2n+1)/2.",
+                                    "Confundir com coeficientes de Fourier trigonométricos."
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Calcular Coeficientes para Exemplo Simples f(x) = x^2",
+                                  "subSteps": [
+                                    "Para n=0: Compute c_0 = (1/2) ∫_{-1}^1 x^2 * 1 dx = (1/2)(2/3) = 1/3.",
+                                    "Para n=1: c_1 = (3/2) ∫_{-1}^1 x^2 * x dx = 0 (por paridade).",
+                                    "Para n=2: c_2 = (5/2) ∫_{-1}^1 x^2 * (3x^2-1)/2 dx; simplifique e integre.",
+                                    "Calcule numericamente c_2 = 1/5.",
+                                    "Verifique soma parcial: (1/3)P_0 + (1/5)P_2 ≈ x^2."
+                                  ],
+                                  "verification": "Obtenha c_0=1/3, c_1=0, c_2=1/5 exatos.",
+                                  "estimatedTime": "2-3 hours",
+                                  "materials": [
+                                    "Calculadora integral (Wolfram Alpha ou SymPy)",
+                                    "Tabela de integrais indefinidas",
+                                    "Planilha para múltiplos n"
+                                  ],
+                                  "tips": [
+                                    "Use simetria/paridade para zerar termos ímpares rapidamente.",
+                                    "Integre por partes se necessário."
+                                  ],
+                                  "learningObjective": "Executar cálculos analíticos precisos de c_n para polinômio quadrático.",
+                                  "commonMistakes": [
+                                    "Erro em fator P_2: lembrar (3x^2-1)/2.",
+                                    "Cálculo errado de limites simétricos.",
+                                    "Arredondar prematuramente."
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Aproximar Função e Verificar Convergência",
+                                  "subSteps": [
+                                    "Compute c_n até n=4 para f(x)=x^2 e plote soma parcial S_N(x) = ∑_{n=0}^N c_n P_n(x).",
+                                    "Para f(x)=|x|: Note paridade par, compute c_0, c_2, etc.",
+                                    "Compare S_N(x) com f(x) em pontos como x=0, ±1, ±0.5.",
+                                    "Avalie erro L2: ∫ (f - S_N)^2 dx → 0.",
+                                    "Discuta truncamento e Gibbs-like phenomenon."
+                                  ],
+                                  "verification": "Plote S_2(x) para x^2 com erro <5% em [-1,1]; confirme para |x|.",
+                                  "estimatedTime": "2 hours",
+                                  "materials": [
+                                    "Python/MATLAB com numpy/scipy para Legendre e plot",
+                                    "Gráficos comparativos"
+                                  ],
+                                  "tips": [
+                                    "Use código para n altos; foque manual em baixos n.",
+                                    "Escolha pontos de teste representativos."
+                                  ],
+                                  "learningObjective": "Aplicar múltiplos c_n para aproximação e validar precisão.",
+                                  "commonMistakes": [
+                                    "Não normalizar P_n corretamente no código.",
+                                    "Ignorar overshoot perto de descontinuidades como |x|.",
+                                    "Plotar sem sobrepor f(x)."
                                   ]
                                 }
                               ],
-                              "practicalExample": "Para f(x)=x^2 em [-1,1], c_0=1/3, c_1=0, c_2=2/5. A soma S_2(x) = 1/3 + (2/5)(3x^2-1)/2 = (1/3 -1/5) + (3/5)x^2 = 2/15 + 3/5 x^2, que aproxima x^2 com erro pequeno.",
+                              "practicalExample": "Para f(x) = x^2 no intervalo [-1,1], calcule c_0 = 1/3, c_1 = 0, c_2 = 1/5. A soma S_2(x) = 1/3 + (1/5)(3x^2 - 1)/2 = (2/5)x^2 + 1/15 reproduz x^2 com erro mínimo quadrático.",
                               "finalVerifications": [
-                                "c_n calculado corretamente para f(x)=x^2 até n=2",
-                                "c_n para f(x)=|x| até n=3 com valores exatos",
-                                "Soma parcial reconstrói f(x) com erro <5% em norma L2",
-                                "Derivação da fórmula mostrada sem falhas",
-                                "Gráficos de aproximação vs f(x) convergentes"
+                                "c_n calculados analiticamente corretos para n=0,1,2 em f(x)=x^2.",
+                                "Aproximação S_2(x) coincide com f(x) em x=0 (±1), x=±1.",
+                                "Uso correto de paridade para zerar c_1.",
+                                "Código numérico reproduz valores analíticos dentro de 1e-6.",
+                                "Erro de truncamento diminui com N.",
+                                "Para f(x)=|x|, c_even corretos e c_odd=0."
                               ],
                               "assessmentCriteria": [
-                                "Precisão exata nas integrais (sem erros aritméticos)",
-                                "Uso correto da simetria par/ímpar",
-                                "Explicação clara da ortogonalidade na derivação",
-                                "Avaliação qualitativa de convergência",
-                                "Aplicação consistente da fórmula em exemplos variados"
+                                "Precisão analítica dos integrais (exata para polinômios).",
+                                "Correta aplicação do fator (2n+1)/2.",
+                                "Validação numérica vs. analítica.",
+                                "Interpretação de convergência e erro.",
+                                "Uso de simetria/paridade.",
+                                "Clareza em plots e comparações."
                               ],
                               "crossCurricularConnections": [
-                                "Física: Expansão de potenciais em coordenadas esféricas para equações de Laplace/Poisson",
-                                "Engenharia Elétrica: Análise de sinais em domínios limitados, filtros adaptativos",
-                                "Computação Científica: Algoritmos numéricos para integrais (quadratura Gauss-Legendre)",
-                                "Química Quântica: Funções de onda em problemas de hidrogênio"
+                                "Física: Soluções de equações de Laplace em coordenadas esféricas (potenciais).",
+                                "Engenharia: Análise modal em vibrações (expansões ortogonais).",
+                                "Computação: Algoritmos numéricos para integrais (quadratura Gauss-Legendre).",
+                                "Processamento de Sinais: Análise espectral em bases ortogonais."
                               ],
-                              "realWorldApplication": "Em física computacional, séries de Fourier-Legendre aproximam soluções de PDEs em esferas (ex: dinâmica de fluidos, eletromagnetismo); em processamento de sinais, modelam funções não-periódicas em intervalos finitos para compressão de dados."
+                              "realWorldApplication": "Usado em soluções analíticas de PDEs como equação do calor em disco ou potencial eletrostático em esfera; aproximação de funções em simulações numéricas para previsão climática ou design de antenas."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",

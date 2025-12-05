@@ -34598,29 +34598,142 @@
                             "name": "Comparar derivadas unilaterais",
                             "description": "Avaliar se derivada à direita e à esquerda coincidem em um ponto, relacionando com a derivabilidade bilateral e usando exemplos de funções contínuas não deriváveis.",
                             "atomicExpansion": {
-                              "steps": 5,
-                              "learningObjective": "Aplicar conceitos a exemplos clássicos e reconhecer não-derivabilidade",
-                              "commonMistakes": [
-                                "Calcular errado D+ de |x| (é 1, não 0)",
-                                "Confundir com descontinuidade removível",
-                                "Ignorar que limites unilaterais existem mas diferem"
+                              "steps": [
+                                {
+                                  "stepNumber": 1,
+                                  "title": "Revisar Definições de Derivadas Unilaterais",
+                                  "subSteps": [
+                                    "Estude a definição formal da derivada à direita: D⁺f(x) = lim_{h→0⁺} [f(x+h) - f(x)] / h",
+                                    "Estude a definição formal da derivada à esquerda: D⁻f(x) = lim_{h→0⁻} [f(x+h) - f(x)] / h",
+                                    "Compreenda que a derivada bilateral f'(x) existe se e somente se D⁺f(x) = D⁻f(x) = L ( finito )",
+                                    "Discuta a relação com continuidade: toda função derivável é contínua, mas nem toda contínua é derivável",
+                                    "Anote exemplos iniciais de funções suaves onde D⁺ = D⁻"
+                                  ],
+                                  "verification": "Escreva as definições corretas e explique verbalmente a condição de igualdade para derivabilidade bilateral.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Livro-texto de Cálculo Diferencial",
+                                    "Folha de papel e caneta",
+                                    "Calculadora gráfica (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: h > 0 para direita (aproximação pela direita), h < 0 para esquerda",
+                                    "Visualize graficamente: tangente à direita vs. à esquerda"
+                                  ],
+                                  "learningObjective": "Dominar as definições precisas e a condição necessária para derivabilidade bilateral.",
+                                  "commonMistakes": [
+                                    "Confundir os limites (direita com h→0⁻)",
+                                    "Esquecer que os limites devem ser iguais e finitos",
+                                    "Ignorar a direção do h no denominador"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 2,
+                                  "title": "Calcular Derivadas Unilaterais em Exemplos Simples",
+                                  "subSteps": [
+                                    "Escolha f(x) = x² e calcule D⁺(0) e D⁻(0) passo a passo",
+                                    "Para f(x) = |x|, compute D⁺(0): lim_{h→0⁺} (|h| - 0)/h = lim h/h = 1",
+                                    "Compute D⁻(0) para |x|: lim_{h→0⁻} (|h| - 0)/h = lim (-h)/h = -1",
+                                    "Verifique para outro ponto, ex: x=1 em f(x)=|x-1|",
+                                    "Registre os valores em uma tabela comparativa"
+                                  ],
+                                  "verification": "Cálculos numéricos e limites resolvidos corretamente para pelo menos duas funções.",
+                                  "estimatedTime": "40 minutos",
+                                  "materials": [
+                                    "Papel quadriculado",
+                                    "Software de cálculo simbólico como Wolfram Alpha (opcional)",
+                                    "Gráficos de funções impressos"
+                                  ],
+                                  "tips": [
+                                    "Simplifique a expressão [f(x+h)-f(x)]/h antes de tomar limite",
+                                    "Use tabelas de valores de h próximos para aproximação numérica inicial"
+                                  ],
+                                  "learningObjective": "Executar cálculos precisos de derivadas unilaterais em funções piecewise.",
+                                  "commonMistakes": [
+                                    "Erro no sinal absoluto: |h| = h para h>0, -h para h<0",
+                                    "Não simplificar frações antes do limite",
+                                    "Confundir f(x+h) com f(x-h)"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Comparar Derivadas Unilaterais e Avaliar Derivabilidade",
+                                  "subSteps": [
+                                    "Para cada exemplo calculado, compare D⁺f(x) e D⁻f(x): iguais? Finitos?",
+                                    "Conclua derivabilidade bilateral: sim se D⁺ = D⁻ finito",
+                                    "Teste continuidade em pontos onde D⁺ ≠ D⁻, ex: |x| em 0 é contínua mas não derivável",
+                                    "Crie uma regra de decisão: fluxograma para 'Derivável? Por quê?'",
+                                    "Aplique a outro exemplo: f(x) = x sin(1/x) para x≠0, f(0)=0 em x=0"
+                                  ],
+                                  "verification": "Fluxograma ou tabela de decisão correta para 3 exemplos, com conclusões justificadas.",
+                                  "estimatedTime": "35 minutos",
+                                  "materials": [
+                                    "Folha para fluxograma",
+                                    "Exemplos de funções adicionais anotados"
+                                  ],
+                                  "tips": [
+                                    "Sempre verifique continuidade primeiro: lim f(x) = f(x0)",
+                                    "Se D⁺ ou D⁻ infinito, não derivável"
+                                  ],
+                                  "learningObjective": "Avaliar derivabilidade relacionando unilaterais à bilateral com lógica estruturada.",
+                                  "commonMistakes": [
+                                    "Afirmar derivável só por continuidade",
+                                    "Ignorar se limites existem (infinitos contam como não derivável)",
+                                    "Comparar valores errados devido a cálculos prévios"
+                                  ]
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Explorar Funções Contínuas Não Deriváveis",
+                                  "subSteps": [
+                                    "Estude f(x) = |x|^α para α entre 0 e 1: contínua, D⁺=D⁻ mas infinita em 0",
+                                    "Analise f(x) = x² sin(1/x): derivável mas segunda derivada problemática",
+                                    "Crie gráfico e zoom em pontos críticos para visualizar 'canto'",
+                                    "Discuta teorema: derivável ⇒ contínua, contrapositiva falsa",
+                                    "Liste 3 exemplos clássicos e compute unilaterais"
+                                  ],
+                                  "verification": "Identifique corretamente 3 funções contínuas não deriváveis com cálculos unilaterais.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Software de plotagem (Desmos ou GeoGebra)",
+                                    "Lista de funções patológicas"
+                                  ],
+                                  "tips": [
+                                    "Use zoom gráfico para 'ver' discrepância nas tangentes",
+                                    "Procure funções com 'cusps' ou oscilações"
+                                  ],
+                                  "learningObjective": "Reconhecer e exemplificar falhas na derivabilidade apesar da continuidade.",
+                                  "commonMistakes": [
+                                    "Confundir não-diferenciável com descontínua",
+                                    "Erros em limites oscilantes",
+                                    "Exemplos errados (ex: funções suaves)"
+                                  ]
+                                }
                               ],
-                              "stepNumber": 5,
-                              "title": "Analisar exemplos de funções contínuas não deriváveis",
-                              "subSteps": [
-                                "Estude f(x) = |x| em x=0: calcule D+(0)=1, D-(0)=-1",
-                                "Analise f(x)=x^{1/3} em x=0: D+ e D- infinitas ou não coincidem",
-                                "Explore f(x)=|x|*sin(1/x) para x≠0, f(0)=0",
-                                "Grafique e visualize o 'canto'",
-                                "Generalize: pontos de não-diferenciabilidade em contínuas"
+                              "practicalExample": "Para f(x) = |x| em x=0: D⁺(0) = lim_{h→0⁺} h/h = 1; D⁻(0) = lim_{h→0⁻} (-h)/h = -1. Como 1 ≠ -1, f não é derivável em 0, apesar de contínua (lim_{x→0} |x| = 0 = f(0)). Gráfico mostra 'canto' agudo.",
+                              "finalVerifications": [
+                                "Calcula corretamente D⁺ e D⁻ para funções piecewise como |x| e |x-1|.",
+                                "Identifica corretamente pontos onde D⁺ ≠ D⁻ e conclui não-derivabilidade.",
+                                "Explica relação entre unilaterais, bilateral e continuidade com exemplos.",
+                                "Cria fluxograma de decisão para derivabilidade em um ponto dado.",
+                                "Analisa gráfico e detecta visualmente discrepâncias unilaterais.",
+                                "Lista e verifica 2 funções contínuas não deriváveis."
                               ],
-                              "verification": "Explique verbalmente ou por escrito por que |x| não é derivável em 0 apesar de contínua",
-                              "estimatedTime": "40 minutos",
-                              "materials": [
-                                "Software de plotagem (Desmos, GeoGebra)",
-                                "Lista de funções patológicas"
+                              "assessmentCriteria": [
+                                "Precisão nos cálculos de limites unilaterais (100% correto).",
+                                "Correta interpretação de igualdade D⁺ = D⁻ para bilateral.",
+                                "Uso adequado de exemplos contínuos não deriváveis.",
+                                "Clareza na explicação verbal ou escrita da relação com continuidade.",
+                                "Criatividade e acurácia em fluxogramas ou tabelas comparativas.",
+                                "Profundidade na análise gráfica e numérica."
                               ],
-                              "tips": "Zoom na gráfica perto de x0 para ver o comportamento assimétrico"
+                              "crossCurricularConnections": [
+                                "Física: Modelagem de trajetórias com 'quebras' (ex: colisões, detecção de não-suavidade em velocidades).",
+                                "Informática: Algoritmos numéricos de derivadas finitas unilaterais em programação (Python/NumPy).",
+                                "Engenharia: Análise de sinais com singularidades (ex: detecção de falhas em sensores).",
+                                "Economia: Funções de custo com pontos não-diferenciáveis (ex: thresholds em otimização)."
+                              ],
+                              "realWorldApplication": "Em engenharia civil, analisar perfis de vigas com 'cantos' para verificar se o modelo matemático permite derivadas (suavidade estrutural); em machine learning, detectar não-diferenciabilidades em funções de perda para otimizar gradientes unilaterais em dados ruidosos."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",

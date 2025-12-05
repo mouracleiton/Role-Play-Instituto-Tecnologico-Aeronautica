@@ -173,7 +173,12 @@ export interface StudySession {
 }
 
 export interface GameEvent {
-  type: 'skill_completed' | 'level_up' | 'achievement_unlocked' | 'streak_updated' | 'discipline_completed';
+  type:
+    | 'skill_completed'
+    | 'level_up'
+    | 'achievement_unlocked'
+    | 'streak_updated'
+    | 'discipline_completed';
   payload: any;
   timestamp: Date;
 }
@@ -364,6 +369,14 @@ export interface ValidationWarning {
   code: string;
   message: string;
   path: string;
+}
+
+export interface LoadingProgress {
+  loaded: number;
+  total: number;
+  percentage: number;
+  currentItem?: string;
+  status: 'loading' | 'complete' | 'error';
 }
 
 export interface CurriculumFilter {

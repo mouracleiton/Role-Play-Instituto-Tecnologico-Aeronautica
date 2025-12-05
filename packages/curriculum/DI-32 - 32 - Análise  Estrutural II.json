@@ -19553,37 +19553,113 @@
                                   "stepNumber": 1,
                                   "title": "Compreender imperfeições geométricas em barras comprimidas",
                                   "subSteps": [
-                                    "Estude a teoria de flambagem de Euler e como imperfeições iniciais afetam a carga crítica.",
-                                    "Analise desvios laterais como a principal imperfeição geométrica em elementos lineares.",
-                                    "Revise exemplos de normas como Eurocode ou AISC que especificam tolerâncias de fabricação.",
-                                    "Identifique diferenças entre imperfeições iniciais e deformações residuais.",
-                                    "Discuta impactos na análise não linear de estruturas."
+                                    "Revise a teoria de flambagem de Euler para barras perfeitas.",
+                                    "Identifique como imperfeições iniciais reduzem a carga crítica de flambagem.",
+                                    "Estude desvios laterais como a principal imperfeição geométrica em elementos lineares.",
+                                    "Analise exemplos reais de falhas estruturais causadas por imperfeições.",
+                                    "Discuta a importância da modelagem inicial para análises de sensibilidade."
                                   ],
-                                  "verification": "Resuma em um parágrafo os efeitos das imperfeições na estabilidade de barras e cite uma norma relevante.",
+                                  "verification": "Resuma em um parágrafo as diferenças entre barras perfeitas e imperfeitas, citando fórmulas chave.",
                                   "estimatedTime": "45 minutos",
-                                  "materials": "Livro-texto de Análise Estrutural II, slides da aula sobre flambagem, normas AISC/Eurocode (PDFs).",
-                                  "tips": "Use diagramas de flambagem para visualizar modos de instabilidade.",
-                                  "learningObjective": "Entender o papel das imperfeições geométricas na redução da capacidade de carga de barras comprimidas.",
-                                  "commonMistakes": "Confundir imperfeições geométricas com cargas excêntricas ou apoios imperfeitos."
+                                  "materials": "Livro-texto de Análise Estrutural, notas de aula, calculadora.",
+                                  "tips": "Use diagramas esquemáticos para visualizar desvios laterais ao longo do comprimento da barra.",
+                                  "learningObjective": "Entender o impacto físico das imperfeições geométricas na estabilidade estrutural.",
+                                  "commonMistakes": "Confundir imperfeições geométricas com imperfeições de material, como variações de seção transversal."
                                 },
                                 {
                                   "stepNumber": 2,
-                                  "title": "Selecionar e formular funções para modelagem de desvios",
+                                  "title": "Modelar desvios com funções sinusoidais",
                                   "subSteps": [
-                                    "Compare funções sinusoidais (w(x) = A * sin(πx/L)) e polinomiais cúbicas para representar desvios laterais.",
-                                    "Escolha sinusoidal para imperfeições globais e polinomial para locais, baseado no comprimento da barra.",
-                                    "Defina coordenadas: x ao longo do comprimento L, w(x) como desvio lateral.",
-                                    "Estude formas normalizadas para compatibilidade com elementos finitos.",
-                                    "Pratique esboçando as funções em papel ou software como MATLAB.",
-                                    "verification]: "
-                                  ]
+                                    "Defina a forma funcional: w(x) = A * sin(πx / L) para o modo fundamental.",
+                                    "Explique o significado de amplitude A e comprimento de onda λ = 2L.",
+                                    "Derive a equação diferencial da barra com imperfeição sinusoidal.",
+                                    "Implemente a função em software para plotar o desvio lateral.",
+                                    "Calcule a carga crítica reduzida usando método de perturbação."
+                                  ],
+                                  "verification": "Plote a função sinusoidal para uma barra de L=2m e A=1mm, verificando simetria e amplitude.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": "Software MATLAB ou Python (Matplotlib/NumPy), papel milimetrado.",
+                                  "tips": "Comece com o modo fundamental (meia onda) para simplicidade, expandindo para múltiplos modos depois.",
+                                  "learningObjective": "Aplicar funções sinusoidais para representar desvios iniciais realistas em barras.",
+                                  "commonMistakes": "Usar seno em vez de cosseno sem ajustar fases, levando a desvios assimétricos incorretos."
+                                },
+                                {
+                                  "stepNumber": 3,
+                                  "title": "Modelar desvios com funções polinomiais",
+                                  "subSteps": [
+                                    "Escolha polinômios cúbicos: w(x) = A * (x/L)^2 * (1 - x/L) para desvio máximo no meio.",
+                                    "Compare com sinusoidais em termos de suavidade e condições de contorno.",
+                                    "Ajuste coeficientes para matching de normas L2 ou máxima deflexão.",
+                                    "Implemente e plote ambas as funções para a mesma amplitude.",
+                                    "Avalie qual função melhor aproxima imperfeições medidas experimentalmente."
+                                  ],
+                                  "verification": "Gere gráficos comparativos mostrando sobreposição >90% entre sinusoidal e polinomial.",
+                                  "estimatedTime": "50 minutos",
+                                  "materials": "Software de plotagem (Excel, MATLAB), tabelas de dados experimentais.",
+                                  "tips": "Normalize as funções para facilitar comparações diretas de forma.",
+                                  "learningObjective": "Dominar modelagem polinomial alternativa para flexibilidade em análises numéricas.",
+                                  "commonMistakes": "Ignorar condições de contorno (w(0)=w(L)=0), resultando em desvios não fixos nas extremidades."
+                                },
+                                {
+                                  "stepNumber": 4,
+                                  "title": "Definir amplitudes e comprimentos de onda típicos",
+                                  "subSteps": [
+                                    "Consulte normas como Eurocode ou AISC para limites de tolerância (e.g., L/1000 a L/500).",
+                                    "Selecione amplitudes A = L/750 para barras esbeltas.",
+                                    "Defina comprimentos de onda: λ = L para sinusoidal fundamental.",
+                                    "Crie uma tabela de parâmetros baseados em classes de imperfeição (classe A, B, C).",
+                                    "Valide com dados experimentais de fabricação de perfis metálicos."
+                                  ],
+                                  "verification": "Compile uma tabela com 3 cenários típicos e justifique escolhas com referências normativas.",
+                                  "estimatedTime": "40 minutos",
+                                  "materials": "Normas técnicas (PDFs), banco de dados de imperfeições reais.",
+                                  "tips": "Use valores conservadores para design seguro, priorizando imperfeições maiores.",
+                                  "learningObjective": "Selecionar parâmetros realistas baseados em padrões industriais.",
+                                  "commonMistakes": "Escolher amplitudes muito pequenas, subestimando sensibilidade à flambagem."
+                                },
+                                {
+                                  "stepNumber": 5,
+                                  "title": "Implementar e analisar o modelo completo",
+                                  "subSteps": [
+                                    "Integre o modelo de imperfeição em um solver finito de elementos ou analítico.",
+                                    "Calcule a carga crítica para casos perfeitos vs. imperfeitos.",
+                                    "Realize análise de sensibilidade variando A e λ.",
+                                    "Compare resultados com curvas de flambagem imperfeitas (e.g., curva 'a' da AISC).",
+                                    "Documente o modelo em relatório com gráficos e conclusões."
+                                  ],
+                                  "verification": "Demonstre redução de 10-20% na carga crítica para A=L/750, alinhado à literatura.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": "Software FEA (ANSYS, Abaqus ou código próprio), relatórios de exemplo.",
+                                  "tips": "Automatize varreduras paramétricas para eficiência.",
+                                  "learningObjective": "Aplicar o modelo em simulações completas de estabilidade.",
+                                  "commonMistakes": "Não linearizar corretamente a geometria inicial, levando a erros em cargas altas."
                                 }
                               ],
-                              " estimatedTime ": "60 minutos",
-                              "materials": "MATLAB ou Python (SymPy/NumPy), papel e lápis para esboços.",
-                              "tips": "Sinusoidal é mais simples para barras esguias; teste plotando ambas funções.",
-                              "learningObjective": "Dominar a formulação matemática de funções sinusoidais e polinomiais para desvios laterais.",
-                              "commonMistakes": "Usar amplitude maior que tolerâncias reais (tipicamente L/1000 a L/500)."
+                              "practicalExample": "Para uma coluna de aço comprimida de 3m de comprimento e seção IPE200, modele o desvio lateral inicial como w(x) = (L/750) * sin(πx/L), com A=4mm. Plote o modo deformado e calcule a carga crítica reduzida de 250kN (vs. 320kN perfeita), simulando fabricação real com tolerâncias classe B.",
+                              "finalVerifications": [
+                                "O modelo satisfaz condições de contorno w(0)=w(L)=0.",
+                                "Amplitude máxima coincide com valor especificado.",
+                                "Carga crítica reduzida alinha-se a normas (redução 15-25%).",
+                                "Gráficos mostram forma suave sem discontinuidades.",
+                                "Análise de sensibilidade revela impacto dominante de A sobre λ.",
+                                "Relatório inclui justificativa de parâmetros típicos."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na definição de funções (ausência de erros matemáticos).",
+                                "Adequação de parâmetros a normas reais (faixa L/1500 a L/300).",
+                                "Qualidade dos gráficos e plots (clareza e legendas).",
+                                "Correção na análise de sensibilidade (variação quantitativa).",
+                                "Integração coerente com teoria de flambagem.",
+                                "Documentação completa e profissional."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Funções trigonométricas e polinomiais, séries de Fourier.",
+                                "Programação: Implementação numérica em Python/MATLAB para simulações.",
+                                "Física: Mecânica dos sólidos, teoria de elasticidade linear.",
+                                "Estatística: Análise de dados experimentais de imperfeições.",
+                                "Design: Normas de fabricação e controle de qualidade."
+                              ],
+                              "realWorldApplication": "Em projetos de edifícios altos, pontes e torres, modelar imperfeições em colunas garante previsão precisa de flambagem, evitando colapsos como no caso de estruturas pré-fabricadas com tolerâncias fabris, otimizando material e segurança conforme normas como NBR 8800 ou Eurocode 3."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
