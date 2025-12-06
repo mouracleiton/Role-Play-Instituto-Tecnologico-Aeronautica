@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-84",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 289
+      "totalAtomicSkills": 289,
+      "startDate": "2025-02-17",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-84"
     },
     "areas": [
       {
@@ -30053,7 +30059,33 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "No Brasil, o Estado exerce a responsabilidade primária do Pilar 1 ao proteger sua população de genocídio por meio da Constituição Federal (art. 5º, direitos fundamentais), Lei nº 2.889/1956 (crime de genocídio) e instituições como o Ministério Público Federal e a Polícia Federal, prevenindo massacres como os vistos em conflitos indígenas."
+                                  "practicalExample": "No Brasil, o Estado exerce a responsabilidade primária do Pilar 1 ao proteger sua população de genocídio por meio da Constituição Federal (art. 5º, direitos fundamentais), Lei nº 2.889/1956 (crime de genocídio) e instituições como o Ministério Público Federal e a Polícia Federal, prevenindo massacres como os vistos em conflitos indígenas.",
+                                  "stepNumber": 4,
+                                  "title": "Exemplo Prático: Responsabilidade Primária do Estado no Pilar 1 (Brasil)",
+                                  "subSteps": [
+                                    "1. Leia atentamente o exemplo prático fornecido sobre a atuação do Estado brasileiro.",
+                                    "2. Identifique as principais leis e instituições mencionadas.",
+                                    "3. Relacione o exemplo com o conceito de Pilar 1 da Responsabilidade de Proteger (R2P).",
+                                    "4. Discuta como isso previne genocídios em contextos indígenas."
+                                  ],
+                                  "verification": "Responda: Cite uma lei brasileira mencionada no exemplo e explique seu papel na prevenção de genocídio. (Resposta esperada: Lei nº 2.889/1956, que define o crime de genocídio.)",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Constituição Federal do Brasil (art. 5º)",
+                                    "Lei nº 2.889/1956 (Crime de Genocídio)",
+                                    "Texto do exemplo prático fornecido"
+                                  ],
+                                  "tips": [
+                                    "Consulte fontes oficiais para verificar as leis citadas.",
+                                    "Compare com casos reais de conflitos indígenas para aprofundar a compreensão.",
+                                    "Lembre-se: Pilar 1 foca na responsabilidade interna do Estado."
+                                  ],
+                                  "learningObjective": "Compreender e exemplificar a responsabilidade primária do Estado no Pilar 1 da R2P, utilizando o caso brasileiro de prevenção ao genocídio.",
+                                  "commonMistakes": [
+                                    "Confundir Pilar 1 (responsabilidade estatal interna) com Pilar 2 ou 3 (ajuda internacional ou intervenção).",
+                                    "Ignorar o papel das instituições como MPF e PF na prevenção.",
+                                    "Generalizar sem referenciar leis específicas."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -30063,6 +30095,37 @@
                                     "Descreve o Pilar 1 distinguindo-o dos Pilares 2 e 3?",
                                     "Fornece um exemplo concreto de aplicação?",
                                     "Demonstra compreensão da soberania reafirmada?"
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Pilar 1 da Responsabilidade de Proteger (R2P)",
+                                  "subSteps": [
+                                    "Leia a definição oficial da R2P no Relatório da ONU de 2005.",
+                                    "Liste e defina os quatro crimes graves: genocídio, crimes de guerra, limpeza étnica e crimes contra a humanidade.",
+                                    "Explique a responsabilidade primária do Estado em proteger sua população.",
+                                    "Identifique pelo menos três meios internos de proteção (ex.: legislação nacional, instituições judiciais, forças de segurança).",
+                                    "Distinga o Pilar 1 (obrigação interna do Estado) dos Pilares 2 (ajuda internacional) e 3 (responsabilidade da comunidade internacional).",
+                                    "Analise um exemplo concreto, como a crise em Ruanda ou Síria.",
+                                    "Reflita sobre como a R2P reafirma a soberania estatal responsável."
+                                  ],
+                                  "verification": "Avalie-se respondendo às finalVerifications: listar e definir os quatro crimes graves; explicar responsabilidade primária; identificar três meios internos; descrever Pilar 1 distinguindo dos outros; fornecer exemplo concreto; demonstrar compreensão da soberania reafirmada.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Relatório 'A Responsabilidade de Proteger' (ONU, 2005)",
+                                    "Vídeo explicativo da ONU sobre R2P (disponível em un.org)",
+                                    "Artigo: 'The Responsibility to Protect: The Basics' (International Coalition for the Responsibility to Protect)"
+                                  ],
+                                  "tips": [
+                                    "Use mapas mentais para conectar os pilares da R2P.",
+                                    "Compare com casos históricos para fixar conceitos.",
+                                    "Evite fontes não oficiais; priorize documentos da ONU.",
+                                    "Discuta com colegas para esclarecer distinções entre pilares."
+                                  ],
+                                  "learningObjective": "Compreender e explicar o Pilar 1 da R2P, incluindo os quatro crimes graves, a responsabilidade primária do Estado, meios internos de proteção, distinções dos outros pilares, exemplos concretos e a reafirmação da soberania.",
+                                  "commonMistakes": [
+                                    "Confundir Pilar 1 (responsabilidade interna) com Pilar 3 (intervenção externa).",
+                                    "Omitir 'limpeza étnica' dos quatro crimes graves.",
+                                    "Interpretar R2P como erosão da soberania, ignorando sua reafirmação.",
+                                    "Não distinguir meios internos (legislação, instituições) de assistência externa."
                                   ]
                                 },
                                 {
@@ -30073,6 +30136,38 @@
                                     "Uso de terminologia oficial da R2P.",
                                     "Capacidade de contextualização com exemplos reais.",
                                     "Originalidade na formulação, evitando cópias literais."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Elaboração da Definição Conceitual dos Quatro Crimes e Responsabilidade Primária na R2P",
+                                  "subSteps": [
+                                    "1. Identifique e liste exatamente os quatro crimes massivas previstos na doutrina R2P (genocídio, crimes de guerra, limpeza étnica e crimes contra a humanidade).",
+                                    "2. Explique a responsabilidade primária do Estado, destacando meios internos como legislação nacional e instituições de proteção.",
+                                    "3. Contextualize com pelo menos dois exemplos reais de aplicação (ex.: Ruanda para genocídio; Srebrenica para crimes contra a humanidade).",
+                                    "4. Redija um parágrafo conciso (150-200 palavras) utilizando terminologia oficial da ONU.",
+                                    "5. Revise o texto quanto à originalidade e clareza."
+                                  ],
+                                  "verification": "Submissão de texto avaliado pelos critérios de precisão, completude, clareza, terminologia oficial, contextualização e originalidade.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Resolução 1674 (2006) e 1706 (2006) do Conselho de Segurança da ONU.",
+                                    "Relatório do Secretário-Geral da ONU sobre R2P (2009).",
+                                    "Site oficial da ONU: un.org/en/preventgenocide/rwanda",
+                                    "Documentos do curso UM-84 sobre Direito Internacional."
+                                  ],
+                                  "tips": [
+                                    "Priorize fontes primárias da ONU para terminologia exata.",
+                                    "Estruture o texto: introdução aos crimes → responsabilidade primária → meios internos → exemplos.",
+                                    "Use sinônimos para garantir originalidade, sem alterar conceitos.",
+                                    "Mantenha linguagem formal e objetiva."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de formular uma definição precisa e original dos quatro crimes massivos e da responsabilidade primária do Estado na R2P, integrando meios internos de proteção e exemplos históricos reais.",
+                                  "commonMistakes": [
+                                    "Omissão ou inclusão incorreta de um dos quatro crimes específicos.",
+                                    "Confusão entre responsabilidade primária (Estado) e secundária (comunidade internacional).",
+                                    "Falta de menção a meios internos como legislação ou instituições nacionais.",
+                                    "Uso de terminologia não oficial (ex.: 'massacres' em vez de 'crimes de guerra').",
+                                    "Ausência de contextualização com exemplos reais ou cópia literal de fontes.",
+                                    "Texto prolixo ou desestruturado."
                                   ]
                                 },
                                 {
@@ -30082,12 +30177,93 @@
                                     "Ética e Filosofia: Discussão sobre deveres morais do Estado e soberania.",
                                     "Sociologia: Estruturas sociais e prevenção de atrocidades em massa.",
                                     "Educação Cívica: Papel do cidadão na fiscalização estatal."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Conexões Interdisciplinares: Falhas Estatais e Prevenção de Atrocidades",
+                                  "subSteps": [
+                                    "Discutir falhas históricas em genocídios (Ruanda, Holocausto) e lições para o presente.",
+                                    "Analisar legislações nacionais e tratados internacionais de direitos humanos.",
+                                    "Debater deveres morais do Estado, soberania e ética filosófica.",
+                                    "Examinar estruturas sociais e estratégias sociológicas de prevenção.",
+                                    "Explorar o papel do cidadão na fiscalização estatal via educação cívica."
+                                  ],
+                                  "verification": "Ensaio reflexivo (500 palavras) integrando pelo menos três conexões interdisciplinares; avaliação por rubrica (compreensão, análise, síntese).",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Documentário 'Hotel Ruanda' ou 'Shoah' (trechos selecionados).",
+                                    "Textos: Convenção para Prevenção e Repressão do Crime de Genocídio (ONU, 1948); Constituição Brasileira (artigos sobre direitos fundamentais).",
+                                    "Artigos acadêmicos: 'Responsabilidade Estatal em Genocídios' (exemplos de autores como Samantha Power).",
+                                    "Quadro branco ou ferramenta digital (Miro/Kanban) para mapeamento de conexões."
+                                  ],
+                                  "tips": [
+                                    "Inicie com uma pergunta provocativa: 'O Estado deve intervir em crises humanitárias internas?' para engajar.",
+                                    "Use mapeamento conceitual para visualizar conexões entre disciplinas.",
+                                    "Adapte exemplos a contextos brasileiros (ex.: ditadura militar) para relevância local.",
+                                    "Monitore participação equitativa em debates para inclusão de todas as visões."
+                                  ],
+                                  "learningObjective": "Ao final, o aluno será capaz de identificar e articular conexões interdisciplinares entre História, Direito, Ética, Sociologia e Educação Cívica no estudo de falhas estatais em genocídios e estratégias de prevenção.",
+                                  "commonMistakes": [
+                                    "Reduzir o tema a uma única disciplina, ignorando interseções.",
+                                    "Confundir responsabilidade estatal com ações individuais.",
+                                    "Focar em eventos históricos sem ligar a implicações contemporâneas ou preventivas.",
+                                    "Generalizações simplistas sobre soberania vs. intervenção humanitária."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Compreender o Pilar 1 permite a formuladores de políticas fortalecerem legislações internas contra atrocidades, como no Brasil com políticas indígenas, auxiliando diplomatas em fóruns da ONU e ativistas em monitoramento de direitos humanos, prevenindo crises que demandem intervenção internacional."
+                                  "realWorldApplication": "Compreender o Pilar 1 permite a formuladores de políticas fortalecerem legislações internas contra atrocidades, como no Brasil com políticas indígenas, auxiliando diplomatas em fóruns da ONU e ativistas em monitoramento de direitos humanos, prevenindo crises que demandem intervenção internacional.",
+                                  "stepNumber": 1,
+                                  "title": "Compreendendo o Pilar 1: Responsabilidade Interna do Estado",
+                                  "subSteps": [
+                                    "1. Leia a definição oficial do Pilar 1 da Doutrina Responsabilidade de Proteger (R2P) no documento da ONU.",
+                                    "2. Analise exemplos nacionais, como políticas indígenas no Brasil (ex: FUNAI e demarcações).",
+                                    "3. Identifique mecanismos internos de prevenção de atrocidades (leis, instituições).",
+                                    "4. Discuta aplicações em fóruns internacionais como ONU."
+                                  ],
+                                  "verification": "Responda ao quiz com 80% de acerto: identifique 3 exemplos de aplicação do Pilar 1 e explique sua relevância para o Brasil.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Documento ONU 'Responsabilidade de Proteger' (2005)",
+                                    "Lei 6.001/1973 (Estatuto do Índio) - Brasil",
+                                    "Vídeo explicativo R2P (YouTube ONU)"
+                                  ],
+                                  "tips": [
+                                    "Relacione conceitos teóricos a casos reais brasileiros para melhor retenção.",
+                                    "Anote diferenças entre Pilar 1 (interno) e Pilares 2/3 (internacional).",
+                                    "Use mind maps para visualizar responsabilidades estatais."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aprendiz será capaz de explicar o Pilar 1 da R2P, identificando suas aplicações em políticas nacionais brasileiras e seu papel na prevenção de atrocidades.",
+                                  "commonMistakes": [
+                                    "Confundir Pilar 1 com intervenção internacional (Pilares 2/3).",
+                                    "Ignorar contextos nacionais como políticas indígenas brasileiras.",
+                                    "Superestimar o papel da ONU no Pilar 1, que é primariamente estatal."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "No Brasil, o Estado exerce a responsabilidade primária do Pilar 1 ao proteger sua população de genocídio por meio da Constituição Federal (art. 5º, direitos fundamentais), Lei nº 2.889/1956 (crime de genocídio) e instituições como o Ministério Público Federal e a Polícia Federal, prevenindo massacres como os vistos em conflitos indígenas.",
+                              "finalVerifications": [
+                                "Consegue listar e definir os quatro crimes graves da R2P?",
+                                "Explica corretamente a 'responsabilidade primária' do Estado?",
+                                "Identifica pelo menos três meios internos de proteção (legislação, instituições)?",
+                                "Descreve o Pilar 1 distinguindo-o dos Pilares 2 e 3?",
+                                "Fornece um exemplo concreto de aplicação?",
+                                "Demonstra compreensão da soberania reafirmada?"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual: inclusão exata dos quatro crimes e responsabilidade primária.",
+                                "Completude: cobertura de meios internos como legislação e instituições.",
+                                "Clareza e estrutura: descrição lógica e concisa.",
+                                "Uso de terminologia oficial da R2P.",
+                                "Capacidade de contextualização com exemplos reais.",
+                                "Originalidade na formulação, evitando cópias literais."
+                              ],
+                              "crossCurricularConnections": [
+                                "História: Estudo de falhas estatais em genocídios (Ruanda, Holocausto).",
+                                "Direito: Análise de legislação nacional e tratados internacionais de direitos humanos.",
+                                "Ética e Filosofia: Discussão sobre deveres morais do Estado e soberania.",
+                                "Sociologia: Estruturas sociais e prevenção de atrocidades em massa.",
+                                "Educação Cívica: Papel do cidadão na fiscalização estatal."
+                              ],
+                              "realWorldApplication": "Compreender o Pilar 1 permite a formuladores de políticas fortalecerem legislações internas contra atrocidades, como no Brasil com políticas indígenas, auxiliando diplomatas em fóruns da ONU e ativistas em monitoramento de direitos humanos, prevenindo crises que demandem intervenção internacional."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "beginner",
@@ -37060,7 +37236,8 @@
             "totalSkills": 289
           }
         ],
-        "totalSkills": 289
+        "totalSkills": 289,
+        "percentage": 0
       }
     ]
   }

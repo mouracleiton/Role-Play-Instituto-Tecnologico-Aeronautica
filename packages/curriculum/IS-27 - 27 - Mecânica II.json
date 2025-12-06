@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-27",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 254
+      "totalAtomicSkills": 254,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-27"
     },
     "areas": [
       {
@@ -1814,9 +1820,73 @@
                                     "Engenharia Mecânica: Cálculo de energia em rotores e turbinas.",
                                     "Astronomia: Energia de rotação de planetas e estrelas."
                                   ],
-                                  "realWorldApplication": "Essa fórmula é essencial para analisar a energia cinética em rodas de veículos, hélices de aviões, giroscópios em satélites e rotação de engrenagens em máquinas industriais, permitindo otimizar eficiência energética e estabilidade dinâmica."
+                                  "realWorldApplication": "Essa fórmula é essencial para analisar a energia cinética em rodas de veículos, hélices de aviões, giroscópios em satélites e rotação de engrenagens em máquinas industriais, permitindo otimizar eficiência energética e estabilidade dinâmica.",
+                                  "stepNumber": 4,
+                                  "title": "Derivação da Energia Cinética Rotacional para um Disco Uniforme",
+                                  "subSteps": [
+                                    "Definir a densidade superficial σ = M / (π R²) e expressar a massa diferencial dm = σ dA.",
+                                    "Considerar um elemento de área em coordenadas polares: dA = r dr dθ.",
+                                    "Substituir a velocidade do elemento: v = r ω.",
+                                    "Escrever a energia cinética diferencial: dK = (1/2) dm v² = (1/2) σ (r dr dθ) (r ω)².",
+                                    "Integrar dK sobre toda a área: K = ∫₀²π ∫₀ᴿ (1/2) σ r³ ω² dr dθ.",
+                                    "Calcular a integral para obter K = (1/4) σ ω² π R⁴.",
+                                    "Substituir σ = M / (π R²) e simplificar para K = (1/2) (1/2 M R²) ω².",
+                                    "Identificar I = (1/2) M R² e confirmar K = (1/2) I ω²."
+                                  ],
+                                  "verification": [
+                                    "Verificação da integral em coordenadas polares com limites corretos (θ: 0→2π, r: 0→R).",
+                                    "Substituição precisa de σ e simplificação algébrica para obter I = (1/2) M R².",
+                                    "Confirmação dimensional: [K] = kg·m²/s² através de análise de unidades em cada passo.",
+                                    "Correspondência entre o resultado integral e a fórmula K = (1/2) I ω²."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Folha de cálculo ou papel para derivações matemáticas",
+                                    "Diagrama de disco com coordenadas polares marcado",
+                                    "Tabela de integrais definitivas",
+                                    "Fórmulas básicas de cinemática rotacional (v = r ω, a = r α)",
+                                    "Lista de momentos de inércia padrão"
+                                  ],
+                                  "tips": [
+                                    "Comece pela integração em θ (mais simples) antes de integrar em r.",
+                                    "Verifique dimensionalmente cada termo intermediário da integral.",
+                                    "Use a simetria do disco para simplificar integrais antes de calcular.",
+                                    "Mantenha σ explícito até o último passo para evitar erros de substituição.",
+                                    "Compare o resultado com o caso discreto (partículas) para validar a transição contínua."
+                                  ],
+                                  "learningObjective": "O aluno deverá ser capaz de derivar a energia cinética rotacional para corpos contínuos através de integração, compreender a transição do modelo de partículas para o modelo contínuo, calcular o momento de inércia para formas geométricas simples e aplicar a fórmula K = (1/2) I ω² em problemas práticos.",
+                                  "commonMistakes": [
+                                    "Esquecer de integrar sobre θ (0 a 2π) e considerar apenas r.",
+                                    "Confundir densidade linear com densidade superficial (σ vs λ).",
+                                    "Usar raio interno não-zero ao integrar de 0 a R.",
+                                    "Cometer erros de algebra ao simplificar σ π R⁴ para σ π R² R².",
+                                    "Não verificar a dimensionalidade do resultado final."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para um disco uniforme de raio R e massa M rotacionando em torno de seu eixo central: derive K = (1/2) I ω² com I = (1/2) M R², mostrando os passos de integração com densidade σ = M / (π R²). Comece pela expressão diferencial dK = (1/2) (r ω)² dm, substitua dm = σ · 2π r dr, integre I = ∫ r² dm de 0 a R para obter I = (1/2) M R², e finalmente substitua na fórmula de energia cinética.",
+                              "finalVerifications": [
+                                "Derivação completa da fórmula K = (1/2) I ω² sem erros, incluindo transição da soma discreta para integral contínua.",
+                                "Explicação clara da relação entre velocidade tangencial v = r ω e a constante angular ω em todo o corpo rígido.",
+                                "Cálculo correto do momento de inércia I para pelo menos um objeto geométrico simples (ex: disco, haste) via integração.",
+                                "Identificação precisa de v = r ω em diagramas e justificativa da independência de ω para todas as partículas.",
+                                "Verificação dimensional completa: [K] = kg·m²/s² = [I]·[ω]², confirmando consistência das unidades."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática na substituição de variáveis e integração (40%).",
+                                "Compreensão conceitual da rigidez rotacional e distribuição de massa (20%).",
+                                "Uso correto de notação diferencial/integral e limites de integração (15%).",
+                                "Clareza na explicação verbal dos passos lógicos e conceitos físicos (15%).",
+                                "Aplicação bem-sucedida ao exemplo prático com cálculos sem erros (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Cálculo I: Integração em coordenadas polares e aplicação de teoremas de Cauchy.",
+                                "Álgebra Linear: Manipulação de expressões algébricas com expoentes e fatores comuns.",
+                                "Engenharia Mecânica: Análise de energia em sistemas rotativos como turbinas e motores.",
+                                "Física Astronômica: Cálculo da energia de rotação de corpos celestes e sua influência em dinâmica orbital.",
+                                "Robótica: Controle de energia cinética em sistemas de movimento rotativo de robôs industriais."
+                              ],
+                              "realWorldApplication": "Essa fórmula é essencial para projetar sistemas de energia rotativa em aplicações como rodas de veículos autônomos (otimização de energia de inércia), hélices de drones (estabilidade dinâmica), turbinas eólicas (eficiência energética na conversão de energia cinética do vento) e giroscópios em satélites espaciais (controle de orientação e estabilização), permitindo cálculos precisos para dimensionamento e otimização de desempenho."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -9692,7 +9762,18 @@
                                 "Engenharia Mecânica: análise modal de vibrações estruturais.",
                                 "Circuitos Elétricos: osciladores LC acoplados análogos."
                               ],
-                              "realWorldApplication": "Análise de vibrações em pontes ou edifícios (modos normais evitam ressonância); design de moléculas em química quântica; processamento de sinais em filtros acoplados."
+                              "realWorldApplication": "Análise de vibrações em pontes ou edifícios (modos normais evitam ressonância); design de moléculas em química quântica; processamento de sinais em filtros acoplados.",
+                              "crossCurricularConnections": [
+                                "Álgebra Linear: autovalores e autovetores de matrizes simétricas.",
+                                "Matemática Computacional: diagonalização numérica com NumPy/Eigen.",
+                                "Engenharia Mecânica: análise modal de vibrações estruturais.",
+                                "Circuitos Elétricos: osciladores LC acoplados análogos.",
+                                "Física Teórica: sistemas conservativos acoplados e conservação de energia.",
+                                "Química Quântica: modos normais em moléculas diatômicas e espectroscopia vibracional.",
+                                "Engenharia Civil: análise dinâmica de estruturas e modos de ressonância.",
+                                "Processamento de Sinais: filtros acoplados e sistemas de estados espaços multivaráveis.",
+                                "Robótica: dinâmica de sistemas de braços robóticos com acoplamento mecânico."
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -9839,7 +9920,16 @@
                                 "Química: Modos normais em moléculas (espectroscopia vibracional).",
                                 "Computação: Simulações numéricas com NumPy/SciPy."
                               ],
-                              "realWorldApplication": "Cálculo de frequências de vibração em edifícios acoplados (prevenção de ressonância em terremotos), circuitos LC acoplados em filtros eletrônicos, ou modos vibracionais em moléculas para análise espectroscópica em química."
+                              "realWorldApplication": "Cálculo de frequências de vibração em edifícios acoplados (prevenção de ressonância em terremotos), circuitos LC acoplados em filtros eletrônicos, ou modos vibracionais em moléculas para análise espectroscópica em química.",
+                              "crossCurricularConnections": [
+                                "Matemática: Álgebra linear (autovalores e autovetores).",
+                                "Engenharia: Vibrações em estruturas (pontes, edifícios).",
+                                "Química: Modos normais em moléculas (espectroscopia vibracional).",
+                                "Computação: Simulações numéricas com NumPy/SciPy.",
+                                "Física: Ressonância e sistemas acoplados em mecânica quântica.",
+                                "Arquitetura: Dinâmica estrutural de edifícios e pontes.",
+                                "Robótica: Controle de sistemas multidegree-of-freedom."
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -25550,7 +25640,33 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Considere um planeta com semi-eixo maior a=1 UA, excentricidade e=0.207 (como Mercúrio aproximado), T=1 ano. Calcule a velocidade tangencial no periélio (r=0.793 UA) e afélio (r=1.207 UA) para Δt=1 dia. dA/dt = π a² / T ≈ 3.14 UA²/ano. Converta unidades: v_peri ≈ (2 * dA/dt / r_peri) ≈ 35 km/s; v_af ≈ 23 km/s. Verifique: razão v_peri/v_af ≈ 1.52, consistente com r_af/r_peri."
+                                  "practicalExample": "Considere um planeta com semi-eixo maior a=1 UA, excentricidade e=0.207 (como Mercúrio aproximado), T=1 ano. Calcule a velocidade tangencial no periélio (r=0.793 UA) e afélio (r=1.207 UA) para Δt=1 dia. dA/dt = π a² / T ≈ 3.14 UA²/ano. Converta unidades: v_peri ≈ (2 * dA/dt / r_peri) ≈ 35 km/s; v_af ≈ 23 km/s. Verifique: razão v_peri/v_af ≈ 1.52, consistente com r_af/r_peri.",
+                                  "stepNumber": 4,
+                                  "title": "Cálculo da Velocidade Tangencial em Periélio e Afélio",
+                                  "subSteps": [
+                                    "Calcular a velocidade areolar dA/dt usando a fórmula πa²/T",
+                                    "Converter a unidade de área anual para km²/dia para facilitar o cálculo de velocidade",
+                                    "Aplicar a relação v = 2*(dA/dt)/r para obter as velocidades no periélio (r=0,793 UA) e afélio (r=1,207 UA)",
+                                    "Verificar a consistência da razão v_peri/v_af com a razão das distâncias r_af/r_peri"
+                                  ],
+                                  "verification": "Comprovar que a razão entre as velocidades calculadas (v_peri/v_af) é aproximadamente igual à razão inversa das distâncias (r_af/r_peri), confirmando a conservação do momento angular.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Folha de cálculo ou papel e caneta",
+                                    "Tabela de conversão de unidades (1 UA = 149,6 milhões de km)",
+                                    "Calculadora científica"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se de converter UA para km apenas no momento final da divisão para evitar erros de unidade",
+                                    "Utilize π ≈ 3,14 para simplificar os cálculos iniciais",
+                                    "Verifique intermediariamente o valor de dA/dt antes de prosseguir com as divisões"
+                                  ],
+                                  "learningObjective": "Aplicar o princípio da conservação do momento angular e a velocidade areolar para determinar as velocidades tangenciais extremas de um corpo em órbita elíptica",
+                                  "commonMistakes": [
+                                    "Esquecer de converter a área anual (UA²/ano) para uma base diária antes da divisão por r",
+                                    "Confundir a fórmula de velocidade areolar com a velocidade orbital direta",
+                                    "Ignorar a necessidade de verificar a razão v_peri/v_af como passo de validação"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -25561,6 +25677,50 @@
                                     "Valida numericamente com dados reais de planetas (ex: NASA ephemerides).",
                                     "Explica conservação de L = 2 m dA/dt.",
                                     "Aplica em problema não-trivial com Δt parcial."
+                                  ],
+                                  "stepNumber": 7,
+                                  "title": "Aplicação da Lei das Áreas de Kepler e Conservação do Momento Angular",
+                                  "subSteps": [
+                                    "Derivar v ∝ 1/r a partir da lei das áreas para Δt igual",
+                                    "Calcular dA/dt para uma elipse dada a, e, T",
+                                    "Comparar velocidades em pontos simétricos utilizando a razão r₂/r₁",
+                                    "Integrar o conceito com um diagrama qualitativo mostrando áreas iguais",
+                                    "Validar numericamente com dados reais de planetas (ex: efemérides da NASA)",
+                                    "Explicar a conservação de L = 2m dA/dt",
+                                    "Resolver um problema não-trivial envolvendo Δt parcial"
+                                  ],
+                                  "verification": [
+                                    "Pode derivir v ∝ 1/r da lei das áreas para Δt igual",
+                                    "Calcula corretamente dA/dt para elipse dada a, e, T",
+                                    "Compara velocidades em pontos simétricos com razão r2/r1",
+                                    "Integra com diagrama qualitativo mostrando áreas iguais",
+                                    "Valida numericamente com dados reais de planetas (ex: NASA ephemerides)",
+                                    "Explica conservação de L = 2 m dA/dt",
+                                    "Aplica em problema não-trivial com Δt parcial"
+                                  ],
+                                  "estimatedTime": "2h 30min",
+                                  "materials": [
+                                    "Capítulo sobre leis de Kepler no livro de Mecânica Celestial",
+                                    "Dados de efemérides planetárias (NASA JPL)",
+                                    "Software de cálculo simbólico (Python/SymPy ou Mathematica)",
+                                    "Folha de cálculo para validação numérica",
+                                    "Material de referência sobre conservação de momento angular"
+                                  ],
+                                  "tips": [
+                                    "Inicie com casos simétricos para simplificar cálculos",
+                                    "Verifique unidades em todas as derivações",
+                                    "Utilize a relação entre período e semi-maior eixo para validar T",
+                                    "Compare resultados teóricos com dados reais em etapas",
+                                    "Para problemas com Δt parcial, divida o movimento em segmentos"
+                                  ],
+                                  "learningObjective": "Compreender e aplicar a lei das áreas de Kepler e a conservação do momento angular em sistemas planetários, validando resultados através de dados reais e resolvendo problemas complexos",
+                                  "commonMistakes": [
+                                    "Confundir lei das áreas com lei harmônica",
+                                    "Calcular dA/dt incorretamente para elipses não-circulares",
+                                    "Ignorar a dependência da excentricidade na fórmula de dA/dt",
+                                    "Esquecer que L é constante apenas para forças centrais",
+                                    "Subestimar a importância da validação numérica com dados reais",
+                                    "Aplicar Δt parcial sem considerar variações de velocidade"
                                   ]
                                 },
                                 {
@@ -25570,6 +25730,38 @@
                                     "Correção física: relação com momento angular conservado (15%).",
                                     "Criatividade: extensão a cenários reais ou auto-problemas (10%).",
                                     "Eficiência: tempo dentro do estimado e sem erros comuns (5%)."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise de Conservação do Momento Angular em Sistemas Mecânicos",
+                                  "subSteps": [
+                                    "Revisar conceitos fundamentais de momento angular e condições de conservação",
+                                    "Resolver problema proposto aplicando fórmulas corretas e unidades consistentes",
+                                    "Construir diagramas ilustrando o raciocínio lógico dos passos resolvidos",
+                                    "Desenvolver extensão criativa para cenários reais ou proposição de auto-problemas",
+                                    "Revizar solução para garantir eficiência e ausência de erros comuns"
+                                  ],
+                                  "verification": "Avaliação baseada nos critérios: 40% precisão matemática, 30% clareza no raciocínio com diagramas, 15% correção física (conservação do momento angular), 10% criatividade, 5% eficiência",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Fócula de cálculos mecânicos",
+                                    "Protetor de folhas para anotações",
+                                    "Software de simulação (ex: Mathematica ou Python)",
+                                    "Cronômetro para controle de tempo",
+                                    "Guia de problemas propostos"
+                                  ],
+                                  "tips": [
+                                    "Verifique unidades em cada etapa antes de realizar cálculos",
+                                    "Utilize diagramas vetoriais para visualização clara do momento angular",
+                                    "Teste soluções em casos limites simplificados antes de cenários complexos",
+                                    "Distribua o tempo de forma equilibrada entre resolução e criação de problemas"
+                                  ],
+                                  "learningObjective": "Aplicar o princípio de conservação do momento angular em sistemas mecânicos, desenvolvendo habilidades de resolução de problemas, raciocínio físico-matemático e criação de cenários aplicáveis",
+                                  "commonMistakes": [
+                                    "Uso incorreto de fórmulas (confusão entre momento linear e angular)",
+                                    "Omissão de termos de torque externo nos cálculos",
+                                    "Erros de conversão de unidades (radianos vs graus)",
+                                    "Subestimação do tempo necessário para desenvolvimento criativo",
+                                    "Falha em identificar sistemas isolados para aplicação da conservação"
                                   ]
                                 },
                                 {
@@ -25579,12 +25771,97 @@
                                     "Engenharia Aeroespacial: Planejamento de manobras de satélites GEO/LEO.",
                                     "Computação: Simulações numéricas de N-body com Python/MATLAB.",
                                     "Geometria Analítica: Equações paramétricas de elipses (r = a(1-e²)/(1+e cosθ))."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Integração de Modelagem Orbital e Simulação Computacional",
+                                  "subSteps": [
+                                    "Calcular áreas elípticas e integrais polares para determinar dA/dt exato usando métodos numéricos",
+                                    "Analisar dados orbitais reais de exoplanetas por espectroscopia para determinar parâmetros orbitais",
+                                    "Planejar manobras de satélites GEO/LEO considerando restrições de energia e tempo",
+                                    "Desenvolver simulações N-body usando Python/MATLAB para prever trajetórias orbitais",
+                                    "Aplicar equações paramétricas de elipses (r = a(1-e²)/(1+e cosθ)) na modelagem de órbitas"
+                                  ],
+                                  "verification": "Entrega de relatório com cálculos analíticos verificados, resultados de simulação comparados com dados reais e análise de erro de modelagem orbital",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Python/MATLAB",
+                                    "Conjuntos de dados espectroscópicos de exoplanetas",
+                                    "Software de dinâmica orbital (STK/Satellite Tool Kit)",
+                                    "Calculadoras gráficas ou ambientes de computação científica (NumPy/SciPy)",
+                                    "Manuais de mecânica celeste e cálculo vetorial"
+                                  ],
+                                  "tips": [
+                                    "Utilize métodos de quadratura Gaussiana para integrais elípticas de alta precisão",
+                                    "Valide resultados espectroscópicos com bases de dados publicadas (ex: NASA Exoplanet Archive)",
+                                    "Inicie simulações N-body com sistemas simples (Sol-Terra-Lua) antes de casos complexos",
+                                    "Cross-valide equações paramétricas com soluções analíticas de órbitas keplerianas"
+                                  ],
+                                  "learningObjective": "Integrar conceitos matemáticos avançados, técnicas computacionais e aplicações práticas de engenharia aeroespacial para modelar e prever fenômenos orbitais complexos",
+                                  "commonMistakes": [
+                                    "Confusão entre integrais elípticas completas e incompletas na cálculo de dA/dt",
+                                    "Interpretação incorreta de deslocamento radial em dados espectroscópicos",
+                                    "Subestimação da influência de perturbações gravitacionais não incluídas no modelo N-body",
+                                    "Aplicação incorreta do parâmetro excentricidade e na conversão entre sistemas de coordenadas orbital"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em missões espaciais como a Parker Solar Probe, a lei das áreas é usada para prever velocidades em periélio solar (até 200 km/s), otimizando trajetórias e consumo de combustível; também em navegação de sondas como Voyager para correções de curso baseadas em velocidades orbitais planetárias."
+                                  "realWorldApplication": "Em missões espaciais como a Parker Solar Probe, a lei das áreas é usada para prever velocidades em periélio solar (até 200 km/s), otimizando trajetórias e consumo de combustível; também em navegação de sondas como Voyager para correções de curso baseadas em velocidades orbitais planetárias.",
+                                  "stepNumber": 7,
+                                  "title": "Aplicação da Lei das Áreas em Trajetórias Espaciais",
+                                  "subSteps": [
+                                    "Analisar a relação entre a lei das áreas e a conservação de momento angular em órbitas",
+                                    "Calcular velocidades em periélio solar usando dados de missões como a Parker Solar Probe",
+                                    "Otimizar trajetórias espaciais minimizando consumo de combustível através de cálculos de velocidade",
+                                    "Aplicar o princípio a correções de curso em sondas como a Voyager usando velocidades orbitais planetárias"
+                                  ],
+                                  "verification": "Resolução de problema prático: Determinar a velocidade esperada de uma sonda em periélio solar dado o período orbital, comparando com dados reais da NASA",
+                                  "estimatedTime": "2 horas",
+                                  "materials": [
+                                    "Capítulo sobre mecânica celeste do livro 'Fundamentos de Dinâmica Orbital'",
+                                    "Relatórios técnicos das missões Parker Solar Probe e Voyager",
+                                    "Calculadora científica ou software de simulação orbital (ex: STK)",
+                                    "Tabelas de constantes astronômicas"
+                                  ],
+                                  "tips": [
+                                    "Utilize dados reais das missões para validação prática",
+                                    "Preste atenção às conversões de unidades (UA, km, segundos)",
+                                    "Visualize as órbitas usando diagramas de trajetória para melhor compreensão",
+                                    "Considere efeitos de gravidade de planetas nas correções de curso"
+                                  ],
+                                  "learningObjective": "Aplicar a lei das áreas para prever velocidades críticas em pontos orbitais específicos e otimizar trajetórias espaciais, entendendo seu impacto direto em missões interplanetárias",
+                                  "commonMistakes": [
+                                    "Confundir periélio com afélio ao aplicar a lei das áreas",
+                                    "Esquecer de converter unidades entre metros, quilômetros e unidades astronômicas",
+                                    "Não considerar a influência de corpos celestes adicionais nas correções de trajetória",
+                                    "Subestimar a importância da precisão numérica em cálculos de velocidade para missões de longo prazo"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Considere um planeta com semi-eixo maior a=1 UA, excentricidade e=0.207 (como Mercúrio aproximado), T=1 ano. Calcule a velocidade tangencial no periélio (r=0.793 UA) e afélio (r=1.207 UA) para Δt=1 dia. dA/dt = π a² / T ≈ 3.14 UA²/ano. Converta unidades: v_peri ≈ (2 * dA/dt / r_peri) ≈ 35 km/s; v_af ≈ 23 km/s. Verifique: razão v_peri/v_af ≈ 1.52, consistente com r_af/r_peri.",
+                              "finalVerifications": [
+                                "Pode derivar v ∝ 1/r da lei das áreas para Δt igual.",
+                                "Calcula corretamente dA/dt para elipse dada a, e, T.",
+                                "Compara velocidades em pontos simétricos com razão r2/r1.",
+                                "Integra com diagrama qualitativo mostrando áreas iguais.",
+                                "Valida numericamente com dados reais de planetas (ex: NASA ephemerides).",
+                                "Explica conservação de L = 2 m dA/dt.",
+                                "Aplica em problema não-trivial com Δt parcial."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática: fórmulas corretas e unidades consistentes (pontos=40%).",
+                                "Clareza no raciocínio: passos lógicos com diagramas (30%).",
+                                "Correção física: relação com momento angular conservado (15%).",
+                                "Criatividade: extensão a cenários reais ou auto-problemas (10%).",
+                                "Eficiência: tempo dentro do estimado e sem erros comuns (5%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo de áreas elípticas e integrais polares para dA/dt exato.",
+                                "Astronomia: Análise de dados orbitais reais de exoplanetas via espectroscopia.",
+                                "Engenharia Aeroespacial: Planejamento de manobras de satélites GEO/LEO.",
+                                "Computação: Simulações numéricas de N-body com Python/MATLAB.",
+                                "Geometria Analítica: Equações paramétricas de elipses (r = a(1-e²)/(1+e cosθ))."
+                              ],
+                              "realWorldApplication": "Em missões espaciais como a Parker Solar Probe, a lei das áreas é usada para prever velocidades em periélio solar (até 200 km/s), otimizando trajetórias e consumo de combustível; também em navegação de sondas como Voyager para correções de curso baseadas em velocidades orbitais planetárias."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -26167,6 +26444,27 @@
                                     "Analise como restrições reduzem graus de liberdade de 3N para n independentes.",
                                     "Estude representação via multiplicadores de Lagrange para restrições.",
                                     "Pratique identificando restrições em exemplos como esferas em superfícies ou engrenagens."
+                                  ],
+                                  "verification": "Resolva problemas práticos identificando e classificando restrições em sistemas mecânicos, aplicando multiplicadores de Lagrange para verificar a redução de graus de liberdade.",
+                                  "estimatedTime": "2 horas",
+                                  "materials": [
+                                    "Capítulo 5 do livro 'Mecânica Analítica' de Goldstein",
+                                    "Folha de exercícios sobre restrições",
+                                    "Software MATLAB para simulação de sistemas com restrições",
+                                    "Vídeo explicativo sobre multiplicadores de Lagrange"
+                                  ],
+                                  "tips": [
+                                    "Comece por exemplos simples como uma partícula em uma superfície para entender restrições holonômicas",
+                                    "Diferencie claramente entre dependência de tempo nas restrições",
+                                    "Pratique a contagem de graus de liberdade antes e depois da aplicação das restrições",
+                                    "Utilize diagramas para visualizar as restrições"
+                                  ],
+                                  "learningObjective": "O aluno deverá ser capaz de definir e classificar restrições em sistemas mecânicos, analisar a redução de graus de liberdade, e aplicar o método dos multiplicadores de Lagrange para resolver problemas com restrições.",
+                                  "commonMistakes": [
+                                    "Confundir restrições holonômicas com não-holonômicas",
+                                    "Classificar incorretamente restrições como scleronomous quando dependem implicitamente do tempo",
+                                    "Subestimar a redução de graus de liberdade ao não considerar todas as restrições",
+                                    "Aplicar multiplicadores de Lagrange sem garantir que as restrições sejam independentes"
                                   ]
                                 },
                                 "verification"
@@ -32508,7 +32806,8 @@
             "totalSkills": 254
           }
         ],
-        "totalSkills": 254
+        "totalSkills": 254,
+        "percentage": 0
       }
     ]
   }

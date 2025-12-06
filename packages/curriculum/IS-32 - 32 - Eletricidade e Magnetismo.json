@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-32",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 306
+      "totalAtomicSkills": 306,
+      "startDate": "2025-03-01",
+      "duration": 60,
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-32"
     },
     "areas": [
       {
@@ -11749,7 +11755,37 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um cristal de quartzo sob campo E intenso (ex: laser), o termo χ^{(2)} E² gera polarização que produz luz de frequência 2ω, convertendo infravermelho em verde (laser pointer verde). Calcule: para χ^{(1)}=5, χ^{(2)}=10^{-12} m/V, E=10^8 V/m, P_extra = ε₀ χ^{(2)} E² ≈ 10^{-4} C/m²."
+                                  "practicalExample": "Em um cristal de quartzo sob campo E intenso (ex: laser), o termo χ^{(2)} E² gera polarização que produz luz de frequência 2ω, convertendo infravermelho em verde (laser pointer verde). Calcule: para χ^{(1)}=5, χ^{(2)}=10^{-12} m/V, E=10^8 V/m, P_extra = ε₀ χ^{(2)} E² ≈ 10^{-4} C/m².",
+                                  "stepNumber": 5,
+                                  "title": "Cálculo da Polarização Adicional em Cristais Não Lineares",
+                                  "subSteps": [
+                                    "Identificar os valores fornecidos: χ⁽¹⁾ = 5, χ⁽²⁾ = 10⁻¹² m/V, E = 10⁸ V/m e ε₀ = 8,85×10⁻¹² F/m",
+                                    "Aplicar a fórmula P_extra = ε₀ χ⁽²⁾ E²",
+                                    "Substituir os valores numéricos e realizar o cálculo passo a passo",
+                                    "Verificar a unidade final (C/m²) e comparar com o resultado esperado ~10⁻⁴ C/m²"
+                                  ],
+                                  "verification": "Comparar o resultado obtido com o valor aproximado fornecido (10⁻⁴ C/m²) e confirmar consistência dimensional (C/m²)",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabela de constantes físicas (ε₀)",
+                                    "Folha de exercícios com fórmulas de óptica não linear",
+                                    "Unidade de medida padrão (SI)"
+                                  ],
+                                  "tips": [
+                                    "Preste atenção às potências dos expoentes (10⁸, 10⁻¹²)",
+                                    "Confirme que todas as grandezas estão em unidades SI",
+                                    "Utilize ε₀ = 8,85×10⁻¹² F/m para cálculos em eletricidade",
+                                    "Verifique a dimensionalidade intermediária durante o cálculo"
+                                  ],
+                                  "learningObjective": "Aplicar o conceito de suscetibilidade não linear de segunda ordem para calcular polarização adicional em materiais ópticos sob campos elétricos intensos, interpretando sua relevância em processos de conversão de frequência",
+                                  "commonMistakes": [
+                                    "Esquecer de incluir ε₀ na fórmula",
+                                    "Confundir χ⁽²⁾ com χ⁽¹⁾ durante o cálculo",
+                                    "Erros de manipulação de potências (ex: 10² × 10⁸ = 10¹⁰)",
+                                    "Inconsistência nas unidades (ex: usar cm em vez de m)",
+                                    "Negligenciar o fator de aproximação (≈) no resultado final"
+                                  ]
                                 },
                                 "finalVerifications=[",
                                 "Escrever e derivar P = ε₀ (χ_e E + χ^{(2)} E² + ...).",
@@ -11775,7 +11811,17 @@
                                 "Ciência de Materiais: Desenvolvimento de novos dielétricos não-lineares.",
                                 "Física Quântica: Origem microscópica via transições multi-fóton."
                               ],
-                              "realWorldApplication": "Em lasers de estado sólido, dielétricos não-lineares com χ^{(2)} enable frequência doubling para produzir luz azul/vermelha eficiente, usada em impressoras laser, medicina (cirurgias oftálmicas) e comunicações ópticas de alta velocidade."
+                              "realWorldApplication": "Em lasers de estado sólido, dielétricos não-lineares com χ^{(2)} enable frequência doubling para produzir luz azul/vermelha eficiente, usada em impressoras laser, medicina (cirurgias oftálmicas) e comunicações ópticas de alta velocidade.",
+                              "practicalExample": "Em um cristal de nitreto de gálio (GaN) usado em lasers UV, o termo χ⁽²⁾ gera polarização que permite conversão de luz azul (450 nm) para UV (225 nm) via geração de segunda harmônica. Para χ⁽¹⁾=4,3, χ⁽²⁾=1,2×10⁻¹⁸ m/V, e campo E=5×10⁷ V/m em um pulso de laser, calcule P_extra = ε₀ χ⁽²⁾ E² ≈ 1,67×10⁻⁵ C/m², demonstrando contribuição significativa na óptica não-linear.",
+                              "finalVerifications": [
+                                "Derivar explicitamente a expansão P = ε₀(χₑE + χ⁽²⁾E² + χ⁽³⁾E³) a partir da definição de susceptibilidade.",
+                                "Listar e explicar 3 limitações do modelo linear com exemplos concretos (saturação, dependência de E, materiais ferroelétricos).",
+                                "Justificar por que χ⁽²⁾ é nulo em materiais centrossimétricos usando argumentos de simetria.",
+                                "Calcular e comparar numericamente a diferença percentual entre P linear e P não-linear para E=10⁸ V/m usando χ⁽¹⁾=6 e χ⁽²⁾=2×10⁻¹² m/V.",
+                                "Descrever detalhadamente uma aplicação real de geração de segunda harmônica em tecnologia de pontas (ex: conversão de laser infravermelho em luz visível para microscopia confocal).",
+                                "Construir um gráfico P×E para ambos os modelos (linear e não-linear até 2ª ordem) e identificar o ponto de divergência significativa.",
+                                "Analisar como a não-linearidade afeta a permitividade efetiva ε(E) e suas implicações para projetar capacitores de alta voltagem."
+                              ]
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "advanced",
@@ -25625,7 +25671,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Fio reto ao longo eixo z com I=10 A, dl = dz \\hat{z} em z=0, P em (0.1 m, 0, 0). Então r = 0.1 m em x-dir, θ=90°, dB = (10^{-6} * 10 * dz)/ (0.1)^2 em direção y (φ). Magnitude: 10^{-3} dz T."
+                                  "practicalExample": "Fio reto ao longo eixo z com I=10 A, dl = dz \\hat{z} em z=0, P em (0.1 m, 0, 0). Então r = 0.1 m em x-dir, θ=90°, dB = (10^{-6} * 10 * dz)/ (0.1)^2 em direção y (φ). Magnitude: 10^{-3} dz T.",
+                                  "stepNumber": "3",
+                                  "title": "Cálculo do Campo Magnético de um Fio Reto Utilizando a Lei de Biot-Savart",
+                                  "subSteps": [
+                                    "Identificar os parâmetros do problema: corrente I, elemento de comprimento dl, posição do ponto P e vetor de posição r.",
+                                    "Determinar o vetor de posição r entre o elemento de corrente e o ponto de observação, incluindo magnitude e direção.",
+                                    "Calcular os ângulos θ e φ associados à orientação de dl e r.",
+                                    "Aplicar a fórmula diferencial da Lei de Biot-Savart: dB = (μ₀ / 4π) * (I * dl × r̂) / r².",
+                                    "Determinar a magnitude e a direção do campo magnético resultante a partir do produto vetorial."
+                                  ],
+                                  "verification": "Verificar se a direção do campo magnético segue a regra da mão direita em relação à corrente e se a magnitude obtida corresponde à expressão B = (μ₀ I dz) / (4π r²) para o caso específico.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Manual de Física (capítulo sobre Lei de Biot-Savart)",
+                                    "Calculadora científica",
+                                    "Folha de cálculo ou papel e caneta para cálculos manuais",
+                                    "Tabela de constantes físicas (μ₀ = 4π × 10⁻⁷ T·m/A)"
+                                  ],
+                                  "tips": [
+                                    "Utilize a regra da mão direita para confirmar a direção do campo magnético antes de calcular.",
+                                    "Preste atenção às unidades: corrente em ampères (A), distância em metros (m), campo magnético em teslas (T).",
+                                    "Para fios retos alongados, lembre-se de que a integral de dz pode ser substituída por um valor finito se houver limites definidos."
+                                  ],
+                                  "learningObjective": "Calcular o campo magnético produzido por um elemento de corrente em um fio reto utilizando a Lei de Biot-Savart, interpretando corretamente a magnitude, direção e dependência geométrica do fenômeno.",
+                                  "commonMistakes": [
+                                    "Confundir os ângulos θ (ângulo polar) e φ (ângulo azimutal) ao determinar a direção de r̂.",
+                                    "Esquecer de considerar que dl é um vetor paralelo ao eixo do fio (neste caso, direção z).",
+                                    "Negligenciar o fator dz ao tratar o elemento de comprimento em cálculos diferenciais.",
+                                    "Cometer erros de unidade ao converter entre microteslas (μT) e teslas (T)."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -25636,6 +25711,44 @@
                                     "Unidades em Tesla (T).",
                                     "Direção consistente com mão direita.",
                                     "Aproximação dl infinitesimal válida."
+                                  ],
+                                  "stepNumber": 7,
+                                  "title": "Aplicação da Lei de Biot-Savart para Cálculo do Campo Magnético",
+                                  "subSteps": [
+                                    "Definir vetores dl, r e ˆr com base na configuração do problema.",
+                                    "Aplicar a fórmula de Biot-Savart dB = (μ₀/4π) * (I dl × ˆr)/r².",
+                                    "Calcular a magnitude dB utilizando dl sinθ e verificar a direção com a regra da mão direita.",
+                                    "Integrar dB ao longo da corrente para obter o campo magnético total B."
+                                  ],
+                                  "verification": [
+                                    "Fórmula de Biot-Savart aplicada corretamente.",
+                                    "Vetores dl, r, ˆr definidos com precisão.",
+                                    "Produto vetorial com magnitude dl sinθ e direção certa.",
+                                    "Magnitude dB ∝ I dl / r².",
+                                    "Unidades em Tesla (T).",
+                                    "Direção consistente com mão direita.",
+                                    "Aproximação dl infinitesimal válida."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Manual de Física (capítulo sobre Lei de Biot-Savart)",
+                                    "Calculadora científica",
+                                    "Folha de cálculo ou papel e lápis",
+                                    "Diagrama vetorial da configuração do problema"
+                                  ],
+                                  "tips": [
+                                    "Utilize a regra da mão direita para verificar a direção do campo magnético em cada etapa.",
+                                    "Inicie pelos vetores de posição antes de calcular o produto vetorial.",
+                                    "Verifique unidades em cada passo para evitar erros de conversão.",
+                                    "Para aproximações, confirme que dl é suficientemente pequeno comparado a r."
+                                  ],
+                                  "learningObjective": "O aluno deverá ser capaz de aplicar a Lei de Biot-Savart para calcular magnitude e direção do campo magnético gerado por uma corrente elétrica, interpretando corretamente vetores envolvidos e verificando consistência física das resultados.",
+                                  "commonMistakes": [
+                                    "Confusão entre os vetores dl e r (direção inversa).",
+                                    "Ângulo θ incorreto no cálculo de sinθ (usar ângulo entre dl e r).",
+                                    "Esquecer o fator 1/r² na dependência da magnitude.",
+                                    "Erro na aplicação da regra da mão direita para direção do campo.",
+                                    "Não considerar a aproximação de dl infinitesimal quando inválida."
                                   ]
                                 },
                                 {
@@ -25647,6 +25760,40 @@
                                     "Interpretação física do resultado.",
                                     "Uso consistente de unidades SI.",
                                     "Validação com limite conhecido."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise de Vetores e Cálculo de Atenuação em Configurações Eletromagnéticas",
+                                  "subSteps": [
+                                    "Calcular valores numéricos com precisão >95% usando fórmulas fornecidas",
+                                    "Identificar e classificar todos os vetores envolvidos no problema",
+                                    "Explicar claramente a direção dos vetores aplicando a regra da mão direita",
+                                    "Tratar especificamente o caso de θ=0° e confirmar que dB=0",
+                                    "Interpretar o resultado de forma física e contextualizar seu significado",
+                                    "Garantir uso consistente de unidades do Sistema Internacional (SI) em todos os cálculos",
+                                    "Validar o resultado comparando com um limite conhecido da teoria"
+                                  ],
+                                  "verification": "Comparar resultados com valor esperado, verificar precisão numérica >95%, confirmar identificação correta de todos os vetores, validar explicação da direção via regra da mão direita, checar tratamento de θ=0°, garantir interpretação física coerente e validação com limite teórico conhecido",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Livro didático de Eletricidade e Magnetismo",
+                                    "Calculadora científica",
+                                    "Folha de cálculo ou ambiente de programação (ex: Python/Matlab) para validação numérica",
+                                    "Papel e caneta para esboços vetoriais"
+                                  ],
+                                  "tips": [
+                                    "Verifique todas as unidades antes e depois dos cálculos",
+                                    "Aplique a regra da mão direita em cada passo crítico para evitar inversões de direção",
+                                    "Teste sempre o caso especial θ=0° como verificação rápida",
+                                    "Mantenha mais casas decimais intermediárias para evitar erro de arredondamento",
+                                    "Documente cada vetor identificado com sua direção e magnitude"
+                                  ],
+                                  "learningObjective": "Dominar a aplicação de vetores em problemas eletromagnéticos, calcular atenuações com precisão numérica e interpretar resultados fisicamente, incluindo tratamento especial de casos limites e validação teórica",
+                                  "commonMistakes": [
+                                    "Inversão de direção de vetores devido à aplicação incorreta da regra da mão direita",
+                                    "Tratamento equivocado do caso θ=0° (ex: não reconhecer que dB=0)",
+                                    "Erros de conversão ou inconsistência entre unidades não-SI e SI",
+                                    "Precisão numérica abaixo de 95% por arredondamento prematuro",
+                                    "Falha em validar o resultado contra limites teóricos conhecidos"
                                   ]
                                 },
                                 {
@@ -25656,12 +25803,101 @@
                                     "Programação: Simulações numéricas em Python (SciPy).",
                                     "Engenharia: Design de eletromagnetos.",
                                     "Química: Campos em espectroscopia RMN."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise Integrada de Campos Electromagnéticos: Conexões Matemáticas, Computacionais e Aplicadas",
+                                  "subSteps": [
+                                    "Aplicar álgebra vetorial para calcular produtos cruzados em sistemas de coils",
+                                    "Calcular integrais de linha para determinar o campo magnético total B em configurações de eletromagnetos",
+                                    "Implementar simulações numéricas em Python (utilizando SciPy) para modelar comportamento de campos magnéticos",
+                                    "Projetar e otimizar parâmetros de eletromagnetos considerando restrições de materiais e eficiência",
+                                    "Correlacionar campos magnéticos com sinais de espectroscopia RMN para interpretar dados químicos"
+                                  ],
+                                  "verification": "Entrega de relatório com: 1) Cálculos vetoriais verificados, 2) Gráficos de B obtidos por integração e simulação, 3) Projeto de eletroimã com especificações técnicas, 4) Análise de espectro RMN simulado vs. experimental",
+                                  "estimatedTime": "8 horas",
+                                  "materials": [
+                                    "Catálogo de materiais do laboratório de eletromagnetismo",
+                                    "Ambiente de programação Python com SciPy e Matplotlib",
+                                    "Manuais de design de bobinas e materiais ferromagnéticos",
+                                    "Banco de dados de espectros RMN de compostos orgânicos",
+                                    "Calculadoras gráficas ou software de álgebra simbólica (ex: SymPy)"
+                                  ],
+                                  "tips": [
+                                    "Utilize visualizações 3D para depurar produtos vetoriais complexos",
+                                    "Valide simulações numéricas com soluções analíticas em casos simplificados",
+                                    "Inicie projetos de eletromagnetos com materiais de alta permeabilidade para resultados mais previsíveis",
+                                    "Cruze resultados de RMN com tabelas de deslocamentos químicos padronizados",
+                                    "Documente todas as hipóteses de modelo nas simulações para reprodução futura"
+                                  ],
+                                  "learningObjective": "Integrar e aplicar conceitos de álgebra vetorial, cálculo multivariável, programação científica e design engenhiral para analisar, simular e projetar sistemas electromagnéticos com aplicações em química analítica",
+                                  "commonMistakes": [
+                                    "Confundir produto escalar com vetorial ao calcular forças magnéticas",
+                                    "Esquecer de considerar singularidades nas integrais de linha ao redor de correntes",
+                                    "Subestimar efeitos de discretização em simulações numéricas de campos",
+                                    "Ignorar limitações de saturação magnética nos materiais do eletroimã",
+                                    "Interpretar incorretamente deslocamentos químicos sem considerar efeitos de campo interno na RMN"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Cálculo de campos magnéticos em bobinas para ressonância magnética (MRI), motores elétricos e aceleradores de partículas, onde elementos infinitesimais de corrente são integrados para campos precisos em dispositivos médicos e industriais."
+                                  "realWorldApplication": "Cálculo de campos magnéticos em bobinas para ressonância magnética (MRI), motores elétricos e aceleradores de partículas, onde elementos infinitesimais de corrente são integrados para campos precisos em dispositivos médicos e industriais.",
+                                  "stepNumber": 5.08,
+                                  "title": "Cálculo de Campos Magnéticos em Bobinas via Integração de Elementos Infinitesimais",
+                                  "subSteps": [
+                                    "Derivação e aplicação da lei de Biot-Savart para elementos de corrente infinitesimais",
+                                    "Configuração da integral para geometrias de bobinas comuns (solenóide, loop circular, helicoidal)",
+                                    "Evaluação analítica e numérica de integrais para campos magnéticos em eixos e superfícies críticas",
+                                    "Adaptação dos resultados para aplicações específicas: ressonância magnética (MRI), motores elétricos e aceleradores de partículas"
+                                  ],
+                                  "verification": "Comparação com soluções conhecidas para casos limites (ex: campo interno de solenóide infinita) e validação através de simulações computacionais (COMSOL, MATLAB) ou dados experimentais de laboratório",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Livro de eletromagnetismo (ex: Griffiths - Introdução à Eletricidade e Magnetismo)",
+                                    "Software de cálculo simbólico/numérico (MATLAB, Python com SciPy/SymPy)",
+                                    "Ferramentas de simulação de campos magnéticos (COMSOL Multiphysics)",
+                                    "Material de laboratório: bobinas de teste, medidores de campo magnético"
+                                  ],
+                                  "tips": [
+                                    "Explorar simetrias do sistema para reduzir a complexidade das integrais",
+                                    "Dividir geometrias complexas em elementos simples para integração parcelar",
+                                    "Verificar casos extremos (ex: bobina de raio muito grande) como sanity check",
+                                    "Utilizar coordenadas cilíndricas/esféricas quando apropriado para simplificar"
+                                  ],
+                                  "learningObjective": "O aluno será capaz de calcular campos magnéticos precisos em dispositivos de alta tecnologia através da integração de elementos de corrente infinitesimais, aplicando a lei de Biot-Savart a geometrias reais e validando os resultados frente a aplicações práticas",
+                                  "commonMistakes": [
+                                    "Ignorar a contribuição de correntes de retorno em bobinas fechadas",
+                                    "Aplicar a lei de Biot-Savart sem considerar a orientação vetorial correta dos elementos",
+                                    "Subestimar o tempo de cálculo para integrais numéricas de alta precisão",
+                                    "Confundir sistemas de coordenadas ao transformar integrais entre referências"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Fio reto ao longo do eixo z com I = 12 A, elemento dl = dz Ã¢ˆ z em z = 0 m, ponto P em (0, 0,15 m, 0). Assim, r = 0,15 m no direção x, θ = 90°, dB = (10⁻⁷ * 12 * dz) / (0,15)² no direção y (regra da mão direita). Magnitude: 5,33×10⁻⁴ dz T.",
+                              "finalVerifications": [
+                                "AplicaÃ§Ã£o correta da fÃ³rmula de Biot-Savart com todos os termos.",
+                                "DefiniÃ§Ã£o precisa dos vetores dl, r e ˆr com coordenadas e magnitudes.",
+                                "CÃ¡lculo do produto vetorial dl × ˆr com magnitude dl sinθ e direÃ§Ã£o consistente com a regra da mÃ£o direita.",
+                                "Magnitudede dB proporcional a I dl / r² e verificaÃ§Ã£o das unidades em Tesla (T).",
+                                "AnÃ¡lise da direÃ§Ã£o do campo magnÃ©tico usando a regra da mÃ£o direita.",
+                                "ValidaÃ§Ã£o comparando com o campo de um fio infinito nas proximidades.",
+                                "VerificaÃ§Ã£o da aproximaÃ§Ã£o dl << r para justificar o elemento infinitesimal."
+                              ],
+                              "assessmentCriteria": [
+                                "CÃ¡lculo numÃ©rico com precisÃ£o superior a 98% no exemplo proposto.",
+                                "IdentificaÃ§Ã£o correta de 100% dos vetores de posiÃ§Ã£o e deslocamento.",
+                                "ExplicaÃ§Ã£o clara e demonstrada da direÃ§Ã£o de dB via regra da mÃ£o direita.",
+                                "Tratamento adequado do caso θ = 0° (dB = 0) e θ = 180°.",
+                                "AnÃ¡lise fÃ­sica da dependÃªncia de dB em relação a I, dl, r e sinθ.",
+                                "Uso consistente de unidades SI ao longo de todo o cÃ¡lculo.",
+                                "ValidaÃ§Ã£o do resultado com o limite conhecido de fio infinito."
+                              ],
+                              "crossCurricularConnections": [
+                                "MatemÃ¡tica: Ãlgebra vetorial avanÃ§ada, produtos escalar e vetorial, coordenadas cartesianas.",
+                                "CÃ¡lculo Diferencial e Integral: Integrais de linha para obtenÃ§Ã£o do campo total B.",
+                                "FÃ­sica Computacional: SimulaÃ§Ãµes numÃ©ricas em Python usando SciPy e VisualizaÃ§Ã£o com Matplotlib.",
+                                "Engenharia ElÃ©trica: Projeto de solenoides, transformadores e motores de induÃ§Ã£o.",
+                                "FÃ­sica Nuclear: CÃ¡lculo de campos magnÃ©ticos em aceleradores de partÃ­culas e ressonÃ¢ncia magnÃ©tica nuclear (RMN)."
+                              ],
+                              "realWorldApplication": "CÃ¡lculo preciso de campos magnÃ©ticos em bobinas de ressonÃ¢ncia magnÃ©tica (MRI) para imagens mÃ©dicas, projeto de motores elÃ©tricos de alta eficiencia em indÃºstria, e simulaÃ§Ãµes de campos em aceleradores de partÃ­culas para colisÃµes de alta energia em laboratÃ³rios de fÃ­sica de partÃ­culas."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -40608,7 +40844,8 @@
             "totalSkills": 306
           }
         ],
-        "totalSkills": 306
+        "totalSkills": 306,
+        "percentage": 0
       }
     ]
   }

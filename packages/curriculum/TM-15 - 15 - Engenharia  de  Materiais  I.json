@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TM-15",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 369
+      "totalAtomicSkills": 369,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 6,
+      "version": "TM-15",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TM-15"
     },
     "areas": [
       {
@@ -28818,7 +28824,14 @@
                                   "estimatedTime": "25 minutos",
                                   "materials": "Computador para relatório, software de desenho (ex: Draw.io para diagramas).",
                                   "learningObjective": "Integrar conceitos para avaliação preditiva em contextos reais de engenharia.",
-                                  "commonMistakes": "Generalizar sem considerar composição química ou tamanho da peça."
+                                  "commonMistakes": "Generalizar sem considerar composição química ou tamanho da peça.",
+                                  "tips": [
+                                    "Consulte diagramas de fase Fe-C e TTT/CCT para previsões precisas de microestrutura.",
+                                    "Calcule taxas de resfriamento aproximadas usando o módulo da peça (V/A).",
+                                    "Inclua exemplos numéricos: ex., aço 0.4%C (hipoeutetóide) vs. 1.2%C (hipereutetóide).",
+                                    "No relatório, use gráficos de resfriamento e fotos microscópicas para evidências visuais.",
+                                    "Avalie trade-offs quantitativamente: %perlita vs. propriedades mecânicas."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Em uma haste de aço SAE 1045 (eutetoide) normalizada: aquecer a 900°C, resfriar ao ar (~20°C/min). Resultado: microestrutura refinada de ferrita + perlita grossa (grão ASTM 8), dureza 180 HB, ideal para peças usinadas como eixos automotivos, evitando fragilidade da martensita da têmpera.",
@@ -48476,7 +48489,8 @@
             "totalSkills": 369
           }
         ],
-        "totalSkills": 369
+        "totalSkills": 369,
+        "percentage": 0
       }
     ]
   }

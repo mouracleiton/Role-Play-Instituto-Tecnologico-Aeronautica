@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PS-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 320
+      "totalAtomicSkills": 320,
+      "startDate": "2025-02-17",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "PS-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PS-22"
     },
     "areas": [
       {
@@ -6485,7 +6491,14 @@
                                   "estimatedTime": "50 minutos",
                                   "materials": "Ferramentas de identificação (MATLAB System ID Toolbox, Python control library).",
                                   "learningObjective": "Validar modelos lineares contra dados reais usando análise em frequência.",
-                                  "commonMistakes": "Não considerar aliasing na validação; overfitting ignorando ruído de medição."
+                                  "commonMistakes": "Não considerar aliasing na validação; overfitting ignorando ruído de medição.",
+                                  "tips": [
+                                    "Use escala logarítmica para magnitude e linear para fase nos gráficos de Bode.",
+                                    "Normalize espectros por potência do sinal de entrada para comparação justa.",
+                                    "Aplique filtro anti-aliasing na aquisição de dados para evitar distorções.",
+                                    "Inspecione visualmente resíduos em domínio do tempo e frequência antes de testes estatísticos.",
+                                    "Itere ajustes com validação cruzada para evitar overfitting ao ruído."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 5,
@@ -13173,7 +13186,33 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Calcule a transformada de Laplace de f(t) = u(t) + 2 t u(t) + e^{-3t} u(t), obtendo F(s) = 1/s + 2/s² + 1/(s+3), e verifique em s=4."
+                                  "practicalExample": "Calcule a transformada de Laplace de f(t) = u(t) + 2 t u(t) + e^{-3t} u(t), obtendo F(s) = 1/s + 2/s² + 1/(s+3), e verifique em s=4.",
+                                  "stepNumber": 1,
+                                  "title": "Exemplo Prático: Cálculo da Transformada de Laplace de f(t) = u(t) + 2 t u(t) + e^{-3t} u(t)",
+                                  "subSteps": [
+                                    "1. Identifique os termos individuais da função: u(t), 2t u(t) e e^{-3t} u(t), aproveitando a linearidade da transformada de Laplace.",
+                                    "2. Calcule L{u(t)} = 1/s.",
+                                    "3. Calcule L{2t u(t)} = 2 L{t u(t)} = 2/s².",
+                                    "4. Calcule L{e^{-3t} u(t)} = 1/(s+3).",
+                                    "5. Some os resultados: F(s) = 1/s + 2/s² + 1/(s+3)."
+                                  ],
+                                  "verification": "Avalie F(s) em s=4: F(4) = 1/4 + 2/16 + 1/7 ≈ 0,25 + 0,125 + 0,1429 ≈ 0,5179. Verifique usando uma calculadora ou software como MATLAB/SymPy.",
+                                  "estimatedTime": "10 minutos",
+                                  "materials": [
+                                    "Tabela de transformadas de Laplace",
+                                    "Calculadora ou software simbólico (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Use a propriedade de linearidade para somar transformadas de cada termo.",
+                                    "Lembre-se que u(t) indica causalidade, com L{u(t)} = 1/s para s > 0."
+                                  ],
+                                  "learningObjective": "Aplicar a transformada de Laplace a funções piecewise com degrau unitário, exponenciais e polinômios, utilizando linearidade e verificação numérica.",
+                                  "commonMistakes": [
+                                    "Esquecer o coeficiente 2 em L{2t u(t)}, resultando em 1/s².",
+                                    "Confundir L{t u(t)} = 1/s² com L{u(t)}.",
+                                    "Não considerar o domínio de convergência (s > 0).",
+                                    "Erros aritméticos na soma dos termos."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -13197,9 +13236,63 @@
                                     "Computação: Implementação numérica em MATLAB/Simulink para simulações.",
                                     "Controle Automático: Modelagem de plantas em espaço de Laplace."
                                   ],
-                                  "realWorldApplication": "Em engenharia aeronáutica, a transformada de Laplace de sinais básicos é essencial para modelar funções de transferência de sistemas de controle de voo, como respostas a comandos de degrau (manobras abruptas) ou ramps (acelerações suaves), permitindo análise de estabilidade e projeto de controladores PID para aviões."
+                                  "realWorldApplication": "Em engenharia aeronáutica, a transformada de Laplace de sinais básicos é essencial para modelar funções de transferência de sistemas de controle de voo, como respostas a comandos de degrau (manobras abruptas) ou ramps (acelerações suaves), permitindo análise de estabilidade e projeto de controladores PID para aviões.",
+                                  "stepNumber": "4.2",
+                                  "title": "Derivação da Transformada de Laplace de Sinais Básicos",
+                                  "subSteps": [
+                                    "Definir a transformada de Laplace unilateral: L{f(t)} = ∫_{0}^∞ f(t) e^{-st} dt, com Re(s) > σ.",
+                                    "Derivar L{u(t)} = ∫_{0}^∞ e^{-st} dt = 1/s, para Re(s) > 0.",
+                                    "Calcular L{t u(t)} = ∫_{0}^∞ t e^{-st} dt usando integração por partes (u = t, dv = e^{-st} dt).",
+                                    "Obter L{e^{-at} u(t)} = ∫_{0}^∞ e^{-(s+a)t} dt = 1/(s+a), para Re(s) > -a.",
+                                    "Aplicar propriedade de linearidade: L{α f(t) + β g(t)} = α L{f(t)} + β L{g(t)} para combinações de sinais básicos."
+                                  ],
+                                  "verification": "Derivações exatas com passos mostrados, regiões de convergência corretas e comparação com tabela padrão.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel e caneta para cálculos manuais",
+                                    "Tabela de integrais básicas",
+                                    "Calculadora científica",
+                                    "Tabela padrão de transformadas de Laplace"
+                                  ],
+                                  "tips": [
+                                    "Sempre inicie a integral em t=0 (devido à unilateralidade e u(t)).",
+                                    "Verifique a convergência: Re(s) deve ser maior que o maior polo real.",
+                                    "Na integração por partes, lembre-se: ∫ u dv = u v - ∫ v du.",
+                                    "Compare resultados com tabela para validação imediata."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de derivar analiticamente as transformadas de Laplace das funções degrau unitário u(t), rampa t u(t) e exponencial e^{-at} u(t), aplicando integração por partes e linearidade, identificando regiões de convergência.",
+                                  "commonMistakes": [
+                                    "Integrar de -∞ a ∞ em vez de 0 a ∞ (transformada bilateral errada).",
+                                    "Esquecer o sinal negativo em e^{-st} ou erro em du/dv na integração por partes.",
+                                    "Não especificar a região de convergência (ex: Re(s) > 0 para u(t)).",
+                                    "Aplicar linearidade sem considerar causalidade ou ROC da soma.",
+                                    "Confundir L{t} com 1/s (esquecendo u(t))."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Calcule a transformada de Laplace de f(t) = u(t) + 2 t u(t) + e^{-3t} u(t), obtendo F(s) = 1/s + 2/s² + 1/(s+3), e verifique em s=4.",
+                              "finalVerifications": [
+                                "Deriva corretamente Laplace{u(t)} = 1/s com passos completos.",
+                                "Obtém Laplace{t u(t)} = 1/s² via integração por partes sem erros.",
+                                "Calcula Laplace{e^{-at} u(t)} = 1/(s+a) especificando Re(s) > -a.",
+                                "Aplica linearidade para soma de sinais básicos.",
+                                "Compara resultados com tabela padrão sem discrepâncias."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática nos cálculos de integrais (100% correto).",
+                                "Clareza na apresentação de passos e justificativas de limites.",
+                                "Correta identificação de regiões de convergência.",
+                                "Uso apropriado de propriedades como integração por partes e linearidade.",
+                                "Capacidade de verificação numérica ou tabular."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo integral avançado e séries de potências.",
+                                "Física: Análise de circuitos RC/RL e sistemas massa-mola.",
+                                "Engenharia Elétrica: Resolução de equações diferenciais em regime transitório.",
+                                "Computação: Implementação numérica em MATLAB/Simulink para simulações.",
+                                "Controle Automático: Modelagem de plantas em espaço de Laplace."
+                              ],
+                              "realWorldApplication": "Em engenharia aeronáutica, a transformada de Laplace de sinais básicos é essencial para modelar funções de transferência de sistemas de controle de voo, como respostas a comandos de degrau (manobras abruptas) ou ramps (acelerações suaves), permitindo análise de estabilidade e projeto de controladores PID para aviões."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -42837,7 +42930,8 @@
             "totalSkills": 320
           }
         ],
-        "totalSkills": 320
+        "totalSkills": 320,
+        "percentage": 0
       }
     ]
   }

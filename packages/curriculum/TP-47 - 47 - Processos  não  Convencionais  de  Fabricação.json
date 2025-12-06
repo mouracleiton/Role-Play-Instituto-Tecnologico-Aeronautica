@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TP-47",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 308
+      "totalAtomicSkills": 308,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "TP-47",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TP-47"
     },
     "areas": [
       {
@@ -34593,9 +34599,50 @@
                                     "Calcular taxa de remoção aproximada usando fórmula: RR = (I * EW) / (ρ * F * A).",
                                     "Comparar com outros processos de usinagem.",
                                     "verification]: "
+                                  ],
+                                  "verification": "1. Liste 3 variáveis chave e seu impacto. 2. Calcule RR para I=5 A, EW=0,1 g/eq, ρ=2,7 g/cm³, F=96.500 C/mol, A=1 cm² (resposta esperada: ~0,17 mm/min). 3. Explique como mitigar polarização.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabela de pesos equivalentes eletroquímicos (EW)",
+                                    "Dados de densidade (ρ) e constante de Faraday (F=96.485 C/mol)",
+                                    "Gráficos de polarização (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Verifique unidades: I em A, A em cm², ρ em g/cm³ para consistência.",
+                                    "Lembre-se: EW = Massa molar / valência.",
+                                    "Fluxo de eletrólito remove bolhas e calor, reduzindo polarização.",
+                                    "Compare com usinagem convencional: ECM não gera calor excessivo."
+                                  ],
+                                  "learningObjective": "Analisar qualitativa e quantitativamente os fatores (corrente, eletrólito, temperatura, fluxo) que influenciam a taxa de dissolução em usinagem eletroquímica, calculando RR e comparando com outros processos.",
+                                  "commonMistakes": [
+                                    "Esquecer de dividir por área (A) na fórmula RR.",
+                                    "Usar massa molar em vez de EW.",
+                                    "Ignorar conversão de unidades (ex: A em m² ao invés de cm²).",
+                                    "Confundir polarização de concentração com ativação.",
+                                    "Subestimar efeito do fluxo na remoção de produtos."
                                   ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simulação prática: Configure um setup de ECM em laboratório com uma peça de aço inoxidável como ânodo, ferramenta de cobre como cátodo, solução de NaCl como eletrólito e fonte de 12V. Monitore a formação de lacuna por 10 minutos e meça a profundidade removida.",
+                              "finalVerifications": [
+                                "Elaborar um relatório resumindo os princípios, equações e fatores de ECM, incluindo um diagrama completo.",
+                                "Resolver um problema prático: Calcule a taxa de remoção para uma densidade de corrente de 10 A/cm² em ferro (EW=0.0368 kg/C).",
+                                "Quiz de 10 questões sobre conceitos chave, com acerto mínimo de 80%."
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão conceitual (30%): Explicações claras de oxidação e fluxo iônico.",
+                                "Habilidades técnicas (40%): Precisão em diagramas, equações balanceadas e cálculos.",
+                                "Aplicação prática (20%): Qualidade da simulação ou exemplo prático.",
+                                "Apresentação e verificações (10%): Clareza no relatório e acertos no quiz."
+                              ],
+                              "crossCurricularConnections": [
+                                "Química: Reações redox e equilíbrio iônico.",
+                                "Física: Circuitos elétricos, potencial eletroquímico e difusão.",
+                                "Engenharia Mecânica: Processos de usinagem não convencionais e controle de processos.",
+                                "Materiais: Propriedades de metais e eletrólitos."
+                              ],
+                              "realWorldApplication": "ECM é amplamente usado na indústria aeroespacial para usinagem de pás de turbinas e furos precisos em ligas super-resistentes; na manufatura médica para implantes ortopédicos; e em ferramentas para formas complexas sem tensões residuais, como em componentes de motores de foguetes (ex: SpaceX e Boeing)."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -39623,7 +39670,8 @@
             "totalSkills": 308
           }
         ],
-        "totalSkills": 308
+        "totalSkills": 308,
+        "percentage": 0
       }
     ]
   }

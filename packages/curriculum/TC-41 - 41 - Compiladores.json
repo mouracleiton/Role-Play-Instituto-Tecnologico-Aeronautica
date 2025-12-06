@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TC-41",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 334
+      "totalAtomicSkills": 334,
+      "startDate": "2025-01-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TC-41"
     },
     "areas": [
       {
@@ -3072,7 +3078,23 @@
                                     "Teste interativamente: Use playground de regex para validar entradas como números de telefone.",
                                     "Escreva 4 regex usando cada quantificador em contextos simples."
                                   ],
-                                  "verification": "Escreva regex para: (1) um ou mais dígitos, (2) 'am' opcional em 'team/amteam'."
+                                  "verification": "Escreva regex para: (1) um ou mais dígitos, (2) 'am' opcional em 'team/amteam'.",
+                                  "estimatedTime": "20-25 minutos",
+                                  "materials": [
+                                    "Regex101.com (playground interativo)",
+                                    "Documentação MDN Web Docs sobre Quantificadores Regex"
+                                  ],
+                                  "tips": [
+                                    "Quantificadores se aplicam ao elemento imediatamente anterior no padrão.",
+                                    "Use ? para tornar quantificadores não-gulosos (ex: +? para 'uma ou mais, o mínimo possível').",
+                                    "Teste sempre com exemplos positivos e negativos no playground."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de definir, comparar e aplicar os quantificadores '+' (uma ou mais ocorrências) e '?' (zero ou uma ocorrência) em expressões regulares, validando padrões como números e textos opcionais.",
+                                  "commonMistakes": [
+                                    "Confundir '+' com '*' (permitir zero ocorrências).",
+                                    "Aplicar quantificador a grupos incorretos sem parênteses (ex: (ab)+ em vez de ab+).",
+                                    "Esquecer de testar casos vazios para '?' e casos únicos para '+'."
+                                  ]
                                 },
                                 "estimatedTime: ",
                                 "materials: [",
@@ -6352,7 +6374,14 @@
                               "Inglês Técnico: Documentação de erros e relatórios padronizados": [
                                 ""
                               ],
-                              "realWorldApplication": "}  Compiladores reais como GCC/Flex usam isso para tokenizar código-fonte com erros amigáveis (ex: 'syntax error at line 42'); editores como Vim/Emacs para syntax highlighting com error underlines; ferramentas CLI como grep/awk estendidas para custom lexers com diagnósticos posicionados."
+                              "realWorldApplication": "}  Compiladores reais como GCC/Flex usam isso para tokenizar código-fonte com erros amigáveis (ex: 'syntax error at line 42'); editores como Vim/Emacs para syntax highlighting com error underlines; ferramentas CLI como grep/awk estendidas para custom lexers com diagnósticos posicionados.",
+                              "assessmentCriteria": [
+                                "Ações { } executam lógica personalizada corretamente (ex: contadores, yylval) (30%)",
+                                "Manipulação de yytext/yyinput captura lexemas sem overflow (25%)",
+                                "Erros léxicos reportados com posição exata e mensagem clara (25%)",
+                                "Testes abrangentes passam (valid/invalid/edge) (10%)",
+                                "Código limpo, comentado e sem leaks (10%)"
+                              ]
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "advanced",
@@ -20661,6 +20690,28 @@
                                     "Inclua padding para alinhamento em ambos.",
                                     "Calcule o tamanho total do frame para reserva no prologue.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Calcule os offsets para uma função com parâmetros: int a (4 bytes), double b (8 bytes); variáveis locais: char x (1 byte), int y (4 bytes). Considere alinhamento de 8 bytes e BP como base. Forneça o tamanho total do frame.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Diagrama de stack frame (x86)",
+                                    "Exemplo de código assembly com prologue/epilogue",
+                                    "Calculadora para alinhamento e padding"
+                                  ],
+                                  "tips": [
+                                    "Sempre inicie parâmetros em [BP+8] (após return address).",
+                                    "Use offsets crescentes para parâmetros (direita para esquerda na convenção CDECL).",
+                                    "Para locais, offsets negativos: BP-4, BP-8, etc., ajustando padding.",
+                                    "Arredonde tamanhos para múltiplos do alinhamento (ex: 8 bytes para SSE).",
+                                    "Some todos os tamanhos alocados para SUB ESP no prologue."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de calcular offsets precisos para parâmetros e variáveis locais em um stack frame, incluindo padding para alinhamento, e determinar o tamanho total do frame para alocação dinâmica.",
+                                  "commonMistakes": [
+                                    "Alocar parâmetros com offsets decrescentes em vez de crescentes.",
+                                    "Esquecer o return address (8 bytes em x86-64) antes dos parâmetros.",
+                                    "Não aplicar padding, causando desalinhamento e falhas em instruções SIMD.",
+                                    "Confundir convenções de chamada (CDECL vs STDCALL).",
+                                    "Calcular offsets sem considerar o tamanho do tipo (ex: char como 1 byte, mas padding para 4)."
                                   ]
                                 }
                               ],
@@ -20675,7 +20726,27 @@
                                 "Confundir direção de alocação locais vs params",
                                 "Ignorar alinhamento no stack",
                                 "Não reservar espaço total no SP"
-                              ]
+                              ],
+                              "practicalExample": "```c\n// Exemplo prático: globals e locals\nchar global_char = 'A';  // offset 0, size 1, pad 3\nint global_int = 42;     // offset 4, size 4\n\ndouble func(double param1, int param2) {\n    char local_char = 'B';   // BP-8 (pad 3 +4+1)\n    int local_int = 10;      // BP-4, size 4\n    return param1 + param2 + local_int;\n}\n```\nLayout esperado: .data total 16 bytes (pad para double=8); stack frame ~24 bytes com alinhamento.",
+                              "finalVerifications": [
+                                "Calcule offsets completos para o exemplo prático acima e compare com disassembly (objdump ou gdb).",
+                                "Crie uma struct com 5 membros mistos e calcule sizeof(struct) incluindo padding.",
+                                "Escreva uma função com 3 params e 3 locals; determine tamanho do frame e offsets exatos."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos cálculos de padding e alinhamento (100% correto).",
+                                "Tabelas e diagramas claros com offsets e tamanhos totais.",
+                                "Explicação correta de diferenças entre globais/locais e stack/data.",
+                                "Identificação e correção de erros comuns em verificações finais.",
+                                "Tempo de execução dentro do estimado com raciocínio lógico documentado."
+                              ],
+                              "crossCurricularConnections": [
+                                "Arquitetura de Computadores: alinhamento de cache e performance de acesso memória.",
+                                "Compiladores: geração de código assembly e otimização de layout.",
+                                "Sistemas Operacionais: gerenciamento de stack e seções de dados (.data/.bss).",
+                                "Engenharia de Software: depuração de binários e análise de memória."
+                              ],
+                              "realWorldApplication": "Crítico para otimização de performance (evitar cache misses), depuração em assembly/GDB, engenharia reversa de malware/binários, e desenvolvimento de compiladores/interpretadores eficientes."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -25794,6 +25865,13 @@
                                     "Não checar pilha antes de reduce",
                                     "Loop infinito em erro sem break",
                                     "Confundir estado atual com símbolo na pilha"
+                                  ],
+                                  "verification": [
+                                    "Verifique se o pseudocódigo detecta erro corretamente quando ação não é shift/reduce/accept.",
+                                    "Simule entrada 'id +' com pilha vazia: deve shift 'id', então erro em '+', pop estado inválido e skip token.",
+                                    "Confirme ausência de loop infinito: inclua break ou condição de fim em erros irrecuperáveis.",
+                                    "Teste reduce: pop símbolos corretos e push não-terminal sem erro.",
+                                    "Valide variáveis: stack, lookahead, actionTable[action][state] usados consistentemente."
                                   ]
                                 },
                                 {
@@ -44338,7 +44416,8 @@
             "totalSkills": 334
           }
         ],
-        "totalSkills": 334
+        "totalSkills": 334,
+        "percentage": 0
       }
     ]
   }

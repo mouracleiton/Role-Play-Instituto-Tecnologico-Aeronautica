@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EB-13",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 197
+      "totalAtomicSkills": 197,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EB-13"
     },
     "areas": [
       {
@@ -11253,7 +11259,14 @@
                                   "estimatedTime": "20 minutos",
                                   "materials": "Diagramas anteriores; planilha Excel para cálculos.",
                                   "learningObjective": "Analisar graficamente η ∝ 1 - 1/rp^{(γ-1)/γ}.",
-                                  "commonMistakes": "Interpretar erroneamente redução de Δs como perda de eficiência."
+                                  "commonMistakes": "Interpretar erroneamente redução de Δs como perda de eficiência.",
+                                  "tips": [
+                                    "Estime áreas com precisão usando regra do trapézio ou software como Engauge Digitizer.",
+                                    "Verifique η numérica com γ=1.4 para ar; espere η≈0.36 (rp=4), 0.52 (rp=10).",
+                                    "Visualize: rp↑ alonga ciclo em T, elevando T3/T2 mais que T4/T1, ↑η.",
+                                    "Tabela: rp | Qin(kJ/kg) | Wnet(kJ/kg) | η(%); plote η vs rp para confirmação.",
+                                    "Cuidado: ↓Δs não é perda, mas otimização (menos calor rejeitado por Wnet)."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 5,
@@ -25631,7 +25644,8 @@
             "totalSkills": 197
           }
         ],
-        "totalSkills": 197
+        "totalSkills": 197,
+        "percentage": 0
       }
     ]
   }

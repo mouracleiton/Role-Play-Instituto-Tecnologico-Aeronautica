@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PP-34",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 308
+      "totalAtomicSkills": 308,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "PP-34",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PP-34"
     },
     "areas": [
       {
@@ -2805,7 +2811,15 @@
                                     "Papel milimetrado"
                                   ],
                                   "learningObjective": "Interpretar fisicamente as deformações normais em contextos reais.",
-                                  "commonMistakes": "Ignorar rotações rígidas (que não contribuem para strain); superestimar deformações grandes."
+                                  "commonMistakes": "Ignorar rotações rígidas (que não contribuem para strain); superestimar deformações grandes.",
+                                  "tips": [
+                                    "Use uma escala exagerada nas visualizações para tornar deformações pequenas perceptíveis.",
+                                    "Diferencie rotações rígidas (não contribuem para strain) de deformações verdadeiras.",
+                                    "Para ε > 0, imagine fibras se alongando; para ε < 0, comprimindo.",
+                                    "Na lei de Hooke, considere E típico: aço ~200 GPa, alumínio ~70 GPa.",
+                                    "Em software, aplique condições de contorno realistas para simulações precisas.",
+                                    "Relacione deformações >5% com regime não-linear (falha plástica)."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Em uma viga de ponte sob carga vertical, ε_zz (vertical) é negativa devido à compressão, enquanto ε_xx e ε_yy podem ser positivas por efeito de Poisson, calculadas como ∂u_z/∂z ≈ -δ/L onde δ é flecha e L é comprimento.",
@@ -8430,7 +8444,8 @@
                                   "materials": "Mesmo do step 2, mais exemplos de problemas com cargas distribuídas.",
                                   "tips": "Lembre: sinal negativo em V porque minimizamos Π.",
                                   "learningObjective": "Formar o vetor de carga equivalente F corretamente.",
-                                  "commonMistakes": "Incluir cargas de condições essenciais em V ou esquecer integrações de superfície."
+                                  "commonMistakes": "Incluir cargas de condições essenciais em V ou esquecer integrações de superfície.",
+                                  "verification": "Exemplo de verificação: Para um elemento 1D de comprimento L com carga volumétrica uniforme b, usando funções de forma lineares N = [1-ξ, ξ] (ξ=x/L), calcule F = ∫ N^T b dx = bL/2 [1; 1]. Confirme que a soma dos componentes de F equals bL (carga total)."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -28959,6 +28974,26 @@
                                     "Verifique volume do elemento: V ≈ ∑ w_g |det(J_g)| onde w_g pesos Gauss.",
                                     "Compare com volume analítico do hexaédrico.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Comparar o volume numérico aproximado V ≈ ∑ w_g |det(J_g)| com o volume analítico do elemento hexaédrico (ex: 8 para cubo unitário). Erro deve ser < 0.1% com 2×2×2 pontos de Gauss.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Tabela de pontos e pesos de Gauss (1-3 pontos por direção)",
+                                    "Código/função para computar Jacobiano e det(J)",
+                                    "Elemento hexaédrico de referência com coordenadas conhecidas"
+                                  ],
+                                  "tips": [
+                                    "Use sempre |det(J)| para garantir positividade.",
+                                    "Escolha número de pontos de Gauss compatível com a ordem da função (ex: 2 pontos para lineares).",
+                                    "Para elementos rígidos, 1 ponto central basta (ξ=η=ζ=0, w=8 ou 2 por dim).",
+                                    "Monitore det(J) para detectar elementos invertidos (det<0)."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de aplicar o Jacobiano na mudança de variáveis para integração numérica em elementos finitos via quadratura de Gauss, verificando a exatidão pelo volume do elemento.",
+                                  "commonMistakes": [
+                                    "Esquecer o valor absoluto |det(J)|, levando a volumes negativos.",
+                                    "Usar limites de integração errados (ex: 0-1 em vez de -1 a 1).",
+                                    "Não multiplicar pelos pesos w_g da quadratura.",
+                                    "Confundir derivadas do mapeamento isoparamétrico com as do elemento físico."
                                   ]
                                 },
                                 "estimatedTime\": \"20 minutos\na",
@@ -28966,7 +29001,22 @@
                                 "tips\": \"Sempre use |det(J)| para evitar negativos.\",\n",
                                 "learningObjective\": \"Integrar usando transformação isoparamétrica.\",\n",
                                 "commonMistakes\": [\"Esquecer |det(J)|\", \"Pontos de Gauss errados\"]\n"
-                              ]
+                              ],
+                              "practicalExample": "Considere um hexaédrico com nós: nó1 (-0.5,-0.5,-0.5), nó2 (0.5,-0.5,-0.5), ..., nó8 (0.5,0.5,0.5), ligeiramente distorcido (ex. nó8 movido para (0.6,0.6,0.6)). Compute det(J) no centro e volume usando 2x2x2 Gauss, comparando com V=1 analítico.",
+                              "finalVerifications": "1. Volume numérico ≈ volume geométrico (erro <1%). 2. det(J)>0 em todos pontos de Gauss. 3. Interpolação nos nós reproduz coordenadas exatas. 4. Derivadas no centro somam zero para rigidez.",
+                              "assessmentCriteria": [
+                                "Correta definição de funções de forma e Jacobiana (40%)",
+                                "Cálculo preciso de det(J) e integração (30%)",
+                                "Verificação de erros comuns e validação numérica (20%)",
+                                "Explicação conceitual da isoparametrização (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo multivariável e álgebra linear (matrizes Jacobianas)",
+                                "Computação: Programação numérica (SymPy, MATLAB para FEA)",
+                                "Engenharia Mecânica: Análise de elementos finitos em estruturas",
+                                "Física: Mudança de variáveis em integrais para mecânica dos sólidos"
+                              ],
+                              "realWorldApplication": "Essencial em softwares de Elementos Finitos (ANSYS, Abaqus) para simular tensões em componentes aeronáuticos, como fuselagens de aviões ou turbinas, otimizando design e segurança."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -40017,7 +40067,8 @@
             "totalSkills": 308
           }
         ],
-        "totalSkills": 308
+        "totalSkills": 308,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MT-02",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 381
+      "totalAtomicSkills": 381,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 4,
+      "version": "2025-MT-02",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MT-02"
     },
     "areas": [
       {
@@ -3480,6 +3486,24 @@
                                     "Discuta materiais: ligas de níquel super-resistentes a creep e oxidação a altas temperaturas.",
                                     "Examine diagramas de velocidade e pressão ao longo dos estágios da turbina.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Explique por que a potência da turbina deve exceder em 20-50% a potência do compressor e cite um material adequado para as pás da turbina.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Diagrama T-s e h-s do ciclo Brayton",
+                                    "Tabelas de propriedades termodinâmicas de gases",
+                                    "Referência: 'Elementos de Engenharia de Turbomáquinas' (Mattingly)"
+                                  ],
+                                  "tips": [
+                                    "Visualize o fluxo: gases quentes expandem no rotor (trabalho extraído) e são redirecionados no stator.",
+                                    "Use eficiência isentrópica para calcular perdas reais na expansão.",
+                                    "Considere o matching entre compressor e turbina para otimizar o ciclo."
+                                  ],
+                                  "learningObjective": "Compreender o processo de expansão na turbina de um motor de turbina a gás, incluindo conversão de entalpia em trabalho, requisitos de potência e seleção de materiais resistentes a altas temperaturas.",
+                                  "commonMistakes": [
+                                    "Confundir expansão isentrópica (ideal) com real (com perdas).",
+                                    "Subestimar a importância de ligas de níquel para resistir a creep e oxidação.",
+                                    "Ignorar que o excedente de trabalho da turbina gera o thrust propulsivo."
                                   ]
                                 },
                                 "verification"
@@ -3488,7 +3512,26 @@
                               "materials": "Diagramas de turbinas axiais, dados de motores reais (e.g., J79 turbojato), software de plotagem.",
                               "tips": "Use equações de turbomáquinas: η_isentrópico = (h_in - h_out)/(h_in - h_outs).",
                               "learningObjective": "Compreender como a turbina extrai trabalho dos gases de combustão para balancear o ciclo.",
-                              "commonMistakes": "Subestimar impacto de temperaturas TIT (Turbine Inlet Temperature) no design; ignorar matching compressor-turbina."
+                              "commonMistakes": "Subestimar impacto de temperaturas TIT (Turbine Inlet Temperature) no design; ignorar matching compressor-turbina.",
+                              "practicalExample": "Análise do motor turbojato GE J79: examine diagramas reais da câmara de combustão em lata, calcule a temperatura de entrada da turbina (TIT ≈ 1400 K) e compare com dados de desempenho público.",
+                              "finalVerifications": [
+                                "Desenhe o diagrama completo de uma câmara de combustão anular ou em lata, rotulando todas as zonas e componentes.",
+                                "Plote o diagrama T-s do ciclo Brayton focando na combustão e turbina, com cálculos de temperaturas e razões de trabalho.",
+                                "Explique o balanceamento de potência entre compressor e turbina em um exemplo numérico simples."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos diagramas e rotulações (30%)",
+                                "Correção dos cálculos termodinâmicos e plots (40%)",
+                                "Compreensão conceitual de fluxos, perdas e materiais (20%)",
+                                "Clareza na explicação verbal ou escrita (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Termodinâmica: ciclo Brayton e processos isobáricos.",
+                                "Ciência dos Materiais: ligas super-resistentes a altas temperaturas.",
+                                "Mecânica dos Fluidos: fluxo de ar primário/secundário e expansão na turbina.",
+                                "Aerodinâmica: matching compressor-turbina."
+                              ],
+                              "realWorldApplication": "Projeto e manutenção de motores a jato em aeronaves militares (e.g., F-4 Phantom com J79) e comerciais (e.g., CFM56 com câmaras anulares), otimizando eficiência e durabilidade para voos supersônicos e subsônicos."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -27371,6 +27414,28 @@
                                     "Quantifique perdas: η_t <1 reduz T_{4real}, diminuindo potência de eixo.",
                                     "Inclua perdas mecânicas: potência disponível = W_t * η_m - W_c.",
                                     "verification]: "
+                                  ],
+                                  "verification": [
+                                    "Derive a fórmula de T_{out}/T_{in} e calcule T_{4real} para π_t=4, η_t=0.90, γ=1.4, T_{in}=1200 K.",
+                                    "Verifique o matching: W_t = W_c + W_{PT} para dados de ciclo Brayton."
+                                  ],
+                                  "estimatedTime": "20-25 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabelas de propriedades do ar (cp, γ)",
+                                    "Folha de papel e caneta para derivações"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: para turbina, (γ-1)/γ é positivo, mas η_t <1 reduz a queda de temperatura.",
+                                    "Use consistência nas notações: T_4 é ideal, T_{4real} é real.",
+                                    "Considere η_m ≈ 0.98-0.99 para perdas mecânicas."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de derivar fórmulas politrópicas de perdas na turbina, calcular trabalho real considerando matching com compressor e hélice, e quantificar impactos de eficiências em potência de eixo.",
+                                  "commonMistakes": [
+                                    "Confundir razão de pressões π_t com a do compressor (π_c).",
+                                    "Esquecer o sinal: T_{4real} > T_4 (queda menor devido a perdas).",
+                                    "Não incluir W_{PT} no balanço de potência do matching.",
+                                    "Usar η_isentrópica em vez de politrópica para processos finitos."
                                   ]
                                 },
                                 "estimatedTime"
@@ -27389,7 +27454,26 @@
                                 "Prepare relatório com gráficos P_eixo vs η_c/η_t."
                               ],
                               "verification": "Gráfico mostra redução 10-20% em P_eixo para η=0.85 vs ideal.",
-                              "estimatedTime": "30 minutos"
+                              "estimatedTime": "30 minutos",
+                              "practicalExample": "Análise do motor turboélice PT6A: dados reais mostram η_c ≈ 0.88-0.92 e η_t ≈ 0.90-0.94 em cruzeiro; calcule impacto de 1% redução em η_c sobre potência de hélice (queda ≈ 3-5%).",
+                              "finalVerifications": [
+                                "Resolva ciclo completo turboélice com π_c=12, π_t=2.5, η_c=0.90, η_t=0.92; verifique P_eixo ≈ 1000 kW.",
+                                "Compare resultados polítropo vs isentrópico; discuta diferenças em relatório.",
+                                "Simule variação η com altitude usando software."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão cálculos: ±3% em temperaturas e trabalhos (40%).",
+                                "Compreensão conceitual: explicação clara de perdas (30%).",
+                                "Análise crítica: identificação de gargalos e sugestões (20%).",
+                                "Apresentação: gráficos e documentação (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Termodinâmica (MT-01): diagramas T-s e ciclos ideais.",
+                                "Motores a Jato (AE-03): matching compressor-turbina.",
+                                "Aerodinâmica de Compressores (AE-02): estágios axiais.",
+                                "Laboratório de Propulsão: testes experimentais."
+                              ],
+                              "realWorldApplication": "Otimização de performance em aeronaves turboélices como Caravan ou ATR; diagnóstico de falhas em manutenção (ex.: η_c baixa indica sujeira em pás); previsão de consumo em design de aeronaves regionais."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -35897,7 +35981,8 @@
             "totalSkills": 381
           }
         ],
-        "totalSkills": 381
+        "totalSkills": 381,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-31",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 335
+      "totalAtomicSkills": 335,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 6,
+      "version": "VO-31",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-31"
     },
     "areas": [
       {
@@ -13365,7 +13371,15 @@
                                   "estimatedTime": "45 minutos",
                                   "materials": "Flight manual de glider ou aeronave leve, simulador de voo opcional, software de plotagem (ex: MATLAB ou Python).",
                                   "learningObjective": "Integrar todos os fatores em cálculos práticos de planeio.",
-                                  "commonMistakes": "Não converter unidades consistentemente; superestimar precisão da aproximação sin(γ)≈γ."
+                                  "commonMistakes": "Não converter unidades consistentemente; superestimar precisão da aproximação sin(γ)≈γ.",
+                                  "tips": [
+                                    "Sempre verifique unidades: converta altitude de ft para m e use densidade do ar ISA.",
+                                    "Para TAS, aplique TAS = IAS / √σ, onde σ é a razão de densidades.",
+                                    "Em sensibilidade, use derivação parcial ou tabela de variação para eficiência.",
+                                    "No gráfico ROC vs altitude, inclua curvas para diferentes massas se possível.",
+                                    "Compare com flight manual usando condições idênticas (ex: configuração limpa).",
+                                    "Documente suposições como ângulo de planeio γ pequeno para sin(γ)≈γ."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Para um planador de 600kg a 3000ft (ρ≈1.0 kg/m³), com γ=4° (GR≈14:1), TAS≈45 m/s. ROC = -45 * sin(4°) ≈ -3.14 m/s (-630 ft/min). Aumentando massa para 660kg, TAS≈47 m/s, ROC≈-3.28 m/s, demonstrando piora na taxa de descida.",
@@ -25130,9 +25144,49 @@
                                     "Calcule velocidade de stall em manobra: V_stall_manobra = V_stall_nivelado * sqrt(n).",
                                     "Simule variações: Aumente peso e observe contração do envelope.",
                                     "verification\": "
+                                  ],
+                                  "verification": "Calcule a velocidade de stall em manobra para n=4, dado V_stall_nivelado=60 kt. Explique o impacto de um aumento de 20% no peso W no envelope de voo. (Resposta esperada: V_stall_manobra ≈ 120 kt; envelope contrai, velocidades mín/máx aumentam para mesmo n_lim).",
+                                  "estimatedTime": "25-35 minutos",
+                                  "materials": [
+                                    "Papel e lápis/régua para diagrama V-n",
+                                    "Calculadora",
+                                    "Software de simulação (opcional: MATLAB ou FlightGear)",
+                                    "Referência: diagrama V-n de aeronave leve"
+                                  ],
+                                  "tips": [
+                                    "Use escalas logarítmicas para V se necessário, para melhor visualização.",
+                                    "Lembre-se: n_lim = L_max / W, logo maior W reduz n acessível em baixa V.",
+                                    "Simule com valores reais de aeronave (ex: Cessna 172: W=1100 kg, L_max=1.5W).",
+                                    "Verifique unidades: V em kt ou m/s consistente."
+                                  ],
+                                  "learningObjective": "Compreender e quantificar como o peso (W) da aeronave influencia os limites de fator de carga (n_lim) no envelope de voo (V-n), calculando velocidades de stall em manobras e analisando contrações do envelope com variação de peso.",
+                                  "commonMistakes": [
+                                    "Esquecer o fator sqrt(n) na V_stall_manobra, subestimando velocidades.",
+                                    "Confundir n_lim (de sustentação) com limites estruturais fixos.",
+                                    "Plotar envelope sem curvas de stall, ignorando contração em alto W.",
+                                    "Não considerar n negativo (download) no diagrama."
                                   ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simule em software de dinâmica de voo (ex: X-Plane ou MATLAB) uma manobra de curva com n=2g, medindo variações de velocidade e raio, comparando com o envelope de voo de uma aeronave leve como Cessna 172.",
+                              "finalVerifications": [
+                                "Desenhe o diagrama V-n para uma aeronave com limites +4g/-2g e peso de 2000 kg.",
+                                "Calcule a velocidade máxima de manobra para n=3g, dado V_stall = 50 kt.",
+                                "Explique verbalmente como aumento de peso afeta o envelope de voo."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos cálculos de n e velocidades (40%)",
+                                "Correção e legibilidade dos diagramas V-n e de forças (30%)",
+                                "Compreensão conceitual demonstrada em explicações (20%)",
+                                "Identificação de erros comuns e aplicações reais (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Leis de Newton e equilíbrio de forças.",
+                                "Matemática: Equações quadráticas e raízes quadradas para cálculos de stall.",
+                                "Engenharia Mecânica: Análise de tensões estruturais.",
+                                "Gestão de Segurança: Normas ANAC/EASA para envelopes de voo."
+                              ],
+                              "realWorldApplication": "Uso do envelope de voo por pilotos para evitar sobrecarga estrutural em turbulência ou manobras evasivas, e por projetistas aeronáuticos para certificação de aeronaves conforme FAR/CS-23/25."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -26642,6 +26696,19 @@
                                     "  Usar h_p diretamente sem conversão  ",
                                     "  Unidades inconsistentes (ft vs m)  ",
                                     "  Esquecer g0 padrão ISA  "
+                                  ],
+                                  "verification": "Para h_gp = 1000 m, E_p ≈ 9.80665 kJ/kg. Ajuste para latitude φ=0° deve ser idêntico; para φ=45°, g ≈ 9.798 m/s², E_p ≈ 9.798 kJ/kg.",
+                                  "estimatedTime": "50 minutos",
+                                  "materials": [
+                                    "Calculadora",
+                                    "Tabela g por latitude"
+                                  ],
+                                  "tips": "Divida h_gp por 1000 para km e multiplique g em km/s² se preferir unidades consistentes.",
+                                  "learningObjective": "Calcular E_p com precisão a partir de h_p.",
+                                  "commonMistakes": [
+                                    "Usar h_p diretamente sem conversão",
+                                    "Unidades inconsistentes (ft vs m)",
+                                    "Esquecer g0 padrão ISA"
                                   ]
                                 },
                                 {
@@ -26665,6 +26732,27 @@
                                   "  commonMistakes  ": [
                                     "  Ignorar compressibilidade em altas altitudes  ",
                                     "  Não ajustar para non-standard days  "
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Integrar em Análise de Energia Total",
+                                  "subSteps": [
+                                    "Revise energia específica total: E = E_c + E_p, onde E_c = V²/2.",
+                                    "Combine E_p ajustada com E_c para diagrama de energia.",
+                                    "Simule cenário: aeronave subindo de 0 a 10 km h_p, plote E_p.",
+                                    "Compare com software como AVL ou gráficos manuais.",
+                                    "Teste sensibilidade: ±1 km h_p afeta E_p quanto?"
+                                  ],
+                                  "verification": "Calcule E_p para h_p=5km, compare com valor tabelado (±1% erro).",
+                                  "estimatedTime": "40 minutos",
+                                  "materials": [
+                                    "Gráfico de energia",
+                                    "Software plotter opcional"
+                                  ],
+                                  "tips": "Sempre normalize E por massa para comparações.",
+                                  "learningObjective": "Usar E_p em contexto de desempenho aeronáutico.",
+                                  "commonMistakes": [
+                                    "Ignorar compressibilidade em altas altitudes",
+                                    "Não ajustar para non-standard days"
                                   ]
                                 }
                               ],
@@ -26691,7 +26779,31 @@
                                 "  Meteorologia: Modelos de atmosfera real vs ISA.  ",
                                 "  Programação: Scripts Python para tabelas ISA.  "
                               ],
-                              "  realWorldApplication  ": "  Pilotos e engenheiros de performance usam isso para calcular tetos de serviço, perfis de climb e reservas de energia em planejamento de voo, ajustando altímetros para altitudes de pressão precisas em ATC e evitando stalls por subestimação de E_p.  "
+                              "  realWorldApplication  ": "  Pilotos e engenheiros de performance usam isso para calcular tetos de serviço, perfis de climb e reservas de energia em planejamento de voo, ajustando altímetros para altitudes de pressão precisas em ATC e evitando stalls por subestimação de E_p.  ",
+                              "practicalExample": "Para uma aeronave em altitude de pressão h_p = 8 km (ISA), converta para h_gp ≈ 7.94 km usando fórmula tropo: h_gp = h_p / (1 + 0.06965 * h_p / 2) approx. Então E_p = 9.80665 * 7940 = 77.87 kJ/kg. Verifique com tabela: pressão 35.65 kPa confirma.",
+                              "finalVerifications": [
+                                "Correta conversão h_p=10km para h_gp≈9.90km.",
+                                "E_p calculada com <0.5% erro vs tabela.",
+                                "Explicação verbal da correção geopotencial.",
+                                "Aplicação em climb profile sem erros.",
+                                "Identificação de camada ISA correta.",
+                                "Cálculo sensível a lapse rate."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão numérica nas conversões (±1%).",
+                                "Uso correto de fórmulas e tabelas ISA.",
+                                "Compreensão conceitual demonstrada.",
+                                "Aplicação em cenários reais sem falhas.",
+                                "Identificação e correção de erros comuns.",
+                                "Eficiência temporal nos cálculos."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Gravitação e potencial gravitacional.",
+                                "Matemática: Integração numérica para perfis T(p).",
+                                "Meteorologia: Modelos de atmosfera real vs ISA.",
+                                "Programação: Scripts Python para tabelas ISA."
+                              ],
+                              "realWorldApplication": "Pilotos e engenheiros de performance usam isso para calcular tetos de serviço, perfis de climb e reservas de energia em planejamento de voo, ajustando altímetros para altitudes de pressão precisas em ATC e evitando stalls por subestimação de E_p."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "advanced",
@@ -33731,6 +33843,13 @@
                                   "commonMistakes": [
                                     "Esquecer correção por temperatura off-design",
                                     "Não considerar variação de L/D com Mach"
+                                  ],
+                                  "tips": [
+                                    "Use interpolação bilinear no diagrama SFC-altitude-Mach para precisão",
+                                    "Assuma L/D constante inicialmente, refine com polar de arrasto se disponível",
+                                    "Itere thrust-weight para peso decrescente no cruzeiro longo",
+                                    "Valide resultados com equação de Breguet: Range ≈ (V/SFC) * (L/D) * ln(W_i/W_f)",
+                                    "Considere compressibilidade em Mach > 0.8 para correção de CD0"
                                   ]
                                 },
                                 {
@@ -43902,7 +44021,8 @@
             "totalSkills": 335
           }
         ],
-        "totalSkills": 335
+        "totalSkills": 335,
+        "percentage": 0
       }
     ]
   }

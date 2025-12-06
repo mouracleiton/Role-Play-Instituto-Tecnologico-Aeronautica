@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TC-42",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 229
+      "totalAtomicSkills": 229,
+      "startDate": "2025-03-03",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "TC-42",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TC-42"
     },
     "areas": [
       {
@@ -15026,7 +15032,9 @@
                                     "Gerar primos muito pequenos para RSA moderno",
                                     "Não verificar se p e q são distintos",
                                     "Subestimar k necessário para segurança"
-                                  ]
+                                  ],
+                                  "verification": "Gere e exiba um primo de 1024 bits e n RSA; confirme com ferramenta externa (ex: openssl prime).",
+                                  "estimatedTime": "2 horas"
                                 }
                               ],
                               "practicalExample": "Implemente Miller-Rabin para testar se n = 2**64 - 59 (um primo conhecido de 64 bits) é primo com k=20 testemunhas aleatórias. Em seguida, tente enganar com n=561 e mostre que é detectado como composto após poucas testemunhas.",
@@ -20450,7 +20458,8 @@
                                   "materials": "Python com pow() para RSA, bibliotecas como pycryptodome para chaves, script Jupyter.",
                                   "tips": "Use chaves RSA-1024 para simulação prática; limite iterações para demo.",
                                   "learningObjective": "Demonstrar praticamente como modificações no ciphertext vazam informações via oráculo.",
-                                  "commonMistakes": "Implementar oráculo que vaza mensagem em vez de só validar padding; usar padding seguro por engano."
+                                  "commonMistakes": "Implementar oráculo que vaza mensagem em vez de só validar padding; usar padding seguro por engano.",
+                                  "verification": "Execute o script completo e verifique nos logs se os primeiros bytes da mensagem secreta (ex: 'CTF{') são recuperados corretamente após ~2^16 iterações. Confirme que o oráculo retorna apenas 'válido' ou 'inválido' sem expor a mensagem decifrada."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -21486,6 +21495,13 @@
                                     "Ordenar crescente em vez de decrescente",
                                     "Incluir letras com zero ocorrências",
                                     "Erros em empates"
+                                  ],
+                                  "tips": [
+                                    "Use uma planilha para facilitar: crie colunas 'Letra' e 'Contagem', filtre >0 e ordene pela contagem (decrescente).",
+                                    "Para empates, ordene secundariamente por letra (A-Z). Exemplo: funções SORT com múltiplas colunas.",
+                                    "Dica rápida: decrescente = Z-A nos números (maior para menor).",
+                                    "Top 10: selecione apenas as 10 primeiras após ordenar.",
+                                    "Gráfico de barras: eixo Y=letras, X=contagem; rotule bem os eixos."
                                   ]
                                 },
                                 {
@@ -30199,7 +30215,8 @@
             "totalSkills": 229
           }
         ],
-        "totalSkills": 229
+        "totalSkills": 229,
+        "percentage": 0
       }
     ]
   }

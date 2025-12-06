@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-83",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 233
+      "totalAtomicSkills": 233,
+      "startDate": "2025-02-10",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-v1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-83"
     },
     "areas": [
       {
@@ -4808,9 +4814,66 @@
                                     "Jornalismo Ético (análise de fontes e viés)",
                                     "Cidadania Global (debate de narrativas midiáticas)"
                                   ],
-                                  "realWorldApplication": "Habilita acompanhar e analisar como a imprensa internacional retrata o Brasil, essencial para profissionais em diplomacia, jornalismo ou negócios internacionais, fomentando pensamento crítico e multilinguismo na era digital."
+                                  "realWorldApplication": "Habilita acompanhar e analisar como a imprensa internacional retrata o Brasil, essencial para profissionais em diplomacia, jornalismo ou negócios internacionais, fomentando pensamento crítico e multilinguismo na era digital.",
+                                  "stepNumber": 3,
+                                  "title": "Análise Prática de Artigo Jornalístico Internacional",
+                                  "subSteps": [
+                                    "Selecione e leia o artigo 'Brazil's Lula returns to power amid polarization' da BBC News (2023).",
+                                    "Anota vocabulário novo (ex: 'polarization', 'bolster') com definições e exemplos de uso.",
+                                    "Identifique argumentos principais sobre estabilidade política, evidências de eleições e viés na cobertura.",
+                                    "Resuma o artigo em 150 palavras, destacando pontos chave."
+                                  ],
+                                  "verification": [
+                                    "Anotações de pelo menos 5 vocábulos com definições corretas.",
+                                    "Lista de 3 argumentos com evidências identificadas.",
+                                    "Resumo inicial de 50 palavras compartilhado em grupo."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Artigo da BBC News (2023): 'Brazil's Lula returns to power amid polarization' (acesso online).",
+                                    "Dicionário inglês-português ou app como Cambridge Dictionary.",
+                                    "Caderno ou documento digital para anotações."
+                                  ],
+                                  "tips": [
+                                    "Leia o artigo duas vezes: primeira para compreensão geral, segunda para detalhes.",
+                                    "Use contexto para inferir significados de vocábulos antes de consultar dicionário.",
+                                    "Compare frases do artigo com eventos reais brasileiros para detectar viés.",
+                                    "Estruture o resumo: introdução, corpo (argumentos) e conclusão."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de ler e analisar criticamente um artigo jornalístico em inglês avançado sobre política brasileira, anotando vocabulário relevante, identificando argumentos e evidências, e produzindo um resumo conciso.",
+                                  "commonMistakes": [
+                                    "Traduzir palavra por palavra em vez de compreender no contexto.",
+                                    "Ignorar evidências factuais e focar apenas em opiniões.",
+                                    "Resumo com cópia direta do texto (plágio).",
+                                    "Não relacionar o conteúdo com conhecimentos prévios sobre o Brasil.",
+                                    "Análise superficial de viés sem justificativa."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Selecione o artigo 'Brazil's Lula returns to power amid polarization' da BBC News (2023). Anote vocabulário como 'polarization' e 'bolster', identifique argumentos sobre estabilidade política, evidências de eleições e viés neutro na cobertura brasileira. Resuma em 150 palavras.",
+                              "finalVerifications": [
+                                "Resumo preciso do artigo em 100-150 palavras sem consulta.",
+                                "Explicação oral de 3 argumentos principais e suas evidências.",
+                                "Lista de 10 vocábulos novos usados corretamente em frases próprias.",
+                                "Identificação de viés ou omissões na cobertura brasileira.",
+                                "Discussão crítica: 'O artigo reflete realidade brasileira?'."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e completude das anotações de vocabulário (80% correto).",
+                                "Identificação exata de argumentos e evidências (mínimo 3 por categoria).",
+                                "Profundidade da análise crítica de viés e cobertura (evidências justificadas).",
+                                "Fluência no resumo e síntese (linguagem clara, sem erros graves).",
+                                "Uso efetivo de estrutura textual para compreensão global.",
+                                "Aplicação de conhecimento prévio ao contexto brasileiro."
+                              ],
+                              "crossCurricularConnections": [
+                                "Língua Inglesa (vocabulário e leitura avançada)",
+                                "História Contemporânea (eventos políticos brasileiros)",
+                                "Geopolítica (visão internacional do Brasil)",
+                                "Jornalismo Ético (análise de fontes e viés)",
+                                "Cidadania Global (debate de narrativas midiáticas)"
+                              ],
+                              "realWorldApplication": "Habilita acompanhar e analisar como a imprensa internacional retrata o Brasil, essencial para profissionais em diplomacia, jornalismo ou negócios internacionais, fomentando pensamento crítico e multilinguismo na era digital."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -30050,7 +30113,8 @@
             "totalSkills": 233
           }
         ],
-        "totalSkills": 233
+        "totalSkills": 233,
+        "percentage": 0
       }
     ]
   }

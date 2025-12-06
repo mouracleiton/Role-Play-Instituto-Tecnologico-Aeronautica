@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RA-39",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 302
+      "totalAtomicSkills": 302,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "RA-39",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RA-39"
     },
     "areas": [
       {
@@ -40400,7 +40406,8 @@
             "totalSkills": 302
           }
         ],
-        "totalSkills": 302
+        "totalSkills": 302,
+        "percentage": 0
       }
     ]
   }

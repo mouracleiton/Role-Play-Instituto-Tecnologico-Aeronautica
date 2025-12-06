@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RA-46",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 311
+      "totalAtomicSkills": 311,
+      "startDate": "2025-02-10",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "RA-46",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RA-46"
     },
     "areas": [
       {
@@ -5413,7 +5419,32 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um país emergente, para smartphones premium, um aumento de 10% na renda média familiar resulta em 18% mais unidades demandadas (E_r=1.8 >1, bem de luxo: curva desloca muito à direita). Para arroz básico, +10% renda leva a +4% demanda (E_r=0.4 <1, necessário: deslocamento pequeno). Para macarrão instantâneo em lares pobres, +10% renda causa -6% demanda (E_r=-0.6 <0, inferior: deslocamento à esquerda). Gráficos mostram curvas D0 para D1 com magnitudes proporcionais a E_r."
+                                  "practicalExample": "Em um país emergente, para smartphones premium, um aumento de 10% na renda média familiar resulta em 18% mais unidades demandadas (E_r=1.8 >1, bem de luxo: curva desloca muito à direita). Para arroz básico, +10% renda leva a +4% demanda (E_r=0.4 <1, necessário: deslocamento pequeno). Para macarrão instantâneo em lares pobres, +10% renda causa -6% demanda (E_r=-0.6 <0, inferior: deslocamento à esquerda). Gráficos mostram curvas D0 para D1 com magnitudes proporcionais a E_r.",
+                                  "stepNumber": 4,
+                                  "title": "Exemplo Prático: Elasticidade-Renda da Demanda",
+                                  "subSteps": [
+                                    "Leia o exemplo fornecido sobre smartphones premium, arroz básico e macarrão instantâneo em diferentes contextos econômicos.",
+                                    "Identifique o valor da elasticidade-renda (E_r) para cada bem e classifique-os (luxo, necessário ou inferior).",
+                                    "Desenhe as curvas de demanda iniciais (D0) e deslocadas (D1) para cada caso, destacando a magnitude do deslocamento proporcional ao |E_r|.",
+                                    "Compare os deslocamentos: grande à direita para luxo, pequeno à direita para necessário e à esquerda para inferior."
+                                  ],
+                                  "verification": "Responda: Para um bem inferior, qual a direção do deslocamento da curva de demanda com aumento de renda? Desenhe um gráfico simples confirmando E_r = -0.6.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e caneta para esboçar gráficos",
+                                    "Acesso ao exemplo textual fornecido"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: E_r > 1 (luxo: deslocamento grande à direita); 0 < E_r < 1 (necessário: pequeno à direita); E_r < 0 (inferior: à esquerda).",
+                                    "Use setas nos gráficos para indicar direção e magnitude do deslocamento.",
+                                    "Considere o contexto socioeconômico (país emergente, lares pobres) para realismo."
+                                  ],
+                                  "learningObjective": "Compreender e ilustrar graficamente como diferentes valores de elasticidade-renda (E_r) causam deslocamentos na curva de demanda, diferenciando bens de luxo, necessários e inferiores.",
+                                  "commonMistakes": [
+                                    "Confundir deslocamento da curva (devido a renda) com movimento ao longo da curva (devido a preço).",
+                                    "Ignorar o sinal negativo para bens inferiores, desenhando deslocamento na direção errada.",
+                                    "Não proporcionalizar a magnitude do deslocamento ao valor absoluto de E_r."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -5422,6 +5453,40 @@
                                     "Explicar verbalmente por que E_r<0 ocorre em bens inferiores.",
                                     "Prever qualitativamente impacto de recessão em três tipos de bens.",
                                     "Identificar limitações de E_r em uma declaração hipotética."
+                                  ],
+                                  "stepNumber": 46,
+                                  "title": "Elasticidade-Renda da Demanda: Classificação e Aplicações",
+                                  "subSteps": [
+                                    "Estudar a definição de elasticidade-renda: E_r = (%ΔQ_d / %ΔY).",
+                                    "Classificar tipos de bens: luxo (E_r > 1), normal necessário (0 < E_r < 1), inferior (E_r < 0).",
+                                    "Analisar deslocamentos da curva de demanda para variações de renda.",
+                                    "Explorar bens inferiores e o efeito na demanda durante recessões.",
+                                    "Discutir limitações do conceito de elasticidade-renda."
+                                  ],
+                                  "verification": [
+                                    "Classificar corretamente um bem dado E_r (ex: E_r=1.2 = luxo).",
+                                    "Desenhar deslocamento correto da curva para E_r=-0.4 e renda ↑.",
+                                    "Explicar verbalmente por que E_r<0 ocorre em bens inferiores.",
+                                    "Prever qualitativamente impacto de recessão em três tipos de bens.",
+                                    "Identificar limitações de E_r em uma declaração hipotética."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - RA-46 (seção de Microeconomia).",
+                                    "Slides ou videoaula sobre elasticidades da demanda.",
+                                    "Exercícios práticos de classificação de bens."
+                                  ],
+                                  "tips": [
+                                    "Use exemplos reais: pão (necessário), joias (luxo), carne barata (inferior).",
+                                    "Desenhe sempre as curvas para visualizar deslocamentos.",
+                                    "Pratique cálculos numéricos para fixar a interpretação."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de classificar bens com base na elasticidade-renda, interpretar deslocamentos de curvas de demanda e prever impactos econômicos qualitativos.",
+                                  "commonMistakes": [
+                                    "Confundir elasticidade-renda com elasticidade-preço.",
+                                    "Ignorar a direção do deslocamento para bens inferiores (esquerda quando renda aumenta).",
+                                    "Classificar incorretamente bens Giffen como apenas inferiores sem contexto.",
+                                    "Não considerar limitações como pressupostos de ceteris paribus."
                                   ]
                                 },
                                 {
@@ -5431,6 +5496,36 @@
                                     "Qualidade dos gráficos: direção, magnitude e rótulos (25%).",
                                     "Uso de exemplos reais e contraintuitivos (15%).",
                                     "Síntese integrada sem erros comuns (10%)."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Análise do Erro Relativo: Sinal, Magnitude e Representação Gráfica",
+                                  "subSteps": [
+                                    "Definir o erro relativo E_r e discutir o significado de seu sinal (positivo: superestimação; negativo: subestimação).",
+                                    "Interpretar magnitudes: |E_r| > 1 (erro dominante), |E_r| = 1, 0 < |E_r| < 1 (erro aceitável), |E_r| < 0 (impossível, mas verificar convenções).",
+                                    "Construir gráficos vetoriais ou barras mostrando direção, magnitude e incluir rótulos completos (eixos, legendas, unidades).",
+                                    "Selecionar e analisar exemplos reais e contraintuitivos (ex.: erro em medições astronômicas ou propagação em engenharia).",
+                                    "Realizar síntese integrada dos conceitos, evitando erros comuns como confusão entre erro absoluto e relativo."
+                                  ],
+                                  "verification": "Submissão de relatório com definição, interpretações, gráficos e síntese, avaliado pelos critérios de assessmentCriteria.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel quadriculado ou software de graficação (GeoGebra, Excel ou Python/Matplotlib).",
+                                    "Calculadora científica.",
+                                    "Dados experimentais reais (ex.: medições de comprimento, massa ou experimentos de física básica)."
+                                  ],
+                                  "tips": [
+                                    "Sempre inclua o sinal de E_r nos cálculos e gráficos para capturar direção do erro.",
+                                    "Use escalas logarítmicas em gráficos para melhor visualização de magnitudes variadas.",
+                                    "Busque exemplos contraintuitivos onde E_r pequeno leva a grandes discrepâncias práticas.",
+                                    "Verifique rótulos: eixos com unidades, legenda clara e título descritivo."
+                                  ],
+                                  "learningObjective": "Compreender e interpretar o sinal e a magnitude do erro relativo E_r, representá-lo graficamente com precisão e aplicá-lo em exemplos reais e contraintuitivos, sintetizando conceitos sem erros comuns.",
+                                  "commonMistakes": [
+                                    "Ignorar o sinal de E_r, focando apenas no módulo.",
+                                    "Má interpretação de magnitudes (ex.: considerar |E_r| >1 como 'normal').",
+                                    "Gráficos incompletos: falta de rótulos, escalas erradas ou direção omitida.",
+                                    "Exemplos genéricos ou não contraintuitivos, sem conexão real.",
+                                    "Síntese superficial com repetição de erros como confusão entre E_a e E_r."
                                   ]
                                 },
                                 {
@@ -5440,12 +5535,87 @@
                                     "Geografia Econômica: Variações regionais de E_r por PIB per capita.",
                                     "Sociologia: Mudanças em padrões de consumo com mobilidade social.",
                                     "Finanças Pessoais: Planejamento orçamentário considerando elasticidades."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Cálculo e Interpretação da Elasticidade-Renda (E_r)",
+                                  "subSteps": [
+                                    "1. Entenda a fórmula: E_r = (∂Q/∂Y) * (Y/Q), onde ∂Q/∂Y é a derivada parcial da quantidade demandada em relação à renda.",
+                                    "2. Colete dados empíricos de Q (quantidade) e Y (renda) para um bem específico.",
+                                    "3. Estime ∂Q/∂Y via regressão linear simples ou múltipla (usando ferramentas estatísticas).",
+                                    "4. Calcule E_r e interprete: E_r > 1 (bem de luxo), 0 < E_r < 1 (bem necessário), E_r < 0 (bem inferior).",
+                                    "5. Analise implicações em contextos regionais e sociais."
+                                  ],
+                                  "verification": "Forneça um conjunto de dados (ex: Q = [100,120], Y = [5000,6000]) e peça ao aluno para calcular E_r, interpretá-lo e classificá-lo. Verifique se E_r ≈ 2 (luxo).",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Planilha Excel ou Google Sheets com dados de Q e Y",
+                                    "Software estatístico (Excel, R ou Python para regressão)",
+                                    "Calculadora gráfica para derivadas"
+                                  ],
+                                  "tips": [
+                                    "Use modelo log-log (ln Q = a + b ln Y) onde b ≈ E_r para simplificação.",
+                                    "Considere variações regionais por PIB per capita (Geografia Econômica).",
+                                    "Integre com planejamento orçamentário pessoal (Finanças)."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de calcular a elasticidade-renda (E_r) empiricamente, interpretá-la e relacioná-la a contextos interdisciplinares como matemática, estatística e ciências sociais.",
+                                  "commonMistakes": [
+                                    "Confundir E_r com elasticidade-preço (E_p), ignorando a variável renda.",
+                                    "Esquecer a normalização (Y/Q), resultando em valores absolutos errados.",
+                                    "Interpretar E_r < 0 como 'necessário' em vez de 'inferior'.",
+                                    "Não tratar heterocedasticidade ou multicolinearidade na regressão."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Empresas como Apple usam E_r >1 para mercados de alta renda, expandindo produção em booms econômicos; governos preveem demanda por subsídios em bens inferiores durante recessões, ajustando políticas públicas como vale-alimentação para itens necessários (E_r <1)."
+                                  "realWorldApplication": "Empresas como Apple usam E_r >1 para mercados de alta renda, expandindo produção em booms econômicos; governos preveem demanda por subsídios em bens inferiores durante recessões, ajustando políticas públicas como vale-alimentação para itens necessários (E_r <1).",
+                                  "stepNumber": 5,
+                                  "title": "Aplicações no Mundo Real da Elasticidade-Renda",
+                                  "subSteps": [
+                                    "Analise o exemplo da Apple: bens de luxo com E_r > 1 em expansões econômicas.",
+                                    "Estude o uso governamental: previsão de demanda por bens inferiores (E_r < 1) em recessões para políticas de subsídios.",
+                                    "Discuta como empresas e governos utilizam E_r para decisões estratégicas."
+                                  ],
+                                  "verification": "Explique por que governos aumentam subsídios para bens inferiores durante recessões e dê um exemplo de bem com E_r > 1 usado por empresas como a Apple.",
+                                  "estimatedTime": "10 minutos",
+                                  "materials": [
+                                    "Texto de aplicação real fornecido",
+                                    "Gráficos de ciclos econômicos (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Diferencie E_r de elasticidade-preço: E_r mede variação com renda, não preço.",
+                                    "Considere contextos econômicos: booms vs. recessões afetam demandas diferentemente.",
+                                    "Use exemplos locais: vale-gás ou programas como Bolsa Família no Brasil."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de identificar e aplicar conceitos de elasticidade-renda (E_r) em cenários empresariais e de políticas públicas reais.",
+                                  "commonMistakes": [
+                                    "Confundir bens normais (E_r > 0) com bens de luxo (E_r > 1).",
+                                    "Ignorar o sinal de E_r para bens inferiores (negativo).",
+                                    "Aplicar E_r sem considerar o estágio do ciclo econômico."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um país emergente, para smartphones premium, um aumento de 10% na renda média familiar resulta em 18% mais unidades demandadas (E_r=1.8 >1, bem de luxo: curva desloca muito à direita). Para arroz básico, +10% renda leva a +4% demanda (E_r=0.4 <1, necessário: deslocamento pequeno). Para macarrão instantâneo em lares pobres, +10% renda causa -6% demanda (E_r=-0.6 <0, inferior: deslocamento à esquerda). Gráficos mostram curvas D0 para D1 com magnitudes proporcionais a E_r.",
+                              "finalVerifications": [
+                                "Classificar corretamente um bem dado E_r (ex: E_r=1.2 = luxo).",
+                                "Desenhar deslocamento correto da curva para E_r=-0.4 e renda ↑.",
+                                "Explicar verbalmente por que E_r<0 ocorre em bens inferiores.",
+                                "Prever qualitativamente impacto de recessão em três tipos de bens.",
+                                "Identificar limitações de E_r em uma declaração hipotética."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na definição e sinal de E_r (20%).",
+                                "Correta interpretação de magnitudes >1, =1, <1, <0 (30%).",
+                                "Qualidade dos gráficos: direção, magnitude e rótulos (25%).",
+                                "Uso de exemplos reais e contraintuitivos (15%).",
+                                "Síntese integrada sem erros comuns (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo de derivadas parciais e percentuais (∂Q/∂Y * Y/Q).",
+                                "Estatística: Regressão linear para estimar E_r empiricamente.",
+                                "Geografia Econômica: Variações regionais de E_r por PIB per capita.",
+                                "Sociologia: Mudanças em padrões de consumo com mobilidade social.",
+                                "Finanças Pessoais: Planejamento orçamentário considerando elasticidades."
+                              ],
+                              "realWorldApplication": "Empresas como Apple usam E_r >1 para mercados de alta renda, expandindo produção em booms econômicos; governos preveem demanda por subsídios em bens inferiores durante recessões, ajustando políticas públicas como vale-alimentação para itens necessários (E_r <1)."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -40160,7 +40330,8 @@
             "totalSkills": 311
           }
         ],
-        "totalSkills": 311
+        "totalSkills": 311,
+        "percentage": 0
       }
     ]
   }

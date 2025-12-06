@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-08",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 324
+      "totalAtomicSkills": 324,
+      "startDate": "2025-03-01",
+      "duration": 5,
+      "dailyStudyHours": 8,
+      "version": "2025-01",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-08"
     },
     "areas": [
       {
@@ -23929,7 +23935,10 @@
                                     "Dados estatísticos (INPE PRODES, Global Forest Watch)",
                                     "Artigos acadêmicos sobre a política escolhida"
                                   ],
-                                  "Ferramentas de análise (Excel para gráficos)": "tips: "
+                                  "Ferramentas de análise (Excel para gráficos)": "tips: ",
+                                  "tips": "Utilize funções de agregação no Excel (como SOMAR.SÍNTESE e MÉDIA) para resumir grandes conjuntos de dados; cruze sempre fontes estatísticas com estudos de caso qualitativos para análise integrada; documente metodicamente vieses potenciais nas entrevistas; aplique o quadro da bioética de Potter em etapas claras (Descrição, Prescrição, Valoração); utilize gráficos de tendência e comparação para visualizar evolução temporal dos indicadores.",
+                                  "learningObjective": "Avaliar criticamente a eficácia de políticas públicas mediante análise integrada de dados quantitativos e qualitativos, identificando condicionantes sociais e aplicando princípios bioéticos, para atribuir uma pontuação justificada de eficácia com base em critérios pré-definidos.",
+                                  "commonMistakes": "Concentrar-se exclusivamente em dados quantitativos sem analisar dimensões qualitativas; negligenciar o impacto de fatores sociais (corrupção, lobby) na implementação da política; aplicar de forma superficial o quadro bioético de Potter sem conectar com os dados analisados; atribuir pontuações baseadas em opiniões subjetivas ao invés de critérios objetivos; cometer erros na manipulação de dados no Excel que geram gráficos misllevados (ex: escalas inapropriadas, seleção incompleta de dados)."
                                 },
                                 "Compare com políticas semelhantes em outros países para benchmark.",
                                 "learningObjective: "
@@ -23953,7 +23962,12 @@
                               ],
                               "tips": "Use linguagem acessível para simular relatório a tomadores de decisão.",
                               "learningObjective": "Sintetizar análise em recomendações acionáveis e éticas.",
-                              "commonMistakes": "Ignorar bioética; recomendações genéricas sem base na análise."
+                              "commonMistakes": "Ignorar bioética; recomendações genéricas sem base na análise.",
+                              "practicalExample": "Análise do Código Florestal Brasileiro (2012) usando os princípios de bioética de Potter: estudantes mapeiam conflitos entre preservação de áreas de preservação permanente e demandas agrícolas, avaliando impactos em comunidades tradicionais.",
+                              "finalVerifications": "Apresentação oral do relatório final com defesa das recomendações perante um painel simulado de políticos e ONGs, seguida de avaliação por pares usando rubrica pré-definida.",
+                              "assessmentCriteria": "Domínio teórico (20%), precisão descritiva (25%), rigor analítico (30%), viabilidade das recomendações (15%) e clareza de comunicação (10%).",
+                              "crossCurricularConnections": "Ciência de Dados (análise de indicadores), Filosofia (bioética), Economia (análise de custo-benefício), Política Pública (design de políticas), Geografia (cenários climáticos).",
+                              "realWorldApplication": "Desenvolvimento de um briefing para consultoria ambiental, preparando estudantes para estágios em agências reguladoras como IBAMA ou consultorias sustentáveis."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -41103,7 +41117,8 @@
             "totalSkills": 324
           }
         ],
-        "totalSkills": 324
+        "totalSkills": 324,
+        "percentage": 100
       }
     ]
   }

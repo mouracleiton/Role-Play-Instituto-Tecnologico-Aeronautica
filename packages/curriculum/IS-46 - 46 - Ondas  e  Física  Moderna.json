@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-46",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 268
+      "totalAtomicSkills": 268,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-46"
     },
     "areas": [
       {
@@ -5765,6 +5771,24 @@
                                     "Compare com resistor: em R, I em fase com V; em C, defasado.",
                                     "Desenhe fasores ou gráficos de V(t) e I(t) para visualização.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Calcule I₀ para valores específicos de ω, C e V₀ e explique por que a corrente antecede a tensão em 90° usando a relação entre cos e sen",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Fórmula básica de corrente em capacitores",
+                                    "Gráficos de senoidais",
+                                    "Ferramenta de simulação de circuitos (ex: Falstad)",
+                                    "Calculadora científica",
+                                    "Folha de exercícios com valores numéricos"
+                                  ],
+                                  "tips": "Foque na relação matemática entre V(t) = V₀ cos(ωt) e I(t) = I₀ sin(ωt); utilize representação de fasores com ângulo -90°; compare sempre com o caso do resistor para destacar a defasagem; lembre que 'corrente de deslocamento' é um conceito conceitual, não envolve movimento real de cargas",
+                                  "learningObjective": "Compreender a relação matemática entre amplitude de corrente e tensão em capacitores, identificar a defasagem de fase de 90° (corrente antecedendo tensão), interpretar fisicamente a corrente de deslocamento e comparar o comportamento com o de resistores",
+                                  "commonMistakes": [
+                                    "Confundir defasagem de capacitor (corrente lidera) com indutor (corrente atrasa)",
+                                    "Esquecer que I₀ = ωCV₀ depende da frequência",
+                                    "Interpretar corrente de deslocamento como movimento físico de cargas",
+                                    "Utilizar o mesmo ângulo de fase que em resistores ou indutores",
+                                    "Desconsiderar a relação entre cos e sen ao converter entre tensão e corrente"
                                   ]
                                 },
                                 "verification: "
@@ -5790,7 +5814,23 @@
                                 "Discuta reatância capacitiva X_C = 1/(ωC) e |Z| = X_C.",
                                 "Simule ou pense em circuito RC: como capacitor afeta filtro passa-baixas.",
                                 "Conclua: capacitor passa altas frequências (alta ω → alta I)."
-                              ]
+                              ],
+                              "practicalExample": "Cálculo numérico com C = 10 μF, V₀ = 10 V, f = 50 Hz: determinar I₀ = ωCV₀ ≈ 0.628 A, escrever I(t) = 0.628 sin(314t) A, simular circuito RC no Falstad para observar resposta em filtro passa-baixas e verificar que o capacitor permite passagem de sinais de alta frequência.",
+                              "finalVerifications": "1) Confirmar numericamente que I₀ = ωCV₀ com os valores dados. 2) Verificar a defasagem de 90° entre V(t) e I(t) nos gráficos. 3) Demonstrar que X_C = 1/(ωC) ≈ 3.18 kΩ. 4) Explicar como o capacitor atenua sinais de baixa frequência em um filtro RC.",
+                              "assessmentCriteria": [
+                                "Cálculo preciso de amplitude de corrente e reatância capacitiva",
+                                "Interpretação correta da defasagem de fase (90°) entre tensão e corrente",
+                                "Explicação clara da dependência de frequência (I ∝ ω)",
+                                "Análise qualitativa do comportamento do capacitor em filtros AC",
+                                "Uso adequado de unidades e conversões (F, μF, rad/s)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Lei de Maxwell e campo elétrico variável (corrente de deslocamento)",
+                                "Cálculo: Derivação de funções trigonométricas e aplicação da regra da cadeia",
+                                "Engenharia Elétrica: Projeto de filtros RC, análise de circuitos no domínio do tempo e frequência",
+                                "Matemática: Representação de sinais periódicos com fasores e séries de Fourier"
+                              ],
+                              "realWorldApplication": "Filtros de linha de alimentação em fontes PSU de computadores (rejeição de ruído DC), circuitos de sintonização em rádios FM/AM (seleção de frequência via XC), sensores capacitivos em sistemas de toque sem contato, circuitos de flash em câmeras (armazenamento e liberação rápida de energia)."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -10079,9 +10119,66 @@
                                     "Engenharia: Design de antenas (dimensões baseadas em λ/4).",
                                     "Informática: Frequências em redes sem fio (WiFi, 5G)."
                                   ],
-                                  "realWorldApplication": "Em telecomunicações, dimensiona antenas para comprimentos de onda específicos (ex: celular em GHz → cm); em medicina, lasers com λ em nm para cirurgias; em astronomia, analisa espectros estelares para composição química."
+                                  "realWorldApplication": "Em telecomunicações, dimensiona antenas para comprimentos de onda específicos (ex: celular em GHz → cm); em medicina, lasers com λ em nm para cirurgias; em astronomia, analisa espectros estelares para composição química.",
+                                  "stepNumber": 5,
+                                  "title": "Conversão entre Frequência e Comprimento de Onda em Diferentes Regiões do Espectro Eletromagnético",
+                                  "subSteps": [
+                                    "Aplicar a fórmula fundamental c = f λ com manipulação adequada de unidades",
+                                    "Converter 100 MHz (rádio FM) para λ em cm e verificar bidirecionalmente",
+                                    "Converter 2.4 GHz (WiFi) para λ em cm e validar resultado",
+                                    "Calcular frequência para λ = 500 nm (luz verde) em THz",
+                                    "Determinar λ para 10 THz (infravermelho) em μm",
+                                    "Realizar conversões bidirecionais para pelo menos 3 exemplos diferentes"
+                                  ],
+                                  "verification": "Confirmação através de cálculos bidirecionais (f → λ e λ → f) com tolerância de ±0.1%, cruzando resultados com valores esperados para cada região do espectro",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabela de prefixos métricos",
+                                    "Valor da velocidade da luz (c = 3 × 10⁸ m/s)",
+                                    "Exemplos práticos de aplicações (telecomunicações, astronomia, medicina)",
+                                    "Lista de regiões do espectro eletronmagnético"
+                                  ],
+                                  "tips": [
+                                    "Sempre converter todas as unidades para o mesmo sistema antes do cálculo",
+                                    "Utilizar notação científica para evitar erros de exponenciais",
+                                    "Verificar resultados inversamente (se f → λ está correto, então λ → f deve coincidir)",
+                                    "ConsultAR a tabela de prefixos para conversões rápidas entre Hz, kHz, MHz, GHz, THz",
+                                    "Aplicar o conhecimento em contextos reais para maior retenção"
+                                  ],
+                                  "learningObjective": "Dominar a conversão precisa e bidirecional entre frequência e comprimento de onda em diferentes unidades e regiões do espectro eletronmagnético, utilizando a relação c = f λ com manejo adequado de notação científica",
+                                  "commonMistakes": [
+                                    "Esquecer de converter unidades de frequência (ex: MHz para Hz) antes do cálculo",
+                                    "Confundir os prefixos métricos (ex: GHz com Hz)",
+                                    "Negligenciar a verificação bidirecional dos resultados",
+                                    "Aplicar a fórmula de forma inversa sem ajuste adequado",
+                                    "Cometer erros de arredondamento que afetam a precisão (±0.1%)"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Converta 2.4 GHz (WiFi) para λ em cm: f = 2.4 × 10^9 Hz, λ = (3 × 10^8 m/s) / (2.4 × 10^9 Hz) ≈ 0.125 m = 12.5 cm. Verificação: f = c / λ = 3e8 / 0.125 = 2.4e9 Hz (correto).",
+                              "finalVerifications": [
+                                "Converte 500 MHz (rádio FM) para λ em metros (deve ser 0.6 m).",
+                                "Calcula f para λ = 620 nm (vermelho) em THz (~484 THz).",
+                                "Verifica consistência para λ = 0.1 mm (micro-ondas) em GHz (~3 GHz).",
+                                "Converte 5 fs (tempo de período) para f em Hz (2 × 10^14 Hz) e λ em nm (2000 nm).",
+                                "Executa conversão bidirecional para 1.5 μm (infravermelho) verificando f ≈ 200 THz."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nas conversões de unidades (±0.5%).",
+                                "Uso correto da fórmula c = f λ com c = 2.998 × 10^8 m/s.",
+                                "Verificação bidirecional realizada para todos os exemplos.",
+                                "Aplicação correta em pelo menos três regiões distintas do espectro EM.",
+                                "Domínio fluente de notação científica e prefixos SI."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Manipulação de potências de dez e operações com expoentes.",
+                                "Física Aplicada: Projeto de sistemas de comunicação sem fio.",
+                                "Biomedicina: Utilização de lasers em cirurgias (precisão de λ em nm).",
+                                "Astronomia: Interpretação de espectros estelares para determinação de composição.",
+                                "Engenharia Elétrica: Design de circuitos de micro-ondas."
+                              ],
+                              "realWorldApplication": "Em redes 5G, engenheiros calculam λ para frequências de 26 GHz para projetar antenas com dimensões de centímetros; em medicina, lasers de 355 nm são usados em litotripsia para dissolver cálculos renais; telescópios espaciais analisam deslocamento Doppler de linhas de emissão em nm para estudar movimento de galáxias."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -27108,7 +27205,38 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Para um elétron confinado em uma caixa de L = 1 nm: Δx ≈ L/(2√3) ≈ 2.89 × 10^{-10} m, Δp ≈ (π ℏ)/(2 L) ≈ 1.04 × 10^{-24} kg m/s, produto ≈ 3.01 × 10^{-34} J s > ℏ/2. Para gaussiano com σ = 1 nm: Δx = 10^{-9} m, Δp = ℏ/(2σ) ≈ 5.27 × 10^{-26} kg m/s, produto = ℏ/2 exatamente."
+                                  "practicalExample": "Para um elétron confinado em uma caixa de L = 1 nm: Δx ≈ L/(2√3) ≈ 2.89 × 10^{-10} m, Δp ≈ (π ℏ)/(2 L) ≈ 1.04 × 10^{-24} kg m/s, produto ≈ 3.01 × 10^{-34} J s > ℏ/2. Para gaussiano com σ = 1 nm: Δx = 10^{-9} m, Δp = ℏ/(2σ) ≈ 5.27 × 10^{-26} kg m/s, produto = ℏ/2 exatamente.",
+                                  "stepNumber": 5,
+                                  "title": "Aplicando o Princípio da Incerteza de Heisenberg: Caixa de Partícula e Pacote Gaussiano",
+                                  "subSteps": [
+                                    "Calcular Δx para o elétron confinado em uma caixa de largura L = 1 nm usando Δx ≈ L/(2√3)",
+                                    "Determinar Δp para o mesmo sistema utilizando Δp ≈ (π ℏ)/(2 L)",
+                                    "Calcular o produto Δx·Δp e compará-lo com ℏ/2 para verificar a incerteza",
+                                    "Repetir os cálculos para um pacote de onda gaussiano com desvio padrão σ = 1 nm",
+                                    "Comparar os resultados dos dois modelos e analisar as diferenças observadas"
+                                  ],
+                                  "verification": "Comparar os valores numéricos obtidos com os resultados fornecidos no exemplo e confirmar se o produto Δx·Δp satisfaz a desigualdade de Heisenberg (Δx·Δp ≥ ℏ/2)",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Fórmulas do princípio da incerteza de Heisenberg",
+                                    "Valor da constante reduzida ℏ (1,0545718 × 10⁻³⁴ J·s)",
+                                    "Calculadora científica",
+                                    "Folha de cálculo ou papel e caneta"
+                                  ],
+                                  "tips": [
+                                    "Utilizar unidades SI consistentes (metros, kg, s) em todos os cálculos",
+                                    "Lembre-se de que ℏ = h/(2π) e h ≈ 6,626 × 10⁻³⁴ J·s",
+                                    "Verificar intermediários para evitar erros de arredondamento nas etapas intermediárias",
+                                    "Para o caso gaussiano, utilize Δx = σ e Δp = ℏ/(2σ) diretamente"
+                                  ],
+                                  "learningObjective": "Aplicar quantitativamente o princípio da incerteza de Heisenberg em sistemas físicos modelados e comparar diferentes distribuições de probabilidade de posição e impulso",
+                                  "commonMistakes": [
+                                    "Esquecer de converter nanômetros para metros antes dos cálculos",
+                                    "Confundir ℏ com h ao calcular Δp",
+                                    "Utilizar a expressão incorreta para Δp no caso da caixa de potencial",
+                                    "Não considerar que o produto mínimo é ℏ/2 e não ℏ",
+                                    "Ignorar a diferença entre o modelo da caixa infinita e o pacote gaussiano ao interpretar os resultados"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -27117,6 +27245,43 @@
                                     "Cálculo de Δp com unidades corretas.",
                                     "Produto para caixa > ℏ/2 e para gaussiano = ℏ/2.",
                                     "Explicação qualitativa da diferença entre casos."
+                                  ],
+                                  "stepNumber": "5.7",
+                                  "title": "Análise da Incerteza de Heisenberg: Caixa Infinitamente Profunda vs Pacote Gaussiano",
+                                  "subSteps": [
+                                    "Verificar a formulação correta da desigualdade de Heisenberg Δx Δp ≥ ℏ/2",
+                                    "Realizar cálculo numérico de Δx para partícula em caixa com precisão mínima de 10%",
+                                    "Determinar Δp com unidades consistentes (kg·m/s)",
+                                    "Calcular e comparar os produtos ΔxΔp: validar que caixa > ℏ/2 e gaussiano = ℏ/2",
+                                    "Fornecer explicação qualitativa das diferenças entre os dois casos físicos"
+                                  ],
+                                  "verification": [
+                                    "Fórmula Δx Δp ≥ ℏ/2 enunciada corretamente.",
+                                    "Cálculo numérico de Δx para caixa com precisão de 10%.",
+                                    "Cálculo de Δp com unidades corretas.",
+                                    "Produto para caixa > ℏ/2 e para gaussiano = ℏ/2.",
+                                    "Explicação qualitativa da diferença entre casos."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Texto: Griffiths - Introdução à Mecânica Quântica (Capítulo sobre Incerteza)",
+                                    "Folha de cálculo ou Python com NumPy para cálculos numéricos",
+                                    "Tabela de constantes físicas (ℏ = 1,0545718e-34 J·s)",
+                                    "Figura comparativa da distribuição de probabilidade para caixa e gaussiano"
+                                  ],
+                                  "tips": [
+                                    "Utilizar integração numérica (ex: método de Simpson) para cálculos de Δx na caixa",
+                                    "Lembrar que para o gaussiano ψ(x) = (1/(πσ²)^(1/4))e^(-x²/(2σ²)) minimiza a incerteza",
+                                    "Verificar dimensionalmente cada termo durante os cálculos",
+                                    "Comparar primeiro os valores numéricos antes de escrever a explicação qualitativa"
+                                  ],
+                                  "learningObjective": "Aplicar a desigualdade de Heisenberg em sistemas modelares, calcular incertezas posicionais e impulsionais com precisão, e interpretar fisicamente por que certos estados atingem o limite teórico da incerteza.",
+                                  "commonMistakes": [
+                                    "Esquecer de incluir o fator √2 nos cálculos de Δx para a caixa",
+                                    "Confundir as condições de contorno da caixa (x=0 a L vs x=-L/2 a L/2)",
+                                    "Utilizar unidades inconsistentes (ex: metros vs nanômetros)",
+                                    "Assumir que todos os estados não ligados atingem o limite ℏ/2",
+                                    "Não justificar fisicamente por que o gaussiano é o estado mínimo de incerteza"
                                   ]
                                 },
                                 {
@@ -27126,6 +27291,37 @@
                                     "Verificação explícita do limite ℏ/2.",
                                     "Clareza na distinção entre aproximações (caixa vs gaussiano).",
                                     "Análise qualitativa do trade-off posição-momento."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise de Aproximações em Mecânica Quântica: Caixa Infinito vs Gaussiano",
+                                  "subSteps": [
+                                    "Calcular desvios padrão com precisão matemática (erro <5%)",
+                                    "Verificar consistência de unidades e constantes físicas (ℏ, m, L)",
+                                    "Demonstrar explicitamente o limite ℏ/2 para estados fundamentais",
+                                    "Comparar e distinguir aproximações da partícula em caixa vs potencial gaussiano",
+                                    "Realizar análise qualitativa do trade-off posição-momento via princípio da incerteza"
+                                  ],
+                                  "verification": "Comparação com soluções analíticas conhecidas, checagem dimensional, validação do limite ℏ/2 através de expansão série, e discussão qualitativa dos resultados de incerteza",
+                                  "estimatedTime": "2 horas",
+                                  "materials": [
+                                    "Capítulo de Mecânica Quântica sobre poço de potencial infinito",
+                                    "Tabelas de constantes físicas (ℏ, m_e)",
+                                    "Software de cálculo simbólico (Python/SymPy ou Mathematica)",
+                                    " Gráficos de densidade de probabilidade para caixa e gaussiano"
+                                  ],
+                                  "tips": [
+                                    "Utilizar análise dimensional para prevenir erros de unidades",
+                                    "Comparar resultados aproximados com soluções exatas para validação",
+                                    "Visualizar as funções de onda para entender melhor o trade-off posição-momento",
+                                    "Aplicar o princípio da incerteza ΔxΔp ≥ ℏ/2 como referência qualitativa"
+                                  ],
+                                  "learningObjective": "O estudante será capaz de aplicar e comparar aproximações em sistemas quânticos simples, verificando limites fundamentais e analisando trade-offs entre variáveis conjugadas",
+                                  "commonMistakes": [
+                                    "Desconsiderar a dependência de ℏ nas expressões de desvio padrão",
+                                    "Confundir as condições de contorno da caixa com o potencial gaussiano",
+                                    "Ignorar o fator ℏ/2 na análise do limite",
+                                    "Aplicar aproximações fora do seu domínio de validade",
+                                    "Subestimar a importância qualitativa da incerteza sem cálculos quantitativos"
                                   ]
                                 },
                                 {
@@ -27135,12 +27331,95 @@
                                     "Estatística: Conceitos de variância e distribuições de probabilidade.",
                                     "Engenharia: Design de poços quânticos em nanotecnologia.",
                                     "Computação: Simulações numéricas de pacotes de onda."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Integração de Conceitos Avançados em Física Quântica e Simulação Multidisciplinar",
+                                  "subSteps": [
+                                    "Revisar cálculos de desvios padrão e integrais gaussianas para modelar incertezas quânticas",
+                                    "Analisar incertezas em orbitais moleculares e espectroscopia para interpretar dados experimentais",
+                                    "Projetar poços quânticos utilizando princípios de engenharia nanotecnológica",
+                                    "Realizar simulações numéricas de pacotes de onda com parâmetros estatísticos válidos"
+                                  ],
+                                  "verification": "Validação cruzada através de comparação entre resultados de simulação, dados espectroscópicos e limites teóricos de variância",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Software de simulação numérica (Python/NumPy, COMSOL Multiphysics)",
+                                    "Pacotes de onda padrão para modelagem quântica",
+                                    "Artigos sobre diseño de poços quânticos em nanotecnologia",
+                                    "Tabelas de distribuições de probabilidade e funções gaussianas"
+                                  ],
+                                  "tips": [
+                                    "Utilizar visualização 3D para interpretar orbitais moleculares",
+                                    "Calibrar parâmetros de simulação com dados experimentais reais",
+                                    "Aplicar verificação de convergência nos cálculos numéricos",
+                                    "Integrar conceitos de estatística ao definir intervalos de confiança para resultados"
+                                  ],
+                                  "learningObjective": "Integrar e aplicar conceitos avançados de matemática, química, estatística, engenharia e computação para projetar e simular sistemas quânticos complexos",
+                                  "commonMistakes": [
+                                    "Confundir variância com desvio padrão nas simulações estatísticas",
+                                    "Aplicar incertezas orbitais sem considerar efeitos de espectroscopia",
+                                    "Configurar parâmetros de malha numérica inadequados para poços quânticos",
+                                    "Ignorar limitações de precisão em integrais gaussianas para pacotes de onda"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Esses cálculos são essenciais para entender limites em microscopia eletrônica (Δx pequeno implica Δp grande, borrando imagem), lasers (pacotes gaussianos mínimos para pulsos curtos) e computação quântica (controle de qubits minimizando decoerência por incertezas)."
+                                  "realWorldApplication": "Esses cálculos são essenciais para entender limites em microscopia eletrônica (Δx pequeno implica Δp grande, borrando imagem), lasers (pacotes gaussianos mínimos para pulsos curtos) e computação quântica (controle de qubits minimizando decoerência por incertezas).",
+                                  "stepNumber": 5,
+                                  "title": "Aplicação Prática do Princípio da Incerteza de Heisenberg",
+                                  "subSteps": [
+                                    "Calcular a incerteza de posição (Δx) e impulso (Δp) para imagens em microscopia eletrônica",
+                                    "Determinar os limites de duração de pulsos laser usando pacotes gaussianos mínimos",
+                                    "Analisar a decoerência de qubits em computação quântica via controle de incertezas"
+                                  ],
+                                  "verification": "Comparar resultados com valores teóricos esperados e validar consistência com equações de Heisenberg usando software de simulação ou cálculos manuais",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Fórmulas do princípio da incerteza (Δx·Δp ≥ ħ/2)",
+                                    "Dados experimentais de microscopia eletrônica",
+                                    "Parâmetros de pulsos laser (duração, frequência)",
+                                    "Modelos de qubits e tempos de decoerência",
+                                    "Calculadora científica ou ambiente de simulação quântica (ex: QuTiP)"
+                                  ],
+                                  "tips": [
+                                    "Use unidades consistentes (SI) para evitar erros de conversão",
+                                    "Verifique ordens de grandeza: Δx pequeno implica Δp grande",
+                                    "Para lasers, lembre-se de que τ_min ≈ ħ/(2ΔE) para pulsos gaussianos ópticos",
+                                    "Em computação quântica, minimize Δp para prolongar tempo de coerência"
+                                  ],
+                                  "learningObjective": "Aplicar matematicamente o princípio da incerteza de Heisenberg para resolver problemas práticos em microscopia, óptica não-linear e tecnologia quântica",
+                                  "commonMistakes": [
+                                    "Confundir Δx com Δp na fórmula principal",
+                                    "Negligenciar o fator ħ/2 ao estabelecer limites inferiores",
+                                    "Aplicar o princípio fora do contexto quântico (ex: sistemas macroscópicos)",
+                                    "Subestimar o impacto de incertezas em tempos de decoerência quântica"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para um elétron confinado em uma caixa de L = 1 nm: Δx ≈ L/(2√3) ≈ 2.89 × 10^{-10} m, Δp ≈ (π ℏ)/(2 L) ≈ 1.04 × 10^{-24} kg m/s, produto ≈ 3.01 × 10^{-34} J s > ℏ/2. Para pacote gaussiano com σ = 1 nm: Δx = 10^{-9} m, Δp = ℏ/(2σ) ≈ 5.27 × 10^{-26} kg m/s, produto = ℏ/2 exatamente. Para L = 0.1 nm: Δx ≈ 2.89 × 10^{-11} m, Δp ≈ 1.04 × 10^{-23} kg m/s, produto ≈ 3.01 × 10^{-35} J s. Para σ = 0.1 nm: Δx = 10^{-10} m, Δp = 5.27 × 10^{-27} kg m/s, produto = ℏ/2.",
+                              "finalVerifications": [
+                                "Fórmula do Princípio da Incerteza Δx Δp ≥ ℏ/2 escrita corretamente com definição dos símbolos.",
+                                "Cálculo numérico de Δx para caixa com erro inferior a 5% para L = 1 nm e L = 0.1 nm.",
+                                "Cálculo de Δp com unidades consistentes (kg·m/s) e uso correto de ℏ.",
+                                "Verificação explícita de que o produto para caixa é maior que ℏ/2 e para gaussiano é igual a ℏ/2.",
+                                "Comparação qualitativa entre os casos (caixa rígida vs pacote mínimo) e análise de tendências com L ou σ."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos cálculos numéricos (erro < 5% nos valores de Δx, Δp e produto).",
+                                "Uso correto de unidades SI e conversões (nm → m, J·s, kg·m/s).",
+                                "Identificação explícita de ℏ/2 como limite inferior e distinção entre desigualdade e igualdade.",
+                                "Justificação das aproximações utilizadas (L/(2√3) para caixa, σ para gaussiano).",
+                                "Análise crítica das implicações físicas (trade-off posição-momento, efeitos de confinamento).",
+                                "Presença de tabela comparativa com todos os casos testados."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática Aplicada: Cálculo de integrais gaussianas e derivação de desvios padrão.",
+                                "Química-Física: Modelagem de orbitais atômicos e interpretação de espectros de absorção.",
+                                "Estatística: Conceitos de variância, distribuição normal e limites de confiança.",
+                                "Engenharia de Materiais: Projeto de nanocélulas de confinamento e poços quânticos em semicondutores.",
+                                "Ciência da Computação: Simulação numérica de pacotes de onda usando Python/Mathematica.",
+                                "Física Teórica: Conexão com teorema de Robertson-Schrödinger e generalizações do princípio da incerteza."
+                              ],
+                              "realWorldApplication": "Esses conceitos são fundamentais na microscopia de túnel eletrônico (onde Δx muito pequeno exige Δp extremamente alto, afetando a resolução), em tecnologia de pulsos láser ultrarrápidos (pacotes gaussianos de mínima incerteza permitem pulsos de femtosegundos), no desenvolvimento de qubits de poço quântico (controle preciso de Δx e Δp minimiza decoerência) e em espectroscopia de ressonância magnética nuclear (RMN), onde a incerteza de momento está ligada à precisão da medição de campos magnéticos."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -30941,9 +31220,70 @@
                                     "Ciência da Computação: Simulações numéricas de EQS (método de diferenças finitas).",
                                     "Filosofia da Ciência: Interpretação probabilística da mecânica quântica."
                                   ],
-                                  "realWorldApplication": "O tunelamento quântico é essencial em tecnologias como diodos túnel para osciladores de micro-ondas em radares, microscopia de varredura por tunelamento (STM) para imagens atômicas, memórias flash NAND em smartphones/SSDs (armazenamento de dados via tunelamento de elétrons), e fusão nuclear (reação muônica catalisada por tunelamento)."
+                                  "realWorldApplication": "O tunelamento quântico é essencial em tecnologias como diodos túnel para osciladores de micro-ondas em radares, microscopia de varredura por tunelamento (STM) para imagens atômicas, memórias flash NAND em smartphones/SSDs (armazenamento de dados via tunelamento de elétrons), e fusão nuclear (reação muônica catalisada por tunelamento).",
+                                  "stepNumber": 7,
+                                  "title": "Simulação Numérica do Tunelamento Quântico de Elétrons",
+                                  "subSteps": [
+                                    "Revisar conceitos fundamentais de tunelamento quântico e equação de Schrödinger unidimensional",
+                                    "Definir parâmetros físicos: massa do elétron (m=9.1e-31 kg), energia (E=1 eV), altura da barreira (V0=2 eV) e largura (a=2 nm)",
+                                    "Implementar solução numérica da EQS usando método de diferenças finitas para obter ψ(x)",
+                                    "Calcular a probabilidade de transmissão T aproximada e comparar com valor esperado (T≈0.01)",
+                                    "Plotar |ψ(x)|² e identificar regiões de oscilação, penetração evanescente e transmissão",
+                                    "Realizar todas as verificações finais listadas (explicações, derivações, aplicações)"
+                                  ],
+                                  "verification": "Verificação através da precisão numérica de T (erro <5%), consistência física do gráfico de |ψ(x)|², explicação clara dos mecanismos de tunelamento em pelo menos duas aplicações reais, e derivação correta da fórmula aproximada para T",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Ambiente de programação (Python com NumPy/SciPy/Matplotlib ou MATLAB)",
+                                    "Tabela de constantes físicas (ħ, conversões eV→Joules)",
+                                    "Folha de cálculo para cálculos preliminares",
+                                    "Material de referência: equações de Schrödinger e solução para barreira finita"
+                                  ],
+                                  "tips": [
+                                    "Utilizar unidades consistentes (conversão de eV para Joules e nm para metros)",
+                                    "Verificar normalização da função de onda nas fronteiras da barreira",
+                                    "Testar sensibilidade numérica variando o tamanho do passo de grade espacial",
+                                    "Destacar a dependência exponencial de T em relação a (a√(2m(V0-E)))/ħ",
+                                    "Conectar resultados com exemplos reais como diodos túnel e STM"
+                                  ],
+                                  "learningObjective": "Dominar a aplicação prática da equação de Schrödinger para fenômenos de tunelamento, calcular probabilidades de transmissão com precisão numérica, interpretar graficamente a distribuição probabilística da onda de matéria, e relacionar o tunelamento quântico com tecnologias modernas",
+                                  "commonMistakes": [
+                                    "Esquecer de converter unidades entre eV, metros e Joules",
+                                    "Violar condições de continuidade de ψ e dψ/dx nas interfaces da barreira",
+                                    "Aplicar fórmula aproximada de T fora do regime de barreira fina",
+                                    "Interpretar incorretamente a região evanescente como oscilatória",
+                                    "Subestimar a dependência de T em relação à massa do partículas (m) e à largura (a)"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simule numericamente o tunelamento de um elétron (m=9.1×10⁻³¹ kg, E=1 eV) através de uma barreira retangular de altura V₀=2 eV e largura a=2 nm usando o método de diferenças finitas. Calcule o coeficiente de transmissão T aproximado (esperado ~0.01) e plote a distribuição de probabilidade |ψ(x)|², destacando a penetração evanescente na região II e os picos de onda na região III.",
+                              "finalVerifications": [
+                                "Explicar em palavras próprias por que a probabilidade de tunelamento é não-nula, mesmo quando E < V₀, baseando-se na natureza ondulatória da matéria.",
+                                "Derivar ou recordar a fórmula aproximada T ≈ [16(E/V₀)(1-E/V₀)] exp[-2κa] para uma barreira fina e compará-la com o valor numérico obtido.",
+                                "Descrever o mecanismo de decaimento alfa usando o modelo de tunelamento através de uma barreira coulombiana, incluindo a expressão para a constante Geiger-Nuttall.",
+                                "Explicar o funcionamento básico de um diodo túnel, relacionando a corrente de túnel com o coeficiente de transmissão e a polarização reversa.",
+                                "Plotar ou descrever detalhadamente o gráfico de |ψ(x)|² para a barreira finita, identificando regiões oscilatórias e evanescentes.",
+                                "Discutir a dependência física do fator κ = √[2m(V₀-E)]/ħ e seu papel na determinação da probabilidade de tunelamento.",
+                                "Relacionar o fenômeno de tunelamento à dualidade onda-partícula, explicando como a descrição ondulatória permite a penetração na barreira."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na implementação numérica da solução da Equação de Schrödinger (erro < 5% em T).",
+                                "Correta identificação e interpretação das regiões de onda oscilatória e evanescente no gráfico de |ψ(x)|².",
+                                "Explicação clara dos fatores que influenciam T (largura a, altura V₀-E, massa m) e suas dependências físicas.",
+                                "Associação precisa de pelo menos duas aplicações reais ao tunelamento quântico com mecanismos subjacentes.",
+                                "Uso adequado de unidades SI e constantes físicas nas derivações e cálculos.",
+                                "Capacidade de derivar condições de contorno e aplicar continuidade de ψ e dψ/dx.",
+                                "Demonstração de conexões interdisciplinares, especialmente com engenharia de dispositivos semicondutores."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática Aplicada: Solução de equações diferenciais ordinárias com condições de contorno e métodos numéricos (diferências finitas).",
+                                "Física Moderna: Princípios de mecânica quântica, dualidade onda-partícula e interpretação probabilística.",
+                                "Engenharia Elétrica: Projeto e análise de diodos túnel, transistores túnel e memórias flash baseadas em tunelamento.",
+                                "Química-Física: Cinética de reações químicas mediadas por tunelamento e decaimento radioativo.",
+                                "Ciência da Computação: Simulação computacional de sistemas quânticos e desenvolvimento de algoritmos para modelagem de túnel.",
+                                "Filosofia da Ciência: Discussão sobre determinismo versus probabilidade nas leis da física quântica."
+                              ],
+                              "realWorldApplication": "O tunelamento quântico é fundamental em diversas tecnologias modernas: diodos túnel utilizados em osciladores de alta frequência para radares e comunicações satelitares; microscopia de tunelamento por varredura (STM) que permite imagens de superfícies à escala atômica; memórias flash NAND em SSDs e smartphones, onde o armazenamento de dados depende do tunelamento de elétrons entre células de canal; dispositivos de fusão nuclear em experimentos de fusão muônica, onde o tunelamento aumenta a taxa de reações; e sensores de campo magnético baseados em efeito Hall túnel para sistemas de segurança e automóveis autônomos."
                             },
                             "estimatedTime": "0.5 hora",
                             "difficulty": "intermediate",
@@ -35485,7 +35825,8 @@
             "totalSkills": 268
           }
         ],
-        "totalSkills": 268
+        "totalSkills": 268,
+        "percentage": 100
       }
     ]
   }

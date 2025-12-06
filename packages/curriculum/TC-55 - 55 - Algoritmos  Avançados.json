@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TC-55",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 320
+      "totalAtomicSkills": 320,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "TC-55",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TC-55"
     },
     "areas": [
       {
@@ -5264,6 +5270,43 @@
                                     "Não inicializar corretamente (-1 ou None)",
                                     "Índices invertidos na tabela",
                                     "Atualizar memo após recursão errada"
+                                  ],
+                                  "subSteps": [
+                                    {
+                                      "id": 1,
+                                      "title": "Inicializar a tabela de memoização",
+                                      "description": "Crie uma tabela 2D memo de dimensões (n+1) x (W+1), inicializada com -1 para indicar valores não computados.",
+                                      "codeSnippet": "memo = [[-1] * (W + 1) for _ in range(n + 1)]",
+                                      "hint": "Garanta que seja uma lista de listas para evitar referências compartilhadas."
+                                    },
+                                    {
+                                      "id": 2,
+                                      "title": "Verificar cache na função recursiva",
+                                      "description": "No início da função knapsack(index, peso_atual), adicione uma verificação: se memo[index][peso_atual] != -1, retorne esse valor imediatamente.",
+                                      "codeSnippet": "if memo[index][peso_atual] != -1:\n    return memo[index][peso_atual]",
+                                      "hint": "Coloque isso logo após os parâmetros da função."
+                                    },
+                                    {
+                                      "id": 3,
+                                      "title": "Armazenar resultado no memo",
+                                      "description": "Após calcular o valor máximo (considerando take ou not_take), armazene-o em memo[index][peso_atual] antes de retornar.",
+                                      "codeSnippet": "max_val = max(take, not_take)\nmemo[index][peso_atual] = max_val\nreturn max_val",
+                                      "hint": "Atualize o memo apenas com o resultado final da computação."
+                                    },
+                                    {
+                                      "id": 4,
+                                      "title": "Ajustar chamada inicial",
+                                      "description": "Na função principal, inicialize a memo e chame knapsack(0, W) para iniciar a recursão com memoização.",
+                                      "codeSnippet": "return knapsack(0, W)",
+                                      "hint": "Passe a memo como parâmetro global ou use nonlocal/closure se necessário."
+                                    },
+                                    {
+                                      "id": 5,
+                                      "title": "Testar e verificar",
+                                      "description": "Reexecute o exemplo do Step anterior e confirme que o número de chamadas recursivas reduz para O(n*W). Imprima a tabela memo final.",
+                                      "codeSnippet": "print(memo)",
+                                      "hint": "Use um contador de chamadas para medir eficiência."
+                                    }
                                   ]
                                 },
                                 {
@@ -41518,7 +41561,8 @@
             "totalSkills": 320
           }
         ],
-        "totalSkills": 320
+        "totalSkills": 320,
+        "percentage": 0
       }
     ]
   }

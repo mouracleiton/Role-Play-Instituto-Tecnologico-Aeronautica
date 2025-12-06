@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-86",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 305
+      "totalAtomicSkills": 305,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-UM-86",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-86"
     },
     "areas": [
       {
@@ -10655,7 +10661,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um projeto de inovação para lançar um novo app de e-commerce sustentável, a atividade 'Desenvolver MVP' é desdobrada via Kanban: Tarefa 1 'Pesquisar fornecedores sustentáveis' (Ana, 3 dias); Tarefa 2 'Prototipar UI/UX' (Pedro, 5 dias, depende de T1); Tarefa 3 'Integrar API de pagamentos' (Equipe Dev, 7 dias). OKRs complementam com Objective: 'Lançar MVP viável' e Key Results: '90% features completas em 4 semanas'. Responsáveis atualizam diariamente, promovendo integração em stand-ups."
+                                  "practicalExample": "Em um projeto de inovação para lançar um novo app de e-commerce sustentável, a atividade 'Desenvolver MVP' é desdobrada via Kanban: Tarefa 1 'Pesquisar fornecedores sustentáveis' (Ana, 3 dias); Tarefa 2 'Prototipar UI/UX' (Pedro, 5 dias, depende de T1); Tarefa 3 'Integrar API de pagamentos' (Equipe Dev, 7 dias). OKRs complementam com Objective: 'Lançar MVP viável' e Key Results: '90% features completas em 4 semanas'. Responsáveis atualizam diariamente, promovendo integração em stand-ups.",
+                                  "stepNumber": "4",
+                                  "title": "Desenvolver MVP utilizando Kanban e OKRs",
+                                  "subSteps": [
+                                    "1. Definir tarefas granulares no quadro Kanban (ex: Pesquisar fornecedores, Prototipar UI/UX, Integrar APIs).",
+                                    "2. Atribuir responsáveis e prazos realistas, considerando dependências.",
+                                    "3. Estabelecer OKRs alinhados (Objective: Lançar MVP viável; Key Results: 90% features em 4 semanas).",
+                                    "4. Atualizar diariamente o quadro e realizar stand-ups para integração da equipe."
+                                  ],
+                                  "verification": "MVP funcional com pelo menos 90% das features completas, quadro Kanban atualizado e OKRs mensuráveis atingidos.",
+                                  "estimatedTime": "4 semanas (15-20 dias úteis totais para tarefas principais)",
+                                  "materials": [
+                                    "Ferramenta Kanban (Trello, Jira ou Miro)",
+                                    "Planilha para OKRs (Google Sheets ou Notion)",
+                                    "Ferramentas de prototipagem (Figma, Adobe XD)"
+                                  ],
+                                  "tips": [
+                                    "Priorize tarefas com dependências para evitar gargalos.",
+                                    "Use stand-ups diários de 15 minutos para alinhamento.",
+                                    "Monitore progresso semanalmente e ajuste OKRs se necessário.",
+                                    "Integre feedback contínuo do time para refinar o MVP."
+                                  ],
+                                  "learningObjective": "Aplicar metodologias ágeis como Kanban e OKRs para desdobrar atividades complexas em tarefas executáveis, promovendo gestão eficiente de projetos de inovação.",
+                                  "commonMistakes": [
+                                    "Subestimar dependências entre tarefas, causando atrasos em cascata.",
+                                    "Definir OKRs vagos ou não mensuráveis, dificultando verificação.",
+                                    "Falta de atualizações diárias, levando a desalinhamento da equipe.",
+                                    "Ignorar capacidade da equipe ao atribuir múltiplas tarefas simultâneas."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -10664,6 +10698,37 @@
                                     "Equipe relata maior clareza e accountability em pesquisa rápida.",
                                     "Nenhum bloqueio não resolvido há mais de 48h.",
                                     "Métricas iniciais de progresso alinhadas com expectativas."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Verificações Finais e Conclusão do Projeto",
+                                  "subSteps": [
+                                    "Desdobrar 100% das atividades originais em tarefas atribuídas no board.",
+                                    "Atualizar o Board Kanban/OKR com as informações mais recentes.",
+                                    "Realizar pesquisa rápida com a equipe para coletar relatos de clareza e accountability.",
+                                    "Identificar e resolver todos os bloqueios pendentes há mais de 48h.",
+                                    "Analisar e alinhar métricas iniciais de progresso com as expectativas definidas."
+                                  ],
+                                  "verification": "Todas as finalVerifications atendidas: 100% das atividades desdobradas, board atualizado, feedback positivo da equipe, sem bloqueios >48h e métricas alinhadas.",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Board Kanban/OKR (ex: Trello, Jira ou Miro)",
+                                    "Planilha de métricas e OKRs",
+                                    "Ferramentas de comunicação (ex: Slack, Teams)",
+                                    "Lista de atividades originais do currículo"
+                                  ],
+                                  "tips": [
+                                    "Envolva toda a equipe no feedback para maior precisão.",
+                                    "Priorize bloqueios críticos antes de métricas.",
+                                    "Documente evidências fotográficas ou screenshots do board.",
+                                    "Celebre conquistas para manter motivação."
+                                  ],
+                                  "learningObjective": "Garantir a conclusão de alta qualidade do Catálogo dos Cursos de Graduação 2025 - UM-86, aplicando práticas ágeis de verificação final para alinhamento, accountability e resolução de impedimentos.",
+                                  "commonMistakes": [
+                                    "Deixar tarefas desdobradas incompletas por pressa.",
+                                    "Não atualizar o board regularmente, gerando desalinhamento.",
+                                    "Ignorar feedback subjetivo da equipe.",
+                                    "Subestimar bloqueios menores que acumulam.",
+                                    "Não validar métricas contra expectativas reais."
                                   ]
                                 },
                                 {
@@ -10674,6 +10739,36 @@
                                     "Eficiência no fluxo inicial (tempo ciclo das tarefas).",
                                     "Capacidade de adaptação demonstrada em piloto.",
                                     "Integração efetiva entre tarefas colaborativas."
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Definir Critérios de Avaliação do Projeto",
+                                  "subSteps": [
+                                    "Analise os objetivos gerais do curso e do projeto (Catálogo dos Cursos de Graduação 2025 - UM-86).",
+                                    "Identifique critérios chave: clareza e granularidade das tarefas (SMART), equilíbrio de atribuições e cobertura de dependências.",
+                                    "Inclua métricas de engajamento: nível de buy-in da equipe e eficiência no fluxo inicial (tempo ciclo das tarefas).",
+                                    "Defina critérios de validação: capacidade de adaptação em piloto e integração efetiva entre tarefas colaborativas.",
+                                    "Documente os critérios em uma tabela ou lista compartilhada."
+                                  ],
+                                  "verification": "Os critérios de avaliação foram definidos, documentados e revisados pela equipe, alinhados aos objetivos do currículo UM-86, com pelo menos 6 itens SMART.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-86",
+                                    "Template de critérios de avaliação (Google Sheets ou Miro)",
+                                    "Exemplos de critérios SMART de projetos anteriores"
+                                  ],
+                                  "tips": [
+                                    "Use o framework SMART (Specific, Measurable, Achievable, Relevant, Time-bound) para cada critério.",
+                                    "Envolva a equipe desde o início para aumentar o buy-in.",
+                                    "Priorize critérios mensuráveis, como tempo ciclo, para facilitar a verificação.",
+                                    "Teste os critérios em uma tarefa piloto rápida."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de definir e documentar critérios de avaliação claros, equilibrados e adaptáveis para projetos educacionais, alinhados ao currículo de graduação UM-86.",
+                                  "commonMistakes": [
+                                    "Definir critérios vagos ou não mensuráveis (ex: 'boa qualidade' em vez de 'clareza SMART').",
+                                    "Ignorar dependências entre tarefas, desequilibrando o fluxo.",
+                                    "Não envolver a equipe, reduzindo engajamento.",
+                                    "Sobrecarregar com critérios excessivos, complicando a avaliação.",
+                                    "Esquecer de testar em piloto, levando a adaptações tardias."
                                   ]
                                 },
                                 {
@@ -10683,12 +10778,91 @@
                                     "Planejamento Estratégico (OKRs).",
                                     "Comunicação e Resolução de Conflitos.",
                                     "Análise de Processos e Melhoria Contínua (Lean)."
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Integração de Competências Transversais no Currículo",
+                                  "subSteps": [
+                                    "Analise cada conexão curricular listada e identifique disciplinas do Catálogo UM-86 onde elas se aplicam.",
+                                    "Crie um mapa mental ligando 'Gestão Ágil de Projetos' a cursos de Engenharia de Software ou Administração.",
+                                    "Desenvolva um plano de ação para incorporar 'Liderança e Desenvolvimento de Equipes' em projetos de TCC.",
+                                    "Elabore exemplos práticos de 'Planejamento Estratégico (OKRs)' em contextos acadêmicos.",
+                                    "Pratique 'Comunicação e Resolução de Conflitos' simulando cenários de grupo de estudo.",
+                                    "Aplique 'Análise de Processos e Melhoria Contínua (Lean)' a um fluxo de estudos pessoal."
+                                  ],
+                                  "verification": "Envie um relatório com pelo menos 3 exemplos concretos de aplicação das conexões transversais ao seu curso, incluindo um mapa mental ou plano de ação.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-86",
+                                    "Materiais introdutórios sobre Scrum, Kanban, OKRs e Lean (disponíveis online)",
+                                    "Ferramenta de mapa mental (ex: MindMeister ou papel e caneta)"
+                                  ],
+                                  "tips": [
+                                    "Relacione as competências a disciplinas específicas do seu curso para maior relevância.",
+                                    "Use exemplos reais de projetos universitários para tornar a integração prática.",
+                                    "Discuta com colegas para enriquecer as ideias de aplicação.",
+                                    "Priorize conexões que impactem diretamente sua formação profissional."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de identificar e planejar a integração de competências transversais (Gestão Ágil, Liderança, OKRs, Comunicação e Lean) ao currículo de graduação UM-86, promovendo uma formação holística.",
+                                  "commonMistakes": [
+                                    "Ignorar conexões com disciplinas técnicas, focando apenas em optativas.",
+                                    "Criar exemplos genéricos sem referência ao Catálogo UM-86.",
+                                    "Subestimar o impacto da 'Melhoria Contínua (Lean)' em rotinas acadêmicas.",
+                                    "Não planejar ações concretas, limitando-se a listagens superficiais."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "No mundo corporativo, como na Google com OKRs para alinhar times globais em inovações como o Google Workspace, ou na Spotify com Kanban squads para features de streaming, isso acelera entregas, reduz silos e impulsiona accountability em ambientes de alta inovação."
+                                  "realWorldApplication": "No mundo corporativo, como na Google com OKRs para alinhar times globais em inovações como o Google Workspace, ou na Spotify com Kanban squads para features de streaming, isso acelera entregas, reduz silos e impulsiona accountability em ambientes de alta inovação.",
+                                  "stepNumber": 6,
+                                  "title": "Aplicações Práticas de OKRs e Kanban no Mundo Corporativo",
+                                  "subSteps": [
+                                    "Estude o uso de OKRs na Google para alinhamento de equipes globais em projetos como o Google Workspace.",
+                                    "Analise o modelo de squads Kanban na Spotify para desenvolvimento de features de streaming.",
+                                    "Identifique como essas práticas reduzem silos e aumentam a accountability em ambientes inovadores."
+                                  ],
+                                  "verification": "Resuma em 3 pontos principais como OKRs e Kanban aceleram entregas em empresas como Google e Spotify, relacionando com o texto fornecido.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Artigo oficial: 'OKRs na Google' (disponível em re:Work Google)",
+                                    "Vídeo: 'Spotify Engineering Culture' no YouTube",
+                                    "Infográfico: Comparação OKRs vs. Kanban"
+                                  ],
+                                  "tips": [
+                                    "Relacione os exemplos com desafios da sua equipe atual.",
+                                    "Anote métricas específicas mencionadas para reforçar o aprendizado.",
+                                    "Visualize fluxos com ferramentas como Miro ou Trello para melhor compreensão."
+                                  ],
+                                  "learningObjective": "Compreender e exemplificar como OKRs e Kanban são aplicados em empresas de tecnologia para alinhar equipes, acelerar entregas e fomentar accountability.",
+                                  "commonMistakes": [
+                                    "Confundir OKRs com metas tradicionais sem foco em resultados ousados.",
+                                    "Aplicar Kanban sem squads autônomos, criando gargalos em vez de fluxo contínuo.",
+                                    "Ignorar a necessidade de cultura de transparência e iteração rápida."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um projeto de inovação para lançar um novo app de e-commerce sustentável, a atividade 'Desenvolver MVP' é desdobrada via Kanban: Tarefa 1 'Pesquisar fornecedores sustentáveis' (Ana, 3 dias); Tarefa 2 'Prototipar UI/UX' (Pedro, 5 dias, depende de T1); Tarefa 3 'Integrar API de pagamentos' (Equipe Dev, 7 dias). OKRs complementam com Objective: 'Lançar MVP viável' e Key Results: '90% features completas em 4 semanas'. Responsáveis atualizam diariamente, promovendo integração em stand-ups.",
+                              "finalVerifications": [
+                                "100% das atividades originais desdobradas em tarefas atribuídas.",
+                                "Board Kanban/OKR ativo com atualizações recentes.",
+                                "Equipe relata maior clareza e accountability em pesquisa rápida.",
+                                "Nenhum bloqueio não resolvido há mais de 48h.",
+                                "Métricas iniciais de progresso alinhadas com expectativas."
+                              ],
+                              "assessmentCriteria": [
+                                "Clareza e granularidade das tarefas (SMART).",
+                                "Equilíbrio de atribuições e cobertura de dependências.",
+                                "Nível de engajamento e buy-in da equipe.",
+                                "Eficiência no fluxo inicial (tempo ciclo das tarefas).",
+                                "Capacidade de adaptação demonstrada em piloto.",
+                                "Integração efetiva entre tarefas colaborativas."
+                              ],
+                              "crossCurricularConnections": [
+                                "Gestão Ágil de Projetos (Scrum/Kanban).",
+                                "Liderança e Desenvolvimento de Equipes.",
+                                "Planejamento Estratégico (OKRs).",
+                                "Comunicação e Resolução de Conflitos.",
+                                "Análise de Processos e Melhoria Contínua (Lean)."
+                              ],
+                              "realWorldApplication": "No mundo corporativo, como na Google com OKRs para alinhar times globais em inovações como o Google Workspace, ou na Spotify com Kanban squads para features de streaming, isso acelera entregas, reduz silos e impulsiona accountability em ambientes de alta inovação."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -42809,7 +42983,8 @@
             "totalSkills": 305
           }
         ],
-        "totalSkills": 305
+        "totalSkills": 305,
+        "percentage": 0
       }
     ]
   }

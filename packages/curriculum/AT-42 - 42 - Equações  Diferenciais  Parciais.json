@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-42",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 309
+      "totalAtomicSkills": 309,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-42"
     },
     "areas": [
       {
@@ -707,6 +713,82 @@
                         "difficulty": "beginner",
                         "status": "not_started",
                         "prerequisites": []
+                      }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.1.1.c1",
+                        "name": "Funções de múltiplas variáveis independentes",
+                        "description": "Função desconhecida que depende de duas ou mais variáveis independentes, representada como u(x,y) ou f(x₁,...,xₙ), formando superfícies ou hiper-superfícies.",
+                        "specificSkills": [
+                          "Definir e representar funções de duas ou mais variáveis independentes, como u(x,y) ou f(x₁,...,xₙ)",
+                          "Identificar o domínio e a imagem de funções multivariáveis",
+                          "Visualizar graficamente funções de duas variáveis como superfícies no espaço tridimensional",
+                          "Compreender a extensão conceitual para funções de n variáveis, formando hiper-superfícies",
+                          "Reconhecer exemplos de funções multivariáveis em contextos reais e matemáticos"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c2",
+                        "name": "Derivadas parciais",
+                        "description": "Derivada de uma função multivariável em relação a uma variável específica, mantendo as demais constantes, notada por ∂u/∂x, com interpretação geométrica como inclinação direcional.",
+                        "specificSkills": [
+                          "Calcular derivadas parciais de primeira ordem de funções de várias variáveis",
+                          "Determinar derivadas parciais de ordem superior",
+                          "Interpretar geometricamente derivadas parciais como inclinações direcionais em superfícies",
+                          "Aplicar notação ∂u/∂x em funções multivariáveis, mantendo variáveis constantes"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c3",
+                        "name": "Definição formal de EDP",
+                        "description": "Equação algébrica F(x,y,u,∂u/∂x,∂u/∂y,...)=0 que relaciona uma função desconhecida de múltiplas variáveis independentes com suas derivadas parciais.",
+                        "specificSkills": [
+                          "Reconhecer a definição formal de uma Equação Diferencial em Derivadas Parciais (EDP) como uma equação algébrica do tipo F(x,y,u,∂u/∂x,∂u/∂y,...)=0.",
+                          "Identificar os componentes de uma EDP: variáveis independentes, função desconhecida u e suas derivadas parciais.",
+                          "Diferenciar EDPs de Equações Diferenciais Ordinárias (EDOs) com base no número de variáveis independentes."
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c4",
+                        "name": "Diferença entre EDPs e EDOs",
+                        "description": "EDPs envolvem derivadas parciais e ≥2 variáveis independentes (ex.: ∂u/∂t=∂²u/∂x²); EDOs envolvem derivadas ordinárias e 1 variável independente (ex.: du/dt=ku).",
+                        "specificSkills": [
+                          "Diferenciar EDPs de EDOs pelo número de variáveis independentes e tipo de derivadas envolvidas.",
+                          "Identificar corretamente uma equação como EDP ou EDO a partir de sua notação matemática.",
+                          "Fornecer exemplos representativos de EDPs (ex.: equação do calor) e EDOs (ex.: crescimento exponencial)."
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c5",
+                        "name": "Ordem de uma EDP",
+                        "description": "Maior número de derivações parciais sucessivas aplicadas à função desconhecida em qualquer termo da equação (ex.: ∂²u/∂x² define ordem 2).",
+                        "specificSkills": [
+                          "Determinar a ordem de uma equação diferencial parcial (EDP) identificando o maior número de derivações parciais sucessivas aplicadas à função desconhecida.",
+                          "Analisar termos de uma EDP para reconhecer derivações de ordem superior (ex.: ∂²u/∂x² indica ordem 2).",
+                          "Classificar EDPs como de primeira, segunda ou maior ordem com base na definição formal.",
+                          "Aplicar o conceito de ordem em exemplos concretos de equações diferenciais parciais."
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c6",
+                        "name": "Notação de derivadas parciais",
+                        "description": "Símbolo ∂ distingue parciais de ordinárias (d); notação mista como ∂²u/∂x∂y indica sequência de derivações, com igualdade por teorema de Schwarz em funções suaves.",
+                        "specificSkills": [
+                          "Reconhecer e utilizar o símbolo ∂ para distinguir derivadas parciais das ordinárias (d)",
+                          "Interpretar notação mista como ∂²u/∂x∂y, indicando sequência de derivações parciais",
+                          "Aplicar o teorema de Schwarz para igualdade de derivadas parciais mistas em funções suaves"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.c7",
+                        "name": "Exemplos clássicos de EDPs",
+                        "description": "Equação do calor (parabólica: ∂u/∂t=k∂²u/∂x²), Laplace (elíptica: ∇²u=0), onda (hiperbólica: ∂²u/∂t²=c²∂²u/∂x²), todas de segunda ordem.",
+                        "specificSkills": [
+                          "Reconhecer e classificar equações diferenciais parciais clássicas de segunda ordem como parabólicas (equação do calor), elípticas (Laplace) e hiperbólicas (onda)",
+                          "Escrever as formas matemáticas padrão: ∂u/∂t = k ∂²u/∂x², ∇²u = 0, ∂²u/∂t² = c² ∂²u/∂x²",
+                          "Associar essas EDPs a contextos físicos: difusão térmica, problemas de valor de contorno harmônicos e propagação de ondas"
+                        ]
                       }
                     ]
                   },
@@ -40538,7 +40620,8 @@
             "totalSkills": 309
           }
         ],
-        "totalSkills": 309
+        "totalSkills": 309,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MC-11",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 331
+      "totalAtomicSkills": 331,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-MC-11",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MC-11"
     },
     "areas": [
       {
@@ -12811,6 +12817,13 @@
                                   "commonMistakes": [
                                     "Ignorar premissas do teste F (normalidade, etc.)",
                                     "Concluir causalidade de significância"
+                                  ],
+                                  "tips": [
+                                    "Enuncie H0 e HA explicitamente para clareza.",
+                                    "Teste F é global: avalia se o modelo explica variância além da média.",
+                                    "Use α=0,05 como padrão, mas justifique escolha.",
+                                    "Interprete R² junto ao F: % de variância explicada.",
+                                    "Se não significativo, revise variáveis ou premissas antes de descartar."
                                   ]
                                 }
                               ],
@@ -44411,7 +44424,8 @@
             "totalSkills": 331
           }
         ],
-        "totalSkills": 331
+        "totalSkills": 331,
+        "percentage": 0
       }
     ]
   }

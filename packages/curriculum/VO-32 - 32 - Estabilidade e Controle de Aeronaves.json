@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-32",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 274
+      "totalAtomicSkills": 274,
+      "startDate": "2025-02-01",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "VO-32",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-32"
     },
     "areas": [
       {
@@ -1544,14 +1550,45 @@
                                     "Obter matrizes A e B da forma δẋ = A δx + B δu.",
                                     "Focar em derivadas aerodinâmicas: CLα, CMα, etc., a partir dos dados.",
                                     "verification]: "
-                                  ]
+                                  ],
+                                  "verification": "Derive as matrizes A e B para o caso de voo nivelado trimado (α₀ = 0) usando os dados aerodinâmicos fornecidos na apostila VO-32. Verifique se os elementos da matriz A correspondem aos valores esperados na Tabela X da seção de linearização.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": "Apostila VO-32 (Seções 4.2 a 4.4); Dados aerodinâmicos do avião exemplo (Tabela 4.1); Software MATLAB/Simulink para validação numérica.",
+                                  "tips": "- Escolha o ponto de equilíbrio com α₀ trimado para minimizar termos constantes.\n- Use derivadas aerodinâmicas estáveis (CLα > 0, CMα < 0).\n- Expresse perturbações em variáveis não-dimensionais para padronização.\n- Verifique a linearização expandindo em série de Taylor até primeira ordem.",
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de linearizar as equações não-lineares de movimento longitudinal da aeronave em torno de um ponto de equilíbrio, obtendo o modelo estado-espaço δẋ = A δx + B δu com foco nas derivadas aerodinâmicas.",
+                                  "commonMistakes": "- Negligenciar termos de produto nas linearizações (ex: q * δα).\n- Confundir derivadas dimensionais (ex: C_{Lα}) com não-dimensionais.\n- Esquecer a rotação da velocidade de perturbação (δw = U₀ δα).\n- Não normalizar as equações pelo peso ou pela inércia corretamente."
                                 },
                                 "estimatedTime\": \"1.5 horas\nação das derivadas está correta comparando com valores teóricos conhecidos.\"",
                                 "materials\": [\"Livro-texto de dinâmica de voo (ex: Etkin)\", \"Script de linearização em MATLAB/Python\", \"Dados do Step 1\"]\n",
                                 "tips\": [\"Linearize em torno de α0 onde CMα < 0 para estabilidade.\", \"Use diferenças finitas numéricas para derivadas: (f(α+Δ)-f(α-Δ))/(2Δ).\"],\n",
                                 "learningObjective\": \"Aplicar linearização matemática às equações de aeronaves reais para análise de estabilidade.\",\n",
                                 "commonMistakes\": [\"Linearizar fora da região linear (alto α).\", \"Esquecer termos de inércia ou massa variável.\", \"Erros em Jacobiana da matriz A.\"]\n    },\n    {\n      \"stepNumber\": 3,\n      \"title\": \"Cálculo numérico dos coeficientes de estabilidade estáticos\",\n      \"subSteps\": [\n        \"Calcular CLα = dCL/dα numericamente dos dados plotados.\",\n        \"Calcular CMα = dCM/dα, incluindo contribuição do centro de gravidade (h).\",\n        \"Determinar posição do centro aerodinâmico h_ac = h0 - CMα / CLα.\",\n        \"Verificar consistência com curvas polares: CMα negativo para estabilidade.\",\n        \"Implementar em código iterativo para precisão.\"\n      ],\n      \"verification\": \"Gráficos de derivadas coincidem com inclinações visuais das curvas originais (±5% erro).\",\n      \"estimatedTime\": \"1 hora\",\n      \"materials\": [\"Código Python/MATLAB do Step 2\", \"Ferramentas de plotagem (Matplotlib, etc.)\", \"Dados lineares do Step 1\"],\n      \"tips\": [\"Escolha Δα pequeno (0.1-1°) para precisão numérica.\", \"Teste sensibilidade variando h.\"],\n      \"learningObjective\": \"Extrair derivadas estáticas de dados reais via métodos numéricos.\",\n      \"commonMistakes\": [\"Dividir por zero em trim\", \"Confundir h_n (neutral point) com h_ac.\", \"Não normalizar por área de referência.\"]\n    },\n    {\n      \"stepNumber\": 4,\n      \"title\": \"Cálculo da margem estática e validação\",\n      \"subSteps\": [\n        \"Calcular margem estática: hm = h_n - h_cg, onde h_n = -CMα / CLα.\",\n        \"Interpretar: hm > 0 estável, hm < 0 instável.\",\n        \"Variar h_cg e plotar hm vs h_cg.\",\n        \"Comparar com valores certificados da aeronave.\",\n        \"Documentar relatório com gráficos e conclusões.\"\n      ],\n      \"verification\": \"Margem calculada positiva e coerente com literatura (ex: 10-20% corda média).\",\n      \"estimatedTime\": \"1 hora\",\n      \"materials\": [\"Resultados dos Steps anteriores\", \"Templates de relatório\", \"Dados de referência de aeronaves\"],\n      \"tips\": [\"Margem típica 5-25% para aviões comerciais.\", \"Inclua incertezas de dados reais.\"],\n      \"learningObjective\": \"Determinar e interpretar numericamente a margem estática para manche fixo.\",\n      \"commonMistakes\": [\"Inverter sinal de hm.\", \"Esquecer efeitos de cauda ou flaps.\", \"Não considerar compressibilidade em altos Mach.\"]\n    }\n  ],\n  \"practicalExample\": \"Usando dados reais da curva polar do Piper PA-28 Cherokee (disponível em relatórios FAA), com α de -2° a 12°, calcule CLα ≈ 5.5/rad, CMα ≈ -1.2/rad, h_cg = 0.25c, resultando em hm ≈ 0.16c (16% corda), confirmando estabilidade estática longitudinal em cruzeiro.\",\n  \"finalVerifications\": [\n    \"Margem estática calculada é positiva e dentro de faixas típicas (5-30% corda).\",\n    \"Gráficos de coeficientes lineares coincidem com dados originais (R² > 0.95).\",\n    \"Código numérico reproduz resultados consistentemente em reexecuções.\",\n    \"Interpretação correta: impacto de variação de CG na estabilidade.\",\n    \"Relatório inclui análise de sensibilidade e limitações dos dados reais.\",\n    \"Validação cruzada com método analítico simples (erro < 10%).\"\n  ],\n  \"assessmentCriteria\": [\n    \"Precisão numérica dos coeficientes (erro < 5% vs referências).\",\n    \"Correta linearização e derivação de hm.\",\n    \"Uso adequado de ferramentas computacionais e visualizações.\",\n    \"Análise qualitativa da estabilidade (estável/instável/ neutro).\",\n    \"Documentação clara com unidades e suposições.\",\n    \"Tratamento de incertezas em dados reais.\"\n  ],\n  \"crossCurricularConnections\": [\n    \"Matemática Numérica: diferenças finitas e interpolação.\",\n    \"Programação: scripts em Python/MATLAB para automação.\",\n    \"Física/Aerodinâmica: compreensão de forças e momentos em fluidos.\",\n    \"Engenharia de Controle: análise de autômatos lineares (polos da matriz A).\",\n    \"Análise de Dados: limpeza e visualização de datasets experimentais.\"\n  ],\n  \"realWorldApplication\": \"Em projetos de aeronaves, como no design do centro de gravidade para certificação FAA/EASA, evitando instabilidades que causaram acidentes históricos (ex: Lockheed Electra), ou otimizando performance em simuladores de voo e testes em túnel de vento.\"\n}"
-                              ]
+                              ],
+                              "practicalExample": "Usando dados reais da curva polar do Piper PA-28 Cherokee (disponível em relatórios FAA), com α de -2° a 12°, calcule CLα ≈ 5.5/rad, CMα ≈ -1.2/rad, h_cg = 0.25c, resultando em hm ≈ 0.16c (16% corda), confirmando estabilidade estática longitudinal em cruzeiro.",
+                              "finalVerifications": [
+                                "Margem estática calculada é positiva e dentro de faixas típicas (5-30% corda).",
+                                "Gráficos de coeficientes lineares coincidem com dados originais (R² > 0.95).",
+                                "Código numérico reproduz resultados consistentemente em reexecuções.",
+                                "Interpretação correta: impacto de variação de CG na estabilidade.",
+                                "Relatório inclui análise de sensibilidade e limitações dos dados reais.",
+                                "Validação cruzada com método analítico simples (erro < 10%)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão numérica dos coeficientes (erro < 5% vs referências).",
+                                "Correta linearização e derivação de hm.",
+                                "Uso adequado de ferramentas computacionais e visualizações.",
+                                "Análise qualitativa da estabilidade (estável/instável/ neutro).",
+                                "Documentação clara com unidades e suposições.",
+                                "Tratamento de incertezas em dados reais."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática Numérica: diferenças finitas e interpolação.",
+                                "Programação: scripts em Python/MATLAB para automação.",
+                                "Física/Aerodinâmica: compreensão de forças e momentos em fluidos.",
+                                "Engenharia de Controle: análise de autômatos lineares (polos da matriz A).",
+                                "Análise de Dados: limpeza e visualização de datasets experimentais."
+                              ],
+                              "realWorldApplication": "Em projetos de aeronaves, como no design do centro de gravidade para certificação FAA/EASA, evitando instabilidades que causaram acidentes históricos (ex: Lockheed Electra), ou otimizando performance em simuladores de voo e testes em túnel de vento."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -25480,6 +25517,12 @@
                                     "Linearização inadequada levando a múltiplas soluções",
                                     "Erro em sinais de momentos (Cmδe negativo)",
                                     "Omitir trim de potência δt"
+                                  ],
+                                  "verification": "Executar solver e confirmar convergência para α ≈ 4°, θ ≈ 4°, δe ≈ -0.5°, δt adequado, com ||F(x)|| < 1e-6 e jacobiana não-singular.",
+                                  "estimatedTime": "2 hours",
+                                  "materials": [
+                                    "MATLAB/Python com SciPy",
+                                    "Dados aerodinâmicos de uma aeronave (ex: NASA data para GA(W)-1)"
                                   ]
                                 },
                                 {
@@ -36034,7 +36077,8 @@
             "totalSkills": 274
           }
         ],
-        "totalSkills": 274
+        "totalSkills": 274,
+        "percentage": 0
       }
     ]
   }

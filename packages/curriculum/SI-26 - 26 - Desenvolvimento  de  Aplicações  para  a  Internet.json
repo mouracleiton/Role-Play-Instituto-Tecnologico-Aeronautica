@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SI-26",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 229
+      "totalAtomicSkills": 229,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 8,
+      "version": "2025 v1.0",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SI-26"
     },
     "areas": [
       {
@@ -9469,9 +9475,40 @@
                                     "Testes e debugging em mobile.",
                                     "Versionamento com Git (integração Flutter)."
                                   ],
-                                  "realWorldApplication": "Em startups e empresas de apps como Nubank ou iFood, configurar Flutter permite devs criarem apps iOS/Android simultaneamente, reduzindo custos e tempo de deploy em 50% comparado a stacks nativas."
+                                  "realWorldApplication": "Em startups e empresas de apps como Nubank ou iFood, configurar Flutter permite devs criarem apps iOS/Android simultaneamente, reduzindo custos e tempo de deploy em 50% comparado a stacks nativas.",
+                                  "verification": "Xcode abre sem erros, 'pod --version' confirma instalação, 'flutter doctor' mostra iOS toolchain OK.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": "macOS Ventura+, App Store, Ruby/Gems pré-instalados.",
+                                  "tips": "Para Intel Macs, use Rosetta se necessário; teste com 'flutter doctor'.",
+                                  "learningObjective": "Preparar ambiente iOS para builds Flutter.",
+                                  "commonMistakes": "Pular CocoaPods, impedindo iOS builds; não abrir Xcode primeiro."
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Configure o ambiente e crie 'app_contador'. Rode em emulador Android: o app mostra um botão que incrementa contador. Use hot reload para mudar cor do botão editando lib/main.dart.",
+                              "finalVerifications": [
+                                "flutter doctor exibe todos checks OK.",
+                                "flutter create gera projeto sem erros.",
+                                "Projeto roda em emulador Android e/ou iOS.",
+                                "Hot reload e hot restart funcionam.",
+                                "flutter devices lista emuladores corretamente.",
+                                "'flutter pub get' resolve dependências."
+                              ],
+                              "assessmentCriteria": [
+                                "Instalação completa sem erros críticos no doctor.",
+                                "Todos steps executados com verificações positivas.",
+                                "Projeto inicial compilado e executado em pelo menos uma plataforma.",
+                                "Conhecimento demonstrado de troubleshooting comum.",
+                                "Tempo total dentro do estimado (2 horas).",
+                                "Documentação de passos personalizados criada."
+                              ],
+                              "crossCurricularConnections": [
+                                "Programação em Dart (linguagem principal do Flutter).",
+                                "Desenvolvimento nativo Android/iOS (toolchains integrados).",
+                                "Gerenciamento de ambientes DevOps (PATH, SDKs).",
+                                "Testes e debugging em mobile.",
+                                "Versionamento com Git (integração Flutter)."
+                              ],
+                              "realWorldApplication": "Em startups e empresas de apps como Nubank ou iFood, configurar Flutter permite devs criarem apps iOS/Android simultaneamente, reduzindo custos e tempo de deploy em 50% comparado a stacks nativas."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -15377,12 +15414,47 @@
                                     "Mesmos do step 2",
                                     "Documentação MIME types customizados",
                                     "Ferramentas curl/Postman para headers custom"
+                                  ],
+                                  "tips": [
+                                    "Utilize o método req.accepts() do Express para parsing automático do header Accept, simplificando a detecção de versão.",
+                                    "Defina Content-Type exato na resposta (ex: res.type('application/vnd.suaapi.v2+json')) para garantir compatibilidade com clientes.",
+                                    "Implemente logging no middleware para debug de headers recebidos durante testes.",
+                                    "Considere priorização MIME types se múltiplos forem enviados no Accept.",
+                                    "Documente as versões suportadas no Swagger/OpenAPI para facilitar consumo da API."
+                                  ],
+                                  "learningObjective": "Ao final deste step, o aluno será capaz de implementar versionamento de API baseado no header Accept, configurando middleware para detecção de versão, lógica condicional em controller único e respostas com Content-Type apropriado, incluindo fallback para v1.",
+                                  "commonMistakes": [
+                                    "Não definir Content-Type na resposta, causando rejeição por clientes estritos.",
+                                    "Esquecer o fallback para v1 quando header Accept está ausente ou inválido.",
+                                    "Confundir header Accept (para request) com Content-Type (para response).",
+                                    "Usar string matching rígido em vez de req.accepts(), perdendo suporte a quality factors (q=).",
+                                    "Não testar cenários edge como Accept: */* ou headers malformados."
                                   ]
                                 },
                                 "tips: "
                               ],
                               "learningObjective": "Detectar e rotear dinamicamente por headers, promovendo APIs limpas sem poluição de URI.",
-                              "commonMistakes": "Não validar headers corretamente levando a erros 406 Not Acceptable; ignorar cache de proxies."
+                              "commonMistakes": "Não validar headers corretamente levando a erros 406 Not Acceptable; ignorar cache de proxies.",
+                              "practicalExample": "Desenvolva uma API de e-commerce com /v1/produtos (retorna id, nome, preco) e /v2/produtos (adiciona categoria, estoque, imagem_url). Use Express.js para URI versioning e headers Accept para uma rota unificada. Teste com Postman simulando clientes legados acessando v1.",
+                              "finalVerifications": [
+                                "Executar suíte de testes integrados cobrindo v1 e v2 via URI e headers.",
+                                "Simular deploy com tráfego misto (80% v1, 20% v2) e validar zero quebras.",
+                                "Gerar relatório de cobertura com métricas de performance entre versões.",
+                                "Documentar API com OpenAPI/Swagger para ambas versões."
+                              ],
+                              "assessmentCriteria": [
+                                "Implementação correta de versionamento URI (30%) e headers (30%).",
+                                "Compatibilidade retroativa e isolamento de lógica (20%).",
+                                "Qualidade de testes e documentação (10%).",
+                                "Eficiência de código (reutilização via services) e tratamento de erros (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Arquitetura de Software: Padrões de evolução de sistemas distribuídos.",
+                                "Engenharia de Software: Manutenção evolutiva e refactoring sem downtime.",
+                                "DevOps: Pipelines CI/CD para deploy de múltiplas versões.",
+                                "Banco de Dados: Queries versionadas e migrações schema."
+                              ],
+                              "realWorldApplication": "APIs de grandes plataformas como GitHub (versionamento via headers), Stripe (URI paths), e Twitter/X, garantindo evoluções contínuas para bilhões de requests diários sem interromper integrações de terceiros."
                             },
                             "estimatedTime": "0.5 hora",
                             "difficulty": "intermediate",
@@ -17817,6 +17889,27 @@
                                     "Compare autenticação em TLS 1.2 vs 1.3 (certificados pós-handshake em 1.3).",
                                     "Pratique validando um certificado com openssl.",
                                     "verification: "
+                                  ],
+                                  "verification": "Valide um certificado de um site real (ex: google.com) usando 'openssl s_client -connect google.com:443 -showcerts' e 'openssl verify', explicando cada etapa da chain of trust.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "RFC 5280 (Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile)",
+                                    "RFC 8446 (TLS 1.3)",
+                                    "OpenSSL instalado no ambiente de prática",
+                                    "Exemplo de certificado PEM/DER para testes locais"
+                                  ],
+                                  "tips": [
+                                    "Use 'openssl x509 -in cert.pem -text -noout' para inspecionar detalhes do certificado.",
+                                    "Visualize a chain completa com 'openssl s_client -connect example.com:443 -showcerts'.",
+                                    "Lembre-se: em TLS 1.3, certificados podem ser enviados pós-handshake para autenticação adicional.",
+                                    "Teste revogação com 'openssl ocsp' se OCSP estiver disponível."
+                                  ],
+                                  "learningObjective": "Ao final deste step, o aluno será capaz de descrever a estrutura de certificados X.509, explicar o processo de autenticação de servidor via chain of trust em TLS 1.2 e 1.3, e validar certificados usando ferramentas como OpenSSL.",
+                                  "commonMistakes": [
+                                    "Confundir o sujeito (subject) do certificado com o emissor (issuer).",
+                                    "Ignorar a verificação de revogação (CRL/OCSP), assumindo que validade basta.",
+                                    "Não checar a chain of trust completa até uma root CA confiável.",
+                                    "Esquecer diferenças entre TLS 1.2 (certificado no Server Hello) e 1.3 (flexibilidade pós-handshake)."
                                   ]
                                 },
                                 "estimatedTimeExecute código OpenSSL para inspecionar um certificado real.",
@@ -17846,7 +17939,27 @@
                                 "Nmap com script tls-enum-ciphers",
                                 "Diagramas prontos para edição"
                               ],
-                              "tips": "Foco em simplificações de 1.3 para memorização."
+                              "tips": "Foco em simplificações de 1.3 para memorização.",
+                              "practicalExample": "Capture um handshake TLS real com Wireshark: 1. Abra Wireshark e filtre por 'tls.handshake'. 2. Acesse https://www.google.com. 3. Identifique Client Hello (pacote 1), Server Hello (pacote 5), Certificate (pacote 11). 4. Exporte o Certificate e valide com OpenSSL: `openssl x509 -in cert.pem -text -noout`. Analise cifras negociadas e extensões SNI.",
+                              "finalVerifications": [
+                                "Desenhe o fluxograma completo do handshake TLS 1.3 destacando 4 mensagens principais.",
+                                "Simule uma negociação de cifras falha e explique por quê.",
+                                "Valide um certificado real e liste 3 pontos de verificação.",
+                                "Explique uma diferença crítica entre TLS 1.2 e 1.3 com exemplo de ataque mitigado."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão técnica nos diagramas e análises (40%)",
+                                "Compreensão de conceitos chave e diferenças entre versões (30%)",
+                                "Uso correto de ferramentas e validações práticas (20%)",
+                                "Clareza na explicação e identificação de erros comuns (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Criptografia Computacional (SI-12): Algoritmos de cifras e chaves.",
+                                "Redes de Computadores (SI-15): Protocolos de transporte e camadas OSI.",
+                                "Segurança da Informação (SI-20): Autenticação, ataques MITM e conformidade PCI-DSS.",
+                                "Desenvolvimento Web Seguro (SI-25): Implementação HTTPS em aplicações."
+                              ],
+                              "realWorldApplication": "O handshake TLS é essencial para HTTPS em navegadores (protege 95% do tráfego web), APIs REST seguras, VPNs (IPsec/OpenVPN), email criptografado (SMTPS/IMAPS) e IoT (MQTT over TLS), prevenindo eavesdropping, MITM e garantindo compliance com LGPD/GDPR."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -31944,7 +32057,8 @@
             "totalSkills": 229
           }
         ],
-        "totalSkills": 229
+        "totalSkills": 229,
+        "percentage": 0
       }
     ]
   }

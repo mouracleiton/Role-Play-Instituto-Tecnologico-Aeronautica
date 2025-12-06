@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ID-53",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 254
+      "totalAtomicSkills": 254,
+      "startDate": "2025-02-10",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 6,
+      "version": "2025-v1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ID-53"
     },
     "areas": [
       {
@@ -35467,7 +35473,8 @@
             "totalSkills": 254
           }
         ],
-        "totalSkills": 254
+        "totalSkills": 254,
+        "percentage": 0
       }
     ]
   }

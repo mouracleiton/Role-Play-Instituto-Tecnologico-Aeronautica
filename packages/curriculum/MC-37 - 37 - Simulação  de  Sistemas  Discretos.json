@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MC-37",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 346
+      "totalAtomicSkills": 346,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MC-37"
     },
     "areas": [
       {
@@ -20546,9 +20552,73 @@
                                     "Engenharia: Modelagem de sistemas estocásticos.",
                                     "Física Computacional: Simulações de partículas discretas."
                                   ],
-                                  "realWorldApplication": "Em finanças, otimizar simulações de risco (Value-at-Risk) para eventos raros como crashes de mercado, reduzindo tempo de computação de dias para horas com amostragem por importância, permitindo análises em tempo real para traders."
+                                  "realWorldApplication": "Em finanças, otimizar simulações de risco (Value-at-Risk) para eventos raros como crashes de mercado, reduzindo tempo de computação de dias para horas com amostragem por importância, permitindo análises em tempo real para traders.",
+                                  "stepNumber": 4,
+                                  "title": "Implementação e Comparação de Técnicas de Redução de Variância em Simulação M/M/1",
+                                  "subSteps": [
+                                    "Implementar simulação básica de sistema de filas M/M/1 (chegadas Poisson, serviços exponenciais).",
+                                    "Desenvolver estimador via SRS (amostragem aleatória simples uniforme) para P(tempo de espera > 10).",
+                                    "Implementar amostragem estratificada, estratificando por carga do sistema (ρ).",
+                                    "Implementar amostragem por importância, atribuindo pesos altos a configurações com filas longas.",
+                                    "Executar 5000 réplicas independentes para cada método e calcular variâncias das estimativas.",
+                                    "Gerar gráficos comparativos de variâncias e realizar testes estatísticos (ex: F-test para variâncias)."
+                                  ],
+                                  "verification": [
+                                    "Variâncias calculadas corretamente para os três métodos.",
+                                    "Razão Var(SRS)/Var(Importância) ≈ 50.",
+                                    "Gráficos exibem redução clara de variância.",
+                                    "Código roda sem erros e é reprodutível."
+                                  ],
+                                  "estimatedTime": "6-8 horas",
+                                  "materials": [
+                                    "Python 3.x com bibliotecas NumPy, SciPy e Matplotlib.",
+                                    "Ambiente Jupyter Notebook ou Google Colab.",
+                                    "Documentação de simulações estocásticas (opcional)."
+                                  ],
+                                  "tips": [
+                                    "Fixe sementes aleatórias (np.random.seed) para reprodutibilidade.",
+                                    "Descarte período transiente (warm-up) na simulação de filas para regime estacionário.",
+                                    "Normalize pesos na amostragem por importância para evitar bias.",
+                                    "Use vetores NumPy para eficiência computacional em réplicas.",
+                                    "Valide o modelo M/M/1 com fórmulas analíticas conhecidas (ex: L = ρ/(1-ρ))."
+                                  ],
+                                  "learningObjective": "Implementar e comparar métodos de redução de variância (SRS, estratificada e por importância) em simulações Monte Carlo de sistemas de filas discretas, quantificando ganhos de eficiência (razões de variância) e demonstrando aplicação prática em modelagem estocástica.",
+                                  "commonMistakes": [
+                                    "Não descartar o período transiente, levando a estimativas enviesadas.",
+                                    "Cálculo incorreto de variância (confundir variância amostral com populacional).",
+                                    "Falta de normalização nos pesos da amostragem por importância, causando bias.",
+                                    "Réplicas não independentes (não regenerar o sistema entre runs).",
+                                    "Escolha inadequada de strata ou função de importância, sem ganho de variância."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em uma simulação de 10.000 eventos Bernoulli independentes com p=0.001 (falha rara), estime a probabilidade de pelo menos uma falha usando SRS (amostragem uniforme), estratificada (estratos de alto/baixo risco com oversampling) e por importância (distribuição inclinada para falhas com pesos ajustados). Execute 5000 réplicas e calcule variâncias: espere Var(SRS)/Var(Importância) ≈ 100.",
+                              "finalVerifications": [
+                                "Variâncias calculadas corretamente para SRS, estratificada e importância.",
+                                "Razões de variância >1, confirmando redução de variância.",
+                                "Gráficos (histogramas/boxplots) evidenciam diferenças visuais.",
+                                "Testes estatísticos (ex: F-test) rejeitam igualdade de variâncias.",
+                                "Resultados alinhados com teoria (ganhos maiores para eventos raros).",
+                                "Código executável, versionado e reprodutível com sementes fixas.",
+                                "Relatório completo, sem erros em fórmulas ou interpretações."
+                              ],
+                              "assessmentCriteria": [
+                                "Cálculos de variância precisos (erro relativo <5%).",
+                                "Quantificação correta de eficiência (ex: >2x estratificada, >10x importância).",
+                                "Interpretação crítica relacionando teoria e prática.",
+                                "Gráficos profissionais, legíveis e informativos.",
+                                "Código limpo, modular, comentado e otimizado.",
+                                "Relatório estruturado com introdução, métodos, resultados e conclusões.",
+                                "Evidência de compreensão integrada teórico-prática."
+                              ],
+                              "crossCurricularConnections": [
+                                "Estatística: Redução de variância e inferência em simulações.",
+                                "Programação: Implementação eficiente de simulações em Python/R.",
+                                "Ciência de Dados: Técnicas de Monte Carlo para big data estocástico.",
+                                "Engenharia: Análise de confiabilidade em sistemas discretos.",
+                                "Física Computacional: Simulações de processos estocásticos discretos."
+                              ],
+                              "realWorldApplication": "Na indústria aeroespacial, simular falhas raras em componentes (ex: probabilidade de falha em missões espaciais) usando amostragem por importância para reduzir variância de 10^6 para 10^3 réplicas, acelerando certificações de segurança de semanas para dias."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -26448,6 +26518,13 @@
                                     "Ignorar overhead computacional",
                                     "Concluir sem testes múltiplos",
                                     "Não considerar escalabilidade"
+                                  ],
+                                  "verification": [
+                                    "Tabelas comparativas (baseline vs CRN vs AV vs CV) geradas com métricas (média, variância, tempo CPU).",
+                                    "Relatório de suporte do software (configuração, estabilidade, docs) documentado.",
+                                    "Testes em modelo complexo (ex: rede de filas) realizados e resultados analisados.",
+                                    "Conclusão explícita sobre robustez da integração para validações reais.",
+                                    "Relatório final com gráficos de variância (ex: boxplots) produzido e salvo."
                                   ]
                                 }
                               ],
@@ -45460,7 +45537,8 @@
             "totalSkills": 346
           }
         ],
-        "totalSkills": 346
+        "totalSkills": 346,
+        "percentage": 0
       }
     ]
   }

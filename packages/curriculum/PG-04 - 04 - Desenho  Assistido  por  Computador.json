@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PG-04",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 384
+      "totalAtomicSkills": 384,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-PG-04",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PG-04"
     },
     "areas": [
       {
@@ -16317,7 +16323,38 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um projeto de engrenagem para máquina leve, duplique 'Aço AISI 1045', reduza densidade para 7.2 g/cm³ simulando liga alumínio-aço, mude cor para azul metálico, salve como 'AçoLeveAzul.sldmat', aplique à engrenagem e confirme redução de 15% na massa total via Mass Properties."
+                                  "practicalExample": "Em um projeto de engrenagem para máquina leve, duplique 'Aço AISI 1045', reduza densidade para 7.2 g/cm³ simulando liga alumínio-aço, mude cor para azul metálico, salve como 'AçoLeveAzul.sldmat', aplique à engrenagem e confirme redução de 15% na massa total via Mass Properties.",
+                                  "stepNumber": "4.2",
+                                  "title": "Customização de Material para Otimização de Massa em Engrenagem",
+                                  "subSteps": [
+                                    "Abra o modelo da engrenagem no SolidWorks.",
+                                    "Acesse a biblioteca de materiais (Appearence > Edit Material).",
+                                    "Duplique o material 'Aço AISI 1045'.",
+                                    "Altere a densidade para 7.2 g/cm³, simulando uma liga alumínio-aço.",
+                                    "Modifique a cor para azul metálico.",
+                                    "Salve o novo material como 'AçoLeveAzul.sldmat'.",
+                                    "Aplique o material à engrenagem.",
+                                    "Execute Mass Properties para analisar a massa total."
+                                  ],
+                                  "verification": "Confirme redução de 15% na massa total via ferramenta Mass Properties (compare antes/depois).",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "SolidWorks 2025",
+                                    "Modelo da engrenagem (.SLDPRT)",
+                                    "Biblioteca de materiais padrão"
+                                  ],
+                                  "tips": [
+                                    "Salve o material customizado em pasta personalizada para reutilização.",
+                                    "Use unidades consistentes (g/cm³) para evitar erros de escala.",
+                                    "Teste aparências em diferentes ângulos de visualização."
+                                  ],
+                                  "learningObjective": "Customizar propriedades de materiais no SolidWorks para simular ligas leves e otimizar massa em projetos mecânicos.",
+                                  "commonMistakes": [
+                                    "Esquecer de salvar o material customizado como .sldmat.",
+                                    "Não aplicar o material a todas as faces da peça.",
+                                    "Confundir densidade com outras propriedades como módulo de elasticidade.",
+                                    "Não recalcular Mass Properties após alterações."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -16326,6 +16363,39 @@
                                     "Aplicação à parte específica sem afetar outras.",
                                     "Cálculos de massa/volume atualizados e precisos.",
                                     "Pré-visualização e simulação básica sem erros."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Aplicação e Verificação Final do Material Customizado",
+                                  "subSteps": [
+                                    "Salve o material customizado na biblioteca personalizada.",
+                                    "Selecione e aplique o material à parte específica do modelo.",
+                                    "Inspecione as propriedades editadas (densidade e cor).",
+                                    "Verifique os cálculos atualizados de massa e volume.",
+                                    "Execute pré-visualização e simulação básica."
+                                  ],
+                                  "verification": [
+                                    "Material customizado salvo e listado na biblioteca personalizada.",
+                                    "Propriedades editadas (densidade, cor) visíveis e corretas na inspeção.",
+                                    "Aplicação à parte específica sem afetar outras.",
+                                    "Cálculos de massa/volume atualizados e precisos.",
+                                    "Pré-visualização e simulação básica sem erros."
+                                  ],
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Software de simulação de engenharia (ex: ANSYS, SolidWorks Simulation)",
+                                    "Modelo de peça com geometria pré-definida"
+                                  ],
+                                  "tips": [
+                                    "Sempre confirme as unidades de densidade (kg/m³) antes de salvar.",
+                                    "Use cores contrastantes para facilitar a visualização na inspeção.",
+                                    "Teste a aplicação em uma cópia do modelo para evitar alterações indesejadas."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de criar, salvar, aplicar e verificar materiais customizados em simulações de engenharia, garantindo precisão nos cálculos e visualizações.",
+                                  "commonMistakes": [
+                                    "Aplicar o material a todas as partes em vez de apenas à específica.",
+                                    "Esquecer de salvar o material na biblioteca personalizada.",
+                                    "Não atualizar ou verificar cálculos de massa/volume após edição.",
+                                    "Ignorar erros na pré-visualização devido a propriedades inconsistentes."
                                   ]
                                 },
                                 {
@@ -16335,6 +16405,36 @@
                                     "Aplicação seletiva e verificação de impactos.",
                                     "Nomeação clara e organização da biblioteca.",
                                     "Execução dentro do tempo total estimado (50 minutos)."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Prática: Edição, Duplicação e Organização de Entradas no Catálogo (PG-04)",
+                                  "subSteps": [
+                                    "Abra o arquivo do Catálogo dos Cursos de Graduação 2025 na página PG-04.",
+                                    "Selecione uma entrada de curso e edite precisamente ≥3 propriedades com valores realistas (ex: carga horária, pré-requisitos, ementa).",
+                                    "Duplique a entrada selecionada e salve a cópia sem alterar o arquivo original.",
+                                    "Aplique as edições de forma seletiva em elementos relacionados e verifique os impactos visuais e de layout.",
+                                    "Nomeie a nova entrada de forma clara (ex: 'Curso_X_Duplicado_v2') e organize-a na biblioteca de componentes.",
+                                    "Salve o progresso e confirme que todas as alterações foram executadas dentro do tempo total."
+                                  ],
+                                  "verification": "Inspecione o arquivo: ≥3 propriedades editadas com valores realistas; duplicata salva sem alterações no original; impactos verificados sem erros de layout; biblioteca organizada com nomes claros; conclusão em ≤50 minutos.",
+                                  "estimatedTime": "50 minutos",
+                                  "materials": [
+                                    "Software de edição de layout (ex: Adobe InDesign)",
+                                    "Arquivo: Catálogo dos Cursos de Graduação 2025 - PG-04"
+                                  ],
+                                  "tips": [
+                                    "Trabalhe em uma cópia do arquivo para evitar perda de dados.",
+                                    "Use valores baseados em cursos reais do ITA para realismo.",
+                                    "Pré-visualize mudanças antes de aplicar em toda a página.",
+                                    "Monitore o tempo a cada subpasso para não exceder o limite."
+                                  ],
+                                  "learningObjective": "O aluno dominará a edição precisa de propriedades, duplicação segura de entradas, aplicação seletiva de mudanças com verificação de impactos e organização eficiente da biblioteca, tudo dentro do prazo estipulado.",
+                                  "commonMistakes": [
+                                    "Editar o original em vez de criar e salvar uma duplicata.",
+                                    "Inserir valores irreais ou inconsistentes com o contexto acadêmico.",
+                                    "Aplicar edições globalmente sem verificar impactos locais.",
+                                    "Usar nomes genéricos ou deixar a biblioteca desorganizada.",
+                                    "Demorar mais de 50 minutos por falta de planejamento."
                                   ]
                                 },
                                 {
@@ -16343,12 +16443,93 @@
                                     "Química: Variações em composições materiais e propriedades.",
                                     "Matemática: Cálculos de volume, densidade e derivadas.",
                                     "Engenharia de Manufatura: Otimização de materiais para produção."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Experimento: Influência da Densidade no Equilíbrio e Flutuação",
+                                  "subSteps": [
+                                    "1. Selecione amostras de materiais com diferentes densidades (ex: madeira, plástico, metal).",
+                                    "2. Meça a massa de cada amostra usando uma balança de precisão.",
+                                    "3. Determine o volume por deslocamento de água em um cilindro graduado.",
+                                    "4. Calcule a densidade (ρ = m/V) para cada material.",
+                                    "5. Teste a flutuação das amostras em um recipiente com água e observe o equilíbrio.",
+                                    "6. Analise como variações na densidade afetam o equilíbrio e a estabilidade."
+                                  ],
+                                  "verification": "Cálculos de densidade corretos (com erro <5%) e explicação escrita do impacto no equilíbrio, conectando com física, química e matemática.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Balança de precisão",
+                                    "Cilindro graduado (100-250 mL)",
+                                    "Amostras de materiais (madeira, plástico, alumínio, ferro - 5-10g cada)",
+                                    "Recipiente com água",
+                                    "Calculadora ou software para derivadas (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Realize medições em triplicata para maior precisão.",
+                                    "Corrija o volume pelo efeito da temperatura na densidade da água.",
+                                    "Use derivadas para modelar pequenas variações na densidade durante otimização.",
+                                    "Registre fotos ou vídeos dos testes de flutuação."
+                                  ],
+                                  "learningObjective": "Compreender o conceito de densidade e seu impacto no equilíbrio de objetos, massa, propriedades materiais e otimização em manufatura, integrando cálculos matemáticos precisos.",
+                                  "commonMistakes": [
+                                    "Confundir massa com peso ou volume com área.",
+                                    "Ignorar o deslocamento de ar ou erros de paralaxe na leitura do cilindro.",
+                                    "Não considerar variações composicionais que alteram propriedades químicas.",
+                                    "Erros em cálculos de derivadas para análise de sensibilidade."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na indústria automotiva, engenheiros editam propriedades de plásticos reforçados para reduzir peso em componentes, simulando performance real antes de protótipos caros, economizando tempo e custos em design iterativo."
+                                  "realWorldApplication": "Na indústria automotiva, engenheiros editam propriedades de plásticos reforçados para reduzir peso em componentes, simulando performance real antes de protótipos caros, economizando tempo e custos em design iterativo.",
+                                  "stepNumber": 4,
+                                  "title": "Editando Propriedades de Plásticos Reforçados",
+                                  "subSteps": [
+                                    "Acesse o módulo de materiais no software de simulação.",
+                                    "Selecione o material plástico reforçado (ex: PA6 + GF30).",
+                                    "Edite propriedades como módulo de elasticidade, resistência à tração e densidade para otimizar peso.",
+                                    "Defina comportamento anisotrópico considerando orientação das fibras.",
+                                    "Salve as alterações e aplique ao modelo do componente automotivo."
+                                  ],
+                                  "verification": "Execute uma simulação rápida e confirme que o fator de segurança reflete as novas propriedades, com redução de peso observada sem falha prematura.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Software de simulação (ex: ANSYS Workbench ou similar)",
+                                    "Modelo CAD do componente automotivo",
+                                    "Datasheet de propriedades do plástico reforçado"
+                                  ],
+                                  "tips": [
+                                    "Baseie edições em dados reais de fabricantes para precisão.",
+                                    "Considere efeitos de temperatura e umidade em polímeros.",
+                                    "Teste iterações pequenas para validar impactos na performance."
+                                  ],
+                                  "learningObjective": "Editar propriedades de materiais compósitos como plásticos reforçados para otimizar design automotivo, simulando redução de peso e performance real antes de protótipos físicos.",
+                                  "commonMistakes": [
+                                    "Usar propriedades isotrópicas em materiais reforçados com fibras direcionais.",
+                                    "Ignorar conversão de unidades (ex: MPa vs. GPa).",
+                                    "Não atualizar o modelo após edições, causando inconsistências na simulação."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um projeto de engrenagem para máquina leve, duplique 'Aço AISI 1045', reduza densidade para 7.2 g/cm³ simulando liga alumínio-aço, mude cor para azul metálico, salve como 'AçoLeveAzul.sldmat', aplique à engrenagem e confirme redução de 15% na massa total via Mass Properties.",
+                              "finalVerifications": [
+                                "Material customizado salvo e listado na biblioteca personalizada.",
+                                "Propriedades editadas (densidade, cor) visíveis e corretas na inspeção.",
+                                "Aplicação à parte específica sem afetar outras.",
+                                "Cálculos de massa/volume atualizados e precisos.",
+                                "Pré-visualização e simulação básica sem erros."
+                              ],
+                              "assessmentCriteria": [
+                                "Edição precisa de ≥3 propriedades com valores realistas.",
+                                "Duplicação e salvamento sem alterar originais.",
+                                "Aplicação seletiva e verificação de impactos.",
+                                "Nomeação clara e organização da biblioteca.",
+                                "Execução dentro do tempo total estimado (50 minutos)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Impacto da densidade em massa e equilíbrio.",
+                                "Química: Variações em composições materiais e propriedades.",
+                                "Matemática: Cálculos de volume, densidade e derivadas.",
+                                "Engenharia de Manufatura: Otimização de materiais para produção."
+                              ],
+                              "realWorldApplication": "Na indústria automotiva, engenheiros editam propriedades de plásticos reforçados para reduzir peso em componentes, simulando performance real antes de protótipos caros, economizando tempo e custos em design iterativo."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -50615,7 +50796,8 @@
             "totalSkills": 384
           }
         ],
-        "totalSkills": 384
+        "totalSkills": 384,
+        "percentage": 0
       }
     ]
   }

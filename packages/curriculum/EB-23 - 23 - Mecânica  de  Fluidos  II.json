@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EB-23",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 348
+      "totalAtomicSkills": 348,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EB-23"
     },
     "areas": [
       {
@@ -1828,6 +1834,13 @@
                                     "Ignorar que T/T₀ <1 para Ma>0.",
                                     "Extrapolação além de limites físicos.",
                                     "Não considerar variações de γ com T."
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: T/T₀ < 1 indica fluxo supersônico (Ma > 1); use γ = 1.4 para ar.",
+                                    "Para tabela, calcule com passos de 0.05 em T/T₀; inclua Ma correspondente.",
+                                    "Problema reverso: use T/T₀ = (p/p₀)^{(γ-1)/γ} ou solver numérico.",
+                                    "Gráfico: use escala log em p/p₀ para visualizar melhor a curva exponencial.",
+                                    "Compare com nozzles reais: perdas reduzem p/p₀ efetivo em ~5-10%."
                                   ]
                                 }
                               ],
@@ -6009,6 +6022,27 @@
                                     "Discutir sub-pixel accuracy com interpolação.",
                                     "Testar com dados sintéticos para validar.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Implemente a correlação cruzada em código Python usando NumPy e valide o deslocamento detectado (pico máximo) contra valores conhecidos em dados sintéticos, alcançando precisão sub-pixel via interpolação.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Notebook Jupyter ou ambiente Python",
+                                    "Bibliotecas: NumPy, SciPy, Matplotlib",
+                                    "Imagens sintéticas deslocadas (geradas via código ou fornecidas)",
+                                    "Documentação de correlação cruzada (opcional: OpenCV tutorial)"
+                                  ],
+                                  "tips": [
+                                    "Sempre normalize as imagens (subtraia média e divida pelo desvio padrão) para evitar viés.",
+                                    "Use Transformada de Fourier (FFT) para correlação 2D eficiente em imagens grandes.",
+                                    "Aplique padding ou janelas (ex: Hanning) para mitigar artefatos de borda.",
+                                    "Para sub-pixel, use interpolação parabólica ou gaussiana no pico vizinho."
+                                  ],
+                                  "learningObjective": "Ao final, o aluno será capaz de explicar, implementar e validar a correlação cruzada normalizada para estimar deslocamentos entre imagens, incluindo detecção de picos e precisão sub-pixel.",
+                                  "commonMistakes": [
+                                    "Esquecer normalização, causando picos falsos devido a diferenças de brilho.",
+                                    "Não considerar deslocamentos negativos (usar correlação não centrada).",
+                                    "Interpretar ruído como pico sem validação em dados reais.",
+                                    "Implementar soma simples sem divisão pelo tamanho da janela, perdendo escala."
                                   ]
                                 },
                                 "estimatedTime\": \"2 horas\teste",
@@ -6016,7 +6050,33 @@
                                 "tips\": \"Pratique com janelas pequenas primeiro para entender o sinal-ruído.\",\n",
                                 "learningObjective\": \"Aplicar correlação cruzada para extrair deslocamentos precisos.\",\n",
                                 "commonMistakes\": [\"Não normalizar a correlação levando a falsos picos\", \"Ignorar out-of-bounds nas janelas de busca\"]\n    },\n    {\n      \"stepNumber\": 4,\n      \"title\": \"Calcular vetores de velocidade\",\n      \"subSteps\": [\n        \"Converter deslocamento espacial em velocidade: v = Δx / Δt.\",\n        \"Construir campo vetorial interpolando sobrepostas de janelas.\",\n        \"Aplicar validação: detecção de vetores inválidos (baixa correlação, gradientes altos).\",\n        \"Visualizar mapa de velocidades com quiver plots.\",\n        \"Analisar componentes u, v e magnitude.\"\n      ],\n      \"verification\": \"Gerar e interpretar um mapa de vetores de velocidade de um exemplo.\",\n      \"estimatedTime\": \"1.5 horas\",\n      \"materials\": [\"Software PIVLab (MATLAB gratuito)\", \"Dados de teste de fluxo laminar\", \"Ferramenta de plotagem como Matplotlib\"],\n      \"tips\": \"Sempre valide 10-20% dos vetores manualmente.\",\n      \"learningObjective\": \"Transformar deslocamentos em campo de velocidades físico.\",\n      \"commonMistakes\": [\"Esquecer de dividir pelo intervalo temporal Δt\", \"Não filtrar vetores outlier\"]\n    },\n    {\n      \"stepNumber\": 5,\n      \"title\": \"Integrar conceitos e limitações\",\n      \"subSteps\": [\n        \"Resumir pipeline completo: aquisição → correlação → vetores.\",\n        \"Discutir erros: bias, random, spatial resolution.\",\n        \"Comparar com outras técnicas (LDV, PTV).\",\n        \"Explorar extensões: stereo-PIV, time-resolved PIV.\",\n        \"Planejar experimento simples.\"\n      ],\n      \"verification\": \"Explicar o princípio da PIV em 5 minutos para um colega.\",\n      \"estimatedTime\": \"1 hora\",\n      \"materials\": [\"Artigos de revisão sobre PIV (ex: Meas. Sci. Technol.)\", \"Quiz online sobre PIV\"],\n      \"tips\": \"Crie um fluxograma pessoal do processo.\",\n      \"learningObjective\": \"Sintetizar o princípio fundamental com aplicações práticas.\",\n      \"commonMistakes\": [\"Superestimar precisão sem considerar densidade de partículas\", \"Confundir PIV 2D com 3D\"]\n    }\n  ],\n  \"practicalExample\": \"Em um teste de túnel de vento, capture pares de imagens de partículas em fluxo sobre uma asa de avião em escala. Aplique correlação cruzada em janelas de 32x32 pixels para mapear vetores de velocidade, revelando separação de escoamento na borda de ataque.\",\n  \"finalVerifications\": [\n    \"Descreve corretamente o pipeline de PIV: imagens → correlação → velocidades.\",\n    \"Calcula deslocamento de um par de imagens com precisão sub-pixel.\",\n    \"Identifica picos de correlação em dados reais.\",\n    \"Gera e valida um mapa de vetores de velocidade.\",\n    \"Explica limitações como resolução espacial e densidade de partículas.\",\n    \"Compara PIV com velocimetria laser Doppler.\"\n  ],\n  \"assessmentCriteria\": [\n    \"Precisão na explicação da correlação cruzada (fórmula e interpretação).\",\n    \"Capacidade de calcular vetores de exemplo manualmente.\",\n    \"Qualidade da visualização e validação de resultados.\",\n    \"Profundidade na discussão de erros e limitações.\",\n    \"Clareza na conexão com aplicações em Mecânica dos Fluidos.\",\n    \"Criatividade em exemplos práticos.\",\n    \"Uso correto de terminologia técnica (ex: interrogation window, peak locking).\"\n  ],\n  \"crossCurricularConnections\": [\n    \"Matemática: Estatística (correlação), álgebra linear (vetores).\",\n    \"Física: Óptica (laser, difração), Mecânica dos Fluidos (continuum hypothesis).\",\n    \"Programação: Processamento de imagens (Python/OpenCV, MATLAB).\",\n    \"Engenharia: Análise experimental, validação numérica CFD.\",\n    \"Computação Científica: Otimização de algoritmos de correlação.\"\n  ],\n  \"realWorldApplication\": \"Na indústria aeronáutica, PIV é usada em túneis de vento para otimizar perfis de asas, reduzindo arrasto em 5-10%; em automotivo, mede fluxos internos de motores para melhorar eficiência de combustão.\"\n}"
-                              ]
+                              ],
+                              "practicalExample": "Em um teste de túnel de vento, capture pares de imagens de partículas em fluxo sobre uma asa de avião em escala. Aplique correlação cruzada em janelas de 32x32 pixels para mapear vetores de velocidade, revelando separação de escoamento na borda de ataque.",
+                              "finalVerifications": [
+                                "Descreve corretamente o pipeline de PIV: imagens → correlação → velocidades.",
+                                "Calcula deslocamento de um par de imagens com precisão sub-pixel.",
+                                "Identifica picos de correlação em dados reais.",
+                                "Gera e valida um mapa de vetores de velocidade.",
+                                "Explica limitações como resolução espacial e densidade de partículas.",
+                                "Compara PIV com velocimetria laser Doppler."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na explicação da correlação cruzada (fórmula e interpretação).",
+                                "Capacidade de calcular vetores de exemplo manualmente.",
+                                "Qualidade da visualização e validação de resultados.",
+                                "Profundidade na discussão de erros e limitações.",
+                                "Clareza na conexão com aplicações em Mecânica dos Fluidos.",
+                                "Criatividade em exemplos práticos.",
+                                "Uso correto de terminologia técnica (ex: interrogation window, peak locking)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Estatística (correlação), álgebra linear (vetores).",
+                                "Física: Óptica (laser, difração), Mecânica dos Fluidos (continuum hypothesis).",
+                                "Programação: Processamento de imagens (Python/OpenCV, MATLAB).",
+                                "Engenharia: Análise experimental, validação numérica CFD.",
+                                "Computação Científica: Otimização de algoritmos de correlação."
+                              ],
+                              "realWorldApplication": "Na indústria aeronáutica, PIV é usada em túneis de vento para otimizar perfis de asas, reduzindo arrasto em 5-10%; em automotivo, mede fluxos internos de motores para melhorar eficiência de combustão."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -13524,6 +13584,21 @@
                                   "materials": [
                                     "Livro texto de Mecânica de Fluidos II",
                                     "Ferramenta de verificação online (ex: Wolfram Alpha para termos)"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se de expandir o tensor de tensões viscosas corretamente usando o tensor de deformação rate-of-strain.",
+                                    "Garanta que os termos convectivos (u∂u/∂x + v∂u/∂y + w∂u/∂z) estejam no lado esquerdo multiplicados por ρ.",
+                                    "Use notação tensorial ou índices para verificar simetria entre equações x, y e z.",
+                                    "Confira os coeficientes: 2μ para diagonais e μ para off-diagonais no tensor viscoso.",
+                                    "Para verificação dimensional, lembre que ρ*aceleração = força/volume (N/m³)."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de derivar, montar e verificar as três equações escalares completas de Navier-Stokes em coordenadas cartesianas, incluindo todos os termos de aceleração, pressão e viscosidade, garantindo simetria e consistência dimensional.",
+                                  "commonMistakes": [
+                                    "Esquecer o termo de dilatação volumétrica -(2/3)μ∇·u nas componentes diagonais.",
+                                    "Colocar termos convectivos no lado direito da equação.",
+                                    "Usar coeficientes incorretos nos termos de cisalhamento, como ∂/∂y(μ(∂u/∂y + ∂v/∂x)) em vez de forma simétrica.",
+                                    "Omitir variações de μ se não constante, mas assumir constante aqui.",
+                                    "Ignorar a verificação dimensional, confundindo unidades de pressão com força/vol."
                                   ]
                                 }
                               ],
@@ -17780,7 +17855,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em simulação de fluxo subsonico sobre airfoil NACA 0012 a 0° AoA (simétrico), simetria plano reduz malha de 500k para 250k células (50% redução, tempo simulação de 2h para 1h). Com flap assimétrico introduzindo vorticidade, simulação simétrica erra pressão em 15% na seção afetada, exigindo full domain."
+                                  "practicalExample": "Em simulação de fluxo subsonico sobre airfoil NACA 0012 a 0° AoA (simétrico), simetria plano reduz malha de 500k para 250k células (50% redução, tempo simulação de 2h para 1h). Com flap assimétrico introduzindo vorticidade, simulação simétrica erra pressão em 15% na seção afetada, exigindo full domain.",
+                                  "stepNumber": 4.2,
+                                  "title": "Aplicação de Simetria em Malhas para Fluxos Subsonicos",
+                                  "subSteps": [
+                                    "1. Carregue a malha full domain de 500k células para airfoil NACA 0012 a 0° AoA.",
+                                    "2. Configure o plano de simetria no domínio médio e gere malha reduzida de 250k células.",
+                                    "3. Execute simulação simétrica e compare tempo (esperado: ~1h) e resultados com full domain.",
+                                    "4. Modifique geometria adicionando flap assimétrico, execute simulação simétrica e full domain.",
+                                    "5. Analise erros de pressão na seção afetada (esperado: ~15% de erro na simétrica)."
+                                  ],
+                                  "verification": "Redução de 50% na malha e tempo na simulação simétrica; erro de pressão >10% no caso assimétrico com simetria aplicada.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software CFD (ex: ANSYS Fluent ou OpenFOAM)",
+                                    "Malha estruturada NACA 0012 (500k células full domain)",
+                                    "Condições: Ma=0.3, Re=6e6, AoA=0°",
+                                    "Geometria com flap deflectido 10°"
+                                  ],
+                                  "tips": [
+                                    "Verifique simetria geométrica e de condições de contorno antes de aplicar.",
+                                    "Use monitor de resíduos e forças para convergência rápida.",
+                                    "Salve malhas reduzidas para reutilização em casos semelhantes."
+                                  ],
+                                  "learningObjective": "Compreender benefícios (redução computacional) e limitações (erros em fluxos assimétricos) do uso de simetria em simulações CFD.",
+                                  "commonMistakes": [
+                                    "Aplicar simetria em casos com vorticidade ou assimetria (ex: flaps deflectidos).",
+                                    "Não ajustar condições de contorno no plano de simetria (velocidade normal=0).",
+                                    "Ignorar verificação de convergência em domínios reduzidos."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -17789,6 +17892,44 @@
                                     "Compara resultados full vs sym com gráficos quantitativos.",
                                     "Lista 4 vantagens e 4 limitações com exemplos.",
                                     "Explica impacto em recursos computacionais (CPU, RAM)."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Verificações Finais: Benefícios e Limitações da Simetria em Simulações",
+                                  "subSteps": [
+                                    "1. Execute simulações full e simétrica para uma malha de exemplo.",
+                                    "2. Calcule a redução percentual no tamanho da malha com precisão <1%.",
+                                    "3. Identifique 3 casos onde simetria falha (ex: vorticidade, carregamentos assimétricos).",
+                                    "4. Compare resultados com gráficos quantitativos (contornos, vetores).",
+                                    "5. Liste 4 vantagens e 4 limitações com exemplos práticos.",
+                                    "6. Explique impactos em CPU, RAM e tempo de simulação."
+                                  ],
+                                  "verification": [
+                                    "Calcula redução % com precisão <1% para malha dada.",
+                                    "Identifica corretamente 3 casos onde simetria falha (ex: vorticidade).",
+                                    "Compara resultados full vs sym com gráficos quantitativos.",
+                                    "Lista 4 vantagens e 4 limitações com exemplos.",
+                                    "Explica impacto em recursos computacionais (CPU, RAM)."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software de simulação (ex: ANSYS, OpenFOAM)",
+                                    "Arquivos de malha full e simétrica",
+                                    "Computador com GPU recomendada"
+                                  ],
+                                  "tips": [
+                                    "Valide precisão em linhas de simetria e pontos críticos.",
+                                    "Use vorticidade e cisalhamento como exemplos clássicos de falha.",
+                                    "Gere gráficos normalizados para comparações claras.",
+                                    "Meça speedup real executando benchmarks.",
+                                    "Documente setups para reproducibilidade."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de quantificar benefícios da simetria em simulações computacionais, comparar resultados e identificar limitações com exemplos precisos.",
+                                  "commonMistakes": [
+                                    "Aplicar simetria sem validar resultados equivalentes.",
+                                    "Ignorar assimetrias induzidas (ex: turbulência, rotação).",
+                                    "Confundir redução de malha com precisão de solução.",
+                                    "Listar vantagens genéricas sem exemplos quantitativos.",
+                                    "Subestimar overhead de condições de simetria."
                                   ]
                                 },
                                 {
@@ -17798,6 +17939,38 @@
                                     "Correta implementação e interpretação em software CFD.",
                                     "Relatório claro, com visualizações e referências.",
                                     "Criatividade em critérios de decisão para uso de simetria."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Projeto Final: Aplicação de Simetria, Análise de Erros e Relatório em CFD",
+                                  "subSteps": [
+                                    "Identificar e justificar o uso de simetria no problema aerodinâmico selecionado.",
+                                    "Configurar o domínio reduzido e condições de simetria no software CFD (ex: ANSYS Fluent ou OpenFOAM).",
+                                    "Executar simulações completas e reduzidas, calculando reduções computacionais e erros relativos (<2%).",
+                                    "Realizar análise qualitativa das limitações da simetria (ex: fluxos assimétricos).",
+                                    "Elaborar relatório técnico com visualizações (contornos, gráficos), interpretação e referências bibliográficas."
+                                  ],
+                                  "verification": "Avaliação do relatório submetido conforme critérios: precisão de erros <2%, profundidade qualitativa, implementação correta em CFD, clareza com visualizações e criatividade nos critérios de simetria.",
+                                  "estimatedTime": "6-8 horas",
+                                  "materials": [
+                                    "Software CFD licenciado (ANSYS Fluent, OpenFOAM ou equivalente).",
+                                    "Computador com pelo menos 16GB RAM e GPU recomendada.",
+                                    "Geometrias de teste simétricas (ex: cilindro, airfoil NACA).",
+                                    "Referências: livros de CFD (Versteeg & Malalasekera), manuais do software."
+                                  ],
+                                  "tips": [
+                                    "Sempre valide a simetria com simulações de referência sem redução.",
+                                    "Use malhas refinadas nas regiões críticas para minimizar erros numéricos.",
+                                    "Inclua métricas como tempo de CPU/GPU e speedup na análise.",
+                                    "Estruture o relatório com seções claras: introdução, metodologia, resultados, discussão e conclusões.",
+                                    "Teste criatividade propondo critérios híbridos (simetria parcial + subdomínios)."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de aplicar simetria para otimizar simulações CFD, quantificar erros com precisão (<2%), analisar limitações qualitativamente e produzir relatórios técnicos profissionais com visualizações e referências.",
+                                  "commonMistakes": [
+                                    "Aplicar simetria em fluxos com perturbações assimétricas (ex: vórtices).",
+                                    "Não convergir adequadamente as simulações reduzidas (erros >2%).",
+                                    "Falta de visualizações ou interpretação superficial dos resultados.",
+                                    "Ignorar referências bibliográficas ou citações inadequadas.",
+                                    "Configuração incorreta de condições de simetria no software (ex: walls errados)."
                                   ]
                                 },
                                 {
@@ -17806,12 +17979,89 @@
                                     "Ciência da Computação: Otimização de meshes e algoritmos paralelos.",
                                     "Física: Princípios de conservação em fluxos simétricos/invariantes.",
                                     "Engenharia Mecânica: Otimização em design aerodinâmico e automotivo."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Aplicando Simetria de Grupos em Otimização de Meshes",
+                                  "subSteps": [
+                                    "Revisar teoria de grupos de simetria e transformações lineares básicas.",
+                                    "Modelar uma mesh inicial com simetria explícita usando software de gráficos computacionais.",
+                                    "Implementar algoritmos de otimização explorando invariâncias simétricas.",
+                                    "Validar o modelo com princípios de conservação física e testes de performance."
+                                  ],
+                                  "verification": "A mesh otimizada deve exibir redução de pelo menos 25% nos vértices sem perda de precisão geométrica, confirmada por métricas de erro e visualização 3D.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Software de modelagem 3D (ex: Blender ou MeshLab)",
+                                    "Notebook com GPU recomendada",
+                                    "Documentação de teoria de grupos (PDF ou Jupyter Notebook)",
+                                    "Exemplos de meshes simétricas (arquivos .obj)"
+                                  ],
+                                  "tips": [
+                                    "Utilize matrizes de transformação para propagar simetrias automaticamente.",
+                                    "Paralelize iterações de otimização com bibliotecas como CUDA ou OpenMP.",
+                                    "Teste simetrias em subgrupos antes de aplicar ao mesh completo.",
+                                    "Monitore o determinante das matrizes para preservar orientação."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de integrar teoria de grupos de simetria em fluxos de otimização de meshes, conectando conceitos matemáticos, computacionais e físicos para aplicações em engenharia.",
+                                  "commonMistakes": [
+                                    "Aplicar transformações sem verificar invariância do volume (dilatações indesejadas).",
+                                    "Ignorar simetrias discretas em meshes não-regulares.",
+                                    "Não paralelizar computações, levando a tempos excessivos.",
+                                    "Confundir simetria geométrica com simetria topológica."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na engenharia aeronáutica, simetria acelera simulações iniciais de fuselagens simétricas (reduzindo custos em 50% no design do Boeing 787), mas é abandonada em configurações assimétricas como hélices rotativas ou winglets para evitar erros em previsão de estol e vibrações."
+                                  "realWorldApplication": "Na engenharia aeronáutica, simetria acelera simulações iniciais de fuselagens simétricas (reduzindo custos em 50% no design do Boeing 787), mas é abandonada em configurações assimétricas como hélices rotativas ou winglets para evitar erros em previsão de estol e vibrações.",
+                                  "stepNumber": 4,
+                                  "title": "Aplicações Práticas da Simetria na Engenharia Aeronáutica",
+                                  "subSteps": [
+                                    "Analise o uso inicial da simetria em simulações de fuselagens simétricas, como no Boeing 787.",
+                                    "Calcule o impacto econômico: redução de 50% nos custos de design.",
+                                    "Identifique limitações em configurações assimétricas (hélices rotativas, winglets).",
+                                    "Discuta erros potenciais: previsão de estol e vibrações."
+                                  ],
+                                  "verification": "Explique, com base no exemplo do Boeing 787, quando a simetria deve ser abandonada em projetos aeronáuticos e por quê.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - EB-23",
+                                    "Vídeo documental sobre design do Boeing 787 (YouTube)",
+                                    "Artigo técnico sobre aerodinâmica assimétrica (NASA ou AIAA)"
+                                  ],
+                                  "tips": [
+                                    "Priorize simetria para protótipos iniciais para otimizar tempo e custo.",
+                                    "Sempre valide simulações simétricas com testes assimétricos em fases avançadas.",
+                                    "Use software como ANSYS ou XFOIL para visualizar diferenças."
+                                  ],
+                                  "learningObjective": "Compreender o papel da simetria em acelerar simulações aeronáuticas iniciais, seus benefícios econômicos e limitações em designs assimétricos, aplicando conceitos ao contexto real do Boeing 787.",
+                                  "commonMistakes": [
+                                    "Aplicar simetria universalmente, ignorando assimetrias como winglets.",
+                                    "Subestimar impactos em estol e vibrações sem validação assimétrica.",
+                                    "Não quantificar reduções de custo (ex.: 50% no Boeing 787)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em simulação de fluxo subsonico sobre airfoil NACA 0012 a 0° AoA (simétrico), simetria plano reduz malha de 500k para 250k células (50% redução, tempo simulação de 2h para 1h). Com flap assimétrico introduzindo vorticidade, simulação simétrica erra pressão em 15% na seção afetada, exigindo full domain.",
+                              "finalVerifications": [
+                                "Calcula redução % com precisão <1% para malha dada.",
+                                "Identifica corretamente 3 casos onde simetria falha (ex: vorticidade).",
+                                "Compara resultados full vs sym com gráficos quantitativos.",
+                                "Lista 4 vantagens e 4 limitações com exemplos.",
+                                "Explica impacto em recursos computacionais (CPU, RAM)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos cálculos de redução e erros (erro <2%).",
+                                "Profundidade na análise qualitativa de limitações.",
+                                "Correta implementação e interpretação em software CFD.",
+                                "Relatório claro, com visualizações e referências.",
+                                "Criatividade em critérios de decisão para uso de simetria."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Teoria de grupos de simetria e transformações lineares.",
+                                "Ciência da Computação: Otimização de meshes e algoritmos paralelos.",
+                                "Física: Princípios de conservação em fluxos simétricos/invariantes.",
+                                "Engenharia Mecânica: Otimização em design aerodinâmico e automotivo."
+                              ],
+                              "realWorldApplication": "Na engenharia aeronáutica, simetria acelera simulações iniciais de fuselagens simétricas (reduzindo custos em 50% no design do Boeing 787), mas é abandonada em configurações assimétricas como hélices rotativas ou winglets para evitar erros em previsão de estol e vibrações."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -45575,7 +45825,8 @@
             "totalSkills": 348
           }
         ],
-        "totalSkills": 348
+        "totalSkills": 348,
+        "percentage": 0
       }
     ]
   }

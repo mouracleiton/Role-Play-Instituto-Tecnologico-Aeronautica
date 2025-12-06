@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EO-45",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 370
+      "totalAtomicSkills": 370,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 5,
+      "version": "EO-45",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EO-45"
     },
     "areas": [
       {
@@ -43903,6 +43909,12 @@
                                   "commonMistakes": [
                                     "Subestimar saturação variável no cálculo de infiltração",
                                     "Não considerar equilíbrio adsortivo inicial"
+                                  ],
+                                  "verification": "Validar comparando perfil de umidade e concentração com solução analítica de Green-Ampt e verificando conservação de massa (erro < 5%).",
+                                  "estimatedTime": "2 horas",
+                                  "materials": [
+                                    "Planilhas Excel ou Python (NumPy)",
+                                    "Dados de infiltração de campo"
                                   ]
                                 },
                                 {
@@ -49346,7 +49358,8 @@
             "totalSkills": 370
           }
         ],
-        "totalSkills": 370
+        "totalSkills": 370,
+        "percentage": 0
       }
     ]
   }

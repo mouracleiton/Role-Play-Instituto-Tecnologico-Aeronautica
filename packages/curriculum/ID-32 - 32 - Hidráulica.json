@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ID-32",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 369
+      "totalAtomicSkills": 369,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 4,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ID-32"
     },
     "areas": [
       {
@@ -9860,6 +9866,27 @@
                                     "Custo energia anual C_e = P * Ce * 8760 / 1000 (em R$/ano).",
                                     "Custo tubos anual C_t = (π D/2 * L * Ct(D)) * CRF, onde CRF é fator capital recovery.",
                                     "Some C_total = C_e + C_t para cada D e plote curva C vs D."
+                                  ],
+                                  "verification": "Curva de custo total (C_total) versus diâmetro (D) plotada corretamente, identificando o diâmetro ótimo que minimiza o custo.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Planilha Excel ou software de cálculo (ex: MATLAB, Python)",
+                                    "Diagrama de Moody ou função para equação de Colebrook",
+                                    "Tabela de valores: ν (cinemática da água), ε (rugosidade), ρ, g, η_bomba, Ce (custo energia), Ct(D) (custo por metro de tubo), CRF (fator de recuperação de capital)"
+                                  ],
+                                  "tips": [
+                                    "Inicie a iteração de Colebrook com f ≈ 0.02 para convergência rápida.",
+                                    "Verifique consistência de unidades: V em m/s, D em m, Q em m³/s.",
+                                    "Use função GOAL SEEK no Excel para resolver a equação implícita de f.",
+                                    "Plote C_total vs D em gráfico logarítmico para melhor visualização do mínimo."
+                                  ],
+                                  "learningObjective": "Aplicar equações de perdas de carga (Darcy-Weisbach e Colebrook) e calcular custos operacionais e de capital para otimizar o diâmetro de tubulações em projetos de bombeamento.",
+                                  "commonMistakes": [
+                                    "Esquecer de iterar corretamente na equação de Colebrook, usando f constante.",
+                                    "Confundir potência hidráulica (ρ g Q hf) com potência da bomba (dividida por η).",
+                                    "Usar diâmetros em mm ao invés de m, causando erros em Re e hf.",
+                                    "Não anualizar corretamente os custos (esquecer 8760 h/ano ou CRF).",
+                                    "Plotar sem identificar o mínimo ótimo de C_total."
                                   ]
                                 },
                                 "verification`: "
@@ -9877,7 +9904,28 @@
                                 "Erro na fórmula de Re (ν=10^-6 m²/s para água 20°C).",
                                 "hf sem fator f atualizado iterativamente.",
                                 "Potência sem eficiência η_bomba."
-                              ]
+                              ],
+                              "practicalExample": "Exemplo prático: Projeto de tubulação para irrigação. Dados: Q=0.05 m³/s, L=500 m, ε=0.00015 m (aço novo), Ce=0.5 R$/kWh, Ct=2000 * D^{1.5} R$/m (aprox.), n=20 anos, i=0.08, H=10 m, η_bomba=0.75. Calcule D_e ≈0.25 m, compare com DN250 comercial e plote C_total vs D.",
+                              "finalVerifications": [
+                                "Gere gráfico de C_total vs D mostrando mínimo e identifique D ótimo.",
+                                "Realize análise de sensibilidade variando Ce em ±30% e discuta impactos.",
+                                "Apresente relatório de 1 página com tabela de resultados e recomendação final."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão dos cálculos de f, hf e custos (±5% do valor ótimo).",
+                                "Correta iteração da equação de Colebrook e uso de diâmetros comerciais.",
+                                "Qualidade do gráfico e análise de trade-offs (energia vs capital).",
+                                "Documentação completa de premissas, unidades e sensibilidade.",
+                                "Relatório claro e conciso com justificativa da solução ótima."
+                              ],
+                              "crossCurricularConnections": [
+                                "Hidráulica e Hidrologia (perdas de carga, Moody).",
+                                "Engenharia Econômica (amortização, valor presente).",
+                                "Otimização e Programação (solvers para mínimo de C_total).",
+                                "Gestão Ambiental (redução de consumo energético).",
+                                "Materiais e Manufatura (seleção de tubos comerciais)."
+                              ],
+                              "realWorldApplication": "Dimensionamento de tubulações em sistemas de abastecimento de água municipal, redes de distribuição de gás/óleo em indústrias petroquímicas, irrigação agrícola e HVAC em edifícios, otimizando CAPEX e OPEX para sustentabilidade econômica e energética."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -13882,6 +13930,13 @@
                                   "learningObjective": "Interpretar resultados considerando regimes e calibração.",
                                   "commonMistakes": [
                                     "Ignorar submersão, não calibrar C_d localmente."
+                                  ],
+                                  "tips": [
+                                    "Meça a altura h no centro do vertedouro, evitando bolhas ou turbulência.",
+                                    "Realize pelo menos 3 medições de Q medido por ponto e calcule a média.",
+                                    "Normalize vazão: q = Q/b vs h para obter C_d de q = C_d * sqrt(2g) * h^{3/2}",
+                                    "Verifique nivelamento do vertedouro antes de iniciar.",
+                                    "Em baixas vazões, aumente tempo de medição para maior precisão."
                                   ]
                                 }
                               ],
@@ -18944,6 +18999,24 @@
                                     "Calcular fator de atrito f inicial usando Moody ou Colebrook-White.",
                                     "Preparar tabela de dados em planilha para iterações.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Confirme se a tabela de dados inclui Q, L, Δh/L, ε, custos unitários, n e i, e se o fator f inicial foi calculado.",
+                                  "estimatedTime": "10-15 minutos",
+                                  "materials": [
+                                    "Planilha Excel ou Google Sheets",
+                                    "Tabelas de coeficientes de rugosidade (ex: PVC, aço)",
+                                    "Dados do problema (vazão Q, comprimento L, declividade ou Δh/L)"
+                                  ],
+                                  "tips": [
+                                    "Consulte tabelas padrão para ε (ex: PVC=0.0015 mm, aço=0.15 mm) e converta para metros se necessário.",
+                                    "Para estimativas iniciais, use i=0.08-0.12 e n=20-50 anos.",
+                                    "Salve a planilha para iterações futuras."
+                                  ],
+                                  "learningObjective": "Coletar e organizar dados essenciais (hidráulicos, de rugosidade e econômicos) para dimensionamento ótimo de tubulações.",
+                                  "commonMistakes": [
+                                    "Unidades inconsistentes (ex: ε em mm vs. metros no cálculo de f).",
+                                    "Não converter ε adequadamente para a equação de Colebrook-White.",
+                                    "Omitir estimativa de custos unitários ou usar valores irreais."
                                   ]
                                 },
                                 "verification: Lista completa de dados com unidades e fontes validadas em uma tabela.",
@@ -26346,6 +26419,13 @@
                                   "commonMistakes": [
                                     "Interpolação não linear em escalas log",
                                     "Esquecer multiplicar por H0"
+                                  ],
+                                  "tips": [
+                                    "Verifique a escala do gráfico (linear ou logarítmica) antes de interpolar para evitar erros.",
+                                    "Registre a fórmula exata de interpolação usada: Δh/H0 = y1 + (y2-y1)*(C-C1)/(C2-C1).",
+                                    "Confira unidades consistentes em C, Δh/H0 e H0 ao multiplicar.",
+                                    "Visualize a interpolação plotando os pontos no gráfico para validação intuitiva.",
+                                    "Ao interpretar segurança, considere fatores de segurança adicionais além do limite nominal."
                                   ]
                                 }
                               ],
@@ -34314,7 +34394,26 @@
                                     "Marcar pontos chave como seção normal subcrítica.",
                                     "Conectar suavemente os pontos com curva contínua."
                                   ],
-                                  "verification": "Curva acima de EMin, convexa, com tendência a EMin à jusante e rótulo 'subcrítica' ou 'y_n sub'."
+                                  "verification": "Curva acima de EMin, convexa, com tendência a EMin à jusante e rótulo 'subcrítica' ou 'y_n sub'.",
+                                  "estimatedTime": "10-15 minutos",
+                                  "materials": [
+                                    "Papel quadriculado ou software de plotagem (Excel, MATLAB ou similar)",
+                                    "Calculadora para estimar y_n",
+                                    "Lápis, régua e borracha"
+                                  ],
+                                  "tips": [
+                                    "Comece plotando pontos com E alto (ex: y=2y_n) e diminua gradualmente para y_n.",
+                                    "Garanta convexidade: a curvatura deve abrir para cima.",
+                                    "A curva aproxima-se de EMin assintoticamente à jusante, sem tocá-la.",
+                                    "Use escala logarítmica ou ampliada perto de EMin para melhor visualização."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de plotar corretamente a curva de energia específica subcrítica acima da linha EMin, com forma convexa suave, marcando a seção normal y_n e aproximando-se assintoticamente de EMin à jusante.",
+                                  "commonMistakes": [
+                                    "Plotar a curva abaixo ou cruzando a linha EMin.",
+                                    "Traçar linha reta ou côncava em vez de curva convexa suave.",
+                                    "Esquecer de calcular/marcar y_n subcrítica ou plotá-la incorretamente.",
+                                    "Iniciar a curva muito próxima de EMin, perdendo a tendência assintótica."
+                                  ]
                                 },
                                 "estimatedTime",
                                 "20 minutos",
@@ -34341,7 +34440,29 @@
                               "estimatedTime": "10 minutos",
                               "materials": [
                                 "Lápis de cor para destaque opcional"
-                              ]
+                              ],
+                              "practicalExample": "Exemplo: Canal retangular com Q=10 m³/s, b=3 m, S₀=0.001, n=0.025 (Manning). Calcule yc≈0.64 m, yn_sub≈1.8 m. Plote de x=0 (y=2 m) a x=200 m, mostrando curva subcrítica aproximando-se de yn.",
+                              "finalVerifications": [
+                                "Eixos corretos com rótulos e escalas adequadas.",
+                                "Curvas subcrítica e supercrítica acima e abaixo de EMin, respectivamente, com formato convexo.",
+                                "EMin horizontal tracejada, direção de fluxo indicada (esquerda → direita).",
+                                "Rótulos claros para yc, yn, seções críticas/normais e legenda completa.",
+                                "Diagrama limpo, sem erros de continuidade nas curvas."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção conceitual das curvas e EMin (30%)",
+                                "Precisão gráfica, escalas e proporções (25%)",
+                                "Rótulos, legenda e verificações (20%)",
+                                "Apresentação visual e limpeza (15%)",
+                                "Uso correto de materiais e tempo (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Construção de gráficos, assíntotas e funções hiperbólicas.",
+                                "Física: Princípio de conservação de energia e perfis de fluxo.",
+                                "Engenharia Civil/Ambiental: Hidráulica de canais e modelagem numérica (Hec-Ras).",
+                                "Desenho Técnico: Normas ABNT para diagramas de engenharia."
+                              ],
+                              "realWorldApplication": "Análise de perfis de fluxo em canais de irrigação, vertedoures de barragens, transições hidráulicas em rios e projetos de controle de cheias, garantindo estabilidade e eficiência energética."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -48176,7 +48297,8 @@
             "totalSkills": 369
           }
         ],
-        "totalSkills": 369
+        "totalSkills": 369,
+        "percentage": 0
       }
     ]
   }

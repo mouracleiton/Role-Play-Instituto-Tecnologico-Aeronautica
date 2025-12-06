@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ST-56",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 309
+      "totalAtomicSkills": 309,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ST-56"
     },
     "areas": [
       {
@@ -1394,7 +1400,27 @@
                                     "Identifique termos lineares (pré-carga) ou quadráticos em q.",
                                     "Confirme conservatividade: V depende apenas de q, não de q̇ ou t."
                                   ],
-                                  "verification": "Expressão de V com termos corretos em q, sem dependência temporal ou veloci."
+                                  "verification": "Expressão de V com termos corretos em q, sem dependência temporal ou veloci.",
+                                  "estimatedTime": "10-15 minutos",
+                                  "materials": [
+                                    "Papel e lápis para cálculos",
+                                    "Diagrama do sistema (se disponível)"
+                                  ],
+                                  "tips": [
+                                    "Comece listando todas as fontes conservativas presentes no sistema.",
+                                    "Expresse posições e deformações explicitamente em função de q.",
+                                    "Para molas, use V = (1/2) k δ² com δ(q).",
+                                    "Verifique se V é par (quadrática) para equilíbrio em q=0.",
+                                    "Teste derivadas parciais ∂V/∂q_i para forças generalizadas."
+                                  ],
+                                  "learningObjective": "Formular corretamente a energia potencial V como função conservativa apenas das coordenadas generalizadas q, identificando termos quadráticos, lineares e sua origem física.",
+                                  "commonMistakes": [
+                                    "Incluir termos dependentes de velocidades q̇ em V (confundir com T).",
+                                    "Esquecer potenciais gravitacionais ou pré-cargas lineares.",
+                                    "Expressar V em coordenadas cartesianas sem converter para q.",
+                                    "Ignorar acoplamentos entre graus de liberdade (matriz K).",
+                                    "Não verificar conservatividade (dependência de t ou história)."
+                                  ]
                                 },
                                 "estimatedTime",
                                 "25 minutos",
@@ -1408,7 +1434,27 @@
                                 "commonMistakes",
                                 "[Incluir dissipação como viscosidade em V",
                                 "Esquecer termos não-lineares em grandes deslocamentos"
-                              ]
+                              ],
+                              "practicalExample": "Exemplo prático: Considere uma viga cantilever discreta com duas massas representando o spar de uma asa aeronáutica. Defina q₁ como deslocamento transversal no meio da viga e q₂ como rotação na ponta. Calcule T e V para este sistema 2-GDL.",
+                              "finalVerifications": [
+                                "Coordenadas generalizadas q(t) definidas com diagrama esquemático e justificativa de independência.",
+                                "Energia cinética T expressa como (1/2) q̇ᵀ M(q) q̇ com matriz de massa explícita e verificação dimensional.",
+                                "Energia potencial V dependente apenas de q, com termos elásticos/gravitacionais corretos e conservatividade confirmada.",
+                                "Lagrangiano L = T - V pronto para aplicação das equações de Euler-Lagrange."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção e independência das coordenadas GDLs selecionadas (25%)",
+                                "Formulação precisa da energia cinética T, incluindo termos cruzados (30%)",
+                                "Formulação precisa da energia potencial V, verificando conservatividade (25%)",
+                                "Verificações dimensionais, diagramas e documentação completa (20%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica dos Materiais (ST-12): discretização de elementos estruturais.",
+                                "Dinâmica e Vibrações (ST-34): modos naturais e análise modal.",
+                                "Aeroelasticidade (AE-56): aplicação em estabilidade de asas.",
+                                "Métodos Computacionais (MA-22): implementação via elementos finitos."
+                              ],
+                              "realWorldApplication": "Modelagem discreta para análise de flutter e fadiga em asas de aeronaves (ex: simulações no wingbox do Embraer E-Jet ou Boeing 787, essenciais para certificação ANAC/FAA)."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -17720,7 +17766,16 @@
                                 "Controle e Aeroelasticidade: Modos para análise de estabilidade",
                                 "Física Computacional: Simulações dinâmicas em FEM"
                               ],
-                              "realWorldApplication": "Na certificação de aeronaves, a análise modal prevê frequências naturais de fuselagem/asa para evitar ressonância com turbulência ou motores, permitindo otimização de design contra flutter e fadiga, com soluções modais acelerando simulações em NASTRAN para missões espaciais ou comerciais."
+                              "realWorldApplication": "Na certificação de aeronaves, a análise modal prevê frequências naturais de fuselagem/asa para evitar ressonância com turbulência ou motores, permitindo otimização de design contra flutter e fadiga, com soluções modais acelerando simulações em NASTRAN para missões espaciais ou comerciais.",
+                              "assessmentCriteria": [
+                                "Precisão dos autovalores (erro <1%)",
+                                "Correta normalização e ortogonalidade modal comprovada",
+                                "Transformação uncoupling demonstrada com equações decopladas",
+                                "Interpretação física dos modos (associação a comportamentos estruturais)",
+                                "Eficiência computacional: redução de DOFs via truncagem modal",
+                                "Relatório completo com plots, tabelas e validação",
+                                "Capacidade de extensão para amortecimento/forçamento"
+                              ]
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -18025,6 +18080,34 @@
                                     "Determinar comprimentos de onda esperados dos modos dinâmicos via análise analítica aproximada.",
                                     "Mapear regiões críticas (raízes, bordas livres) onde deformações são altas.",
                                     "Calcular número aproximado de elementos necessários baseado em regra de 10-20 elementos por comprimento de onda."
+                                  ],
+                                  "verification": [
+                                    "Desenho da geometria com dimensões exatas documentado.",
+                                    "Lista de condições de contorno, materiais e carregamentos dinâmicos identificados.",
+                                    "Cálculo de comprimentos de onda via análise analítica.",
+                                    "Mapa de regiões críticas elaborado.",
+                                    "Número aproximado de elementos calculado e justificado."
+                                  ],
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Papel milimetrado e lápis para esboços geométricos.",
+                                    "Calculadora científica.",
+                                    "Tabelas de propriedades de materiais (ex: alumínio aeronáutico, compósitos).",
+                                    "Referências: Livro de Dinâmica das Estruturas (ex: Clough & Penzien)."
+                                  ],
+                                  "tips": [
+                                    "Utilize simetria da estrutura para reduzir o modelo e economizar tempo.",
+                                    "Comece com análise analítica de vigas/placas Euler-Bernoulli para estimar modos.",
+                                    "Escolha escalas adequadas nos desenhos para visualizar regiões críticas.",
+                                    "Registre todas as unidades (SI) para evitar inconsistências."
+                                  ],
+                                  "learningObjective": "Analisar as características geométricas, materiais, de contorno e carregamento dinâmico de estruturas contínuas (vigas e placas aeronáuticas), determinando comprimentos de onda modais e requisitos de malha para simulações FEM precisas e eficientes.",
+                                  "commonMistakes": [
+                                    "Subestimar o número de elementos por comprimento de onda (<10), causando dispersão numérica.",
+                                    "Omitir condições de contorno realistas (ex: bordas livres em placas).",
+                                    "Ignorar carregamentos dinâmicos como flutter em contextos aeronáuticos.",
+                                    "Não mapear regiões críticas, levando a malhas ineficientes.",
+                                    "Usar propriedades materiais incorretas (ex: módulo de Young errado para compósitos)."
                                   ]
                                 },
                                 "verificationChecklist",
@@ -18041,7 +18124,27 @@
                               "commonMistakes": [
                                 "Subestimar regiões de alta gradiente de deformação.",
                                 "Ignorar efeitos inerciais em carregamentos dinâmicos."
-                              ]
+                              ],
+                              "practicalExample": "Modelar uma longarina de asa (viga cantilever) com elementos de viga 1D no ANSYS para análise modal, comparando frequências com solução analítica de Euler-Bernoulli.",
+                              "finalVerifications": [
+                                "Tabela comparativa de elementos finitos preenchida corretamente.",
+                                "Esboço da geometria com malha proposta e justificativa do número de elementos.",
+                                "Relatório resumido com condições de contorno, materiais e estimativa de modos dinâmicos."
+                              ],
+                              "assessmentCriteria": [
+                                "Identificação precisa de tipos de elementos e aplicações (30%)",
+                                "Análise correta de geometria e malha (25%)",
+                                "Justificativa técnica baseada em regras de malhamento dinâmico (20%)",
+                                "Uso adequado de materiais aeronáuticos e condições de contorno (15%)",
+                                "Resumo claro e tabela comparativa (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica dos Materiais (propriedades e fadiga)",
+                                "Aerodinâmica (carregamentos dinâmicos como flutter)",
+                                "Vibrações e Controle (análise modal)",
+                                "Projeto de Aeronaves (modelagem de componentes estruturais)"
+                              ],
+                              "realWorldApplication": "Análise de vibrações e flutter em asas de aeronaves (ex: Boeing 787), otimização de malhas para simulações de certificação FAA/EASA, e previsão de ressonâncias em hélices de turbinas."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -19053,7 +19156,8 @@
                                     "Erros de indexação levando a singularidade",
                                     "Não zerar linhas/colunas de GLs eliminados",
                                     "Penalidade muito baixa causando instabilidade"
-                                  ]
+                                  ],
+                                  "verification": "Verificação algébrica: confirme [M_aa]{ü_a} + [C_aa]{ú_a} + [K_aa]{u_a} = {F_a}(t) projetando sistema global com {u_b}=0, {ú_b}=0, {ü_b}=0 nos GLs ativos. Numérica: resolva sistema reduzido e cheque norm(u_boundary) < 1e-12; compare modos/vibrações com caso analítico (ex: viga engastada)."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -20379,7 +20483,14 @@
                                   "estimatedTime": "45 minutos",
                                   "materials": "Matplotlib/Plotly para gráficos, FFT para análise espectral.",
                                   "learningObjective": "Interpretar resultados de simulações dinâmicas e validar modelos MEF.",
-                                  "commonMistakes": "Escalas erradas nos plots ocultando instabilidades; ignorar modos espúrios."
+                                  "commonMistakes": "Escalas erradas nos plots ocultando instabilidades; ignorar modos espúrios.",
+                                  "tips": [
+                                    "Use escalas logarítmicas para análise de decaimento de amortecimento.",
+                                    "Normalize os modos para comparação direta com soluções analíticas.",
+                                    "Verifique a condição das matrizes [M] e [K] (cond(M) < 1e12).",
+                                    "Aplique filtro passa-baixa na FFT para remover ruído numérico.",
+                                    "Anote picos espectrais com rótulos para identificar modos dominantes."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Simule uma viga cantilever de alumínio (L=1m, seção 0.1x0.01m) com 4 elementos MEF, sob carga harmônica F(t)=100*sin(2π*50 t) N na ponta livre. Use E=70GPa, ρ=2700kg/m³, ξ=0.02. Verifique resposta em deslocamento na ponta.",
@@ -26697,7 +26808,38 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em uma asa simplificada modelada com 4 DOFs (flexão e torção), defina M e K de um modelo finito elemento. Escolha α=0.05, β=0.001 para matching ξ1=2% em modo 1 (5 Hz). Verifique C_modal diagonal e simule resposta a gust load, confirmando decoplamento."
+                                  "practicalExample": "Em uma asa simplificada modelada com 4 DOFs (flexão e torção), defina M e K de um modelo finito elemento. Escolha α=0.05, β=0.001 para matching ξ1=2% em modo 1 (5 Hz). Verifique C_modal diagonal e simule resposta a gust load, confirmando decoplamento.",
+                                  "stepNumber": "ST-56.4",
+                                  "title": "Modelagem Dinâmica de Asa Simplificada com 4 DOFs: Matrizes M, K, C Rayleigh e Simulação de Gust Load",
+                                  "subSteps": [
+                                    "Defina a geometria da asa simplificada e os 4 graus de liberdade (ex.: deslocamentos verticais v1, v2 e rotações θ1, θ2 em dois nós).",
+                                    "Construa as matrizes de massa M (4x4) e rigidez K (4x4) usando elementos finitos de viga para flexão e torção.",
+                                    "Calcule autovalores e autovetores para identificar o modo 1 com frequência de 5 Hz.",
+                                    "Aplique amortecimento Rayleigh com α=0.05 e β=0.001 para obter ξ1=2% no modo 1, usando a fórmula ξ_i = α/(2ω_i) + β ω_i / 2.",
+                                    "Forme C = α M + β K, transforme para coordenadas modais e verifique se C_modal é diagonal.",
+                                    "Simule a resposta transitória a uma carga de rajada (ex.: pulso de força aerodinâmica) e confirme o decoplamento modal nas respostas."
+                                  ],
+                                  "verification": "C_modal diagonal (elementos fora da diagonal < 1e-6 após normalização); ξ1 ≈ 2% para modo 1 (5 Hz); respostas modais independentes na simulação (sem acoplamento visível em plots de tempo).",
+                                  "estimatedTime": "60-90 minutos",
+                                  "materials": [
+                                    "MATLAB ou Octave para cálculos matriciais e simulação",
+                                    "Conhecimento prévio de elementos finitos de viga (flexão-torção)",
+                                    "Folha de cálculo ou caderno para esboço inicial de M e K"
+                                  ],
+                                  "tips": [
+                                    "Use modos mass-normalizados (Φ^T M Φ = I) para garantir C_modal = diag(2 ξ_i ω_i).",
+                                    "Modelar gust load como força F(t) = q S C_L α_gust, com α_gust variando no tempo.",
+                                    "Verifique consistência de unidades: massa em kg, rigidez em N/m ou N rad.",
+                                    "Comece com M diagonal (lumped mass) para simplicidade inicial."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de formular um modelo modal finito elemento para uma asa com 4 DOFs, aplicar amortecimento Rayleigh para matching de damping ratio específico, verificar ortogonalidade/decoplamento em coordenadas modais e simular resposta estrutural a excitação externa como gust load.",
+                                  "commonMistakes": [
+                                    "Confundir graus de liberdade de flexão (v) com torção (θ) na montagem de K.",
+                                    "Erro no cálculo de α e β: lembrar que ξ_i = (α / (2 ω_i)) + (β ω_i / 2).",
+                                    "Não normalizar modos corretamente, resultando em C_modal não diagonal.",
+                                    "Ignorar unidades inconsistentes entre M (kg), K (N/m) e frequências (Hz).",
+                                    "Simulação com timestep inadequado, causando instabilidade numérica."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -26706,6 +26848,36 @@
                                     "Fatores ξ_i consistentes com α, β via fórmula.",
                                     "Respostas modais independentes em simulação temporal.",
                                     "Energia dissipada por modo matches predição teórica."
+                                  ],
+                                  "stepNumber": "6",
+                                  "title": "Verificação Final das Propriedades do Amortecimento Modal",
+                                  "subSteps": [
+                                    "Calcule os autovetores de C, M e K e verifique a coincidência angular (<1°).",
+                                    "Transforme C para coordenadas modais e confirme diagonalidade (off-diagonais <1e-12).",
+                                    "Calcule os fatores de amortecimento ξ_i usando α e β e compare com os obtidos.",
+                                    "Simule a resposta temporal e confirme independência modal.",
+                                    "Verifique a energia dissipada por modo contra a predição teórica."
+                                  ],
+                                  "verification": "Autovetores coincidem (ângulo <1°); C_modal diagonal (off-diagonais <1e-12); ξ_i consistentes; respostas modais independentes; energia dissipada matches teoria.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software MATLAB ou equivalente",
+                                    "Modelo estrutural com M, K e C (arquivo .m fornecido)",
+                                    "Script de simulação temporal"
+                                  ],
+                                  "tips": [
+                                    "Use tolerâncias numéricas adequadas (1e-12 para off-diagonais).",
+                                    "Verifique normalização dos autovetores antes da comparação angular.",
+                                    "Plote respostas modais para visual inspeção de independência.",
+                                    "Confira unidades de α e β (consistentes com [s^{-1}] e [s^{-2}])."
+                                  ],
+                                  "learningObjective": "Verificar numericamente a consistência e propriedades de um modelo de amortecimento modal diagonalizado, garantindo independência modal e predições teóricas corretas.",
+                                  "commonMistakes": [
+                                    "Ignorar normalização dos autovetores ao comparar ângulos.",
+                                    "Usar Rayleigh damping sem verificar proporção com modos dominantes.",
+                                    "Confundir off-diagonais pequenos com zero absoluto devido a precisão numérica.",
+                                    "Simular resposta sem excitação modal pura, levando a acoplamento espúrio.",
+                                    "Erro em fórmula de ξ_i: ξ_i = (α/ω_i + β ω_i)/2."
                                   ]
                                 },
                                 {
@@ -26715,6 +26887,37 @@
                                     "Qualidade de plots e tabelas (legíveis, anotados).",
                                     "Justificativa de escolhas paramétricas.",
                                     "Identificação de pelo menos 2 limitações do modelo."
+                                  ],
+                                  "stepNumber": 56,
+                                  "title": "Implementação e Verificação Numérica do Amortecimento de Rayleigh",
+                                  "subSteps": [
+                                    "Definir as matrizes de massa M e rigidez K de um sistema estrutural exemplo.",
+                                    "Escolher coeficientes α e β para o amortecimento de Rayleigh (C = αM + βK).",
+                                    "Implementar o cálculo de C e verificar sua simetria e propriedades.",
+                                    "Realizar verificação numérica de dominância diagonal (tol < 1e-10).",
+                                    "Gerar plots (modos, resposta temporal) e tabelas (autovalores, coeficientes).",
+                                    "Documentar justificativas paramétricas e listar pelo menos 2 limitações do modelo."
+                                  ],
+                                  "verification": "Código executável com saída numérica precisa; relatório com plots legíveis, tabelas anotadas e análise qualitativa; auto-verificação via script com tolerância 1e-10.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Software numérico (MATLAB ou Python com NumPy, SciPy e Matplotlib)",
+                                    "Exemplo de matrizes M e K de viga ou treliça (fornecido no enunciado)",
+                                    "Template de relatório em LaTeX ou Markdown"
+                                  ],
+                                  "tips": [
+                                    "Escolha α e β via decomposição modal para ξ constante em frequências alvo.",
+                                    "Use cond(M) e cond(K) para escalar matrizes e evitar ill-conditioning.",
+                                    "Para plots, inclua legendas, grids e scales log para resíduos.",
+                                    "Teste com sistemas 2DOF simples antes de generalizar."
+                                  ],
+                                  "learningObjective": "Implementar o modelo de amortecimento de Rayleigh (C=αM+βK), verificar numericamente suas propriedades e analisar limitações em dinâmica estrutural.",
+                                  "commonMistakes": [
+                                    "Formulação incorreta de C (inversão de α e β ou não usar matrizes consistentes).",
+                                    "Tolerância inadequada na verificação diagonal (>1e-10 ou critério errado).",
+                                    "Plots/tabelas sem anotações (falta de legendas, unidades ou títulos).",
+                                    "Escolha arbitrária de parâmetros sem justificativa modal.",
+                                    "Omissão de limitações como dependência frequência ou modos não amortecidos."
                                   ]
                                 },
                                 {
@@ -26724,12 +26927,90 @@
                                     "Mecânica dos Sólidos: Modelagem EF para estruturas aeronáuticas.",
                                     "Controle de Sistemas: Implicações em amortecimento para estabilidade.",
                                     "Estatística: Análise de sensibilidade paramétrica."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise Modal de Estruturas Aeronáuticas via Elementos Finitos",
+                                  "subSteps": [
+                                    "1. Modelar a estrutura aeronáutica utilizando elementos finitos (vigas, placas ou cascas).",
+                                    "2. Montar as matrizes de rigidez [K] e massa [M] consistentes ou agrupadas.",
+                                    "3. Formular e resolver o problema de autovalores generalizados: [K]φ = ω²[M]φ.",
+                                    "4. Extrair os primeiros N modos próprios (frequências ω e vetores modais φ).",
+                                    "5. Interpretar resultados: formas modais e frequências naturais."
+                                  ],
+                                  "verification": "Compare as frequências naturais obtidas com valores de referência teóricos ou experimentais. Verifique se as formas modais são ortogonais em relação à matriz de massa.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Software de Elementos Finitos (ANSYS, Abaqus ou código em MATLAB/Python).",
+                                    "Geometria da estrutura (ex: asa ou fuselagem simplificada).",
+                                    "Tutoriais de implementação numérica."
+                                  ],
+                                  "tips": [
+                                    "Use elementos consistentes de massa para maior precisão em frequências altas.",
+                                    "Normalizar os modos modais pela norma da matriz de massa.",
+                                    "Verifique convergência com refinamento da malha.",
+                                    "Implemente em MATLAB/Python para análise paramétrica rápida."
+                                  ],
+                                  "learningObjective": "Aplicar métodos de análise modal em estruturas aeronáuticas, conectando conceitos de álgebra linear, programação numérica, mecânica dos sólidos, controle e estatística para avaliar vibrações e estabilidade.",
+                                  "commonMistakes": [
+                                    "Confundir matrizes de massa consistente com agrupada (afeta precisão).",
+                                    "Não impor condições de contorno corretas, levando a modos rígidos espúrios.",
+                                    "Ignorar análise de sensibilidade a parâmetros (ex: variação de material).",
+                                    "Interpretar erroneamente modos locais como globais."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na certificação de aeronaves (ex: Boeing 787), verifica-se amortecimento proporcional em modelos FEM para análise de flutter, reduzindo custo computacional de simulações modais e garantindo predições precisas de damping em testes de solo/vôo."
+                                  "realWorldApplication": "Na certificação de aeronaves (ex: Boeing 787), verifica-se amortecimento proporcional em modelos FEM para análise de flutter, reduzindo custo computacional de simulações modais e garantindo predições precisas de damping em testes de solo/vôo.",
+                                  "stepNumber": "ST-56",
+                                  "title": "Amortecimento Proporcional em Modelos FEM para Análise de Flutter em Aeronaves",
+                                  "subSteps": [
+                                    "1. Configurar modelo FEM de uma asa (ex: Boeing 787) com propriedades estruturais.",
+                                    "2. Definir matriz de amortecimento proporcional (Rayleigh: C = αM + βK).",
+                                    "3. Realizar análise modal para extrair frequências e damping ratios.",
+                                    "4. Comparar predições com dados de testes de solo e voo para validação de flutter."
+                                  ],
+                                  "verification": "Executar simulação modal e verificar se os damping ratios preditos coincidem com valores experimentais (±5%) em modos críticos de flutter.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software FEM (ex: MSC Nastran, Abaqus ou ANSYS)",
+                                    "Modelo simplificado de asa do Boeing 787 (arquivo .bdf ou .inp)",
+                                    "Dados de referência de testes de flutter (manual de certificação FAR/JAR)"
+                                  ],
+                                  "tips": [
+                                    "Calibre α e β usando dois modos dominantes para minimizar erro em faixas de frequência.",
+                                    "Use simulações modais em vez de transitórias para reduzir custo computacional.",
+                                    "Valide com critérios de certificação (ex: FAR 25.629 para flutter)."
+                                  ],
+                                  "learningObjective": "Compreender e aplicar amortecimento proporcional em modelos FEM para análise de flutter, otimizando simulações modais e garantindo precisão em certificações aeronáuticas.",
+                                  "commonMistakes": [
+                                    "Escolha inadequada de α e β, resultando em damping negativo ou excessivo em modos higher-order.",
+                                    "Ignorar acoplamento aerodinâmico inicial na calibração do amortecimento.",
+                                    "Confundir damping ratio (ζ) com coeficientes de Rayleigh (α, β)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em uma asa simplificada modelada com 4 DOFs (flexão e torção), defina M e K de um modelo finito elemento. Escolha α=0.05, β=0.001 para matching ξ1=2% em modo 1 (5 Hz). Verifique C_modal diagonal e simule resposta a gust load, confirmando decoplamento.",
+                              "finalVerifications": [
+                                "Autovetores de C coincidem com os de M e K (ângulo <1°).",
+                                "C_modal diagonal com off-diagonais <1e-12.",
+                                "Fatores ξ_i consistentes com α, β via fórmula.",
+                                "Respostas modais independentes em simulação temporal.",
+                                "Energia dissipada por modo matches predição teórica."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção teórica na formulação C=αM+βK (100%).",
+                                "Precisão numérica na verificação diagonal (tol<1e-10).",
+                                "Qualidade de plots e tabelas (legíveis, anotados).",
+                                "Justificativa de escolhas paramétricas.",
+                                "Identificação de pelo menos 2 limitações do modelo."
+                              ],
+                              "crossCurricularConnections": [
+                                "Álgebra Linear: Problemas de autovalores generalizados.",
+                                "Programação Numérica: Implementação de análise modal em MATLAB/Python.",
+                                "Mecânica dos Sólidos: Modelagem EF para estruturas aeronáuticas.",
+                                "Controle de Sistemas: Implicações em amortecimento para estabilidade.",
+                                "Estatística: Análise de sensibilidade paramétrica."
+                              ],
+                              "realWorldApplication": "Na certificação de aeronaves (ex: Boeing 787), verifica-se amortecimento proporcional em modelos FEM para análise de flutter, reduzindo custo computacional de simulações modais e garantindo predições precisas de damping em testes de solo/vôo."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "advanced",
@@ -33056,7 +33337,8 @@
                                     "Erro na transposição da matriz modal Φ",
                                     "Linearização incorreta em torno de trim",
                                     "Ignorar modos antisimétricos"
-                                  ]
+                                  ],
+                                  "verification": "Validar projeção modal: reconstruir Q_aero = Φ Q_modal e verificar erro de norma ||Q_aero - Φ Q_modal|| / ||Q_aero|| < 10^{-10} no MATLAB."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -39142,7 +39424,8 @@
             "totalSkills": 309
           }
         ],
-        "totalSkills": 309
+        "totalSkills": 309,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-54",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 340
+      "totalAtomicSkills": 340,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "ED-54",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-54"
     },
     "areas": [
       {
@@ -5476,6 +5482,32 @@
                                     "Defina plano de piloto: escopo, timeline e métricas de sucesso.",
                                     "Prepare relatório executivo com visualizações.",
                                     "verification]: "
+                                  ],
+                                  "verification": [
+                                    "Produzir planilha com análise de dados e fórmulas aplicadas.",
+                                    "Documentar simulação de ROI com premissas claras.",
+                                    "Elaborar plano de piloto com escopo, timeline e métricas de sucesso definidas.",
+                                    "Preparar relatório executivo com pelo menos 3 visualizações (gráficos/tabelas)."
+                                  ],
+                                  "estimatedTime": "4-6 horas",
+                                  "materials": [
+                                    "Google Sheets ou Excel",
+                                    "Acesso a dados reais de gargalos (logs, planilhas ou relatórios)",
+                                    "ChatGPT ou similar para insights rápidos",
+                                    "Ferramentas de visualização (ex: Google Data Studio ou gráficos nativos do Sheets)"
+                                  ],
+                                  "tips": [
+                                    "Priorize dados representativos da operação real para evitar viés.",
+                                    "Use fórmulas simples como SOMASE, CONT.SE e MÉDIA para análises iniciais.",
+                                    "Inclua análise de sensibilidade no ROI (cenários otimista/pessimista).",
+                                    "Mantenha o relatório visual e conciso: 1-2 páginas + anexos."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o participante será capaz de coletar e analisar dados simples para validar gargalos, simular retorno sobre investimento (ROI) e planejar um piloto com métricas claras de sucesso.",
+                                  "commonMistakes": [
+                                    "Coletar amostra muito pequena ou não representativa, levando a conclusões erradas.",
+                                    "Superestimar economia sem considerar custos reais de implementação.",
+                                    "Definir métricas vagas no piloto (ex: 'melhorar processo') em vez de quantificáveis (ex: 'reduzir tempo em 20%').",
+                                    "Ignorar visualizações no relatório, tornando-o pouco impactante para stakeholders."
                                   ]
                                 }
                               ],
@@ -5495,7 +5527,28 @@
                                 "Usar dados desatualizados.",
                                 "Fazer projeções otimistas sem sensibilidade.",
                                 "Pular o plano de piloto."
-                              ]
+                              ],
+                              "practicalExample": "Em uma pequena agência de marketing digital, o Step 1 mapeou o processo de geração de relatórios semanais, identificando 5 horas manuais por relatório. No Step 2, gargalos como extração de dados do Google Analytics foram priorizados. Step 3 selecionou Zapier + ChatGPT para automação. A matriz do Step 4 ranqueou isso como alto impacto/baixo risco, e o Step 5 validou com dados de 2 semanas, projetando 70% de redução de tempo no piloto.",
+                              "finalVerifications": [
+                                "Relatório executivo completo com fluxogramas, análise de gargalos, matriz de priorização e plano de piloto.",
+                                "Top 3 oportunidades de IA com métricas baseline e projetadas validadas por stakeholders.",
+                                "Simulação de ROI positiva para pelo menos uma iniciativa piloto."
+                              ],
+                              "assessmentCriteria": [
+                                "Completude e precisão dos fluxogramas e métricas (30%).",
+                                "Qualidade da identificação e priorização de gargalos (25%).",
+                                "Relevância e viabilidade das ferramentas de IA selecionadas (20%).",
+                                "Robustez da matriz risco-impacto e plano de piloto (15%).",
+                                "Clareza do relatório final e visualizações (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Administração: Gestão de processos e análise organizacional.",
+                                "Engenharia de Produção: Otimização e lean management.",
+                                "Ciência de Dados: Análise quantitativa e métricas de performance.",
+                                "Tecnologia da Informação: Ferramentas low-code e automação.",
+                                "Ética e Direito: Considerações de privacidade (LGPD) e riscos regulatórios."
+                              ],
+                              "realWorldApplication": "Empresas como Nubank utilizam mapeamento de processos para implementar chatbots de IA no suporte ao cliente, reduzindo tempo de resposta em 50%; Magazine Luiza automatizou fluxos logísticos com ferramentas no-code, economizando milhões em custos operacionais anuais."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -11321,9 +11374,68 @@
                                     "Desenvolvimento de Liderança: Habilidades de coalizão building.",
                                     "Economia Digital: Impacto de predições em modelos de negócio."
                                   ],
-                                  "realWorldApplication": "Gestores podem liderar transições para IA em indústrias como manufatura ou finanças, otimizando operações e criando vantagem competitiva sustentável, como visto em cases da Amazon e Siemens."
+                                  "realWorldApplication": "Gestores podem liderar transições para IA em indústrias como manufatura ou finanças, otimizando operações e criando vantagem competitiva sustentável, como visto em cases da Amazon e Siemens.",
+                                  "stepNumber": 8,
+                                  "title": "Passo 8: Implementar, Verificar e Institucionalizar a Mudança",
+                                  "subSteps": [
+                                    "Executar o plano de mudança em escala global ou departamental.",
+                                    "Monitorar KPIs em tempo real (ex: redução de downtime).",
+                                    "Aplicar surveys pré/pós para medir shift cultural.",
+                                    "Treinar líderes e identificar champions em todas as unidades.",
+                                    "Documentar lições aprendidas e criar playbook para replicação."
+                                  ],
+                                  "verification": [
+                                    "Relatório de implementação com evidências de 90% adesão.",
+                                    "Dashboards de KPIs demonstrando metas atingidas.",
+                                    "Resultados de surveys mostrando melhoria cultural >20%.",
+                                    "Lista de champions treinados e plano de follow-up."
+                                  ],
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Template de plano de mudança (Google Docs/Sheets).",
+                                    "Ferramentas de survey (Google Forms ou SurveyMonkey).",
+                                    "Dashboard de KPIs (Tableau, Power BI ou Excel).",
+                                    "Vídeo case GE/Siemens (YouTube ou plataforma LMS)."
+                                  ],
+                                  "tips": [
+                                    "Use quick wins para momentum e celebrações públicas.",
+                                    "Envolva HR para reforço cultural via treinamentos recorrentes.",
+                                    "Planeje auditorias trimestrais para retenção de ganhos.",
+                                    "Adapte comunicação para diferentes níveis hierárquicos."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de liderar a implementação de um plano de mudança em IA, verificando sucesso via KPIs e surveys, e ancorando ganhos na cultura organizacional para sustentabilidade de longo prazo.",
+                                  "commonMistakes": [
+                                    "Implementar sem monitoramento contínuo de KPIs.",
+                                    "Ignorar resistências culturais pós-quick wins.",
+                                    "Falta de champions locais para ownership.",
+                                    "Não documentar lições, impedindo escalabilidade.",
+                                    "Subestimar tempo para shift cultural (exigindo >6 meses)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Na GE, líderes usaram IA preditiva para manutenção preditiva em turbinas, aplicando o modelo Kotter: diagnosticaram falhas, comunicaram visão via demos, pilotaram em uma fábrica, escalaram globalmente, resultando em US$1B em savings (inspirado em Agrawal et al.).",
+                              "finalVerifications": [
+                                "Plano de mudança implementado com 90% adesão da equipe.",
+                                "KPIs de IA atingidos (ex: 30% redução em downtime).",
+                                "Cultura organizacional shift comprovada via surveys pré/pós.",
+                                "Líderes treinados e champions identificados em todas unidades.",
+                                "Documentação de lições para replicação."
+                              ],
+                              "assessmentCriteria": [
+                                "Profundidade do diagnóstico (cobertura de processos e cultura: 1-5).",
+                                "Qualidade do plano (alinhamento estratégico e mensurabilidade: 1-5).",
+                                "Nível de engajamento stakeholders (participação e feedback: 1-5).",
+                                "Sucesso de implementação (KPIs e quick wins: 1-5).",
+                                "Sustentabilidade (retenção de ganhos pós-6 meses: 1-5)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Gestão Estratégica: Alinhamento de IA com visão corporativa.",
+                                "Psicologia Organizacional: Gerenciamento de resistências emocionais.",
+                                "Ética em IA: Considerações de privacidade em predições.",
+                                "Desenvolvimento de Liderança: Habilidades de coalizão building.",
+                                "Economia Digital: Impacto de predições em modelos de negócio."
+                              ],
+                              "realWorldApplication": "Gestores podem liderar transições para IA em indústrias como manufatura ou finanças, otimizando operações e criando vantagem competitiva sustentável, como visto em cases da Amazon e Siemens."
                             },
                             "estimatedTime": "4 horas",
                             "difficulty": "advanced",
@@ -16689,6 +16801,13 @@
                                     "Não considerar custos de IA",
                                     "Sobreprometer ganhos sem dados",
                                     "Ignorar treinamento de equipes"
+                                  ],
+                                  "tips": [
+                                    "Priorize integrações de IA em gargalos de alto impacto para justificar investimentos.",
+                                    "Use benchmarks de casos reais de IA para embasar estimativas de ganhos.",
+                                    "Prepare um roadmap phased (fases) para implementação gradual e redução de riscos.",
+                                    "Inclua análise de ROI e payback period no plano de implementação.",
+                                    "Colete feedback qualitativo e quantitativo dos stakeholders para refinar o mapa."
                                   ]
                                 }
                               ],
@@ -23346,7 +23465,37 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um dataset de transações de cartão de crédito com 284.807 registros (UCI Fraud), aplique Isolation Forest (contamination=0.0017) para isolar fraudes por valores altos e locais raros, resultando em 96% recall. Para DBSCAN, clusterize por features densidade (valor, lat/long), identificando transações isoladas como fraudes potenciais."
+                                  "practicalExample": "Em um dataset de transações de cartão de crédito com 284.807 registros (UCI Fraud), aplique Isolation Forest (contamination=0.0017) para isolar fraudes por valores altos e locais raros, resultando em 96% recall. Para DBSCAN, clusterize por features densidade (valor, lat/long), identificando transações isoladas como fraudes potenciais.",
+                                  "stepNumber": 4,
+                                  "title": "Aplicação Prática: Detecção de Fraudes com Isolation Forest e DBSCAN",
+                                  "subSteps": [
+                                    "1. Baixe e carregue o dataset UCI Credit Card Fraud Detection (284.807 registros).",
+                                    "2. Explore os dados e identifique features relevantes (ex: Amount, Time, V1-V28, posição geográfica simulada).",
+                                    "3. Implemente Isolation Forest com contamination=0.0017 e avalie com recall.",
+                                    "4. Normalize/escala features para DBSCAN (ex: valor transação, lat/long).",
+                                    "5. Aplique DBSCAN para clusterizar e identificar pontos isolados como fraudes.",
+                                    "6. Compare resultados com labels reais e visualize anomalias."
+                                  ],
+                                  "verification": "Recall ≥ 96% no Isolation Forest; ≥ 90% das fraudes identificadas como outliers no DBSCAN. Visualize decision_function e labels_{-1} para confirmação.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Python 3.x com Jupyter Notebook",
+                                    "Bibliotecas: scikit-learn, pandas, numpy, matplotlib, seaborn",
+                                    "Dataset: Credit Card Fraud Detection (Kaggle: https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)"
+                                  ],
+                                  "tips": [
+                                    "Ajuste contamination com base na taxa real de fraudes (~0,17%).",
+                                    "Para DBSCAN, teste eps=0.5 e min_samples=5 inicialmente.",
+                                    "Use StandardScaler nas features para melhor performance.",
+                                    "Visualize com scatter plots para entender clusters."
+                                  ],
+                                  "learningObjective": "Implementar e avaliar Isolation Forest e DBSCAN em dataset real de fraudes, alcançando alto recall na detecção de anomalias não-supervisionada.",
+                                  "commonMistakes": [
+                                    "Não escalar features antes do DBSCAN, levando a clusters ruins.",
+                                    "contamination muito alto, gerando excesso de falsos positivos.",
+                                    "Ignorar desbalanceamento e não usar métricas como recall/precision.",
+                                    "Confundir anomalias com ruído sem validação cruzada."
+                                  ]
                                 },
                                 "finalVerifications=["
                               ],
@@ -23365,7 +23514,25 @@
                                 "Ética em IA: Bias em detecção de fraudes e privacidade de dados",
                                 "Negócios: Análise de dados para tomada de decisão estratégica"
                               ],
-                              "realWorldApplication": "Bancos como Nubank usam Isolation Forest para scoring em tempo real de transações, detectando fraudes em milissegundos e prevenindo perdas de milhões anualmente; DBSCAN aplicado em telecom para identificar uso anormal de dados, otimizando retenção de clientes."
+                              "realWorldApplication": "Bancos como Nubank usam Isolation Forest para scoring em tempo real de transações, detectando fraudes em milissegundos e prevenindo perdas de milhões anualmente; DBSCAN aplicado em telecom para identificar uso anormal de dados, otimizando retenção de clientes.",
+                              "practicalExample": "Em um dataset de transações de cartão de crédito com 284.807 registros (UCI Fraud), aplique Isolation Forest (contamination=0.0017) para isolar fraudes por valores altos e locais raros, resultando em 96% recall. Para DBSCAN, clusterize por features densidade (valor, lat/long), identificando transações isoladas como fraudes potenciais.",
+                              "finalVerifications": [
+                                "Explicar com diagrama como Isolation Forest isola anomalias mais rápido que normais?",
+                                "Demonstrar cálculo de score de anomalia em IF para um ponto dado?",
+                                "Identificar corretamente anomalias em plot DBSCAN com ε=0.5, MinPts=5?",
+                                "Comparar outputs de IF vs DBSCAN em dataset financeiro imbalanceado?",
+                                "Propor threshold de detecção baseado em custo de falsos positivos/negativos?",
+                                "Discutir escalabilidade para 1M transações/dia?",
+                                "Implementar pipeline básico com scaling e avaliação?"
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão conceitual precisa dos mecanismos (40%)",
+                                "Implementação correta sem erros de código (30%)",
+                                "Aplicação contextualizada a fraudes gerenciais (20%)",
+                                "Análise de limitações e trade-offs (10%)",
+                                "Uso adequado de visualizações e métricas (extra crédito)",
+                                "Clareza na explicação oral/escrita"
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -46294,7 +46461,8 @@
             "totalSkills": 340
           }
         ],
-        "totalSkills": 340
+        "totalSkills": 340,
+        "percentage": 0
       }
     ]
   }

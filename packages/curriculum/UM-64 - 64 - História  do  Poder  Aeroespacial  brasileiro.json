@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-64",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 289
+      "totalAtomicSkills": 289,
+      "startDate": "2025-02-17",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-UM64",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-64"
     },
     "areas": [
       {
@@ -4615,7 +4621,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Crie um diagrama de fluxo mostrando como o radar CTA em São José dos Campos detectou uma aeronave não identificada em 1955, coordenou controle de tráfego via VHF e ativou doutrina FAB de interceptação, evitando colisão e reforçando soberania aérea."
+                                  "practicalExample": "Crie um diagrama de fluxo mostrando como o radar CTA em São José dos Campos detectou uma aeronave não identificada em 1955, coordenou controle de tráfego via VHF e ativou doutrina FAB de interceptação, evitando colisão e reforçando soberania aérea.",
+                                  "stepNumber": 5,
+                                  "title": "Criação de Diagrama de Fluxo: Incidente de Detecção e Interceptação Aérea em 1955",
+                                  "subSteps": [
+                                    "Pesquise o contexto histórico do incidente de 1955 no radar CTA de São José dos Campos.",
+                                    "Identifique os passos principais: detecção da aeronave não identificada, coordenação via VHF e ativação da doutrina FAB de interceptação.",
+                                    "Desenhe o fluxograma com símbolos padrão (oval para início/fim, retângulo para ações, losango para decisões).",
+                                    "Inclua ramificações para cenários de colisão evitada e reforço à soberania aérea.",
+                                    "Revise e rotule o diagrama com datas, locais e resultados."
+                                  ],
+                                  "verification": "O diagrama deve conter detecção pelo radar CTA, comunicação VHF, ativação da doutrina FAB, prevenção de colisão e menção ao reforço da soberania aérea, com fluxo lógico e símbolos corretos.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel, lápis e borracha",
+                                    "Software de diagramas (Draw.io, Lucidchart ou Microsoft Visio)",
+                                    "Acesso à internet para fontes históricas da FAB"
+                                  ],
+                                  "tips": [
+                                    "Siga a ordem cronológica dos eventos para manter o fluxo claro.",
+                                    "Use cores para diferenciar fases (detecção em azul, interceptação em vermelho).",
+                                    "Teste o diagrama simulando o processo verbalmente."
+                                  ],
+                                  "learningObjective": "Modelar processos de detecção, controle de tráfego aéreo e interceptação usando diagramas de fluxo, integrando história aeronáutica à doutrina da FAB.",
+                                  "commonMistakes": [
+                                    "Omitir a coordenação via VHF entre CTA e controle de tráfego.",
+                                    "Confundir a sequência: detecção precede comunicação e interceptação.",
+                                    "Usar símbolos inadequados, como retângulos para decisões.",
+                                    "Ignorar o impacto na soberania aérea como outcome final."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -4624,6 +4658,33 @@
                                     "Relaciona corretamente impactos em doutrinas FAB com exemplos históricos.",
                                     "Produz síntese coerente sem erros factuais.",
                                     "Demonstra compreensão causal via exemplos concretos."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Síntese: Fundação, Contribuições e Impactos do CTA",
+                                  "subSteps": [
+                                    "Revise os conceitos de fundação e infraestruturas do CTA.",
+                                    "Identifique e liste pelo menos 3 contribuições específicas do CTA para o ATC.",
+                                    "Analise os impactos nas doutrinas da FAB com exemplos históricos.",
+                                    "Elabore uma síntese escrita relacionando causa e efeito."
+                                  ],
+                                  "verification": "Avaliação final com apresentação oral ou escrita cobrindo todos os critérios de verificação.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Documentos oficiais do CTA (site oficial)",
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-64",
+                                    "Vídeos históricos da FAB sobre CTA"
+                                  ],
+                                  "tips": [
+                                    "Use timeline histórica para organizar eventos.",
+                                    "Priorize fontes primárias para precisão factual.",
+                                    "Pratique síntese em voz alta para clareza."
+                                  ],
+                                  "learningObjective": "Compreender e sintetizar a fundação, infraestruturas, contribuições do CTA para ATC e impactos nas doutrinas da FAB, demonstrando análise causal com exemplos concretos.",
+                                  "commonMistakes": [
+                                    "Confundir CTA com IAE ou outros institutos.",
+                                    "Listar contribuições genéricas sem especificidade.",
+                                    "Ignorar contexto histórico das doutrinas FAB.",
+                                    "Produzir sínteses com erros factuais ou incoerentes."
                                   ]
                                 },
                                 {
@@ -4633,6 +4694,39 @@
                                     "Uso de evidências e fontes (20%)",
                                     "Clareza e estrutura na explicação (15%)",
                                     "Originalidade na síntese e conexões (10%)"
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Elaboração de Análise Histórica sobre o Contexto UM-64",
+                                  "subSteps": [
+                                    "1. Pesquise fontes primárias e secundárias sobre o Golpe Militar de 1964 (UM-64).",
+                                    "2. Identifique causas imediatas e estruturais dos eventos.",
+                                    "3. Estruture o texto com introdução, desenvolvimento e conclusão.",
+                                    "4. Inclua evidências e cite fontes adequadamente.",
+                                    "5. Revise o texto com base nos critérios de avaliação."
+                                  ],
+                                  "verification": "Submissão do ensaio ou relatório via plataforma do curso, avaliado conforme os critérios: Precisão histórica (30%), Profundidade causal (25%), Evidências (20%), Clareza (15%), Originalidade (10%). Nota mínima: 7,0.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-64",
+                                    "Livros: '1964: O Golpe que Derrubou um Presidente' de Jorge Ferreira",
+                                    "Documentos primários: Manifestos da Marcha da Família com Deus pela Liberdade",
+                                    "Artigos acadêmicos via SciELO ou JSTOR",
+                                    "Modelo de análise histórica (disponível no AVA)"
+                                  ],
+                                  "tips": [
+                                    "Priorize fontes acadêmicas para garantir precisão factual.",
+                                    "Use diagrama de causas e consequências para organizar ideias.",
+                                    "Evite anacronismos: contextualize no período histórico.",
+                                    "Pratique síntese: conecte eventos a tendências maiores da Guerra Fria.",
+                                    "Leia em voz alta para verificar clareza e fluidez."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de produzir uma análise histórica crítica, fundamentada em evidências, demonstrando precisão factual, profundidade causal e originalidade na síntese, alinhada aos padrões acadêmicos do currículo UM-64.",
+                                  "commonMistakes": [
+                                    "Confundir causas com consequências ou superestimar fatores isolados.",
+                                    "Uso de fontes não confiáveis (ex.: blogs ou Wikipedia como primárias).",
+                                    "Falta de estrutura: texto desorganizado sem parágrafos claros.",
+                                    "Plágio ou citações incompletas, prejudicando a credibilidade.",
+                                    "Análise superficial sem conexões interdisciplinares (econômicas, sociais)."
                                   ]
                                 },
                                 {
@@ -4642,12 +4736,91 @@
                                     "Geopolítica (soberania aérea na Guerra Fria)",
                                     "Educação Militar (doutrinas FAB)",
                                     "Gestão de Projetos (desenvolvimento infraestrutura)"
+                                  ],
+                                  "stepNumber": 3,
+                                  "title": "Explorando Conexões Curriculares Transversais no Catálogo UM-64",
+                                  "subSteps": [
+                                    "1. Revise o catálogo de cursos de graduação 2025 da UM-64 e identifique temas centrais de aviação e defesa aérea.",
+                                    "2. Pesquise cada conexão transversal listada: História Geral do Brasil (industrialização JK), Engenharia Eletrônica (radares e comunicações), Geopolítica (soberania aérea na Guerra Fria), Educação Militar (doutrinas FAB) e Gestão de Projetos (desenvolvimento infraestrutura).",
+                                    "3. Crie um mapa conceitual ligando essas conexões ao currículo principal.",
+                                    "4. Discuta em grupo como essas interseções fortalecem a formação integral do aviador."
+                                  ],
+                                  "verification": "Elabore um mapa conceitual ou relatório de 1 página explicando pelo menos 3 conexões e sua relevância para a carreira na FAB. Avaliação: clareza, precisão histórica e interdisciplinaridade.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-64",
+                                    "Acesso à internet para pesquisa (sites da FAB, EMBRAER, arquivos históricos)",
+                                    "Ferramenta de mapa conceitual (ex: MindMeister, papel e caneta)",
+                                    "Artigos sobre industrialização JK e doutrinas da FAB"
+                                  ],
+                                  "tips": [
+                                    "Comece pela industrialização JK para contextualizar o desenvolvimento aeronáutico brasileiro.",
+                                    "Use analogias: radares como 'olhos do céu' na soberania aérea da Guerra Fria.",
+                                    "Integre gestão de projetos com exemplos reais de infraestrutura aeroportuária da FAB.",
+                                    "Evite superficialidade: busque fontes primárias como relatórios da FAB."
+                                  ],
+                                  "learningObjective": "Ao final, o aluno será capaz de identificar e articular conexões interdisciplinares entre história, engenharia, geopolítica, educação militar e gestão no contexto do currículo UM-64, promovendo uma visão holística da aviação brasileira.",
+                                  "commonMistakes": [
+                                    "Confundir industrialização JK com outros períodos (ex: Vargas).",
+                                    "Subestimar o papel da Guerra Fria na doutrina FAB, focando apenas em tecnologia.",
+                                    "Não ligar conexões à soberania aérea atual da FAB.",
+                                    "Ignorar gestão de projetos em contextos de infraestrutura militar."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Essa relação ilustra como investimentos em infraestrutura tecnológica, como os do CTA, sustentam sistemas modernos de controle aéreo (ex: SISCEAB do DECEA), garantindo segurança em rotas comerciais e defesa nacional contra ameaças aéreas atuais."
+                                  "realWorldApplication": "Essa relação ilustra como investimentos em infraestrutura tecnológica, como os do CTA, sustentam sistemas modernos de controle aéreo (ex: SISCEAB do DECEA), garantindo segurança em rotas comerciais e defesa nacional contra ameaças aéreas atuais.",
+                                  "stepNumber": 5,
+                                  "title": "Aplicações no Mundo Real: Infraestrutura Tecnológica no Controle Aéreo e Defesa Nacional",
+                                  "subSteps": [
+                                    "1. Pesquise sobre o CTA (Centro de Tecnologia da Aeronáutica) e seus investimentos em infraestrutura.",
+                                    "2. Estude o SISCEAB (Sistema Integrado de Controle do Espaço Aéreo Brasileiro) gerenciado pelo DECEA.",
+                                    "3. Analise exemplos de rotas comerciais seguras e ameaças aéreas modernas.",
+                                    "4. Relacione os investimentos do CTA com a segurança e defesa nacional."
+                                  ],
+                                  "verification": "Explique em 2-3 frases como os investimentos em infraestrutura tecnológica do CTA sustentam o SISCEAB, garantindo segurança em rotas comerciais e defesa nacional. Compartilhe sua resposta para feedback.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-64",
+                                    "Site oficial do DECEA (www.decea.mil.br)",
+                                    "Site do CTA/ITA (www.ita.br)",
+                                    "Acesso à internet para pesquisa atualizada"
+                                  ],
+                                  "tips": [
+                                    "Consulte fontes oficiais como DECEA e ITA para dados precisos.",
+                                    "Considere exemplos recentes de incidentes aéreos para contextualizar ameaças.",
+                                    "Anote conexões com disciplinas de engenharia aeronáutica do currículo UM-64."
+                                  ],
+                                  "learningObjective": "Compreender e ilustrar como investimentos em infraestrutura tecnológica, como os do CTA, sustentam sistemas modernos de controle aéreo (ex: SISCEAB do DECEA), garantindo segurança em rotas comerciais e defesa nacional contra ameaças aéreas atuais.",
+                                  "commonMistakes": [
+                                    "Confundir CTA com outros centros de pesquisa aeronáutica.",
+                                    "Subestimar o papel do DECEA na integração civil-militar do SISCEAB.",
+                                    "Ignorar exemplos atuais de ameaças, focando apenas em teoria histórica."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Crie um diagrama de fluxo mostrando como o radar CTA em São José dos Campos detectou uma aeronave não identificada em 1955, coordenou controle de tráfego via VHF e ativou doutrina FAB de interceptação, evitando colisão e reforçando soberania aérea.",
+                              "finalVerifications": [
+                                "Explica com precisão a fundação e infraestruturas do CTA.",
+                                "Identifica pelo menos 3 contribuições específicas para ATC.",
+                                "Relaciona corretamente impactos em doutrinas FAB com exemplos históricos.",
+                                "Produz síntese coerente sem erros factuais.",
+                                "Demonstra compreensão causal via exemplos concretos."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão histórica e factual (30%)",
+                                "Profundidade de análise causal (25%)",
+                                "Uso de evidências e fontes (20%)",
+                                "Clareza e estrutura na explicação (15%)",
+                                "Originalidade na síntese e conexões (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "História Geral do Brasil (industrialização JK)",
+                                "Engenharia Eletrônica (radares e comunicações)",
+                                "Geopolítica (soberania aérea na Guerra Fria)",
+                                "Educação Militar (doutrinas FAB)",
+                                "Gestão de Projetos (desenvolvimento infraestrutura)"
+                              ],
+                              "realWorldApplication": "Essa relação ilustra como investimentos em infraestrutura tecnológica, como os do CTA, sustentam sistemas modernos de controle aéreo (ex: SISCEAB do DECEA), garantindo segurança em rotas comerciais e defesa nacional contra ameaças aéreas atuais."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -17434,7 +17607,8 @@
                                   "commonMistakes": [
                                     "Subestimar impacto na Δv (velocidade delta)",
                                     "Confundir com vantagens climáticas"
-                                  ]
+                                  ],
+                                  "verification": "Calcule a diferença de velocidade tangencial da rotação terrestre entre o equador (φ=0°) e latitude 28° (ex.: Baikonur ~46°, mas use 28° para comparação com Kourou ajustada). Explique como isso impacta a Δv e o payload, citando os ~10-15% de economia."
                                 },
                                 {
                                   "stepNumber": 3,
@@ -27640,7 +27814,32 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Crie um mapa mental ou diagrama digital do CTA inicial em São José dos Campos, marcando o Túnel de Vento Superrsônico (construído em 1948 para testes de aeronaves), Laboratório de Materiais (para desenvolvimento de ligas leves), oficinas de prototipagem e pista de testes, conectando-os à localização estratégica no Vale do Paraíba como polo aeroespacial."
+                                  "practicalExample": "Crie um mapa mental ou diagrama digital do CTA inicial em São José dos Campos, marcando o Túnel de Vento Superrsônico (construído em 1948 para testes de aeronaves), Laboratório de Materiais (para desenvolvimento de ligas leves), oficinas de prototipagem e pista de testes, conectando-os à localização estratégica no Vale do Paraíba como polo aeroespacial.",
+                                  "stepNumber": 4,
+                                  "title": "Criação de Mapa Mental do CTA Inicial em São José dos Campos",
+                                  "subSteps": [
+                                    "Pesquise a localização geográfica do CTA em São José dos Campos e o contexto do Vale do Paraíba como polo aeroespacial.",
+                                    "Marque no diagrama: Túnel de Vento Superrsônico (1948, testes de aeronaves), Laboratório de Materiais (ligas leves), oficinas de prototipagem e pista de testes.",
+                                    "Crie um mapa mental ou diagrama digital conectando esses elementos, mostrando fluxos de desenvolvimento e importância estratégica.",
+                                    "Adicione legendas, datas e setas para ilustrar interconexões."
+                                  ],
+                                  "verification": "O mapa mental inclui todos os elementos especificados (Túnel de Vento, Laboratório, oficinas, pista), conexões lógicas e referência ao Vale do Paraíba; compartilhe o diagrama para revisão.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Ferramenta digital de mapas mentais (ex: MindMeister, Canva, Draw.io ou XMind)",
+                                    "Acesso à internet para imagens e dados históricos do CTA"
+                                  ],
+                                  "tips": [
+                                    "Use cores diferentes para cada instalação e ícones representativos (ex: túnel para vento, engrenagens para oficinas).",
+                                    "Inclua setas direcionais para mostrar o fluxo: testes → materiais → prototipagem → pista.",
+                                    "Exporte em PDF ou imagem para facilitar compartilhamento."
+                                  ],
+                                  "learningObjective": "Compreender e visualizar a infraestrutura inicial do CTA (1940s-1950s), destacando instalações chave e a relevância estratégica do Vale do Paraíba no polo aeroespacial brasileiro.",
+                                  "commonMistakes": [
+                                    "Esquecer de incluir datas ou propósitos específicos das instalações (ex: 1948 para Túnel de Vento).",
+                                    "Não conectar os elementos à localização estratégica do Vale do Paraíba.",
+                                    "Criar diagrama desorganizado sem hierarquia ou fluxos claros."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -27649,6 +27848,34 @@
                                     "Explicação clara do papel da cidade como polo tecnológico.",
                                     "Mapa visual com marcações precisas e legendas.",
                                     "Conexões históricas com eventos de 1946 corretas."
+                                  ],
+                                  "stepNumber": 3,
+                                  "title": "Explorando São José dos Campos e o Centro Técnico Aeroespacial (CTA)",
+                                  "subSteps": [
+                                    "1. Localize São José dos Campos em um mapa detalhado do Brasil, identificando sua posição exata no estado de São Paulo.",
+                                    "2. Pesquise a história do CTA, destacando os eventos de 1946 e sua evolução.",
+                                    "3. Compile uma lista de pelo menos 4 instalações iniciais do CTA, incluindo descrições breves de cada uma.",
+                                    "4. Analise e explique o papel de São José dos Campos como polo tecnológico aeroespacial no Brasil.",
+                                    "5. Crie um mapa visual personalizado com marcações precisas das instalações, legendas e conexões históricas."
+                                  ],
+                                  "verification": "Todas as finalVerifications devem ser atendidas para aprovação da etapa.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Mapa físico ou digital do Brasil (ex: Google Maps ou Atlas)",
+                                    "Acesso à internet para pesquisa (sites oficiais do CTA, ITA e IBGE)",
+                                    "Papel, lápis de cor ou software de edição de imagens (ex: Canva, Paint)"
+                                  ],
+                                  "tips": [
+                                    "Utilize coordenadas geográficas (23°11'S 45°53'W) para precisão na localização.",
+                                    "Consulte fontes primárias como o site do Instituto Tecnológico de Aeronáutica (ITA) para dados históricos.",
+                                    "Inclua setas no mapa para mostrar conexões entre instalações e eventos de 1946."
+                                  ],
+                                  "learningObjective": "Identificar a localização geográfica de São José dos Campos, compreender sua importância histórica desde 1946 e o papel do CTA como polo tecnológico, criando representações visuais precisas.",
+                                  "commonMistakes": [
+                                    "Localizar incorretamente São José dos Campos (confundir com São José do Rio Preto ou outras cidades).",
+                                    "Omitir detalhes históricos de 1946, como a criação do Instituto de Pesquisas da Aeronáutica (IPA).",
+                                    "Listar menos de 4 instalações ou fornecer descrições vagas.",
+                                    "Criar mapas sem legendas ou marcações precisas, dificultando a compreensão."
                                   ]
                                 },
                                 {
@@ -27658,6 +27885,37 @@
                                     "Qualidade visual e organização do mapa (20%)",
                                     "Explicações claras e concisas (15%)",
                                     "Conexões com contexto tecnológico (10%)"
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Elaboração e Avaliação do Mapa Temático de Infraestruturas",
+                                  "subSteps": [
+                                    "Pesquise a precisão geográfica e histórica da região selecionada.",
+                                    "Compile uma lista completa de infraestruturas relevantes (portos, estradas, aeroportos etc.).",
+                                    "Crie o mapa com organização visual clara, utilizando ferramentas digitais.",
+                                    "Elabore explicações concisas para cada elemento do mapa.",
+                                    "Integre conexões com o contexto tecnológico da época."
+                                  ],
+                                  "verification": "Verifique se o mapa atende aos critérios de avaliação: Precisão geográfica e histórica (30%), Completude da lista (25%), Qualidade visual (20%), Explicações claras (15%), Conexões tecnológicas (10%). Submissão aprovada se pontuação ≥ 80%.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Software de mapas (Google Earth Pro, QGIS ou ArcGIS)",
+                                    "Fontes históricas e geográficas (livros, artigos, bases de dados online)",
+                                    "Computador com acesso à internet",
+                                    "Papel e canetas para rascunhos iniciais"
+                                  ],
+                                  "tips": [
+                                    "Utilize camadas no software para separar elementos históricos e tecnológicos.",
+                                    "Inclua legendas e escalas para melhorar a qualidade visual.",
+                                    "Priorize fontes confiáveis para evitar erros de precisão.",
+                                    "Teste a clareza das explicações lendo em voz alta."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de criar um mapa temático preciso e visualmente organizado, integrando aspectos geográficos, históricos e tecnológicos de infraestruturas, aplicando critérios de avaliação rigorosos.",
+                                  "commonMistakes": [
+                                    "Omitir infraestruturas secundárias, reduzindo a completude.",
+                                    "Usar cores ou layouts confusos, prejudicando a organização visual.",
+                                    "Explicações vagas ou excessivamente longas.",
+                                    "Ignorar o contexto tecnológico, focando apenas em geografia.",
+                                    "Erros de escala ou localização geográfica imprecisa."
                                   ]
                                 },
                                 {
@@ -27667,12 +27925,91 @@
                                     "Educação Tecnológica: Importância de infraestruturas para inovação aeroespacial.",
                                     "Ciências: Aplicações de aerodinâmica e ciência dos materiais.",
                                     "Planejamento Urbano: Estratégias para criação de clusters tecnológicos."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Explorando Conexões Interdisciplinares no Ecossistema Aeroespacial",
+                                  "subSteps": [
+                                    "1. Revise as conexões curriculares listadas e identifique exemplos reais no polo de São José dos Campos (UM-64).",
+                                    "2. Pesquise a evolução histórica da indústria de defesa brasileira pós-1945, focando no ITA e EMBRAER.",
+                                    "3. Analise impactos geográficos e urbanos do cluster aeroespacial em polos regionais.",
+                                    "4. Discuta aplicações científicas em aerodinâmica e materiais avançados.",
+                                    "5. Proponha estratégias de planejamento urbano para expansão sustentável de clusters tecnológicos."
+                                  ],
+                                  "verification": "O aluno deve produzir um mapa conceitual conectando pelo menos 4 disciplinas com exemplos específicos do contexto brasileiro, demonstrando compreensão interdisciplinar.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Mapa do Brasil com polos industriais destacados",
+                                    "Artigos sobre história da EMBRAER e ITA",
+                                    "Vídeos educativos sobre aerodinâmica (YouTube ou Khan Academy)",
+                                    "Folha de papel ou ferramenta digital como MindMeister para mapa conceitual"
+                                  ],
+                                  "tips": [
+                                    "Use exemplos locais como o Parque Tecnológico de São José dos Campos para tornar a análise concreta.",
+                                    "Integre dados recentes do Catálogo de Graduação 2025 para relevância.",
+                                    "Discuta em grupo para enriquecer perspectivas interdisciplinares.",
+                                    "Priorize conexões práticas para inovação aeroespacial."
+                                  ],
+                                  "learningObjective": "Compreender e aplicar conexões interdisciplinares entre Geografia, História, Educação Tecnológica, Ciências e Planejamento Urbano no contexto do desenvolvimento sustentável do setor aeroespacial brasileiro.",
+                                  "commonMistakes": [
+                                    "Focar apenas em uma disciplina, ignorando integrações.",
+                                    "Usar exemplos genéricos sem referência ao Brasil ou UM-64.",
+                                    "Subestimar o papel histórico do ITA na indústria de defesa pós-1945.",
+                                    "Não relacionar conceitos científicos a aplicações reais em clusters tecnológicos."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Essa habilidade é essencial para profissionais de aeroespacial, urbanistas e historiadores, permitindo analisar o crescimento de polos tecnológicos como o de São José dos Campos, auxiliar em investimentos em infraestrutura e planejar expansões industriais semelhantes em outras regiões, contribuindo para o desenvolvimento econômico nacional."
+                                  "realWorldApplication": "Essa habilidade é essencial para profissionais de aeroespacial, urbanistas e historiadores, permitindo analisar o crescimento de polos tecnológicos como o de São José dos Campos, auxiliar em investimentos em infraestrutura e planejar expansões industriais semelhantes em outras regiões, contribuindo para o desenvolvimento econômico nacional.",
+                                  "stepNumber": 3,
+                                  "title": "Análise do Crescimento de Polos Tecnológicos",
+                                  "subSteps": [
+                                    "1. Colete dados históricos de população, indústrias e infraestrutura de São José dos Campos (fontes: IBGE, EMBRAPII).",
+                                    "2. Utilize software de SIG (ex: QGIS) para criar camadas espaciais e temporais.",
+                                    "3. Plote mapas de crescimento de 1950 a 2025 e identifique padrões de expansão.",
+                                    "4. Compare com outros polos (ex: São Carlos) e extraia insights econômicos."
+                                  ],
+                                  "verification": "Crie e envie um mapa interativo mostrando o crescimento do polo de São José dos Campos, com relatório de 200 palavras sobre implicações para investimentos.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Computador com QGIS instalado (gratuito)",
+                                    "Dados do IBGE (população e economia)",
+                                    "Relatórios da AEB e EMBRAER sobre o polo aeroespacial"
+                                  ],
+                                  "tips": [
+                                    "Use camadas temporais no QGIS para visualizações dinâmicas.",
+                                    "Normalise dados por área para comparações justas.",
+                                    "Integre dados socioeconômicos para análises mais robustas."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de mapear e analisar o crescimento histórico de polos tecnológicos, identificando padrões para planejamento urbano e investimentos em infraestrutura.",
+                                  "commonMistakes": [
+                                    "Ignorar escalas geográficas diferentes entre regiões.",
+                                    "Usar dados desatualizados sem verificação de fontes oficiais.",
+                                    "Não considerar variáveis externas como políticas públicas e incentivos fiscais."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Crie um mapa mental ou diagrama digital do CTA inicial em São José dos Campos, marcando o Túnel de Vento Superrsônico (construído em 1948 para testes de aeronaves), Laboratório de Materiais (para desenvolvimento de ligas leves), oficinas de prototipagem e pista de testes, conectando-os à localização estratégica no Vale do Paraíba como polo aeroespacial.",
+                              "finalVerifications": [
+                                "Localização exata de São José dos Campos identificada no mapa do Brasil.",
+                                "Lista completa de pelo menos 4 instalações iniciais do CTA com descrições.",
+                                "Explicação clara do papel da cidade como polo tecnológico.",
+                                "Mapa visual com marcações precisas e legendas.",
+                                "Conexões históricas com eventos de 1946 corretas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão geográfica e histórica (30%)",
+                                "Completude da lista de infraestruturas (25%)",
+                                "Qualidade visual e organização do mapa (20%)",
+                                "Explicações claras e concisas (15%)",
+                                "Conexões com contexto tecnológico (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Geografia: Análise de polos regionais e desenvolvimento urbano sustentável.",
+                                "História: Evolução da indústria de defesa e tecnologia no Brasil pós-1945.",
+                                "Educação Tecnológica: Importância de infraestruturas para inovação aeroespacial.",
+                                "Ciências: Aplicações de aerodinâmica e ciência dos materiais.",
+                                "Planejamento Urbano: Estratégias para criação de clusters tecnológicos."
+                              ],
+                              "realWorldApplication": "Essa habilidade é essencial para profissionais de aeroespacial, urbanistas e historiadores, permitindo analisar o crescimento de polos tecnológicos como o de São José dos Campos, auxiliar em investimentos em infraestrutura e planejar expansões industriais semelhantes em outras regiões, contribuindo para o desenvolvimento econômico nacional."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -35439,7 +35776,8 @@
             "totalSkills": 289
           }
         ],
-        "totalSkills": 289
+        "totalSkills": 289,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MT-05",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 308
+      "totalAtomicSkills": 308,
+      "startDate": "2025-02-10",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025.1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MT-05"
     },
     "areas": [
       {
@@ -15670,6 +15676,13 @@
                                     "Não calibrar μ com dados reais",
                                     "Omitir incertezas em medições",
                                     "Ignorar efeitos térmicos em validação"
+                                  ],
+                                  "tips": [
+                                    "Visualize comparações com gráficos de FMEP vs. velocidade (use escalas log para Stribeck).",
+                                    "Inicie otimização com μ médio de literatura (0.05-0.1) e aplique bounds realistas.",
+                                    "Calcule R² e RMSE para quantificar matching (<5% como meta).",
+                                    "Varie temperatura em simulações para capturar efeitos térmicos.",
+                                    "Documente trade-offs: redução de μ vs. viabilidade de lubrificação."
                                   ]
                                 }
                               ],
@@ -33643,7 +33656,8 @@
             "totalSkills": 308
           }
         ],
-        "totalSkills": 308
+        "totalSkills": 308,
+        "percentage": 0
       }
     ]
   }

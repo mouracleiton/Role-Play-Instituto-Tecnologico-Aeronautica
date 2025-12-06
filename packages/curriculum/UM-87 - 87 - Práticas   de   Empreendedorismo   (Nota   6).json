@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-87",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 199
+      "totalAtomicSkills": 199,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 6,
+      "version": "2025-UM87",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-87"
     },
     "areas": [
       {
@@ -27360,7 +27366,8 @@
             "totalSkills": 199
           }
         ],
-        "totalSkills": 199
+        "totalSkills": 199,
+        "percentage": 0
       }
     ]
   }

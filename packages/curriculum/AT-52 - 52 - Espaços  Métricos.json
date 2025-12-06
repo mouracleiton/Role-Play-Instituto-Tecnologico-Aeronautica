@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-52",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 242
+      "totalAtomicSkills": 242,
+      "startDate": "2025-02-01",
+      "duration": "10 semestres",
+      "dailyStudyHours": 8,
+      "version": "AT-52",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-52"
     },
     "areas": [
       {
@@ -30943,7 +30949,8 @@
             "totalSkills": 242
           }
         ],
-        "totalSkills": 242
+        "totalSkills": 242,
+        "percentage": 0
       }
     ]
   }

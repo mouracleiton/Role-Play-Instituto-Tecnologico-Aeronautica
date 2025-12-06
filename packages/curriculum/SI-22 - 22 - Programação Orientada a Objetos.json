@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SI-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 382
+      "totalAtomicSkills": 382,
+      "startDate": "2025-02-01",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "SI-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SI-22"
     },
     "areas": [
       {
@@ -1043,7 +1049,33 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "```python\nclass Pessoa:\n    def __init__(self, nome, idade):\n        self.nome = nome\n        self.idade = idade\n\npessoa1 = Pessoa('Alice', 30)\nprint(f'{pessoa1.nome}: {pessoa1.idade}')  # Alice: 30\n\npessoa2 = Pessoa('Bob', 25)\nprint(f'{pessoa2.nome}: {pessoa2.idade}')  # Bob: 25\npessoa1.idade = 31\nprint(f'{pessoa1.idade}')  # 31 (independente)\nprint(f'{pessoa2.idade}')  # 25\n``` Este exemplo cria duas pessoas independentes com valores iniciais via construtor."
+                                  "practicalExample": "```python\nclass Pessoa:\n    def __init__(self, nome, idade):\n        self.nome = nome\n        self.idade = idade\n\npessoa1 = Pessoa('Alice', 30)\nprint(f'{pessoa1.nome}: {pessoa1.idade}')  # Alice: 30\n\npessoa2 = Pessoa('Bob', 25)\nprint(f'{pessoa2.nome}: {pessoa2.idade}')  # Bob: 25\npessoa1.idade = 31\nprint(f'{pessoa1.idade}')  # 31 (independente)\nprint(f'{pessoa2.idade}')  # 25\n``` Este exemplo cria duas pessoas independentes com valores iniciais via construtor.",
+                                  "stepNumber": "4.2",
+                                  "title": "Implementando Construtores e Instâncias Independentes em Classes Python",
+                                  "subSteps": [
+                                    "Defina a classe `Pessoa` com o método `__init__` que recebe `nome` e `idade` como parâmetros e atribui aos atributos de instância.",
+                                    "Crie duas instâncias independentes da classe `Pessoa`: `pessoa1` com 'Alice' e 30, e `pessoa2` com 'Bob' e 25.",
+                                    "Imprima os atributos de cada instância para verificar a inicialização.",
+                                    "Modifique a `idade` de `pessoa1` e imprima novamente para demonstrar independência das instâncias."
+                                  ],
+                                  "verification": "Execute o código e verifique as saídas: 'Alice: 30', 'Bob: 25', '31', '25'. As instâncias devem manter valores independentes após a modificação.",
+                                  "estimatedTime": "10 minutos",
+                                  "materials": [
+                                    "Python 3.x instalado",
+                                    "Editor de código (ex: VS Code, PyCharm)",
+                                    "Terminal ou IDE com interpretador Python"
+                                  ],
+                                  "tips": [
+                                    "Sempre use `self` para referenciar atributos de instância no `__init__`.",
+                                    "Cada chamada ao construtor cria um novo objeto independente na memória.",
+                                    "Teste modificações em uma instância para confirmar que não afetam outras."
+                                  ],
+                                  "learningObjective": "Compreender o uso do construtor `__init__` para inicializar atributos de instância e demonstrar que múltiplas instâncias de uma classe são objetos independentes com seus próprios estados.",
+                                  "commonMistakes": [
+                                    "Esquecer `self` nos parâmetros ou atribuições do `__init__`, causando erro de sintaxe.",
+                                    "Confundir atributos de instância com variáveis locais ou globais, levando a comportamentos inesperados.",
+                                    "Acessar atributos sem instanciar a classe primeiro."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -1067,9 +1099,62 @@
                                     "Ciências: Analogia com criação de organismos individuais a partir de um blueprint genético.",
                                     "Artes: Design de templates (classes) para objetos únicos e personalizados."
                                   ],
-                                  "realWorldApplication": "Em aplicativos reais, como sistemas de gerenciamento de estoque, criar instâncias de 'Produto' permite representar itens únicos com preços e quantidades iniciais; em jogos, instâncias de 'Inimigo' com posições e vidas específicas; ou em redes sociais, perfis de usuários com dados pessoais inicializados."
+                                  "realWorldApplication": "Em aplicativos reais, como sistemas de gerenciamento de estoque, criar instâncias de 'Produto' permite representar itens únicos com preços e quantidades iniciais; em jogos, instâncias de 'Inimigo' com posições e vidas específicas; ou em redes sociais, perfis de usuários com dados pessoais inicializados.",
+                                  "stepNumber": 3,
+                                  "title": "Criando e Verificando Instâncias da Classe",
+                                  "subSteps": [
+                                    "Defina argumentos apropriados para o construtor da classe.",
+                                    "Crie a primeira instância (ex: p1 = Classe(arg1, arg2)) e acesse seus atributos via notação de ponto.",
+                                    "Use print() para exibir os valores dos atributos da instância p1.",
+                                    "Crie uma segunda instância (ex: p2 = Classe(arg3, arg4)) com valores diferentes.",
+                                    "Imprima os atributos de p2 e modifique um atributo de p1 para confirmar independência."
+                                  ],
+                                  "verification": "Execute o código; os prints devem mostrar valores iniciais corretos para cada instância, sem erros, e alterações em uma não afetarem a outra.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Editor de código Python (ex: VS Code, IDLE)",
+                                    "Ambiente Python 3.x instalado",
+                                    "Código da classe definida no passo anterior"
+                                  ],
+                                  "tips": [
+                                    "Sempre inclua parênteses na instanciação: obj = Classe(args), não obj = Classe.",
+                                    "Use print(f'Valor: {obj.atributo}') para depuração clara.",
+                                    "Teste com valores distintos para evidenciar independência de instâncias.",
+                                    "Mantenha o código comentado para explicar cada passo."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de instanciar múltiplos objetos de uma classe, acessar seus atributos e demonstrar que cada instância mantém estado independente.",
+                                  "commonMistakes": [
+                                    "Esquecer parênteses ou argumentos na instanciação, causando TypeError.",
+                                    "Omitir 'self' nas atribuições do construtor (erro no passo anterior, mas afeta instanciação).",
+                                    "Usar o mesmo nome de variável para instâncias, sobrescrevendo-as.",
+                                    "Acessar atributos sem notação de ponto (ex: print(atributo) em vez de print(obj.atributo)).",
+                                    "Compartilhar referências indevidas, como listas mutáveis no construtor."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "```python\nclass Pessoa:\n    def __init__(self, nome, idade):\n        self.nome = nome\n        self.idade = idade\n\npessoa1 = Pessoa('Alice', 30)\nprint(f'{pessoa1.nome}: {pessoa1.idade}')  # Alice: 30\n\npessoa2 = Pessoa('Bob', 25)\nprint(f'{pessoa2.nome}: {pessoa2.idade}')  # Bob: 25\npessoa1.idade = 31\nprint(f'{pessoa1.idade}')  # 31 (independente)\nprint(f'{pessoa2.idade}')  # 25\n``` Este exemplo cria duas pessoas independentes com valores iniciais via construtor.",
+                              "finalVerifications": [
+                                "Código executa sem erros de sintaxe ou runtime.",
+                                "Atributos da instância refletem valores passados ao construtor.",
+                                "Acesso a atributos via notação de ponto funciona corretamente.",
+                                "Múltiplas instâncias mantêm estados independentes.",
+                                "Não há vazamento de variáveis ou referências compartilhadas indevidas."
+                              ],
+                              "assessmentCriteria": [
+                                "Construtor usa 'self' corretamente em todas as atribuições.",
+                                "Sintaxe de instanciação inclui parênteses e argumentos exatos.",
+                                "Verificações via print confirmam inicialização bem-sucedida.",
+                                "Código demonstra criação de pelo menos duas instâncias independentes.",
+                                "Comentários explicam passos chave; código é legível e sem redundâncias.",
+                                "Ausência de erros comuns como esquecer 'self' ou argumentos errados."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Modelagem de entidades com propriedades variáveis (análoga a funções e variáveis).",
+                                "Língua Portuguesa: Uso de nomenclatura clara e descritiva em identificadores.",
+                                "Ciências: Analogia com criação de organismos individuais a partir de um blueprint genético.",
+                                "Artes: Design de templates (classes) para objetos únicos e personalizados."
+                              ],
+                              "realWorldApplication": "Em aplicativos reais, como sistemas de gerenciamento de estoque, criar instâncias de 'Produto' permite representar itens únicos com preços e quantidades iniciais; em jogos, instâncias de 'Inimigo' com posições e vidas específicas; ou em redes sociais, perfis de usuários com dados pessoais inicializados."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -49831,7 +49916,8 @@
             "totalSkills": 382
           }
         ],
-        "totalSkills": 382
+        "totalSkills": 382,
+        "percentage": 0
       }
     ]
   }

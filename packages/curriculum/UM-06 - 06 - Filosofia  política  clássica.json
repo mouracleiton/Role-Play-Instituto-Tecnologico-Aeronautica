@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-06",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 329
+      "totalAtomicSkills": 329,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "2025-1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-06"
     },
     "areas": [
       {
@@ -40445,7 +40451,8 @@
             "totalSkills": 329
           }
         ],
-        "totalSkills": 329
+        "totalSkills": 329,
+        "percentage": 100
       }
     ]
   }

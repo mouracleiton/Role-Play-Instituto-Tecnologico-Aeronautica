@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-20",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 272
+      "totalAtomicSkills": 272,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "VO-20",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-20"
     },
     "areas": [
       {
@@ -17203,6 +17209,13 @@
                                     "Usar PM diretamente como ζ",
                                     "Esquecer normalização de ω_gc para ω_n",
                                     "Aplicar regras a sistemas não dominados por 2ª ordem"
+                                  ],
+                                  "tips": [
+                                    "Use tabelas de aproximação ζ vs. PM para maior precisão (válido para PM 30°-70°).",
+                                    "ω_n ≈ ω_gc é boa para PM ~60°; para PM baixo, ω_n > ω_gc.",
+                                    "No MATLAB: G_cl = feedback(Gol,1); step(G_cl); stepinfo(G_cl) para métricas exatas.",
+                                    "Ringing prolongado se PM < 30° ou polos complexos não dominantes.",
+                                    "Tabule em formato: Parâmetro | Predito | Simulado | Erro% para verificação clara."
                                   ]
                                 },
                                 {
@@ -35213,7 +35226,8 @@
             "totalSkills": 272
           }
         ],
-        "totalSkills": 272
+        "totalSkills": 272,
+        "percentage": 0
       }
     ]
   }

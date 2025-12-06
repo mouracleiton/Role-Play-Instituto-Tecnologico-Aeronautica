@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UI-31",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 311
+      "totalAtomicSkills": 311,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025-v1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UI-31"
     },
     "areas": [
       {
@@ -40344,7 +40350,15 @@
                                   "estimatedTime": "4-6 horas",
                                   "materials": "Código próprio anterior, NumPy/SciPy para baseline, ferramentas de plotting.",
                                   "learningObjective": "Avaliar criticamente bibliotecas especializadas vs. implementações customizadas.",
-                                  "commonMistakes": "Parâmetros não idênticos entre simulações; ignorar normalização de erros."
+                                  "commonMistakes": "Parâmetros não idênticos entre simulações; ignorar normalização de erros.",
+                                  "tips": [
+                                    "Garanta condições iniciais, de contorno e parâmetros (dt, dx) rigorosamente idênticos entre implementações.",
+                                    "Implemente funções modulares para cálculo de erros L2 e tempo de execução, facilitando reutilização.",
+                                    "Para plots overlay, use escalas iguais (plt.ylim) e legendas claras; salve em alta resolução.",
+                                    "Teste convergência variando resolução da malha para validar ordem de precisão em ambas.",
+                                    "Meça tempo com time.perf_counter() em loop de repetições para média estatisticamente robusta.",
+                                    "Registre hardware e versão de bibliotecas no relatório para contextualizar resultados de performance."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Simule o transporte de íons Li+ em uma bateria de íon-lítio usando FEniCS: defina uma célula 1D com eletrodos, aplique potencial cíclico e compare perfis de concentração com uma implementação FD própria, validando contra dados experimentais de literatura.",
@@ -41599,7 +41613,8 @@
             "totalSkills": 311
           }
         ],
-        "totalSkills": 311
+        "totalSkills": 311,
+        "percentage": 0
       }
     ]
   }

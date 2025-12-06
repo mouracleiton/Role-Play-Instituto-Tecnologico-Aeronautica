@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-74",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 305
+      "totalAtomicSkills": 305,
+      "startDate": "2025-02-17",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025.1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-74"
     },
     "areas": [
       {
@@ -36933,7 +36939,33 @@
                                 "Ergonomia (seleção e uso de EPIs).",
                                 "Normas Regulatórias (ABNT, ANAC para aeroespacial)."
                               ],
-                              "realWorldApplication": "Em testes de motores de foguete na ALCANTARA ou motores a jato na EMBRAER, essas medidas previnem acidentes como os vistos em falhas de contenção no teste do foguete VLS-1, garantindo continuidade segura das operações."
+                              "realWorldApplication": "Em testes de motores de foguete na ALCANTARA ou motores a jato na EMBRAER, essas medidas previnem acidentes como os vistos em falhas de contenção no teste do foguete VLS-1, garantindo continuidade segura das operações.",
+                              "practicalExample": {
+                                "stepNumber": 5,
+                                "title": "Simulação Prática Integrada de Teste Aeroespacial",
+                                "subSteps": [
+                                  "Reúna a equipe e revise integralmente o plano de segurança e diagrama.",
+                                  "Execute simulação realista de teste (ex.: vibração, propulsão simulada com fumaça, ruído e ejeção de detritos falsos).",
+                                  "Monitore em tempo real o cumprimento de barreiras, sinalizações, EPIs e acessibilidade de E-stops.",
+                                  "Simule emergência: acione E-stop intencionalmente e execute evacuação ordenada.",
+                                  "Realize debriefing coletivo: analise desempenho, identifique gaps e defina ações corretivas."
+                                ],
+                                "verification": "Vídeo da simulação completo, relatório de debriefing assinado e checklist de verificação 100% ok sem incidentes.",
+                                "estimatedTime": "2-3 horas",
+                                "materials": [
+                                  "Equipamentos de simulação (gerador de fumaça, vibrador, alto-falantes, detritos falsos)",
+                                  "Câmera/vídeo para gravação",
+                                  "Checklist de monitoramento e formulário de debriefing",
+                                  "Cronômetro para medição de respostas"
+                                ],
+                                "tips": "Grave múltiplos ângulos; pause simulação apenas para correções críticas; incentive feedback honesto no debrief.",
+                                "learningObjective": "Integrar e validar todas as medidas de segurança em um cenário prático realista de teste aeroespacial.",
+                                "commonMistakes": [
+                                  "Subestimar realismo da simulação",
+                                  "Não medir tempos de resposta quantitativamente",
+                                  "Debriefing sem registro de ações corretivas específicas"
+                                ]
+                              }
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "beginner",
@@ -43373,7 +43405,8 @@
             "totalSkills": 305
           }
         ],
-        "totalSkills": 305
+        "totalSkills": 305,
+        "percentage": 0
       }
     ]
   }

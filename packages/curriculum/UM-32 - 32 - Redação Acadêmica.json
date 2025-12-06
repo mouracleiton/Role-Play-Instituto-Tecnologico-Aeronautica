@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-32",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 341
+      "totalAtomicSkills": 341,
+      "startDate": "2025-03-01",
+      "duration": 5,
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-32"
     },
     "areas": [
       {
@@ -38047,6 +38053,26 @@
                                     "Reescreva o parágrafo resultante.",
                                     "Conte as palavras: mire em redução de 30-50% na complexidade.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Entrega do parágrafo reescrito com contagem de palavras para verificação do professor",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Texto original com orações subordinadas",
+                                    "Caneta ou lápis",
+                                    "Contador de palavras online (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Concentre-se no núcleo da ideia em cada oração subordinada",
+                                    "Use conectivos coordenativos para manter a relação lógica",
+                                    "Verifique a concordância e substitua pronomes obsoletos",
+                                    "Leia o texto final em voz alta para testar a fluidez"
+                                  ],
+                                  "learningObjective": "Transformar estruturas complexas em sentenças independentes mantendo coerência textual e reduzindo complexidade linguística em 30-50%",
+                                  "commonMistakes": [
+                                    "Manter conjunções subordinativas (porque, embora) nas sentenças novas",
+                                    "Esquecer de ajustar advérbios de tempo (já, logo) após a reorganização",
+                                    "Criar frases frágiles sem sujeito definido",
+                                    "Reduzir excessivamente o conteúdo e perder informações-chave"
                                   ]
                                 },
                                 "estimatedTime: "
@@ -38061,7 +38087,30 @@
                                 "Alterar o sentido original",
                                 "Criar fragmentos de frase",
                                 "Usar repetições desnecessárias"
-                              ]
+                              ],
+                              "practicalExample": "Frase original: 'Embora o método, que foi desenvolvido por pesquisadores internacionais e validado em múltiplos contextos, tenha mostrado resultados promissores, os alunos, apesar da resistência inicial, decidiram implementá-lo nas aulas práticas, pois entenderam sua relevância pedagógica.'\nFrase simplificada: 'O método desenvolvido por pesquisadores internacionais mostrou resultados promissores após validação. Apesar da resistência inicial, os alunos decidiram usá-lo nas aulas práticas. Eles entenderam sua relevância pedagógica.'",
+                              "finalVerifications": [
+                                "Comparar o texto original e reescrito para garantir preservação do significado",
+                                "Verificar ausência de fragmentos de frase",
+                                "Confirmar uso adequado de pontuação e conectivos coordenativos",
+                                "Avaliar redução efetiva na quantidade de subordinadas por frase",
+                                "Checar coerência e fluidez do parágrafo reestruturado"
+                              ],
+                              "assessmentCriteria": [
+                                "Redução de 30-50% no número médio de palavras por frase",
+                                "Transformação correta de pelo menos 80% das orações subordinadas em sentenças independentes",
+                                "Manutenção precisa do significado original",
+                                "Uso apropriado de conectivos coordenativos para ligação lógica",
+                                "Clareza e naturalidade na versão reescrita"
+                              ],
+                              "crossCurricularConnections": [
+                                "Linguística (análise sintática e semântica)",
+                                "Comunicação (escrita técnica e clara)",
+                                "Ciência da Computação (ferramentas de processamento textual e NLP)",
+                                "Educação Literária (análise de estrutura textual)",
+                                "Gestão de Conhecimento (simplificação de informações complexas)"
+                              ],
+                              "realWorldApplication": "Redação acadêmica e científica, criação de manuais técnicos acessíveis, adaptação de conteúdos para públicos com diferentes níveis de complexidade, desenvolvimento de interfaces de usuário (UI) com linguagem clara, comunicação eficaz em ambientes corporativos e documentos públicos, produção de resumos e sinopeses profissionais"
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -38360,7 +38409,12 @@
                               "commonMistakes2": [
                                 "Misturar funções (usar 'portanto' para adição)",
                                 "Memorizar sem entender o contexto semântico"
-                              ]
+                              ],
+                              "practicalExample": "Análise do parágrafo: 'O curso é excelente. Os professores são capacitados. As instalações são modernas.' → Identificação de falta de coesão (repetição de sujeito e falta de conectores) → Reescrita: 'O curso é excelente, já que os professores são altamente capacitados e as instalações, ademais, são modernas.'",
+                              "finalVerifications": "1) Verificação de que pelo menos 5 falhas de coesão foram identificadas com exemplos concretos; 2) Confirmação de que a tabela de conectores inclui exatamente 12 itens distribuídos em 4 categorias; 3) Teste de aplicação: reescrever um trecho sem conectores usando pelo menos 6 conectores diferentes.",
+                              "assessmentCriteria": "Critérios: Precisão na identificação de falhas de coesão (40%), Correta categorização e uso de conectores (30%), Qualidade da reescrita aplicada (20%), Tempo e organização do trabalho (10%).",
+                              "crossCurricularConnections": "Linguística (análise sintática), Redação Acadêmica (estruturação de textos), Comunicação (eficácia na transmissão de ideias), Ciência da Informação (organização de conteúdo), Matemática (lógica de sequências).",
+                              "realWorldApplication": "Aplicável na elaboração de artigos científicos, relatórios técnicos, teses de graduação, comunicações corporativas, e na revisão de documentos oficiais, melhorando a clareza e persuasão em qualquer texto formal ou acadêmico."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -45132,7 +45186,8 @@
             "totalSkills": 341
           }
         ],
-        "totalSkills": 341
+        "totalSkills": 341,
+        "percentage": 18.72
       }
     ]
   }

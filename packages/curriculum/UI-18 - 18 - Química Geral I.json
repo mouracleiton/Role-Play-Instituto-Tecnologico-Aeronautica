@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UI-18",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 348
+      "totalAtomicSkills": 348,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 4,
+      "version": "UI-18",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UI-18"
     },
     "areas": [
       {
@@ -19495,7 +19501,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Para a célula unitária FCC do cobre (a = 0.361 nm), calcule Z: vértices 8×1/8=1, faces 6×1/2=3, total Z=4. Isso permite calcular densidade teórica: massa = 4 × (63.5 g/mol)/N_A, volume = a³, ρ = massa/volume ≈ 8.96 g/cm³, comparável ao experimental."
+                                  "practicalExample": "Para a célula unitária FCC do cobre (a = 0.361 nm), calcule Z: vértices 8×1/8=1, faces 6×1/2=3, total Z=4. Isso permite calcular densidade teórica: massa = 4 × (63.5 g/mol)/N_A, volume = a³, ρ = massa/volume ≈ 8.96 g/cm³, comparável ao experimental.",
+                                  "stepNumber": 1,
+                                  "title": "Cálculo de Z e Densidade Teórica para Célula Unitária FCC do Cobre",
+                                  "subSteps": [
+                                    "1. Calcule a contribuição dos átomos nos vértices: 8 × (1/8) = 1 átomo.",
+                                    "2. Calcule a contribuição dos átomos nas faces: 6 × (1/2) = 3 átomos.",
+                                    "3. Some as contribuições para obter Z: Z = 1 + 3 = 4 átomos por célula unitária.",
+                                    "4. Calcule a massa total da célula: massa = Z × (massa molar / N_A) = 4 × (63.5 g/mol) / (6.022 × 10²³ mol⁻¹).",
+                                    "5. Calcule o volume da célula: V = a³ = (0.361 × 10⁻⁷ cm)³.",
+                                    "6. Calcule a densidade teórica: ρ = massa / V (em g/cm³)."
+                                  ],
+                                  "verification": "Verifique se ρ ≈ 8.96 g/cm³, valor comparável ao experimental.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Calculadora",
+                                    "Massa molar do Cu: 63.5 g/mol",
+                                    "Constante de Avogadro: 6.022 × 10²³ mol⁻¹",
+                                    "Parâmetro de rede: a = 0.361 nm"
+                                  ],
+                                  "tips": [
+                                    "Converta a para cm (1 nm = 10⁻⁷ cm) antes de calcular V em cm³.",
+                                    "Lembre-se: Z_FCC = 4 é padrão; pratique com outros metais como Al.",
+                                    "Use notação científica para evitar erros de arredondamento."
+                                  ],
+                                  "learningObjective": "Calcular o número de átomos por célula unitária (Z) em estrutura FCC e determinar a densidade teórica de um material, comparando com valores experimentais.",
+                                  "commonMistakes": [
+                                    "Errar contribuições: faces FCC são 1/2 por face, não 1/4.",
+                                    "Esquecer conversão de unidades (nm³ → cm³: fator 10⁻²¹).",
+                                    "Não multiplicar pela massa molar ou dividir por N_A corretamente."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -19521,9 +19556,63 @@
                                     "Química Inorgânica: Empacotamento em sólidos iônicos/metálicos.",
                                     "Computação: Simulações em software como VESTA para visualização."
                                   ],
-                                  "realWorldApplication": "Em metalurgia, calcular Z determina densidade teórica de ligas (ex: aço BCC para ductilidade), otimiza fundição e detecta defeitos; em semicondutores (FCC-like), afeta mobilidade de elétrons em chips."
+                                  "realWorldApplication": "Em metalurgia, calcular Z determina densidade teórica de ligas (ex: aço BCC para ductilidade), otimiza fundição e detecta defeitos; em semicondutores (FCC-like), afeta mobilidade de elétrons em chips.",
+                                  "stepNumber": 4,
+                                  "title": "Cálculo do Número de Átomos por Célula Unitária (Z) e Fator de Empacotamento",
+                                  "subSteps": [
+                                    "1. Identificar as posições dos átomos na célula unitária: vértices (8), arestas, faces (6) e centro do corpo.",
+                                    "2. Calcular a contribuição de cada átomo considerando o compartilhamento: vértices (1/8), faces (1/2), centro (1).",
+                                    "3. Somar as contribuições para determinar Z (ex: SC = 1, BCC = 2, FCC = 4).",
+                                    "4. Calcular o fator de empacotamento (APF): volume atômico ocupado / volume da célula × 100%."
+                                  ],
+                                  "verification": "Resolver problema: Em uma estrutura FCC, calcule Z detalhando contribuições e compare APF com BCC (esperado: Z=4, APF=74%).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Diagramas de células unitárias SC, BCC e FCC (impressos ou digitais)",
+                                    "Calculadora",
+                                    "Papel milimetrado e lápis para desenhos",
+                                    "Software VESTA (opcional para visualização 3D)"
+                                  ],
+                                  "tips": [
+                                    "Desenhe sempre a célula e marque os átomos compartilhados com setas.",
+                                    "Memorize: 8 vértices × 1/8 = 1; 6 faces × 1/2 = 3; 1 centro = 1.",
+                                    "Para APF, use raio atômico padrão (ex: para FCC, r = a√2/4).",
+                                    "Pratique com Z dado para identificar estrutura (Z=2 → BCC)."
+                                  ],
+                                  "learningObjective": "O aluno calculará corretamente Z para SC, BCC e FCC, explicará compartilhamentos de átomos com diagramas e comparará fatores de empacotamento (SC 52%, BCC 68%, FCC 74%).",
+                                  "commonMistakes": [
+                                    "Esquecer o compartilhamento: contar vértices como 8 em vez de 1.",
+                                    "Confundir faces (1/2) com arestas (1/4) ou centro do corpo.",
+                                    "Erro em APF: usar diâmetro em vez de raio ou fórmula errada de volume esférico.",
+                                    "Não somar todas contribuições em FCC (1 + 3 = 4)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para a célula unitária FCC do cobre (a = 0.361 nm), calcule Z: vértices 8×1/8=1, faces 6×1/2=3, total Z=4. Isso permite calcular densidade teórica: massa = 4 × (63.5 g/mol)/N_A, volume = a³, ρ = massa/volume ≈ 8.96 g/cm³, comparável ao experimental.",
+                              "finalVerifications": [
+                                "Calcular corretamente Z_SC=1, Z_BCC=2, Z_FCC=4.",
+                                "Explicar compartilhamento de vértice (1/8) com diagrama.",
+                                "Resolver problema independente: 'FCC com átomos extras?' → 4.",
+                                "Identificar estrutura por Z dado (ex: Z=2 → BCC).",
+                                "Calcular contribuição isolada: faces em FCC = 3.",
+                                "Comparar packing factors: FCC 74%, BCC 68%, SC 52%.",
+                                "Verificar sem erros em 3 problemas sequenciais."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática: frações e somas corretas (30%).",
+                                "Compreensão conceitual: explicar compartilhamentos (25%).",
+                                "Aplicação prática: resolver exemplos reais (20%).",
+                                "Clareza na decomposição de passos (15%).",
+                                "Identificação de erros comuns e correção (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Frações, geometria 3D e cálculo de volumes.",
+                                "Física: Difração de raios X (padrões determinam estrutura/Z).",
+                                "Engenharia de Materiais: Previsão de densidade e propriedades mecânicas.",
+                                "Química Inorgânica: Empacotamento em sólidos iônicos/metálicos.",
+                                "Computação: Simulações em software como VESTA para visualização."
+                              ],
+                              "realWorldApplication": "Em metalurgia, calcular Z determina densidade teórica de ligas (ex: aço BCC para ductilidade), otimiza fundição e detecta defeitos; em semicondutores (FCC-like), afeta mobilidade de elétrons em chips."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -20550,7 +20639,14 @@
                                 "Engenharia de Materiais: Design de ligas metálicas BCC/FCC",
                                 "Biologia: Estruturas proteicas cristalinas em cristalografia"
                               ],
-                              "realWorldApplication": "Na indústria de semicondutores, sistemas cúbicos como silício (FCC) são usados para chips isotrópicos, enquanto tetragonais como em perovskitas solares exploram anisotropia para eficiência direcional em painéis fotovoltaicos, impactando eletrônicos e energia renovável."
+                              "realWorldApplication": "Na indústria de semicondutores, sistemas cúbicos como silício (FCC) são usados para chips isotrópicos, enquanto tetragonais como em perovskitas solares exploram anisotropia para eficiência direcional em painéis fotovoltaicos, impactando eletrônicos e energia renovável.",
+                              "assessmentCriteria": [
+                                "Precisão na descrição de parâmetros de rede (a=b=c vs. a=b≠c) (30%)",
+                                "Correção nas operações de simetria e eixos (25%)",
+                                "Profundidade na análise de empilhamento e densidade (20%)",
+                                "Relevância das propriedades físicas discutidas (15%)",
+                                "Clareza na tabela comparativa e exemplos (10%)"
+                              ]
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -46034,7 +46130,8 @@
             "totalSkills": 348
           }
         ],
-        "totalSkills": 348
+        "totalSkills": 348,
+        "percentage": 0
       }
     ]
   }

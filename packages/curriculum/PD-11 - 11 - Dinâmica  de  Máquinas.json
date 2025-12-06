@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PD-11",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 356
+      "totalAtomicSkills": 356,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-PD-11",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PD-11"
     },
     "areas": [
       {
@@ -4217,10 +4223,48 @@
                                     "Compare com CIV: CIA considera acelerações, não apenas velocidades.",
                                     "Desenhe diagramas mostrando CIA em um mecanismo acelerando.",
                                     "Calcule CIA usando decomposição de acelerações em componentes radial e tangencial."
+                                  ],
+                                  "verification": "O aluno identifica corretamente o CIA em um diagrama de mecanismo acelerando e calcula sua posição decompondo acelerações em componentes tangencial e normal.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Papel e lápis para desenhos",
+                                    "Diagramas de mecanismos (ex: linkagens de quatro barras)",
+                                    "Calculadora para decomposição vetorial"
+                                  ],
+                                  "tips": [
+                                    "Visualize o CIA como a 'interseção' das linhas de aceleração normal perpendicular à velocidade.",
+                                    "Use vetores de aceleração conhecidos nos pontos para encontrar o ponto onde a componente tangencial anula.",
+                                    "Pratique com casos simples como rotação com aceleração angular constante."
+                                  ],
+                                  "learningObjective": "Compreender o conceito de Centro Instantâneo de Aceleração (CIA), diferenciá-lo do CIV e aplicar sua determinação via decomposição de acelerações em mecanismos rígidos.",
+                                  "commonMistakes": [
+                                    "Confundir CIA com CIV, ignorando acelerações e focando apenas em velocidades.",
+                                    "Esquecer que no CIA a aceleração tangencial é zero, mas a normal persiste.",
+                                    "Erro na decomposição: confundir direções radial e tangencial nos vetores de aceleração.",
+                                    "Não considerar aceleração angular variável no cálculo."
                                   ]
                                 },
                                 "verification`: "
-                              ]
+                              ],
+                              "practicalExample": "Análise de um mecanismo de quatro barras em movimento: (1) Desenhe o diagrama de velocidades; (2) Localize o CIV graficamente; (3) Calcule velocidades angulares; (4) Introduza acelerações e encontre o CIA decompondo componentes normal e tangencial.",
+                              "finalVerifications": [
+                                "Resolva um problema completo: dado velocidades e acelerações em pontos de um link, localize CIV e CIA.",
+                                "Simule em GeoGebra ou MATLAB um mecanismo simples e valide posições dos centros instantâneos.",
+                                "Explique verbalmente a diferença entre CIV e CIA em um mecanismo acelerando."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção na localização do CIV/CIA (70% da nota).",
+                                "Precisão nos cálculos de velocidades/acelerações (20%).",
+                                "Clareza nos diagramas e explicações (10%).",
+                                "Identificação de erros comuns evitados."
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica Clássica (Física III): Integração com teoremas de movimento de corpos rígidos.",
+                                "Projeto Mecânico: Aplicação em síntese de mecanismos.",
+                                "Robótica: Análise cinemática de manipuladores.",
+                                "Engenharia Automotiva: Estudo de suspensões e motores."
+                              ],
+                              "realWorldApplication": "Projeto de mecanismos em máquinas-ferramenta, robôs industriais, sistemas de suspensão veicular e otimização de motores de combustão interna para eficiência e redução de vibrações."
                             },
                             "estimatedTime": "0.5 hora",
                             "difficulty": "intermediate",
@@ -40323,7 +40367,13 @@
                                     ": Reconhecer os desafios computacionais na análise dinâmica tradicional.",
                                     "commonMistakes",
                                     ": Subestimar o impacto do momento de inércia variável ao longo do elo."
-                                  ]
+                                  ],
+                                  "verification": "Montar equação de forças inerciais para um elo sem simplificação e estimar complexidade (ex: número de termos).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": "Calculadora simbólica (ex: Mathematica ou papel e lápis), exemplo de mecanismo de quatro barras.",
+                                  "tips": "Comece com um elo simples como uma barra para evitar sobrecarga.",
+                                  "learningObjective": "Reconhecer os desafios computacionais na análise dinâmica tradicional.",
+                                  "commonMistakes": "Subestimar o impacto do momento de inércia variável ao longo do elo."
                                 },
                                 {
                                   "stepNumber": 3,
@@ -47505,7 +47555,8 @@
             "totalSkills": 356
           }
         ],
-        "totalSkills": 356
+        "totalSkills": 356,
+        "percentage": 0
       }
     ]
   }

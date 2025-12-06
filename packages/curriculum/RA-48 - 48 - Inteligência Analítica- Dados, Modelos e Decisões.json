@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RA-48",
       "lastUpdated": "2025-12-05",
-      "totalAtomicSkills": 365
+      "totalAtomicSkills": 365,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "RA-48",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RA-48"
     },
     "areas": [
       {
@@ -47879,9 +47885,62 @@
                                     "Negócios: Segmentação de mercado e análise de clientes.",
                                     "Física: Conceitos de vetores e normas em movimento."
                                   ],
-                                  "realWorldApplication": "Na segmentação de clientes do Spotify, similaridade Cosseno é usada em embeddings de músicas para agrupar faixas com estilos semelhantes, formando playlists homogêneas e personalizadas que aumentam o engajamento do usuário."
+                                  "realWorldApplication": "Na segmentação de clientes do Spotify, similaridade Cosseno é usada em embeddings de músicas para agrupar faixas com estilos semelhantes, formando playlists homogêneas e personalizadas que aumentam o engajamento do usuário.",
+                                  "stepNumber": "3.2",
+                                  "title": "Cálculo Prático e Comparação de Métricas de Distância",
+                                  "subSteps": [
+                                    "1. No dataset de clientes (idade, renda anual em k, gastos mensais), calcule a distância Euclidiana entre Cliente A (25, 50, 200) e Cliente B (28, 55, 220). Fórmula: √[(x2-x1)² + (y2-y1)² + (z2-z1)²].",
+                                    "2. Calcule a distância Manhattan para o mesmo par: |x2-x1| + |y2-y1| + |z2-z1|.",
+                                    "3. Calcule a distância Cosseno: 1 - (A·B / (||A|| ||B||)), onde · é produto escalar e || || é norma Euclidiana.",
+                                    "4. Compare os valores obtidos e justifique a escolha de cada métrica com base no contexto (ex: outliers em renda favorecem Manhattan).",
+                                    "5. Explique como distâncias baixas indicam similaridade para formar clusters homogêneos em marketing."
+                                  ],
+                                  "verification": "Confira cálculos com precisão ≥95% e valide contra finalVerifications: métricas corretas, diferenças explicadas, escolha justificada, clusters homogêneos descritos, falhas identificadas.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Dataset exemplo impresso ou digital",
+                                    "Calculadora científica ou ambiente Python (NumPy)",
+                                    "Papel para cálculos manuais e anotações"
+                                  ],
+                                  "tips": [
+                                    "Padronize unidades (renda em milhares) antes de calcular.",
+                                    "Visualize vetores como setas no espaço 3D para intuír Euclidiana.",
+                                    "Para Cosseno, ignore magnitudes: foque em direção/ângulo.",
+                                    "Teste com scikit-learn para validar: from sklearn.metrics import pairwise_distances."
+                                  ],
+                                  "learningObjective": "O aluno calculará distâncias Euclidiana, Manhattan e Cosseno em vetores reais, justificará escolhas contextuais e aplicará para segmentação de clientes, demonstrando compreensão via exemplos precisos.",
+                                  "commonMistakes": [
+                                    "Erro em normalização de renda (usar 50000 ao invés de 50k).",
+                                    "Confundir similaridade Cosseno (0-1 próximo) com distância (0-2 afastado).",
+                                    "Aplicar Euclidiana com outliers sem justificar alternativa.",
+                                    "Ignorar norma L2 no Cosseno, levando a divisão por zero.",
+                                    "Não relacionar distâncias baixas a clusters úteis em negócios."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um dataset de clientes de e-commerce com features 'idade', 'renda anual' e 'gastos mensais'. Calcule: Euclidiana entre Cliente A (25,50k,200) e B (28,55k,220) para verificar similaridade; use Manhattan se houver outliers em renda; Cosseno se priorizar padrões de gasto relativos. Isso ajuda a agrupá-los em segmentos de marketing homogêneos.",
+                              "finalVerifications": [
+                                "Calcula corretamente as três métricas para vetores dados.",
+                                "Explica diferenças geométricas e contextuais entre elas.",
+                                "Justifica escolha de métrica baseado no dataset.",
+                                "Descreve como distâncias baixas levam a clusters homogêneos.",
+                                "Identifica cenários onde cada uma falha (ex: Cosseno em magnitudes zero)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática ≥95% em cálculos manuais.",
+                                "Explicações conceituais claras e sem jargões desnecessários.",
+                                "Seleção contextual de métricas com justificativa lógica.",
+                                "Exemplos práticos relevantes e corretos.",
+                                "Compreensão demonstrada via analogias ou visualizações."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Geometria vetorial e álgebra linear.",
+                                "Estatística: Medidas de dissimilaridade e pré-processamento de dados.",
+                                "Ciência da Computação: Implementação em bibliotecas como scikit-learn.",
+                                "Negócios: Segmentação de mercado e análise de clientes.",
+                                "Física: Conceitos de vetores e normas em movimento."
+                              ],
+                              "realWorldApplication": "Na segmentação de clientes do Spotify, similaridade Cosseno é usada em embeddings de músicas para agrupar faixas com estilos semelhantes, formando playlists homogêneas e personalizadas que aumentam o engajamento do usuário."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -49064,7 +49123,8 @@
             "totalSkills": 365
           }
         ],
-        "totalSkills": 365
+        "totalSkills": 365,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SC-64",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 283
+      "totalAtomicSkills": 283,
+      "startDate": "2025-02-01",
+      "duration": "10 semesters",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SC-64"
     },
     "areas": [
       {
@@ -836,6 +842,113 @@
                           "10.1.1.1.3",
                           "10.1.1.1.4",
                           "10.1.1.1.5"
+                        ]
+                      }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.1.1.ic1",
+                        "name": "Eixos de Classificação da Taxonomia de Flynn",
+                        "description": "Dois eixos principais: número de fluxos de instruções (Single Instruction - SI ou Multiple Instruction - MI) e número de fluxos de dados (Single Data - SD ou Multiple Data - MD), resultando nas quatro categorias.",
+                        "estimatedTime": "15 minutos",
+                        "difficulty": "beginner",
+                        "status": "not_started",
+                        "prerequisites": [],
+                        "specificSkills": [
+                          "Reconhecer os dois eixos principais da Taxonomia de Flynn: fluxos de instruções e fluxos de dados",
+                          "Diferenciar Single Instruction (SI) de Multiple Instruction (MI)",
+                          "Diferenciar Single Data (SD) de Multiple Data (MD)",
+                          "Identificar as quatro categorias resultantes: SISD, SIMD, MISD e MIMD"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.ic2",
+                        "name": "Arquitetura SISD (Single Instruction Single Data)",
+                        "description": "Arquitetura sequencial clássica baseada no modelo von Neumann, com uma única instrução processando um único fluxo de dados por ciclo, sem paralelismo inerente.",
+                        "estimatedTime": "20 minutos",
+                        "difficulty": "beginner",
+                        "status": "not_started",
+                        "prerequisites": [
+                          "10.1.1.1.ic1"
+                        ],
+                        "specificSkills": [
+                          "Compreender o modelo de arquitetura SISD (Single Instruction Single Data)",
+                          "Identificar características da arquitetura sequencial von Neumann",
+                          "Explicar o processamento de uma única instrução em um único fluxo de dados por ciclo",
+                          "Reconhecer a ausência de paralelismo inerente em arquiteturas SISD"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.ic3",
+                        "name": "Arquitetura SIMD (Single Instruction Multiple Data)",
+                        "description": "Arquitetura paralela vetorial onde uma única instrução é aplicada simultaneamente a múltiplos fluxos de dados independentes, comum em GPUs e extensões como SSE/AVX.",
+                        "estimatedTime": "25 minutos",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": [
+                          "10.1.1.1.ic1"
+                        ],
+                        "specificSkills": [
+                          "Compreender o princípio de Single Instruction Multiple Data (SIMD)",
+                          "Identificar componentes e operação de arquiteturas vetoriais SIMD",
+                          "Reconhecer aplicações de SIMD em GPUs e extensões SSE/AVX",
+                          "Diferenciar SIMD de outras formas de paralelismo de dados",
+                          "Analisar vantagens e limitações do SIMD em processamento paralelo"
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.ic4",
+                        "name": "Arquitetura MISD (Multiple Instruction Single Data)",
+                        "description": "Arquitetura rara com múltiplas instruções independentes operando sobre um único fluxo de dados compartilhado, usada em sistemas tolerantes a falhas com redundância.",
+                        "estimatedTime": "20 minutos",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": [
+                          "10.1.1.1.ic1"
+                        ],
+                        "specificSkills": [
+                          "Identificar as características principais da arquitetura MISD (Multiple Instruction Single Data).",
+                          "Explicar o funcionamento de múltiplas instruções independentes sobre um único fluxo de dados compartilhado.",
+                          "Reconhecer aplicações da MISD em sistemas tolerantes a falhas e redundância.",
+                          "Comparar MISD com outras arquiteturas da taxonomia de Flynn (SISD, SIMD, MIMD).",
+                          "Discutir vantagens, desvantagens e raridade prática da arquitetura MISD."
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.ic5",
+                        "name": "Arquitetura MIMD (Multiple Instruction Multiple Data)",
+                        "description": "Arquitetura paralela versátil e dominante, com múltiplos processadores executando instruções e processando dados independentes, presente em multicore, clusters e supercomputadores.",
+                        "estimatedTime": "30 minutos",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": [
+                          "10.1.1.1.ic1"
+                        ],
+                        "specificSkills": [
+                          "Compreender os princípios fundamentais da arquitetura MIMD, incluindo execução independente de instruções e dados por múltiplos processadores.",
+                          "Identificar e exemplificar aplicações de MIMD em sistemas multicore, clusters e supercomputadores.",
+                          "Diferenciar MIMD de outras classificações de Flynn (SIMD, SISD, MISD) em termos de paralelismo.",
+                          "Analisar vantagens da versatilidade e escalabilidade da MIMD em computação paralela moderna.",
+                          "Reconhecer desafios como sincronização e comunicação em arquiteturas MIMD."
+                        ]
+                      },
+                      {
+                        "id": "10.1.1.1.ic6",
+                        "name": "Limitações e Hibridismo na Taxonomia de Flynn",
+                        "description": "Limitações da classificação (não aborda memória, comunicação ou granularidade); arquiteturas modernas frequentemente híbridas (ex: MIMD com SIMD em GPUs).",
+                        "estimatedTime": "20 minutos",
+                        "difficulty": "intermediate",
+                        "status": "not_started",
+                        "prerequisites": [
+                          "10.1.1.1.ic2",
+                          "10.1.1.1.ic3",
+                          "10.1.1.1.ic4",
+                          "10.1.1.1.ic5"
+                        ],
+                        "specificSkills": [
+                          "Identificar limitações da Taxonomia de Flynn (memória, comunicação, granularidade)",
+                          "Reconhecer arquiteturas híbridas em sistemas modernos",
+                          "Analisar exemplos de hibridismo MIMD-SIMD em GPUs"
                         ]
                       }
                     ]
@@ -27661,7 +27774,14 @@
                                   "estimatedTime": "30 minutos",
                                   "materials": "Cluster ou máquina multi-core, scripts de benchmark, ferramenta de plot (Matplotlib ou Excel).",
                                   "learningObjective": "Integrar decomposição com previsão de performance paralela.",
-                                  "commonMistakes": "Não considerar overheads de comunicação; assumir escalabilidade perfeita para Tp."
+                                  "commonMistakes": "Não considerar overheads de comunicação; assumir escalabilidade perfeita para Tp.",
+                                  "tips": [
+                                    "Realize múltiplas execuções (≥5) por p e use médias para reduzir variabilidade em T(p).",
+                                    "Meça Ts isoladamente, garantindo que Tp=0 nessa fase.",
+                                    "Use wall-clock time (ex: MPI_Wtime) para comparações justas.",
+                                    "Ao ajustar f, minimize erro quadrático médio entre S teórico e real.",
+                                    "Inclua barras de erro no gráfico e especifique hardware usado."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Considere um programa de matriz multiplicação: T(1) = 10 segundos medidos. Profiling mostra 2s em inicialização sequencial (f=0.2), logo Ts=2s, Tp=8s. Com 4 processadores, speedup teórico = 1 / (0.2 + 0.8/4) ≈ 1.67x, validado por execução real em ~6s.",
@@ -38336,7 +38456,8 @@
             "totalSkills": 283
           }
         ],
-        "totalSkills": 283
+        "totalSkills": 283,
+        "percentage": 0
       }
     ]
   }

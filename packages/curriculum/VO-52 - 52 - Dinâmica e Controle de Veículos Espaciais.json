@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-52",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 169
+      "totalAtomicSkills": 169,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 6,
+      "version": "VO-52",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-52"
     },
     "areas": [
       {
@@ -11159,7 +11165,14 @@
                                   "estimatedTime": "1 hora",
                                   "materials": "Código do Step 2, calculadora para checar conservação angular.",
                                   "learningObjective": "Selecionar condições realistas que demonstrem nutação e precessão.",
-                                  "commonMistakes": "ω inicial muito pequeno (sem oscilações visíveis); inércias irreais."
+                                  "commonMistakes": "ω inicial muito pequeno (sem oscilações visíveis); inércias irreais.",
+                                  "tips": [
+                                    "Use inércias prolate (I1=I2 > I3) para simular satélites reais e observar tennis racket theorem.",
+                                    "Escolha |ω0| ~ sqrt(2E/I_min) para nutação visível sem instabilidades numéricas.",
+                                    "Sempre normalize quaternions: np.linalg.norm(q) ≈ 1 para evitar drift.",
+                                    "Teste dt menor (0.001s) se oscilações parecerem instáveis.",
+                                    "Salve dict com chaves claras: 'I', 'omega0', 'q0', 'T', 'dt' para fácil debugging."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 4,
@@ -13634,9 +13647,46 @@
                                     "Controle: Bases para controladores de atitude em spacecraft.",
                                     "Computação: Simulação numérica com ODE solvers (Runge-Kutta)."
                                   ],
-                                  "realWorldApplication": "Em satélites e veículos espaciais axissimétricos (ex: foguetes, top stages), prever nutação livre para evitar instabilidades durante separações ou falhas de controle, permitindo design de dampers passivos ou rodas de reação para estabilização ao redor do eixo de simetria."
+                                  "realWorldApplication": "Em satélites e veículos espaciais axissimétricos (ex: foguetes, top stages), prever nutação livre para evitar instabilidades durante separações ou falhas de controle, permitindo design de dampers passivos ou rodas de reação para estabilização ao redor do eixo de simetria.",
+                                  "verification": "Derive que ω3 é constante e condições para ω constante no eixo 3.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Gráficos de fase para ω1-ω2",
+                                    "Simulador numérico (MATLAB/Python)"
+                                  ],
+                                  "tips": "Visualize com plot de vetores de rotação para entender estabilidade tennis racket.",
+                                  "learningObjective": "Resolver as equações e identificar soluções de equilíbrio constante.",
+                                  "commonMistakes": [
+                                    "Assumir ω3 não constante.",
+                                    "Confundir rotação estável vs instável (eixo intermediário)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para um satélite axissimétrico com I1=I2=100 kg m², I3=50 kg m², derive as equações e mostre que rotação com ω=(0,0,0.1) rad/s é estável, resolvendo dot{ω1}= (100-50)/100 *0*0.1=0, etc. Simule nutação inicial com ω1=0.01, ω2=0.02, ω3=0.1.",
+                              "finalVerifications": [
+                                "Equações simplificadas escritas corretamente com I1=I2.",
+                                "dot{ω3}=0 demonstrado.",
+                                "Solução ω constante no eixo 3 identificada (ω1=ω2=0).",
+                                "Coeficientes K=(I1-I3)/I1 derivados.",
+                                "Variáveis polares introduzidas opcionalmente para solução geral.",
+                                "Verificação numérica ou simbólica sem erros."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão matemática nas derivações (100% correto).",
+                                "Clareza na explicação de passos e assunções.",
+                                "Identificação correta de conservação de ω3.",
+                                "Compreensão de implicações físicas (estabilidade).",
+                                "Uso apropriado de notação e ferramentas simbólicas.",
+                                "Capacidade de generalizar para valores numéricos."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Sistemas de EDO não-lineares e simetrias.",
+                                "Física: Conservação de momento angular em sistemas rígidos.",
+                                "Engenharia Mecânica: Análise de vibrações e estabilidade rotacional.",
+                                "Controle: Bases para controladores de atitude em spacecraft.",
+                                "Computação: Simulação numérica com ODE solvers (Runge-Kutta)."
+                              ],
+                              "realWorldApplication": "Em satélites e veículos espaciais axissimétricos (ex: foguetes, top stages), prever nutação livre para evitar instabilidades durante separações ou falhas de controle, permitindo design de dampers passivos ou rodas de reação para estabilização ao redor do eixo de simetria."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -22348,7 +22398,8 @@
             "totalSkills": 169
           }
         ],
-        "totalSkills": 169
+        "totalSkills": 169,
+        "percentage": 0
       }
     ]
   }

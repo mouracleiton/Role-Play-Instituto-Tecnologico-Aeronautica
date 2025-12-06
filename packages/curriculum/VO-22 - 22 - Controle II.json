@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 199
+      "totalAtomicSkills": 199,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "VO-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-22"
     },
     "areas": [
       {
@@ -1535,6 +1541,14 @@
                                   "tips": [
                                     "Degrau é limite de exponencial com α → 0^-.",
                                     "Sempre verifique com valores específicos: s=1+j, s=-1+j."
+                                  ],
+                                  "learningObjective": "Calcular a Transformada de Laplace do degrau unitário u(t), determinar sua ROC como Re(s) > 0 e justificar convergência/divergência via integral analítica e simulação numérica.",
+                                  "commonMistakes": [
+                                    "Confundir ROC com exponencial decrescente (Re(s) > -α); para degrau α=0, ROC é Re(s) > 0.",
+                                    "Erro na integral: esquecer que ∫_0^∞ e^{-st} dt diverge para Re(s) ≤ 0.",
+                                    "Acreditar que converge no eixo imaginário (Re(s)=0), ignorando oscilação não amortecida.",
+                                    "Não testar numericamente σ < 0, levando a falsa convergência por truncamento insuficiente.",
+                                    "Esquecer extensão para degrau atrasado: borda σ=0 invariante."
                                   ]
                                 },
                                 {
@@ -10508,6 +10522,10 @@
                                   "learningObjective": "Ligar gráficos a métricas de controle como rastreamento e robustez.",
                                   "commonMistakes": [
                                     "Ignorar trade-offs; confundir ref vs distúrbio."
+                                  ],
+                                  "verification": [
+                                    "Analise o gráfico Bode de |S(jω)| e |T(jω)| para um sistema exemplo (motor DC).",
+                                    "Verifique: ω_c ≈ 10 rad/s atende rastreamento (ref ω < 5 rad/s, erro < 5%) e rejeição ruído (atenuação >40 dB em ω > 50 rad/s)? Justifique trade-offs."
                                   ]
                                 }
                               ],
@@ -20525,7 +20543,8 @@
                                   "materials": "MATLAB bodeplot() ou Python bode(), exemplos de Franklin et al.",
                                   "tips": "Use sombreamento para envelopes para clareza visual.",
                                   "learningObjective": "Representar graficamente incertezas como desvios da nominal.",
-                                  "commonMistakes": "Plotar desvios lineares em escala log ou ignorar fase."
+                                  "commonMistakes": "Plotar desvios lineares em escala log ou ignorar fase.",
+                                  "verification": "Aluno submete diagrama de Bode com envelopes de incerteza (±3σ ou bounds), destacando desvios em regiões críticas e explicando impacto na estabilidade da malha aberta."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -25887,7 +25906,8 @@
             "totalSkills": 199
           }
         ],
-        "totalSkills": 199
+        "totalSkills": 199,
+        "percentage": 0
       }
     ]
   }

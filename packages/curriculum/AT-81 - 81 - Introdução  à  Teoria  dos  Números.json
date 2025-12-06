@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-81",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 348
+      "totalAtomicSkills": 348,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "AT-81",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-81"
     },
     "areas": [
       {
@@ -35787,6 +35793,70 @@
                           "10.1.7.3.3"
                         ]
                       }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.7.3.c1",
+                        "name": "Símbolo de Legendre",
+                        "description": "Função definida para primo ímpar p e inteiro a: (a/p)=0 se p|a, 1 se a é resíduo quadrático não nulo mod p, -1 caso contrário. Multiplicativo: (ab/p)=(a/p)(b/p).",
+                        "specificSkills": [
+                          "Definir o símbolo de Legendre $(a/p)$ para primo ímpar $p$ e inteiro $a$",
+                          "Calcular $(a/p)$ verificando se $p$ divide $a$, se $a$ é resíduo quadrático não nulo módulo $p$ ou não",
+                          "Demonstrar a multiplicatividade: $(ab/p)=(a/p)(b/p)$",
+                          "Aplicar o símbolo de Legendre em problemas de resíduos quadráticos"
+                        ]
+                      },
+                      {
+                        "id": "10.1.7.3.c2",
+                        "name": "Resíduo quadrático módulo p",
+                        "description": "Inteiro a é resíduo quadrático mod primo ímpar p se existe x com x² ≡ a mod p e gcd(a,p)=1 para casos não-zero. Há exatamente (p-1)/2 resíduos quadráticos não-nulos mod p.",
+                        "specificSkills": [
+                          "Definir resíduo quadrático módulo primo ímpar p como inteiro a com x² ≡ a mod p e gcd(a,p)=1.",
+                          "Determinar que há exatamente (p-1)/2 resíduos quadráticos não-nulos módulo p.",
+                          "Identificar condições para a ser resíduo quadrático mod p."
+                        ]
+                      },
+                      {
+                        "id": "10.1.7.3.c3",
+                        "name": "Primos ímpares distintos",
+                        "description": "Primos p e q ambos ímpares (≠2) e p ≠ q, implicando coprimalidade automática (mdc(p,q)=1).",
+                        "specificSkills": [
+                          "Reconhecer primos ímpares distintos p e q (p ≠ 2, q ≠ 2, p ≠ q).",
+                          "Compreender que mdc(p, q) = 1 automaticamente para primos ímpares distintos.",
+                          "Aplicar a coprimalidade automática em contextos de teoria dos números, como fatoração ou algoritmos euclidianos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.7.3.c4",
+                        "name": "Lei da Reciprocidade Quadrática",
+                        "description": "Para primos ímpares distintos p,q: \\(\\left( \\frac{p}{q} \\right) \\left( \\frac{q}{p} \\right) = (-1)^{\\frac{p-1}{2} \\cdot \\frac{q-1}{2}}\\).",
+                        "specificSkills": [
+                          "Enunciar e demonstrar a Lei da Reciprocidade Quadrática para primos ímpares distintos.",
+                          "Calcular o símbolo de Legendre \\(\\left( \\frac{p}{q} \\right)\\) utilizando a lei da reciprocidade.",
+                          "Aplicar a lei para determinar quadraticidade de números módulo primos ímpares.",
+                          "Resolver problemas envolvendo símbolos de Legendre e resíduos quadráticos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.7.3.c5",
+                        "name": "Classes de congruência dos primos módulo 4",
+                        "description": "Todo primo ímpar p satisfaz p ≡ 1 ou 3 mod 4. (p-1)/2 é par se p ≡1 mod 4, ímpar se p ≡3 mod 4.",
+                        "specificSkills": [
+                          "Provar que todo primo ímpar $p$ satisfaz $p \\equiv 1 \\pmod{4}$ ou $p \\equiv 3 \\pmod{4}$.",
+                          "Determinar a paridade de $\\frac{p-1}{2}$ para primos ímpares $p$, com base na classe de congruência módulo 4.",
+                          "Classificar primos ímpares nas classes de congruência módulo 4 e relacionar com propriedades algébricas."
+                        ]
+                      },
+                      {
+                        "id": "10.1.7.3.c6",
+                        "name": "Fator de correção na reciprocidade",
+                        "description": "O termo \\((-1)^{\\frac{p-1}{2} \\cdot \\frac{q-1}{2}}\\) vale 1 se pelo menos um de p ou q ≡1 mod 4, e -1 se ambos ≡3 mod 4, determinando se (p/q)=(q/p) ou (p/q)=-(q/p).",
+                        "specificSkills": [
+                          "Calcular o fator de correção \\((-1)^{\\frac{p-1}{2} \\cdot \\frac{q-1}{2}}\\) para primos ímpares p e q.",
+                          "Determinar as condições em que (p/q) = (q/p) ou (p/q) = -(q/p), com base nos resíduos de p e q módulo 4.",
+                          "Aplicar o fator de correção na lei da reciprocidade quadrática."
+                        ]
+                      }
                     ]
                   },
                   {
@@ -44372,7 +44442,8 @@
             "totalSkills": 348
           }
         ],
-        "totalSkills": 348
+        "totalSkills": 348,
+        "percentage": 0
       }
     ]
   }

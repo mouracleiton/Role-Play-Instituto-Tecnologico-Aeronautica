@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-77",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 343
+      "totalAtomicSkills": 343,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-77"
     },
     "areas": [
       {
@@ -5306,9 +5312,65 @@
                                     "Sociologia: Modernização e desigualdades técnicas.",
                                     "Educação Tecnológica: Legado para instituições como ITA."
                                   ],
-                                  "realWorldApplication": "Essa habilidade ajuda a analisar como ideologias como o positivismo moldam políticas de inovação atuais no Brasil, como investimentos em infraestrutura (ferrovias modernas) e aeroespacial (Embraer, sucessora espiritual do ITA), promovendo pensamento crítico sobre progresso sustentável."
+                                  "realWorldApplication": "Essa habilidade ajuda a analisar como ideologias como o positivismo moldam políticas de inovação atuais no Brasil, como investimentos em infraestrutura (ferrovias modernas) e aeroespacial (Embraer, sucessora espiritual do ITA), promovendo pensamento crítico sobre progresso sustentável.",
+                                  "stepNumber": 3,
+                                  "title": "Aplicação Prática: Relatório sobre Positivismo e Avanços Técnicos",
+                                  "subSteps": [
+                                    "Pesquisar três avanços técnicos específicos (iluminação elétrica no Rio de Janeiro em 1889, Estrada de Ferro Dom Pedro II e experimentos de Santos Dumont).",
+                                    "Analisar impactos sociais e conexão com a visão positivista de ordem e progresso.",
+                                    "Redigir um relatório escolar exemplificando como esses avanços promovem o progresso nacional.",
+                                    "Relacionar com precursores do ITA e o lema 'Ordem e Progresso'."
+                                  ],
+                                  "verification": [
+                                    "Relatório cita pelo menos 3 avanços com datas precisas.",
+                                    "Explica visão positivista em 2-3 frases.",
+                                    "Identifica conexões com 'Ordem e Progresso'.",
+                                    "Lista impactos sociais."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Livros de história do Brasil ou acesso à internet.",
+                                    "Papel, caneta ou editor de texto.",
+                                    "Cronologia histórica impressa (opcional)."
+                                  ],
+                                  "tips": [
+                                    "Use fontes confiáveis como livros didáticos ou sites acadêmicos.",
+                                    "Estruture o relatório: introdução, exemplos, análise e conclusão.",
+                                    "Sempre vincule técnica a benefícios sociais para reforçar o positivismo.",
+                                    "Inclua imagens ou diagramas para criatividade."
+                                  ],
+                                  "learningObjective": "O aluno demonstrará compreensão da influência positivista nos avanços técnicos brasileiros, exemplificando em relatório como eles promoveram ordem social, progresso nacional e legaram instituições como o ITA.",
+                                  "commonMistakes": [
+                                    "Confundir datas ou eventos (ex.: iluminação em 1889 vs. outras datas).",
+                                    "Descrever avanços sem conectar ao positivismo ou 'Ordem e Progresso'.",
+                                    "Omitir impactos sociais, focando só na técnica.",
+                                    "Não relacionar com precursores do ITA ou contexto republicano."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um relatório escolar, o aluno exemplifica como a iluminação elétrica no Rio de Janeiro em 1889, a Estrada de Ferro Dom Pedro II e os experimentos de Santos Dumont incorporam o positivismo ao promoverem ordem social via técnica, acelerando o progresso nacional rumo a uma república científica.",
+                              "finalVerifications": [
+                                "Citar pelo menos 3 avanços técnicos específicos com datas.",
+                                "Explicar corretamente a visão positivista de progresso em 2-3 frases.",
+                                "Identificar conexões com o lema 'Ordem e Progresso'.",
+                                "Listar impactos sociais de cada avanço.",
+                                "Demonstrar compreensão de precursores do ITA."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão histórica e factual (30%)",
+                                "Profundidade na conexão com positivismo (25%)",
+                                "Uso de exemplos concretos e variados (20%)",
+                                "Clareza e estrutura na explicação (15%)",
+                                "Criatividade em síntese e aplicação (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Princípios básicos de eletricidade e aerodinâmica.",
+                                "Geografia: Impacto das ferrovias na ocupação territorial.",
+                                "Educação Cívica: Análise do positivismo na formação republicana.",
+                                "Sociologia: Modernização e desigualdades técnicas.",
+                                "Educação Tecnológica: Legado para instituições como ITA."
+                              ],
+                              "realWorldApplication": "Essa habilidade ajuda a analisar como ideologias como o positivismo moldam políticas de inovação atuais no Brasil, como investimentos em infraestrutura (ferrovias modernas) e aeroespacial (Embraer, sucessora espiritual do ITA), promovendo pensamento crítico sobre progresso sustentável."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -29643,6 +29705,19 @@
                                     "tips: ",
                                     "materials: [ ",
                                     "estimatedTime: "
+                                  ],
+                                  "tips": [
+                                    "Priorize fontes primárias como arquivos da FAB e Museu Aeroespacial para dados precisos.",
+                                    "Crie uma linha do tempo visual para mapear evoluções e fusões de escolas.",
+                                    "Inclua imagens ou diagramas de aeronaves para enriquecer a documentação.",
+                                    "Verifique cross-reference com livros especializados para validar inovações técnicas."
+                                  ],
+                                  "learningObjective": "Compreender o pioneirismo das instituições militares brasileiras na formação técnica aeronáutica pré-ITA, identificando datas, objetivos, realizações e comparações com o setor civil.",
+                                  "commonMistakes": [
+                                    "Confundir datas de criação com reformas ou fusões posteriores das escolas.",
+                                    "Ignorar métricas quantitativas, como número de formados ou aeronaves produzidas.",
+                                    "Subestimar o contexto internacional (ex.: influência da Aviação Militar argentina ou europeia).",
+                                    "Focar apenas em narrativas gerais sem listar pelo menos 4 iniciativas específicas."
                                   ]
                                 },
                                 {
@@ -41387,7 +41462,8 @@
             "totalSkills": 343
           }
         ],
-        "totalSkills": 343
+        "totalSkills": 343,
+        "percentage": 0
       }
     ]
   }

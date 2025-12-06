@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-01",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 280
+      "totalAtomicSkills": 280,
+      "startDate": "2025-03-01",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025.01",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-01"
     },
     "areas": [
       {
@@ -15711,9 +15717,67 @@
                                     "Engenharia: Design baseado em leis (circuitos, fluidos).",
                                     "Filosofia: Debates sobre realismo vs instrumentalismo em leis."
                                   ],
-                                  "realWorldApplication": "Engenheiros elétricos usam a Lei de Ohm para otimizar circuitos em smartphones, prevendo quedas de tensão em diferentes cargas; meteorologistas aplicam Lei dos Gases Ideais para modelar furacões e prever trajetórias com precisão vital."
+                                  "realWorldApplication": "Engenheiros elétricos usam a Lei de Ohm para otimizar circuitos em smartphones, prevendo quedas de tensão em diferentes cargas; meteorologistas aplicam Lei dos Gases Ideais para modelar furacões e prever trajetórias com precisão vital.",
+                                  "stepNumber": "5",
+                                  "title": "Análise de Leis Físicas Universais: Gravitação e Aplicações Contextuais",
+                                  "subSteps": [
+                                    "Identificar características matemáticas da Lei da Gravitação Universal (forma inversa quadrada e universalidade)",
+                                    "Comparar dados telescópicos com experimentos terrestres para validar a lei",
+                                    "Exemplificar universalidade da lei com dois contextos distintos (ex.: maçã vs órbita lunar)",
+                                    "Analisar limitações de validade da lei em cenários reais (ex.: alta velocidade, gravidade fraca)",
+                                    "Diferenciar leis de teorias usando três exemplos comparativos (ex.: Lei de Newton vs Teoria da Relatividade)",
+                                    "Realizar análise matemática básica de três leis selecionadas (variáveis, relações e unidades)"
+                                  ],
+                                  "verification": "Avaliação baseada na lista de verificações finais: precisão de fórmulas, explicação de universalidade, identificação de limitações, diferenciação leis/teorias e análise matemática",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Texto sobre leis de Newton e movimentos planetários",
+                                    "Dados telescópicos de órbitas",
+                                    "Equipamentos para experimentos terrestres básicos (ex.: pêndulo, massa e primavera)",
+                                    "Calculadora científica",
+                                    "Gráficos de movimento planetário",
+                                    "Tabelas de constantes físicas"
+                                  ],
+                                  "tips": [
+                                    "Concentre-se na estrutura matemática (inverso quadrado) para identificar leis universais",
+                                    "Use exemplos cotidianos (maçã) e astronômicos (órbita lunar) para ilustrar universalidade",
+                                    "Revisite conceitos de domínio de validade das leis clássicas vs relativística",
+                                    "Diferencie claramente leis (descrições matemáticas) de teorias (quadros conceituais abrangentes)",
+                                    "Verifique unidades e dimensões nas fórmulas para evitar erros de cálculo"
+                                  ],
+                                  "learningObjective": "Compreender e aplicar leis físicas universais, analisando sua estrutura matemática, contexto de aplicação e limitações, e diferenciar leis de teorias através de exemplos práticos e evidências empíricas",
+                                  "commonMistakes": [
+                                    "Confundir leis com teorias (ex.: tratar lei como explicação completa)",
+                                    "Esquecer de considerar unidades ou constantes nas fórmulas",
+                                    "Aplicar leis clássicas em situações de alta velocidade ou energia",
+                                    "Não distinguir entre modelagem matemática simplificada e fenômenos reais complexos",
+                                    "Subestimar a importância do contexto histórico e epistemológico das descobertas"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Analise o comportamento de um circuito elétrico simples: identifique a Lei de Ohm (V = IR) pela sua forma linear e universalidade em sistemas de energia elétrica, comparando medições de tensão em baterias, resistores e LEDs sob diferentes cargas.",
+                              "finalVerifications": [
+                                "Reproduzir com precisão as fórmulas e contextos de pelo menos 4 leis clássicas em um teste escrito.",
+                                "Explicar a universalidade de 2 leis escolhidas com exemplos contextuais específicos e suas limitações.",
+                                "Identificar corretamente 9 de 10 itens em um quiz de distinção entre leis e teorias.",
+                                "Demonstrar análise matemática básica (identificação de variáveis e relações) para 3 leis diferentes.",
+                                "Descrever evidências empíricas históricas que sustentam a universalidade de pelo menos 2 leis."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual na definição e características de leis científicas (20%).",
+                                "Correta reprodução e análise matemática de fórmulas (30%).",
+                                "Demonstração crítica da universalidade e limites contextuais (25%).",
+                                "Habilidade autônoma de identificação e classificação de leis (15%).",
+                                "Uso efetivo de evidências empíricas e aplicações práticas (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Funções lineares e não-lineares como modelos matemáticos.",
+                                "Física: Aplicações diretas em mecânica, termodinâmica e eletricidade.",
+                                "Química: Leis gasosas e reações químicas quantitativas.",
+                                "Engenharia: Projeto de sistemas elétricos, hidráulicos e estruturais.",
+                                "Filosofia e História da Ciência: Análise de métodos científicos e revoluções paradigmáticas."
+                              ],
+                              "realWorldApplication": "Médicos usam a Lei de Ohm para projetar dispositivos de monitoramento cardíaco, garantindo que sinais elétricos fracos do ECG sejam amplificados sem distorção; engenheiros mecânicos aplicam a Lei de Hooke (deformação elástica) no design de amortecedores de automóveis para absorver impactos com precisão controlada."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "beginner",
@@ -35189,7 +35253,8 @@
             "totalSkills": 280
           }
         ],
-        "totalSkills": 280
+        "totalSkills": 280,
+        "percentage": 100
       }
     ]
   }

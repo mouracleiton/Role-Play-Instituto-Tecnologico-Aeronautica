@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - DI-64",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 260
+      "totalAtomicSkills": 260,
+      "startDate": "2025-02-10",
+      "duration": "10 semesters",
+      "dailyStudyHours": 8,
+      "version": "2025-DI64",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - DI-64"
     },
     "areas": [
       {
@@ -4464,7 +4470,40 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Elabore a planta baixa de uma cozinha residencial de 4m x 3m, incluindo paredes de 2,70m de altura, porta de 0,90m, janela de 1,20m, pia, fogão, mesa para 4 pessoas e circulação fluida entre eles, em escala 1:50."
+                                  "practicalExample": "Elabore a planta baixa de uma cozinha residencial de 4m x 3m, incluindo paredes de 2,70m de altura, porta de 0,90m, janela de 1,20m, pia, fogão, mesa para 4 pessoas e circulação fluida entre eles, em escala 1:50.",
+                                  "stepNumber": 1,
+                                  "title": "Elaboração da Planta Baixa de uma Cozinha Residencial",
+                                  "subSteps": [
+                                    "1. Desenhe o retângulo de 4m x 3m em escala 1:50 (8cm x 6cm) representando as paredes de 2,70m de altura.",
+                                    "2. Posicione a porta de 0,90m (1,8cm em escala) em uma parede lateral e a janela de 1,20m (2,4cm em escala) em outra parede.",
+                                    "3. Insira a pia (90cm x 60cm), fogão (60cm x 60cm) e mesa para 4 pessoas (120cm x 80cm), garantindo circulação mínima de 1m entre eles.",
+                                    "4. Trace linhas de circulação fluida e adicione símbolos arquitetônicos padrão (hachuras para paredes, etc.).",
+                                    "5. Revise dimensões, proporções e funcionalidade."
+                                  ],
+                                  "verification": "Verifique se a planta atende todas as especificações: dimensões corretas em escala 1:50, circulação fluida ≥1m, todos os elementos posicionados logicamente sem sobreposições, e representação clara de paredes, porta, janela, pia, fogão e mesa.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel milimetrado ou sulfite A4",
+                                    "Régua graduada em mm",
+                                    "Lápis HB e 2B",
+                                    "Borracha",
+                                    "Compasso (opcional para curvas)",
+                                    "Escala gráfica 1:50 impressa"
+                                  ],
+                                  "tips": [
+                                    "Priorize o triângulo de trabalho (pia-fogão-mesa) com distâncias otimizadas para eficiência.",
+                                    "Use hachuras leves nas paredes e símbolos normatizados (NBR 6492).",
+                                    "Reserve 10% da área para circulação mínima.",
+                                    "Teste o fluxo imaginando o movimento do usuário."
+                                  ],
+                                  "learningObjective": "Desenvolver habilidades para criar plantas baixas funcionais de ambientes residenciais, aplicando escalas, dimensões padrão e princípios ergonômicos de circulação em projetos arquitetônicos.",
+                                  "commonMistakes": [
+                                    "Ignorar a escala, resultando em desenhos desproporcionais.",
+                                    "Posicionar elementos sem considerar circulação, causando bloqueios.",
+                                    "Esquecer altura das paredes ou dimensões exatas de aberturas.",
+                                    "Não alinhar móveis paralelamente às paredes, comprometendo estética.",
+                                    "Falta de legenda ou símbolos claros."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -4473,6 +4512,41 @@
                                     "Hachuras uniformes e cotas legíveis em todos os elementos.",
                                     "Circulações indicadas e livres de obstruções.",
                                     "Símbolos convencionais utilizados corretamente."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Verificação Final da Planta Baixa",
+                                  "subSteps": [
+                                    "Revise a aplicação da escala em todas as dimensões do desenho.",
+                                    "Confira o posicionamento preciso de paredes, aberturas e mobiliário.",
+                                    "Verifique a uniformidade das hachuras e a legibilidade das cotas.",
+                                    "Analise as circulações, garantindo que estejam indicadas e livres de obstruções.",
+                                    "Confirme o uso correto de todos os símbolos convencionais."
+                                  ],
+                                  "verification": [
+                                    "Escala aplicada corretamente em todas as dimensões.",
+                                    "Paredes, aberturas e mobiliário posicionados com precisão.",
+                                    "Hachuras uniformes e cotas legíveis em todos os elementos.",
+                                    "Circulações indicadas e livres de obstruções.",
+                                    "Símbolos convencionais utilizados corretamente."
+                                  ],
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Software de CAD (ex: AutoCAD ou similar)",
+                                    "Lista de verificação impressa",
+                                    "Regra e calculadora para conferência de escalas"
+                                  ],
+                                  "tips": [
+                                    "Utilize a função de zoom e pan para inspecionar detalhes minuciosos.",
+                                    "Compare com normas ABNT NBR 6492 para desenhos arquitetônicos.",
+                                    "Faça uma pausa curta antes da verificação para visão fresca."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de realizar uma verificação completa e criteriosa de uma planta baixa, assegurando precisão técnica, legibilidade e conformidade com padrões convencionais de representação arquitetônica.",
+                                  "commonMistakes": [
+                                    "Ignorar discrepâncias de escala em dimensões secundárias.",
+                                    "Deixar hachuras com densidades ou padrões inconsistentes.",
+                                    "Cotas mal posicionadas, sobrepostas ou com setas incompletas.",
+                                    "Omitir indicações de circulações em áreas de alto tráfego.",
+                                    "Uso incorreto ou ausente de símbolos padronizados (ex: portas, janelas)."
                                   ]
                                 },
                                 {
@@ -4482,6 +4556,40 @@
                                     "Adequação funcional dos elementos (circulação, ergonomia).",
                                     "Conformidade com normas gráficas convencionais.",
                                     "Criatividade na disposição sem comprometer normas."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Elaboração e Finalização da Planta Baixa",
+                                  "subSteps": [
+                                    "1. Definir escala (ex: 1:50) e traçar margens com esquadros.",
+                                    "2. Desenhar paredes, portas e janelas com precisão métrica (erro <1%).",
+                                    "3. Incluir elementos funcionais: circulação, mobiliário ergonômico.",
+                                    "4. Aplicar cotas, hachuras e legendas conforme normas ABNT NBR 6492.",
+                                    "5. Revisar proporções, legibilidade e criatividade na disposição."
+                                  ],
+                                  "verification": "Comparar com critérios de avaliação: precisão (<1% erro), clareza, funcionalidade, normas e criatividade. Autoavaliação ou revisão por pares.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Papel milimetrado A3",
+                                    "Lápis HB e 2B",
+                                    "Borracha macia",
+                                    "Régua graduada, esquadros e compasso",
+                                    "Apontador de lápis",
+                                    "Normas ABNT NBR 6492 (impressa ou digital)"
+                                  ],
+                                  "tips": [
+                                    "Meça duas vezes antes de traçar linhas definitivas.",
+                                    "Use camadas leves para esboço inicial e apague após confirmação.",
+                                    "Priorize fluxo de circulação: mínimo 90cm em corredores.",
+                                    "Teste ergonomia: alcance de braços em bancadas (60-70cm).",
+                                    "Adicione criatividade em layouts modulares sem violar normas."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de produzir um desenho técnico de planta baixa preciso, funcional e normatizado, integrando criatividade e normas gráficas.",
+                                  "commonMistakes": [
+                                    "Erros de escala ou proporções acima de 1%.",
+                                    "Linhas borradas ou ilegíveis por falta de limpeza.",
+                                    "Omissão de cotas ou elementos ergonômicos (ex: circulação estreita).",
+                                    "Desrespeito a normas ABNT (ex: hachuras incorretas).",
+                                    "Excesso de criatividade comprometendo funcionalidade."
                                   ]
                                 },
                                 {
@@ -4491,12 +4599,93 @@
                                     "Artes: Composição visual e estética espacial.",
                                     "Tecnologia: Uso de ferramentas digitais como AutoCAD para validação.",
                                     "Sustentabilidade: Otimização de circulações para eficiência energética."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Dimensionamento de Circulações e Aberturas",
+                                  "subSteps": [
+                                    "1. Calcule a largura mínima das circulações com base no número de usuários e normas ABNT NBR 9050.",
+                                    "2. Determine o posicionamento e dimensões das aberturas para ventilação natural e iluminação.",
+                                    "3. Valide o layout utilizando ferramentas digitais como AutoCAD.",
+                                    "4. Otimize o fluxo para eficiência energética, considerando orientação solar."
+                                  ],
+                                  "verification": "Verifique se as circulações atendem aos requisitos mínimos de largura (mín. 1,20m para acessibilidade), as aberturas proporcionam fator de iluminação diurna ≥2% e ventilação conforme NBR 15575. Simule no AutoCAD e compare com normas.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel milimetrado ou software de desenho (AutoCAD ou similar)",
+                                    "Calculadora ou planilha Excel para cálculos",
+                                    "Normas técnicas: ABNT NBR 9050 e NBR 15575",
+                                    "Computador com software de simulação energética (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Priorize corredores retos para minimizar distâncias percorridas.",
+                                    "Use proporções áureas para estética nas aberturas.",
+                                    "Considere ventos predominantes locais para ventilação cruzada.",
+                                    "Teste múltiplas iterações no software para otimização."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de dimensionar circulações e aberturas de forma integrada, atendendo normas técnicas, critérios estéticos e de sustentabilidade, promovendo eficiência energética e acessibilidade universal.",
+                                  "commonMistakes": [
+                                    "Subdimensionar circulações, ignorando fluxo de emergência.",
+                                    "Posicionar aberturas sem considerar sombreamento ou ganho térmico excessivo.",
+                                    "Negligenciar acessibilidade para PCDs (ex.: rampas e portas amplas).",
+                                    "Não validar cálculos com simulações digitais, levando a erros de proporção."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na produção de projetos arquitetônicos residenciais ou comerciais, submetidos a aprovações em prefeituras e usados por construtoras para execução precisa, evitando retrabalhos caros."
+                                  "realWorldApplication": "Na produção de projetos arquitetônicos residenciais ou comerciais, submetidos a aprovações em prefeituras e usados por construtoras para execução precisa, evitando retrabalhos caros.",
+                                  "stepNumber": 5,
+                                  "title": "Garantir Precisão nas Medidas e Escalas do Projeto Arquitetônico",
+                                  "subSteps": [
+                                    "Verificar todas as cotas lineares e angulares com precisão de 1mm.",
+                                    "Aplicar escalas corretas (1:50 para plantas, 1:100 para situacionamento).",
+                                    "Simular aprovação municipal revisando normas ABNT NBR 6492 e legislações locais.",
+                                    "Exportar desenhos em PDF e DWG para compatibilidade com construtoras."
+                                  ],
+                                  "verification": "Projeto submetido passa em checklist de precisão sem erros de medida ou escala, simulando aprovação em prefeitura.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software CAD (AutoCAD, Revit ou similar)",
+                                    "Normas ABNT NBR 6492",
+                                    "Modelos de projetos aprovados",
+                                    "Checklist de prefeituras"
+                                  ],
+                                  "tips": [
+                                    "Use snap e grid para precisão automática.",
+                                    "Confira medidas em múltiplas visualizações (planta, corte, 3D).",
+                                    "Salve versões com data para rastreabilidade.",
+                                    "Teste impressão em escala real."
+                                  ],
+                                  "learningObjective": "Produzir projetos arquitetônicos com precisão técnica para aprovação imediata em órgãos públicos e execução sem retrabalho.",
+                                  "commonMistakes": [
+                                    "Escalas incorretas levando a aprovações negadas.",
+                                    "Cotas arredondadas imprecisas causando erros de construção.",
+                                    "Ignorar tolerâncias normativas ABNT.",
+                                    "Falta de legenda de escalas e cotas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Elabore a planta baixa de uma cozinha residencial de 4m x 3m, incluindo paredes de 2,70m de altura, porta de 0,90m, janela de 1,20m, pia, fogão, mesa para 4 pessoas e circulação fluida entre eles, em escala 1:50.",
+                              "finalVerifications": [
+                                "Escala aplicada corretamente em todas as dimensões.",
+                                "Paredes, aberturas e mobiliário posicionados com precisão.",
+                                "Hachuras uniformes e cotas legíveis em todos os elementos.",
+                                "Circulações indicadas e livres de obstruções.",
+                                "Símbolos convencionais utilizados corretamente."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão das medidas e proporções (erro <1%).",
+                                "Clareza e legibilidade do desenho completo.",
+                                "Adequação funcional dos elementos (circulação, ergonomia).",
+                                "Conformidade com normas gráficas convencionais.",
+                                "Criatividade na disposição sem comprometer normas."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculos de proporção e geometria plana.",
+                                "Física: Dimensionamento de aberturas para ventilação e luz.",
+                                "Artes: Composição visual e estética espacial.",
+                                "Tecnologia: Uso de ferramentas digitais como AutoCAD para validação.",
+                                "Sustentabilidade: Otimização de circulações para eficiência energética."
+                              ],
+                              "realWorldApplication": "Na produção de projetos arquitetônicos residenciais ou comerciais, submetidos a aprovações em prefeituras e usados por construtoras para execução precisa, evitando retrabalhos caros."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "intermediate",
@@ -34372,7 +34561,8 @@
             "totalSkills": 260
           }
         ],
-        "totalSkills": 260
+        "totalSkills": 260,
+        "percentage": 0
       }
     ]
   }

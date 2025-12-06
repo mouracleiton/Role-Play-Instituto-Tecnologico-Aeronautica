@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SP-18",
       "lastUpdated": "2025-12-05",
-      "totalAtomicSkills": 339
+      "totalAtomicSkills": 339,
+      "startDate": "2025-02-17",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-v1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SP-18"
     },
     "areas": [
       {
@@ -30749,9 +30755,49 @@
                                     "Segurança e Qualidade: Normas ISO/AS9100 e FMEA.",
                                     "Análise de Dados: Processamento de sinais e estatística."
                                   ],
-                                  "realWorldApplication": "Garante que cargas úteis espaciais sobrevivam aos rigores elétricos do lançamento (ex: Falcon 9, Ariane 5), prevenindo falhas como a perda de satélites por incompatibilidade de potência, economizando milhões em missões."
+                                  "realWorldApplication": "Garante que cargas úteis espaciais sobrevivam aos rigores elétricos do lançamento (ex: Falcon 9, Ariane 5), prevenindo falhas como a perda de satélites por incompatibilidade de potência, economizando milhões em missões.",
+                                  "verification": "Relatório aprovado com todas verificações passadas; assinatura do supervisor.",
+                                  "estimatedTime": "45 minutos - 1 hora",
+                                  "materials": [
+                                    "Template de relatório padrão",
+                                    "Ferramentas de arquivamento digital"
+                                  ],
+                                  "tips": [
+                                    "Inclua evidências fotográficas e dados raw.",
+                                    "Prepare para revisão de pares."
+                                  ],
+                                  "learningObjective": "Sintetizar resultados em relatório acionável, fechando o ciclo de teste.",
+                                  "commonMistakes": [
+                                    "Relatório incompleto sem dados brutos.",
+                                    "Esquecer power-down seguro."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um teste de integração para um satélite CubeSat no veículo lançador Vega-C, execute ciclo completo de power cycle 3 vezes após testes nominais e transientes, valide todos os dados contra MIL-STD-704, compile relatório com gráficos mostrando estabilidade ±1% e recuperação <50ms, desconecte com inspeção zero defeitos, arquivando dados que garantiram aprovação para lançamento, evitando potenciais falhas elétricas em órbita.",
+                              "finalVerifications": [
+                                "Ciclo de power cycle executado 3 vezes sem falhas ou anomalias.",
+                                "Todos os dados validados contra requisitos do veículo lançador (ex: ±1% estabilidade, <50ms recuperação).",
+                                "Relatório compilado com gráficos, tabelas, análise estatística e recomendações claras.",
+                                "Equipamentos desconectados e inspecionados sem danos visíveis ou térmicos.",
+                                "Dados arquivados digitalmente com rastreabilidade completa.",
+                                "Assinatura do supervisor confirmando aprovação final."
+                              ],
+                              "assessmentCriteria": [
+                                "Execução precisa do power cycle (100% sem erros).",
+                                "Relatório completo com evidências quantitativas e qualitativas (nota >90%).",
+                                "Validação exaustiva contra specs (todas verificações passadas).",
+                                "Adesão a procedimentos de desconexão e arquivamento seguros.",
+                                "Clareza e açãoabilidade do relatório (revisão de pares aprovada).",
+                                "Tempo total do passo dentro do estimado (±20%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Gestão de Projetos: Ciclo de vida de testes e relatórios.",
+                                "Engenharia de Confiabilidade: Análise de falhas e validação final.",
+                                "Comunicações Técnicas: Redação de relatórios científicos.",
+                                "Normas e Regulamentações: Conformidade com MIL-STD e ISO/AS9100.",
+                                "Análise de Dados: Estatística descritiva e visualização."
+                              ],
+                              "realWorldApplication": "Assegura a certificação final de interfaces elétricas de cargas úteis espaciais, como em missões PSLV ou Soyuz, onde relatórios de verificação previnem desqualificações custosas, garantindo sobrevivência ao ambiente de lançamento e operação orbital confiável, com impacto em bilhões de dólares em programas espaciais."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -47258,7 +47304,38 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um teste de CubeSat universitário, configure a estação terrestre em UHF (437 MHz), envie comando de 'health check' via uplink, receba telemetria de temperatura/bateria via downlink, valide BER < 10^-6 e SNR > 10 dB durante simulação de 10 minutos de órbita LEO."
+                                  "practicalExample": "Em um teste de CubeSat universitário, configure a estação terrestre em UHF (437 MHz), envie comando de 'health check' via uplink, receba telemetria de temperatura/bateria via downlink, valide BER < 10^-6 e SNR > 10 dB durante simulação de 10 minutos de órbita LEO.",
+                                  "stepNumber": 18,
+                                  "title": "Configuração e Teste de Estação Terrestre para CubeSat em UHF",
+                                  "subSteps": [
+                                    "Configure a estação terrestre em UHF na frequência de 437 MHz, ajustando modulador/demodulador e antena.",
+                                    "Envie o comando de 'health check' via uplink utilizando protocolo AX.25 ou similar.",
+                                    "Receba e decode a telemetria de temperatura e bateria via downlink.",
+                                    "Monitore e valide os parâmetros BER < 10^-6 e SNR > 10 dB durante uma simulação de 10 minutos de órbita LEO."
+                                  ],
+                                  "verification": "Confirme BER < 10^-6 e SNR > 10 dB nos logs da simulação; telemetria recebida corretamente e health check respondido.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Estação terrestre UHF (transceptor 437 MHz, ex: Icom IC-9100 ou USRP)",
+                                    "Antena Yagi direcional para UHF",
+                                    "Software de simulação orbital (ex: Orekit, GMAT ou STK)",
+                                    "Computador com GNU Radio ou SatNOGS client",
+                                    "Cabo coaxial e conversor Doppler"
+                                  ],
+                                  "tips": [
+                                    "Simule o efeito Doppler para órbita LEO (~7 km/s) ajustando frequência em ±10 kHz.",
+                                    "Use potência baixa (<1W) para evitar interferências e cumprir regulamentações ANATEL.",
+                                    "Registre todos os passes em arquivo CSV para análise posterior.",
+                                    "Teste o loopback local antes da simulação orbital."
+                                  ],
+                                  "learningObjective": "Configurar e operar estação terrestre UHF para comunicação bidirecional com CubeSat, validando qualidade de link (BER e SNR) em simulação LEO realista.",
+                                  "commonMistakes": [
+                                    "Frequência desalinhada (esquecer offset Doppler ou canal exato 437.000 MHz).",
+                                    "Antena mal apontada, resultando em SNR baixo.",
+                                    "Não decodificar frames AX.25 corretamente, perdendo telemetria.",
+                                    "Ignorar ruído ambiente, falhando na validação BER.",
+                                    "Simulação orbital incompleta (menos de 10 min ou sem inclinação 98°)."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -47286,9 +47363,76 @@
                                     "Física Orbital: modelagem de passes e Doppler.",
                                     "Gestão de Projetos: planejamento e relatórios de testes."
                                   ],
-                                  "realWorldApplication": "Durante a fase LEOP de missões como Starlink ou satélites da ISS, onde testes de comunicação validam conectividade inicial, permitindo comandos de manobra e download de dados científicos essenciais para sucesso da missão."
+                                  "realWorldApplication": "Durante a fase LEOP de missões como Starlink ou satélites da ISS, onde testes de comunicação validam conectividade inicial, permitindo comandos de manobra e download de dados científicos essenciais para sucesso da missão.",
+                                  "stepNumber": 1,
+                                  "title": "Validação End-to-End de Link de Comunicação Satelital",
+                                  "subSteps": [
+                                    "1. Configurar estação terrena e simulador de satélite com parâmetros nominais (frequência, modulação QPSK, potência TX).",
+                                    "2. Estabelecer link uplink e medir BER e latência.",
+                                    "3. Ativar downlink e avaliar throughput e packet loss.",
+                                    "4. Enviar comandos TC e parsear telemetria TM recebida.",
+                                    "5. Medir qualidade de sinal (SNR e EVM) com analisador de espectro.",
+                                    "6. Executar ciclo completo end-to-end (10 tentativas) e auditar logs.",
+                                    "7. Documentar resultados e anomalias em relatório."
+                                  ],
+                                  "verification": "Link uplink estabelecido com BER < 10^-6 e latência < 500 ms; Downlink com throughput > 1 kbps e packet loss < 1%; Telemetria parseada corretamente; SNR > 8 dB e EVM < 10%; Ciclo completo sem falhas em 95% das tentativas; Conformidade CCSDS; Logs sem anomalias.",
+                                  "estimatedTime": "4.5 horas",
+                                  "materials": [
+                                    "Estação terrena com transceptor RF (USRP ou similar)",
+                                    "Simulador de satélite/OBC mockup",
+                                    "Software CCSDS para TM/TC (ex: COSMOS, GNU Radio)",
+                                    "Analisador de espectro e osciloscópio",
+                                    "Computador com Linux e ferramentas de log (Wireshark)",
+                                    "Antenas patch e cabos RF",
+                                    "Atenuadores variáveis para simulação de path loss"
+                                  ],
+                                  "tips": [
+                                    "Compense efeito Doppler usando software definido por software (SDR).",
+                                    "Automatize testes com scripts Python para reprodutibilidade.",
+                                    "Calibre antenas antes de iniciar para evitar mismatches.",
+                                    "Monitore temperatura de equipamentos para estabilidade RF.",
+                                    "Salve raw IQ samples para análise pós-teste.",
+                                    "Teste comandos não destrutivos primeiro (ex: ping TM)."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de configurar, executar e validar um link de comunicação satelital end-to-end, medindo métricas chave de performance (BER, latência, SNR, EVM) e garantindo conformidade com padrões CCSDS para TM/TC em cenários nominais.",
+                                  "commonMistakes": [
+                                    "Configuração incorreta de frequência ou modulação levando a alto BER.",
+                                    "Não compensar Doppler, causando falhas em uplink/downlink.",
+                                    "Esquecimento de calibração de antenas (VSWR alto).",
+                                    "Análise qualitativa em vez de quantitativa de telemetria.",
+                                    "Exceder tempo limite por falta de troubleshooting sistemático.",
+                                    "Documentação incompleta sem métricas numéricas ou plots.",
+                                    "Ignorar segurança: envio de comandos destrutivos sem verificação."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um teste de CubeSat universitário, configure a estação terrestre em UHF (437 MHz), envie comando de 'health check' via uplink, receba telemetria de temperatura/bateria via downlink, valide BER < 10^-6 e SNR > 10 dB durante simulação de 10 minutos de órbita LEO.",
+                              "finalVerifications": [
+                                "Link uplink estabelecido com BER < 10^-6 e latência < 500 ms.",
+                                "Downlink com throughput > 1 kbps e packet loss < 1%.",
+                                "Telemetria parseada corretamente com todos os parâmetros nominais.",
+                                "Qualidade de sinal (SNR > 8 dB, EVM < 10%) em condições nominais.",
+                                "Ciclo completo end-to-end sem falhas em 95% das tentativas.",
+                                "Conformidade com padrões CCSDS para TM/TC.",
+                                "Logs auditados sem anomalias não resolvidas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na configuração e execução dos testes (sem erros de setup).",
+                                "Análise de dados quantitativa com métricas chave reportadas.",
+                                "Eficiência temporal: conclusão dentro do tempo estimado total (4.5 horas).",
+                                "Capacidade de troubleshooting: resolução de falhas simuladas em < 15 min.",
+                                "Qualidade da documentação: relatórios claros e acionáveis.",
+                                "Integração de segurança: verificação de comandos não destrutivos.",
+                                "Reprodutibilidade: testes repetíveis com resultados consistentes."
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de RF e Antenas: design e calibração de links.",
+                                "Processamento Digital de Sinais: demodulação e correção de erros.",
+                                "Sistemas Embarcados: protocolos TM/TC em OBCs.",
+                                "Física Orbital: modelagem de passes e Doppler.",
+                                "Gestão de Projetos: planejamento e relatórios de testes."
+                              ],
+                              "realWorldApplication": "Durante a fase LEOP de missões como Starlink ou satélites da ISS, onde testes de comunicação validam conectividade inicial, permitindo comandos de manobra e download de dados científicos essenciais para sucesso da missão."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "intermediate",
@@ -49640,7 +49784,8 @@
             "totalSkills": 339
           }
         ],
-        "totalSkills": 339
+        "totalSkills": 339,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PG-05",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 379
+      "totalAtomicSkills": 379,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-PG-05",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PG-05"
     },
     "areas": [
       {
@@ -33802,6 +33808,13 @@
                                     "Confundir plano com eixo em projeções 2D.",
                                     "Ignorar planos oblíquos em sólidos irregulares.",
                                     "Não validar com múltiplas vistas."
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: um plano de simetria divide o sólido em duas metades congruentes e sobreponíveis por reflexão.",
+                                    "Comece identificando simetrias nas bases e eixos principais do sólido.",
+                                    "Use um espelho físico ou app de realidade aumentada para visualizar reflexos reais.",
+                                    "Em prismas, priorize planos perpendiculares às bases ou paralelos às faces laterais.",
+                                    "Registre o número e orientação de cada plano para comparação com soluções padrão."
                                   ]
                                 },
                                 {
@@ -50233,7 +50246,8 @@
             "totalSkills": 379
           }
         ],
-        "totalSkills": 379
+        "totalSkills": 379,
+        "percentage": 0
       }
     ]
   }

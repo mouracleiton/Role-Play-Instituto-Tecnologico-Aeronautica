@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-73",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 345
+      "totalAtomicSkills": 345,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "2025-AT-73",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-73"
     },
     "areas": [
       {
@@ -4890,6 +4896,71 @@
                           "10.1.2.2.5"
                         ]
                       }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.2.2.c1",
+                        "name": "Definição precisa do axioma da simetria da distância",
+                        "description": "Para quaisquer dois pontos distintos A e B no plano euclidiano, a distância d(A, B) é igual a d(B, A), estabelecendo a propriedade fundamental de simetria na noção de distância.",
+                        "specificSkills": [
+                          "Enunciar com precisão o axioma da simetria da distância: d(A,B) = d(B,A) para quaisquer pontos distintos A e B no plano euclidiano.",
+                          "Reconhecer e justificar a simetria da distância em exemplos concretos no plano cartesiano.",
+                          "Utilizar o axioma em demonstrações iniciais de propriedades métricas, como a desigualdade triangular."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.2.c2",
+                        "name": "Significado e notação da função de distância d(A, B)",
+                        "description": "d(A, B) denota o comprimento único e positivo do segmento de reta entre pontos A e B, independente da ordem, essencial para a geometria axiomática.",
+                        "specificSkills": [
+                          "Compreender que d(A, B) representa o comprimento único e positivo do segmento de reta entre os pontos A e B.",
+                          "Reconhecer que d(A, B) = d(B, A), sendo independente da ordem dos pontos.",
+                          "Aplicar a notação d(A, B) em contextos de geometria axiomática para expressar distâncias entre pontos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.2.c3",
+                        "name": "Verificação empírica e aplicação prática da simetria",
+                        "description": "Igualdade demonstrada por cálculos com fórmula euclidiana ou medições em diagramas concretos no plano cartesiano.",
+                        "specificSkills": [
+                          "Calcular distâncias euclidianas para verificar propriedades de simetria em figuras geométricas.",
+                          "Realizar medições diretas em diagramas concretos no plano cartesiano para demonstrar igualdades simétricas.",
+                          "Aplicar verificações empíricas de simetria em contextos práticos, comparando resultados algébricos e geométricos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.2.c4",
+                        "name": "Uso do axioma em argumentos iniciais de demonstrações",
+                        "description": "Invocação para igualar distâncias invertidas, preparando o terreno para propriedades de congruência e igualdades de segmentos.",
+                        "specificSkills": [
+                          "Reconhecer configurações com distâncias invertidas em figuras geométricas",
+                          "Invocar o axioma para estabelecer igualdade entre distâncias invertidas",
+                          "Formular o passo inicial de demonstrações utilizando o axioma",
+                          "Articular a igualdade de segmentos como base para propriedades de congruência"
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.2.c5",
+                        "name": "Integração no sistema axiomático de distância",
+                        "description": "Complementaridade com axiomas de positividade e desigualdade triangular, formando a estrutura de uma métrica simétrica no plano euclidiano.",
+                        "specificSkills": [
+                          "Integrar o axioma de simetria ao sistema axiomático de distância, complementando positividade e desigualdade triangular.",
+                          "Demonstrar que o conjunto de axiomas define uma métrica simétrica no plano euclidiano.",
+                          "Verificar propriedades métricas utilizando os axiomas integrados em exemplos geométricos.",
+                          "Analisar a estrutura axiomática para validar distâncias euclidianas."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.2.c6",
+                        "name": "Violações hipotéticas e implicações em geometrias alternativas",
+                        "description": "Cenários onde d(A, B) ≠ d(B, A) geram inconsistências lógicas e perda de intuição, contrastando com não euclidianas que preservam simetria.",
+                        "specificSkills": [
+                          "Reconhecer violações hipotéticas da simetria métrica d(A,B) = d(B,A)",
+                          "Analisar inconsistências lógicas e perda de intuição geométrica em cenários assimétricos",
+                          "Comparar implicações com geometrias não euclidianas que preservam simetria",
+                          "Avaliar propriedades preservadas em axiomas geométricos alternativos"
+                        ]
+                      }
                     ]
                   },
                   {
@@ -6633,6 +6704,73 @@
                         "difficulty": "intermediate",
                         "status": "not_started",
                         "prerequisites": []
+                      }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.2.4.ic1",
+                        "name": "Raio Geométrico",
+                        "description": "Meia-reta originada em um ponto específico, elemento primitivo essencial para a formação de ângulos na geometria euclidiana axiomática.",
+                        "specificSkills": [
+                          "Reconhecer e identificar o raio geométrico como meia-reta com origem definida em uma figura plana.",
+                          "Definir precisamente a origem e a direção de um raio geométrico.",
+                          "Diferenciar o raio geométrico de segmentos de reta e retas completas.",
+                          "Utilizar raios geométricos na formação e representação de ângulos.",
+                          "Aplicar o conceito de raio nos axiomas básicos da geometria euclidiana para construções geométricas elementares."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.4.ic2",
+                        "name": "Vértice do Ângulo",
+                        "description": "Ponto comum de origem compartilhado por dois raios distintos, definindo a base estrutural de um ângulo.",
+                        "specificSkills": [
+                          "Identificar o vértice como o ponto de interseção comum de dois raios em uma figura geométrica.",
+                          "Representar graficamente o vértice de um ângulo utilizando notação padrão (ex.: ∠ABC, onde B é o vértice).",
+                          "Diferenciar o vértice dos lados (raios) que formam o ângulo em contextos geométricos.",
+                          "Aplicar o conceito de vértice na medição e classificação de ângulos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.4.ic3",
+                        "name": "Ângulo como Par de Raios Distintos",
+                        "description": "Configuração formada por dois raios com o mesmo vértice que não coincidem, pré-requisito para a aplicação do axioma de medida.",
+                        "specificSkills": [
+                          "Identificar um ângulo como par de raios distintos com vértice comum.",
+                          "Diferenciar raios coincidentes de raios distintos no contexto de ângulos.",
+                          "Reconhecer essa configuração como pré-requisito para o axioma de medida de ângulos.",
+                          "Representar graficamente um ângulo utilizando dois raios não coincidentes."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.4.ic4",
+                        "name": "Medida Angular como Número Real Positivo",
+                        "description": "Valor numérico associado a um ângulo, garantido pelo axioma como maior que zero, refletindo separação angular não degenerada.",
+                        "specificSkills": [
+                          "Reconhecer a medida angular como um número real positivo maior que zero, conforme axioma.",
+                          "Justificar a positividade da medida angular para ângulos não degenerados.",
+                          "Associar o valor numérico da medida angular à separação angular efetiva entre semirretas."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.4.ic5",
+                        "name": "Limite Superior da Medida (π radianos)",
+                        "description": "Teto máximo da medida de um ângulo simples, correspondente ao ângulo raso, assegurando ordenação e continuidade no intervalo (0, π].",
+                        "specificSkills": [
+                          "Identificar π radianos como o limite superior da medida de um ângulo simples, correspondente ao ângulo raso.",
+                          "Aplicar o intervalo (0, π] para ordenar e representar medidas de ângulos simples com continuidade.",
+                          "Reconhecer a relevância do limite superior na padronização de medidas angulares em contextos trigonométricos."
+                        ]
+                      },
+                      {
+                        "id": "10.1.2.4.ic6",
+                        "name": "Dependências Axiomáticas (Incidência, Ordem e Continuidade)",
+                        "description": "Axiomas prévios que definem pontos em raios, posições relativas e completude do plano, necessários para a existência da medida angular.",
+                        "specificSkills": [
+                          "Compreender os axiomas de incidência que definem pontos em raios.",
+                          "Aplicar os axiomas de ordem para determinar posições relativas de pontos no plano.",
+                          "Explicar o axioma de continuidade e a completude do plano euclidiano.",
+                          "Reconhecer a dependência axiomática desses elementos para a existência da medida angular."
+                        ]
                       }
                     ]
                   },
@@ -44531,7 +44669,8 @@
             "totalSkills": 345
           }
         ],
-        "totalSkills": 345
+        "totalSkills": 345,
+        "percentage": 0
       }
     ]
   }

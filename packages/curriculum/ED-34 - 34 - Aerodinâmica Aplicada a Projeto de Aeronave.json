@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-34",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 370
+      "totalAtomicSkills": 370,
+      "startDate": "2025-01-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "ED-34",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-34"
     },
     "areas": [
       {
@@ -2342,6 +2348,27 @@
                                     "Plote curva de potência requerida vs disponível usando CD da polar.",
                                     "Valide com equação: ROC = (P_avail - P_req) / W.",
                                     "verification\": "
+                                  ],
+                                  "verification": "Calcule o teto operacional e verifique se ROC = 0 (P_avail = P_req) na altitude determinada. Compare com valores típicos de aeronaves semelhantes.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Gráfico da polar (CD vs CL)",
+                                    "Dados de potência disponível (thrust/potência vs altitude)",
+                                    "Tabelas ou calculadora ISA (pressão, temperatura, densidade)",
+                                    "Planilha ou software para plotagem (ex: Excel, MATLAB)"
+                                  ],
+                                  "tips": [
+                                    "Use L/D_max para estimativa inicial rápida.",
+                                    "Interpolação gráfica é precisa para encontrar o cruzamento exato.",
+                                    "Considere lapse rate do motor (potência diminui com altitude).",
+                                    "Unidades: converta para consistência (ex: potência em HP, peso em lb)"
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de calcular o teto operacional de uma aeronave utilizando a polar, curvas de potência disponível/requerida e modelo ISA, validando com a equação de taxa de subida.",
+                                  "commonMistakes": [
+                                    "Esquecer a variação de densidade e temperatura no cálculo de P_req e P_avail.",
+                                    "Confundir teto de serviço (service ceiling) com teto absoluto.",
+                                    "Usar thrust em vez de potência (para hélices, use potência).",
+                                    "Não plotar as curvas para visualização gráfica do cruzamento."
                                   ]
                                 },
                                 "estimatedTime\": \"40 minutos\the",
@@ -2351,7 +2378,32 @@
                                 "commonMistakes\": \"Ignorar perda de potência do motor em altitude.\n"
                               ],
                               "stepNumber\": 4,4th step\": \"Estimar Alcance Usando Equações de Breguet\", \"subSteps\": [ \"Aplique range Breguet: R = (V / SFC) * (L/D) * ln(W_init / W_final), usando L/D da polar em cruzeiro.\", \"Estime SFC (specific fuel consumption) do motor.\", \"Calcule pesos inicial e final considerando combustível.\", \"Integre efeitos de arrasto variável se polar disponível.\", \"Compare com alcance máximo teórico.\n": "#verification\": \"Range calculado dentro de 10% de valor publicado para aeronave similar.\",",
-                              "\"estimatedTime\": \"50 minutes\", \"materials\": \"Dados de combustível e motor, calculadora avançada ou Python/MATLAB\", \"tips\": \"Use L/D médio para cruzeiro longo, não instantâneo.\", \"learningObjective\": \"Conectar polar diretamente à autonomia da aeronave.\", \"commonMistakes\": \"Usar L/D errado (ex: max em vez de cruzeiro típico).\"    },    {      \"stepNumber\": 5,      \"title\": \"Validar e Interpretar Resultados Integrados\",      \"subSteps\": [        \"Compare V_cruise, teto e range com especificações reais de aeronave (ex: Cessna 172).\",        \"Analise sensibilidade: como variações em CD afetam performance.\",        \"Discuta limitações da polar (2D, incompressível).\",        \"Gere relatório com gráficos e tabelas.\",        \"Proponha otimizações baseadas na polar.\"      ],      \"verification\": \"Relatório coerente com todas métricas validadas contra referências.\",      \"estimatedTime\": \"35 minutos\",      \"materials\": \"Referências de aeronaves (Jane's ou FAA), software de plotagem.\",      \"tips\": \"Sempre cite fontes para validação.\",      \"learningObjective\": \"Integrar cálculos em análise de performance completa.\",      \"commonMistakes\": \"Sobreestimar performance ignorando fatores como propelidor efficiency.\"    }  ],  \"practicalExample\": \"Para um Cessna 172 com polar CD = 0.02 + 0.08*CL^2, W=1110 kg, S=16.2 m²: L/D_max=11.5 em CL=0.55. V_cruise~110 kts a 8000ft, teto~14,000ft, range~600nm com Breguet (SFC=0.5 lb/hp-hr).\",  \"finalVerifications\": [    \"L/D máximo corretamente extraído da polar.\",    \"Velocidade de cruzeiro calculada com erro <5%.\",    \"Teto operacional alinhado com potência disponível.\",    \"Range Breguet consistente com pesos e SFC.\",    \"Análise de sensibilidade realizada.\",    \"Relatório com gráficos incluídos.\"  ],  \"assessmentCriteria\": [    \"Precisão numérica nos cálculos (90%+ correto).\",    \"Compreensão conceitual da relação polar-desempenho.\",    \"Uso correto de equações de Breguet e ISA.\",    \"Qualidade dos gráficos e tabelas.\",    \"Identificação de limitações e otimizações.\",    \"Clareza na interpretação prática.\"  ],  \"crossCurricularConnections\": [    \"Matemática: Otimização e cálculo diferencial para L/D max.\",    \"Física: Dinâmica de fluidos e conservação de energia.\",    \"Engenharia de Propulsão: Matching thrust com drag.\",    \"Gestão de Projetos: Análise de trade-offs em design.\",    \"Computação: Simulações numéricas da polar.\"  ],  \"realWorldApplication\": \"Engenheiros aeronáuticos usam isso no design preliminar para prever performance de novas aeronaves, otimizando asas para missões específicas como transporte ou reconnaissance, reduzindo custos de testes em túnel de vento.\"}": "#/schema"
+                              "\"estimatedTime\": \"50 minutes\", \"materials\": \"Dados de combustível e motor, calculadora avançada ou Python/MATLAB\", \"tips\": \"Use L/D médio para cruzeiro longo, não instantâneo.\", \"learningObjective\": \"Conectar polar diretamente à autonomia da aeronave.\", \"commonMistakes\": \"Usar L/D errado (ex: max em vez de cruzeiro típico).\"    },    {      \"stepNumber\": 5,      \"title\": \"Validar e Interpretar Resultados Integrados\",      \"subSteps\": [        \"Compare V_cruise, teto e range com especificações reais de aeronave (ex: Cessna 172).\",        \"Analise sensibilidade: como variações em CD afetam performance.\",        \"Discuta limitações da polar (2D, incompressível).\",        \"Gere relatório com gráficos e tabelas.\",        \"Proponha otimizações baseadas na polar.\"      ],      \"verification\": \"Relatório coerente com todas métricas validadas contra referências.\",      \"estimatedTime\": \"35 minutos\",      \"materials\": \"Referências de aeronaves (Jane's ou FAA), software de plotagem.\",      \"tips\": \"Sempre cite fontes para validação.\",      \"learningObjective\": \"Integrar cálculos em análise de performance completa.\",      \"commonMistakes\": \"Sobreestimar performance ignorando fatores como propelidor efficiency.\"    }  ],  \"practicalExample\": \"Para um Cessna 172 com polar CD = 0.02 + 0.08*CL^2, W=1110 kg, S=16.2 m²: L/D_max=11.5 em CL=0.55. V_cruise~110 kts a 8000ft, teto~14,000ft, range~600nm com Breguet (SFC=0.5 lb/hp-hr).\",  \"finalVerifications\": [    \"L/D máximo corretamente extraído da polar.\",    \"Velocidade de cruzeiro calculada com erro <5%.\",    \"Teto operacional alinhado com potência disponível.\",    \"Range Breguet consistente com pesos e SFC.\",    \"Análise de sensibilidade realizada.\",    \"Relatório com gráficos incluídos.\"  ],  \"assessmentCriteria\": [    \"Precisão numérica nos cálculos (90%+ correto).\",    \"Compreensão conceitual da relação polar-desempenho.\",    \"Uso correto de equações de Breguet e ISA.\",    \"Qualidade dos gráficos e tabelas.\",    \"Identificação de limitações e otimizações.\",    \"Clareza na interpretação prática.\"  ],  \"crossCurricularConnections\": [    \"Matemática: Otimização e cálculo diferencial para L/D max.\",    \"Física: Dinâmica de fluidos e conservação de energia.\",    \"Engenharia de Propulsão: Matching thrust com drag.\",    \"Gestão de Projetos: Análise de trade-offs em design.\",    \"Computação: Simulações numéricas da polar.\"  ],  \"realWorldApplication\": \"Engenheiros aeronáuticos usam isso no design preliminar para prever performance de novas aeronaves, otimizando asas para missões específicas como transporte ou reconnaissance, reduzindo custos de testes em túnel de vento.\"}": "#/schema",
+                              "practicalExample": "Para um Cessna 172 com polar CD = 0.02 + 0.08*CL^2, W=1110 kg, S=16.2 m²: L/D_max=11.5 em CL=0.55. V_cruise~110 kts a 8000ft, teto~14,000ft, range~600nm com Breguet (SFC=0.5 lb/hp-hr).",
+                              "finalVerifications": [
+                                "L/D máximo corretamente extraído da polar.",
+                                "Velocidade de cruzeiro calculada com erro <5%.",
+                                "Teto operacional alinhado com potência disponível.",
+                                "Range Breguet consistente com pesos e SFC.",
+                                "Análise de sensibilidade realizada.",
+                                "Relatório com gráficos incluídos."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão numérica nos cálculos (90%+ correto).",
+                                "Compreensão conceitual da relação polar-desempenho.",
+                                "Uso correto de equações de Breguet e ISA.",
+                                "Qualidade dos gráficos e tabelas.",
+                                "Identificação de limitações e otimizações.",
+                                "Clareza na interpretação prática."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Otimização e cálculo diferencial para L/D max.",
+                                "Física: Dinâmica de fluidos e conservação de energia.",
+                                "Engenharia de Propulsão: Matching thrust com drag.",
+                                "Gestão de Projetos: Análise de trade-offs em design.",
+                                "Computação: Simulações numéricas da polar."
+                              ],
+                              "realWorldApplication": "Engenheiros aeronáuticos usam isso no design preliminar para prever performance de novas aeronaves, otimizando asas para missões específicas como transporte ou reconnaissance, reduzindo custos de testes em túnel de vento."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -21002,7 +21054,14 @@
                                   "estimatedTime": "15-25 minutos",
                                   "materials": "Gráficos gerados, calculadora ou script para máximo.",
                                   "learningObjective": "Interpretar curvas polares para otimização de performance.",
-                                  "commonMistakes": "Confundir máximo L/D global com local em alto AoA."
+                                  "commonMistakes": "Confundir máximo L/D global com local em alto AoA.",
+                                  "tips": [
+                                    "Foque exclusivamente na região de alto AoA (próximo ao stall, tipicamente >12°), ignorando picos em baixo AoA.",
+                                    "Use zoom no gráfico para precisão; interpole se necessário para valores exatos de AoA, CL e CD.",
+                                    "Para inclinação da polar, aplique derivada numérica: dCL/dCD ≈ ΔCL/ΔCD entre pontos vizinhos ao stall.",
+                                    "Valide com XFOIL simulando Reynolds e Mach idênticos aos experimentais.",
+                                    "Registre incertezas (ex: resolução de dados) e comportamentos pós-stall no relatório."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Usando dados de túnel de vento de uma asa NACA 0012 em AoA de 14°-18°: L=120N, D=45N, V=30m/s, S=0.25m², ρ=1.225kg/m³. Calcule CL≈1.2, CD≈0.15, L/D≈8 no stall; plote polar mostrando máximo L/D=8.2 em 16° AoA.",
@@ -48831,7 +48890,8 @@
                                   "materials": "CAD software (SolidWorks/FreeCAD), planilhas Excel ou Python (NumPy)",
                                   "tips": "Padronize unidades SI para evitar erros de conversão",
                                   "learningObjective": "Modelar precisamente a geometria para cálculos confiáveis",
-                                  "commonMistakes": "Erro em cálculo de área molhada ou volume de cauda"
+                                  "commonMistakes": "Erro em cálculo de área molhada ou volume de cauda",
+                                  "verification": "Lista de parâmetros em tabela com unidades e valores nominais"
                                 },
                                 {
                                   "stepNumber": 3,
@@ -48925,7 +48985,8 @@
             "totalSkills": 370
           }
         ],
-        "totalSkills": 370
+        "totalSkills": 370,
+        "percentage": 0
       }
     ]
   }

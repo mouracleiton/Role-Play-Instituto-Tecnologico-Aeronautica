@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-62",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 243
+      "totalAtomicSkills": 243,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-62"
     },
     "areas": [
       {
@@ -30059,9 +30065,73 @@
                                     "Estatística Básica (análise de dados de impacto)",
                                     "Ética em Tecnologia (equidade social)"
                                   ],
-                                  "realWorldApplication": "Em startups sociais como a Akatu (Brasil), objetivos SMART guiaram campanhas que impactaram 1M+ pessoas em consumo consciente; usado em ODS da ONU para metas globais mensuráveis, como erradicação da pobreza até 2030."
+                                  "realWorldApplication": "Em startups sociais como a Akatu (Brasil), objetivos SMART guiaram campanhas que impactaram 1M+ pessoas em consumo consciente; usado em ODS da ONU para metas globais mensuráveis, como erradicação da pobreza até 2030.",
+                                  "stepNumber": 3,
+                                  "title": "Elaboração de Objetivo SMART para Projetos Sociais",
+                                  "subSteps": [
+                                    "Definir quem, o quê e onde (especificidade)",
+                                    "Estabelecer métricas quantitativas claras (números/%)",
+                                    "Avaliar recursos e viabilidade (equipe/orçamento)",
+                                    "Alinhar com impacto social e estudos de caso (evidências)",
+                                    "Definir prazo e milestones (temporalidade)",
+                                    "Redigir objetivo de forma concisa (versão final)"
+                                  ],
+                                  "verification": "Verificação contra os critérios SMART, alinhamento com evidências de casos reais e validação de métricas de impacto social",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Template SMART",
+                                    "Casos de estudo (ex: Food Rescue US, Akatu)",
+                                    "Ferramentas de planejamento (ex: Gantt)",
+                                    "Guia de métricas de impacto social (SROI)",
+                                    "Artigos sobre ODS da ONU"
+                                  ],
+                                  "tips": [
+                                    "Use números específicos baseados em dados reais",
+                                    "Valide a viabilidade com a equipe antes de definir metas",
+                                    "Inclua referências a estudos de caso para justificar impacto",
+                                    "Mantenha a frase final concisa e focada",
+                                    "Utilize ferramentas de design thinking para empatia com usuários"
+                                  ],
+                                  "learningObjective": "O aluno será capaz de desenvolver objetivos SMART para projetos sociais, integrando métricas quantitativas, viabilidade operacional e alinhamento com impacto social, usando evidências de estudos de caso reais.",
+                                  "commonMistakes": [
+                                    "Objetivo muito vago sem especificação de quem/onde",
+                                    "Falta de métricas quantitativas claras",
+                                    "Subestimação de recursos humanos ou orçamentários",
+                                    "Desconexão entre objetivo e impacto social real",
+                                    "Prazos irrealistas sem milestones definidos",
+                                    "Não referência de estudos de caso para validade do impacto"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Projeto: Sistema de monitoramento ambiental por satélite para comunidades ribeirinhas. Objetivo SMART: Até 31/12/2025, desenvolver e implantar módulo de análise de desmatamento no plataforma 'Guardiões da Floresta' que atenda 15 comunidades no Amazonas, detectando 95% dos eventos de corte ilegal reportados (baseado em caso 'Global Forest Watch'), alcançável com parceria com INPE, equipe de 5 cientistas de dados e orçamento de R$120k, relevante para ODS 15 (Vida Terrestre).",
+                              "finalVerifications": [
+                                "Objetivo é específico: identifica claramente quem são os beneficiários, qual a solução tecnológica, onde será implementado e qual ação será executada?",
+                                "Inclui métricas quantitativas claras (números, porcentagens, níveis de precisão) para todos os aspectos do objetivo?",
+                                "Demonstra alcançabilidade através de análise de recursos (pessoal, orçamentário, tempo) e comparação com casos de referência?",
+                                "Possui alinhamento explícito com impactos sociais maiores (ODS, direitos humanos) e é sustentado por evidências de estudos de caso?",
+                                "Define prazos finais e marcos intermediários (milestones) realistas e mensuráveis?",
+                                "Incorpora métricas de impacto social validadas por estudos de referência (ex.: taxa de conscientização, redução de riscos)?",
+                                "A versão final do objetivo é concisa, inspiradora e cabe em uma única frase clara?"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e clareza da definição do problema social e público-alvo (1-5)",
+                                "Qualidade e especificidade das métricas quantitativas adotadas (1-5)",
+                                "Análise crítica da alcançabilidade baseada em recursos e benchmarks (1-5)",
+                                "Profundidade do alinhamento com impactos sociais globais e evidências de casos reais (1-5)",
+                                "Estrutura temporal robusta com milestones verificáveis (1-5)",
+                                "Capacidade de motivar equipes e guiar implementação prática (1-5)",
+                                "Integração de lições de estudos de caso de inovação social (1-5)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Análise de Dados (processamento de métricas de impacto social)",
+                                "Gestão de Inovação (metodologias de desenvolvimento ágil para projetos sociais)",
+                                "Ética Aplicada à Tecnologia (equidade de acesso e privacidade em soluções digitais)",
+                                "Políticas Públicas (alinhamento com metas de ODS e agendas governamentais)",
+                                "Design de Interfaces (usabilidade centrada no usuário para populações vulneráveis)",
+                                "Finanças Corporativas (gestão de orçamento e recursos em projetos sem fins lucrativos)",
+                                "Ciência de Dados Ambientais (análise de satélites e sensores para monitoramento)"
+                              ],
+                              "realWorldApplication": "Em projetos como o 'MapBiomas' (Brasil), objetivos SMART guiaram o mapeamento de 90% da cobertura florestal brasileira, impactando políticas públicas de 12 estados; na iniciativa 'Akshay Urja' (Índia), metas SMART para energia solar comunitária geraram 500.000 kWh/dia em áreas rurais, seguindo metodologia validada pelo Banco Mundial; atualmente, o programa 'Escola do Futuro' da UNESCO usa estrutura SMART para escalar soluções educacionais em 45 países, com aumento documentado de 40% na retenção estudantil."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "beginner",
@@ -32842,7 +32912,8 @@
             "totalSkills": 243
           }
         ],
-        "totalSkills": 243
+        "totalSkills": 243,
+        "percentage": 100
       }
     ]
   }

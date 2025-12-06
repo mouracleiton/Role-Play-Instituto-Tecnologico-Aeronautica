@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PP-31",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 277
+      "totalAtomicSkills": 277,
+      "startDate": "2025-02-10",
+      "duration": "5 anos",
+      "dailyStudyHours": 10,
+      "version": "PP-31",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PP-31"
     },
     "areas": [
       {
@@ -30395,7 +30401,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Considere uma viga-coluna aeronáutica de alumínio (E=70 GPa, G=27 GPa) com L=1.5 m, seção retangular 0.05x0.1 m (I_y=8.33e-7 m^4, J=1.04e-7 m^4), sujeita a P=100 kN axial e torção basal M_t=5 kNm. Usando uma função sin(πx/L) para v e (x/L)(1-x/L) para θ, derive P_cr ≈ 250 kN, modo misto flexo-torção."
+                                  "practicalExample": "Considere uma viga-coluna aeronáutica de alumínio (E=70 GPa, G=27 GPa) com L=1.5 m, seção retangular 0.05x0.1 m (I_y=8.33e-7 m^4, J=1.04e-7 m^4), sujeita a P=100 kN axial e torção basal M_t=5 kNm. Usando uma função sin(πx/L) para v e (x/L)(1-x/L) para θ, derive P_cr ≈ 250 kN, modo misto flexo-torção.",
+                                  "stepNumber": 31,
+                                  "title": "Derivação da Carga Crítica de Flambagem Mista Flexo-Torsional",
+                                  "subSteps": [
+                                    "1. Identifique os parâmetros da viga-coluna: E=70 GPa, G=27 GPa, L=1.5 m, seção 0.05x0.1 m (I_y=8.33e-7 m⁴, J=1.04e-7 m⁴), P=100 kN, M_t=5 kNm.",
+                                    "2. Adote funções de aproximação: v(x) = A sin(πx/L), θ(x) = B (x/L)(1 - x/L).",
+                                    "3. Calcule a energia de deformação elástica U = (1/2) ∫ (EI_y v''² + GJ θ'²) dx.",
+                                    "4. Calcule o trabalho das cargas V = - (1/2) ∫ P (v'² + r² θ'²) dx - ∫ M_t θ dx (onde r² = I_y/A, A=0.005 m²).",
+                                    "5. Aplique Rayleigh-Ritz: d( U + V )/dA = 0 e d( U + V )/dB = 0 para resolver o sistema e obter P_cr ≈ 250 kN."
+                                  ],
+                                  "verification": "Confirme que a carga crítica obtida é P_cr ≈ 250 kN para o modo misto flexo-torsional.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Papel sulfite e caneta",
+                                    "Tabela de propriedades do alumínio (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Mantenha unidades consistentes (N, m, Pa).",
+                                    "Verifique os momentos de inércia: I_y = (0.1)(0.05)^3 / 12 = 8.33×10^{-7} m⁴; J ≈ 0.141(0.05)^4 = 1.04×10^{-7} m⁴.",
+                                    "Use r² = I_y / A para o raio de giração torsional.",
+                                    "Integre analiticamente as funções seno e polinomial para precisão."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de aplicar o método de Rayleigh-Ritz para derivar a carga crítica de flambagem mista flexo-torsional em viga-coluna aeronáutica, considerando acoplamento entre flexão e torção.",
+                                  "commonMistakes": [
+                                    "Esquecer o termo de acoplamento P θ'² na energia geométrica.",
+                                    "Usar função inadequada para θ(x), como seno em vez de polinômio para apoio bipartido.",
+                                    "Confundir módulos E e G ou unidades de torque (kNm vs Nm).",
+                                    "Erro no cálculo da área A ou r², levando a P_cr incorreta."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -30404,6 +30439,43 @@
                                     "Carga crítica estimada converge com mais funções de forma.",
                                     "Modo de flambagem ilustrado graficamente.",
                                     "Erro vs solução exata <10%."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Verificações Finais na Análise de Flambagem por Flexo-Torção",
+                                  "subSteps": [
+                                    "Formule a expressão completa do potencial de energia total Π incluindo termos de flexão e torção.",
+                                    "Aplique o princípio variacional δΠ = 0 para derivar a equação característica.",
+                                    "Resolva a equação para determinar a carga crítica λ_cr.",
+                                    "Aumente o número de funções de forma e verifique a convergência de λ_cr.",
+                                    "Plote o modo de flambagem deformado.",
+                                    "Compare o resultado com a solução exata e calcule o erro percentual."
+                                  ],
+                                  "verification": [
+                                    "Expressão de Π correta com todos termos de flexo-torção.",
+                                    "Condições δΠ=0 levam a equação característica válida.",
+                                    "Carga crítica estimada converge com mais funções de forma.",
+                                    "Modo de flambagem ilustrado graficamente.",
+                                    "Erro vs solução exata <10%."
+                                  ],
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Software de cálculo simbólico/numerico (ex: MATLAB, Python com SymPy/NumPy)",
+                                    "Papel e lápis para derivações iniciais",
+                                    "Referência com solução exata para coluna de perfis abertos"
+                                  ],
+                                  "tips": [
+                                    "Use funções de forma trigonométricas ou polinomiais admissíveis para melhor convergência.",
+                                    "Normalize as funções de forma para evitar ill-conditioning na matriz de rigidez.",
+                                    "Plote múltiplos modos se a matriz for de ordem superior.",
+                                    "Verifique unidades consistentes em momentos de inércia e módulo de cisalhamento."
+                                  ],
+                                  "learningObjective": "Validar a aplicação do método de Rayleigh-Ritz na determinação precisa da carga crítica de flambagem flexo-torção, avaliando convergência e precisão.",
+                                  "commonMistakes": [
+                                    "Omissão de termos de energia de torção de deformação de cisalhamento.",
+                                    "Inversão incorreta da matriz de rigidez geométrica.",
+                                    "Funções de forma não satisfazendo condições de contorno essenciais.",
+                                    "Erro na linearização da expressão de Π para pequenas deformações.",
+                                    "Comparação inadequada com solução exata sem normalização do modo."
                                   ]
                                 },
                                 {
@@ -30413,6 +30485,37 @@
                                     "Implementação numérica e resolução de autovalores (20%)",
                                     "Validação e análise de sensibilidade (15%)",
                                     "Clareza na documentação e gráficos (10%)"
+                                  ],
+                                  "stepNumber": 31,
+                                  "title": "Projeto Prático: Método Variacional Numérico para Autovalores",
+                                  "subSteps": [
+                                    "1. Formular a funcional de energia Π para um problema modelo (ex: oscilador harmônico quântico ou átomo de hidrogênio).",
+                                    "2. Derivar as equações de minimização variacional e condições de ortogonalidade.",
+                                    "3. Implementar numericamente a expansão em base trial e resolução dos autovalores via diagonalização ou otimização.",
+                                    "4. Realizar validação comparando com autovalores exatos conhecidos.",
+                                    "5. Executar análise de sensibilidade variando parâmetros como número de funções base.",
+                                    "6. Produzir documentação completa com código fonte, resultados e gráficos de convergência."
+                                  ],
+                                  "verification": "Autovalores estimados com erro relativo < 5% em relação aos exatos; gráficos mostram convergência clara; documentação permite reprodução independente do experimento.",
+                                  "estimatedTime": "8-10 horas",
+                                  "materials": [
+                                    "Computador com Python (bibliotecas NumPy, SciPy, Matplotlib)",
+                                    "Ambiente Jupyter Notebook",
+                                    "Referências teóricas: livros de Mecânica Quântica (ex: Griffiths)"
+                                  ],
+                                  "tips": [
+                                    "Use funções trial gaussianas ou polinomiais para problemas harmônicos.",
+                                    "Implemente diagonalização da matriz Hamiltoniana na base trial para eficiência.",
+                                    "Monitore a convergência plotando energia vs. número de funções base.",
+                                    "Normalise todas as funções trial para evitar erros de escala."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de formular, implementar numericamente e validar o método variacional para estimativa de autovalores em problemas quânticos, analisando sua precisão e sensibilidade.",
+                                  "commonMistakes": [
+                                    "Formulação incorreta da funcional Π, confundindo <H> com <T> + <V>.",
+                                    "Falha em impor ortogonalidade entre funções trial, levando a resultados espúrios.",
+                                    "Integração numérica imprecisa em matrizes de overlap e Hamiltoniana.",
+                                    "Ausência de normalização, causando autovalores inflados.",
+                                    "Gráficos sem legendas ou escalas inadequadas, prejudicando a análise."
                                   ]
                                 },
                                 {
@@ -30422,12 +30525,92 @@
                                     "Computação: Programação numérica (MATLAB/Python) e FEM.",
                                     "Engenharia Mecânica: Análise de flambagem em tubulações.",
                                     "Materiais: Propriedades anisotrópicas em compósitos aeronáuticos."
+                                  ],
+                                  "stepNumber": 31,
+                                  "title": "Conexões Curriculares Transversais no PP-31",
+                                  "subSteps": [
+                                    "1. Revise os conceitos de cálculo variacional e autovalores em Matemática e relacione com formulações de elementos finitos.",
+                                    "2. Estude mecânica dos sólidos e teoria da elasticidade em Física, aplicando a problemas estruturais.",
+                                    "3. Pratique programação numérica em MATLAB/Python para implementação de métodos FEM.",
+                                    "4. Analise casos de flambagem em tubulações da Engenharia Mecânica.",
+                                    "5. Explore propriedades anisotrópicas de materiais compósitos aeronáuticos."
+                                  ],
+                                  "verification": "Descreva uma aplicação prática de cada conexão listada e justifique sua relevância para o PP-31. Submeta um relatório curto com exemplos.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025",
+                                    "Livro: 'Mecânica dos Sólidos' (Timoshenko)",
+                                    "Software: MATLAB ou Python (biblioteca FEniCS)",
+                                    "Artigos sobre FEM em compósitos aeronáuticos"
+                                  ],
+                                  "tips": [
+                                    "Busque exemplos reais de projetos aeronáuticos do ITA para ilustrar as conexões.",
+                                    "Use diagramas para visualizar relações entre disciplinas.",
+                                    "Integre código numérico simples para validar conceitos teóricos."
+                                  ],
+                                  "learningObjective": "Identificar e aplicar conexões interdisciplinares entre PP-31 (Análise de Elementos Finitos) e disciplinas correlatas, fomentando visão integrada do currículo de Engenharia Aeronáutica.",
+                                  "commonMistakes": [
+                                    "Subestimar o papel da programação numérica, tratando FEM apenas como teoria.",
+                                    "Confundir propriedades isotrópicas com anisotrópicas em materiais compósitos.",
+                                    "Ignorar flambagem como instabilidade crítica em análises estruturais."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em projetos de asas e fuselagem de aeronaves, estima cargas críticas de buckling em painéis sob compressão axial combinada com torques aerodinâmicos, otimizando peso e segurança sem simulações FEM completas durante pré-design."
+                                  "realWorldApplication": "Em projetos de asas e fuselagem de aeronaves, estima cargas críticas de buckling em painéis sob compressão axial combinada com torques aerodinâmicos, otimizando peso e segurança sem simulações FEM completas durante pré-design.",
+                                  "stepNumber": "4.2",
+                                  "title": "Estimação de Cargas Críticas de Buckling em Painéis sob Compressão Axial e Torque",
+                                  "subSteps": [
+                                    "1. Identifique os parâmetros geométricos do painel (dimensões a, b, espessura t) e condições de contorno.",
+                                    "2. Determine as cargas atuantes: compressão axial N_x e torque aerodinâmico T.",
+                                    "3. Aplique a fórmula empírica para carga crítica de buckling combinada: N_cr = k * (π² D / b²) ajustada por fator de torque.",
+                                    "4. Calcule o fator de segurança e verifique contra critérios de projeto aeronáutico (ex: FAR 25).",
+                                    "5. Compare com resultados analíticos simples para validação pré-design."
+                                  ],
+                                  "verification": "Calcule N_cr para um painel de 1m x 0.5m, t=2mm, alumínio (E=70GPa, ν=0.33), N_x=100kN/m, T=5kNm. Resposta esperada: N_cr ≈ 150kN/m (com FS>1.5).",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Tabelas de coeficientes de buckling (NASA CR-1453 ou similar)",
+                                    "Fórmulas de rigidez flexural D = E t³ / (12(1-ν²))",
+                                    "Calculadora ou software de planilhas (Excel)",
+                                    "Exemplo de dados de painéis de asas (Catálogo ITA)"
+                                  ],
+                                  "tips": [
+                                    "Use aproximações de placa simplesmente apoiada para pré-design rápido.",
+                                    "Inclua redução de rigidez devido a furos ou suportes reais (+10-20%).",
+                                    "Valide com curvas de buckling interativo (Bruhn, Análise e Design de Estruturas Aeronáuticas)."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de estimar cargas críticas de buckling em painéis de fuselagem e asas sob compressão axial combinada com torques, aplicando métodos analíticos simplificados para otimização em fase de pré-projeto.",
+                                  "commonMistakes": [
+                                    "Esquecer o efeito de cisalhamento torsional no modo de buckling assimétrico.",
+                                    "Usar fórmulas de placa uniaxial sem correção para torque (subestima N_cr em até 30%).",
+                                    "Ignorar propriedades anisotrópicas de compósitos em painéis modernos.",
+                                    "Não aplicar fatores de segurança aeronáuticos (tipicamente 1.5-2.0)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Considere uma viga-coluna aeronáutica de alumínio (E=70 GPa, G=27 GPa) com L=1.5 m, seção retangular 0.05x0.1 m (I_y=8.33e-7 m^4, J=1.04e-7 m^4), sujeita a P=100 kN axial e torção basal M_t=5 kNm. Usando uma função sin(πx/L) para v e (x/L)(1-x/L) para θ, derive P_cr ≈ 250 kN, modo misto flexo-torção.",
+                              "finalVerifications": [
+                                "Expressão de Π correta com todos termos de flexo-torção.",
+                                "Condições δΠ=0 levam a equação característica válida.",
+                                "Carga crítica estimada converge com mais funções de forma.",
+                                "Modo de flambagem ilustrado graficamente.",
+                                "Erro vs solução exata <10%."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão da formulação de Π (30%)",
+                                "Correção na minimização variacional (25%)",
+                                "Implementação numérica e resolução de autovalores (20%)",
+                                "Validação e análise de sensibilidade (15%)",
+                                "Clareza na documentação e gráficos (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo variacional e autovalores matriciais.",
+                                "Física: Mecânica dos sólidos e teoria da elasticidade.",
+                                "Computação: Programação numérica (MATLAB/Python) e FEM.",
+                                "Engenharia Mecânica: Análise de flambagem em tubulações.",
+                                "Materiais: Propriedades anisotrópicas em compósitos aeronáuticos."
+                              ],
+                              "realWorldApplication": "Em projetos de asas e fuselagem de aeronaves, estima cargas críticas de buckling em painéis sob compressão axial combinada com torques aerodinâmicos, otimizando peso e segurança sem simulações FEM completas durante pré-design."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -36304,7 +36487,8 @@
             "totalSkills": 277
           }
         ],
-        "totalSkills": 277
+        "totalSkills": 277,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - DI-49",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 342
+      "totalAtomicSkills": 342,
+      "startDate": "2025-02-17",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025 v1.0",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - DI-49"
     },
     "areas": [
       {
@@ -15306,7 +15312,8 @@
                                     "Usar γf=1,0 para ELU (confunde com ELS)",
                                     "Esquecer ψ para ações secundárias",
                                     "Somar Qk sem majoração seletiva"
-                                  ]
+                                  ],
+                                  "verification": "Calcule Ed para Gk=10 kN/m, Qk1=15 kN/m, Qk2=10 kN/m (ψ2=0,30 para variável impostada). Resposta esperada: 1,40×10 + 1,50×15 + 1,50×0,30×10 = 14 + 22,5 + 4,5 = 41 kN/m."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -45030,7 +45037,8 @@
             "totalSkills": 342
           }
         ],
-        "totalSkills": 342
+        "totalSkills": 342,
+        "percentage": 0
       }
     ]
   }

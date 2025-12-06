@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MT-07",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 261
+      "totalAtomicSkills": 261,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MT-07"
     },
     "areas": [
       {
@@ -10969,7 +10975,13 @@
                                     "Usar η estimada para fechar ciclo de dimensionamento 1D.",
                                     "commonMistakes: ",
                                     "Não iterar após estimativa inicial; subestimar perdas não modeladas."
-                                  ]
+                                  ],
+                                  "verification": "Relatório de 1 página submetido com dimensionamento completo, incluindo iterações de η, gráfico φ-ψ-η e justificativas bibliográficas.",
+                                  "estimatedTime": "3 hours",
+                                  "materials": "Requisitos fictícios de turbobomba (ex., Q=10 m³/s, H=100m, N=3000 rpm); template de relatório.",
+                                  "tips": "Comece com D médio da literatura (ex., 0.5-1m) para convergência rápida nas iterações.",
+                                  "learningObjective": "Integrar estimativa de eficiência (η) no ciclo de dimensionamento preliminar 1D de turbobombas.",
+                                  "commonMistakes": "Não iterar após estimativa inicial de η; ignorar perdas não modeladas em difusores ou volutas."
                                 },
                                 "practicalExample: ",
                                 "Para uma turbobomba de foguete com Q=5 kg/s (ρ=1000), N=20000 rpm, D=0.2m: calcule φ≈0.045, ψ≈1.0; de NASA RP-1170, interpole η≈78%; então P≈ ρ Q g H / η ≈ 1.2 MW.",
@@ -10996,7 +11008,16 @@
                                 "Engenharia de Materiais: Impacto de η em escolha de ligas.",
                                 "Computação: Scripts para automação de curvas."
                               ],
-                              "realWorldApplication": "Em projetos preliminares de turbobombas para foguetes (ex., SpaceX Raptor) ou aviões (GE90), usa-se essas curvas para trade-offs rápidos de tamanho/potência antes de CFD 3D, reduzindo tempo de design em 80%."
+                              "realWorldApplication": "Em projetos preliminares de turbobombas para foguetes (ex., SpaceX Raptor) ou aviões (GE90), usa-se essas curvas para trade-offs rápidos de tamanho/potência antes de CFD 3D, reduzindo tempo de design em 80%.",
+                              "practicalExample": "Para uma turbobomba de foguete com Q=5 kg/s (ρ=1000), N=20000 rpm, D=0.2m: calcule φ≈0.045, ψ≈1.0; de NASA RP-1170, interpole η≈78%; então P≈ ρ Q g H / η ≈ 1.2 MW.",
+                              "finalVerifications": [
+                                "Cálculo de φ e ψ correto dentro de 1%.",
+                                "η estimada bate com curva bibliográfica (±3%).",
+                                "Potência predita converge em <3 iterações.",
+                                "Gráfico φ-ψ-η inclui fonte e legenda.",
+                                "Relatório cita Moutapha/NASA explicitamente.",
+                                "Sensibilidade a ±10% em φ varia η <5%."
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -34739,7 +34760,8 @@
             "totalSkills": 261
           }
         ],
-        "totalSkills": 261
+        "totalSkills": 261,
+        "percentage": 0
       }
     ]
   }

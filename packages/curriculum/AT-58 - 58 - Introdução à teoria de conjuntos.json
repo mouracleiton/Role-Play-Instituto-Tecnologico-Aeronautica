@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-58",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 269
+      "totalAtomicSkills": 269,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 6,
+      "version": "AT-58",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-58"
     },
     "areas": [
       {
@@ -7903,7 +7909,13 @@
                                 "Economia: Cálculos fracionários em juros compostos sem divisores de zero.",
                                 "Filosofia: Discussão sobre completude vs. densidade em axiomas numéricos."
                               ],
-                              "realWorldApplication": "Em finanças, calcular divisões exatas de investimentos (ex: dividir $100 em frações racionais entre 0.4 e 0.6 como 11/25=0.44), garantindo operações precisas sem 'divisores de zero' que invalidariam contas, e densidade para ajustes finos em portfólios."
+                              "realWorldApplication": "Em finanças, calcular divisões exatas de investimentos (ex: dividir $100 em frações racionais entre 0.4 e 0.6 como 11/25=0.44), garantindo operações precisas sem 'divisores de zero' que invalidariam contas, e densidade para ajustes finos em portfólios.",
+                              "crossCurricularConnections": [
+                                "Física: Medidas precisas em experimentos (densidade para aproximações racionais).",
+                                "Programação: Implementar comparação racional em código sem floats (evitar erros de precisão).",
+                                "Economia: Cálculos fracionários em juros compostos sem divisores de zero.",
+                                "Filosofia: Discussão sobre completude vs. densidade em axiomas numéricos."
+                              ]
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -11008,9 +11020,59 @@
                                     "Ciência da Computação: Espaço de funções em aprendizado de máquina (ex: funções de ativação).",
                                     "Filosofia: Relações funcionais em ontologia e causalidade."
                                   ],
-                                  "realWorldApplication": "Em ciência da computação, B^A representa o conjunto de todas transformações possíveis de dados de entrada A para saídas B, como em algoritmos de roteamento de redes ou modelos de ML onde funções definem predições."
+                                  "realWorldApplication": "Em ciência da computação, B^A representa o conjunto de todas transformações possíveis de dados de entrada A para saídas B, como em algoritmos de roteamento de redes ou modelos de ML onde funções definem predições.",
+                                  "stepNumber": "4.2",
+                                  "title": "Definição Formal de B^A como Conjunto de Funções Totais",
+                                  "subSteps": [
+                                    "1. Revisar produto cartesiano A × B e seus elementos.",
+                                    "2. Definir relação funcional: para todo a ∈ A existe único b ∈ B tal que (a,b) ∈ f.",
+                                    "3. Especificar função total: funcional e definida para todo A (dom(f)=A).",
+                                    "4. Definir B^A = {f ⊆ A × B | f é função total de A em B}.",
+                                    "5. Verificar com exemplo: A={1}, B={x,y} → 2 funções."
+                                  ],
+                                  "verification": "Peça ao aluno para listar B^A quando A={1,2}, B={a} (deve ter 1 função).",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Quadro branco e marcador",
+                                    "Papel e lápis para exemplos",
+                                    "Calculadora para potências (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Sempre comece com |A|=1 para visualizar.",
+                                    "Enfatize 'total' vs 'parcial' com desenhos de setas.",
+                                    "Relacione |B^A| = |B|^|A| intuitivamente: 'escolhas independentes para cada elemento de A'."
+                                  ],
+                                  "learningObjective": "Compreender e formalizar B^A como conjunto de funções totais de A para B, identificando-o como subconjunto funcional total de P(A × B), e calcular seu cardinal para finitos.",
+                                  "commonMistakes": [
+                                    "Incluir funções parciais como ∅ (quando A≠∅).",
+                                    "Confundir B^A com A×B ou P(A×B).",
+                                    "Esquecer unicidade na definição funcional.",
+                                    "Calcular |B^A| como |A|×|B| em vez de |B|^|A|."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Considere A = {1}, B = {x, y}. Então A × B = {(1,x), (1,y)}. As funções em B^A são: f1 = {(1,x)} e f2 = {(1,y)}. Não há funções parciais como ∅, pois deve cobrir todo A. B^A tem 2 elementos, subconjuntos funcionais de P(A × B).",
+                              "finalVerifications": [
+                                "Escreve corretamente B^A = {f ∈ P(A × B) | f funcional} ou equivalente.",
+                                "Lista todas funções para |A|=1, |B|=2 corretamente (2 funções).",
+                                "Explica por que ∅ ∉ B^A se A ≠ ∅.",
+                                "Prova que todo f ∈ B^A é subconjunto de A × B.",
+                                "Calcula |B^A| = |B|^|A| para finitos e relaciona com cardinal de P(A × B)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na notação de conjunto (100% match com definição formal).",
+                                "Correção na identificação de funcionalidade (sem inclusão de parciais).",
+                                "Capacidade de gerar exemplos concretos sem erros.",
+                                "Justificativa lógica para propriedades (ex: por que ⊆ P(A × B)).",
+                                "Generalização para tamanhos arbitrários."
+                              ],
+                              "crossCurricularConnections": [
+                                "Programação: B^A modela conjuntos de funções/mapeamentos em linguagens como Python (dicts de A para B).",
+                                "Lógica Matemática: Funções como interpretações de predicados unários.",
+                                "Ciência da Computação: Espaço de funções em aprendizado de máquina (ex: funções de ativação).",
+                                "Filosofia: Relações funcionais em ontologia e causalidade."
+                              ],
+                              "realWorldApplication": "Em ciência da computação, B^A representa o conjunto de todas transformações possíveis de dados de entrada A para saídas B, como em algoritmos de roteamento de redes ou modelos de ML onde funções definem predições."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -35167,7 +35229,8 @@
             "totalSkills": 269
           }
         ],
-        "totalSkills": 269
+        "totalSkills": 269,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RP-38",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 237
+      "totalAtomicSkills": 237,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 4,
+      "version": "RP-38",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RP-38"
     },
     "areas": [
       {
@@ -9173,6 +9179,11 @@
                                   "commonMistakes": [
                                     "Negligenciar componentes tangenciais ao calcular torque",
                                     "Usar distribuição uniforme quando radial é necessária"
+                                  ],
+                                  "verification": [
+                                    "Resolver numericamente o torque Q para uma hélice com V0 = 10 m/s, a = 0.15, r = 1 m e ṁ = 5 kg/s, comparando com distribuição uniforme.",
+                                    "Calcular η para os parâmetros acima e discutir impacto da variação radial.",
+                                    "Simular em ANSYS ou código e validar contra equação analítica (erro < 5%)."
                                   ]
                                 },
                                 {
@@ -29884,7 +29895,8 @@
             "totalSkills": 237
           }
         ],
-        "totalSkills": 237
+        "totalSkills": 237,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EO-31",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 329
+      "totalAtomicSkills": 329,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "EO-31",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EO-31"
     },
     "areas": [
       {
@@ -20199,6 +20205,31 @@
                                     "Realizar testes simples: ensaio de rolamento para plasticidade e dilatação para distinção de siltes.",
                                     "Mapear ocorrências geográficas: ex. Argila de Santos (Brasil), Boston Blue Clay (EUA).",
                                     "Correlacionar com estratigrafia: camadas finas sobre areias ou siltes."
+                                  ],
+                                  "verification": [
+                                    "Explique a diferença entre depósitos marinhos e fluviais em solos quaternários.",
+                                    "Cite um exemplo de argila sensível e sua localização geográfica.",
+                                    "Descreva como a sensibilidade St > 4 afeta a estrutura do solo."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Mapa geológico regional (ex: Brasil ou EUA)",
+                                    "Amostras de solo (argila, silte, areia)",
+                                    "Livro-texto de Geotecnia (ex: 'Mecânica dos Solos' de Das)",
+                                    "Calculadora para testes de sensibilidade"
+                                  ],
+                                  "tips": [
+                                    "Priorize origens sedimentares rápidas, como glaciares retraindo, para quick clays.",
+                                    "Use fotos microscópicas para visualizar estrutura não consolidada.",
+                                    "Compare com casos reais: visite ou estude perfis de Santos (SP).",
+                                    "Registre dados em tabela para correlação estratigráfica."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de analisar critérios geológicos (origem, sensibilidade, estrutura e localização) para diferenciar solos sensíveis, como quick clays, de outros solos moles.",
+                                  "commonMistakes": [
+                                    "Confundir sensibilidade (St) com índice de plasticidade (IP).",
+                                    "Ignorar contexto glacio-marinho, atribuindo falhas só a sobrecarga.",
+                                    "Não mapear corretamente: ex: Boston Blue Clay é glacio-marinho, não fluvial.",
+                                    "Subestimar dilatação em siltes durante ensaios."
                                   ]
                                 },
                                 "verification: ",
@@ -20231,7 +20262,26 @@
                                 "App Soil Classification (mobile)",
                                 "Relatórios de sondagem exemplo (sites de engenharia)",
                                 "Quiz online customizado (Quizlet)"
-                              ]
+                              ],
+                              "practicalExample": "Estudo de caso: Expansão do Porto de Santos (Brasil), onde argilas moles quaternárias causaram recalques de até 1m em aterros; análise de relatórios de sondagem e uso de pocket penetrometer para classificação.",
+                              "finalVerifications": [
+                                "Elaborar relatório de classificação de um perfil de solo simulado, integrando propriedades, critérios geológicos e testes.",
+                                "Quiz final com 10 questões: 70% de acerto mínimo.",
+                                "Apresentação oral de 3 minutos sobre um caso real brasileiro."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na identificação de argilas moles (≥90% em simulações).",
+                                "Uso correto de critérios físico-químicos e geológicos em justificativas.",
+                                "Integração de testes de campo/lab em análises práticas.",
+                                "Clareza e correção em resumos e tabelas comparativas."
+                              ],
+                              "crossCurricularConnections": [
+                                "Geologia Sedimentar: origens e estratigrafia quaternária.",
+                                "Química de Solos: minerais argilosos e propriedades coloidais.",
+                                "Engenharia de Fundações: dimensionamento para solos sensíveis.",
+                                "Hidrogeologia: influência da água no comportamento de argilas moles."
+                              ],
+                              "realWorldApplication": "Classificação precisa de argilas moles é essencial para o projeto de fundações em áreas costeiras e aluviais, prevenindo falhas como as observadas em aterros portuários (ex: Santos) e rodovias sobre solos compressíveis, otimizando custos e segurança em obras civis."
                             },
                             "estimatedTime": "45 minutos",
                             "difficulty": "beginner",
@@ -43138,7 +43188,8 @@
             "totalSkills": 329
           }
         ],
-        "totalSkills": 329
+        "totalSkills": 329,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EB-01",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 319
+      "totalAtomicSkills": 319,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025 - EB-01",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EB-01"
     },
     "areas": [
       {
@@ -23624,7 +23630,8 @@
             "totalSkills": 319
           }
         ],
-        "totalSkills": 319
+        "totalSkills": 319,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TM-25",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 169
+      "totalAtomicSkills": 169,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "TM-25",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TM-25"
     },
     "areas": [
       {
@@ -22300,7 +22306,8 @@
             "totalSkills": 169
           }
         ],
-        "totalSkills": 169
+        "totalSkills": 169,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EB-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 340
+      "totalAtomicSkills": 340,
+      "startDate": "2025-02-10",
+      "duration": "10 semestres",
+      "dailyStudyHours": 8,
+      "version": "2025-EB22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EB-22"
     },
     "areas": [
       {
@@ -16949,7 +16955,13 @@
                                   ],
                                   "tips": "Memorize a relação entre viscosidade dinâmica μ e o tensor.",
                                   "learningObjective": "Dominar a notação tensorial para tensões viscosas.",
-                                  "commonMistakes": "Esquecer a simetria do tensor ou confundir μ com ν."
+                                  "commonMistakes": "Esquecer a simetria do tensor ou confundir μ com ν.",
+                                  "verification": "Derive o tensor τ componente por componente em 2D para um escoamento simples (ex: cisalhamento) e verifique simetria e traço zero para μ constante e λ=-2/3μ.",
+                                  "estimatedTime": "1.5 horas",
+                                  "materials": [
+                                    "Software simbólico como Mathematica ou papel e lápis",
+                                    "Tabela de componentes do tensor de deformação D"
+                                  ]
                                 },
                                 {
                                   "stepNumber": 3,
@@ -17121,6 +17133,11 @@
                                   "commonMistakes": [
                                     "Usar μ errada (viscosidade dinâmica vs. cinemática).",
                                     "Integrar τ sem vetor r perpendicular."
+                                  ],
+                                  "verification": [
+                                    "Resolva exemplo laminar: canal plano h=0.1 m, b=1 m, L=1 m, U_max=2 m/s, μ=10^{-3} Pa·s. τ_w=4×10^{-3} Pa (du/dy|_w=20 s^{-1}). Momento sobre eixo central: M≈1.33×10^{-4} N·m (verifique integração r×τ dA).",
+                                    "Compare turbulento: use f=0.03, ΔP/L=ρ f U_m^2 / (2D), torque M= f ρ U_m^2 (π D^2 /4) L (D/2).",
+                                    "Autoavaliação: Seu cálculo bate com equilíbrio de momento? Unidades corretas?"
                                   ]
                                 },
                                 {
@@ -19539,7 +19556,13 @@
                                     "Garantir robustez da solução",
                                     "commonMistakes: ",
                                     "Ignorar inconsistências físicas (ex: V negativa)"
-                                  ]
+                                  ],
+                                  "verification": "Relatório de validação com % erro e gráfico de sensibilidade",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": "Excel ou Python para gráficos",
+                                  "tips": "Use ordem de grandeza para checagem rápida",
+                                  "learningObjective": "Garantir robustez da solução",
+                                  "commonMistakes": "Ignorar inconsistências físicas (ex: V negativa)"
                                 },
                                 "practicalExample: ",
                                 "Em um tubo de 10 cm diâmetro, 100 m comprimento, água (ρ=1000 kg/m³) flui a 2 m/s na entrada, Δz=5 m, f=0.02, bomba adiciona 5 kW, Q=0. Calcule V_saída e perda de carga. Solução: h_f ≈ 16 m, V2≈1.8 m/s.",
@@ -19566,7 +19589,16 @@
                                 "Engenharia Térmica: trocadores de calor em tubos",
                                 "Programação: simulação numérica em Python/MATLAB"
                               ],
-                              "realWorldApplication": "Dimensionamento de bombas em sistemas de irrigação, HVAC residencial ou redes de distribuição de água urbana, otimizando energia e minimizando custos operacionais."
+                              "realWorldApplication": "Dimensionamento de bombas em sistemas de irrigação, HVAC residencial ou redes de distribuição de água urbana, otimizando energia e minimizando custos operacionais.",
+                              "practicalExample": "Em um tubo de 10 cm diâmetro, 100 m comprimento, água (ρ=1000 kg/m³) flui a 2 m/s na entrada, Δz=5 m, f=0.02, bomba adiciona 5 kW, Q=0. Calcule V_saída e perda de carga. Solução: h_f ≈ 16 m, V2≈1.8 m/s.",
+                              "finalVerifications": [
+                                "Equação balanceada com erro <1%",
+                                "Unidades consistentes (W)",
+                                "Valores físicos realistas (ex: h_f positiva)",
+                                "CV definido corretamente sem vazamentos",
+                                "Todos os termos (Q, W, perdas) incluídos",
+                                "Solução converge com Bernoulli"
+                              ]
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -36374,7 +36406,34 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Para uma placa plana de 1m x 0.5m em ar (ρ=1.2kg/m³, U=20m/s, ν=1.5e-5m²/s), Re_L=1.33e6. Cf_turb≈0.0032 (Schlichting). C_D=2*0.0032=0.0064. Arrasto D=½ρU²*(0.5m*1m)*0.0064≈0.038N. Verifique com integral de Cf."
+                                  "practicalExample": "Para uma placa plana de 1m x 0.5m em ar (ρ=1.2kg/m³, U=20m/s, ν=1.5e-5m²/s), Re_L=1.33e6. Cf_turb≈0.0032 (Schlichting). C_D=2*0.0032=0.0064. Arrasto D=½ρU²*(0.5m*1m)*0.0064≈0.038N. Verifique com integral de Cf.",
+                                  "stepNumber": "EB-22.1",
+                                  "title": "Cálculo do arrasto por atrito em placa plana com escoamento turbulento",
+                                  "subSteps": [
+                                    "1. Calcule o número de Reynolds na corda L = 1 m: Re_L = U L / ν = (20 m/s)(1 m) / (1.5 × 10^{-5} m²/s) = 1.33 × 10^6.",
+                                    "2. Determine o coeficiente de atrito médio turbulento Cf_turb ≈ 0.0032 (fórmula de Schlichting para Re_L ≈ 10^6).",
+                                    "3. Calcule o coeficiente de arrasto C_D = 2 × Cf_turb = 0.0064 (considerando ambas as faces).",
+                                    "4. Calcule a força de arrasto D = (1/2) ρ U² A C_D, com A = 1 m × 0.5 m = 0.5 m²: D ≈ 0.038 N."
+                                  ],
+                                  "verification": "Integre Cf(x) ao longo da placa: C_D = (2/L) ∫_0^L Cf(x) dx, usando Cf(x) turbulento local (ex: lei de potência 1/7), e compare o resultado com 0.0064.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Referência: fórmulas de Schlichting para Cf turbulento",
+                                    "Papel e caneta para cálculos"
+                                  ],
+                                  "tips": [
+                                    "Confirme que Re_L > 5 × 10^5 para fluxo turbulento.",
+                                    "A área A é a projetada (largura × comprimento), mas Cf aplica-se às faces molhadas.",
+                                    "Use aproximações de Cf de fontes confiáveis como Schlichting ou White."
+                                  ],
+                                  "learningObjective": "Calcular o coeficiente de atrito médio e a força de arrasto em uma placa plana sob escoamento turbulento, utilizando fórmulas empíricas padrão.",
+                                  "commonMistakes": [
+                                    "Usar Cf laminar em fluxo turbulento.",
+                                    "Esquecer o fator 2 para arrasto em ambas as faces da placa.",
+                                    "Erro na área molhada: confundir com área planform.",
+                                    "Cálculo incorreto de Re_L (esquecer unidades ou usar L errado)."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -36385,6 +36444,36 @@
                                     "Aplica em exemplo numérico realista.",
                                     "Compara com dados experimentais.",
                                     "Discute fator geométrico para não-placas."
+                                  ],
+                                  "stepNumber": 22,
+                                  "title": "Cálculo de Coeficientes de Fricção (Cf) e Arrasto (C_D) para Placas Planas e Cilindros",
+                                  "subSteps": [
+                                    "Revise as fórmulas empíricas para Cf em escoamento laminar e turbulento em placa plana.",
+                                    "Derive a relação C_D = 2 Cf para placa plana infinita.",
+                                    "Calcule Cf e C_D para valores de Re fornecidos.",
+                                    "Explique as contribuições de forças viscosas e de pressão no arrasto de cilindros.",
+                                    "Discuta limitações da relação Cf-C_D, como efeitos de separação.",
+                                    "Resolva um exemplo numérico realista com dados de Re.",
+                                    "Compare resultados com curvas experimentais de Cf e C_D."
+                                  ],
+                                  "verification": "O aluno demonstra proficiência ao completar todas as finalVerifications com precisão >95%.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabelas e gráficos de Cf vs. Re (laminar/turbulento)",
+                                    "Dados experimentais de arrasto para placas e cilindros"
+                                  ],
+                                  "tips": [
+                                    "Use escalas log-log para cálculos precisos em altos Re.",
+                                    "Lembre-se: para cilindros, arrasto de pressão domina em Re > 10^3.",
+                                    "Verifique unidades de Re (baseada em comprimento característico)."
+                                  ],
+                                  "learningObjective": "Calcular e interpretar Cf e C_D para placas planas e cilindros, identificando contribuições viscosas/pressão, limitações e validando com dados experimentais.",
+                                  "commonMistakes": [
+                                    "Confundir Cf local com Cf médio.",
+                                    "Ignorar transição Re_crit ≈ 5×10^5 em placas.",
+                                    "Aplicar relação C_D=2Cf além do regime sem separação.",
+                                    "Erro em fator geométrico para corpos não-planos."
                                   ]
                                 },
                                 {
@@ -36396,6 +36485,38 @@
                                     "Integração de conceitos de camada limite.",
                                     "Análise de erros comuns evitados.",
                                     "Criatividade em aplicações."
+                                  ],
+                                  "stepNumber": "5.2",
+                                  "title": "Derivação e Resolução Numérica da Equação de Blasius para Camada Limite Laminar",
+                                  "subSteps": [
+                                    "1. Partir das equações de Navier-Stokes incompressíveis e simplificar para fluxo em placa plana (equação de camada limite).",
+                                    "2. Introduzir a transformação de similaridade de Blasius: η = y √(U∞ / (ν x)), f'(η) = u/U∞.",
+                                    "3. Reduzir a equação de momento a f''' + (1/2) f f'' = 0, com condições de contorno f(0)=f'(0)=0, f'(∞)=1.",
+                                    "4. Resolver numericamente usando método de Runge-Kutta ou Shooting Method (implementar 4-5 substeps para η até 8).",
+                                    "5. Calcular espessura de deslocamento δ* e coeficiente de atrito Cf.",
+                                    "6. Integrar conceitos de camada limite: comparar com solução aproximada de Pohlhausen."
+                                  ],
+                                  "verification": "Verificar f''(0) ≈ 0.332 (valor exato de Blasius); Cf = 0.664 / √Re_x; plotar perfil u/U∞ vs η e comparar com curvas padrão.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Calculadora científica ou software (Python/MATLAB para integração numérica)",
+                                    "Papel milimetrado para diagramas",
+                                    "Tabelas de valores de Blasius",
+                                    "Livro-texto: Schlichting 'Boundary Layer Theory'"
+                                  ],
+                                  "tips": [
+                                    "Use passo inicial pequeno em η (Δη=0.1) para convergência no shooting method.",
+                                    "Normalizar todas as velocidades por U∞ para evitar erros dimensionais.",
+                                    "Desenhe o perfil de velocidade e camada limite para visualização intuitiva.",
+                                    "Teste sensibilidade ao valor de f''(0) para otimizar a solução."
+                                  ],
+                                  "learningObjective": "Dominar a derivação teórica e resolução numérica da solução exata de Blasius, integrando conceitos de camada limite para previsão de perfis de velocidade e atrito em fluxos laminares.",
+                                  "commonMistakes": [
+                                    "Esquecer o fator 1/2 na equação reduzida de Blasius.",
+                                    "Condições de contorno erradas: f'(∞)≠1 leva a subestimação de u.",
+                                    "Erro numérico em integração: overshooting em η>10 causa δ* incorreto.",
+                                    "Não dimensionalizar corretamente: mistura de unidades em ν e U∞.",
+                                    "Ignorar verificação gráfica: perfil não assintótico a 1 em η grande."
                                   ]
                                 },
                                 {
@@ -36405,12 +36526,97 @@
                                     "Engenharia Aeronáutica: Otimização de superfícies molhadas.",
                                     "Computação: Simulações CFD para validar Cf-C_D.",
                                     "Química: Propriedades viscosas de fluidos."
+                                  ],
+                                  "stepNumber": 22,
+                                  "title": "Cálculo do Coeficiente de Fricção (Cf) Médio",
+                                  "subSteps": [
+                                    "1. Derive a expressão para o Cf local usando tensão cisalhante na camada limite.",
+                                    "2. Integre o Cf local ao longo da superfície para obter Cf médio (Matemática).",
+                                    "3. Aplique Leis de Newton para equilibrar forças fluidas (Física).",
+                                    "4. Otimize geometria de superfícies molhadas (Engenharia Aeronáutica).",
+                                    "5. Valide resultados com simulações CFD (Computação).",
+                                    "6. Considere propriedades viscosas do fluido (Química)."
+                                  ],
+                                  "verification": "Cf médio deve coincidir com valores teóricos para Re = 10^6 (ex: Cf ≈ 0.003 para placa plana laminar); erro < 5% em simulação CFD.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Papel e lápis para derivações",
+                                    "Software CFD (ANSYS Fluent ou OpenFOAM, opcional)",
+                                    "Tabelas de Cf vs. Re"
+                                  ],
+                                  "tips": [
+                                    "Mantenha unidades consistentes (N/m² para tensão).",
+                                    "Use aproximação de Blasius para camada limite laminar.",
+                                    "Valide numericamente antes de simular.",
+                                    "Considere efeitos 3D em otimização aeronáutica."
+                                  ],
+                                  "learningObjective": "Calcular o coeficiente de fricção médio (Cf) em superfícies molhadas, integrando conceitos de cálculo diferencial, dinâmica de fluidos, simulações computacionais e propriedades químicas de fluidos.",
+                                  "commonMistakes": [
+                                    "Confundir Cf local com Cf médio (esquecer integração).",
+                                    "Não normalizar pela pressão dinâmica q∞.",
+                                    "Ignorar transição laminar-turbulento em Re alto.",
+                                    "Usar propriedades erradas do fluido (viscosidade cinemática vs. dinâmica).",
+                                    "Erro em simulações CFD por malha inadequada."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "No design de asas de aviões ou fuselagens, relacionar Cf com C_D minimiza consumo de combustível; em tubulações externas ou torres eólicas, otimiza arrasto viscoso para estruturas cilíndricas."
+                                  "realWorldApplication": "No design de asas de aviões ou fuselagens, relacionar Cf com C_D minimiza consumo de combustível; em tubulações externas ou torres eólicas, otimiza arrasto viscoso para estruturas cilíndricas.",
+                                  "stepNumber": 4,
+                                  "title": "Relacionando Cf com C_D em Aplicações de Engenharia Aeronáutica",
+                                  "subSteps": [
+                                    "1. Revise a definição de Cf (coeficiente de fricção de cisalhamento) e C_D (coeficiente de arrasto total).",
+                                    "2. Entenda a contribuição do arrasto viscoso (skin friction drag) para C_D em superfícies lisas: C_{D,f} ≈ Cf médio.",
+                                    "3. Analise exemplos: asas e fuselagens de aviões (minimização de consumo de combustível via laminar flow).",
+                                    "4. Explore aplicações em estruturas externas: tubulações, torres eólicas (otimização de arrasto para cilindros)."
+                                  ],
+                                  "verification": "Explique em uma frase como uma redução de 5% em Cf afeta o C_D de uma fuselagem e o consumo de combustível de um avião. Resposta esperada: Reduz C_D em ~5% (para superfícies dominadas por fricção), economizando combustível proporcionalmente à potência requerida.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Folha com fórmulas de aerodinâmica (Cf = τ_w / (0.5 ρ V^2))",
+                                    "Gráficos de Cf vs Re (ex: placa plana)",
+                                    "Calculadora para estimativas simples"
+                                  ],
+                                  "tips": [
+                                    "Use Re para prever regimes laminar/turbulento: Cf diminui com Re crescente em turbulentos.",
+                                    "Integre Cf ao longo da superfície para C_{D,f}: não use valor pontual.",
+                                    "Considere rugosidade: aumenta Cf em ~20-50% para Re altos."
+                                  ],
+                                  "learningObjective": "Compreender e aplicar a relação entre o coeficiente de fricção Cf e o coeficiente de arrasto C_D em designs de aeronaves e estruturas eólicas, identificando estratégias de otimização para redução de consumo energético.",
+                                  "commonMistakes": [
+                                    "Confundir Cf local com C_D total (Cf é componente, não o todo).",
+                                    "Ignorar transição laminar-turbulenta (aumenta Cf abruptamente).",
+                                    "Aplicar fórmulas de placa plana diretamente a geometrias 3D sem correções."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para uma placa plana de 1m x 0.5m em ar (ρ=1.2kg/m³, U=20m/s, ν=1.5e-5m²/s), Re_L=1.33e6. Cf_turb≈0.0032 (Schlichting). C_D=2*0.0032=0.0064. Arrasto D=½ρU²*(0.5m*1m)*0.0064≈0.038N. Verifique com integral de Cf.",
+                              "finalVerifications": [
+                                "Deriva corretamente C_D=2 Cf para placa plana.",
+                                "Calcula Cf e C_D para Re dado com precisão.",
+                                "Explica contribuição viscoso vs pressão em cilindro.",
+                                "Identifica limitações da relação (ex: separação).",
+                                "Aplica em exemplo numérico realista.",
+                                "Compara com dados experimentais.",
+                                "Discute fator geométrico para não-placas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na derivação teórica (80%+ correto).",
+                                "Correção numérica em cálculos (erro <10%).",
+                                "Profundidade em substeps (todos completos).",
+                                "Clareza em verificações e diagramas.",
+                                "Integração de conceitos de camada limite.",
+                                "Análise de erros comuns evitados.",
+                                "Criatividade em aplicações."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Integração e cálculo diferencial para Cf médio.",
+                                "Física: Leis de Newton aplicadas a forças fluidas.",
+                                "Engenharia Aeronáutica: Otimização de superfícies molhadas.",
+                                "Computação: Simulações CFD para validar Cf-C_D.",
+                                "Química: Propriedades viscosas de fluidos."
+                              ],
+                              "realWorldApplication": "No design de asas de aviões ou fuselagens, relacionar Cf com C_D minimiza consumo de combustível; em tubulações externas ou torres eólicas, otimiza arrasto viscoso para estruturas cilíndricas."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "advanced",
@@ -37329,9 +37535,48 @@
                                     "Compare corpos: esfera (Cd cai de 0.5 para 0.1 com transição) vs. placa plana",
                                     "Quantifique: separação eleva Cd_pressure de ~0.1 para >1.0 em cilindros",
                                     "verification\": "
+                                  ],
+                                  "verification": "Explique o impacto da transição laminar-turbulenta em altos Re (>10^5) no coeficiente de arrasto (Cd) de uma esfera, citando valores aproximados e o comportamento em platô.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Gráficos de Cd vs. Re para esferas, cilindros e placas planas",
+                                    "Seção 5.3 do livro Fundamentos de Aerodinâmica (Anderson)",
+                                    "Simulações CFD ou vídeos de escoamento ao redor de esferas"
+                                  ],
+                                  "tips": [
+                                    "Visualize a camada limite turbulenta: ela adia a separação, reduzindo a esteira e Cd_pressure.",
+                                    "Compare curvas experimentais reais para validar conceitos teóricos.",
+                                    "Lembre-se: em altos Re, o platô de Cd indica separação fixa, independente de Re adicional."
+                                  ],
+                                  "learningObjective": "Compreender o efeito dos regimes de alto número de Reynolds no coeficiente de arrasto em escoamentos externos, destacando transição laminar-turbulenta e separação.",
+                                  "commonMistakes": [
+                                    "Confundir regimes de Re com escoamentos internos (tubos).",
+                                    "Ignorar que a queda de Cd em esferas é devida à transição, não só à inercialidade.",
+                                    "Superestimar Cd em turbulentos sem considerar o platô em Re muito altos (>10^6).",
+                                    "Misturar Cd_friction com Cd_pressure na análise total."
                                   ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Experimento caseiro: Compare o tempo de queda de uma esfera lisa (vidro) vs. uma com fita adesiva rugosa em um tubo longo de ar ou água, medindo velocidades terminais para estimar Cd total e discutir impacto da transição na separação.",
+                              "finalVerifications": [
+                                "Explique verbalmente a decomposição Cd = Cd_friction + Cd_pressure para um cilindro em Re=10^5, incluindo sketch do escoamento.",
+                                "Analise uma curva Cd vs. Re de uma esfera e identifique o efeito da separação e transição.",
+                                "Calcule aproximadamente Cd_pressure para um corpo com Cp_front=1.0 e Cp_rear=-0.5."
+                              ],
+                              "assessmentCriteria": [
+                                "Identificação correta das componentes de Cd (30%)",
+                                "Explicação precisa do fenômeno de separação e wake (25%)",
+                                "Análise qualitativa/quantitativa de curvas Cd vs. Re (20%)",
+                                "Sketches e diagramas claros e rotulados (15%)",
+                                "Conexão com aplicações reais (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Aerodinâmica (perfis alares e controle de separação)",
+                                "Mecânica dos Fluidos Computacional (simulações CFD de camada limite)",
+                                "Engenharia Aeronáutica (otimização de fuselagem)",
+                                "Física Geral (conservação de energia na camada limite)"
+                              ],
+                              "realWorldApplication": "Minimização de arrasto em aeronaves comerciais (ex: Boeing 787 com winglets para reduzir wake), automóveis (design de spoilers para atrasar separação) e esportes (bola de golfe com dimples para transição turbulenta, reduzindo Cd de 0.5 para 0.25)"
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -44034,7 +44279,8 @@
             "totalSkills": 340
           }
         ],
-        "totalSkills": 340
+        "totalSkills": 340,
+        "percentage": 0
       }
     ]
   }

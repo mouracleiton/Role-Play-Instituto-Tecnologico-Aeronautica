@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - DI-65",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 178
+      "totalAtomicSkills": 178,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - DI-65"
     },
     "areas": [
       {
@@ -12740,9 +12746,72 @@
                                     "Gestão de Projetos: Análise de risco e fatores de segurança.",
                                     "Sustentabilidade: Otimização para redução de material e impacto ambiental."
                                   ],
-                                  "realWorldApplication": "No projeto da Ponte Rio-Niterói, cálculos de cortantes máximos sob cargas de tráfego variáveis garantem segurança contra falhas por cisalhamento, evitando colapsos e otimizando seções de concreto armado para economia e durabilidade sob milhões de veículos anuais."
+                                  "realWorldApplication": "No projeto da Ponte Rio-Niterói, cálculos de cortantes máximos sob cargas de tráfego variáveis garantem segurança contra falhas por cisalhamento, evitando colapsos e otimizando seções de concreto armado para economia e durabilidade sob milhões de veículos anuais.",
+                                  "stepNumber": 4,
+                                  "title": "Cálculo do Envelope de Cortante Máximo sob Carga Móvel Parcial",
+                                  "subSteps": [
+                                    "Identificar posições críticas de carga para maximização do cortante no apoio (ex: 80% do vão próximo ao apoio esquerdo).",
+                                    "Calcular reações de apoio para configuração crítica com q=12 kN/m.",
+                                    "Construir diagrama de cortante V(x) e determinar V_max ≈150 kN.",
+                                    "Aplicar fator de majoração γf=1.5 para obter V_u=225 kN.",
+                                    "Verificar segurança: φV_u=250 kN > V_u."
+                                  ],
+                                  "verification": [
+                                    "Diagrama de cortante com V_max identificado corretamente.",
+                                    "Cálculo de V_u com γf=1.5 exato.",
+                                    "Condição de segurança φVu > V_u atendida.",
+                                    "Justificativa da posição de carga crítica."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Calculadora ou software (Excel/ANSYS).",
+                                    "Papel milimetrado para diagramas.",
+                                    "Normas técnicas (NBR 7188 ou equivalente para pontes).",
+                                    "Dados da ponte: vão L=25m, q=12 kN/m."
+                                  ],
+                                  "tips": [
+                                    "Maximize V no apoio posicionando carga distribuída o mais próximo possível.",
+                                    "Use linhas de influência para cargas móveis.",
+                                    "Documente todas as hipóteses de carregamento.",
+                                    "Valide com software para concordância <3%."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de determinar o cortante máximo envelope em vigas isostáticas sob cargas de tráfego variáveis, aplicando fatores de segurança e verificando dimensionamento conforme normas técnicas.",
+                                  "commonMistakes": [
+                                    "Aplicar carga em 100% do vão, subestimando V_max no apoio.",
+                                    "Esquecer fator γf=1.5 na verificação última.",
+                                    "Inverter apoio esquerdo/direito na configuração crítica.",
+                                    "Erros de unidade (kN/m em reações).",
+                                    "Não considerar envelope para múltiplas posições de carga."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em uma ponte de viga isostática de 25m de vão, sob carga de tráfego variável q=12 kN/m aplicada em 80% do vão próximo ao apoio esquerdo: calcular reações, V_max ≈ 150 kN no apoio, aplicar γf=1.5 → V_u=225 kN, com φVu=250 kN > V_u (seguro).",
+                              "finalVerifications": [
+                                "Diagrama de cortante envelope correto com V_max identificado.",
+                                "Fatores de segurança aplicados conforme norma específica.",
+                                "Verificação numérica: Vu > V_u em todas seções críticas.",
+                                "Posições de carga crítica justificadas.",
+                                "Relatório documentado com unidades consistentes (kN).",
+                                "Concordância com software <3% de diferença.",
+                                "Análise de sensibilidade realizada."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão dos cálculos de V(x) (erro <2%).",
+                                "Correta identificação de seções e posições críticas.",
+                                "Aplicação fiel de normas e fatores (sem omissões).",
+                                "Clareza nos diagramas e relatórios.",
+                                "Validação cruzada com métodos alternativos.",
+                                "Eficiência no tempo estimado.",
+                                "Compreensão demonstrada em explicações."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Integração para áreas sob curvas de influência.",
+                                "Física: Equilíbrio estático e princípios de Newton.",
+                                "Informática: Modelagem em software como ANSYS ou Excel avançado.",
+                                "Gestão de Projetos: Análise de risco e fatores de segurança.",
+                                "Sustentabilidade: Otimização para redução de material e impacto ambiental."
+                              ],
+                              "realWorldApplication": "No projeto da Ponte Rio-Niterói, cálculos de cortantes máximos sob cargas de tráfego variáveis garantem segurança contra falhas por cisalhamento, evitando colapsos e otimizando seções de concreto armado para economia e durabilidade sob milhões de veículos anuais."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",
@@ -14078,6 +14147,28 @@
                                     "Incluir ações locais (ex.: carga de frenagem concentrada)",
                                     "Combinar com cargas permanentes usando fatores ψ",
                                     "verification"
+                                  ],
+                                  "verification": "Calcule o envelope de momentos fletores para uma viga de 15 m de vão livre submetida a sobrecarga móvel de 4,0 kN/m e carga concentrada de frenagem de 180 kN. Verifique se o momento positivo máximo é aproximadamente 360 kNm e o negativo 450 kNm (considerando fatores de impacto e posicionamento ótimo).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Norma NBR 7188:2013 - Projeto de estruturas de aço para pontes rodoviárias",
+                                    "Planilha Excel ou software de análise estrutural (ex.: TQS ou SAP2000)",
+                                    "Exemplo resolvido de viga reta com sobrecargas móveis",
+                                    "Tabelas de fatores de impacto e ψ da NBR 7187/7188"
+                                  ],
+                                  "tips": [
+                                    "Posicione a sobrecarga móvel de forma a maximizar cada esforço individualmente (ex.: carga total para momento positivo no meio do vão; carga parcial para negativo nos apoios).",
+                                    "Aplique o fator de impacto dinâmico conforme fórmula da norma para cada tipo de veículo.",
+                                    "Use fatores ψ0, ψ1, ψ2 para combinações quasi-permanentes e frequentes com ações permanentes.",
+                                    "Gere envelopes parciais (E+ e E-) antes de combinar para visualização clara."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de calcular e combinar os envelopes de esforços solicitantes (momentos fletores e cisalhamento) devidos a sobrecargas móveis e ações locais, aplicando posicionamento ótimo, fatores de impacto e combinações com ações permanentes conforme normas técnicas brasileiras.",
+                                  "commonMistakes": [
+                                    "Esquecer de aplicar o fator de impacto dinâmico para sobrecargas móveis.",
+                                    "Usar posicionamento único da carga móvel para todos os esforços, em vez de otimizar separadamente para momento positivo, negativo e cisalhamento.",
+                                    "Não considerar a distribuição lateral das cargas em pontes múltiplas faixas.",
+                                    "Omitir ações locais como frenagem ou aceleração concentradas nos pontos especificados.",
+                                    "Aplicar fatores ψ incorretamente, confundindo combinações últimas e de serviço."
                                   ]
                                 },
                                 "verificationTime: Comparar posições críticas com curvas de influência",
@@ -14110,7 +14201,27 @@
                                 "Relatório template",
                                 "Software verificador (TQS, Cypecad)",
                                 "Exemplos de projetos"
-                              ]
+                              ],
+                              "practicalExample": "Exemplo prático: Cálculo completo de envelopes de momentos fletores e cisalhamento para uma laje de pista de ponte rodoviária com vão de 18m, largura de 12m, considerando cargas permanentes (peso próprio 5kN/m²), sobrecarga móvel LM1 (NBR 7188) e ação de frenagem concentrada de 360kN.",
+                              "finalVerifications": [
+                                "Comparar envelopes calculados com resultados de software (SAP2000/TQS) com tolerância de 5%",
+                                "Verificar conformidade com combinações de ELU/ELS da NBR 7188",
+                                "Garantir que diagramas de momentos e cisalhamento estejam corretamente plotados e documentados",
+                                "Realizar análise de sensibilidade para variação de 10% nas cargas"
+                              ],
+                              "assessmentCriteria": [
+                                "Correção e completude dos cálculos de cargas e esforços (40%)",
+                                "Adequação à norma NBR 7188 e documentação técnica (30%)",
+                                "Precisão na modelagem e uso de ferramentas (20%)",
+                                "Análise de erros comuns e verificações (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Análise Estrutural I e II (modelagem de lajes contínuas)",
+                                "Estruturas de Concreto Armado (dimensionamento de armadura)",
+                                "Normas Técnicas em Engenharia Civil (aplicação de NBRs)",
+                                "Projeto de Pontes (integração com superestrutura)"
+                              ],
+                              "realWorldApplication": "Este procedimento é essencial no dimensionamento de lajes de pista em pontes rodoviárias brasileiras, como na duplicação da BR-101 ou na Ponte do Guaíba, garantindo segurança contra colapso por flexão ou cisalhamento sob tráfego pesado, conforme exigido pelo DNIT e normas ABNT."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -15526,6 +15637,13 @@
                                   "commonMistakes": [
                                     "Usar largura efetiva excessiva",
                                     "Ignorar assimetria em seções T"
+                                  ],
+                                  "tips": [
+                                    "Calcule a largura efetiva b_f ≤ min(L/4, espaçamento entre vigas, b_losa/6) conforme NBR 6118.",
+                                    "Para flanges comprimidos, verifique flambagem local: b_f/(2 t_f) ≤ λ_limite da NBR 8800 (classe 1-3).",
+                                    "Equilibre momentos: M_f_sup + M_f_inf = M_total, usando y até o centroide da seção composta.",
+                                    "Em seções T assimétricas, posicione a linha neutra corretamente para evitar superdimensionamento do flange inferior.",
+                                    "Priorize A_s no flange tracionado com ε_s ≤ ε_y e verifique continuidade com alma."
                                   ]
                                 },
                                 {
@@ -23695,7 +23813,8 @@
             "totalSkills": 178
           }
         ],
-        "totalSkills": 178
+        "totalSkills": 178,
+        "percentage": 0
       }
     ]
   }

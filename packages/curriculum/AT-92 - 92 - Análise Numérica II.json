@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-92",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 296
+      "totalAtomicSkills": 296,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-AT92",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-92"
     },
     "areas": [
       {
@@ -11799,9 +11805,61 @@
                                     "Otimização Numérica (escolha de ω).",
                                     "Estatística Computacional (análise de erros)."
                                   ],
-                                  "realWorldApplication": "Em modelagem de fluxo de calor estacionário em painéis solares (condições Dirichlet nas bordas), simulações de campos eletrostáticos em capacitores ou análise de deformações em estruturas aeronáuticas usando diferenças finitas."
+                                  "realWorldApplication": "Em modelagem de fluxo de calor estacionário em painéis solares (condições Dirichlet nas bordas), simulações de campos eletrostáticos em capacitores ou análise de deformações em estruturas aeronáuticas usando diferenças finitas.",
+                                  "stepNumber": "4.3",
+                                  "title": "Implementação e Análise de Gauss-Seidel (GS) e SOR para Problema de Dirichlet",
+                                  "subSteps": [
+                                    "Derive a matriz tridiagonal Toeplitz A = [2, -1, -1]/h² para h=0.1 (n=9) com condições u(0)=0, u(1)=sin(1).",
+                                    "Implemente o iterador GS (ω=1) em Python com NumPy.",
+                                    "Estenda para SOR (ω=1.8), monitorando ||r||_∞ < 10^{-10}.",
+                                    "Compare número de iterações, erros e convergência com solução exata (solver direto ou integração).",
+                                    "Teste para n=50, calcule ω ótimo via teoria e plote gráficos de erro."
+                                  ],
+                                  "verification": "Prova de dominância diagonal; SOR converge em <50% iterações de GS; raio espectral <1; código reproduz ||r||<10^{-10} em <1000 iterações.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Python 3.10+",
+                                    "NumPy, SciPy (para solver direto), Matplotlib (gráficos)"
+                                  ],
+                                  "tips": [
+                                    "Use vetorização NumPy para eficiência em loops de iteração.",
+                                    "Inicialize chute com u linear interpolado para acelerar.",
+                                    "Monitore resíduo r = b - A u a cada 10 iterações.",
+                                    "ω ótimo ≈ 2 / (1 + sin(π h)) para aceleração teórica."
+                                  ],
+                                  "learningObjective": "Implementar métodos iterativos GS e SOR para sistemas tridiagonais de discretização FD de EDPs elípticas, analisar convergência numérica, otimizar ω e validar contra teoria de dominância diagonal e raio espectral.",
+                                  "commonMistakes": [
+                                    "Erro na montagem da matriz: esquecer /h² ou off-diagonais erradas.",
+                                    "Índices incorretos: grid interior 1 a n-1, Python 0-based.",
+                                    "Critério de parada fraco: usar ||u^{k+1}-u^k|| ao invés de ||r||.",
+                                    "ω=1.8 sem verificar dominância: testar ω>2 causa divergência.",
+                                    "Solução exata errada: não aplicar BC u(1)=sin(1) no solver direto."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para a equação -u''=f em [0,1] com u(0)=0, u(1)=sin(1), h=0.1 (n=9), matriz A tridiagonal Toeplitz [2,-1,-1]/h², aplique GS (ω=1) e SOR (ω=1.8). Monitore convergência até ||r||<10^{-10}, compare com solução exata via integrais ou solver direto.",
+                              "finalVerifications": [
+                                "Derivar corretamente a matriz Toeplitz para Dirichlet.",
+                                "Provar dominância diagonal para o sistema.",
+                                "Implementar GS/SOR convergentes para n=50.",
+                                "Calcular ω ótimo e demonstrar aceleração.",
+                                "Interpretar gráficos de erro mostrando monotonia e estabilidade."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na prova de dominância diagonal (100% correto).",
+                                "Eficiência numérica: SOR <50% iterações de GS.",
+                                "Análise qualitativa de estabilidade (raio espectral <1).",
+                                "Código limpo, comentado e reproduzível.",
+                                "Interpretação correta de resultados numéricos vs teoria."
+                              ],
+                              "crossCurricularConnections": [
+                                "Programação Científica (implementação NumPy/SciPy).",
+                                "Física Computacional (simulação de potenciais).",
+                                "Engenharia (análise de tensões em placas).",
+                                "Otimização Numérica (escolha de ω).",
+                                "Estatística Computacional (análise de erros)."
+                              ],
+                              "realWorldApplication": "Em modelagem de fluxo de calor estacionário em painéis solares (condições Dirichlet nas bordas), simulações de campos eletrostáticos em capacitores ou análise de deformações em estruturas aeronáuticas usando diferenças finitas."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -22434,7 +22492,9 @@
                                     "Índices errados para vizinhos (ex: p_direita = p+1 só na mesma linha).",
                                     "Diagonal errada (deve ser 4/h² se h=k).",
                                     "b_p sem multiplicador h²k²."
-                                  ]
+                                  ],
+                                  "verification": "Matriz A parcial com 5 entradas não-nulas por linha e b consistente.",
+                                  "estimatedTime": "40 minutos"
                                 },
                                 {
                                   "stepNumber": 4,
@@ -25254,7 +25314,14 @@
                                     "Timer de performance"
                                   ],
                                   "learningObjective": "Avaliar precisão e eficiência da implementação.",
-                                  "commonMistakes": "Refinamento sem ajustar iterações; ignorar custo computacional."
+                                  "commonMistakes": "Refinamento sem ajustar iterações; ignorar custo computacional.",
+                                  "tips": [
+                                    "Use um gráfico log-log de erro vs h para visualizar a convergência quadrática.",
+                                    "Ajuste o número máximo de iterações proporcionalmente ao refinamento de malha para manter custo similar.",
+                                    "Para profiling, compare tempo com %timeit no Jupyter e otimize loops internos com numba ou vetorização.",
+                                    "Verifique condições de compatibilidade para Neumann: integral de g deve igualar integral de f no domínio.",
+                                    "Ao comparar com scipy, use grids equivalentes e normalize erros pela mesma norma (ex: L2)."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Resolva -Δu = 2π² sin(πx) sin(πy) em [0,1]x[0,1], com u=0 em x=0,1 e y=0; ∂u/∂y = π cos(πy) sin(πx) em y=1. Solução exata: u=sin(πx)sin(πy). Implemente com nx=ny=50, verifique erro L2.",
@@ -38126,7 +38193,8 @@
             "totalSkills": 296
           }
         ],
-        "totalSkills": 296
+        "totalSkills": 296,
+        "percentage": 0
       }
     ]
   }

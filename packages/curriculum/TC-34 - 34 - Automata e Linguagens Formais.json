@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TC-34",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 372
+      "totalAtomicSkills": 372,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025 TC-34",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TC-34"
     },
     "areas": [
       {
@@ -13436,9 +13442,65 @@
                                     "Lógica: Autômatos como modelos computacionais.",
                                     "Linguística: Gramáticas naturais aproximam LLC."
                                   ],
-                                  "realWorldApplication": "Reconhecimento de sintaxe em compiladores (ex: expressões balanceadas em código), validação de XML/JSON (parênteses aninhados), análise de DNA palindrômico em bioinformática."
+                                  "realWorldApplication": "Reconhecimento de sintaxe em compiladores (ex: expressões balanceadas em código), validação de XML/JSON (parênteses aninhados), análise de DNA palindrômico em bioinformática.",
+                                  "stepNumber": "3.4",
+                                  "title": "Linguagens Livres de Contexto: Gramáticas, PDAs e Provas de Não-Regularidade",
+                                  "subSteps": [
+                                    "1. Identificar exemplos clássicos de LLC: {a^n b^n | n ≥ 0}, palíndromos e parênteses balanceados.",
+                                    "2. Construir gramática G para L = {a^n b^n | n ≥ 0}: S → a S b | ε.",
+                                    "3. Aplicar pumping lemma para provar que L não é regular (ex: p=3, w=aaabbb).",
+                                    "4. Simular PDA para L: empilhar A's em a's, desempilhar em b's.",
+                                    "5. Gerar strings válidas/inválidas e diferenciar de linguagens regulares.",
+                                    "6. Discutir conexões com aplicações reais."
+                                  ],
+                                  "verification": "Responda corretamente a pelo menos 5/6 itens das finalVerifications.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Slides sobre teoria da computação.",
+                                    "Quadro ou papel para desenhar gramáticas e PDAs.",
+                                    "Exemplos de strings impressos ou digitais.",
+                                    "Ferramenta online para simular PDA (opcional, ex: JFLAP)."
+                                  ],
+                                  "tips": [
+                                    "No pumping lemma, garanta |y| > 0 e bombeie i=2 para violar a propriedade.",
+                                    "Teste gramáticas gerando strings para n=0,1,2,3.",
+                                    "Visualize o stack do PDA passo a passo para {a^n b^n}.",
+                                    "Compare com AFD para destacar necessidade do stack."
+                                  ],
+                                  "learningObjective": "Ao final, o aluno será capaz de construir gramáticas e PDAs para LLC clássicas, provar não-regularidade com pumping lemma e diferenciar LLC de regulares, aplicando a exemplos como {a^n b^n}.",
+                                  "commonMistakes": [
+                                    "Permitir y=ε no pumping lemma (deve ter |y|>0).",
+                                    "Construir gramática com recursão errada (ex: S → a b S em vez de centrada).",
+                                    "Confundir PDA determinístico (DPDA) com não-determinístico.",
+                                    "Não considerar i=0 ou i=2 nas bombeadas do lemma.",
+                                    "Ignorar strings inválidas como aaabb ou abbb na validação."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Dado L = {a^n b^n | n ≥ 0}, construa uma gramática G = ({S}, {a,b}, P, S) com P: S → a S b | ε. Prove não-regular com pumping lemma para p=3, w=aaabbb: divida em xyz, bombeie i=2 viola igualdade de a's e b's. Simule PDA: empilhe A por a, desempilhe por b.",
+                              "finalVerifications": [
+                                "Pode listar {a^n b^n}, palíndromos e parênteses balanceados como LLC clássicos?",
+                                "Aplica pumping lemma corretamente para provar {a^n b^n} não-regular?",
+                                "Constrói gramática ou esboça PDA para pelo menos 2 exemplos?",
+                                "Diferencia corretamente 5 linguagens regulares de LLC?",
+                                "Explica por que LLC precisam de stack em PDA?",
+                                "Gera strings válidas e inválidas para cada exemplo?"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na identificação de exemplos clássicos (100% correto).",
+                                "Uso correto de pumping lemma em provas (lógica sem falhas).",
+                                "Construção válida de gramáticas ou PDAs (sem erros sintáticos).",
+                                "Diferenciação clara com justificativas teóricas.",
+                                "Profundidade em análise: menciona propriedades como fechamento.",
+                                "Criatividade em exemplos adicionais relevantes."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Teoria dos conjuntos e indução para provas de n.",
+                                "Programação: Parsing em compiladores (LL/LR parsers para LLC).",
+                                "Lógica: Autômatos como modelos computacionais.",
+                                "Linguística: Gramáticas naturais aproximam LLC."
+                              ],
+                              "realWorldApplication": "Reconhecimento de sintaxe em compiladores (ex: expressões balanceadas em código), validação de XML/JSON (parênteses aninhados), análise de DNA palindrômico em bioinformática."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -25208,6 +25270,13 @@
                                     "Omitir Σ na tupla",
                                     "Incluir símbolos da pilha em Σ",
                                     "Usar Σ para pilha"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: Σ é finito e contém apenas símbolos de entrada (não da pilha).",
+                                    "Exemplo prático: Para {aⁿbⁿ | n ≥ 0}, Σ = {a, b}.",
+                                    "Dica visual: Liste todas as letras usadas nas strings da linguagem.",
+                                    "Evite: Incluir ε em Σ; ε não é símbolo, é string vazia.",
+                                    "Pratique: Escreva Σ* para representar todas as strings possíveis."
                                   ]
                                 },
                                 {
@@ -25261,6 +25330,13 @@
                                     "Descrições vagas sem lista explícita",
                                     "Confundir com alfabeto de saída",
                                     "Esquecer distinção em exemplos"
+                                  ],
+                                  "tips": [
+                                    "Liste todos os símbolos explicitamente: Σ = {a, b, ε, ...}.",
+                                    "Diferencie Σ (entrada) de Γ (pilha) e δ (transições).",
+                                    "Teste rejeição com strings contendo símbolos fora de Σ.",
+                                    "Verbalize como: 'Σ é o conjunto finito {...}' para clareza.",
+                                    "Compare descrições de PDAs variados para padrões comuns."
                                   ]
                                 }
                               ],
@@ -49080,7 +49156,8 @@
             "totalSkills": 372
           }
         ],
-        "totalSkills": 372
+        "totalSkills": 372,
+        "percentage": 0
       }
     ]
   }

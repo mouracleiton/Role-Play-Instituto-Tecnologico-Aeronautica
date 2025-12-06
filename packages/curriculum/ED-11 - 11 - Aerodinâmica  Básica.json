@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-11",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 282
+      "totalAtomicSkills": 282,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-11"
     },
     "areas": [
       {
@@ -7705,7 +7711,16 @@
                                   ],
                                   " tips ": " Use P.V. para evitar singularidade ; teste com y=0 para simetria w simétrica . ",
                                   " learningObjective ": " Derivar a expressão exata da velocidade descendente média via Biot - Savart na esteira . ",
-                                  " commonMistakes ": " Sinal errado (w negativa ); confundir dy' com dΓ ; limites de integral errados . "
+                                  " commonMistakes ": " Sinal errado (w negativa ); confundir dy' com dΓ ; limites de integral errados . ",
+                                  "verification": "Confirme que w(θ) = - (Γ₀ b /(8π)) ∫₀^π [sinθ' / (cosθ - cosθ')] dθ' coincide com a literatura (ex: Prandtl); teste numérico em y=0 dá w negativa simétrica; aproximação Σ ΔΓⱼ/(4π(y-yⱼ)) converge sem singularidade via P.V.",
+                                  "estimatedTime": "75 minutos",
+                                  "materials": [
+                                    "Calculadora ou Python (NumPy para soma)",
+                                    "Fórmula anotada de Prandtl"
+                                  ],
+                                  "tips": "Use P.V. para evitar singularidade; teste com y=0 para simetria w simétrica.",
+                                  "learningObjective": "Derivar a expressão exata da velocidade descendente média via Biot-Savart na esteira.",
+                                  "commonMistakes": "Sinal errado (w negativa); confundir dy' com dΓ; limites de integral errados."
                                 },
                                 {
                                   " stepNumber ": 4,
@@ -7724,7 +7739,24 @@
                                   ],
                                   " tips ": " Use método de painel vortex para precisão ; acelere com quadratura Gauss . ",
                                   " learningObjective ": " Aplicar numericamente a integral para obter w em seções reais . ",
-                                  " commonMistakes ": " Divisão por zero sem P . V . ; Γ errada ( deve cair a zero nas pontas ) ; N insuficiente . "
+                                  " commonMistakes ": " Divisão por zero sem P . V . ; Γ errada ( deve cair a zero nas pontas ) ; N insuficiente . ",
+                                  "stepNumber": 4,
+                                  "title": "Implementar e calcular w para uma seção específica",
+                                  "subSteps": [
+                                    "Escolha parâmetros: b = 10 m, Γ₀ = 100 m²/s elíptica, y = 0 e y = 2 m.",
+                                    "Discritize com N = 50 painéis, calcule ΔΓ_j = Γ(y_j+) - Γ(y_j-).",
+                                    "Some numericamente w(y) = Σ ΔΓ_j / (4π (y - y_j) * dist_perp).",
+                                    "Plote w(y) ao longo da envergadura e compare com analítico elíptico w = -Γ₀ / (π b) √(1 - (2y/b)²).",
+                                    "Calcule α_i(y) = w(y) / V∞ para ângulo induzido."
+                                  ],
+                                  "verification": "Para elíptica em raiz, w(0) ≈ -Γ₀ / (π b / 2); erro < 1% com N > 30.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Python / MATLAB com NumPy / SciPy, planilha Excel para teste rápido."
+                                  ],
+                                  "tips": "Use método de painel vortex para precisão; acelere com quadratura Gauss.",
+                                  "learningObjective": "Aplicar numericamente a integral para obter w em seções reais.",
+                                  "commonMistakes": "Divisão por zero sem P.V.; Γ errada (deve cair a zero nas pontas); N insuficiente."
                                 },
                                 {
                                   " stepNumber ": 5,
@@ -7743,7 +7775,24 @@
                                   ],
                                   " tips ": " Sempre normalize por V ∞ para α i . ",
                                   " learningObjective ": " Interpretar w no contexto da equação integral de Prandtl . ",
-                                  " commonMistakes ": " Ignorar que w é média , não local ; não verificar conservação de momento . "
+                                  " commonMistakes ": " Ignorar que w é média , não local ; não verificar conservação de momento . ",
+                                  "stepNumber": 5,
+                                  "title": "Validar e interpretar resultados",
+                                  "subSteps": [
+                                    "Compare w numérica com solução exata elíptica.",
+                                    "Calcule distribuição de CL(y) = α(y) + αi(y) * c(y) / AR.",
+                                    "Analise simetria e máximo na raiz / queda nas pontas.",
+                                    "Teste sensibilidade a N e distribuição Γ.",
+                                    "Discuta impacto na sustentação total e eficiência."
+                                  ],
+                                  "verification": "∫ CL dy deve igualar CL médio * b; w média negativa uniforme para elíptica.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Gráficos gerados, referências teóricas."
+                                  ],
+                                  "tips": "Sempre normalize por V∞ para αi.",
+                                  "learningObjective": "Interpretar w no contexto da equação integral de Prandtl.",
+                                  "commonMistakes": "Ignorar que w é média, não local; não verificar conservação de momento."
                                 }
                               ],
                               " practicalExample ": " Para uma asa reta de b = 12 m , V ∞ = 50 m / s , α = 4 ° , distribuição Γ elíptica Γ 0 = 120 m ² / s : discritize esteira em 40 painéis e calcule w ( y = 1.5 m ) ≈ - 2.8 m / s , confirmando α i ≈ 3.2 ° . ",
@@ -7768,7 +7817,30 @@
                                 " Computação : Programação numérica em Python / MATLAB para simulações CFD básicas . ",
                                 " Engenharia Mecânica : Análise de escoamentos vorticos em turbinas . "
                               ],
-                              " realWorldApplication ": " Essencial no projeto de asas de aviões comerciais ( e . g . Boeing 737 ) para otimizar distribuição de sustentação , minimizar perdas por vórtex ( induced drag ) e melhorar eficiência de combustível , usando em software como XFLR5 ou ANSYS Fluent . "
+                              " realWorldApplication ": " Essencial no projeto de asas de aviões comerciais ( e . g . Boeing 737 ) para otimizar distribuição de sustentação , minimizar perdas por vórtex ( induced drag ) e melhorar eficiência de combustível , usando em software como XFLR5 ou ANSYS Fluent . ",
+                              "practicalExample": "Para uma asa reta de b = 12 m, V∞ = 50 m/s, α = 4°, distribuição Γ elíptica Γ0 = 120 m²/s: discritize esteira em 40 painéis e calcule w(y = 1.5 m) ≈ -2.8 m/s, confirmando αi ≈ 3.2°.",
+                              "finalVerifications": [
+                                "A velocidade w(y) é negativa e simétrica em toda envergadura.",
+                                "w máxima na raiz e zero nas pontas para distribuição elíptica.",
+                                "Integral numérica converge com erro < 0.5% para N ≥ 30.",
+                                "αi = -w / V∞ consistente com teoria de Prandtl.",
+                                "Sustentação total L = ρ V∞ ∫ Γ(y) dy preservada.",
+                                "Gráfico de w(y) suave sem oscilações espúrias."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção da formulação integral de Biot-Savart (30%).",
+                                "Precisão numérica e tratamento de singularidade (25%).",
+                                "Modelagem correta da esteira e Γ(y') (20%).",
+                                "Interpretação física (sinal, simetria, magnitude) (15%).",
+                                "Validação com casos analíticos conhecidos (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Integração impropria e método dos painéis (quadratura numérica).",
+                                "Física: Analogia com magnetostática (Lei de Biot-Savart em EM).",
+                                "Computação: Programação numérica em Python/MATLAB para simulações CFD básicas.",
+                                "Engenharia Mecânica: Análise de escoamentos vorticos em turbinas."
+                              ],
+                              "realWorldApplication": "Essencial no projeto de asas de aviões comerciais (e.g. Boeing 737) para otimizar distribuição de sustentação, minimizar perdas por vórtex (induced drag) e melhorar eficiência de combustível, usando em software como XFLR5 ou ANSYS Fluent."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -12043,6 +12115,13 @@
                                   "tips": [
                                     "Visualize o flap Fowler como 'esticando' a asa.",
                                     "Note que fendas injetam ar de alta energia."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de explicar os princípios aerodinâmicos dos flaps fendidos e Fowler, descrevendo seus mecanismos de redução de separação, aumento de circulação e área, comparando ganhos em CLmax e ilustrando sequências de deployment.",
+                                  "commonMistakes": [
+                                    "Confundir flap fendido com Fowler, ignorando a ausência de aumento significativo de área no fendido.",
+                                    "Esquecer que a fenda no flap fendido injeta ar de alta energia da borda de ataque para reduzir separação.",
+                                    "Superestimar o ganho de CLmax do flap fendido (acima de 80%) ou subestimar o do Fowler (até 90%).",
+                                    "Não visualizar corretamente o movimento do Fowler: simultaneamente para trás e para baixo."
                                   ]
                                 },
                                 "learningObjective: "
@@ -12070,7 +12149,26 @@
                                 "Use cores para diferenciar impactos (azul=circulação, verde=área).",
                                 "Relacione com performance em pouso curto."
                               ],
-                              "learningObjective": "Sintetizar diferenças e impactos aerodinâmicos dos três tipos de flaps."
+                              "learningObjective": "Sintetizar diferenças e impactos aerodinâmicos dos três tipos de flaps.",
+                              "practicalExample": "Monte um modelo de asa em papelão ou espuma com flaps simples e Fowler. Teste em um túnel de vento caseiro (soprador de cabelo) medindo ângulo de ataque e sustentação aproximada com uma balança digital, comparando antes e após deflexão.",
+                              "finalVerifications": [
+                                "Submissão da tabela comparativa e mapa mental.",
+                                "Quiz com 8 questões sobre diferenças aerodinâmicas e aplicações.",
+                                "Vídeo curto (1 min) explicando o flap de uma aeronave real."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual e diagramas corretos (40%)",
+                                "Completude da tabela e comparações quantitativas (30%)",
+                                "Identificação e análise em exemplos reais (20%)",
+                                "Criatividade no mapa mental e verificações (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Equações de Kutta-Joukowski e integrais de circulação.",
+                                "Física: Princípios de Bernoulli e escoamento viscoso.",
+                                "Engenharia Mecânica: Cinemática de mecanismos de flaps.",
+                                "Ciência dos Materiais: Resistência estrutural de superfícies móveis."
+                              ],
+                              "realWorldApplication": "Flaps permitem decolagens e pousos em pistas curtas, essenciais em aviões como o Boeing 737 (flaps Fowler) e Cessna 172 (flaps simples), otimizando segurança e eficiência em aeroportos congestionados como Congonhas (SBSP)."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -35649,7 +35747,8 @@
             "totalSkills": 282
           }
         ],
-        "totalSkills": 282
+        "totalSkills": 282,
+        "percentage": 0
       }
     ]
   }

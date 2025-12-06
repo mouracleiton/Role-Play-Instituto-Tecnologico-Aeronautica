@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-63",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 307
+      "totalAtomicSkills": 307,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "ED-63",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-63"
     },
     "areas": [
       {
@@ -19269,10 +19275,30 @@
                                     "Desenhe diagramas causais marcando loops com 'R1', 'R2' etc.",
                                     "Discuta com um parceiro ou em fórum: o que quebra o loop?",
                                     "verification: "
-                                  ]
+                                  ],
+                                  "verification": "Quiz com perguntas sobre identificação de loops e análise de casos, seguido de revisão por pares ou moderador no fórum",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": "Caixas de estudo de casos (ex: redes sociais, epidemias), papel e caneta ou software de diagramação (ex: Lucidchart), acesso a fórum online para discussões",
+                                  "tips": "Comece com exemplos simples antes de casos complexos. Utilize exemplos do dia a dia para facilitar a compreensão. Foque em mapear variáveis claramente antes de desenhar diagramas.",
+                                  "learningObjective": "Identificar e analisar loops reforçadores em sistemas complexos, mapeando variáveis e diagramando relações causais para compreender dinâmicas de auto-potenciação",
+                                  "commonMistakes": "Confundir loops reforçadores com loops estabilizadores. Esquecer de incluir todas as variáveis relevantes no mapeamento. Sobrecargar o diagrama com detalhes desnecessários. Subestimar fatores que interrompem o loop (ex: saturação, limites de recursos)"
                                 },
                                 "verification: "
-                              ]
+                              ],
+                              "practicalExample": "Crie um infográfico sobre como feedbacks positivos em plataformas de mídia social levam ao aumento exponencial de seguidores, usando dados hipotéticos de crescimento mensal.",
+                              "finalVerifications": "Apresentar um diagrama completo de um loop reforçador escolhido pelo aluno, com explicação escrita de pelo menos 200 palavras sobre o mecanismo de auto-reforço e possíveis pontos de intervenção.",
+                              "assessmentCriteria": [
+                                "Precisão na identificação das variáveis e conexões causais",
+                                "Clareza na explicação do mecanismo exponencial",
+                                "Capacidade de sugerir estratégias para mitigar ou aproveitar o loop"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática (funções exponenciais e crescimento geométrico)",
+                                "Biologia (dinâmica de populações)",
+                                "Economia (efeitos de rede e mercados em bolha)",
+                                "Ciência da Computação (algoritmos de recomendação com feedback positivo)"
+                              ],
+                              "realWorldApplication": "Análise de estratégias de marketing viral, planejamento de políticas de saúde pública para contenção de epidemias, gestão de recursos naturais com efeitos de feedback positivo."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -22813,6 +22839,27 @@
                                     "Calcule variância: Std dev de pedidos no Varejo vs Fábrica.",
                                     "Discuta insights: Como pequenas variações se amplificam.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Apresentação de gráficos com análise de variância e relatório escrito identificando causas e amplificação",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Planilha com dados de pedidos e estoques por player",
+                                    "Calculadora",
+                                    "Caneta e papel",
+                                    "Software de análise de dados (ex: Excel, Google Sheets)"
+                                  ],
+                                  "tips": [
+                                    "Utilize gráficos de linha para visualização clara das variações ao longo das semanas",
+                                    "Compare semana a semana para identificar pontos de amplificação",
+                                    "Considere o tempo de lead e atrasos na cadeia ao analisar causas",
+                                    "Utilize o coeficiente de variação (std dev / média) para comparações mais robustas"
+                                  ],
+                                  "learningObjective": "Compreender como pequenas variações na demanda ao consumidor se amplificam nas etapas upstream da cadeia de suprimentos, identificando causas estruturais e métricas de amplificação",
+                                  "commonMistakes": [
+                                    "Confundir variância com desvio padrão ao calcular amplificação",
+                                    "Analisar apenas uma semana isolada sem considerar tendências",
+                                    "Atribuir amplificação exclusivamente a atrasos sem considerar ajustes reativos",
+                                    "Ignorar a diferença entre demanda real e pedidos gerados pelo sistema"
                                   ]
                                 },
                                 "verification: ",
@@ -40111,7 +40158,8 @@
             "totalSkills": 307
           }
         ],
-        "totalSkills": 307
+        "totalSkills": 307,
+        "percentage": 100
       }
     ]
   }

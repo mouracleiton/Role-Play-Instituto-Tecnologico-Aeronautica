@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-72",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 335
+      "totalAtomicSkills": 335,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "AT-72",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-72"
     },
     "areas": [
       {
@@ -9834,6 +9840,11 @@
                                   "learningObjective": "Aplicar a definição em exemplos concretos e validar propriedades vetoriais.",
                                   "commonMistakes": [
                                     "Não projetar de volta para o plano tangente na esfera; confundir com soma euclidiana global."
+                                  ],
+                                  "tips": [
+                                    "Dica: Use coordenadas locais para simplificar cálculos na esfera.",
+                                    "Dica: Verifique independência computando a soma com diferentes reparametrizações e mostrando igualdade no plano tangente.",
+                                    "Dica: Para comutatividade e associatividade, explore a simetria e propriedades algébricas da derivada em t=0."
                                   ]
                                 },
                                 {
@@ -22933,7 +22944,34 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Considere f(x) = 0.5 (constante) em [0,1]. Então g(x) = 0.5 - x. g(0) = 0.5 ≥ 0, g(1) = -0.5 ≤ 0. Por TVI, ∃ c ∈ [0,1] com g(c)=0, i.e., 0.5 - c = 0 ⇒ c=0.5, e f(0.5)=0.5 (ponto fixo). Visualize: linha reta g decrescente cruzando zero em 0.5."
+                                  "practicalExample": "Considere f(x) = 0.5 (constante) em [0,1]. Então g(x) = 0.5 - x. g(0) = 0.5 ≥ 0, g(1) = -0.5 ≤ 0. Por TVI, ∃ c ∈ [0,1] com g(c)=0, i.e., 0.5 - c = 0 ⇒ c=0.5, e f(0.5)=0.5 (ponto fixo). Visualize: linha reta g decrescente cruzando zero em 0.5.",
+                                  "stepNumber": "3.1",
+                                  "title": "Exemplo Prático: Demonstração de Ponto Fixo via Teorema do Valor Intermediário (TVI)",
+                                  "subSteps": [
+                                    "Defina g(x) = f(x) - x para f(x) = 0.5 (constante) em [0,1].",
+                                    "Calcule g(0) = 0.5 ≥ 0 e g(1) = -0.5 ≤ 0.",
+                                    "Aplique o TVI: existe c ∈ (0,1) tal que g(c) = 0, logo f(c) = c.",
+                                    "Verifique explicitamente: c = 0.5 e f(0.5) = 0.5.",
+                                    "Visualize graficamente: g(x) é reta decrescente cruzando o eixo x em 0.5."
+                                  ],
+                                  "verification": "Responda: Qual é o ponto fixo exato? Desenhe o gráfico de g(x) e identifique o cruzamento com y=0. Confirme f(c)=c.",
+                                  "estimatedTime": "5-7 minutos",
+                                  "materials": [
+                                    "Papel e lápis para esboço gráfico",
+                                    "Software de graficação (GeoGebra ou Desmos, opcional)"
+                                  ],
+                                  "tips": [
+                                    "Sempre verifique continuidade de f e os sinais opostos de g nos extremos.",
+                                    "Desenhe g(x) para ganhar intuição visual sobre o cruzamento.",
+                                    "Generalize: isso prova Brouwer em 1D para [0,1]."
+                                  ],
+                                  "learningObjective": "Aplicar o Teorema do Valor Intermediário para provar a existência de pontos fixos em funções contínuas no intervalo [0,1], desenvolvendo intuição geométrica.",
+                                  "commonMistakes": [
+                                    "Esquecer de verificar g(a) ≥ 0 e g(b) ≤ 0 (sinais opostos).",
+                                    "Confundir ponto fixo f(c)=c com raiz de f(x)=0.",
+                                    "Não notar que f constante é contínua, essencial para TVI.",
+                                    "Ignorar o intervalo fechado [0,1] para garantir extremos."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -22942,6 +22980,33 @@
                                     "Identifica g(c)=0 como ponto fixo de f.",
                                     "Reformula o teorema inteiro usando g sem hesitação.",
                                     "Aplica a interpretação a um exemplo novo simples."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Reformulação do Teorema do Ponto Fixo via TVI com função auxiliar g",
+                                  "subSteps": [
+                                    "Defina g(x) = f(x) - x para x ∈ [0,1], onde f: [0,1] → [0,1] é contínua.",
+                                    "Calcule g(0) = f(0) - 0 ≥ 0 e g(1) = f(1) - 1 ≤ 0, justificando com as hipóteses de f.",
+                                    "Verifique que g é contínua em [0,1] e aplique o Teorema do Valor Intermediário (TVI) a g.",
+                                    "Conclua que ∃ c ∈ (0,1) tal que g(c) = 0, ou seja, f(c) = c (ponto fixo de f).",
+                                    "Reformule o teorema inteiro utilizando g sem recorrer à formulação original."
+                                  ],
+                                  "verification": "O aluno demonstra domínio ao calcular g(0)/g(1), explicar TVI em g, identificar ponto fixo e reformular o teorema em exemplo novo.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Papel e caneta",
+                                    "Acesso ao enunciado do teorema do ponto fixo"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: f(0) ≥ 0 e f(1) ≤ 1 garantem os sinais opostos ou nulos em g(0) e g(1).",
+                                    "Visualize graficamente: interseção da curva y = f(x) com y = x.",
+                                    "Pratique verbalizando: 'TVI garante raiz de g, que é interseção com diagonal'."
+                                  ],
+                                  "learningObjective": "Reformular o Teorema do Ponto Fixo unidimensional usando função auxiliar g(x) = f(x) - x e TVI, identificando g(c) = 0 como ponto fixo f(c) = c.",
+                                  "commonMistakes": [
+                                    "Calcular incorretamente g(0) ou g(1), ignorando f(0) ≥ 0 ou f(1) ≤ 1.",
+                                    "Confundir g(c) = 0 com f(c) = 0 (raiz em vez de ponto fixo).",
+                                    "Hesitar na continuidade de g ou na aplicação direta da TVI.",
+                                    "Não reformular o teorema inteiro em termos de g."
                                   ]
                                 },
                                 {
@@ -22951,6 +23016,34 @@
                                     "Conexão intuitiva entre reformulação e teorema original (70-80%).",
                                     "Uso correto de continuidade e hipóteses (60-70%).",
                                     "Capacidade de generalizar para outros contextos (acima de 90%)."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Reformulação Intuitiva do Teorema do Valor Intermediário (TVI)",
+                                  "subSteps": [
+                                    "Definir a função auxiliar g(x) = f(x) - k e analisar seus sinais nos extremos do intervalo.",
+                                    "Verificar a continuidade de f no intervalo fechado [a, b].",
+                                    "Aplicar o TVI a g para concluir a existência de c tal que g(c) = 0.",
+                                    "Conectar intuitivamente com o teorema original via mudança de sinal.",
+                                    "Generalizar para contextos como existência de raízes ou máximos/mínimos."
+                                  ],
+                                  "verification": "Resolva o exercício: Prove que f(x) = x^3 - x + 1 tem pelo menos uma raiz em [0,1] usando TVI reformulado. Compare com critérios de avaliação.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Papel e lápis para esboços gráficos",
+                                    "Calculadora para avaliações numéricas",
+                                    "Apostila de Cálculo I (capítulo sobre continuidade e TVI)"
+                                  ],
+                                  "tips": [
+                                    "Sempre esboce o gráfico para visualizar os sinais de g nos extremos.",
+                                    "Confira hipóteses de continuidade antes de aplicar o teorema.",
+                                    "Pense em g como uma 'ponte' entre valores conhecidos e o intermediário."
+                                  ],
+                                  "learningObjective": "Compreender e aplicar o Teorema do Valor Intermediário (TVI) por meio de reformulação intuitiva com funções auxiliares, analisando sinais nos extremos e generalizando para outros contextos contínuos.",
+                                  "commonMistakes": [
+                                    "Ignorar a continuidade de f no intervalo.",
+                                    "Confundir sinais de g(a) e g(b) (deve haver mudança de sinal).",
+                                    "Não conectar a reformulação ao TVI original.",
+                                    "Falhar em generalizar para funções não polinomiais."
                                   ]
                                 },
                                 {
@@ -22959,12 +23052,86 @@
                                     "Física: Existência de equilíbrios em sistemas dinâmicos 1D.",
                                     "Programação: Implementação de solvers de equações não-lineares via fixed-point.",
                                     "Economia: Modelos de equilíbrio oferta-demanda como pontos fixos."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Método do Ponto Fixo",
+                                  "subSteps": [
+                                    "Definir ponto fixo de uma função g: p tal que g(p) = p.",
+                                    "Enunciar o Teorema do Ponto Fixo de Banach: condições de contração em intervalo fechado.",
+                                    "Provar unicidade e convergência do método iterativo x_{n+1} = g(x_n).",
+                                    "Implementar numericamente em Python para equação não-linear f(x) = 0 via g(x) = x - f(x).",
+                                    "Explorar aplicações em equilíbrios econômicos e sistemas dinâmicos."
+                                  ],
+                                  "verification": "Resolver: Encontre o ponto fixo de g(x) = (x + cos(x))/2 no intervalo [0, π/2] e implemente 10 iterações. Verifique erro < 10^{-6}.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Caderno e calculadora científica.",
+                                    "Ambiente Python com NumPy (opcional para implementação)."
+                                  ],
+                                  "tips": [
+                                    "Escolha g tal que |g'(x)| < k < 1 em todo o intervalo para garantir convergência.",
+                                    "Inicie iterações próximas ao ponto fixo estimado para aceleração.",
+                                    "Teste múltiplas reformulações g(x) = x - λ f(x) variando λ."
+                                  ],
+                                  "learningObjective": "Compreender o teorema do ponto fixo de Banach, aplicar métodos iterativos para soluções numéricas de equações não-lineares e conectar com aplicações interdisciplinares.",
+                                  "commonMistakes": [
+                                    "Não verificar a condição de Lipschitz com constante <1, levando a divergência.",
+                                    "Escolher intervalo inadequado onde g não mapeia em si mesmo.",
+                                    "Confundir ponto fixo com raiz da função original sem reformulação adequada.",
+                                    "Ignorar análise de erro na implementação numérica."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em otimização e economia, modela equilíbrios de mercado onde uma função de preço-oferta intersecta demanda (ponto fixo), garantindo existência de preço de equilíbrio via reformulação Brouwer-TVI."
+                                  "realWorldApplication": "Em otimização e economia, modela equilíbrios de mercado onde uma função de preço-oferta intersecta demanda (ponto fixo), garantindo existência de preço de equilíbrio via reformulação Brouwer-TVI.",
+                                  "stepNumber": 4,
+                                  "title": "Aplicação do Teorema do Ponto Fixo de Brouwer em Equilíbrios de Mercado",
+                                  "subSteps": [
+                                    "Reformule o problema de interseção entre oferta e demanda como um ponto fixo de uma função contínua.",
+                                    "Verifique as condições do Teorema de Brouwer: conjunto compacto e convexo no R^n.",
+                                    "Aplique o teorema para garantir a existência de um preço de equilíbrio.",
+                                    "Interprete economicamente o ponto fixo como o equilíbrio de mercado."
+                                  ],
+                                  "verification": "Resolva um exemplo numérico simples: defina funções de oferta D(p) e demanda S(p) em [0,10], encontre o ponto fixo de g(p) = D^{-1}(S(p)) e verifique se satisfaz as hipóteses de Brouwer.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Papel e caneta para cálculos.",
+                                    "Calculadora ou software como Python/MATLAB para plotar funções (opcional)."
+                                  ],
+                                  "tips": [
+                                    "Sempre confirme compactidade (fechado e limitado) e convexidade do conjunto de preços.",
+                                    "Use normalização para mapear para a unidade simplex se necessário.",
+                                    "Visualize graficamente a interseção para intuição antes da prova formal."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de modelar equilíbrios de mercado como problemas de ponto fixo e aplicar o Teorema de Brouwer para provar a existência de soluções de equilíbrio.",
+                                  "commonMistakes": [
+                                    "Esquecer de verificar se o conjunto é convexo ou compacto.",
+                                    "Confundir continuidade da função de excesso de demanda com Lipschitz.",
+                                    "Aplicar Brouwer em dimensões infinitas (use Kakutani para isso)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Considere f(x) = 0.5 (constante) em [0,1]. Então g(x) = 0.5 - x. g(0) = 0.5 ≥ 0, g(1) = -0.5 ≤ 0. Por TVI, ∃ c ∈ [0,1] com g(c)=0, i.e., 0.5 - c = 0 ⇒ c=0.5, e f(0.5)=0.5 (ponto fixo). Visualize: linha reta g decrescente cruzando zero em 0.5.",
+                              "finalVerifications": [
+                                "Consegue calcular g(0) e g(1) corretamente para qualquer f válida.",
+                                "Explica verbalmente por que TVI se aplica a g.",
+                                "Identifica g(c)=0 como ponto fixo de f.",
+                                "Reformula o teorema inteiro usando g sem hesitação.",
+                                "Aplica a interpretação a um exemplo novo simples."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na definição de g e seus sinais nos extremos (90-100%).",
+                                "Compreensão clara da aplicação do TVI (80-90%).",
+                                "Conexão intuitiva entre reformulação e teorema original (70-80%).",
+                                "Uso correto de continuidade e hipóteses (60-70%).",
+                                "Capacidade de generalizar para outros contextos (acima de 90%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Análise Numérica: Métodos iterativos de ponto fixo (ex: método de Banach).",
+                                "Física: Existência de equilíbrios em sistemas dinâmicos 1D.",
+                                "Programação: Implementação de solvers de equações não-lineares via fixed-point.",
+                                "Economia: Modelos de equilíbrio oferta-demanda como pontos fixos."
+                              ],
+                              "realWorldApplication": "Em otimização e economia, modela equilíbrios de mercado onde uma função de preço-oferta intersecta demanda (ponto fixo), garantindo existência de preço de equilíbrio via reformulação Brouwer-TVI."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -39107,6 +39274,25 @@
                                     "Explore provas que usam Jordan para Brouwer em dimensão 2.",
                                     "Analise implicações: ausência de retração para a fronteira em discos.",
                                     "verification\": "
+                                  ],
+                                  "verification": "Peça ao aluno para esboçar uma prova do teorema do ponto fixo de Brouwer em dimensão 2 usando o teorema da curva de Jordan, destacando a não-existência de retração contínua do disco para sua fronteira. Verifique se menciona homeomorfismo e separação do plano.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Papel e caneta para diagramas",
+                                    "Referência ao teorema de Jordan-Schoenflies",
+                                    "Exemplos de mapas contínuos em disco unitário"
+                                  ],
+                                  "tips": [
+                                    "Visualize o disco fechado e sua fronteira como circunferência.",
+                                    "Lembre-se: suponha sem ponto fixo, construa retração, derive loop não-trivial via Jordan.",
+                                    "Compare com prova em dimensão 1 via valor intermediário."
+                                  ],
+                                  "learningObjective": "Compreender e demonstrar como o teorema da curva de Jordan implica o teorema do ponto fixo de Brouwer em dimensão 2, via não-retraibilidade do disco para sua fronteira.",
+                                  "commonMistakes": [
+                                    "Confundir homeomorfismo com isometria ou difeomorfismo.",
+                                    "Esquecer a necessidade de continuidade na função f.",
+                                    "Ignorar que Jordan separa o plano em interior e exterior, permitindo detectar loops não-contráteis.",
+                                    "Acreditar que Brouwer vale para bolas abertas (não é o caso)."
                                   ]
                                 }
                               ],
@@ -39122,7 +39308,26 @@
                               "commonMistakes": [
                                 "Confundir Brouwer com outros teoremas fixos (ex: Sperner).",
                                 "Não ver a dependência na topologia do plano."
-                              ]
+                              ],
+                              "practicalExample": "Implemente em Python (usando Matplotlib) uma visualização de uma curva Jordan simples e aplique um algoritmo de preenchimento para destacar o interior e exterior, testando com curvas convexas e ligeiramente deformadas.",
+                              "finalVerifications": [
+                                "Resuma em 200 palavras as ligações entre o Teorema de Jordan, superfícies não orientáveis e o Teorema de Brouwer.",
+                                "Desenhe um diagrama mostrando uma retração impossível em um disco via Jordan-Schoenflies.",
+                                "Explique verbalmente por que Brouwer falha em dimensões superiores sem hipóteses adicionais."
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão precisa dos teoremas e provas (40%).",
+                                "Identificação correta de contraexemplos e limitações (30%).",
+                                "Qualidade de diagramas, visualizações e resumos (20%).",
+                                "Aplicação de conceitos em exemplos práticos (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Análise Real: continuidade e teoremas de ponto fixo.",
+                                "Geometria Computacional: algoritmos para curvas e separação de regiões.",
+                                "Física Matemática: topologia de superfícies em modelagem de materiais.",
+                                "Ciência da Computação: pathfinding e detecção de colisões em jogos."
+                              ],
+                              "realWorldApplication": "O Teorema de Jordan é fundamental em computação gráfica para algoritmos de 'scanline fill' que preenchem regiões internas de curvas; o Brouwer aplica-se em economia (equilíbrio de Nash) e robótica (garantia de colisões em planejamento de movimentos)."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "advanced",
@@ -42895,7 +43100,8 @@
             "totalSkills": 335
           }
         ],
-        "totalSkills": 335
+        "totalSkills": 335,
+        "percentage": 0
       }
     ]
   }

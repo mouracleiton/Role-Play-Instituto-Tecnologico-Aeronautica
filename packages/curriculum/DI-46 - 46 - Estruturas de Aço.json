@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - DI-46",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 342
+      "totalAtomicSkills": 342,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - DI-46"
     },
     "areas": [
       {
@@ -6393,7 +6399,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um ensaio de compressão axial em provete de aço S235 (A=100mm², L=300mm), registre dados: aos 200MPa (ε=-0.001), limite proporcional; 235MPa (ε=-0.0012), escoamento; ruptura a 380MPa (ε=-0.12). Plote o diagrama, compare com tração (mesmo f_y mas ε_y=-0.0015 vs +0.002), identifique pontos e discuta por que compressão falha mais cedo em encruamento."
+                                  "practicalExample": "Em um ensaio de compressão axial em provete de aço S235 (A=100mm², L=300mm), registre dados: aos 200MPa (ε=-0.001), limite proporcional; 235MPa (ε=-0.0012), escoamento; ruptura a 380MPa (ε=-0.12). Plote o diagrama, compare com tração (mesmo f_y mas ε_y=-0.0015 vs +0.002), identifique pontos e discuta por que compressão falha mais cedo em encruamento.",
+                                  "stepNumber": 5,
+                                  "title": "Ensaio de Compressão Axial em Aço S235 e Comparação com Tração",
+                                  "subSteps": [
+                                    "Prepare o provete de aço S235 (A=100 mm², L=300 mm).",
+                                    "Registre os dados do ensaio: 200 MPa (ε=-0.001, limite proporcional); 235 MPa (ε=-0.0012, escoamento); 380 MPa (ε=-0.12, ruptura).",
+                                    "Plote o diagrama tensão-deformação.",
+                                    "Compare com diagrama de tração (f_y=235 MPa, ε_y=+0.002).",
+                                    "Identifique pontos chave e discuta por que a compressão falha mais cedo devido a encruamento."
+                                  ],
+                                  "verification": "Diagrama tensão-deformação plotado corretamente com pontos identificados; discussão submetida explicando diferenças (ε_y compressão vs. tração e falha prematura).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Provete de aço S235 (A=100 mm², L=300 mm)",
+                                    "Máquina universal de ensaios",
+                                    "Folha de registro de dados",
+                                    "Software de plotagem (Excel ou Python/MATLAB)"
+                                  ],
+                                  "tips": [
+                                    "Use deformações negativas para compressão.",
+                                    "Observe ε_y ≈ -0.0012 (compressão) vs. +0.002 (tração).",
+                                    "Considere flambagem ou encruamento como causas de ruptura antecipada em compressão."
+                                  ],
+                                  "learningObjective": "Compreender e comparar o comportamento mecânico do aço S235 em compressão axial versus tração, identificando limites elástico, proporcional, de escoamento e ruptura, e explicando diferenças qualitativas.",
+                                  "commonMistakes": [
+                                    "Confundir sinais das deformações (positivo/negativo).",
+                                    "Não identificar corretamente limite proporcional (200 MPa) vs. escoamento (235 MPa).",
+                                    "Omitir discussão sobre encruamento ou flambagem na compressão.",
+                                    "Plotar diagrama sem escalas adequadas ou pontos marcados."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -6402,6 +6437,37 @@
                                     "Comparação com tração destaca pelo menos 3 diferenças chave (f_y, ε_y, f_r).",
                                     "Curvas mostram zona elástica linear, transição de escoamento e plastificação realista.",
                                     "Interpretação escrita explica implicações para projeto estrutural."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Elaboração do Diagrama de Tensão-Deformação em Compressão e Comparação com Tração",
+                                  "subSteps": [
+                                    "Desenhe os eixos corretos: tensão (horizontal, com escalas apropriadas e valores negativos para compressão) e deformação (vertical).",
+                                    "Localize e rotule precisamente os pontos f_e (limite elástico), f_y (escoamento) e f_r (ruptura), indicando seus valores numéricos.",
+                                    "Trace as curvas representando a zona elástica linear, transição de escoamento e plastificação de forma realista.",
+                                    "Compare o diagrama de compressão com o de tração, destacando pelo menos 3 diferenças chave (ex.: valores de f_y, ε_y e f_r).",
+                                    "Elabore uma interpretação escrita explicando as implicações para o projeto estrutural."
+                                  ],
+                                  "verification": "O trabalho é aprovado se atender a todos os critérios das finalVerifications.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel milimetrado ou gráfico",
+                                    "Régua e compasso",
+                                    "Lápis, borracha e caneta",
+                                    "Dados experimentais de tração e compressão fornecidos"
+                                  ],
+                                  "tips": [
+                                    "Use escalas proporcionais para visualizar claramente todas as zonas do diagrama.",
+                                    "Confira os sinais negativos na tensão de compressão para evitar confusões com tração.",
+                                    "Na comparação, foque em diferenças quantitativas e qualitativas nos comportamentos.",
+                                    "Inclua unidades consistentes (ex.: MPa para tensão, % para deformação)."
+                                  ],
+                                  "learningObjective": "Construir e interpretar diagramas tensão-deformação para materiais em compressão, comparando com tração e analisando implicações para dimensionamento estrutural.",
+                                  "commonMistakes": [
+                                    "Omitir ou inverter sinais negativos na tensão de compressão.",
+                                    "Posicionar incorretamente os pontos f_e, f_y ou f_r sem valores precisos.",
+                                    "Não destacar pelo menos 3 diferenças chave na comparação com tração.",
+                                    "Representar curvas sem realismo na transição elástica-plástica.",
+                                    "Falta de interpretação escrita ou explicação superficial das implicações."
                                   ]
                                 },
                                 {
@@ -6411,6 +6477,33 @@
                                     "Qualidade da comparação com diagrama de tração (20%).",
                                     "Profundidade da interpretação e discussão de diferenças (15%).",
                                     "Clareza e organização do diagrama e relatório (10%)."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Plotagem e Análise do Diagrama de Tração",
+                                  "subSteps": [
+                                    "Plotar os pontos chave de esforço versus deformação em papel milimetrado.",
+                                    "Identificar e rotular corretamente f_e (força elástica limite), f_y (força de escoamento) e f_r (força de ruptura).",
+                                    "Comparar o diagrama experimental com um diagrama de tração teórico padrão.",
+                                    "Interpretar e discutir as diferenças observadas entre os diagramas."
+                                  ],
+                                  "verification": "Submissão do diagrama plotado e relatório de análise, avaliado pelos critérios de avaliação fornecidos.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel milimetrado ou quadriculado",
+                                    "Lápis, régua e compasso",
+                                    "Dados experimentais de tração (força vs. deformação)"
+                                  ],
+                                  "tips": [
+                                    "Escolha escalas adequadas para os eixos para maximizar a precisão da plotagem.",
+                                    "Verifique duplamente a identificação das forças antes de rotular.",
+                                    "Estruture a discussão destacando causas possíveis para discrepâncias."
+                                  ],
+                                  "learningObjective": "Construir com precisão o diagrama de tração experimental, identificar e rotular os pontos chave (f_e, f_y, f_r), compará-lo com o diagrama teórico e interpretar as diferenças observadas.",
+                                  "commonMistakes": [
+                                    "Imprecisão na plotagem dos pontos devido a escalas inadequadas.",
+                                    "Confusão entre f_y (escoamento) e f_r (ruptura) na identificação.",
+                                    "Comparação superficial sem análise de causas das diferenças.",
+                                    "Falta de clareza nos rótulos ou desorganização no relatório."
                                   ]
                                 },
                                 {
@@ -6419,12 +6512,95 @@
                                     "Matemática: Construção e interpretação de gráficos cartesianos.",
                                     "Ciência dos Materiais: Microestrutura do aço e dislocações.",
                                     "Engenharia Mecânica: Ensaios uniaxial e propriedades elasto-plásticas."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Realização do Ensaio Uniaxial de Tração e Construção do Gráfico Tensão-Deformação",
+                                  "subSteps": [
+                                    "Preparar a amostra de aço, medindo dimensões iniciais (comprimento e diâmetro) com precisão micrométrica.",
+                                    "Instalar a amostra na máquina universal de ensaios, garantindo alinhamento axial perfeito.",
+                                    "Configurar a máquina para ensaio de tração com velocidade de deformação constante (ex: 1 mm/min).",
+                                    "Iniciar o ensaio, registrando força aplicada e deslocamento a cada intervalo de tempo ou deformação.",
+                                    "Continuar até a ruptura da amostra, anotando o ponto de escoamento e máxima carga.",
+                                    "Exportar dados de força vs. deslocamento e calcular tensão (σ = F/A0) e deformação (ε = ΔL/L0).",
+                                    "Construir o gráfico cartesiano de tensão vs. deformação usando software (ex: Excel ou Python/Matplotlib)."
+                                  ],
+                                  "verification": "O gráfico apresenta região elástica linear com inclinação (módulo de Young) próxima a 200 GPa, ponto de escoamento visível e região plástica não-linear, compatível com comportamento de aço.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Amostra cilíndrica de aço baixo carbono",
+                                    "Máquina universal de ensaios de tração",
+                                    "Paquímetro e micrômetro",
+                                    "Computador com software de plotagem gráfica (Excel ou similar)",
+                                    "Folha de dados para registro manual"
+                                  ],
+                                  "tips": [
+                                    "Alinhe perfeitamente a amostra para evitar flambagem ou falha prematura por cisalhamento.",
+                                    "Registre dados em intervalos regulares para boa resolução do gráfico.",
+                                    "Use área seção transversal inicial (A0) para cálculo de tensão de engenharia.",
+                                    "Compare o gráfico obtido com curvas tensão-deformação padrão de aços."
+                                  ],
+                                  "learningObjective": "Realizar ensaio uniaxial de tração em aço, construir e interpretar o gráfico tensão-deformação, identificando regiões elástica (Lei de Hooke) e plástica, relacionando com microestrutura (dislocações) e propriedades mecânicas.",
+                                  "commonMistakes": [
+                                    "Não zerar extensômetro ou máquina antes do ensaio, levando a offsets no gráfico.",
+                                    "Confundir tensão de engenharia com verdadeira ou deformação nominal com verdadeira.",
+                                    "Ignorar alinhamento, causando falha assimétrica e gráfico distorcido.",
+                                    "Erro na interpretação: confundir limite de elasticidade com limite de escoamento.",
+                                    "Gráfico com eixos invertidos ou escalas inadequadas, dificultando leitura."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "No dimensionamento de colunas de aço em edifícios altos, o diagrama tensão-deformação em compressão guia o cálculo de cargas críticas de escoamento (f_y) e ruptura (f_r), considerando flambagem, garantindo segurança contra colapso sob cargas verticais como em pontes ou torres."
+                                  "realWorldApplication": "No dimensionamento de colunas de aço em edifícios altos, o diagrama tensão-deformação em compressão guia o cálculo de cargas críticas de escoamento (f_y) e ruptura (f_r), considerando flambagem, garantindo segurança contra colapso sob cargas verticais como em pontes ou torres.",
+                                  "stepNumber": 4,
+                                  "title": "Interpretação do Diagrama Tensão-Deformação em Compressão para Aço",
+                                  "subSteps": [
+                                    "1. Identificar os pontos principais do diagrama: tensão de escoamento (f_y) e tensão de ruptura (f_r).",
+                                    "2. Analisar o comportamento não linear devido à flambagem local e global.",
+                                    "3. Aplicar o diagrama no cálculo da carga crítica de colunas esbeltas.",
+                                    "4. Comparar com normas técnicas (ex.: NBR 8800)."
+                                  ],
+                                  "verification": "Desenhe o diagrama tensão-deformação em compressão para uma coluna de aço e indique como determinar a tensão admissível considerando flambagem. Forneça um exemplo numérico simples.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Norma ABNT NBR 8800 (Projeto de estruturas de aço)",
+                                    "Folha de papel e lápis para esboço do diagrama",
+                                    "Calculadora para cálculos preliminares"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: em compressão, a flambagem reduz significativamente a capacidade portante em relação à tração.",
+                                    "Use curvas de flambagem (Euler ou AISC) para colunas esbeltas (λ > 100).",
+                                    "Verifique unidades: MPa para tensão, mm para deformação."
+                                  ],
+                                  "learningObjective": "Compreender e interpretar o diagrama tensão-deformação em compressão para aço estrutural, identificando tensões de escoamento (f_y) e ruptura (f_r), e aplicá-lo no dimensionamento de colunas considerando flambagem para garantir segurança em estruturas como edifícios altos, pontes e torres.",
+                                  "commonMistakes": [
+                                    "Ignorar o efeito de flambagem, usando diretamente f_y sem redução por esbeltez.",
+                                    "Confundir diagrama de compressão com tração, onde o comportamento é mais dúctil.",
+                                    "Não considerar imperfeições iniciais ou excentricidades na análise.",
+                                    "Usar valores de f_r sem verificar o tipo de seção (sólida ou perfil formada a frio)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um ensaio de compressão axial em provete de aço S235 (A=100mm², L=300mm), registre dados: aos 200MPa (ε=-0.001), limite proporcional; 235MPa (ε=-0.0012), escoamento; ruptura a 380MPa (ε=-0.12). Plote o diagrama, compare com tração (mesmo f_y mas ε_y=-0.0015 vs +0.002), identifique pontos e discuta por que compressão falha mais cedo em encruamento.",
+                              "finalVerifications": [
+                                "Diagrama possui eixos corretos com escalas apropriadas e sinais negativos para compressão.",
+                                "Pontos f_e, f_y e f_r estão precisamente localizados e rotulados com valores.",
+                                "Comparação com tração destaca pelo menos 3 diferenças chave (f_y, ε_y, f_r).",
+                                "Curvas mostram zona elástica linear, transição de escoamento e plastificação realista.",
+                                "Interpretação escrita explica implicações para projeto estrutural."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão no desenho e plotagem dos pontos chave (30%).",
+                                "Correta identificação e rotulação de f_e, f_y, f_r (25%).",
+                                "Qualidade da comparação com diagrama de tração (20%).",
+                                "Profundidade da interpretação e discussão de diferenças (15%).",
+                                "Clareza e organização do diagrama e relatório (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Mecânica dos contínuos e Lei de Hooke.",
+                                "Matemática: Construção e interpretação de gráficos cartesianos.",
+                                "Ciência dos Materiais: Microestrutura do aço e dislocações.",
+                                "Engenharia Mecânica: Ensaios uniaxial e propriedades elasto-plásticas."
+                              ],
+                              "realWorldApplication": "No dimensionamento de colunas de aço em edifícios altos, o diagrama tensão-deformação em compressão guia o cálculo de cargas críticas de escoamento (f_y) e ruptura (f_r), considerando flambagem, garantindo segurança contra colapso sob cargas verticais como em pontes ou torres."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -43801,7 +43977,8 @@
             "totalSkills": 342
           }
         ],
-        "totalSkills": 342
+        "totalSkills": 342,
+        "percentage": 0
       }
     ]
   }

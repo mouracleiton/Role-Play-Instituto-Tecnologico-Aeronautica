@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-19",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 268
+      "totalAtomicSkills": 268,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "ED-19",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-19"
     },
     "areas": [
       {
@@ -889,7 +895,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em uma empresa de e-commerce, avalie um modelo de predição de churn: use matriz de confusão para calcular recall (minimizar clientes perdidos não detectados), R² para previsão de valor lifetime, e decida se deployar baseado em ROI estimado de 20%."
+                                  "practicalExample": "Em uma empresa de e-commerce, avalie um modelo de predição de churn: use matriz de confusão para calcular recall (minimizar clientes perdidos não detectados), R² para previsão de valor lifetime, e decida se deployar baseado em ROI estimado de 20%.",
+                                  "stepNumber": 19,
+                                  "title": "Avaliação Prática de Modelo de Previsão de Churn em E-commerce",
+                                  "subSteps": [
+                                    "Calcular o recall utilizando a matriz de confusão para identificar clientes perdidos não detectados",
+                                    "Aplicar o coeficiente de determinação (R²) para avaliar a precisão da previsão do valor lifetime dos clientes",
+                                    "Estimar o ROI esperado (20%) e tomar decisão sobre o deploy do modelo"
+                                  ],
+                                  "verification": "Análise crítica da matriz de confusão (foco em falsos negativos), cálculo do R² ajustado e justificação da decisão de deploy com base no ROI estimado versus custos operacionais",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Planilha de cálculo (Excel/Google Sheets)",
+                                    "Bibliotecas Python (scikit-learn, pandas, numpy)",
+                                    "Conjunto de dados de transações e histórico de churn",
+                                    "Modelo de previsão de churn pré-treinado"
+                                  ],
+                                  "tips": [
+                                    "Priorize a minimização de falsos negativos (clientes com churn não detectados)",
+                                    "Valide o R² com conjunto de teste para evitar overfitting",
+                                    "Inclua custos de implementação e manutenção na estimativa de ROI real",
+                                    "Compare o ROI estimado com o custo de oportunidade de alternativas"
+                                  ],
+                                  "learningObjective": "Aplicar métricas de avaliação de modelos (recall, R²) para tomada de decisão estratégica em negócios, equilibrando precisão técnica com impacto financeiro",
+                                  "commonMistakes": [
+                                    "Confundir precisão com recall ao avaliar detecção de churn",
+                                    "Ignorar viés de dados históricos na previsão de valor lifetime",
+                                    "Calcular ROI sem considerar custos de implementação e manutenção contínua",
+                                    "Deployar modelo com alto recall mas baixo impacto financeiro sem análise de custo-benefício"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -898,6 +932,44 @@
                                     "Gerar classification_report com precisão/recall > 0.75.",
                                     "Identificar trade-off entre precisão e recall em cenário de negócios.",
                                     "Documentar insights com plots e recomendações acionáveis."
+                                  ],
+                                  "stepNumber": "5.7",
+                                  "title": "Avaliação e Interpretação de Modelos de Machine Learning",
+                                  "subSteps": [
+                                    "Calcular e analisar a matriz de confusão para o dataset de teste",
+                                    "Interpretar o coeficiente de determinação (R²) e sua relevância",
+                                    "Gerar e interpretar o classification_report, focando em precisão e recall",
+                                    "Analisar o trade-off entre precisão e recall no contexto específico do cenário de negócios",
+                                    "Documentar insights com plots visuais e recomendações acionáveis para tomada de decisão"
+                                  ],
+                                  "verification": [
+                                    "Calcular corretamente matriz de confusão para dataset de teste.",
+                                    "Interpretar R² > 0.8 como modelo explicativo forte.",
+                                    "Gerar classification_report com precisão/recall > 0.75.",
+                                    "Identificar trade-off entre precisão e recall em cenário de negócios.",
+                                    "Documentar insights com plots e recomendações acionáveis."
+                                  ],
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Python",
+                                    "Bibliotecas: scikit-learn, pandas, matplotlib, seaborn",
+                                    "Conjunto de dados de teste fornecido",
+                                    "Template de relatório de análise",
+                                    "Guia de métricas de avaliação de modelos"
+                                  ],
+                                  "tips": [
+                                    "Conecte sempre as métricas ao contexto do negócio ao analisar trade-offs",
+                                    "Utilize visualizações como curvas ROC e matrizes de confusão para comunicação clara",
+                                    "Valide estatisticamente as métricas antes de conclusões finais",
+                                    "Documente hipóteses e decisões tomadas durante a análise"
+                                  ],
+                                  "learningObjective": "Avaliar e interpretar modelos de machine learning usando métricas adequadas, identificando trade-offs contextuais e comunicando insights técnicos para decisões estratégicas",
+                                  "commonMistakes": [
+                                    "Confundir precisão com recall em cenários de desbalanceamento de classes",
+                                    "Interpretar R² isoladamente sem considerar o contexto do problema",
+                                    "Gerar plots complexos que dificultam compreensão por stakeholders não técnicos",
+                                    "Subestimar a importância de validar métricas em conjuntos de teste diferentes",
+                                    "Não contextualizar trade-offs entre precisão/recall com objetivos negócios específicos"
                                   ]
                                 },
                                 {
@@ -907,6 +979,39 @@
                                     "Interpretação contextualizada para negócios (25%)",
                                     "Identificação de erros comuns e baselines (10%)",
                                     "Criatividade em aplicações reais (5%)"
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Projeto Integrador de Análise de Dados para Decisões Estratégicas",
+                                  "subSteps": [
+                                    "Coleta e pré-processamento de dados relevantes para o caso de negócio",
+                                    "Execução de cálculos avançados com validação técnica rigorosa",
+                                    "Desenvolvimento de visualizações interativas e relatórios executivos",
+                                    "Análise crítica de baselines e identificação de vieses comuns",
+                                    "Proposta de soluções criativas aplicáveis ao contexto empresarial"
+                                  ],
+                                  "verification": "Avaliação baseada na rubrica com critérios ponderados (40% cálculos, 20% visualizações, 25% interpretação, 10% erros/baselines, 5% criatividade)",
+                                  "estimatedTime": "40 horas",
+                                  "materials": [
+                                    "Pacote de dados simulados do setor",
+                                    "Guia de boas práticas de visualização (Tableau/Power BI)",
+                                    "Modelo de rubrica de avaliação",
+                                    "Benchmark de baselines setoriais",
+                                    "Estudos de casos de inovação em análise de dados"
+                                  ],
+                                  "tips": [
+                                    "Alinhe cada cálculo a uma pergunta de negócio específica",
+                                    "Use storytelling nas visualizações para guiar a tomada de decisão",
+                                    "Documente todas as assunções e fontes de dados",
+                                    "Compare resultados contra benchmarks históricos",
+                                    "Inclua um slide de 'insights acionáveis' no relatório final"
+                                  ],
+                                  "learningObjective": "Desenvolver a capacidade de transformar dados brutos em insights estratégicos validados tecnicamente, identificando erros sistemáticos e propondo soluções inovadoras contextualizadas",
+                                  "commonMistakes": [
+                                    "Confusão entre correlação e causalidade nos cálculos",
+                                    "Visualizações sobrecarregadas sem foco empresarial",
+                                    "Ignorar limites metodológicos das baselines",
+                                    "Erros de arredondamento cumulativo em cálculos sequenciais",
+                                    "Propostas criativas desconectadas da realidade operacional"
                                   ]
                                 },
                                 {
@@ -916,12 +1021,100 @@
                                     "Programação: Manipulação de dados com Python/pandas.",
                                     "Matemática: Álgebra linear para entender resíduos.",
                                     "Ética: Bias em modelos e impactos sociais."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise Integrada de Dados com Foco em Ética e Decisões Estratégicas",
+                                  "subSteps": [
+                                    "Aplicar testes de hipótese para validar métricas estatísticas",
+                                    "Calcular ROI e tomar decisões estratégicas baseadas em análise de dados",
+                                    "Manipular conjuntos de dados utilizando Python e pandas",
+                                    "Aplicar conceitos de álgebra linear para análise de resíduos",
+                                    "Avaliar e mitigar viés em modelos e impactos sociais"
+                                  ],
+                                  "verification": "Projeto prático aplicando todos os conceitos em um caso de estudo de negócio real, com apresentação de relatórios, código-fonte e reflexão ética",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Livro-texto de estatística inferencial",
+                                    "Notebook com ambiente Python (pandas, numpy, scipy)",
+                                    "Conjunto de dados de exemplo empresarial",
+                                    "Calculadora científica",
+                                    "Guia de ética em inteligência artificial"
+                                  ],
+                                  "tips": [
+                                    "Pratique com datasets reais antes da avaliação",
+                                    "Revisite conceitos de álgebra linear para manipulação correta de matrizes de resíduos",
+                                    "Documente todas as decisões de modelagem para auditoria ética",
+                                    "Utilize visualizações para comunicar resultados estratégicos de forma clara"
+                                  ],
+                                  "learningObjective": "Aplicar métodos estatísticos, técnicas de programação e análise matemática para tomar decisões de negócio estratégicas, considerando impactos éticos na análise de dados",
+                                  "commonMistakes": [
+                                    "Confundir testes de hipótese unilateral com bilateral",
+                                    "Ignorar viés de seleção ou viés de confirmação nos dados",
+                                    "Uso incorreto de operações de álgebra linear na manipulação de resíduos",
+                                    "Subestimar o impacto social das decisões baseadas em modelos preditivos",
+                                    "Não validar assumições dos testes estatísticos antes da aplicação"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Bancos usam recall alto em modelos de aprovação de crédito para reduzir falsos negativos (empréstimos ruins aprovados), maximizando lucros e minimizando riscos regulatórios."
+                                  "realWorldApplication": "Bancos usam recall alto em modelos de aprovação de crédito para reduzir falsos negativos (empréstimos ruins aprovados), maximizando lucros e minimizando riscos regulatórios.",
+                                  "stepNumber": 5,
+                                  "title": "Alta Sensibilidade em Modelos de Aprovação de Crédito: Equilibrando Lucros e Riscos",
+                                  "subSteps": [
+                                    "Definir recall e sua relação com falsos negativos em classificação binária",
+                                    "Analisar o impacto econômico de falsos negativos na aprovação de crédito",
+                                    "Comparar trade-offs entre recall alto vs. precisão em contextos bancários",
+                                    "Examinar requisitos regulatórios e limites de risco em modelos financeiros",
+                                    "Implementar estratégias para otimizar recall sem comprometer sustentabilidade operacional"
+                                  ],
+                                  "verification": "Análise de caso pratico: estudantes devem calcular métricas de recall em conjunto de dados de crédito e propor ajustes ao modelo para reduzir falsos negativos, justificando impactos regulatórios e de lucro.",
+                                  "estimatedTime": "4 horas (30 minutos por subetapa + 1 hora para verificação)",
+                                  "materials": [
+                                    "Capítulo 7 do livro 'Machine Learning para Finanças' (2023)",
+                                    "Artigo: 'Regulação Bancária e Modelagem de Risco' (Basel III)",
+                                    "Dataset simulado de solicitações de crédito (CSV)",
+                                    "Documentação da biblioteca scikit-learn (funções recall_score, precision_recall_curve)",
+                                    "Guia de boas práticas do Banco Central sobre modelos de crédito"
+                                  ],
+                                  "tips": [
+                                    "Concentre-se no custo financeiro direto de cada falso negativo (p.e., perdas com empréstimos inadimplentes)",
+                                    "Use curvas de precisão-recall para visualizar trade-offs antes de ajustar parâmetros",
+                                    "Considere custos de falsos positivos como parte da análise de viabilidade comercial",
+                                    "Consulte diretrizes regulatórias específicas do país para limites de risco aceitáveis",
+                                    "Teste robustez do modelo com dados de períodos econômicos diferentes"
+                                  ],
+                                  "learningObjective": "O aluno deverá ser capaz de justificar a escolha de alta sensibilidade em modelos de aprovação de crédito, quantificar impactos financeiros e regulatórios de falsos negativos, e projetar estratégias de otimização alinhadas às metas empresariais.",
+                                  "commonMistakes": [
+                                    "Confundir recall com precisão e aplicar otimização equivocada",
+                                    "Ignorar custos operacionais de aumentar o volume de aprovações (p.e., custos de análise manual)",
+                                    "Subestimar requisitos regulatórios específicos para modelos de crédito",
+                                    "Assumir que alta recall sempre corresponde a melhor performance comercial",
+                                    "Não validar modelos com dados fora do período de treinamento econômico"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um projeto de monitoramento de estruturas aéreas, avalie um modelo de detecção de microfissuras em sensores de vibração: use matriz de confusão para calcular precisão (evitar paradas falsas em linhas de produção) e R² para prever tempo até falha crítica, decidindo se implementar manutenção preditiva baseada em redução de custos de 15%.",
+                              "finalVerifications": [
+                                "Calcular matriz de confusão corretamente para dados de sensores de vibração de turbinas eólico",
+                                "Interpretar R² > 0.85 como modelo explicativo robusto para prever degradação estrutural",
+                                "Gerar classification_report com precisão/recall > 0.8 para classificação de risco de falha",
+                                "Identificar trade-off entre precisão e recall no contexto de segurança aeronáutica",
+                                "Documentar insights com plots de distribuição de resíduos e recomendações para inspeções"
+                              ],
+                              "assessmentCriteria": [
+                                "Correção técnica nos cálculos e implementação (40%)",
+                                "Qualidade das visualizações técnicas e relatórios de engenharia (25%)",
+                                "Interpretação contextualizada para decisões de manutenção (20%)",
+                                "Identificação de erros comuns e comparação com baselines (10%)",
+                                "Inovação na aplicação de métricas em sistemas críticos (5%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de Sistemas: Integração de modelos preditivos em sistemas de monitoramento em tempo real",
+                                "Mecânica Estrutural: Análise de resíduos aplicada a dados de deformação de materiais",
+                                "Cibersegurança: Proteção de dados sensoriais e modelos contra ataques adversários",
+                                "Gestão de Projetos: Avaliação de ROI para implementação de manutenção preditiva",
+                                "Ética e Regulação: Conformidade com normas de segurança aeroespacial ao deployar modelos"
+                              ],
+                              "realWorldApplication": "A empresa AeroStruct usa modelos preditivos com alta precisão para detectar anomalias em asas de aeronaves durante testes de vibração, reduzindo inspeções físicas em 30% e aumentando a segurança operacional sem comprometer prazos de manutenção."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -37498,7 +37691,8 @@
             "totalSkills": 268
           }
         ],
-        "totalSkills": 268
+        "totalSkills": 268,
+        "percentage": 0
       }
     ]
   }

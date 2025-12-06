@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SP-65",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 348
+      "totalAtomicSkills": 348,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "SP-65",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SP-65"
     },
     "areas": [
       {
@@ -17554,6 +17560,13 @@
                                   "commonMistakes": [
                                     "Aplicar correções de satélites com sinal fraco",
                                     "Não considerar a distância baseline (deve ser < 20km para DGPS)"
+                                  ],
+                                  "tips": [
+                                    "Verifique a qualidade do link de rádio (RSSI > -80 dBm) antes de iniciar as correções.",
+                                    "Priorize satélites com elevação > 15° e SNR > 35 dB-Hz para minimizar erros de multipath.",
+                                    "Registre a altura da antena no rover com precisão centimétrica para correções verticais.",
+                                    "Teste com baseline curta (<5 km) inicialmente para validar o setup.",
+                                    "Salve dados brutos em formato RINEX para análise pós-missão se as correções em tempo real falharem."
                                   ]
                                 },
                                 {
@@ -36765,7 +36778,8 @@
             "totalSkills": 348
           }
         ],
-        "totalSkills": 348
+        "totalSkills": 348,
+        "percentage": 0
       }
     ]
   }

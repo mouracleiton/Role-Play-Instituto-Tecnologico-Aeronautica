@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-73",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 342
+      "totalAtomicSkills": 342,
+      "startDate": "2025-02-10",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-RJ-73",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-73"
     },
     "areas": [
       {
@@ -9652,7 +9658,8 @@
                                     "Focar só no mínimo custo ignorando riscos",
                                     "Não testar sensibilidade a mudanças de requisitos",
                                     "Relatório sem visualizações claras"
-                                  ]
+                                  ],
+                                  "verification": "Checklist de verificação: [ ] Relatório executivo com visualizações claras; [ ] Número ótimo selecionado com justificativa e intervalo de confiança; [ ] Análise de sensibilidade (±20% nos inputs) realizada e impactada documentada; [ ] Mitigações propostas (ex: propulsão); [ ] Riscos residuais identificados."
                                 }
                               ],
                               "practicalExample": "Para uma constelação de monitoramento climático em LEO (ex: 500km altitude), otimize de 48 para 66 satélites: custo cai 15% com economias de lançamento, massa total gerenciável em um Falcon Heavy, vida útil de 4 anos mantida com redundância contra arrasto.",
@@ -23417,7 +23424,8 @@
                                     "Ignorar delay de ~6 meses no mínimo GCR",
                                     "Assumir linearidade na modulação",
                                     "Confundir modulação GCR com flares SCR"
-                                  ]
+                                  ],
+                                  "verification": "Confirmar anti-correlação entre intensidade GCR (Oulu/Moscow) e SSN com lag de 6-12 meses; validar φ(t) ~1-2 GV no máximo solar via modelo ajustado"
                                 },
                                 {
                                   "stepNumber": 4,
@@ -34203,6 +34211,13 @@
                                     "Não considerar volume da estrutura externa.",
                                     "Ignorar deployables (painéis que ocupam pouco stowed).",
                                     "Fator de empacotamento >1 sem alertar."
+                                  ],
+                                  "tips": [
+                                    "Use volumes 'stowed' (empacotados) para deployables como painéis solares e antenas.",
+                                    "Inclua margem de 10-20% no envelope para cabos, suportes e tolerâncias de fabricação.",
+                                    "Fator de empacotamento ideal: 0.4-0.6 para CubeSats; avalie trade-offs se >0.8.",
+                                    "No Excel: =SOMA(B2:B10) para total; selecione dados > Inserir > Gráfico de Pizza 3D.",
+                                    "Consulte envelopes reais de launchers (ex: Vega-C: 1.1m diâmetro, 2.2m altura útil)."
                                   ]
                                 },
                                 {
@@ -45248,7 +45263,8 @@
             "totalSkills": 342
           }
         ],
-        "totalSkills": 342
+        "totalSkills": 342,
+        "percentage": 0
       }
     ]
   }

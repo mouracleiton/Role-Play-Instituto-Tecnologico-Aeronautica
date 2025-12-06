@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-07",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 374
+      "totalAtomicSkills": 374,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "1.0",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-07"
     },
     "areas": [
       {
@@ -46665,7 +46671,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Analise um debate fictício entre um rousseauniano e um stirneriano sobre a abolição do Estado: identifique como a igualdade coletiva (tirania da maioria) colide com a liberdade egoísta em propostas anarquistas-socialistas, usando excertos de textos originais."
+                                  "practicalExample": "Analise um debate fictício entre um rousseauniano e um stirneriano sobre a abolição do Estado: identifique como a igualdade coletiva (tirania da maioria) colide com a liberdade egoísta em propostas anarquistas-socialistas, usando excertos de textos originais.",
+                                  "stepNumber": 7,
+                                  "title": "Análise Crítica do Debate entre Rousseau e Stirner sobre a Abolição do Estado",
+                                  "subSteps": [
+                                    "Leitura guiada dos excertos centrais de Rousseau sobre soberania popular e da teoria do 'Único' de Stirner",
+                                    "Identificação dos conceitos-chave: igualdade coletiva (Rousseau) vs. liberdade egoísta (Stirner)",
+                                    "Mapeamento da colisão entre 'tirania da maioria' e anarquia socialista nas propostas de abolição do Estado",
+                                    "Sintetização das contradições entre modelos anarquistas-socialistas usando evidências textuais"
+                                  ],
+                                  "verification": "Entrega de análise escrita com pelo menos 3 citações diretas de cada autor, demonstrando compreensão da colisão conceitual e sua relevância para anarquismo socialista",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Excertos de 'Discurso sobre a Origem e os Fundamentos da Desigualdade' (Rousseau)",
+                                    "Excertos de 'O Único e sua Propriedade' (Stirner)",
+                                    "Artigos comparativos sobre anarquismo coletivista e anarquismo individualista",
+                                    "Guia de análise textual com marcadores conceituais"
+                                  ],
+                                  "tips": [
+                                    "Concentre-se nas definições de 'liberdade' propostas por cada filósofo",
+                                    "Utilize a estrutura 'tese-antítese' para organizar a comparação",
+                                    "Relacione as críticas à democracia majoritária com os princípios anarquistas-socialistas",
+                                    "Verifique o contexto histórico de publicação dos textos para entender nuances"
+                                  ],
+                                  "learningObjective": "Analisar criticamente as contradições entre modelos de organização social baseados em igualdade coletiva e liberdade individual, identificando implicações na teoria anarquista-socialista através de fontes primárias",
+                                  "commonMistakes": [
+                                    "Confundir a crítica stirneriana à igualdade com apologia ao individualismo capitalista",
+                                    "Interpretar a 'tirania da maioria' como fenômeno exclusivamente democrático moderno",
+                                    "Não distinguir entre anarquismo socialista e anarquismo liberal nas citações",
+                                    "Supervalorizar o aspecto teórico sem considerar as implicações práticas das propostas"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -46674,6 +46709,43 @@
                                     "Mapeia pelo menos 3 contradições específicas no anarquismo.",
                                     "Relaciona tensões com Proudhon ou Bakunin.",
                                     "Sintetiza implicações para críticas ao Estado."
+                                  ],
+                                  "stepNumber": 7,
+                                  "title": "Análise Crítica do Anarquismo: Contradições e Tensões",
+                                  "subSteps": [
+                                    "Explicar o conceito de 'tirania da maioria' em Rousseau e seu contexto político.",
+                                    "Descrever a rejeição stirneriana de coletivismos, identificando o que ele chama de 'fantasmas'.",
+                                    "Mapear três contradições específicas dentro do pensamento anarquista.",
+                                    "Relacionar as tensões entre Proudhon e Bakunin, destacando diferenças clave.",
+                                    "Sintetizar as implicações dessas análises para críticas ao Estado moderno."
+                                  ],
+                                  "verification": [
+                                    "Explica corretamente a 'tirania da maioria' de Rousseau.",
+                                    "Descreve a rejeição stirneriana de coletivismos como 'fantasmas'.",
+                                    "Mapeia pelo menos 3 contradições específicas no anarquismo.",
+                                    "Relaciona tensões com Proudhon ou Bakunin.",
+                                    "Sintetiza implicações para críticas ao Estado."
+                                  ],
+                                  "estimatedTime": "3 horas",
+                                  "materials": [
+                                    "Livro: 'O Contrato Social' de Rousseau (capítulos selecionados)",
+                                    "Livro: 'O Unique e a Sua Propriedade' de Stirner",
+                                    "Textos de Proudhon e Bakunin",
+                                    "Artigos críticos sobre anarquismo",
+                                    "Mapa conceitual das contradições anarquistas"
+                                  ],
+                                  "tips": [
+                                    "Compare diretamente as posições de Stirner com outros anarquistas para destacar diferenças.",
+                                    "Utilize exemplos históricos para ilustrar tensões entre Proudhon e Bakunin.",
+                                    "Crie um quadro para mapear cada contradição anarquista com evidências teóricas.",
+                                    "Sintetize as implicações em uma conclusão escrita clara."
+                                  ],
+                                  "learningObjective": "Analisar criticamente as contradições internas do anarquismo e suas relações com pensadores chave, sintetizando implicações para críticas ao Estado.",
+                                  "commonMistakes": [
+                                    "Confundir o individualismo de Stirner com as propostas coletivistas de outros anarquistas.",
+                                    "Listar contradições sem exemplificá-las com argumentos específicos.",
+                                    "Não diferenciar adequadamente as posições de Proudhon (mutualismo) e Bakunin (coletivismo).",
+                                    "Superficializar as implicações para críticas ao Estado sem ligação com os pontos analisados."
                                   ]
                                 },
                                 {
@@ -46683,6 +46755,39 @@
                                     "Uso de evidências textuais (citações relevantes)",
                                     "Clareza na síntese e diagramação",
                                     "Criatividade em conexões contextuais"
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Análise Estrutural e Contextual da Disciplina",
+                                  "subSteps": [
+                                    "Revisar e validar definições conceituais dos eixos curriculares",
+                                    "Identificar e mapear múltiplas dimensões de tensões institucionais e epistemológicas",
+                                    "Coletar e selecionar evidências textuais de documentos fundadores do curso",
+                                    "Sintetizar informações em diagramas conceituais claros e organizados",
+                                    "Estabelecer conexões criativas entre o curso e contextos sociais, históricos e tecnológicos contemporâneos"
+                                  ],
+                                  "verification": "Avaliação por meio de checklist de precisão conceitual, análise de profundidade das tensões identificadas por pares, validação da relevância das citações e avaliação da clareza e originalidade da diagramação e conexões",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 (UM-07)",
+                                    "Documentos programáticos e ementas oficiais",
+                                    "Fontes acadêmicas e políticas educacionais relevantes",
+                                    "Ferramentas de diagramação conceitual (ex: Miro, Lucidchart)",
+                                    "Estudos de caso de cursos com arquitetura curricular consolidada"
+                                  ],
+                                  "tips": [
+                                    "Utilize tabelas de correspondência entre critérios de avaliação e evidências apresentadas",
+                                    "Cruze informações de diferentes seções do catálogo para identificar incoerências e tensões",
+                                    "Priorize a organização visual dos dados antes da escrita textual",
+                                    "Inclua pelo menos três dimensões de análise (épistêmica, institucional e societal) nas conexões contextuais",
+                                    "Revise as definições contra dicionários técnicos e documentos oficiais da UM"
+                                  ],
+                                  "learningObjective": "Analisar criticamente a estrutura conceitual e contextual de cursos de graduação, identificando tensões epistemológicas e institucionais, e sintetizando evidências em representações claras e conexões inovadoras",
+                                  "commonMistakes": [
+                                    "Conceber definições de eixos curriculares de forma isolada, sem inter-relacioná-los",
+                                    "Limitar a identificação de tensões a aspectos superficiais (ex: carga horária vs conteúdo)",
+                                    "Utilizar evidências textuais sem contextualização ou relevância direta com o objeto de análise",
+                                    "Produzir diagramas excessivamente complexos ou simplistas que obscurecem relações conceituais",
+                                    "Estabelecer conexões contextuais genéricas ou decorrentes de viés pessoal sem embasamento analítico"
                                   ]
                                 },
                                 {
@@ -46692,12 +46797,91 @@
                                     "Ética: Conflitos entre utilitarismo e individualismo",
                                     "Economia Política: Propriedade e igualdade em socialismos",
                                     "Psicologia Social: Conformismo vs. autonomia individual"
+                                  ],
+                                  "stepNumber": 7,
+                                  "title": "Análise Interdisciplinar das Revoluções do Século XIX e Teorias Contemporâneas",
+                                  "subSteps": [
+                                    "Estudo das revoluções do século XIX e seu impacto no anarquismo operário",
+                                    "Análise das dinâmicas de poder em grupos igualitários através da lente sociológica",
+                                    "Discussão dos conflitos éticos entre utilitarismo e individualismo",
+                                    "Exploração da propriedade e igualdade nas teorias socialistas na economia política",
+                                    "Avaliação do conformismo versus autonomia individual na psicologia social"
+                                  ],
+                                  "verification": "Discussão em grupo com apresentação de casos práticos e prova escrita com análise crítica",
+                                  "estimatedTime": "5 horas",
+                                  "materials": [
+                                    "Livros-texto de História Moderna",
+                                    "Artigos de sociologia contemporânea",
+                                    "Textos filosóficos de utilitarismo (Bentham, Mill)",
+                                    "Obras de economia política marxista e anarquista",
+                                    "Estudos de psicologia social (Asch, Milgram)"
+                                  ],
+                                  "tips": "Utilize exemplos históricos reais para ilustrar teorias; faça conexões explícitas entre as disciplinas; pratique a aplicação dos conceitos em cenários modernos; mantenha um diário de reflexão interdisciplar",
+                                  "learningObjective": "Compreender as interconexões entre movimentos históricos, estruturas sociais, princípios éticos, modelos econômicos e processos psicológicos, desenvolvendo análise crítica transdisciplinar",
+                                  "commonMistakes": [
+                                    "Confundir anarquismo operário com outros movimentos socialistas",
+                                    "Supergeneralizar dinâmicas de poder sem contexto histórico",
+                                    "Negligenciar o contexto cultural nas análises éticas",
+                                    "Aplicar conceitos de psicologia sem considerar variáveis socioeconômicas",
+                                    "Isolar cada disciplina sem estabelecer ligações sinérgicas"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em movimentos como Occupy Wall Street ou Zapatistas, onde demandas por igualdade coletiva (democracia horizontal) tensionam liberdades individuais, ajudando a prever riscos de 'tirania da maioria' em assembleias ou a defender direitos minoritários via egoísmo stirneriano."
+                                  "realWorldApplication": "Em movimentos como Occupy Wall Street ou Zapatistas, onde demandas por igualdade coletiva (democracia horizontal) tensionam liberdades individuais, ajudando a prever riscos de 'tirania da maioria' em assembleias ou a defender direitos minoritários via egoísmo stirneriano.",
+                                  "stepNumber": 7,
+                                  "title": "Análise de Conflitos entre Democracia Coletiva e Liberdades Individuais",
+                                  "subSteps": [
+                                    "Pesquisar princípios organizacionais dos movimentos Occupy Wall Street e Zapatistas, focando em democracia horizontal e direitos individuais",
+                                    "Identificar e analisar casos históricos de 'tirania da maioria' em assembleias coletivas",
+                                    "Aplicar o conceito de egoísmo stirneriano para defender direitos minoritários em contextos de decisão coletiva",
+                                    "Debater estratégias para equilibrar demandas por igualdade coletiva com liberdades individuais em estruturas democráticas"
+                                  ],
+                                  "verification": "Apresentação de análise escrita ou debate em grupo avaliando pelo menos três casos práticos com propostas de solução",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Artigos sobre Occupy Wall Street e Zapatistas",
+                                    "Texto fundacional de Max Stirner 'O Ego e Sua Própria'",
+                                    "Vídeos documentais sobre assembleias sociais",
+                                    "Casos de estudos de decisões controversas em movimentos sociais"
+                                  ],
+                                  "tips": [
+                                    "Utilizar exemplos concretos de assembleias para ilustrar conceitos abstratos",
+                                    "Aplicar o egoísmo stirneriano como ferramenta crítica, não como solução universal",
+                                    "Destacar contradições entre ideais de igualdade e práticas de exclusão em movimentos sociais",
+                                    "Comparar diferentes modelos de tomada de decisão (majoritária vs. consensuais)"
+                                  ],
+                                  "learningObjective": "Analisar tensões entre democracia horizontal e liberdades individuais, aplicando conceitos filosóficos para equilibrar direitos coletivos e individuais em estruturas sociais",
+                                  "commonMistakes": [
+                                    "Confundir 'tirania da maioria' com decisão majoritária legítima em contextos democráticos",
+                                    "Aplicar o egoísmo stirneriano de forma literal sem considerar o contexto social coletivo",
+                                    "Subestimar a complexidade de estruturas de decisão em movimentos sociais sem liderança formal",
+                                    "Ignorar o papel de normas implícitas na mediação de conflitos entre individuais e coletivos"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simular uma assembleia comunitária onde uma proposta majoritária (ex: limitação de horários de música) colida com o direito individual de um artesão. Os alunos devem mapear como a 'vontade geral' rousseauniana poderia suprimir o único, usando citações de 'O Contrato Social' e 'O Único e Sua Propriedade' para debater soluções anarquistas.",
+                              "finalVerifications": [
+                                "Descreve corretamente como a vontade geral pode levar à tirania da maioria com exemplo de Rousseau.",
+                                "Identifica pelo menos três 'fantasmas' de Stirner que negam a liberdade individual em contextos coletivistas.",
+                                "Mapeia cinco contradições específicas entre Rousseau e Stirner em uma tabela comparativa.",
+                                "Relaciona as tensões com pelo menos um pensador (Proudhon ou Bakunin) e seu posicionamento sobre o Estado.",
+                                "Sintetiza como essas contradições influenciam críticas contemporâneas ao Estado na teoria anarquista."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nas definições conceituais (uso correto de termos como 'vontade geral' e 'fantasmas')",
+                                "Profundidade na análise das contradições (identificação de múltiplas camadas de conflito)",
+                                "Qualidade das evidências textuais (citações precisas e relevantes dos textos originais)",
+                                "Eficácia na síntese e apresentação (clareza e organização do diagrama ou ensaio)",
+                                "Originalidade nas conexões com contextos atuais ou movimentos sociais"
+                              ],
+                              "crossCurricularConnections": [
+                                "História: Análise das revoluções sociais do século XIX e o papel do anarquismo",
+                                "Filosofia Política: Debates entre liberalismo e coletivismo na teoria política moderna",
+                                "Sociologia: Dinâmicas de poder em grupos decididos por maioria",
+                                "Economia: Teorias da propriedade e distribuição em modelos socialistas vs. individualistas",
+                                "Psicologia: Mecanismos de conformidade e resistência em grupos sociais"
+                              ],
+                              "realWorldApplication": "Em movimentos como os Occupy Wall Street, onde assembleias gerais buscam igualdade democrática, é crucial identificar riscos de tirania da maioria que suprimam minorias. Aplicar o egoísmo stirneriano pode defender direitos individuais, como o de um membro se opor a decisões majoritárias que afetem seu trabalho autônomo, propondo mecanismos de veto ou consenso para equilibrar liberdade e igualdade."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "advanced",
@@ -46978,7 +47162,8 @@
             "totalSkills": 374
           }
         ],
-        "totalSkills": 374
+        "totalSkills": 374,
+        "percentage": 0
       }
     ]
   }

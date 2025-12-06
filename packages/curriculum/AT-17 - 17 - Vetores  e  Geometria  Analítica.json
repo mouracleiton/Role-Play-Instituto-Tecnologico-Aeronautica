@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-17",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 251
+      "totalAtomicSkills": 251,
+      "startDate": "2025-02-01",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "AT-17",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-17"
     },
     "areas": [
       {
@@ -11557,7 +11563,9 @@
                                   ],
                                   "tips": "Para paralelas, projete (B-A) na normal a u (ex: u × k em 3D); sempre verifique se t,s reais existem",
                                   "learningObjective": "Usar projeções para classificar e quantificar relações entre retas",
-                                  "commonMistakes": "Assumir interseção sem resolver sistema; ignorar casos paralelos não coincidentes"
+                                  "commonMistakes": "Assumir interseção sem resolver sistema; ignorar casos paralelos não coincidentes",
+                                  "verification": "Classificar 4 pares de retas e calcular distâncias onde aplicável, com gráficos confirmando resultados geometricamente verificados",
+                                  "estimatedTime": "1.5-2.5 horas"
                                 },
                                 {
                                   "stepNumber": 4,
@@ -33155,7 +33163,8 @@
             "totalSkills": 251
           }
         ],
-        "totalSkills": 251
+        "totalSkills": 251,
+        "percentage": 0
       }
     ]
   }

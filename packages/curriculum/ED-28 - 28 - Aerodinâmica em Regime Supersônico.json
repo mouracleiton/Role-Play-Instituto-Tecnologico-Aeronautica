@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-28",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 309
+      "totalAtomicSkills": 309,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "ED-28",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-28"
     },
     "areas": [
       {
@@ -19971,7 +19977,9 @@
                                     "Confundir com equação elíptica subsonica (β imaginário)",
                                     "Erros no sinal do termo M∞²",
                                     "Ignorar axissimetria no contexto"
-                                  ]
+                                  ],
+                                  "verification": "A equação linearizada é obtida sem erros e exibe o caráter hiperbólico correto para M∞ > 1.",
+                                  "estimatedTime": "1.5 horas"
                                 }
                               ],
                               "practicalExample": "Para um cone delgado em escoamento supersônico uniforme (M∞=2), derive a perturbação φ' = f(r,x), substitua na equação linearizada e resolva para o ângulo de choque fraco, verificando que o potencial satisfaz ∇·(ρ∇φ)=0 aproximadamente.",
@@ -38274,6 +38282,13 @@
                                     "Sobre-generalizar C para todas velocidades.",
                                     "Ignorar efeitos térmicos em C.",
                                     "Não documentar fontes dos dados empíricos."
+                                  ],
+                                  "tips": [
+                                    "Inicie com geometrias benchmark (ex: cone ou wedge) para validação rápida.",
+                                    "Use planilhas ou Python para análise de sensibilidade automatizada (variações ±10%).",
+                                    "Compare Cp_mod com múltiplas fontes CFD/experimentais para maior robustez.",
+                                    "Documente faixas de validade de C explicitamente no relatório.",
+                                    "Explore plots 2D/3D em ParaView para visualizar impactos aerodinâmicos."
                                   ]
                                 },
                                 {
@@ -40842,7 +40857,8 @@
             "totalSkills": 309
           }
         ],
-        "totalSkills": 309
+        "totalSkills": 309,
+        "percentage": 0
       }
     ]
   }

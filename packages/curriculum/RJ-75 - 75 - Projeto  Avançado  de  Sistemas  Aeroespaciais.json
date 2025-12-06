@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-75",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 364
+      "totalAtomicSkills": 364,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-75"
     },
     "areas": [
       {
@@ -3898,6 +3904,13 @@
                                   "commonMistakes": [
                                     "Mal linearizar o modelo não-linear",
                                     "Ganho alto causando oscilações"
+                                  ],
+                                  "tips": [
+                                    "Linearize o modelo no ponto de trim de voo nivelado (α=0, θ=0).",
+                                    "Use o PID Tuner ou sisotool para ajuste inicial de ganhos.",
+                                    "Verifique unidades: radianos para α, q, θ; graus apenas para displays.",
+                                    "Adicione filtro derivativo para reduzir ruído em q.",
+                                    "Teste com step em δe e gust como rampa para realismo."
                                   ]
                                 },
                                 {
@@ -8186,7 +8199,44 @@
                                   "materials": "MATLAB/Simulink ou Python (SciPy odeint), script de simulação 6DOF base.",
                                   "tips": "Modularize: funções separadas para aero, thrust, gravity para fácil debug.",
                                   "learningObjective": "Implementar equações completas em simulador numérico acionável.",
-                                  "commonMistakes": "Erros de sinal em DCM; integração numérica instável (use RK4 com dt pequeno)."
+                                  "commonMistakes": "Erros de sinal em DCM; integração numérica instável (use RK4 com dt pequeno).",
+                                  "subSteps": [
+                                    {
+                                      "step": "4.1",
+                                      "title": "Substitua ΣF_b por F_total_b na equação translacional completa.",
+                                      "instructions": "Abra o script de simulação 6DOF. Localize a equação translacional: m * dv_b/dt = ΣF_b. Substitua ΣF_b por F_total_b, onde F_total_b = F_aero_b + F_thrust_b + F_gravity_b. Atualize também a equação rotacional se necessário para incluir torques totais.",
+                                      "verification": "Confirme que a derivada de velocidade agora depende de uma função compute_F_total.",
+                                      "codeSnippet": "def dynamics(state, t):\n    pos, vel, att, rates = unpack_state(state)\n    F_total_b = compute_F_total(state)\n    dv_b = F_total_b / mass"
+                                    },
+                                    {
+                                      "step": "4.2",
+                                      "title": "Implemente em código: função que computa F_total dado estado [pos, vel, att, rates].",
+                                      "instructions": "Crie uma função compute_F_total(state) que extraia pos, vel_b (velocidade body), att (atitudes via quaternion ou Euler), rates (taxas angulares). Compute: F_aero_b usando coeficientes aerodinâmicos e DCM para mundo->body; F_thrust_b = thrust * unit_vector_thrust; F_gravity_b = DCM(att)^T * [0,0,m*g]. Some vetorialmente.",
+                                      "verification": "Teste isolado: input estado estacionário, output F_total_b ≈ [0,0,mg] se thrust=mg.",
+                                      "codeSnippet": "def compute_F_total(state):\n    # Extrair componentes\n    F_aero_b = aero_forces(vel_b, att, rates)\n    F_thrust_b = thrust_magnitude * body_thrust_dir(att)\n    F_grav_b = dcm(att).T @ np.array([0, 0, mass * g])\n    return F_aero_b + F_thrust_b + F_grav_b"
+                                    },
+                                    {
+                                      "step": "4.3",
+                                      "title": "Teste com condições iniciais: voo level, acelere e verifique trajetória.",
+                                      "instructions": "Defina IC: pos=[0,0,100], vel=[50,0,0], att=level (quaternion [1,0,0,0]), rates=0, thrust=1.2*mg. Rode sim por 10s com odeint/RK4 (dt=0.01s). Plote trajetória pos vs tempo: deve acelerar horizontalmente sem cair inicialmente.",
+                                      "verification": "Trajetória reta ascendente; aceleração x ≈ (thrust*cos(alpha)-drag)/m.",
+                                      "plotCommand": "plt.plot(t, pos[:,0]); plt.xlabel('Tempo (s)'); plt.ylabel('Pos x (m)')"
+                                    },
+                                    {
+                                      "step": "4.4",
+                                      "title": "Valide contra simulação sem forças (deve cair devido a g).",
+                                      "instructions": "Modifique compute_F_total para retornar apenas F_grav_b (comente aero e thrust). Rode com IC voo level vel=0. Deve cair parabolicamente: z(t) = z0 - 0.5*g*t^2. Compare com analítico.",
+                                      "verification": "Erro em z < 1% após 10s; vel_z ≈ -g*t.",
+                                      "plotCommand": "plt.plot(t, pos[:,2], label='Sim'); plt.plot(t, 100 - 0.5*9.81*t**2, '--', label='Analítico')"
+                                    },
+                                    {
+                                      "step": "4.5",
+                                      "title": "Adicione logging para depuração de componentes individuais.",
+                                      "instructions": "Em compute_F_total, adicione print ou log: magnitudes/normas de F_aero_b, F_thrust_b, F_grav_b, e F_total_b a cada 100 steps. Salve em array para plot: plt.plot(t_log, norm_F_aero, label='Aero'), etc. Verifique balances (ex: em level flight, thrust ≈ mg + drag).",
+                                      "verification": "Logs mostram forças coerentes; soma vetorial exata (norm(F_total - sum) < 1e-6).",
+                                      "codeSnippet": "logs['F_aero'].append(np.linalg.norm(F_aero_b))\n# Após sim:\nplt.plot(t_log, logs['F_thrust'], label='Thrust')"
+                                    }
+                                  ]
                                 }
                               ],
                               "practicalExample": "Para um drone quadrotor em hover: lift dos rotores equilibra gravidade, drag pequeno em baixa velocidade; simule mudança de thrust para ascensão e verifique aceleração vertical ≈ ΔT/m - g.",
@@ -9750,7 +9800,8 @@
                                   ],
                                   "tips": "Use a regra da mão direita para determinar o sinal positivo dos momentos.",
                                   "learningObjective": "Descrever os momentos M, L e N com eixos associados e efeitos no movimento.",
-                                  "commonMistakes": "Confundir eixos de rotação; esquecer que momentos são torques."
+                                  "commonMistakes": "Confundir eixos de rotação; esquecer que momentos são torques.",
+                                  "verification": "Questão de verificação: Associe cada momento aerodinâmico ao seu eixo de rotação e movimento: 1) L (____ / ____); 2) M (____ / ____); 3) N (____ / ____). Explique como um valor positivo de C_m afeta a estabilidade longitudinal. Respostas esperadas: 1) X / roll; 2) Y / pitch; 3) Z / yaw. C_m positivo tende a alinhar o nariz para cima, afetando o equilíbrio pitching."
                                 },
                                 {
                                   "stepNumber": 3,
@@ -13030,6 +13081,18 @@
                                   "commonMistakes": [
                                     "Usar integrador contínuo em vez de discreto.",
                                     "Instabilidade numérica por dt grande."
+                                  ],
+                                  "subSteps": [
+                                    "1. Abra o modelo Simulink do passo anterior e defina o solver para Fixed-step Discrete com step size dt = 0.01 s (Configuration Parameters > Solver).",
+                                    "2. Adicione um bloco Constant para dt (valor 0.01) da biblioteca Sources.",
+                                    "3. Para o estado u: Após o bloco du/dt, adicione um bloco Gain (ganho conectado à saída do Constant dt).",
+                                    "4. Adicione um bloco Unit Delay (biblioteca Discrete, sample time = -1 para herdar, Initial condition = 100).",
+                                    "5. Adicione um bloco Sum (configurado como +|+, biblioteca Math Operations): entrada superior ao output do Gain(dt*du/dt), entrada inferior ao output do Unit Delay; saída conectada à entrada do Unit Delay.",
+                                    "6. Repita os passos 3-5 para os estados w (Initial=0), q (Initial=0) e theta (Initial=0), conectando as respectivas derivadas.",
+                                    "7. Reconecte as saídas dos Unit Delays (estados integrados u, w, q, theta) de volta às entradas dos blocos de dinâmica/derivadas para fechamento do loop.",
+                                    "8. Adicione um bloco Scope (biblioteca Sinks) e conecte as saídas dos estados (u, w, q, theta) para visualização.",
+                                    "9. Configure o Scope para múltiplos sinais e tempo de simulação de 10 s.",
+                                    "10. Rode a simulação e verifique se não há erros e os estados evoluem suavemente."
                                   ]
                                 },
                                 {
@@ -21306,6 +21369,18 @@
                                     "Derivadas erradas em coeficientes estáveis",
                                     "Confundir estado com controle em Jacobiana",
                                     "Omitir termos de massa/inércia variáveis"
+                                  ],
+                                  "subSteps": [
+                                    "1. Recupere as condições de trim (x₀, u₀) do passo anterior.",
+                                    "2. Defina as variáveis de perturbação: Δx = x - x₀ e Δu = u - u₀.",
+                                    "3. Escreva as equações dinâmicas não-lineares no formato ẋ = f(x, u).",
+                                    "4. Calcule a Jacobiana A = ∂f/∂x|_{x₀,u₀}, computando cada derivada parcial analiticamente.",
+                                    "5. Priorize derivadas aerodinâmicas chave, ex: ∂C_Z/∂α para coeficiente de sustentação.",
+                                    "6. Calcule a Jacobiana B = ∂f/∂u|_{x₀,u₀}, focando em entradas como δ_e, δ_a, δ_r, δ_t.",
+                                    "7. Aplique aproximações de ângulos pequenos: sin(θ) ≈ θ, cos(θ) ≈ 1 onde válido.",
+                                    "8. Monte as matrizes A (12×12) e B (12×4) usando software simbólico (SymPy/MATLAB).",
+                                    "9. Forme o modelo linearizado: Δẋ = A Δx + B Δu.",
+                                    "10. Valide: dimensões corretas, não-zeros esperados e simetria em blocos inerciais."
                                   ]
                                 },
                                 {
@@ -26078,6 +26153,26 @@
                                     "Simule trajetórias longitudinais e isole efeitos modais em acelerações.",
                                     "Avalie sensibilidade de acelerações a parâmetros como centro de gravidade ou thrust.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Simule uma resposta longitudinal a um step em elevador e identifique, usando participation factors, o modo dominante para ax (phugoid) e az (short-period). Forneça gráficos com decomposição modal.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Software de simulação (MATLAB/Simulink ou equivalente com toolbox de controle)",
+                                    "Matrizes de estado longitudinal da aeronave (ex: modelo RJ-75)",
+                                    "Documentação de análise modal (participation factors)"
+                                  ],
+                                  "tips": [
+                                    "Calcule participation factors (PF) para cada modo: PF_i = φ_i * Γ_i, onde φ é vetor modal e Γ é vetor de participação.",
+                                    "Plote acelerações totais vs. soma das componentes modais para validar decomposição.",
+                                    "Considere frequências: short-period (~1-5 Hz, afeta az), phugoid (~0.01-0.1 Hz, afeta ax).",
+                                    "Varie CG para observar mudança na dominância modal."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de decompor acelerações lineares longitudinais (ax e az) em contribuições modais, identificando modos dominantes (phugoid para ax, short-period para az) via análise modal e participation factors.",
+                                  "commonMistakes": [
+                                    "Confundir modos: atribuir phugoid a az ou short-period a ax.",
+                                    "Não normalizar participation factors ou ignorar massa modal.",
+                                    "Simular apenas curtos intervalos de tempo, perdendo phugoid.",
+                                    "Esquecer efeitos não-lineares em simulações de alta amplitude."
                                   ]
                                 },
                                 "estimatedTime]: "
@@ -26087,7 +26182,26 @@
                               "Use Bode plots para frequência de acelerações; quantifique com métricas como peak acceleration.": "learningObjective",
                               "Mapear modos específicos para acelerações lineares ao longo da trajetória de voo.": "commonMistakes",
                               "Subestimar acoplamento com dinâmica lateral": "Overlooking nonlinear saturation em acelerações altas",
-                              "Não considerar variações ao longo da trajetória (ex: ascent vs. cruise)": []
+                              "Não considerar variações ao longo da trajetória (ex: ascent vs. cruise)": [],
+                              "practicalExample": "Simule a dinâmica longitudinal de um jato comercial Boeing 737 em cruzeiro subsônico (Mach 0.8, α0=2°), identificando como o modo short-period afeta picos de aceleração normal az durante turbulência leve, usando JSBSim ou MATLAB Aerospace Toolbox.",
+                              "finalVerifications": [
+                                "Simulação integrada de trajetória completa (takeoff a cruise), validando acelerações lineares contra dados de flight tests públicos.",
+                                "Análise de robustez: varie parâmetros como massa (+/-10%) e verifique estabilidade dos modos.",
+                                "Relatório final com plots de decomposição modal e métricas de erro <5% vs. modelo não-linear."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção das equações não-lineares e linearizadas (25%)",
+                                "Precisão na identificação e classificação de modos (30%)",
+                                "Análise modal de acelerações com simulações válidas (25%)",
+                                "Relatório claro com verificações e discussões de erros comuns (20%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Aerodinâmica Avançada: dependência de coeficientes em α e Mach",
+                                "Teoria de Controle: análise de polos para design de compensadores",
+                                "Mecânica do Voo: integração com dinâmica lateral-direcional",
+                                "Simulação e Identificação de Sistemas: uso de flight data para validação"
+                              ],
+                              "realWorldApplication": "Certificação de estabilidade de aeronaves pela ANAC/FAA, desenvolvimento de sistemas fly-by-wire (ex: Airbus A350), análise de manobras de caças (F-35) e controle de reentrada de veículos espaciais (ex: SpaceX Dragon)."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -33222,6 +33336,15 @@
                                   "commonMistakes": [
                                     "Simulações curtas que mascaram instabilidades lentas",
                                     "Ignorar não-linearidades em grandes ângulos"
+                                  ],
+                                  "tips": [
+                                    "Execute simulações com duração mínima de 3x o tempo de estabilização esperado para detectar instabilidades lentas.",
+                                    "Inclua modelos não-lineares (e.g., sin(θ) em vez de θ) para ângulos >10° e valide linearidade.",
+                                    "Use escalas logarítmicas em plots de Bode e Nyquist para visualizar melhor a largura de banda e margens.",
+                                    "Varie wn em passos logarítmicos (e.g., 10, 20, 50, 100 rad/s) para análise sistemática.",
+                                    "Defina distúrbios realistas: vento (5-15 m/s), falhas (20% perda de ganho).",
+                                    "Inicie tuning com pidtune() e refine manualmente com base em métricas específicas.",
+                                    "Salve saídas com simout para facilitar plots comparativos e relatórios."
                                   ]
                                 }
                               ],
@@ -44540,7 +44663,8 @@
             "totalSkills": 364
           }
         ],
-        "totalSkills": 364
+        "totalSkills": 364,
+        "percentage": 0
       }
     ]
   }

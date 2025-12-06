@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-01",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 350
+      "totalAtomicSkills": 350,
+      "startDate": "2025-02-17",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-ED-01",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-01"
     },
     "areas": [
       {
@@ -40761,6 +40767,12 @@
                                     "Não zerar instrumento antes",
                                     "Ignorar efeitos de densidade do fluido",
                                     "Poucos pontos de calibração levando a não-linearidade"
+                                  ],
+                                  "tips": [
+                                    "Mantenha condições ambientais estáveis (T e P constantes) para ρ precisa.",
+                                    "Realize 3 repetições por ponto de velocidade e use média.",
+                                    "Verifique vazamentos em conexões de pressão antes de iniciar.",
+                                    "Cubra faixa operacional completa com pontos de calibração uniformes."
                                   ]
                                 },
                                 {
@@ -42546,6 +42558,13 @@
                                     "Ignorar histerese térmica.",
                                     "Pontos de calibração insuficientes.",
                                     "Não corrigir coeficiente de imersão."
+                                  ],
+                                  "tips": [
+                                    "Aguarde estabilização térmica (variação <0.1°C/min) antes de registrar.",
+                                    "Agite banho para uniformidade e evite gradientes.",
+                                    "Meça histerese com ciclo asc/desc em pontos chave.",
+                                    "Use ≥6 pontos para polinômio robusto (R²>0.999).",
+                                    "Backup dados e valide correção em faixa operacional."
                                   ]
                                 }
                               ],
@@ -44468,7 +44487,8 @@
             "totalSkills": 350
           }
         ],
-        "totalSkills": 350
+        "totalSkills": 350,
+        "percentage": 0
       }
     ]
   }

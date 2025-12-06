@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TP-34",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 336
+      "totalAtomicSkills": 336,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "TP-34",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TP-34"
     },
     "areas": [
       {
@@ -28204,7 +28210,27 @@
                                     "Ajuste com p real de von Karman iterativamente se avançado.",
                                     "Plote σ_x vs x para visualizar distribuição assimétrica se μ variável."
                                   ],
-                                  "verification": "σ_x máxima no neutro, zero nas bordas; check dimensional."
+                                  "verification": "σ_x máxima no neutro, zero nas bordas; check dimensional.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Software de análise numérica (MATLAB, Python ou similar)",
+                                    "Resultados dos passos anteriores (distribuição de p(x))",
+                                    "Folha de verificação dimensional"
+                                  ],
+                                  "tips": [
+                                    "Explore a simetria para reduzir o problema a metades independentes.",
+                                    "Inicie com p constante para validar a solução antes de iterar com von Karman.",
+                                    "Use plotagem para inspecionar assimetrias causadas por μ variável.",
+                                    "Verifique sempre consistência dimensional: [σ] = Pa."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de aplicar condições de contorno apropriadas para determinar a distribuição completa de tensões longitudinais σ_x(x) em uma chapa conformada, combinando soluções simétricas e ajustando iterativamente com distribuições reais de pressão via von Karman.",
+                                  "commonMistakes": [
+                                    "Aplicar condições de contorno incorretas, como σ_x ≠ 0 nas bordas livres.",
+                                    "Não combinar corretamente as soluções das metades simétricas, levando a descontinuidades.",
+                                    "Ignorar iterações para p real, resultando em distribuição linear imprecisa.",
+                                    "Erros em unidades ou escalas no plot, mascarando assimetrias.",
+                                    "Confundir plano neutro com eixo de simetria, alterando σ_x máxima."
+                                  ]
                                 },
                                 "estimatedTime",
                                 "35 minutos",
@@ -28225,7 +28251,29 @@
                               ],
                               "verification": "Distribuição simétrica para atrito constante, tensão compressiva negativa.",
                               "estimatedTime": "20 minutos",
-                              "materials": "Software de plotagem, relatório template."
+                              "materials": "Software de plotagem, relatório template.",
+                              "practicalExample": "Exemplo numérico: Considere laminação de alumínio com raio dos rolos R = 150 mm, espessura inicial hi = 8 mm, final hf = 5 mm, coeficiente de atrito μ = 0.1, tensão de escoamento Y = 150 MPa. Calcule o ângulo de mordida α ≈ √((hi - hf)/R), semi-largura L ≈ √(R (hi - hf)), geometria h(x) = hi - 2x tan(α), derive e integre σ_x(x) assumindo p ≈ Y, plote distribuição e força total F ≈ ∫ p w dx com w=1000 mm.",
+                              "finalVerifications": [
+                                "Equilíbrio global de forças: soma horizontal e vertical zero no diagrama de corpo livre.",
+                                "Condições de contorno satisfeitas: σ_x ≈ 0 na entrada/saída, máximo no neutro.",
+                                "Dimensões consistentes e unidades corretas (ex: MPa, mm).",
+                                "Gráfico de σ_x(x) e p(x) com simetria e picos esperados.",
+                                "Força de laminação F calculada e comparada com fórmula aproximada F ≈ Y w L √(R/(hi-hf))."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção da derivação da EDO e integração (40%).",
+                                "Precisão dos cálculos numéricos e gráficos (30%).",
+                                "Interpretação física e discussão de limitações (20%).",
+                                "Clareza do relatório e documentação (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica dos Materiais (tensões e deformação plástica).",
+                                "Processos de Fabricação (conformação mecânica).",
+                                "Cálculo Diferencial e Integral (EDOs e integração numérica).",
+                                "Física Geral (equilíbrio de forças).",
+                                "Análise Numérica (métodos de Euler, FEM introductório)."
+                              ],
+                              "realWorldApplication": "O Método da Laje é fundamental no projeto de moinhos de laminação em siderúrgicas (ex: CSN, Gerdau) e na fabricação de ligas aeroespaciais (chapas de titânio e alumínio para fuselagem de aeronaves EMBRAER). Otimiza força, torque e consumo energético, reduzindo defeitos como flambagem ou fraturas por cisalhamento."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -44639,7 +44687,8 @@
             "totalSkills": 336
           }
         ],
-        "totalSkills": 336
+        "totalSkills": 336,
+        "percentage": 0
       }
     ]
   }

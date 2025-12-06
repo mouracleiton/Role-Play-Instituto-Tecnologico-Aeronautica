@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-78",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 341
+      "totalAtomicSkills": 341,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "RJ-78",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-78"
     },
     "areas": [
       {
@@ -20823,7 +20829,8 @@
             "totalSkills": 341
           }
         ],
-        "totalSkills": 341
+        "totalSkills": 341,
+        "percentage": 0
       }
     ]
   }

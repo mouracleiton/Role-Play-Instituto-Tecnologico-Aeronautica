@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-90",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 357
+      "totalAtomicSkills": 357,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-90"
     },
     "areas": [
       {
@@ -2455,9 +2461,46 @@
                                     "Resolva exercícios de identificação de falácias baseadas em oposições erradas.",
                                     "verification]: "
                                   ],
-                                  "Analise corretamente 3 silogismos, identificando todas as oposições com O e sua impacto na validade.\"],      ": "estimatedTime\": \"35 minutos\",      \"materials\": [\"Livro de silogística ou PDF com exemplos\",\"Quiz online de lógica categórica\"],      \"tips\": \"Sempre verifique quantificadores primeiro antes de oposições.\",      \"learningObjective\": \"Aplicar análise de oposições com O para classificar e validar silogismos.\",      \"commonMistakes\": [\"Ignorar figura do silogismo\",\"Confundir oposições em premissas vs conclusão\",\"Não testar todas as relações\"]\n  ],\n  \"practicalExample\": \"Em um silogismo: Premissa maior E 'Nenhum mamífero é ave', Premissa menor O 'Alguns animais não são mamíferos'. Analise: E subalterna de O? Não, verifique contradição ou validade usando quadrado.\",\n  \"finalVerifications\": [\n    \"Desenha e explica o quadrado das oposições corretamente.\",\n    \"Identifica contraditória O-A, subcontrária O-I e subalterna E-O sem erros.\",\n    \"Aplica relações em pelo menos 3 pares de proposições.\",\n    \"Classifica um silogismo usando oposições com O.\",\n    \"Explica impacto em validade silogística.\",\n    \"Resolve quiz com 90% acerto.\"\n  ],\n  \"assessmentCriteria\": [\n    \"Precisão nas definições de relações (100% correto).\",\n    \"Completude dos substeps em análises (todos cobertos).\",\n    \"Criatividade em exemplos práticos.\",\n    \"Correta aplicação a silogismos (sem falácias).\",\n    \"Clareza na explicação verbal ou escrita.\",\n    \"Uso adequado de diagramas/visuais.\"\n  ],\n  \"crossCurricularConnections\": [\n    \"Filosofia: Argumentação aristotélica e dialética.\",\n    \"Direito: Análise de contradições em argumentos jurídicos.\",\n    \"Linguística: Semântica de quantificadores e negações.\",\n    \"Ciência da Computação: Lógica proposicional e verificação de programas.\"\n  ],\n  \"realWorldApplication\": \"Em debates políticos ou jurídicos, analisar se uma afirmação universal (A) contradiz uma particular negativa (O), como 'Todos os impostos são justos' vs 'Alguns impostos não são justos', para desmontar argumentos falaciosos; ou em programação lógica para validar regras de inferência em bancos de dados.\"\n}"
+                                  "Analise corretamente 3 silogismos, identificando todas as oposições com O e sua impacto na validade.\"],      ": "estimatedTime\": \"35 minutos\",      \"materials\": [\"Livro de silogística ou PDF com exemplos\",\"Quiz online de lógica categórica\"],      \"tips\": \"Sempre verifique quantificadores primeiro antes de oposições.\",      \"learningObjective\": \"Aplicar análise de oposições com O para classificar e validar silogismos.\",      \"commonMistakes\": [\"Ignorar figura do silogismo\",\"Confundir oposições em premissas vs conclusão\",\"Não testar todas as relações\"]\n  ],\n  \"practicalExample\": \"Em um silogismo: Premissa maior E 'Nenhum mamífero é ave', Premissa menor O 'Alguns animais não são mamíferos'. Analise: E subalterna de O? Não, verifique contradição ou validade usando quadrado.\",\n  \"finalVerifications\": [\n    \"Desenha e explica o quadrado das oposições corretamente.\",\n    \"Identifica contraditória O-A, subcontrária O-I e subalterna E-O sem erros.\",\n    \"Aplica relações em pelo menos 3 pares de proposições.\",\n    \"Classifica um silogismo usando oposições com O.\",\n    \"Explica impacto em validade silogística.\",\n    \"Resolve quiz com 90% acerto.\"\n  ],\n  \"assessmentCriteria\": [\n    \"Precisão nas definições de relações (100% correto).\",\n    \"Completude dos substeps em análises (todos cobertos).\",\n    \"Criatividade em exemplos práticos.\",\n    \"Correta aplicação a silogismos (sem falácias).\",\n    \"Clareza na explicação verbal ou escrita.\",\n    \"Uso adequado de diagramas/visuais.\"\n  ],\n  \"crossCurricularConnections\": [\n    \"Filosofia: Argumentação aristotélica e dialética.\",\n    \"Direito: Análise de contradições em argumentos jurídicos.\",\n    \"Linguística: Semântica de quantificadores e negações.\",\n    \"Ciência da Computação: Lógica proposicional e verificação de programas.\"\n  ],\n  \"realWorldApplication\": \"Em debates políticos ou jurídicos, analisar se uma afirmação universal (A) contradiz uma particular negativa (O), como 'Todos os impostos são justos' vs 'Alguns impostos não são justos', para desmontar argumentos falaciosos; ou em programação lógica para validar regras de inferência em bancos de dados.\"\n}",
+                                  "verification": "Analise corretamente 3 silogismos, identificando todas as oposições com O e sua impacto na validade.",
+                                  "estimatedTime": "35 minutos",
+                                  "materials": [
+                                    "Livro de silogística ou PDF com exemplos",
+                                    "Quiz online de lógica categórica"
+                                  ],
+                                  "tips": "Sempre verifique quantificadores primeiro antes de oposições.",
+                                  "learningObjective": "Aplicar análise de oposições com O para classificar e validar silogismos.",
+                                  "commonMistakes": [
+                                    "Ignorar figura do silogismo",
+                                    "Confundir oposições em premissas vs conclusão",
+                                    "Não testar todas as relações"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um silogismo: Premissa maior E 'Nenhum mamífero é ave', Premissa menor O 'Alguns animais não são mamíferos'. Conclusão possível? Analise usando o quadrado das oposições: E (universal negativa) é subalterna de O? Não diretamente; verifique contradições ou subcontrárias com outras proposições para validar a distribuição e inferência.",
+                              "finalVerifications": [
+                                "Desenha e explica o quadrado das oposições corretamente.",
+                                "Identifica contraditória O-A, subcontrária O-I e subalterna E-O sem erros.",
+                                "Aplica relações em pelo menos 3 pares de proposições.",
+                                "Classifica um silogismo usando oposições com O.",
+                                "Explica impacto em validade silogística.",
+                                "Resolve quiz com 90% acerto."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nas definições de relações (100% correto).",
+                                "Completude dos substeps em análises (todos cobertos).",
+                                "Criatividade em exemplos práticos.",
+                                "Correta aplicação a silogismos (sem falácias).",
+                                "Clareza na explicação verbal ou escrita.",
+                                "Uso adequado de diagramas/visuais."
+                              ],
+                              "crossCurricularConnections": [
+                                "Filosofia: Argumentação aristotélica e dialética.",
+                                "Direito: Análise de contradições em argumentos jurídicos.",
+                                "Linguística: Semântica de quantificadores e negações.",
+                                "Ciência da Computação: Lógica proposicional e verificação de programas."
+                              ],
+                              "realWorldApplication": "Em debates políticos ou jurídicos, analisar se uma afirmação universal (A) contradiz uma particular negativa (O), como 'Todos os impostos são justos' vs 'Alguns impostos não são justos', para desmontar argumentos falaciosos; ou em programação lógica para validar regras de inferência em bancos de dados."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",
@@ -6623,7 +6666,14 @@
                                 "Linguística: Estrutura argumentativa em textos persuasivos",
                                 "Informática: Lógica proposicional em programação e algoritmos"
                               ],
-                              "realWorldApplication": "Avaliar argumentos em debates políticos, detectar fake news lógicas em redes sociais ou validar premissas em decisões empresariais e jurídicas."
+                              "realWorldApplication": "Avaliar argumentos em debates políticos, detectar fake news lógicas em redes sociais ou validar premissas em decisões empresariais e jurídicas.",
+                              "assessmentCriteria": [
+                                "Precisão na identificação de termos e estrutura (20%)",
+                                "Correta classificação de figura/modo (25%)",
+                                "Aplicação completa de regras de distribuição (25%)",
+                                "Detecção de falácias e conclusão justificada (20%)",
+                                "Tempo de execução eficiente e sem erros comuns (10%)"
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -33905,9 +33955,61 @@
                                     "Ciência da Computação: Fundamentos de programação lógica e bancos de dados.",
                                     "Linguística: Semântica formal e quantificadores naturais."
                                   ],
-                                  "realWorldApplication": "Na programação de consultas SQL (uso de EXISTS), validação de teoremas em IA e análise de big data onde existência de entidades deve ser explicitamente verificada para evitar erros lógicos em sistemas autônomos."
+                                  "realWorldApplication": "Na programação de consultas SQL (uso de EXISTS), validação de teoremas em IA e análise de big data onde existência de entidades deve ser explicitamente verificada para evitar erros lógicos em sistemas autônomos.",
+                                  "stepNumber": "4",
+                                  "title": "Evolução da Lógica: De Silogismos Aristotélicos à Lógica de Predicados",
+                                  "subSteps": [
+                                    "Pesquisar a história da lógica silogística (Aristóteles, Boécio, medievais) e a Revolução Lógica do século XIX (Boole, Frege, Russell).",
+                                    "Criar uma linha do tempo interativa no Canva, marcando datas chave e contribuições.",
+                                    "Converter o silogismo exemplo em notação simbólica moderna: ∀x (Homem(x) → Mortal(x)) ∧ Homem(Sócrates) → Mortal(Sócrates).",
+                                    "Destacar a adição explícita do quantificador existencial ∃ para pressupostos de existência.",
+                                    "Adicionar elementos interativos e exportar o projeto."
+                                  ],
+                                  "verification": "Revisão da linha do tempo submetida, com checklist de 5 eventos históricos e notação simbólica correta.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Plataforma Canva (conta gratuita)",
+                                    "Referências: Stanford Encyclopedia of Philosophy (lógica), livros de história da lógica",
+                                    "Ferramentas online para símbolos lógicos (LaTeX ou MathJax)"
+                                  ],
+                                  "tips": [
+                                    "Use templates de linha do tempo no Canva para agilizar.",
+                                    "Inclua citações diretas de Frege ou Russell para autenticidade.",
+                                    "Teste a interatividade clicando nos elementos antes de finalizar.",
+                                    "Compare silogismos com e sem ∃ para clareza visual."
+                                  ],
+                                  "learningObjective": "O aluno compreenderá a transição histórica da lógica aristotélica para a lógica de predicados, dominando a formalização de silogismos com quantificadores ∀ e ∃, e sua importância para evitar ambiguidades existenciais.",
+                                  "commonMistakes": [
+                                    "Ignorar pressupostos existenciais nos silogismos clássicos, tratando-os como implícitos sem ∃.",
+                                    "Notação simbólica incorreta (ex: confundir → com ∧).",
+                                    "Datas históricas erradas (ex: Frege em 1890s, não antes).",
+                                    "Linha do tempo sem interatividade ou visual pobre.",
+                                    "Falta de conexão entre eventos históricos e mudanças simbólicas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Crie uma linha do tempo interativa no Canva mostrando como um silogismo 'Todos os homens são mortais; Sócrates é homem; logo Sócrates é mortal' evolui para '∀x (Homem(x) → Mortal(x)) ∧ Homem(Sócrates) → Mortal(Sócrates)', destacando adição de ∃ para existência.",
+                              "finalVerifications": [
+                                "Linha do tempo completa com datas e contribuições chave.",
+                                "Provas lógicas convertidas corretamente.",
+                                "Ensaio sintetizando transição com citações.",
+                                "Quiz autoaplicado com 90% acerto sobre quantificadores.",
+                                "Diagrama comparativo pré e pós-século XIX."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão histórica das contribuições (30%).",
+                                "Clareza na explicação da transição existencial (25%).",
+                                "Uso correto de notação simbólica (20%).",
+                                "Profundidade de análise comparativa (15%).",
+                                "Originalidade no exemplo prático (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Filosofia: Ontologia e lógica em Kant e Hegel.",
+                                "História da Ciência: Revolução formalista na matemática.",
+                                "Ciência da Computação: Fundamentos de programação lógica e bancos de dados.",
+                                "Linguística: Semântica formal e quantificadores naturais."
+                              ],
+                              "realWorldApplication": "Na programação de consultas SQL (uso de EXISTS), validação de teoremas em IA e análise de big data onde existência de entidades deve ser explicitamente verificada para evitar erros lógicos em sistemas autônomos."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -44942,7 +45044,8 @@
             "totalSkills": 357
           }
         ],
-        "totalSkills": 357
+        "totalSkills": 357,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-18",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 359
+      "totalAtomicSkills": 359,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": "8 horas/dia",
+      "version": "ED-18",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-18"
     },
     "areas": [
       {
@@ -3771,7 +3777,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um design 2^{4-1} III com fatores A(temperatura), B(pressão), C(tempo), D(catalisador) e relação I=ABCD. Y = yield (%). Aliases: A+ BCD, AB+CD, etc. Dados: 8 runs com yields. Ajuste ANOVA pooling SS de interações altas no erro, identificando A significativo mesmo confundido com BCD."
+                                  "practicalExample": "Em um design 2^{4-1} III com fatores A(temperatura), B(pressão), C(tempo), D(catalisador) e relação I=ABCD. Y = yield (%). Aliases: A+ BCD, AB+CD, etc. Dados: 8 runs com yields. Ajuste ANOVA pooling SS de interações altas no erro, identificando A significativo mesmo confundido com BCD.",
+                                  "stepNumber": 5,
+                                  "title": "Análise de Significância em Designs Fatoriais com Aliases via ANOVA",
+                                  "subSteps": [
+                                    "Identificar a estrutura de aliases do desenho 2^(4-1) III (I=ABCD) e listar os aliases principais",
+                                    "Organizar os dados das 8 execuções com os valores de rendimento (Y) e os níveis dos fatores A, B, C, D",
+                                    "Realizar análise de variância (ANOVA) com pooling dos somatórios de quadrados das interações de ordem alta no erro",
+                                    "Testar a significância do fator A, considerando sua alias BCD, e interpretar os resultados estatísticos"
+                                  ],
+                                  "verification": "Confirmar que o valor-p do fator A é menor que o nível de significância (ex: α=0.05) e verificar que o pooling das interações altas não inflou artificialmente a significância do efeito A",
+                                  "estimatedTime": "2 horas",
+                                  "materials": [
+                                    "Software estatístico (R, Minitab ou Excel)",
+                                    "Conjunto de dados com 8 corridas e rendimentos",
+                                    "Tabela de aliases do desenho experimental",
+                                    "Guia prático de ANOVA com pooling"
+                                  ],
+                                  "tips": [
+                                    "Anote cuidadosamente a estrutura de aliases antes da análise",
+                                    "Utilize o pooling apenas para interações teoricamente não significativas",
+                                    "Verifique os pressupostos da ANOVA (normalidade, homoscedasticidade)",
+                                    "Compare os efeitos estimados de A e BCD para validar a interpretação"
+                                  ],
+                                  "learningObjective": "Aplicar análise de variância em designs fatoriais com aliases, identificando fatores significativos mesmo quando confundidos com interações, utilizando técnica de pooling de somatórios de quadrados",
+                                  "commonMistakes": [
+                                    "Interpretar o fator A como não significativo apenas por estar aliasado a BCD",
+                                    "Incluir interações não aliasadas no pooling ao erro",
+                                    "Ignorar a verificação dos pressupostos da ANOVA após o pooling",
+                                    "Confundir os efeitos principais com as aliases sem analisar a tabela de aliases"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -3780,6 +3815,43 @@
                                     "p-values calculados corretamente via F-teste.",
                                     "Resíduos normais e homocedásticos confirmados.",
                                     "Efeitos principais e chave interpretados adequadamente."
+                                  ],
+                                  "stepNumber": "18",
+                                  "title": "Análise de Variância (ANOVA) Avançada com Planos Experimentais",
+                                  "subSteps": [
+                                    "Construir tabela ANOVA com graus de liberdade totais corretos (ex: 7 para 8 runs)",
+                                    "Calcular SS ajustados para aliases sem duplicação",
+                                    "Determinar p-values via F-teste com precisão",
+                                    "Verificar normalidade e homocedasticidade dos resíduos",
+                                    "Interpretar efeitos principais e efeitos-chave adequadamente"
+                                  ],
+                                  "verification": [
+                                    "Tabela ANOVA apresentando GL totais consistentes com o plano experimental",
+                                    "SS ajustados refletindo corretamente as aliases do desenho",
+                                    "p-values obtidos através do teste F com distribuição F apropriada",
+                                    "Teste de normalidade (Shapiro-Wilk) e homocedasticidade (Levene) com p > 0,05",
+                                    "Relatório escrito interpretando significância estatística dos efeitos"
+                                  ],
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Software: Minitab/R/Excel com pacote ANOVA",
+                                    "Guia Prático: 'Design of Experiments - Montgomery' (Capítulo 8)",
+                                    "Planos experimentais padrão (2^k, 3^k, mistos)",
+                                    "Template de cálculo manual de SS ajustados"
+                                  ],
+                                  "tips": [
+                                    "Utilize gráficos de resíduos (QQ-plot e plot de resíduos vs. previsões) para validação",
+                                    "Para aliases complexos, utilize software especializado para cálculo de SS ajustados",
+                                    "Sempre verifique a independência dos efeitos antes de interpretar resultados",
+                                    "Documente todas as suposições violadas e as correções aplicadas"
+                                  ],
+                                  "learningObjective": "O aluno será capaz de executar e validar análises ANOVA avançadas em planos experimentais, interpretando corretamente efeitos estatisticamente significativos e assegurando validade dos resultados através de verificações de suposições",
+                                  "commonMistakes": [
+                                    "Utilizar SS brutas em vez de SS ajustados para aliases",
+                                    "Ignorar a verificação de homocedasticidade dos resíduos",
+                                    "Interpretar efeitos não significativos como 'nulos' sem teste adequado",
+                                    "Calcular GL totais incorretos para desenhos fracionados",
+                                    "Não ajustar o modelo para efeitos de interação relevantes"
                                   ]
                                 },
                                 {
@@ -3789,6 +3861,39 @@
                                     "Tabela ANOVA formatada corretamente com todos componentes.",
                                     "Interpretação coerente com resultados significativos.",
                                     "Uso correto de software sem erros de sintaxe."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Análise de Variância (ANOVA) com Testes de Hipóteses",
+                                  "subSteps": [
+                                    "Identificar e listar todos os aliases do modelo estatístico",
+                                    "Calcular Sum of Squares (SS) e Graus de Liberdade (GL) com precisão",
+                                    "Construir e formatar uma tabela ANOVA completa e correta",
+                                    "Interpretar os resultados em relação à significância estatística",
+                                    "Executar análise utilizando software estatístico sem erros de sintaxe"
+                                  ],
+                                  "verification": "Comparação com solução modelo, validação de cálculos através de métodos manuais e cruzamento de resultados, revisão da formatação da tabela ANOVA e verificação da coerência da interpretação",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Software estatístico (R, Python ou SPSS)",
+                                    "Calculadora científica",
+                                    "Conjunto de dados fornecido",
+                                    "Guia de procedimentos ANOVA",
+                                    "Plantilla de tabela ANOVA"
+                                  ],
+                                  "tips": [
+                                    "Utilize scripts pré-definidos para evitar erros de sintaxe",
+                                    "Verifique duplamente as fórmulas de cálculo de SS antes de executar",
+                                    "Documente cada passo do processo para facilitar a verificação",
+                                    "Interprete o valor-p com referência ao nível de significância estabelecido",
+                                    "Salve versões intermediárias do código para rastrear possíveis erros"
+                                  ],
+                                  "learningObjective": "Dominar técnicas avançadas de análise de variância, incluindo identificação de aliases, cálculos precisos de SS e GL, formatação adequada de tabelas ANOVA e interpretação estatística correta utilizando softwares apropriados",
+                                  "commonMistakes": [
+                                    "Falha em identificar todos os aliases do modelo",
+                                    "Erros de arredondamento nos cálculos de SS superior a 1%",
+                                    "Inclusão incompleta ou incorreta dos componentes na tabela ANOVA",
+                                    "Interpretação inversa da significância estatística",
+                                    "Erros de sintaxe no código do software que geram resultados incorretos"
                                   ]
                                 },
                                 {
@@ -3798,12 +3903,98 @@
                                     "Design de Experimentos (princípios de resolução)",
                                     "Otimização de Processos Industriais",
                                     "Análise de Dados Experimentais em Engenharia"
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Integração de Métodos Estatísticos e Otimização Aplicada à Engenharia",
+                                  "subSteps": [
+                                    "Aplicar testes F e p-values para comparação de modelos em problemas de otimização industrial",
+                                    "Desenvolver scripts em R ou Minitab para automação de análise de dados experimentais",
+                                    "Projetar experimentos utilizando princípios de resolução para otimização de processos",
+                                    "Implementar técnicas de otimização numérica alinhadas a resultados estatísticos",
+                                    "Analisar conjuntos de dados experimentais para tomada de decisão em engenharia"
+                                  ],
+                                  "verification": "Projeto prático com relatório escrito, validação estatística e apresentação de resultados otimizados",
+                                  "estimatedTime": "8 horas",
+                                  "materials": [
+                                    "Software R ou Minitab",
+                                    "Conjuntos de dados experimentais reais",
+                                    "Casos de estudo de processos industriais",
+                                    "Pacotes de otimização (ex: optim, nlme)",
+                                    "Guia de boas práticas de design de experimentos"
+                                  ],
+                                  "tips": [
+                                    "Utilizar visualizações interativas para interpretar resultados de testes F",
+                                    "Testar scripts em diferentes cenários antes da implementação final",
+                                    "Validar modelos com dados de validação cruzada",
+                                    "Documentar todas as hipóteses testadas e parâmetros de otimização",
+                                    "Trabalhar em grupos para comparar abordagens de otimização"
+                                  ],
+                                  "learningObjective": "Integrar métodos estatísticos avançados com técnicas de otimização para resolver problemas complexos de engenharia através de análise rigorosa de dados experimentais",
+                                  "commonMistakes": [
+                                    "Interpretação incorreta de p-values como probabilidade de hipótese nula ser verdadeira",
+                                    "Uso inadequado de testes F em dados não normais sem transformação",
+                                    "Overfitting de modelos de otimização devido a falta de validação cruzada",
+                                    "Design de experimentos com blocos incompletos não considerados",
+                                    "Ignorar efeitos de interação ao aplicar otimização de processos"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na indústria química, otimizar condições de reação em reatores com designs fracionados econômicos, ajustando ANOVA para avaliar yields apesar de confusões, reduzindo custos de experimentação em 50%."
+                                  "realWorldApplication": "Na indústria química, otimizar condições de reação em reatores com designs fracionados econômicos, ajustando ANOVA para avaliar yields apesar de confusões, reduzindo custos de experimentação em 50%.",
+                                  "stepNumber": 18,
+                                  "title": "Otimização de Condições de Reação em Reatores com Designs Fracionados",
+                                  "subSteps": [
+                                    "Definir variáveis de reação críticas (tempo, temperatura, concentração) para otimização",
+                                    "Projetar experimentos fracionados econômicos usando técnicas de planejamento fatorial",
+                                    "Aplicar ANOVA para analisar significância estatística dos fatores e interações",
+                                    "Ajustar parâmetros operacionais com base nos resultados da análise",
+                                    "Validar a redução de custos de experimentação através de comparação com métodos tradicionais"
+                                  ],
+                                  "verification": "Comparação quantitativa da redução de custos de experimentação (mínimo 40% de redução) e aumento de precisão nos yields medidos via ANOVA",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Software de planejamento experimental (ex: Design-Expert, Minitab)",
+                                    "Planilha de cálculo ANOVA",
+                                    "Dados históricos de reatores químicos",
+                                    "Manuais de otimização estatística industrial"
+                                  ],
+                                  "tips": [
+                                    "Inicie com uma análise de sensibilidade para identificar variáveis mais influentes",
+                                    "Utilize modelos quadráticos para capturar efeitos não-lineares",
+                                    "Combine análise de superfície de resposta com o planejamento fracionado",
+                                    "Documente rigorosamente todas as condições experimentais para replicação"
+                                  ],
+                                  "learningObjective": "Aplicar métodos estatísticos avançados (ANOVA, projetos fracionados) para otimização de processos químicos industriais, reduzindo custos de experimentação em pelo menos 50%",
+                                  "commonMistakes": [
+                                    "Ignorar interações entre variáveis durante o planejamento experimental",
+                                    "Subestimar a variabilidade experimental ao aplicar ANOVA",
+                                    "Não validar modelos com ensaios confirmatórios pós-otimização",
+                                    "Utilizar designs fracionados sem considerar efeitos de aliasing"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Design 2^{3-1} IV com fatores A (temperatura), B (pressão), C (velocidade) e relação I=ABC. Y = qualidade do produto (escala 1-10). Dados de 4 runs: (1,1,1)=5; (1,-1,1)=6; (-1,1,1)=4; (-1,-1,1)=7. Aliases: A+BC, B+AC, C+AB. Execute ANOVA no R, ajustando SS para efeito A confundido com BC, identifique efeito principal A significativo e discuta impacto da confusão.",
+                              "finalVerifications": [
+                                "Tabela ANOVA com GL total igual ao número de runs menos 1.",
+                                "SS ajustados para efeitos confundidos sem sobreposição.",
+                                "p-values calculados via distribuição F com graus de liberdade corretos.",
+                                "Gráficos de resíduos (QQ-plot e escala-residuo) confirmando normalidade e homocedasticidade.",
+                                "Interpretação dos efeitos significativos alinhada com a estrutura de aliasing."
+                              ],
+                              "assessmentCriteria": [
+                                "Identificação completa e correta de todos os aliases (acurácia ≥95%).",
+                                "Cálculos manuais e no software de SS e GL com erro <2%.",
+                                "Tabela ANOVA formatada corretamente, incluindo todos os componentes exigidos.",
+                                "Interpretação crítica dos resultados, considerando efeitos confundidos.",
+                                "Uso adequado do software (R/Minitab) sem erros de sintaxe ou lógica."
+                              ],
+                              "crossCurricularConnections": [
+                                "Estatística Descritiva (análise de resíduos)",
+                                "Programação Estatística (manipulação de dados em R)",
+                                "Métodos de Otimização (design de experimentos fracionados)",
+                                "Engenharia de Processos (otimização de parâmetros operacionais)",
+                                "Análise de Dados em Ciências Aplicadas"
+                              ],
+                              "realWorldApplication": "Em produção de polímeros, otimizar temperatura e velocidade de extrusão usando design 2^{3-1} IV, ajustando ANOVA para interpretar efeitos principais apesar de confusões, reduzindo rejeitos em 30% e economizando R$ 200k/ano em matéria-prima."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -7196,7 +7387,8 @@
                                   "estimatedTime": "25 minutos",
                                   "materials": "Excel para gráficos, papel para relatório.",
                                   "learningObjective": "Interpretar S/N no contexto de robustez experimental.",
-                                  "commonMistakes": "Interpretar S/N baixo como 'ruim' sem contexto; ignorar unidades em dB."
+                                  "commonMistakes": "Interpretar S/N baixo como 'ruim' sem contexto; ignorar unidades em dB.",
+                                  "tips": "Use referências de domínio para contextuar limiares de S/N; verifique consistência de unidades em todas as medições; priorize variações de parâmetros mais críticas na análise de sensibilidade; documente hipóteses de validação manual vs. software; inclua gráficos de tendência no relatório para facilitar a interpretação visual."
                                 }
                               ],
                               "practicalExample": "Dados 'menor o melhor' (defeitos em mm): y=[1.2, 1.5, 1.1, 1.4]; Σ y_i²=7.81, /4=1.9525, -10 log(1.9525)= -2.90 dB. 'Maior o melhor' (resistência kg): y=[20,22,19,21]; Σ(1/y_i)²=0.00244, /4=0.00061, -10 log=22.14 dB. 'Nominal' (diâmetro 10mm): y=[9.8,10.1,9.9,10.2,10.0]; μ=10.0, σ=0.1538, μ²/σ²=4220, 10 log=36.25 dB.",
@@ -33184,9 +33376,66 @@
                                     "Gestão de Projetos: Análise custo-benefício",
                                     "Física: Leis termodinâmicas para fatores térmicos"
                                   ],
-                                  "realWorldApplication": "Na indústria automotiva, definir níveis para pressão de injeção em moldagem de plásticos garante peças robustas contra variações de temperatura ambiente (ruído), reduzindo recalls e custos de garantia."
+                                  "realWorldApplication": "Na indústria automotiva, definir níveis para pressão de injeção em moldagem de plásticos garante peças robustas contra variações de temperatura ambiente (ruído), reduzindo recalls e custos de garantia.",
+                                  "stepNumber": "5",
+                                  "title": "Definição de Níveis de Temperatura em Experimentos de Otimização de Juntas Soldadas",
+                                  "subSteps": [
+                                    "Identificar restrições da fornalha e limites operacionais",
+                                    "Determinar faixas de temperatura (baixo, médio, alto) baseadas em custo de energia",
+                                    "Avaliar impacto da temperatura na resistência média e sensibilidade a variações de espessura",
+                                    "Conectar níveis definidos aos objetivos de maximização de resistência e minimização de ruído",
+                                    "Validar configurações através de simulação computacional"
+                                  ],
+                                  "verification": "Verificar se os níveis estão dentro das restrições da fornalha (máx 1250°C), cobrem a região de variação significativa da resposta, alinham-se com o valor nominal ótimo e são suportados por evidências simuladas",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Especificações técnicas da fornalha",
+                                    "Dados de custo de energia por grau Celsius",
+                                    "Software de simulação de solda (ex: ANSYS, COMSOL)",
+                                    "Catálogo de propriedades mecânicas do material soldado",
+                                    "Planilha de cálculo de sensibilidade"
+                                  ],
+                                  "tips": [
+                                    "Utilize dados históricos de solda para calibrar faixas iniciais",
+                                    "Priorize restrições de segurança mesmo que aumentem custo",
+                                    "Teste sempre efeitos de interação temperatura-espessura",
+                                    "Documente todas as fontes de dados para replicação",
+                                    "Inicie simulações com grade grossa antes de refinamento"
+                                  ],
+                                  "learningObjective": "Definir níveis otimizados de fatores experimentais considerando restrições práticas, custos operacionais e objetivos de robustez, utilizando métodos baseados em evidências e validação computacional",
+                                  "commonMistakes": [
+                                    "Definir níveis acima da capacidade máxima da fornalha (1250°C)",
+                                    "Ignorar trade-off entre custo de energia e qualidade do soldado",
+                                    "Assumir linearidade sem verificar com análise de regressão",
+                                    "Não considerar variações de espessura como fonte de ruído",
+                                    "Basear decisões apenas em intuição sem suporte simulado"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um experimento para otimizar a dureza de um liga de aço, defina taxa de resfriamento (baixo: 500°C/h, médio: 1000°C/h, alto: 1500°C/h) e conteúdo de carbono (baixo: 0,2%, médio: 0,4%, alto: 0,6%), considerando limites do forno, custo dos materiais e objetivo de maximizar dureza média minimizando sensibilidade a variações de umidade ambiente (ruído).",
+                              "finalVerifications": [
+                                "Níveis estão dentro de todas as restrições técnicas e econômicas?",
+                                "Faixa cobre região de variação significativa da resposta (dureza)?",
+                                "Nível médio alinha com valor nominal ótimo baseado em dados preliminares?",
+                                "Justificativas são baseadas em especificações técnicas e dados históricos?",
+                                "Simulação confirma detecção de efeitos principais e interações?",
+                                "Documentação inclui cálculos de faixa e validação com engenheiros?"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão das faixas em relação a restrições técnicas (nota 1-10)",
+                                "Alinhamento com objetivos de otimização (cobertura do gradiente de dureza)",
+                                "Qualidade da justificativa (uso de dados históricos vs. suposições)",
+                                "Robustez em simulações de resposta (análise de sensibilidade)",
+                                "Documentação clara, com tabelas e cálculos reproduzíveis"
+                              ],
+                              "crossCurricularConnections": [
+                                "Ciência dos Materiais: Propriedades de ligas de aço",
+                                "Termodinâmica: Processos de resfriamento e tratamento térmico",
+                                "Estatística: Análise de regressão para efeitos de fatores",
+                                "Engenharia de Custos: Otimização econômico-técnica",
+                                "Segurança Industrial: Limites de exposição a altas temperaturas"
+                              ],
+                              "realWorldApplication": "Na indústria aeroespacial, definir níveis de temperatura de tratamento térmico para pás de turbina garante desempenho robusto contra variações de pressão atmosférica (ruído), reduzindo falhas em voos e custos de manutenção."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",
@@ -46221,7 +46470,8 @@
             "totalSkills": 359
           }
         ],
-        "totalSkills": 359
+        "totalSkills": 359,
+        "percentage": 0
       }
     ]
   }

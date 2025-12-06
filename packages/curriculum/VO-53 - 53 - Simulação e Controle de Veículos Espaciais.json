@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-53",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 176
+      "totalAtomicSkills": 176,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "VO-53",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-53"
     },
     "areas": [
       {
@@ -2616,9 +2622,65 @@
                                     "Engenharia de Controle: Filtros de estimação (EKF).",
                                     "Ciência de Dados: Análise Monte Carlo e visualização."
                                   ],
-                                  "realWorldApplication": "Desenvolvimento e teste de subsistemas ADCS em CubeSats para missões universitárias ou comerciais (ex: validação de software para satélites como o CAPE-USat, reduzindo custos de testes em hardware)."
+                                  "realWorldApplication": "Desenvolvimento e teste de subsistemas ADCS em CubeSats para missões universitárias ou comerciais (ex: validação de software para satélites como o CAPE-USat, reduzindo custos de testes em hardware).",
+                                  "stepNumber": 5,
+                                  "title": "Simulação de Estimativa de Atitude TRIAD com Sensores Solares em Condições Reais",
+                                  "subSteps": [
+                                    "1. Configurar modelo orbital: LEO a 400 km, inclinação 90°, propagar 10 órbitas usando modelo Kepleriano ou SGP4.",
+                                    "2. Definir 3 sensores solares com campos de visão e gerar vetores de referência (direção Sol no BCI).",
+                                    "3. Implementar algoritmo TRIAD: calcular DCM a partir de dois vetores observados/referência, converter para ângulos de Euler.",
+                                    "4. Injetar ruído gaussiano (σ=5%) nas medições dos sensores e modelar eclipse (35 min/órbita, sensores zerados).",
+                                    "5. Executar simulação em loop, armazenando quaternions verdadeiros e estimados.",
+                                    "6. Computar erros de roll/pitch/yaw, gerar plots de tempo vs. erro e histogramas estatísticos.",
+                                    "7. Validar: erro <2° fora eclipse, recuperação <2 min pós-eclipse."
+                                  ],
+                                  "verification": "Simulação roda 10 órbitas sem crashes; erro médio <2° fora eclipse em plots; recuperação confirmada em <2 min.",
+                                  "estimatedTime": "180 minutos",
+                                  "materials": [
+                                    "MATLAB ou Octave com Aerospace Toolbox",
+                                    "Funções de propagação orbital (SGP4 ou poliastro)",
+                                    "Templates de TRIAD e modelagem de sensores solares"
+                                  ],
+                                  "tips": [
+                                    "Normalize todos os vetores antes do TRIAD para evitar erros numéricos.",
+                                    "Use quaternions para representação de atitude e converta para Euler apenas para análise.",
+                                    "Fixe a seed do randn para reprodutibilidade.",
+                                    "Vectorize loops em MATLAB para eficiência (<1 min/órbita).",
+                                    "Adicione logging de condições de eclipse para debug."
+                                  ],
+                                  "learningObjective": "Implementar e validar o algoritmo TRIAD para determinação de atitude em CubeSat, considerando ruído gaussiano e eclipses, alcançando erro <2° fora de eclipse e recuperação rápida pós-eclipse.",
+                                  "commonMistakes": [
+                                    "Não normalizar vetores, resultando em quaternions com norma ≠1.",
+                                    "Ignorar eclipse, causando erros persistentes durante sombra.",
+                                    "Falta de tratamento de singularidades no TRIAD (vetores paralelos).",
+                                    "Plots sem médias/desvios padrão ou escalas inadequadas.",
+                                    "Simulação lenta por loops não vetorizados."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simule um CubeSat em órbita LEO (400km, 90° inclinação) com 3 sensores solares. Injete ruído gaussiano (σ=5%) e eclipse de 35min por órbita. Valide se TRIAD estima atitude com erro <2° fora eclipse, recuperando em <2min pós-eclipse.",
+                              "finalVerifications": [
+                                "Simulação executa 10 órbitas sem crashes numéricos.",
+                                "Erro de roll/pitch/yaw <5° em 95% do tempo fora eclipse.",
+                                "Degradação controlada durante eclipse (drift <10°).",
+                                "Métricas estatísticas (mean/std) documentadas em plots.",
+                                "Código modular e comentado para reutilização."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão: erro médio <3° em condições nominais (peso 30%).",
+                                "Robustez: performance sob ruído/eclipse (peso 25%).",
+                                "Eficiência: tempo de simulação <1min/órbita (peso 15%).",
+                                "Clareza: código/plots legíveis e documentados (peso 20%).",
+                                "Extensibilidade: fácil adicionar sensores/filtros (peso 10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Álgebra linear (matrizes de rotação), estatística (análise de ruído).",
+                                "Física: Mecânica orbital, óptica geométrica de sensores.",
+                                "Programação: Scripting MATLAB, modelagem orientada a blocos.",
+                                "Engenharia de Controle: Filtros de estimação (EKF).",
+                                "Ciência de Dados: Análise Monte Carlo e visualização."
+                              ],
+                              "realWorldApplication": "Desenvolvimento e teste de subsistemas ADCS em CubeSats para missões universitárias ou comerciais (ex: validação de software para satélites como o CAPE-USat, reduzindo custos de testes em hardware)."
                             },
                             "estimatedTime": "2.5 horas",
                             "difficulty": "advanced",
@@ -20447,6 +20509,14 @@
                                     "Gains muito altos causando oscilações",
                                     "Erro de quaternion não normalizado",
                                     "Ignorar acoplamento entre eixos"
+                                  ],
+                                  "tips": [
+                                    "Sempre normalize o quaternion de erro: q_err /= norm(q_err).",
+                                    "Use erro multiplicativo: q_err = q_alvo * conj(q_atual).",
+                                    "Inicie com gains baixos (Kp=0.5, Kd=0.1) e aumente gradualmente.",
+                                    "Aplique filtro passa-baixa em ω para reduzir ruído.",
+                                    "Monitore norma de q_err e ω para detecção de falhas.",
+                                    "Considere limites de torque dos propulsores na saturação."
                                   ]
                                 },
                                 {
@@ -20494,6 +20564,14 @@
                                     "Perturbações muito fracas ou irreais",
                                     "Otimização sem métricas claras",
                                     "Sobre-otimizar ignorando ruído"
+                                  ],
+                                  "tips": [
+                                    "Comece com uma perturbação por vez (ex: só drag) para debugar.",
+                                    "Escalone perturbações com fatores realistas (LEO: drag ~10^{-5} kg/m²).",
+                                    "Monte Carlo: 1000+ runs, seed fixo para reprodutibilidade.",
+                                    "GA: população 50-100, elite 10%, mutação 5-10%.",
+                                    "Compare métricas: RMSE erro, tempo conv., ΔV total.",
+                                    "Plots: before/after histograms de overshoot e settling time."
                                   ]
                                 }
                               ],
@@ -22123,10 +22201,59 @@
                                     "Defina control law: m_cmd = -K * q * B, onde q é quaternion de atitude, K ganho.",
                                     "Linearize para pequenos ângulos e analise estabilidade via eigenvalues.",
                                     "verification]: "
+                                  ],
+                                  "verification": [
+                                    "Implemente simulação numérica (RK4 ou odeint) para 1 órbita (~90min LEO).",
+                                    "Sem controle (m=0): verifique oscilações devido a τ_g + τ_d.",
+                                    "Com controle: q → [0,0,0,1], ω → 0 em <10min.",
+                                    "Eigenvalues de A na linearização têm Re(λ) < 0.",
+                                    "Compare B modelo com dados reais (ex: GOES TLE)."
+                                  ],
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Python: numpy, scipy.integrate, skyfield (para TLE/orbitas)",
+                                    "Ou MATLAB: Aerospace Toolbox",
+                                    "Dados TLE de Celestrak (ex: CubeSat LEO/GEO)",
+                                    "Notebook Jupyter para prototipagem"
+                                  ],
+                                  "tips": [
+                                    "Normalize quaternions: ||q||=1 após integração.",
+                                    "Para LEO, use r≈7000km; GEO r≈42000km.",
+                                    "Ganho K inicial: 1e-7 a 1e-5 Nm/T (tune via simulação).",
+                                    "Plote 3D: traçatório q no tetraedro unitário.",
+                                    "ECEF para B: converta lat/long para θ (dipolo)."
+                                  ],
+                                  "learningObjective": "Modelar matematicamente e simular numericamente o sistema dinâmico de atitude de um CubeSat com atuadores magnéticos, incluindo propagação orbital, campo magnético dipolo, lei de controle B-dot like, linearização e análise de estabilidade.",
+                                  "commonMistakes": [
+                                    "Omitir ω × (J ω) (termo gyroscópico dominante em spin).",
+                                    "B em Gauss ao invés de Tesla (fator 1e-4).",
+                                    "q não normalizado → ||q|| explode.",
+                                    "Linearizar em Euler angles (gimbal lock) ao invés de quaternion error.",
+                                    "Propagação orbital errada: use ECI para atitude, ECEF para B local."
                                   ]
                                 },
                                 "verification: "
-                              ]
+                              ],
+                              "practicalExample": "Implemente uma simulação no MATLAB/Simulink ou Python (usando Orekit ou poliastro) de um CubeSat em órbita LEO com torquers magnéticos, demonstrando detumbling inicial e controle de apontamento nadir ao longo de 3 órbitas, variando corrente nas bobinas conforme lei de controle B-dot ou proporcional.",
+                              "finalVerifications": [
+                                "Simulação completa validando estabilização de atitude em <5° RMS após 1 órbita.",
+                                "Relatório de 3-5 páginas com gráficos de evolução de quaternions, torque e campo B.",
+                                "Análise de sensibilidade a erros em TLE e modelo IGRF, com discussão de mitigações."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção das equações dinâmicas e modelo de B (30%)",
+                                "Implementação e estabilidade da simulação (30%)",
+                                "Análise qualitativa/quantitativa de desempenho (20%)",
+                                "Clareza do relatório e visualizações (10%)",
+                                "Tratamento de limitações e erros comuns (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física III (Eletromagnetismo): cálculo de momento magnético e interação com B.",
+                                "Mecânica Orbital (VO-31): propagação de TLE e modelos de campo geomagnético.",
+                                "Teoria de Controle (VC-22): linearização, estabilidade e leis de controle não-lineares.",
+                                "Engenharia de Satélites (VA-45): subsistemas ADCS e integração com outros torques."
+                              ],
+                              "realWorldApplication": "Uso em CubeSats de baixo custo como Tancredo-1 (ITA/CPTEC), missões universitárias brasileiras (UnB, USP) e programas NASA/ESA (Cubesat Launch Initiative), para detumbling pós-lançamento e controle fino sem giroscópios ou rodas de reação caras, reduzindo massa e consumo energético."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -23967,7 +24094,8 @@
             "totalSkills": 176
           }
         ],
-        "totalSkills": 176
+        "totalSkills": 176,
+        "percentage": 0
       }
     ]
   }

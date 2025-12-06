@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TM-31",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 375
+      "totalAtomicSkills": 375,
+      "startDate": "2025-01-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TM-31"
     },
     "areas": [
       {
@@ -48360,7 +48366,8 @@
             "totalSkills": 375
           }
         ],
-        "totalSkills": 375
+        "totalSkills": 375,
+        "percentage": 0
       }
     ]
   }

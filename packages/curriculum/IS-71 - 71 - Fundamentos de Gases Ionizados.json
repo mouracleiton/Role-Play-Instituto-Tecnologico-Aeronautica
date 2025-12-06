@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-71",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 321
+      "totalAtomicSkills": 321,
+      "startDate": "2025-02-01",
+      "duration": "60 months",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-71"
     },
     "areas": [
       {
@@ -21681,7 +21687,8 @@
                                     "Esquecer o fator q na aceleração",
                                     "Usar velocidade de deriva como velocidade térmica",
                                     "Confundir σ_e (menor) com σ_i (maior)"
-                                  ]
+                                  ],
+                                  "verification": "Verifique dimensionalmente: [qτ/m] = C·s/kg = m²/(V·s). Compare com valores típicos: para elétrons em Ar a 300K, use N≈2.5e25 m⁻³, σ≈10⁻¹⁹ m², <v>≈1e6 m/s → τ≈4e-11 s → μ_e≈1e-4 m²/(V·s), enquanto para íons (m~10⁻²⁶ kg, σ~10⁻¹⁹ m²) → μ_i~10⁻⁷ m²/(V·s), confirmando diferença de ordens."
                                 },
                                 {
                                   "stepNumber": 3,
@@ -27553,7 +27560,10 @@
                                   " materials ": "Gráficos de perfis de densidade de plasma, software de simulação como COMSOL ou código Python para modelagem 1D.",
                                   "tips": "Pense em plasma como 'reservatório' com vazamento lento.",
                                   "learningObjective": "Explicar como baixa perda mantém alta densidade de plasma.",
-                                  "commonMistakes": "Superestimar perdas diffusivas sem considerar ambipolaridade."
+                                  "commonMistakes": "Superestimar perdas diffusivas sem considerar ambipolaridade.",
+                                  "verification": "Verifique os cálculos de tempo de residência τ comparando com valores típicos de plasmas confinados (entre milissegundos e segundos).",
+                                  "estimatedTime": "50 minutos",
+                                  "materials": "Gráficos de perfis de densidade de plasma, software de simulação como COMSOL ou código Python para modelagem 1D, dados experimentais de coeficientes de difusão."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -40332,7 +40342,8 @@
             "totalSkills": 321
           }
         ],
-        "totalSkills": 321
+        "totalSkills": 321,
+        "percentage": 0.75
       }
     ]
   }

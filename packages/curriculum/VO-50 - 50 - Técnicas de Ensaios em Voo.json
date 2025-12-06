@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-50",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 311
+      "totalAtomicSkills": 311,
+      "startDate": "2025-02-10",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "VO-50",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-50"
     },
     "areas": [
       {
@@ -16493,7 +16499,11 @@
                                   "learningObjective": "Avaliar resultados contra padrões regulatórios com rigor técnico.",
                                   "commonMistakes": [
                                     "Interpretação subjetiva sem dados; ignorar bibliografia, enfraquecendo argumentos."
-                                  ]
+                                  ],
+                                  "verification": [
+                                    "Checklist de conformidade preenchida com todas as normas citadas e evidências anexadas."
+                                  ],
+                                  "estimatedTime": "2-3 horas"
                                 },
                                 {
                                   "stepNumber": 4,
@@ -34619,9 +34629,77 @@
                                     "Física Aplicada (dinâmica de voo)",
                                     "Estatística (validação de dados)"
                                   ],
-                                  "realWorldApplication": "Na certificação de novas aeronaves pela ANAC ou EASA, onde ensaios de voo com telemetria comprovam qualidades de voo para aprovação comercial, como no caso do Embraer E190-E2."
+                                  "realWorldApplication": "Na certificação de novas aeronaves pela ANAC ou EASA, onde ensaios de voo com telemetria comprovam qualidades de voo para aprovação comercial, como no caso do Embraer E190-E2.",
+                                  "stepNumber": 1,
+                                  "title": "Planejamento e Execução de Ensaio de Voo para Certificação de Estabilidade Longitudinal em Drone UAV",
+                                  "subSteps": [
+                                    "Elaborar plano de ensaio detalhado conforme RBAC-E 91.",
+                                    "Configurar sistema de telemetria para pitch, roll e acelerações.",
+                                    "Realizar testes em solo e calibração de sensores.",
+                                    "Executar voo controlado com coleta de dados.",
+                                    "Processar e analisar telemetria coletada.",
+                                    "Elaborar relatório de conformidade e lições aprendidas."
+                                  ],
+                                  "verification": [
+                                    "Plano aprovado por supervisor.",
+                                    "Telemetria coletada sem perdas (>95% cobertura).",
+                                    "Voo concluído sem incidentes.",
+                                    "Análise comprova conformidade com critérios regulatórios.",
+                                    "Relatório submetido e validado."
+                                  ],
+                                  "estimatedTime": "20 horas (distribuídas em 2 semanas)",
+                                  "materials": [
+                                    "Drone UAV com autonomia mínima de 20 min.",
+                                    "Sistema IMU (Inertial Measurement Unit) para telemetria.",
+                                    "Estação de controle solo (QGroundControl ou Mission Planner).",
+                                    "Notebook com Python/MATLAB para análise.",
+                                    "Documentação RBAC-E 91 (ANAC).",
+                                    "Equipamentos de segurança (capacete, colete refletivo, extintor)."
+                                  ],
+                                  "tips": [
+                                    "Verifique condições meteorológicas (vento <5m/s).",
+                                    "Calibre sensores em ambiente controlado antes do voo.",
+                                    "Implemente redundância em armazenamento de dados.",
+                                    "Use filtros (low-pass) para ruído em telemetria.",
+                                    "Registre NOTAM e autorizações prévias.",
+                                    "Simule voo em software antes da execução real."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de planejar, executar e analisar um ensaio de voo em drone UAV para certificação de estabilidade longitudinal, coletando telemetria de pitch, roll e acelerações, comprovando conformidade com RBAC-E 91 e gerando relatório aprovado.",
+                                  "commonMistakes": [
+                                    "Omissão de requisitos regulatórios no planejamento.",
+                                    "Configuração inadequada de telemetria causando perda de dados.",
+                                    "Execução de voo em condições climáticas inadequadas.",
+                                    "Análise superficial sem validação estatística.",
+                                    "Relatório incompleto ou sem visualizações claras.",
+                                    "Falta de backup e documentação de lições aprendidas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Planejar e executar um ensaio de voo em um drone UAV para certificação de estabilidade longitudinal, coletando telemetria de pitch, roll e acelerações para comprovar conformidade com RBAC-E 91, resultando em relatório aprovado pela ANAC.",
+                              "finalVerifications": [
+                                "Plano de ensaio completo e aprovado.",
+                                "Sistema telemétrico configurado com zero perdas de dados.",
+                                "Voo executado sem incidentes e com cobertura total de parâmetros.",
+                                "Análise demonstra conformidade em >95% dos critérios.",
+                                "Relatório final submetido e validado.",
+                                "Backup de dados armazenado com integridade.",
+                                "Lições aprendidas documentadas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e completude do planejamento (30%).",
+                                "Qualidade e volume de dados telemétricos (25%).",
+                                "Segurança e adesão ao plano durante execução (20%).",
+                                "Profundidade da análise e visualizações (15%).",
+                                "Clareza e conformidade do relatório final (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de Dados (análise telemétrica)",
+                                "Gestão de Projetos Aeronáuticos (planejamento)",
+                                "Segurança e Regulamentação Aviária (normas RBAC)",
+                                "Física Aplicada (dinâmica de voo)",
+                                "Estatística (validação de dados)"
+                              ],
+                              "realWorldApplication": "Na certificação de novas aeronaves pela ANAC ou EASA, onde ensaios de voo com telemetria comprovam qualidades de voo para aprovação comercial, como no caso do Embraer E190-E2."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "advanced",
@@ -42553,7 +42631,8 @@
             "totalSkills": 311
           }
         ],
-        "totalSkills": 311
+        "totalSkills": 311,
+        "percentage": 0
       }
     ]
   }

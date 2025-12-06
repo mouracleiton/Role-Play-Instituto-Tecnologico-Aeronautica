@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UI-28",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 315
+      "totalAtomicSkills": 315,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-UI28",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UI-28"
     },
     "areas": [
       {
@@ -36984,7 +36990,9 @@
                                   "materials": "Acesso a Google Scholar ou bases acadêmicas, gerenciador de referências como Zotero.",
                                   "tips": "Use filtros de data e citações (>100) para relevância.",
                                   "learningObjective": "Localizar fontes atualizadas em tópicos em evolução.",
-                                  "commonMistakes": "Selecionar fontes não revisadas ou irrelevantes (ex: blogs)."
+                                  "commonMistakes": "Selecionar fontes não revisadas ou irrelevantes (ex: blogs).",
+                                  "verification": "Lista de pelo menos 5 fontes recentes com DOIs válidos.",
+                                  "estimatedTime": "60 minutos"
                                 },
                                 {
                                   "stepNumber": 4,
@@ -40705,7 +40713,8 @@
             "totalSkills": 315
           }
         ],
-        "totalSkills": 315
+        "totalSkills": 315,
+        "percentage": 0
       }
     ]
   }

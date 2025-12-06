@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-20",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 365
+      "totalAtomicSkills": 365,
+      "startDate": "2025-02-01",
+      "duration": 60,
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-20"
     },
     "areas": [
       {
@@ -334,7 +340,16 @@
                                     "Ferramentas online como TimelineJS"
                                   ],
                                   "learningObjective": "Compreender como princípios westfálicos foram institucionalizados no direito internacional contemporâneo.",
-                                  "commonMistakes": "Ignorar influências não-europeias ou tratar a ONU como rompimento total com Westfália, em vez de adaptação."
+                                  "commonMistakes": "Ignorar influências não-europeias ou tratar a ONU como rompimento total com Westfália, em vez de adaptação.",
+                                  "tips": [
+                                    "Utilize as obras originais de Grotius e Vattel para analisar diretamente os princípios westfálicos, comparando diferentes traduções quando possível.",
+                                    "Inclua eventos não-europeus significativos (ex: tratados coloniais, movimentos de independência) na linha do tempo para evitar viés eurocêntrico.",
+                                    "Ao mapear a evolução da Liga das Nações para a ONU, destaque como mecanismos como o Capítulo VII da Carta das Nações adaptaram, mas não aboliram, a soberania absoluta.",
+                                    "Use TimelineJS para vincular cada evento a citações específicas dos teóricos e documentos históricos, facilitando a visualização das conexões causais.",
+                                    "Cross-reference eventos com fontes acadêmicas de JSTOR/Google Scholar para validar interpretações e identificar controvérsias historiográficas.",
+                                    "Inclua notas sobre como direitos humanos modernos (ex: tratados de Genebra) criaram limitações funcionais à soberania sem romper a estrutura westfálica.",
+                                    "Compare interpretações de historiadores sobre o Congresso de Viena e a Paz de Utrecht para entender diferentes perspectivas sobre a 'consolidação' do modelo."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 4,
@@ -45277,7 +45292,8 @@
             "totalSkills": 365
           }
         ],
-        "totalSkills": 365
+        "totalSkills": 365,
+        "percentage": 17
       }
     ]
   }

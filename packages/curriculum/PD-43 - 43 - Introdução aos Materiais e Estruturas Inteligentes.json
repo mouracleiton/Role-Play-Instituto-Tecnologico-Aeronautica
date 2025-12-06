@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PD-43",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 371
+      "totalAtomicSkills": 371,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "PD-43",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PD-43"
     },
     "areas": [
       {
@@ -6824,6 +6830,18 @@
                                     "Forgetting hysteresis in real piezos",
                                     "Overlooking bonding layer effects",
                                     "Using scalar instead of tensor properties"
+                                  ],
+                                  "verification": "Derivar as relações constitutivas lineares para PZT-5H e calcular a tensão gerada por uma deformação de 0.1%. Simular um atuador simples no LTSpice.",
+                                  "estimatedTime": "3 hours",
+                                  "materials": [
+                                    "Piezoelectricity Fundamentals PDF",
+                                    "LTSpice for circuit simulation (PZT-5H properties)",
+                                    "Tabela de constantes piezelétricas PZT"
+                                  ],
+                                  "tips": [
+                                    "Use a forma tensorial completa das propriedades piezelétricas.",
+                                    "Considere histerese para aplicações dinâmicas.",
+                                    "Modele camadas de colagem para transferência precisa de deformação."
                                   ]
                                 },
                                 {
@@ -49190,7 +49208,8 @@
             "totalSkills": 371
           }
         ],
-        "totalSkills": 371
+        "totalSkills": 371,
+        "percentage": 0
       }
     ]
   }

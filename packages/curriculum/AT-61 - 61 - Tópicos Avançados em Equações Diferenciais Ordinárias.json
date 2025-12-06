@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-61",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 287
+      "totalAtomicSkills": 287,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-AT-61",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-61"
     },
     "areas": [
       {
@@ -13558,6 +13564,29 @@
                                     "Observe como cada trajetória parte do seu ponto inicial único.",
                                     "Compare velocidades e direções iniciais via f(x₀).",
                                     "Anote diferenças: trajetórias circulares concêntricas para oscilador."
+                                  ],
+                                  "verification": [
+                                    "Trajetórias simuladas e plotadas corretamente para x₀1 = (1,0), x₀2 = (2,0), x₀3 = (0.5,1).",
+                                    "Campo vetorial incluído no plano de fase.",
+                                    "Observações sobre velocidades/direções iniciais e diferenças (ex.: trajetórias circulares concêntricas) anotadas."
+                                  ],
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Software de simulação numérica (Python com SciPy/Matplotlib ou MATLAB).",
+                                    "Funções para campo vetorial e integração de EDOs (ex.: solve_ivp)."
+                                  ],
+                                  "tips": [
+                                    "Use integração numérica com passo pequeno para precisão nas órbitas.",
+                                    "Normalize o campo vetorial para melhor visualização (quiver com scale ajustado).",
+                                    "Simule por tempo suficiente para completar pelo menos 2-3 períodos.",
+                                    "Compute f(x₀) manualmente para validar velocidades iniciais."
+                                  ],
+                                  "learningObjective": "Compreender como condições iniciais distintas geram trajetórias únicas no plano de fase, destacando propriedades como unicidade e comportamento concêntrico em osciladores harmônicos lineares.",
+                                  "commonMistakes": [
+                                    "Confundir plano de fase (x1 vs x2) com gráficos temporais (x(t)).",
+                                    "Escala inadequada no plot, ocultando diferenças entre trajetórias.",
+                                    "Omitir campo vetorial, perdendo referência de direção do fluxo.",
+                                    "Erro nos pontos iniciais ou no sistema dinâmico (verificar dx/dt = Ax)."
                                   ]
                                 },
                                 "verification`: "
@@ -13573,7 +13602,25 @@
                               "commonMistakes": [
                                 "Trajetórias cruzando (violam unicidade).",
                                 "Ignorar direção da seta em f(x)."
-                              ]
+                              ],
+                              "practicalExample": "Simule numericamente o oscilador harmônico x' = y, y' = -x com condições iniciais x₀ = (1,0), (2,0) e (0.5,1) usando Python (scipy.integrate.odeint) ou MATLAB. Plote as trajetórias no plano de fase, adicione o campo vetorial e descreva as órbitas circulares concêntricas.",
+                              "finalVerifications": [
+                                "Produza um gráfico completo do plano de fase com pelo menos três trajetórias marcadas corretamente a partir de condições iniciais específicas.",
+                                "Explique em um parágrafo a importância da unicidade das soluções no contexto do espaço de fase.",
+                                "Responda a uma questão surpresa: 'Qual o ponto no espaço de fase para x(0) = [0, 2]^T?'."
+                              ],
+                              "assessmentCriteria": [
+                                "Correção conceitual e definições precisas (25%)",
+                                "Qualidade e precisão dos gráficos e simulações (40%)",
+                                "Análise qualitativa das trajetórias e velocidades iniciais (20%)",
+                                "Clareza na verificação e explicações escritas (15%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física Clássica: Dinâmica de osciladores e conservação de energia no plano de fase.",
+                                "Engenharia Aeronáutica: Análise de estabilidade em sistemas de controle de voo.",
+                                "Cálculo Numérico: Integração de EDOs e visualização computacional."
+                              ],
+                              "realWorldApplication": "Em engenharia aeroespacial, o espaço de fase modela trajetórias de satélites ou aeronaves, onde condições iniciais (posição e velocidade) determinam órbitas estáveis ou caóticas, essencial para missões espaciais e controle de atitude."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -27690,9 +27737,62 @@
                                     "Computação Científica: Simulações de EDOs com SciPy para validação.",
                                     "Economia Matemática: Modelos dinâmicos de crescimento instável."
                                   ],
-                                  "realWorldApplication": "Em engenharia aeroespacial, usado para provar instabilidade de equilíbrios em satélites ou aeronaves, guiando design de controladores estabilizantes; em química, analisa instabilidades em reatores para prevenir explosões."
+                                  "realWorldApplication": "Em engenharia aeroespacial, usado para provar instabilidade de equilíbrios em satélites ou aeronaves, guiando design de controladores estabilizantes; em química, analisa instabilidades em reatores para prevenir explosões.",
+                                  "stepNumber": "4.3",
+                                  "title": "Prova de Instabilidade pelo Teorema de Chetaev",
+                                  "subSteps": [
+                                    "1. Leia o sistema dado: \\(\\dot{x} = x + y^2\\), \\(\\dot{y} = y\\).",
+                                    "2. Defina a região K = \\{(x,y) \\mid x > 0\\}. Verifique se K é cônica e contém cones arbitrariamente estreitos ao redor da origem.",
+                                    "3. Proponha a função V(x,y) = x.",
+                                    "4. Calcule a derivada temporal \\(\\dot{V} = \\frac{\\partial V}{\\partial x} \\dot{x} + \\frac{\\partial V}{\\partial y} \\dot{y}\\).",
+                                    "5. Analise o sinal de V e \\(\\dot{V}\\) em K \\setminus \\{(0,0)\\}.",
+                                    "6. Realize simulações numéricas para validar trajetórias saindo de K.",
+                                    "7. Documente a prova e interprete os resultados."
+                                  ],
+                                  "verification": "Conferir as verificações finais: V > 0 e \\(\\dot{V} > 0\\) em K \\setminus \\{0\\}, K cônica, cálculos corretos e simulações confirmatórias.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel e caneta para cálculos.",
+                                    "Software de simulação (Python com SciPy ou MATLAB).",
+                                    "Calculadora gráfica."
+                                  ],
+                                  "tips": [
+                                    "Verifique se K é invariante ou contém trajetórias saindo para infinito.",
+                                    "Use expansão em série para validar perto da origem.",
+                                    "Simule com condições iniciais próximas à origem em K.",
+                                    "Documente LaTeX para clareza nas equações."
+                                  ],
+                                  "learningObjective": "Aplicar o teorema de instabilidade de Chetaev para demonstrar a instabilidade de um equilíbrio em sistemas dinâmicos autônomos não lineares.",
+                                  "commonMistakes": [
+                                    "Definir K não cônica ou sem cones estreitos.",
+                                    "Erro no cálculo de \\(\\dot{V}\\), ignorando termos quadráticos.",
+                                    "Afirmar estabilidade por confusão com Lyapunov.",
+                                    "Simulações com passos temporais inadequados, mascarando instabilidade.",
+                                    "Falta de rigor na prova de positividade em todo K."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para o sistema \\(\\dot{x} = x + y^2\\), \\(\\dot{y} = y\\), defina K = \\{(x,y) \\mid x > 0\\}. Proponha V(x,y) = x. Então \\(\\dot{V} = \\dot{x} = x + y^2 > 0\\) em K \\setminus \\{(0,0)\\}, provando instabilidade da origem.",
+                              "finalVerifications": [
+                                "V(\\mathbf{x}) > 0 para \\(\\mathbf{x} \\in K \\setminus \\{0\\}\\).",
+                                "\\(\\dot{V}(\\mathbf{x}) > 0\\) para \\(\\mathbf{x} \\in K \\setminus \\{0\\}\\).",
+                                "K é cônica e contém cone arbitrariamente estreito.",
+                                "Cálculos algébricos corretos sem erros aritméticos.",
+                                "Simulações numéricas mostram trajetórias saindo de K."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e rigor na definição de K e V (30%).",
+                                "Correção no cálculo de \\(\\dot{V}\\) e prova de positividade (40%).",
+                                "Qualidade da análise qualitativa e numérica (20%).",
+                                "Clareza na documentação e interpretação (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Análise de equilíbrios instáveis em mecânica celeste (ex: pontos de Lagrange).",
+                                "Engenharia de Controle: Detecção de modos instáveis em sistemas de feedback.",
+                                "Computação Científica: Simulações de EDOs com SciPy para validação.",
+                                "Economia Matemática: Modelos dinâmicos de crescimento instável."
+                              ],
+                              "realWorldApplication": "Em engenharia aeroespacial, usado para provar instabilidade de equilíbrios em satélites ou aeronaves, guiando design de controladores estabilizantes; em química, analisa instabilidades em reatores para prevenir explosões."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "advanced",
@@ -37339,7 +37439,8 @@
             "totalSkills": 287
           }
         ],
-        "totalSkills": 287
+        "totalSkills": 287,
+        "percentage": 0
       }
     ]
   }

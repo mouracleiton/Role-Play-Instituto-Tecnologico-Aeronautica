@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-46",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 350
+      "totalAtomicSkills": 350,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-AT46",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-46"
     },
     "areas": [
       {
@@ -669,9 +675,59 @@
                                     "Geometria Analítica: Distâncias em R².",
                                     "Processamento de Sinais: Magnitude de frequências complexas."
                                   ],
-                                  "realWorldApplication": "Em engenharia elétrica, calcula a magnitude de tensões e correntes em análise de circuitos com fasores; em processamento de imagens, mede distâncias em transformadas de Fourier complexas; em física, representa forças vetoriais ou probabilidades quânticas."
+                                  "realWorldApplication": "Em engenharia elétrica, calcula a magnitude de tensões e correntes em análise de circuitos com fasores; em processamento de imagens, mede distâncias em transformadas de Fourier complexas; em física, representa forças vetoriais ou probabilidades quânticas.",
+                                  "stepNumber": 46,
+                                  "title": "Cálculo e Interpretação Geométrica do Módulo |z|",
+                                  "subSteps": [
+                                    "1. Represente z = a + bi como ponto (a, b) no plano complexo (eixo real horizontal, imaginário vertical).",
+                                    "2. Calcule |z| = √(a² + b²) usando fórmula algébrica.",
+                                    "3. Plote o ponto (a, b) e desenhe o vetor da origem até o ponto.",
+                                    "4. Interprete |z| como a distância euclidiana da origem ao ponto."
+                                  ],
+                                  "verification": "Calcule |z| para z = 3 + 4i e plote, confirmando |z| = 5 como hipotenusa.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel quadriculado ou software de plotagem (GeoGebra/Desmos)",
+                                    "Calculadora para raízes",
+                                    "Lápis e régua"
+                                  ],
+                                  "tips": [
+                                    "Memorize triângulo 3-4-5: |3+4i| = 5.",
+                                    "|z| é sempre real e ≥ 0; |0| = 0.",
+                                    "Para z real ou imaginário puro, |x| = |x|, |bi| = |b|."
+                                  ],
+                                  "learningObjective": "Compreender e calcular o módulo |z| de um número complexo como norma euclidiana, interpretando-o geometricamente como distância à origem no plano complexo.",
+                                  "commonMistakes": [
+                                    "Esquecer a raiz quadrada: calcular apenas a² + b².",
+                                    "Confundir |z| com parte real ou imaginária.",
+                                    "Plotar eixo imaginário no horizontal.",
+                                    "Negar valores negativos em a ou b (use módulo: (-3)^2 = 9)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para z = 3 + 4i, plote (3,4). Calcule |z| = √(3² + 4²) = √(9+16) = √25 = 5. Geometricamente, é a hipotenusa de um triângulo retângulo 3-4-5.",
+                              "finalVerifications": [
+                                "Calcula |z| corretamente para z=1+i, z=0+5i, z=-2-2i.",
+                                "Explica |z| como distância à origem.",
+                                "Verifica geometricamente pelo menos um exemplo com plot.",
+                                "Identifica que |i| = 1 e |1| = 1.",
+                                "Discute |z1 * z2| = |z1| * |z2| com exemplo simples."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão no cálculo algébrico (100% correto).",
+                                "Correta plotagem e interpretação geométrica.",
+                                "Tempo de execução eficiente (<1 min por cálculo).",
+                                "Explicação clara da conexão euclidiana.",
+                                "Aplicação correta em exemplos variados (reais, imaginários puros)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Magnitude de vetores em mecânica.",
+                                "Engenharia Elétrica: Amplitude de fasores em circuitos AC.",
+                                "Programação: Uso de complex() no Python para .abs().",
+                                "Geometria Analítica: Distâncias em R².",
+                                "Processamento de Sinais: Magnitude de frequências complexas."
+                              ],
+                              "realWorldApplication": "Em engenharia elétrica, calcula a magnitude de tensões e correntes em análise de circuitos com fasores; em processamento de imagens, mede distâncias em transformadas de Fourier complexas; em física, representa forças vetoriais ou probabilidades quânticas."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "beginner",
@@ -45472,7 +45528,8 @@
             "totalSkills": 350
           }
         ],
-        "totalSkills": 350
+        "totalSkills": 350,
+        "percentage": 0
       }
     ]
   }

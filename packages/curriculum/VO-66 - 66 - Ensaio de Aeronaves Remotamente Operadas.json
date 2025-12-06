@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - VO-66",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 306
+      "totalAtomicSkills": 306,
+      "startDate": "2025-01-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "VO-66",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - VO-66"
     },
     "areas": [
       {
@@ -2239,7 +2245,19 @@
                                   ],
                                   "Simulador de RPAS (RealFlight ou Liftoff), Drone físico opcional em ambiente controlado, Logs de telemetria (Betaflight)": "Monitore altímetro e velocidade para validar sustentação.",
                                   "learningObjective": "Integrar teoria em prática de pilotagem RPAS.",
-                                  "commonMistakes": "Aumentar α excessivamente em baixa velocidade sem monitorar sinais de estol."
+                                  "commonMistakes": "Aumentar α excessivamente em baixa velocidade sem monitorar sinais de estol.",
+                                  "verification": "Realizar simulação de voo com 3 cenários variados e registrar α vs. L sem estol.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Simulador de RPAS (RealFlight ou Liftoff)",
+                                    "Drone físico opcional em ambiente controlado",
+                                    "Logs de telemetria (Betaflight)"
+                                  ],
+                                  "tips": [
+                                    "Monitore altímetro e velocidade para validar sustentação.",
+                                    "Mantenha α abaixo do limite de estol em todas as manobras.",
+                                    "Registre telemetria em tempo real para análise posterior."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Em uma missão de inspeção com RPAS multirotor carregado (2kg payload), voando a 15m/s em vento frontal de 5m/s, o piloto nota perda de altitude. Aumenta α de 4° para 10° via comando de pitch-up, elevando sustentação em 30% e recuperando altitude sem atingir estol (α_stol=14°). Telemetria confirma: C_L subiu de 0.6 para 1.0.",
@@ -40889,7 +40907,8 @@
             "totalSkills": 306
           }
         ],
-        "totalSkills": 306
+        "totalSkills": 306,
+        "percentage": 0
       }
     ]
   }

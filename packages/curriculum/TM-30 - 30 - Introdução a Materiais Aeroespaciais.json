@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TM-30",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 301
+      "totalAtomicSkills": 301,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TM-30"
     },
     "areas": [
       {
@@ -20078,7 +20084,15 @@
                                   "verification": "Trace uma curva TTT para uma liga de Mg e identifique fases precipitadas.",
                                   "estimatedTime": "75 minutos",
                                   "materials": "Gráficos TTT de literatura (ex: papers on Mg alloys), microscópio virtual ou imagens TEM.",
-                                  "tips": "Lembre: em Mg, precipitação é mais lenta devido a HCP; use rare-earths para melhores precipitados."
+                                  "tips": "Lembre: em Mg, precipitação é mais lenta devido a HCP; use rare-earths para melhores precipitados.",
+                                  "learningObjective": "Compreender os mecanismos de precipitação em ligas de magnésio, incluindo sequências de fases, curvas TTT, endurecimento por Orowan e comparações com ligas de alumínio, identificando condições ótimas de envelhecimento.",
+                                  "commonMistakes": [
+                                    "Confundir sequência de precipitação de Mg (mais lenta devido a HCP) com Al (FCC mais rápida).",
+                                    "Erro na interpretação de curvas TTT: ignorar 'nariz' deslocado para longos tempos em Mg.",
+                                    "Atribuir erroneamente mecanismo de corte (shearing) a precipitados incoerentes em Mg.",
+                                    "Não distinguir envelhecimento natural (pouco efetivo em Mg) de artificial (pico de dureza).",
+                                    "Omitir papel de terras raras (RE) em precipitados finos e estáveis."
+                                  ]
                                 },
                                 "learningObjective: ",
                                 "Compreender a evolução temporal-espacial de precipitados e seu impacto no endurecimento.",
@@ -38116,7 +38130,8 @@
             "totalSkills": 301
           }
         ],
-        "totalSkills": 301
+        "totalSkills": 301,
+        "percentage": 0
       }
     ]
   }

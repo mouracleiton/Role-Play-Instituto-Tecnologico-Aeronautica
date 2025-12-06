@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SC-35",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 287
+      "totalAtomicSkills": 287,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SC-35"
     },
     "areas": [
       {
@@ -2745,9 +2751,62 @@
                                     "Matemática: Algoritmos de chave pública (RSA).",
                                     "Ética Digital: Privacidade e proteção de dados."
                                   ],
-                                  "realWorldApplication": "HTTPS é essencial para e-commerce (compras seguras), banking apps e APIs públicas (ex: Google Maps, Twitter API), prevenindo roubo de dados em Wi-Fi públicas e garantindo confiança em comunicações web."
+                                  "realWorldApplication": "HTTPS é essencial para e-commerce (compras seguras), banking apps e APIs públicas (ex: Google Maps, Twitter API), prevenindo roubo de dados em Wi-Fi públicas e garantindo confiança em comunicações web.",
+                                  "stepNumber": "4.2",
+                                  "title": "Laboratório Prático: Requisições HTTP/HTTPS com curl",
+                                  "subSteps": [
+                                    "Instale e verifique o curl no terminal: `curl --version`.",
+                                    "Execute requisição GET: `curl -v http://httpbin.org/get` e analise status 200, headers e resposta.",
+                                    "Execute requisição POST: `curl -X POST -d '{\"key\":\"value\"}' -H 'Content-Type: application/json' http://httpbin.org/post` e compare com GET.",
+                                    "Teste HTTPS: `curl -v https://httpbin.org/get` e observe o handshake TLS nos logs verbose.",
+                                    "Demonstre persistência de conexão: Execute múltiplas requisições GET no mesmo socket com `curl -v --http1.1 http://httpbin.org/get http://httpbin.org/get`."
+                                  ],
+                                  "verification": "Aluno executa todas as subetapas no terminal, captura saídas com screenshots ou logs, e explica diferenças observadas em relatório curto.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Terminal Linux/Mac/Windows com curl instalado",
+                                    "Acesso à internet",
+                                    "Editor de texto para anotações"
+                                  ],
+                                  "tips": [
+                                    "Sempre use `-v` para logs detalhados de headers e handshake.",
+                                    "Teste em HTTP/1.0 vs 1.1 com `--http1.0` para comparar persistência.",
+                                    "Use `httpbin.org` por ser um serviço de teste seguro e informativo.",
+                                    "Salve saídas com `> arquivo.txt` para análise posterior."
+                                  ],
+                                  "learningObjective": "Realizar requisições HTTP/HTTPS práticas com curl, analisar métodos, status codes, persistência de conexões e handshake TLS, diferenciando cenários seguros e inseguros.",
+                                  "commonMistakes": [
+                                    "Esquecer `-H 'Content-Type: application/json'` em POST JSON, causando erro 400.",
+                                    "Confundir HTTP (inseguro, porta 80) com HTTPS (seguro, porta 443).",
+                                    "Ignorar verbose (`-v`), perdendo insights sobre headers e TLS.",
+                                    "Não testar persistência, assumindo conexões sempre novas.",
+                                    "Usar aspas simples em JSON no shell, quebrando a sintaxe."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Use curl para uma requisição GET: `curl -v http://httpbin.org/get` (observe status 200 e headers). Em seguida, POST: `curl -X POST -d '{\"key\":\"value\"}' http://httpbin.org/post`. Compare com HTTPS: `curl -v https://httpbin.org/get` e note handshake TLS. Analise persistência via múltiplas requisições no mesmo socket.",
+                              "finalVerifications": [
+                                "Descrever corretamente pelo menos 4 métodos HTTP e seus usos.",
+                                "Explicar 5 códigos de status com exemplos.",
+                                "Diferenciar persistência em HTTP/1.1 vs 1.0.",
+                                "Desenhar fluxo de handshake TLS/SSL.",
+                                "Identificar quando usar HTTPS vs HTTP."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual e terminologia técnica (30%).",
+                                "Capacidade de exemplos práticos e testes (25%).",
+                                "Compreensão de segurança e persistência (20%).",
+                                "Integração de todos conceitos em explicação coesa (15%).",
+                                "Identificação de erros comuns e soluções (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Segurança da Informação: Criptografia assimétrica e certificados digitais.",
+                                "Desenvolvimento Web: Construção de APIs RESTful.",
+                                "Redes de Computadores: Camadas TCP/IP e sockets.",
+                                "Matemática: Algoritmos de chave pública (RSA).",
+                                "Ética Digital: Privacidade e proteção de dados."
+                              ],
+                              "realWorldApplication": "HTTPS é essencial para e-commerce (compras seguras), banking apps e APIs públicas (ex: Google Maps, Twitter API), prevenindo roubo de dados em Wi-Fi públicas e garantindo confiança em comunicações web."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -24569,7 +24628,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em uma transferência de arquivo HTTP via TCP, o pacote 5 é perdido devido a congestionamento na rede. O receptor recebe pacotes 6,7,8 e envia ACK 500 (para byte 500 do pacote 4) três vezes consecutivas. O servidor detecta isso, retransmite pacote 5 imediatamente (Fast Retransmit), evitando timeout de 3 segundos e completando a transferência 2x mais rápido, visível em Wireshark como 'Dup ACK' seguido de retransmissão."
+                                  "practicalExample": "Em uma transferência de arquivo HTTP via TCP, o pacote 5 é perdido devido a congestionamento na rede. O receptor recebe pacotes 6,7,8 e envia ACK 500 (para byte 500 do pacote 4) três vezes consecutivas. O servidor detecta isso, retransmite pacote 5 imediatamente (Fast Retransmit), evitando timeout de 3 segundos e completando a transferência 2x mais rápido, visível em Wireshark como 'Dup ACK' seguido de retransmissão.",
+                                  "stepNumber": 35,
+                                  "title": "Fast Retransmit no Controle de Congestionamento TCP",
+                                  "subSteps": [
+                                    "Configure uma transferência de arquivo HTTP via TCP em ambiente controlado.",
+                                    "Simule a perda do pacote 5 usando ferramentas como tc ou netem.",
+                                    "Capture o tráfego com Wireshark e observe a recepção dos pacotes 6, 7 e 8.",
+                                    "Analise os ACKs duplicados (ACK 500) enviados três vezes pelo receptor.",
+                                    "Verifique a detecção pelo servidor e a retransmissão imediata do pacote 5."
+                                  ],
+                                  "verification": "No Wireshark, confirme a presença de 'Dup ACK' (três ACKs 500 consecutivos) seguido de retransmissão do pacote 5, sem timeout de 3 segundos.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Wireshark (versão atualizada)",
+                                    "Ambiente Linux com tc/netem para simulação de perdas",
+                                    "Servidor e cliente HTTP configurados (ex: Apache e curl)"
+                                  ],
+                                  "tips": [
+                                    "Ajuste o threshold de Dup ACKs para 3 no kernel TCP (sysctl net.ipv4.tcp_retransmit_min)",
+                                    "Compare tempos com e sem Fast Retransmit para visualizar ganho de 2x",
+                                    "Use filtros Wireshark: tcp.analysis.lost_segment e tcp.analysis.duplicate_ack"
+                                  ],
+                                  "learningObjective": "Compreender o mecanismo de Fast Retransmit no TCP, que usa três ACKs duplicados para detectar perdas e retransmitir imediatamente, evitando timeouts e acelerando a recuperação.",
+                                  "commonMistakes": [
+                                    "Confundir Fast Retransmit com timeout-based retransmission (RTO).",
+                                    "Ignorar que são necessários exatamente 3 Dup ACKs para acionar o mecanismo.",
+                                    "Não diferenciar Fast Retransmit de Fast Recovery (inflação da janela).",
+                                    "Falhar em simular perdas corretamente, confundindo com ordenação fora de ordem."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -24578,6 +24665,45 @@
                                     "Diferencia detecção por ACKs de timeout-based recovery.",
                                     "Calcula ganho de latência em um exemplo numérico.",
                                     "Identifica traces Wireshark mostrando Fast Retransmit acionado por Dup ACKs."
+                                  ],
+                                  "stepNumber": 35,
+                                  "title": "Fast Retransmit: Detecção por Três ACKs Duplicados Consecutivos",
+                                  "subSteps": [
+                                    "1. Revisar o mecanismo de controle de congestionamento TCP e o problema de perda de segmentos.",
+                                    "2. Explicar o conceito de ACKs duplicados (Dup ACKs) e seu significado na rede.",
+                                    "3. Detalhar o threshold de três ACKs duplicados consecutivos para acionamento do Fast Retransmit.",
+                                    "4. Comparar detecção por Dup ACKs com recuperação baseada em timeout.",
+                                    "5. Simular um cenário de perda de pacote com geração de Dup ACKs usando diagramas ou ferramentas como Packet Tracer.",
+                                    "6. Calcular o ganho de latência em um exemplo numérico (ex: RTT = 100ms, timeout = 1s).",
+                                    "7. Analisar traces reais no Wireshark para identificar Fast Retransmit acionado por Dup ACKs."
+                                  ],
+                                  "verification": [
+                                    "Explica com precisão o threshold de três ACKs duplicados consecutivos.",
+                                    "Simula corretamente um cenário de perda com ACKs duplicados em diagrama ou ferramenta.",
+                                    "Diferencia detecção por ACKs de timeout-based recovery.",
+                                    "Calcula ganho de latência em um exemplo numérico.",
+                                    "Identifica traces Wireshark mostrando Fast Retransmit acionado por Dup ACKs."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Slides do módulo TCP Congestion Control (SC-35)",
+                                    "Wireshark com traces de exemplo TCP",
+                                    "Ferramenta de simulação (Cisco Packet Tracer ou ns-3)",
+                                    "Vídeo demonstrativo de Fast Retransmit"
+                                  ],
+                                  "tips": [
+                                    "Visualize a sequência de pacotes em diagramas para entender a contagem de Dup ACKs.",
+                                    "Use Wireshark filters como 'tcp.analysis.duplicate_ack' para facilitar a análise.",
+                                    "Lembre-se: Fast Retransmit retransmite o segmento perdido sem esperar timeout, reduzindo latência.",
+                                    "Pratique cálculos de RTT e threshold em exemplos reais."
+                                  ],
+                                  "learningObjective": "Compreender o mecanismo de Fast Retransmit no TCP, acionado por três ACKs duplicados consecutivos, diferenciando-o de timeout-based recovery, simulando cenários e analisando traces para calcular ganhos de performance.",
+                                  "commonMistakes": [
+                                    "Confundir o threshold de 3 Dup ACKs com 2 ou 4.",
+                                    "Achar que Fast Retransmit implica em redução da janela de congestionamento (isso é Fast Recovery).",
+                                    "Ignorar que Dup ACKs indicam perda seletiva, não congestionamento geral.",
+                                    "Erro no cálculo de latência: esquecer de considerar múltiplos RTTs no timeout.",
+                                    "Dificuldade em identificar Dup ACKs em Wireshark por falta de filtros adequados."
                                   ]
                                 },
                                 {
@@ -24587,6 +24713,37 @@
                                     "Análise comparativa: compara efetivamente com timeout (20%)",
                                     "Clareza de explicação: verbal/escrita sem ambiguidades (15%)",
                                     "Criatividade em exemplos: aplica a cenários reais como web browsing (10%)"
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "ACKs Cumulativos e Thresholds: Simulações e Comparação com Timeouts",
+                                  "subSteps": [
+                                    "1. Revisar conceitos de ACKs cumulativos e seu papel na detecção de perdas.",
+                                    "2. Explicar o threshold de duplicados e critérios de reenvio.",
+                                    "3. Realizar simulações práticas com ferramentas como Wireshark ou ns-3.",
+                                    "4. Desenvolver diagramas de sequência comparando com mecanismo de timeout.",
+                                    "5. Aplicar a cenários reais, como navegação web com perdas de pacotes."
+                                  ],
+                                  "verification": "Submissão de relatório com simulações, diagramas e análise comparativa, avaliado pelos critérios de assessment.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Slides sobre TCP (disponíveis no Moodle).",
+                                    "Simulador de rede (ns-3 ou Packet Tracer).",
+                                    "Wireshark para captura de tráfego.",
+                                    "Papel e caneta para diagramas."
+                                  ],
+                                  "tips": [
+                                    "Use diagramas de sequência para visualizar ACKs cumulativos.",
+                                    "Varie parâmetros como taxa de perda nas simulações para observar thresholds.",
+                                    "Compare tempos de recuperação em cenários com e sem duplicados ACK.",
+                                    "Relacione sempre com aplicações reais para fixar conceitos."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de explicar com precisão ACKs cumulativos e thresholds, simular seu funcionamento, compará-los efetivamente com timeouts e aplicá-los criativamente a cenários reais como web browsing.",
+                                  "commonMistakes": [
+                                    "Confundir ACKs cumulativos com ACKs individuais ou selectivos.",
+                                    "Ignorar o threshold de 3 duplicados como critério padrão para fast retransmit.",
+                                    "Subestimar a vantagem de ACKs sobre timeouts em redes com baixa latência.",
+                                    "Não incluir diagramas claros nas simulações, levando a ambiguidades.",
+                                    "Exemplos genéricos sem ligação a aplicações reais como HTTP."
                                   ]
                                 },
                                 {
@@ -24596,12 +24753,93 @@
                                     "Programação: Implementação de sockets TCP em linguagens como Python/C++ com monitoramento de ACKs.",
                                     "Estatística: Probabilidades de falsos positivos em detecção de perdas.",
                                     "Sistemas Operacionais: Integração com kernel TCP stacks como Linux."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Implementação de Sockets TCP com Detecção de Perdas e Monitoramento de ACKs",
+                                  "subSteps": [
+                                    "1. Revisar conceitos de TCP: three-way handshake, segmentos, ACKs e timeouts.",
+                                    "2. Configurar ambiente de sockets TCP em Python ou C++ (usar bibliotecas socket).",
+                                    "3. Implementar cliente e servidor simples com envio de dados e recebimento de ACKs.",
+                                    "4. Adicionar simulação de perdas probabilísticas (ex: descartar pacotes com probabilidade p=0.1).",
+                                    "5. Incluir mecanismo de retransmissão baseado em ACKs ausentes e análise de estatísticas.",
+                                    "6. Testar com ferramentas como Wireshark para visualizar tráfego de rede."
+                                  ],
+                                  "verification": "Código funcional que demonstre retransmissão automática após perda simulada, com logs mostrando ACKs recebidos/perdidos e estatísticas de falsos positivos. Teste com pelo menos 100 pacotes e perda de 10%.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Computador com Python 3+ ou C++ e compilador (g++).",
+                                    "Biblioteca socket padrão.",
+                                    "Wireshark para captura de pacotes.",
+                                    "Netcat (nc) para testes de servidor simples."
+                                  ],
+                                  "tips": [
+                                    "Use threads ou asyncio para lidar com envio/recebimento assíncrono.",
+                                    "Implemente um contador de sequência simples para detectar perdas.",
+                                    "Simule perdas com random.random() < perda_probabilidade.",
+                                    "Monitore timestamps para calcular RTT e ajustar timeouts."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de implementar sockets TCP com mecanismos de confiabilidade, detectando perdas via ACKs, simulando cenários probabilísticos e analisando desempenho, integrando conceitos de programação de rede, estatística e sistemas operacionais.",
+                                  "commonMistakes": [
+                                    "Não tratar o three-way handshake corretamente, causando falha na conexão.",
+                                    "Confundir ACK cumulativo com ACK individual, levando a retransmissões desnecessárias.",
+                                    "Ignorar timeouts, resultando em travamento em perdas persistentes.",
+                                    "Falta de logging detalhado para depuração de ACKs perdidos.",
+                                    "Não randomizar sementes para simulação realista de perdas."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Na internet cotidiana, essa detecção acelera downloads de vídeos no YouTube ou Netflix, retransmitindo pacotes perdidos em links Wi-Fi congestionados em milissegundos ao invés de segundos, reduzindo buffering e melhorando QoE para bilhões de usuários diários."
+                                  "realWorldApplication": "Na internet cotidiana, essa detecção acelera downloads de vídeos no YouTube ou Netflix, retransmitindo pacotes perdidos em links Wi-Fi congestionados em milissegundos ao invés de segundos, reduzindo buffering e melhorando QoE para bilhões de usuários diários.",
+                                  "stepNumber": 35,
+                                  "title": "Detecção Rápida de Pacotes Perdidos no TCP",
+                                  "subSteps": [
+                                    "1. Revise o mecanismo básico de ACKs no TCP e identifique como timeouts tradicionais causam atrasos.",
+                                    "2. Estude o algoritmo de Fast Retransmit: retransmissão após 3 ACKs duplicados.",
+                                    "3. Analise um exemplo prático com Wireshark capturando tráfego Wi-Fi congestionado.",
+                                    "4. Simule perda de pacotes em uma ferramenta como ns-3 ou Mininet e observe a redução de buffering."
+                                  ],
+                                  "verification": "Capture um fluxo TCP com perda de pacotes usando Wireshark e confirme a retransmissão após 3 DUP ACKs. Responda: Qual o ganho em latência comparado ao timeout RTO?",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Wireshark instalado",
+                                    "Conexão Wi-Fi para simulação de congestionamento",
+                                    "Tutorial de captura TCP no Wireshark (disponível online)"
+                                  ],
+                                  "tips": [
+                                    "Gere tráfego artificial com iperf para simular perdas sem depender de rede real.",
+                                    "Filtre por 'tcp.analysis.duplicate_ack' no Wireshark para visualizar DUP ACKs.",
+                                    "Compare métricas de throughput com e sem Fast Retransmit."
+                                  ],
+                                  "learningObjective": "Compreender como a detecção rápida de pacotes perdidos via ACKs duplicados no TCP otimiza o desempenho de aplicações de streaming, reduzindo latência de segundos para milissegundos em cenários reais de rede.",
+                                  "commonMistakes": [
+                                    "Confundir Fast Retransmit com Fast Recovery (este último ajusta a janela de congestionamento).",
+                                    "Ignorar que 3 é o threshold padrão, mas configurável.",
+                                    "Não considerar que SACKs aprimoram ainda mais em perdas múltiplas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em uma transferência de arquivo HTTP via TCP, o pacote 5 é perdido devido a congestionamento na rede. O receptor recebe pacotes 6,7,8 e envia ACK 500 (para byte 500 do pacote 4) três vezes consecutivas. O servidor detecta isso, retransmite pacote 5 imediatamente (Fast Retransmit), evitando timeout de 3 segundos e completando a transferência 2x mais rápido, visível em Wireshark como 'Dup ACK' seguido de retransmissão.",
+                              "finalVerifications": [
+                                "Explica com precisão o threshold de três ACKs duplicados consecutivos.",
+                                "Simula corretamente um cenário de perda com ACKs duplicados em diagrama ou ferramenta.",
+                                "Diferencia detecção por ACKs de timeout-based recovery.",
+                                "Calcula ganho de latência em um exemplo numérico.",
+                                "Identifica traces Wireshark mostrando Fast Retransmit acionado por Dup ACKs."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual: 100% correto sobre ACK cumulativos e threshold (30%)",
+                                "Profundidade prática: simulações/diagramas claros e acionáveis (25%)",
+                                "Análise comparativa: compara efetivamente com timeout (20%)",
+                                "Clareza de explicação: verbal/escrita sem ambiguidades (15%)",
+                                "Criatividade em exemplos: aplica a cenários reais como web browsing (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Análise de sequências numéricas e contadores de duplicatas.",
+                                "Física: Modelagem de propagação de sinais em redes com perdas probabilísticas.",
+                                "Programação: Implementação de sockets TCP em linguagens como Python/C++ com monitoramento de ACKs.",
+                                "Estatística: Probabilidades de falsos positivos em detecção de perdas.",
+                                "Sistemas Operacionais: Integração com kernel TCP stacks como Linux."
+                              ],
+                              "realWorldApplication": "Na internet cotidiana, essa detecção acelera downloads de vídeos no YouTube ou Netflix, retransmitindo pacotes perdidos em links Wi-Fi congestionados em milissegundos ao invés de segundos, reduzindo buffering e melhorando QoE para bilhões de usuários diários."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -38314,7 +38552,8 @@
             "totalSkills": 287
           }
         ],
-        "totalSkills": 287
+        "totalSkills": 287,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - IS-28",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 336
+      "totalAtomicSkills": 336,
+      "startDate": "2025-03-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - IS-28"
     },
     "areas": [
       {
@@ -28475,7 +28481,8 @@
                                     "Usar r total em vez de perpendicular",
                                     "Errar sinal de torque",
                                     "Confundir μ estático/dinâmico"
-                                  ]
+                                  ],
+                                  "verification": "Verifique dimensionalmente (N·m), confira uso de r perpendicular, valide consistência de sinais e compare ∑τ com direção esperada de rotação."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -34806,7 +34813,43 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Monte o aparato em laboratório escolar: corda de náilon 1,8m entre suportes de alumínio a 1m de altura, tensionador com peso de 1kg, gerador de 60Hz conectado via excêntrico e acelerômetro no centro para medir ondas estacionárias na 2ª harmônica."
+                                  "practicalExample": "Monte o aparato em laboratório escolar: corda de náilon 1,8m entre suportes de alumínio a 1m de altura, tensionador com peso de 1kg, gerador de 60Hz conectado via excêntrico e acelerômetro no centro para medir ondas estacionárias na 2ª harmônica.",
+                                  "stepNumber": 1,
+                                  "title": "Montagem do Aparato para Estudo de Ondas Estacionárias na 2ª Harmônica",
+                                  "subSteps": [
+                                    "Fixar os suportes de alumínio a 1m de altura no laboratório escolar",
+                                    "Conectar a corda de náilon de 1,8m entre os suportes, garantindo alinhamento horizontal",
+                                    "Instalar o tensionador applyando um peso de 1kg para manter a tensão constante",
+                                    "Conectar o gerador de 60Hz à corda via excêntrico, ajustando para excitação adequada",
+                                    "Posicionar o acelerômetro exatamente no centro da corda para medição das vibrações"
+                                  ],
+                                  "verification": "Confirmar a formação de nós e antinós correspondentes à 2ª harmônica através do acelerômetro; a distância entre nós deve ser λ/2 e a frequência medida deve corresponder a 2×f_fundamental",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Corda de náilon (1,8m)",
+                                    "Suportes de alumínio",
+                                    "Tensionador com peso de 1kg",
+                                    "Gerador de frequência de 60Hz",
+                                    "Excêntrico de acoplamento",
+                                    "Acelerômetro de medição",
+                                    "Suporte para fixação dos equipamentos",
+                                    "Medidor de altura (para calibração dos 1m)"
+                                  ],
+                                  "tips": [
+                                    "Garantir que os suportes estejam perfeitamente alinhados para evitar deformações na corda",
+                                    "Verificar a estabilidade da tensão antes de iniciar as medições",
+                                    "Calibrar o acelerômetro antes do experimento e posicioná-lo exatamente no centro",
+                                    "Manter a frequência do gerador estável em 60Hz durante todo o procedimento",
+                                    "Analisar os dados do acelerômetro em tempo real para confirmar a presença da 2ª harmônica"
+                                  ],
+                                  "learningObjective": "Compreender a formação de padrões de ondas estacionárias em cordas tensas, determinar experimentalmente a 2ª harmônica e aplicar técnicas de medição vibracional usando acelerômetro",
+                                  "commonMistakes": [
+                                    "Suportes mal alinhados causando vibrações laterais e distorção do padrão",
+                                    "Tensão insuficiente ou variável alterando a frequência natural da corda",
+                                    "Acelerômetro posicionado fora do centro, resultando em medições incompletas",
+                                    "Frequência do gerador não estável, gerando sobreposição de harmônicas",
+                                    "Falha em calibrar o acelerômetro, levando a leituras incorretas de amplitude"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -34815,6 +34858,46 @@
                                     "Gerador excita ondas visíveis e controláveis.",
                                     "Sensores captam sinais limpos e precisos.",
                                     "Sistema seguro para operação contínua por 30 minutos."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Configuração do Sistema de Medição de Ondas",
+                                  "subSteps": [
+                                    "Corda tensionada uniformemente sem folgas ou torções.",
+                                    "Suportes estáveis sem vibrações indesejadas.",
+                                    "Gerador excitado para produzir ondas visíveis e controláveis.",
+                                    "Sensores conectados e calibrados para captar sinais.",
+                                    "Sistema testado para operação contínua segura."
+                                  ],
+                                  "verification": [
+                                    "Corda tensionada uniformemente sem folgas ou torções.",
+                                    "Suportes estáveis sem vibrações indesejadas.",
+                                    "Gerador excita ondas visíveis e controláveis.",
+                                    "Sensores captam sinais limpos e precisos.",
+                                    "Sistema seguro para operação contínua por 30 minutos."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Corda de material apropriado",
+                                    "Suportes estáveis e ajustáveis",
+                                    "Gerador de ondas eletromagnéticas",
+                                    "Sensores de sinal (p.ex., sensores de movimento ou ópticos)",
+                                    "Cabos de conexão e adaptadores",
+                                    "Cronômetro ou temporizador"
+                                  ],
+                                  "tips": [
+                                    "Verificar a tensão da corda antes de iniciar a operação.",
+                                    "Ajustar os suportes para eliminar ressonâncias indesejadas.",
+                                    "Calibrar o gerador com base na frequência alvo do experimento.",
+                                    "Testar os sensores individualmente antes da conexão ao sistema.",
+                                    "Monitorar a temperatura dos componentes durante os testes de 30 minutos."
+                                  ],
+                                  "learningObjective": "Dominar a montagem segura e precisa de um sistema de geração e detecção de ondas, garantindo sinal de qualidade e operação estável.",
+                                  "commonMistakes": [
+                                    "Corda mal tensionada causando reflexões ou ruído nas ondas.",
+                                    "Suportes vibratórios introduzindo artefatos nos sinais medidos.",
+                                    "Gerador não calibrado produzindo frequências fora do espectro desejado.",
+                                    "Sensores mal posicionados ou conectados inversamente.",
+                                    "Falha em verificar a estabilidade do sistema antes do teste de 30 minutos."
                                   ]
                                 },
                                 {
@@ -34824,6 +34907,40 @@
                                     "Tensionamento correto validado por ressonâncias.",
                                     "Integração eletrônica funcional sem falhas.",
                                     "Eficiência temporal e limpeza da área."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Montagem e Integração do Sistema Mecânico-Eletrônico",
+                                  "subSteps": [
+                                    "Realizar verificação de segurança e preparação do ambiente",
+                                    "Executar montagem mecânica com precisão metrológica",
+                                    "Aplicar tensionamento verificado por análise de ressonâncias",
+                                    "Integrar e testar circuitos eletrônicos para funcionalidade completa",
+                                    "Realizar inspeção final de eficiência temporal e limpeza"
+                                  ],
+                                  "verification": "Relatórios de inspeção de segurança, medições de precisão registradas, graficos de ressonância confirmados, testes de continuidade eletrônica e auditoria de tempo/eficiência",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Kit de ferramentas de montagem precisa (chave de torque, micrômetro)",
+                                    "Equipamento de medição de ressonância",
+                                    "Componentes eletrônicos e solda",
+                                    "Equipamento de proteção individual (EPI)",
+                                    "Osciloscópio e multímetro",
+                                    "Planilha de registro de parâmetros"
+                                  ],
+                                  "tips": [
+                                    "Sempre verificar condições de segurança antes de iniciar",
+                                    "Documentar valores de torque em cada etapa",
+                                    "Calibrar equipamentos de medição antes do uso",
+                                    "Testar eletrônicos em subcircuitos antes da integração completa",
+                                    "Manter área de trabalho organizada para evitar atrasos"
+                                  ],
+                                  "learningObjective": "O aluno será capaz de executar montagens mecânicas precisas com integração eletrônica funcional, validando parâmetros de tensão através de análise de ressonância e garantindo conformidade com protocolos de segurança e eficiência operacional",
+                                  "commonMistakes": [
+                                    "Negligenciar protocolos de segurança durante manutenções",
+                                    "Aplicação incorreta de torque causando deformações",
+                                    "Desalinhamento de componentes gerando ressonâncias indesejadas",
+                                    "Conectação eletrônica deficiente provocando falhas de funcionamento",
+                                    "Desorganização do espaço causando perdas de tempo e erros de montagem"
                                   ]
                                 },
                                 {
@@ -34833,12 +34950,96 @@
                                     "Informática: Aquisição de dados e análise gráfica com software.",
                                     "Química: Propriedades elásticas e densidade linear da corda.",
                                     "Música: Analogia com cordas de instrumentos vibrantes."
+                                  ],
+                                  "stepNumber": "5",
+                                  "title": "Análise Integrada de Cordas Vibrantes: Conexões Multidisciplinares",
+                                  "subSteps": [
+                                    "Estudar equações de onda e calcular frequências ressonantes usando métodos matemáticos",
+                                    "Analisar estabilidade estrutural e comportamento de materiais sob tensão em modelos mecânicos",
+                                    "Realizar aquisição e análise gráfica de dados utilizando softwares de informática",
+                                    "Determinar propriedades elásticas e densidade linear de cordas através de experimentos químicos",
+                                    "Estabelecer analogias entre cordas vibrantes e instrumentos musicais"
+                                  ],
+                                  "verification": "Relatório técnico com cálculos verificados, simulações de software validadas e comparação experimental com instrumentos de corda",
+                                  "estimatedTime": "180 minutos",
+                                  "materials": [
+                                    "Software: MATLAB/Python com bibliotecas de análise de sinal",
+                                    "Equipamento: Dispositivo de tensão ajustável, sensores de deformação",
+                                    "Materiais: Cordas de diferentes composição e diâmetro",
+                                    "Calculadoras científicas, planilhas eletrônicas"
+                                  ],
+                                  "tips": [
+                                    "Utilizar dimensões normalizadas para facilitar comparações entre disciplinas",
+                                    "Cruzar validações: confirmar resultados matemáticos com dados experimentais",
+                                    "Documentar parâmetros de tensão e temperatura para reprodutibilidade",
+                                    "Explorar analogias musicais para visualização intuitiva de modos de vibração"
+                                  ],
+                                  "learningObjective": "Integrar conceitos de física, engenharia e ciências naturais para analisar sistematicamente sistemas de cordas vibrantes, desenvolvendo habilidades de aplicação interdisciplinar e validação experimental",
+                                  "commonMistakes": [
+                                    "Confundir frequência natural com frequência de excitação externa",
+                                    "Desconsiderar efeitos de temperatura na elasticidade dos materiais",
+                                    "Incorrer em erros de amostragem ao utilizar softwares de análise de dados",
+                                    "Generalizar propriedades de cordas ideais para materiais reais sem ajustes",
+                                    "Subestimar a influência da borda nas condições de contorno das vibrações"
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Fundamental para engenharia civil (análise de vibrações em pontes e cabos aéreos), fabricação de instrumentos musicais (violões e pianos), telecomunicações (transmissão de sinais em fibras) e pesquisa em acústica industrial."
+                                  "realWorldApplication": "Fundamental para engenharia civil (análise de vibrações em pontes e cabos aéreos), fabricação de instrumentos musicais (violões e pianos), telecomunicações (transmissão de sinais em fibras) e pesquisa em acústica industrial.",
+                                  "stepNumber": "3",
+                                  "title": "Análise de Vibrações em Sistemas Estruturais e Acústicos",
+                                  "subSteps": [
+                                    "Modelar vibrações em estruturas como pontes e cabos aéreos utilizando equações de movimento",
+                                    "Analisar transmissão de sinais de frequência em fibras ópticas e seus efeitos na qualidade de transmissão",
+                                    "Estudar propagação de ondas sonoras em instrumentos musicais (violões e pianos) para otimização acústica",
+                                    "Aplicar princípios de acústica industrial em ambientes de pesquisa para redução de ruído e controle de vibrações"
+                                  ],
+                                  "verification": "Simulação computacional de vibrações estruturais e análise espectral de sinais acústicos, com validação através de modelos experimentais",
+                                  "estimatedTime": "6 horas",
+                                  "materials": [
+                                    "Software de análise de vibrações (ANSYS, MATLAB)",
+                                    "Modelos matemáticos de sistemas de massa-mola-amortecedor",
+                                    "Espectrômetros de frequência e sensores de vibração",
+                                    "Fibras ópticas de teste e osciloscópios de alta precisão",
+                                    "Instrumentos musicais padrão para análise acústica"
+                                  ],
+                                  "tips": [
+                                    "Concentre-se nos modos de vibração fundamentais para entender o comportamento ressonante das estruturas",
+                                    "Utilize dados reais de pontes e cabos para calibração dos modelos numéricos",
+                                    "Pratique com violões de diferentes construções para observar variações acústicas",
+                                    "Inclua perdas de sinal e dispersão nas simulações de fibras ópticas para resultados realistas"
+                                  ],
+                                  "learningObjective": "Compreender os princípios físicos e matemáticos da análise de vibrações aplicados a contextos estruturais, de telecomunicações e acústicos, e desenvolver habilidades para projetar soluções em sistemas reais",
+                                  "commonMistakes": [
+                                    "Confundir modos de vibração com deformações estáticas nas estruturas",
+                                    "Negligenciar efeitos de damping (amortecimento) nas análises de ressonância",
+                                    "Subestimar a influência da temperatura na propagação de sinais em fibras ópticas",
+                                    "Adjustar incorretamente os parâmetros de frequência nos modelos acústicos de instrumentos musicais"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um laboratório de ensino médio, monte o aparato usando uma corda de aço de 2m de comprimento e 0,5mm diâmetro, suportes de madeira de 1,2m fixados em bancada com clamps, tensionador por meio de um peso de 2kg, gerador de frequência de 0-500Hz conectado via ímã vibratório e um sensor de acelerômetro posicionado no quarto de vibração da corda para registrar padrões de ondas estacionárias nas harmônicas 1ª e 2ª.",
+                              "finalVerifications": [
+                                "Corda está tensionada uniformemente sem pontos de folga ou torção.",
+                                "Suportes permanecem estáveis sob vibração contínua por 5 minutos.",
+                                "Gerador produz ondas estacionárias claras e reproduzíveis em pelo menos três frequências ressonantes.",
+                                "Sensores fornecem sinais com SNR > 20dB e sem ruído de interferência.",
+                                "Todo o aparato é desligado e guardado de forma segura após o experimento."
+                              ],
+                              "assessmentCriteria": [
+                                "Segurança reforçada durante montagem e operação.",
+                                "Precisão geométrica na alinhamento dos suportes e fixação da corda.",
+                                "Tensionamento validado por espectro de frequências ressonantes.",
+                                "Integração eletrônica com dados adquiridos sem interrupções.",
+                                "Eficiência operacional dentro do tempo estimado e limpeza pós-experimento."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática Aplicada: Resolução de equações diferenciais para ondas e cálculo de velocidades de onda.",
+                                "Engenharia de Materiais: Análise da relação tensão-comprimento-densidade na frequência fundamental.",
+                                "Física Moderna: Analogia com sistemas de ressonância em circuitos LC.",
+                                "Tecnologia da Informação: Aquisição e processamento de sinais digitais em tempo real.",
+                                "Artes Visuais: Exploração de padrões de interferência como formas geométricas vibrantes."
+                              ],
+                              "realWorldApplication": "Essencial na projetação de estruturas civis (análise de vibrações em pontes suspensas e cabos de energia), desenvolvimento de sensores de vibração para manutenção preditiva em indústrias, fabricação de instrumentos musicais de precisão (violinos e guitarras), e na engenharia de telecomunicações para transmissão de sinais de alta frequência em fibras ópticas."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -44664,7 +44865,8 @@
                                   "commonMistakes": [
                                     "Atribuir deriva numérica a falha teórica",
                                     "Ignorar normalização de H"
-                                  ]
+                                  ],
+                                  "verification": "Comparar o log de erro de ΔH/H com a ordem teórica do integrador e confirmar que a variação de H é nula dentro da tolerância numérica esperada; validar violação de conservação ao introduzir fricção."
                                 }
                               ],
                               "practicalExample": "Simule o sistema Sol-Terra: H inicial ≈ -G M m / a (energia de ligação elíptica). Integre por 100 anos; H deve oscilar <1e-12.",
@@ -45240,7 +45442,8 @@
             "totalSkills": 336
           }
         ],
-        "totalSkills": 336
+        "totalSkills": 336,
+        "percentage": 14.29
       }
     ]
   }

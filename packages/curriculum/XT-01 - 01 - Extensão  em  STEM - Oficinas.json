@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - XT-01",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 274
+      "totalAtomicSkills": 274,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - XT-01"
     },
     "areas": [
       {
@@ -37887,7 +37893,8 @@
             "totalSkills": 274
           }
         ],
-        "totalSkills": 274
+        "totalSkills": 274,
+        "percentage": 0
       }
     ]
   }

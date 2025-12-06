@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PS-36",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 378
+      "totalAtomicSkills": 378,
+      "startDate": "2025-03-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PS-36"
     },
     "areas": [
       {
@@ -49891,7 +49897,8 @@
             "totalSkills": 378
           }
         ],
-        "totalSkills": 378
+        "totalSkills": 378,
+        "percentage": 0
       }
     ]
   }

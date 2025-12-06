@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-32",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 351
+      "totalAtomicSkills": 351,
+      "startDate": "2025-01-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-32"
     },
     "areas": [
       {
@@ -2257,7 +2263,36 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Para a EDO separável dy/dx = (2x)/y com y(0)=1, a solução proposta é y(x) = √(x² + 1). Verificação: y'(x) = x / √(x² + 1), então y' * y = x, que equals 2x? Espera, corrija exemplo: na verdade para dy/dx = x/y, y=√(x²+1), y'=x/√(x²+1), y'*y = x, sim satisfaz dy/dx = x/y. Condição: y(0)=1 satisfaz."
+                                  "practicalExample": "Para a EDO separável dy/dx = (2x)/y com y(0)=1, a solução proposta é y(x) = √(x² + 1). Verificação: y'(x) = x / √(x² + 1), então y' * y = x, que equals 2x? Espera, corrija exemplo: na verdade para dy/dx = x/y, y=√(x²+1), y'=x/√(x²+1), y'*y = x, sim satisfaz dy/dx = x/y. Condição: y(0)=1 satisfaz.",
+                                  "stepNumber": 32,
+                                  "title": "Exemplo Prático: Resolução de EDO Separável dy/dx = x/y com y(0)=1",
+                                  "subSteps": [
+                                    "1. Reconheça a EDO como separável: dy/dx = x/y.",
+                                    "2. Separe as variáveis: y dy = x dx.",
+                                    "3. Integre ambos os lados: ∫ y dy = ∫ x dx, resultando em (1/2) y² = (1/2) x² + C.",
+                                    "4. Simplifique: y² = x² + 2C. Defina K = 2C, então y² = x² + K.",
+                                    "5. Resolva para y: y = √(x² + K) (considerando a raiz positiva pelo contexto).",
+                                    "6. Aplique a condição inicial y(0) = 1: 1 = √(0 + K) → K = 1.",
+                                    "7. Solução: y(x) = √(x² + 1)."
+                                  ],
+                                  "verification": "Diferencie y(x) = √(x² + 1): y'(x) = x / √(x² + 1). Então y'(x) * y(x) = [x / √(x² + 1)] * √(x² + 1) = x, logo dy/dx = x / y, satisfazendo a EDO. Condição inicial: y(0) = √(1) = 1, ok.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e lápis",
+                                    "Calculadora gráfica (opcional para plotagem)"
+                                  ],
+                                  "tips": [
+                                    "Verifique sempre a solução diferenciando e substituindo na EDO original.",
+                                    "Considere o domínio da solução (ex.: x ≥ 0 para raiz real).",
+                                    "Aplique a condição inicial após simplificar a solução geral."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de resolver uma EDO separável de primeira ordem, aplicar condições iniciais e verificar a solução obtida.",
+                                  "commonMistakes": [
+                                    "Esquecer a constante de integração C.",
+                                    "Erro na separação de variáveis ou integração.",
+                                    "Não verificar a condição inicial ou o domínio da solução.",
+                                    "Confundir dy/dx = x/y com dy/dx = 2x/y sem ajustar."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -2267,6 +2302,37 @@
                                     "Testes numéricos em pontos confirmam igualdade.",
                                     "Nenhum erro de domínio ou singularidade ignorado.",
                                     "Documentação completa de passos."
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Verificação Final da Solução",
+                                  "subSteps": [
+                                    "Calcule a derivada y'(x) da solução obtida y(x).",
+                                    "Simplifique y'(x) algebricamente e compare com f(x)g(y(x)).",
+                                    "Substitua x = x₀ na solução y(x) e verifique se y(x₀) = y₀.",
+                                    "Selecione 2-3 pontos numéricos e confirme que y'(x) ≈ f(x)g(y(x)).",
+                                    "Analise o domínio da solução e verifique ausência de singularidades.",
+                                    "Documente todos os cálculos e conclusões."
+                                  ],
+                                  "verification": "A solução é válida se y'(x) = f(x)g(y(x)) identicamente, y(x₀)=y₀ e testes numéricos confirmam.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e lápis",
+                                    "Calculadora gráfica (opcional)",
+                                    "Folha com a EDO e solução proposta"
+                                  ],
+                                  "tips": [
+                                    "Simplifique expressões antes de comparar lados.",
+                                    "Use frações exatas na verificação da condição inicial.",
+                                    "Escolha pontos numéricos dentro do domínio.",
+                                    "Registre fotos ou scans dos cálculos para portfólio."
+                                  ],
+                                  "learningObjective": "Verificar rigorosamente se uma função y(x) satisfaz uma EDO separável dy/dx = f(x)g(y) e sua condição inicial y(x₀)=y₀, identificando erros potenciais.",
+                                  "commonMistakes": [
+                                    "Erro no cálculo da derivada de y(x).",
+                                    "Comparação sem simplificação algébrica completa.",
+                                    "Substituição incorreta na condição inicial.",
+                                    "Ignorar singularidades ou domínio restrito.",
+                                    "Falta de testes numéricos para confirmação."
                                   ]
                                 },
                                 {
@@ -2277,6 +2343,39 @@
                                     "Uso de testes numéricos adicionais (10%).",
                                     "Clareza na documentação e identificação de erros (10%).",
                                     "Análise de domínio e suposições (10%)."
+                                  ],
+                                  "stepNumber": 32,
+                                  "title": "Verificação de Soluções de Equações Diferenciais",
+                                  "subSteps": [
+                                    "Calcule a derivada da função proposta.",
+                                    "Substitua a função e sua derivada na equação diferencial.",
+                                    "Simplifique a expressão algébricamente para verificar se resulta em uma identidade.",
+                                    "Confira se a função satisfaz a condição inicial fornecida.",
+                                    "Realize testes numéricos em pontos específicos para validação adicional.",
+                                    "Analise o domínio da solução e declare suposições implícitas.",
+                                    "Documente o processo, destacando possíveis erros."
+                                  ],
+                                  "verification": "Confirme que a substituição resulta em 0=0 ou identidade verdadeira, que a condição inicial é satisfeita exatamente e que testes numéricos corroboram a solução.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Papel e lápis para cálculos algébricos",
+                                    "Calculadora gráfica (opcional para testes numéricos)",
+                                    "Folha de exercícios com EDOs e condições iniciais"
+                                  ],
+                                  "tips": [
+                                    "Sempre diferencie com cuidado, especialmente em funções compostas.",
+                                    "Simplifique passo a passo para evitar erros de álgebra.",
+                                    "Use valores numéricos próximos à condição inicial para testes rápidos.",
+                                    "Anote suposições sobre o domínio desde o início."
+                                  ],
+                                  "learningObjective": "Verificar rigorosamente se uma função dada satisfaz uma equação diferencial de primeira ordem e sua condição inicial, incluindo análise de domínio e validação numérica.",
+                                  "commonMistakes": [
+                                    "Erro no cálculo da derivada (ex.: regra da cadeia ignorada).",
+                                    "Substituição incorreta de y ou y' na EDO.",
+                                    "Esquecimento da condição inicial.",
+                                    "Simplificação algébrica incompleta ou errada.",
+                                    "Ignorar restrições de domínio da solução.",
+                                    "Falta de testes numéricos para confirmação."
                                   ]
                                 },
                                 {
@@ -2286,12 +2385,94 @@
                                     "Engenharia: Confirmação de modelos em controle de sistemas dinâmicos.",
                                     "Química: Verificação de cinéticas de reação modeladas por EDOs.",
                                     "Economia: Validação de modelos de crescimento exponencial."
+                                  ],
+                                  "stepNumber": 32,
+                                  "title": "Validação de Soluções Numéricas para Equações Diferenciais Ordinárias (EDOs)",
+                                  "subSteps": [
+                                    "1. Selecione um modelo de EDO de um dos contextos interdisciplinares (ex: mecânica, cinética química).",
+                                    "2. Implemente um método numérico simples (ex: método de Euler) para resolver a EDO.",
+                                    "3. Compare a solução numérica com a solução analítica conhecida ou comportamento físico esperado.",
+                                    "4. Analise erros de truncamento e verifique condições iniciais e de contorno.",
+                                    "5. Documente a validação e discuta limitações do método."
+                                  ],
+                                  "verification": "A solução numérica deve convergir para a solução exata com refinamento da malha (passo h → 0) e satisfazer as condições iniciais. Erro relativo < 1% em pontos de verificação.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Computador com Python (bibliotecas NumPy, SciPy) ou MATLAB.",
+                                    "Folha de papel e calculadora para cálculos manuais iniciais.",
+                                    "Exemplos de EDOs dos contextos cross-curriculares."
+                                  ],
+                                  "tips": [
+                                    "Comece com passos grandes (h) para depuração, depois refine.",
+                                    "Plote gráficos para visualização intuitiva da convergência.",
+                                    "Verifique sempre se a derivada numérica coincide com a EDO no ponto.",
+                                    "Use soluções exatas conhecidas para testes iniciais."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de validar soluções numéricas de EDOs, identificando erros e garantindo precisão em aplicações interdisciplinares como física, engenharia e economia.",
+                                  "commonMistakes": [
+                                    "Implementação incorreta do método numérico (ex: esquecimento do fator h).",
+                                    "Não verificar condições iniciais após iterações.",
+                                    "Ignorar instabilidades numéricas em EDOs rígidas.",
+                                    "Comparação inadequada sem normalização de erros.",
+                                    "Confundir solução numérica com analítica sem análise de convergência."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em modelagem populacional, verificar a solução de dy/dt = ky (crescimento exponencial) com y(0)=P₀ garante que previsões de população atendam dados iniciais reais, evitando erros em políticas públicas ou planejamento urbano."
+                                  "realWorldApplication": "Em modelagem populacional, verificar a solução de dy/dt = ky (crescimento exponencial) com y(0)=P₀ garante que previsões de população atendam dados iniciais reais, evitando erros em políticas públicas ou planejamento urbano.",
+                                  "stepNumber": 32,
+                                  "title": "Verificação da Solução da Equação de Crescimento Exponencial",
+                                  "subSteps": [
+                                    "Resolva a EDO dy/dt = ky separando variáveis: dy/y = k dt.",
+                                    "Integre ambos os lados: ln|y| = kt + C → y(t) = A e^{kt}, onde A = ±e^C.",
+                                    "Aplique a condição inicial y(0) = P₀: y(0) = A = P₀.",
+                                    "Obtenha a solução y(t) = P₀ e^{kt}.",
+                                    "Verifique se satisfaz a EDO: compute y'(t) = k P₀ e^{kt} = k y(t).",
+                                    "Confirme a condição inicial: y(0) = P₀ e^0 = P₀."
+                                  ],
+                                  "verification": "Calcule y'(t) para y(t) = P₀ e^{kt} e verifique se y'(t) = k y(t) e y(0) = P₀. Responda: A solução está correta? Explique.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e caneta",
+                                    "Calculadora para exponenciais (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Sempre verifique tanto a equação diferencial quanto a condição inicial.",
+                                    "A derivada de e^{kt} é exatamente k e^{kt}, facilitando a verificação.",
+                                    "Use substituição direta na EDO para rapidez."
+                                  ],
+                                  "learningObjective": "Verificar se uma função dada satisfaz uma equação diferencial linear de primeira ordem com condição inicial, garantindo precisão em modelos reais como crescimento populacional.",
+                                  "commonMistakes": [
+                                    "Esquecer de aplicar a condição inicial, deixando constante genérica.",
+                                    "Erro na derivada: confundir d/dt [e^{kt}] com e^{kt} em vez de k e^{kt}.",
+                                    "Não verificar ambas as condições (EDO e CI)."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para a EDO separável dy/dx = x/y com y(0)=1, a solução proposta é y(x) = √(x² + 1). Verificação da EDO: y'(x) = x / √(x² + 1), então y'(x) = x / y(x), satisfazendo a equação. Verificação da condição inicial: y(0) = √(0² + 1) = 1, correto.",
+                              "finalVerifications": [
+                                "Derivada y'(x) calculada e simplificada corretamente.",
+                                "Lado esquerdo y'(x) idêntico ao lado direito f(x)g(y(x)) algebricamente.",
+                                "Condição inicial y(x₀)=y₀ satisfeita exatamente.",
+                                "Testes numéricos em pontos confirmam igualdade.",
+                                "Nenhum erro de domínio ou singularidade ignorado.",
+                                "Documentação completa de passos."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão e completude no cálculo da derivada (20%).",
+                                "Correção algébrica na substituição e simplificação (30%).",
+                                "Verificação exata da condição inicial (20%).",
+                                "Uso de testes numéricos adicionais (10%).",
+                                "Clareza na documentação e identificação de erros (10%).",
+                                "Análise de domínio e suposições (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Validação de trajetórias em mecânica (EDOs de movimento).",
+                                "Computação: Verificação de soluções numéricas em simulações (ex: Euler method).",
+                                "Engenharia: Confirmação de modelos em controle de sistemas dinâmicos.",
+                                "Química: Verificação de cinéticas de reação modeladas por EDOs.",
+                                "Economia: Validação de modelos de crescimento exponencial."
+                              ],
+                              "realWorldApplication": "Em modelagem populacional, verificar a solução de dy/dt = ky (crescimento exponencial) com y(0)=P₀ garante que previsões de população atendam dados iniciais reais, evitando erros em políticas públicas ou planejamento urbano."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "intermediate",
@@ -8659,7 +8840,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Para a EDO y'' - 3y' + 2y = 0, equação característica r² - 3r + 2 = 0 → r=1, r=2 (D=1>0). Solução geral: y(x) = c₁ e^x + c₂ e^{2x}. Verificação: y' = c₁ e^x + 2 c₂ e^{2x}, y'' = c₁ e^x + 4 c₂ e^{2x}, então y'' -3y' +2y = (c₁ e^x +4c₂ e^{2x}) -3(c₁ e^x +2c₂ e^{2x}) +2(c₁ e^x + c₂ e^{2x}) =0. Wrónskiano W = e^{3x} ≠0."
+                                  "practicalExample": "Para a EDO y'' - 3y' + 2y = 0, equação característica r² - 3r + 2 = 0 → r=1, r=2 (D=1>0). Solução geral: y(x) = c₁ e^x + c₂ e^{2x}. Verificação: y' = c₁ e^x + 2 c₂ e^{2x}, y'' = c₁ e^x + 4 c₂ e^{2x}, então y'' -3y' +2y = (c₁ e^x +4c₂ e^{2x}) -3(c₁ e^x +2c₂ e^{2x}) +2(c₁ e^x + c₂ e^{2x}) =0. Wrónskiano W = e^{3x} ≠0.",
+                                  "stepNumber": 1,
+                                  "title": "Resolução de EDO linear homogênea de 2ª ordem com raízes reais distintas",
+                                  "subSteps": [
+                                    "Formule a equação característica: para y'' - 3y' + 2y = 0, r² - 3r + 2 = 0.",
+                                    "Calcule o discriminante D = (-3)² - 4(1)(2) = 9 - 8 = 1 > 0 (raízes reais distintas).",
+                                    "Resolva a equação característica: (r-1)(r-2)=0 → r=1, r=2.",
+                                    "Escreva a solução geral: y(x) = c₁ e^{x} + c₂ e^{2x}.",
+                                    "Verifique a solução substituindo na EDO original.",
+                                    "Confirme independência linear via Wrónskiano: W ≠ 0."
+                                  ],
+                                  "verification": "y' = c₁ e^x + 2 c₂ e^{2x}, y'' = c₁ e^x + 4 c₂ e^{2x}. Substituindo: y'' - 3y' + 2y = 0. Wrónskiano W = |e^x  e^{2x}| = e^{3x} ≠ 0.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e caneta",
+                                    "Calculadora para raízes (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Sempre determine o discriminante D para classificar o caso.",
+                                    "Verifique a solução diretamente na EDO para evitar erros.",
+                                    "Calcule o Wrónskiano para garantir base fundamental."
+                                  ],
+                                  "learningObjective": "Resolver EDOs lineares homogêneas de 2ª ordem com coeficientes constantes reais distintos, obtendo e verificando a solução geral.",
+                                  "commonMistakes": [
+                                    "Erro no cálculo do discriminante ou raízes da equação característica.",
+                                    "Confusão nos expoentes ao derivar as soluções exponenciais.",
+                                    "Omitir verificação da solução ou independência linear.",
+                                    "Esquecer as constantes arbitrárias c₁ e c₂."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -8668,6 +8877,34 @@
                                     "Verificação da EDO realizada com simplificação para zero.",
                                     "Wrónskiano W(x) ≠ 0 demonstrado.",
                                     "Explicação de que S forma conjunto fundamental fornecida."
+                                  ],
+                                  "stepNumber": 5,
+                                  "title": "Verificação da Solução Geral e Conjunto Fundamental para Raízes Reais Distintas",
+                                  "subSteps": [
+                                    "Confirme o cálculo correto das raízes reais distintas r₁ e r₂ da equação característica.",
+                                    "Escreva a solução geral na forma y(x) = c₁ e^{r₁ x} + c₂ e^{r₂ x}.",
+                                    "Substitua y(x) na EDO original e simplifique para mostrar que resulta em zero.",
+                                    "Calcule o Wrónskiano W(e^{r₁ x}, e^{r₂ x})(x) e demonstre que é diferente de zero.",
+                                    "Explique que as funções formam um conjunto fundamental de soluções."
+                                  ],
+                                  "verification": "Todas as condições listadas nas finalVerifications devem ser atendidas para considerar o passo completo.",
+                                  "estimatedTime": "10-15 minutos",
+                                  "materials": [
+                                    "Papel e lápis",
+                                    "Calculadora (opcional para cálculos numéricos)"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: W(y₁, y₂) = (r₂ - r₁) e^{(r₁ + r₂)x} ≠ 0, pois r₁ ≠ r₂.",
+                                    "Na verificação da EDO, distribua os termos de y' e y'' cuidadosamente.",
+                                    "Use constantes arbitrárias c₁ e c₂ para mostrar a solução geral."
+                                  ],
+                                  "learningObjective": "Verificar a solução geral de EDOs lineares homogêneas de 2ª ordem com raízes reais distintas e demonstrar que formam um conjunto fundamental via Wrónskiano.",
+                                  "commonMistakes": [
+                                    "Esquecer as constantes c₁ e c₂ na solução geral.",
+                                    "Erro no cálculo do Wrónskiano, como confundir y₁' com y₂'.",
+                                    "Não simplificar completamente a substituição na EDO, deixando termos residuais.",
+                                    "Afirmar independência linear sem calcular o Wrónskiano.",
+                                    "Confundir com o caso de raízes repetidas ou complexas."
                                   ]
                                 },
                                 {
@@ -8677,6 +8914,36 @@
                                     "Correção na verificação da EDO (simplificação idêntica a zero).",
                                     "Cálculo correto e interpretação do Wrónskiano.",
                                     "Clareza na explicação do conjunto fundamental e independência linear."
+                                  ],
+                                  "stepNumber": 3,
+                                  "title": "Resolução da EDO linear homogênea de segunda ordem e verificação",
+                                  "subSteps": [
+                                    "Formule a equação característica e calcule o discriminante Δ = b² - 4ac.",
+                                    "Determine as raízes r₁ e r₂ (distintas reais, repetida ou complexas) e escreva a solução geral y(x) com constantes arbitrárias C₁ e C₂.",
+                                    "Verifique a solução substituindo y(x), y' e y'' na EDO original e simplificando até obter identicamente zero.",
+                                    "Calcule o Wrónskiano W(y₁, y₂) das soluções fundamentais e interprete seu sinal não nulo.",
+                                    "Explique por que {y₁, y₂} forma um conjunto fundamental e demonstra independência linear."
+                                  ],
+                                  "verification": "A solução está correta se: (1) raízes e discriminante exatos; (2) forma geral com constantes C₁, C₂; (3) verificação simplifica a zero; (4) Wrónskiano ≠ 0; (5) explicação clara de independência linear.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Papel e lápis para cálculos",
+                                    "Calculadora científica",
+                                    "Folha com a EDO proposta (ex: y'' + 3y' + 2y = 0)"
+                                  ],
+                                  "tips": [
+                                    "Para raízes complexas α ± βi, use y = e^{αx}(C₁ cos(βx) + C₂ sen(βx)).",
+                                    "Na verificação, expanda todos os termos antes de simplificar.",
+                                    "Wrónskiano W = | y₁ y₂ ; y₁' y₂' |; compute determinante e mostre ≠ 0.",
+                                    "Conjunto fundamental: linearmente independente e abrange soluções."
+                                  ],
+                                  "learningObjective": "Resolver EDOs lineares homogêneas de 2ª ordem com coeficientes constantes, obter solução geral exata, verificar validade e demonstrar independência linear via Wrónskiano.",
+                                  "commonMistakes": [
+                                    "Erro no discriminante (esquecer sinal ou coeficientes).",
+                                    "Omitir constantes arbitrárias na solução geral.",
+                                    "Não simplificar completamente a verificação (restos não zero).",
+                                    "Confundir formas de solução para raízes repetidas (x e^{rx}) vs. distintas.",
+                                    "Calcular Wrónskiano errado ou ignorar interpretação de independência."
                                   ]
                                 },
                                 {
@@ -8686,12 +8953,93 @@
                                     "Biologia: Dinâmica de populações com crescimento/decrescimento diferencial.",
                                     "Economia: Modelos de oferta/demanda com taxas exponenciais distintas.",
                                     "Química: Cinética de reações com duas vias de decaimento."
+                                  ],
+                                  "stepNumber": 32,
+                                  "title": "Equações Diferenciais Lineares Homogêneas de Segunda Ordem",
+                                  "subSteps": [
+                                    "1. Identificar a forma geral da EDO: ay'' + by' + cy = 0.",
+                                    "2. Formar a equação característica: ar² + br + c = 0.",
+                                    "3. Resolver as raízes e classificar: reais distintas, reais iguais ou complexas conjugadas.",
+                                    "4. Construir a solução geral para cada caso.",
+                                    "5. Aplicar condições iniciais para determinar constantes.",
+                                    "6. Explorar conexões interdisciplinares (ex: circuitos RLC, dinâmica populacional)."
+                                  ],
+                                  "verification": "Resolva a EDO y'' + 4y' + 4y = 0 com y(0)=1, y'(0)=0 e verifique se y(t) = (1 + t)e^{-2t}. Compare com modelo de decaimento em química.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Caderno e caneta",
+                                    "Calculadora científica",
+                                    "Software de simulação (opcional: MATLAB ou Python com SciPy)"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: raízes complexas α ± βi geram soluções e^{αt}(A cos(βt) + B sen(βt)).",
+                                    "Verifique sempre a equação característica para evitar erros de sinal.",
+                                    "Use gráficos para visualizar amortecimento em contextos físicos."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de resolver EDOs lineares homogêneas de segunda ordem com coeficientes constantes, identificar casos de raízes e aplicar soluções em modelagens interdisciplinares como circuitos RLC, controle automático e cinética química.",
+                                  "commonMistakes": [
+                                    "Confundir raízes reais iguais (solução te^{αt}) com distintas (Ae^{αt} + Be^{βt}).",
+                                    "Esquecer o fator e^{αt} em raízes complexas.",
+                                    "Erro nos sinais da equação característica (ar² + br + c = 0).",
+                                    "Não aplicar corretamente condições iniciais, levando a inconsistências."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Esta solução é essencial para modelar fenômenos como decaimento radioativo duplo em física nuclear, circuitos elétricos em engenharia eletrônica, crescimento de populações competidoras em ecologia, e previsões econômicas de mercados com duas forças exponenciais opostas."
+                                  "realWorldApplication": "Esta solução é essencial para modelar fenômenos como decaimento radioativo duplo em física nuclear, circuitos elétricos em engenharia eletrônica, crescimento de populações competidoras em ecologia, e previsões econômicas de mercados com duas forças exponenciais opostas.",
+                                  "stepNumber": 32,
+                                  "title": "Aplicações Práticas de Sistemas Lineares de EDOs",
+                                  "subSteps": [
+                                    "1. Identifique o fenômeno real (ex.: decaimento radioativo duplo) e formule o sistema de EDOs associado.",
+                                    "2. Resolva o sistema linear homogêneo de primeira ordem usando autovalores e autovetores.",
+                                    "3. Aplique condições iniciais para determinar constantes de integração.",
+                                    "4. Interprete os resultados no contexto do problema físico ou biológico.",
+                                    "5. Analise gráficos da solução para validar o modelo."
+                                  ],
+                                  "verification": "Resolva o sistema para decaimento radioativo duplo com y1(0)=1, y2(0)=0 e taxas λ1=0.1, λ2=0.2. Verifique se y1(t) + y2(t) = e^{-0.1t} + e^{-0.2t} satisfaz as condições iniciais.",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": [
+                                    "Papel e caneta para cálculos",
+                                    "Calculadora ou software como Python/MATLAB para verificação numérica",
+                                    "Gráficos de referência para decaimento exponencial"
+                                  ],
+                                  "tips": [
+                                    "Priorize autovalores reais distintos para soluções simples exponenciais.",
+                                    "Use software para plotar soluções e visualizar comportamentos assintóticos.",
+                                    "Sempre normalize autovetores para facilitar cálculos.",
+                                    "Compare com dados experimentais para validar o modelo."
+                                  ],
+                                  "learningObjective": "Compreender e aplicar soluções de sistemas lineares de EDOs de primeira ordem para modelar fenômenos reais como decaimento radioativo duplo, circuitos elétricos, populações competidoras e dinâmicas econômicas.",
+                                  "commonMistakes": [
+                                    "Esquecer de verificar linearidade e homogeneidade do sistema.",
+                                    "Confundir autovalores com taxas de decaimento (sinais opostos).",
+                                    "Não aplicar corretamente condições iniciais às componentes exponenciais.",
+                                    "Ignorar dependência entre variáveis em populações competidoras."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Para a EDO y'' - 3y' + 2y = 0, equação característica r² - 3r + 2 = 0 → r=1, r=2 (D=1>0). Solução geral: y(x) = c₁ e^x + c₂ e^{2x}. Verificação: y' = c₁ e^x + 2 c₂ e^{2x}, y'' = c₁ e^x + 4 c₂ e^{2x}, então y'' -3y' +2y = (c₁ e^x +4c₂ e^{2x}) -3(c₁ e^x +2c₂ e^{2x}) +2(c₁ e^x + c₂ e^{2x}) =0. Wrónskiano W = e^{3x} ≠0.",
+                              "finalVerifications": [
+                                "Raízes reais distintas calculadas corretamente.",
+                                "Solução geral y(x) = c₁ e^{r₁ x} + c₂ e^{r₂ x} escrita.",
+                                "Verificação da EDO realizada com simplificação para zero.",
+                                "Wrónskiano W(x) ≠ 0 demonstrado.",
+                                "Explicação de que S forma conjunto fundamental fornecida."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão no cálculo das raízes e discriminante (pontos plenos se exatos).",
+                                "Forma exata da solução geral com constantes arbitrárias.",
+                                "Correção na verificação da EDO (simplificação idêntica a zero).",
+                                "Cálculo correto e interpretação do Wrónskiano.",
+                                "Clareza na explicação do conjunto fundamental e independência linear."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Modelagem de circuitos RLC com respostas transitórias exponenciais.",
+                                "Engenharia: Análise de sistemas lineares em controle automático.",
+                                "Biologia: Dinâmica de populações com crescimento/decrescimento diferencial.",
+                                "Economia: Modelos de oferta/demanda com taxas exponenciais distintas.",
+                                "Química: Cinética de reações com duas vias de decaimento."
+                              ],
+                              "realWorldApplication": "Esta solução é essencial para modelar fenômenos como decaimento radioativo duplo em física nuclear, circuitos elétricos em engenharia eletrônica, crescimento de populações competidoras em ecologia, e previsões econômicas de mercados com duas forças exponenciais opostas."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -25552,9 +25900,59 @@
                                     "Processamento de Sinais: Filtragem convolucional em DSP.",
                                     "Ciências da Computação: Algoritmos numéricos para FFT-based convolução acelerada."
                                   ],
-                                  "realWorldApplication": "Em engenharia elétrica, calcula a resposta transitória de um circuito RC a uma entrada em rampa, onde a convolução fornece a solução exata da EDO sem tabelas extensas, essencial para design de filtros e sistemas de controle estáveis."
+                                  "realWorldApplication": "Em engenharia elétrica, calcula a resposta transitória de um circuito RC a uma entrada em rampa, onde a convolução fornece a solução exata da EDO sem tabelas extensas, essencial para design de filtros e sistemas de controle estáveis.",
+                                  "stepNumber": "4.2",
+                                  "title": "Cálculo da Transformada Inversa via Convolução: Exemplo 1/[s(s+1)]",
+                                  "subSteps": [
+                                    "1. Decomponha F(s)G(s) em F(s) = 1/s → f(t) = 1 · u(t) e G(s) = 1/(s+1) → g(t) = e^{-t} · u(t).",
+                                    "2. Configure a convolução: h(t) = ∫₀ᵗ f(τ) · g(t - τ) dτ = ∫₀ᵗ 1 · e^{-(t - τ)} dτ.",
+                                    "3. Compute a integral: ∫ e^{-(t - τ)} dτ = -e^{-(t - τ)} |₀ᵗ = -e^{0} + e^{-t} = 1 - e^{-t}.",
+                                    "4. Verifique o resultado aplicando L{h(t)} e comparando com F(s)G(s)."
+                                  ],
+                                  "verification": "h(0) = 0? L{1 - e^{-t}} = 1/[s(s+1)]? Comportamento assintótico: lim_{t→∞} h(t) = 1?",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Tabela de transformadas de Laplace",
+                                    "Papel e lápis para cálculos",
+                                    "Calculadora gráfica ou software como MATLAB/SageMath (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: convolução é comutativa, mas mantenha a ordem F(s)G(s) consistente.",
+                                    "Use substituição u = t - τ para simplificar integrais complicadas.",
+                                    "Sempre verifique causalidade: h(t) = 0 para t < 0.",
+                                    "Pratique com software para visualização da convolução gráfica."
+                                  ],
+                                  "learningObjective": "Resolver transformadas inversas de produtos racionais via teorema da convolução, interpretando o resultado como resposta convolucional de sistemas LTI.",
+                                  "commonMistakes": [
+                                    "Inverter limites da integral (deve ser sempre 0 a t para causalidade).",
+                                    "Erro na antiderivada: confundir ∫ e^{τ} dτ com sinal errado.",
+                                    "Esquecer u(t) nas funções inversas, violando causalidade.",
+                                    "Não simplificar completamente ou falhar na verificação L{h(t)}."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Exemplo: Calcule L⁻¹{1/[s(s+1)]}. Tome F(s)=1/s → f(t)=1, G(s)=1/(s+1) → g(t)=e^{-t}. Então h(t) = ∫₀ᵗ 1 · e^{-(t-τ)} dτ = [-e^{-(t-τ)}]₀ᵗ = -e^0 + e^{-t} = 1 - e^{-t}. Verificação: L{1 - e^{-t}} = 1/s - 1/(s+1) = 1/[s(s+1)].",
+                              "finalVerifications": [
+                                "f(t) e g(t) são corretas e causais?",
+                                "A integral de convolução está configurada com limites 0 a t?",
+                                "O cálculo da antiderivada e avaliação de limites está preciso?",
+                                "O resultado h(t) satisfaz h(0)=0?",
+                                "L{h(t)} recupera F(s)G(s)?",
+                                "Comportamento assintótico faz sentido para a EDO?"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na identificação de f(t) e g(t) (30%)",
+                                "Correta setup e avaliação da integral (40%)",
+                                "Simplificação e verificação final (20%)",
+                                "Clareza e documentação dos passos (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Resolução de circuitos RC/RL via Laplace e convolução para resposta a impulsos.",
+                                "Engenharia de Controle: Análise de sistemas LTI com entradas arbitrárias.",
+                                "Processamento de Sinais: Filtragem convolucional em DSP.",
+                                "Ciências da Computação: Algoritmos numéricos para FFT-based convolução acelerada."
+                              ],
+                              "realWorldApplication": "Em engenharia elétrica, calcula a resposta transitória de um circuito RC a uma entrada em rampa, onde a convolução fornece a solução exata da EDO sem tabelas extensas, essencial para design de filtros e sistemas de controle estáveis."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -31014,7 +31412,8 @@
                                     "Não expandir P(x) ou R(x) corretamente",
                                     "Erros aritméticos nos coeficientes coletados",
                                     "Ignorar termos constantes iniciais"
-                                  ]
+                                  ],
+                                  "verification": "Use o exemplo de Legendre ou Bessel: calcule c₀, c₁ arbitrários, c₂ e c₃ via recorrência, e confirme que os coeficientes de (x-x₀)^0, ^1, ^2, ^3 na soma são zero."
                                 }
                               ],
                               "practicalExample": "Para y'' - 2xy' + 2y = 0 em x₀=0 (equação de Hermite): Assuma y=∑c_n x^n, y'=∑n c_n x^{n-1}, y''=∑n(n-1)c_n x^{n-2}. Substitua, alinhe multiplicando y'' por x^2, y' por x, colete: para n≥2, c_n = [2n c_{n-2}] / [n(n-1)], resultando em solução y= c₀ (1 + x²/2 + ...) + c₁ x(1 + x²/6 + ...).",
@@ -46451,7 +46850,8 @@
             "totalSkills": 351
           }
         ],
-        "totalSkills": 351
+        "totalSkills": 351,
+        "percentage": 0
       }
     ]
   }

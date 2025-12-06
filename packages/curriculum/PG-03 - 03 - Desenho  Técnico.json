@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PG-03",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 290
+      "totalAtomicSkills": 290,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PG-03"
     },
     "areas": [
       {
@@ -39234,7 +39240,8 @@
             "totalSkills": 290
           }
         ],
-        "totalSkills": 290
+        "totalSkills": 290,
+        "percentage": 0
       }
     ]
   }

@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-26",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 276
+      "totalAtomicSkills": 276,
+      "startDate": "2025-02-01",
+      "duration": 5,
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-26"
     },
     "areas": [
       {
@@ -18311,7 +18317,15 @@
                                     "Notícias de fiscalizações (ex: G1, Folha)",
                                     "Documentos de projetos reais"
                                   ],
-                                  "tips": "Busque julgados recentes para relevância; use palavras-chave como 'IBAMA autuação grande porte'."
+                                  "tips": "Busque julgados recentes para relevância; use palavras-chave como 'IBAMA autuação grande porte'.",
+                                  "learningObjective": "Analisar e aplicar os marcos legais do IBAMA (LC 140/2011 e Lei 6.938/1981) a casos reais de fiscalização, avaliando limitações institucionais e simulando procedimentos de aplicação em projetos de engenharia para desenvolver competências de interpretação normativa e tomada de decisão técnico-jurídica.",
+                                  "commonMistakes": [
+                                    "Confundir as competências específicas da LC 140/2011 com as da Lei 6.938/1981",
+                                    "Subestimar o papel dos convênios interfederativos na cooperação fiscalizadora",
+                                    "Utilizar casos ou jurisprudência desatualizados para análise",
+                                    "Não identificar critérios de aplicação das multas em projetos hipotéticos",
+                                    "Elaborar relatórios sem estrutura técnica-jurídica adequada"
+                                  ]
                                 },
                                 "learningObjective: Sintetizar competências do IBAMA em contextos práticos e normativos.",
                                 "commonMistakes: Generalizar casos sem citar fontes ou desconectar da LC 140/2011."
@@ -34907,7 +34921,8 @@
             "totalSkills": 276
           }
         ],
-        "totalSkills": 276
+        "totalSkills": 276,
+        "percentage": 0
       }
     ]
   }

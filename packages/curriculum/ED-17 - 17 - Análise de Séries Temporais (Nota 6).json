@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-17",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 363
+      "totalAtomicSkills": 363,
+      "startDate": "2025-02-01",
+      "duration": 60,
+      "dailyStudyHours": 8,
+      "version": "1.0",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-17"
     },
     "areas": [
       {
@@ -15689,9 +15695,65 @@
                                     "Física: Modelagem de sinais temporais em oscilações.",
                                     "Machine Learning: Feature engineering com lags para forecasting."
                                   ],
-                                  "realWorldApplication": "Em finanças, analistas usam PACF de retornos de ações para detectar ordem AR(p) e modelar dependências temporais, melhorando previsões de risco e portfólios; ex: PACF de Bitcoin mostra MA(1) para choques de mercado."
+                                  "realWorldApplication": "Em finanças, analistas usam PACF de retornos de ações para detectar ordem AR(p) e modelar dependências temporais, melhorando previsões de risco e portfólios; ex: PACF de Bitcoin mostra MA(1) para choques de mercado.",
+                                  "stepNumber": "5",
+                                  "title": "Identificação de Ordens ARIMA usando PACF e Differencing",
+                                  "subSteps": [
+                                    "Carregar o dataset AirPassengers e visualizar série original",
+                                    "Aplicar diferenciação 1x e plotar PACF para detectar não-estacionariedade",
+                                    "Aplicar diferenciação 2x e plotar PACF para identificar ordem AR(p)",
+                                    "Interpretar padrões de corte abrupto e decaimento nos gráficos",
+                                    "Sugerir ordens ARIMA (p,d,q) com base na análise dos gráficos"
+                                  ],
+                                  "verification": "O aluno deve gerar gráficos PACF corretos para série diferenciada 1x e 2x, identificar persistência em lags baixos como indício de não-estacionariedade, detectar corte abrupto após lag 1 na série 2x diferenciada como evidência de AR(1), e justificar a escolha de ordens ARIMA com base nos padrões observados.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Python/R ambiente de programação",
+                                    "Bibliotecas: statsmodels, matplotlib/seaborn",
+                                    "Dataset AirPassengers (disponível em statsmodels ou CSV)",
+                                    "Jupyter Notebook ou script de código",
+                                    "Guia de referência de funções plot_pacf e diff"
+                                  ],
+                                  "tips": [
+                                    "Use bandas de confiança (alpha=0.05) para interpretar significância dos lags",
+                                    "Compare sempre PACF com ACF para confirmar padrões (ex: decaimento sinuoso em MA)",
+                                    "Teste múltiplas diferenciações até alcançar estacionariedade visual",
+                                    "Documente cada etapa com anotações claras no código",
+                                    "Valide resultados com testes de estacionariedade (ADF) após diferenciação"
+                                  ],
+                                  "learningObjective": "Interpretar gráficos PACF para determinar ordens p e d em modelos ARIMA, aplicando diferenciação adequada para alcançar estacionariedade e justificando escolhas teóricas com evidências visuais.",
+                                  "commonMistakes": [
+                                    "Confundir padrões de PACF com ACF (ex: interpretar decaimento como AR ao invés de MA)",
+                                    "Ignorar bandas de confiança e sobreinterpretar lags não significativos",
+                                    "Aplicar diferenciação excessiva sem verificar estacionariedade",
+                                    "Não considerar tendência sazonal no dataset AirPassengers",
+                                    "Relatar ordens sem justificar com evidências gráficas"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Utilize o dataset de temperatura média mensal de São Paulo (1970-2023). Após verificação de estacionariedade e diferenciação 1x, gere o PACF. Observação: decaimento sinuoso nos lags 1-3 indica componente MA(3); após ajuste por tendência sazonal (diferenciação 12x), corte abrupto após lag 2 sugere AR(2). Código Python: `diff_temp = np.diff(temp_series, 12); plot_pacf(diff_temp, lags=20)` com bandas de confiança ajustadas para alpha=0.05.",
+                              "finalVerifications": [
+                                "Gráfico PACF gerado com bandas de confiança corretas e rótulos claros para série diferenciada.",
+                                "Identificação precisa de pelo menos três padrões clássicos (corte abrupto, decaimento sinuoso, persistência) com evidências visuais.",
+                                "Correlação entre padrão observado e sugestão de ordem AR/MA validada por modelo ARIMA inicial (AIC/BIC).",
+                                "Análise de lags significativos acima de 0.05 rejeitada como ruído, com justificativa estatística.",
+                                "Relatório escrito conectando padrões PACF ao contexto da série (ex: 'Decaimento sinuoso em lags 1-3 indica choques persistentes em temperatura')."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão gráfica: alinhamento 100% entre PACF gerado e expectativas teóricas para série teste.",
+                                "Identificação de pelo menos 4 padrões distintos com descrição detalhada de lags críticos.",
+                                "Seleção de ordens AR/MA coerente com teoria e validada por métricas AIC/BIC (<5% de erro relativo).",
+                                "Uso correto de parâmetros (lags=2*int(np.log(n)), alpha=0.05) e interpretação das bandas de confiança.",
+                                "Relatório final com visualizações anotadas, conclusões estatísticas e aplicação prática ao contexto da série."
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de Produção: Otimização de inventário via modelagem ARIMA de demanda com base em PACF.",
+                                "Ciência de Dados: Feature engineering para modelos de machine learning usando lags significativos do PACF.",
+                                "Economia e Negócios: Análise de ciclos econômicos (PIB, inflação) para políticas fiscais usando dependências temporais.",
+                                "Meteorologia: Previsão de padrões climáticos através de séries de precipitação com identificação de AR/MA.",
+                                "Ciência da Computação: Implementação de algoritmos de PACF em linguagens de programação para Otimização de Algoritmos."
+                              ],
+                              "realWorldApplication": "Em saúde pública, epidemiologistas aplicam PACF a séries de casos de doenças infecciosas (ex: COVID-19) para detectar dependências temporais. Um PACF com corte abrupto após lag 2 em dados diários de internações sugere modelo AR(2), permitindo prever picos futuros e alocar recursos hospitalares com precisão, como feito pelo Ministério da Saúde em 2021 durante a segunda onda da pandemia."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -29512,9 +29574,77 @@
                                   "crossCurricularConnections": [
                                     "Programação em R (manipulação de dados e funções)"
                                   ],
-                                  "realWorldApplication": "Previsão de demanda em e-commerce (vendas sazonais), finanças (preços de ações com tendência), saúde (casos de doenças epidêmicas não estacionárias) para otimizar estoques e estratégias."
+                                  "realWorldApplication": "Previsão de demanda em e-commerce (vendas sazonais), finanças (preços de ações com tendência), saúde (casos de doenças epidêmicas não estacionárias) para otimizar estoques e estratégias.",
+                                  "stepNumber": 5,
+                                  "title": "Comparação de Modelos ETS e ARIMA para Séries Temporais Sazonais",
+                                  "subSteps": [
+                                    "Carregar e preparar o conjunto de dados AirPassengers",
+                                    "Ajustar modelo ETS automático usando `ets()` com seleção de componentes",
+                                    "Ajustar modelo ARIMA automático usando `auto.arima()`",
+                                    "Gerar previsões para os próximos 12 meses para ambos os modelos",
+                                    "Calcular métricas de precisão (RMSE, MAE, MAPE) para as previsões",
+                                    "Testar resíduos dos modelos usando o teste de Ljung-Box",
+                                    "Criar visualizações de previsões com intervalos de confiança",
+                                    "Comparar resultados e interpretar a superioridade do ETS para sazonalidade forte"
+                                  ],
+                                  "verification": [
+                                    "Confirmação de que o modelo ETS foi ajustado com componentes adequados (ex: AAdM) via `summary()`",
+                                    "Geração correta das previsões para h=12 em ambos os modelos",
+                                    "Cálculo preciso das métricas de precisão com RMSE < MAE",
+                                    "Aplicação válida do teste Ljung-Box (p-valor > 0.05 indicando resíduos brancos de ruído)",
+                                    "Visualizações claras sem padrões óbvios nos resíduos e com intervalos de confiança"
+                                  ],
+                                  "estimatedTime": "2 horas e 30 minutos",
+                                  "materials": [
+                                    "RStudio ou ambiente R",
+                                    "Pacotes `forecast`, `fpp2`",
+                                    "Conjunto de dados `AirPassengers`",
+                                    "Guia de funções `ets()` e `auto.arima()`",
+                                    "Documentação sobre métricas de precisão e testes de resíduos"
+                                  ],
+                                  "tips": [
+                                    "Utilize `auto.ets(model='ZZZ')` para permitir seleção automática de componentes",
+                                    "Compare os resumos dos modelos para validar a seleção de componentes",
+                                    "Use `accuracy()` para calcular métricas e `checkresiduals()` para testes",
+                                    "Em `autoplot()`, inclua `PI = TRUE` para exibir intervalos de confiança",
+                                    "Analise gráficos de resíduos para identificar padrões não aleatórios"
+                                  ],
+                                  "learningObjective": "O aluno será capaz de aplicar e comparar modelos ETS e ARIMA para séries temporais sazonais, interpretar métricas de precisão, validar assumições estatísticas e selecionar o modelo mais adequado com base em características de sazonalidade",
+                                  "commonMistakes": [
+                                    "Esquecer de especificar `h=12` ao gerar previsões",
+                                    "Ignorar a validação dos componentes do modelo ETS via `summary()`",
+                                    "Interpretar incorretamente o teste Ljung-Box (p-valor baixo indica problemas)",
+                                    "Comparar RMSE e MAE sem considerar a escala da série",
+                                    "Não ajustar a estação antes de aplicar modelos não estacionários",
+                                    "Utilizar visualizações sem intervalos de confiança para análise de incerteza"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Utilizando o dataset AirPassengers (passageiros aéreos mensais de 1949 a 1960), os estudantes devem aplicar a sequência completa: preparação de dados, ajuste automático de modelos ETS e ARIMA, geração de previsões para os próximos 12 meses, comparação das métricas RMSE e MAE, e interpretação dos resultados, destacando a superioridade do ETS para séries com forte componente sazonal multiplicativa.",
+                              "finalVerifications": [
+                                "Execução bem-sucedida de todas as etapas sem erros de sintaxe ou execução.",
+                                "Modelo ETS ajustado com componentes automaticamente selecionados (ex: AAdM) e resíduos sem padrões visíveis.",
+                                "Previsões geradas para h=12 com intervalos de confiança plotados corretamente.",
+                                "Cálculo preciso das métricas RMSE, MAE e MAPE para ambos os modelos.",
+                                "Comparação clara indicando qual modelo tem menor erro (ex: RMSE_ETS < RMSE_ARIMA).",
+                                "Relatório gerado com visualizações e interpretação escrita."
+                              ],
+                              "assessmentCriteria": [
+                                "Implementação correta das funções ets() com model='ZZZ' e auto.arima().",
+                                "Validação da estacionariedade e escolha adequada de diferenciação.",
+                                "Análise crítica dos resíduos utilizando testes Ljung-Box.",
+                                "Comparação quantitativa adequada usando pelo menos três métricas de erro.",
+                                "Presença de visualizações claras com rótulos, legendas e intervalos de confiança.",
+                                "Interpretação justificada sobre qual modelo é mais adequado para o contexto dado."
+                              ],
+                              "crossCurricularConnections": [
+                                "Programação estatística em R (manipulação de séries temporais, pacotes forecast e ggplot2)",
+                                "Estatística inferencial (testes de hipótese, análise de resíduos)",
+                                "Modelagem matemática (representação de tendências e sazonalidades)",
+                                "Análise de dados (visão gráfica e métricas de desempenho)",
+                                "Comunicação científica (relatórios e visualizações profissionais)"
+                              ],
+                              "realWorldApplication": "Otimização de estoque em redes de varejo (previsão de demanda sazonal), planejamento de capacidade em serviços de saúde (previsão de casos de doenças epidêmicas), gestão de portfólio financeiro (previsão de retornos de ativos com tendência), logística aérea (previsão de tráfego para alocação de recursos), e análise de tendências de mercado em e-commerce."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",
@@ -43946,6 +44076,14 @@
                                     "Rankear apenas por uma métrica",
                                     "Ignorar custo computacional",
                                     "Sem testes de significância"
+                                  ],
+                                  "tips": [
+                                    "Utilize métricas normalizadas ou escalonadas quando combinar RMSE e MAPE em ranking ponderado",
+                                    "Aplicar o teste Diebold-Mariano com horizonte de previsão adequado ao contexto do problema",
+                                    "Considerar a curva de aprendizado do modelo para evitar viés de overfitting na seleção",
+                                    "Incluir métricas de custo computacional (tempo de treino/inferência) no ranking final",
+                                    "Documentar sensibilidade do ranking a diferentes pesos nas métricas para análise de robustez",
+                                    "Verificar se a diferença de desempenho é estatisticamente significativa antes de declarar um vencedor"
                                   ]
                                 }
                               ],
@@ -46550,6 +46688,13 @@
                                     "Overfitting parâmetros sem validação cruzada",
                                     "Não quantificar incertezas em previsões",
                                     "Falta de ligação com ações de marketing"
+                                  ],
+                                  "tips": [
+                                    "Utilize validação cruzada com pelo menos 5 folds para evitar overfitting nos parâmetros do modelo.",
+                                    "Sempre plotar intervalos de confiança para visualizar incertezas e tomar decisões robustas.",
+                                    "Conecte os picos identificados a métricas de desempenho do marketing (ex: conversão, rotatividade) para priorizar ações.",
+                                    "Teste diferentes tamanhos de hold-out set (20-30% dos dados) para avaliar estabilidade das previsões.",
+                                    "Documente hipóteses sobre causas de sazonalidade (ex: eventos, campanhas) para melhorar a precisão futura."
                                   ]
                                 }
                               ],
@@ -48394,7 +48539,8 @@
             "totalSkills": 363
           }
         ],
-        "totalSkills": 363
+        "totalSkills": 363,
+        "percentage": 100
       }
     ]
   }

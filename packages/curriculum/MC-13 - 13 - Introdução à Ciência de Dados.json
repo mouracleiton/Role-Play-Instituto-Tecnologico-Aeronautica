@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - MC-13",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 319
+      "totalAtomicSkills": 319,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025-MC-13",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - MC-13"
     },
     "areas": [
       {
@@ -15848,6 +15854,64 @@
                         "status": "not_started",
                         "prerequisites": []
                       }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.3.1.ic1",
+                        "name": "Fatos brutos",
+                        "description": "Dados como elementos crus e não processados, representando realidades observadas sem qualquer elaboração ou análise inicial.",
+                        "specificSkills": [
+                          "Identificar e coletar dados crus sem qualquer processamento ou interpretação inicial.",
+                          "Reconhecer fatos observados como elementos básicos e não elaborados.",
+                          "Diferenciar fatos brutos de informações processadas ou analisadas.",
+                          "Registrar realidades observadas de forma objetiva e imparcial.",
+                          "Compilar conjuntos iniciais de dados brutos para etapas subsequentes de análise."
+                        ]
+                      },
+                      {
+                        "id": "10.1.3.1.ic2",
+                        "name": "Símbolos isolados",
+                        "description": "Símbolos, números ou caracteres sem ligação ou estrutura, como '42' ou '#FF0000', existindo de forma independente.",
+                        "specificSkills": [
+                          "Identificar e classificar símbolos isolados, como números ('42') ou códigos hexadecimais ('#FF0000'), em sequências de caracteres.",
+                          "Diferenciar símbolos isolados de elementos com ligação ou estrutura sintática.",
+                          "Extrair e processar símbolos isolados em contextos de análise lexical ou parsing."
+                        ]
+                      },
+                      {
+                        "id": "10.1.3.1.ic3",
+                        "name": "Observações sem contexto",
+                        "description": "Registros diretos de eventos ou medidas isolados, sem informações sobre origem, propósito ou relações, como 'choveu' ou '25'.",
+                        "specificSkills": [
+                          "Identificar registros diretos de eventos ou medidas isolados em dados brutos.",
+                          "Reconhecer a ausência de informações sobre origem, propósito ou relações em observações como 'choveu' ou '25'.",
+                          "Diferenciar observações sem contexto de dados com informações contextuais adicionais.",
+                          "Analisar limitações de observações isoladas para inferências ou análises subsequentes."
+                        ]
+                      },
+                      {
+                        "id": "10.1.3.1.ic4",
+                        "name": "Ausência de significado inerente",
+                        "description": "Falta de interpretação ou relevância própria nos dados, exigindo adição de contexto para gerar utilidade ou compreensão.",
+                        "specificSkills": [
+                          "Reconhecer que dados brutos carecem de significado intrínseco sem contexto adicional.",
+                          "Adicionar metadados, anotações ou descrições contextuais para tornar dados interpretáveis.",
+                          "Integrar conhecimento de domínio para conferir relevância e utilidade aos dados.",
+                          "Avaliar a suficiência de contexto em conjuntos de dados para análise eficaz.",
+                          "Desenvolver práticas de documentação que mitiguem a ausência de significado inerente nos dados."
+                        ]
+                      },
+                      {
+                        "id": "10.1.3.1.ic5",
+                        "name": "Natureza raw",
+                        "description": "Estado primitivo e não refinado dos dados, análogo a matérias-primas que necessitam de processamento para transformação em informação.",
+                        "specificSkills": [
+                          "Identificar o estado primitivo e não refinado dos dados em conjuntos brutos.",
+                          "Reconhecer dados raw como análogos a matérias-primas que demandam processamento.",
+                          "Diferenciar dados raw de dados processados ou refinados.",
+                          "Explicar a transformação de dados raw em informação por meio de etapas de limpeza e processamento."
+                        ]
+                      }
                     ]
                   },
                   {
@@ -16311,6 +16375,13 @@
                                   "commonMistakes": [
                                     "Descrições vagas sem exemplos",
                                     "Focar só em benefícios sem mencionar riscos da ausência"
+                                  ],
+                                  "tips": [
+                                    "Escolha cenários da MC-13 que você conheça bem para enriquecer a descrição.",
+                                    "Inclua exemplos concretos de como o contexto altera a interpretação dos dados.",
+                                    "Mencione explicitamente riscos, como decisões erradas sem contexto.",
+                                    "Estruture o parágrafo: introdução ao cenário, papel do contexto, impacto e lições.",
+                                    "Leia em voz alta na revisão para detectar ambiguidades."
                                   ]
                                 }
                               ],
@@ -29617,7 +29688,8 @@
                                   ],
                                   "tips": "Normalize features antes para evitar distorções por escala.",
                                   "learningObjective": "Aplicar e interpretar DB Index como métrica complementar.",
-                                  "commonMistakes": "Confundir minimização (DB baixo bom) com Silhouette (alto bom)."
+                                  "commonMistakes": "Confundir minimização (DB baixo bom) com Silhouette (alto bom).",
+                                  "verification": "Implemente e plote o DB Index para K=2 até 10 no dataset Iris (sem labels). Identifique o K com menor DB e descreva o 'elbow' observado no gráfico."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -41237,7 +41309,8 @@
             "totalSkills": 319
           }
         ],
-        "totalSkills": 319
+        "totalSkills": 319,
+        "percentage": 0
       }
     ]
   }

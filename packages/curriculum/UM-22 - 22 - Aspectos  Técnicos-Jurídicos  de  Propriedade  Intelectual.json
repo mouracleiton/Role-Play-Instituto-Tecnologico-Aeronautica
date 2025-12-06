@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-22",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 361
+      "totalAtomicSkills": 361,
+      "startDate": "2025-02-01",
+      "duration": 5,
+      "dailyStudyHours": 6,
+      "version": "UM-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-22"
     },
     "areas": [
       {
@@ -5090,10 +5096,47 @@
                                     "Anote descontos: 60% para micro/pequenas empresas, 40% para instituições de ensino",
                                     "Calcule exemplos para diferentes anos e tipos de titular",
                                     "verification: "
+                                  ],
+                                  "verification": "Cross-reference data with INPI's official e-Marcas/e-Patentes portal and confirm via INPI customer service hotline",
+                                  "estimatedTime": "60 minutes",
+                                  "materials": [
+                                    "Access to INPI's e-Marcas/e-Patentes portal",
+                                    "Official annuity tables from INPI",
+                                    "Calculator for discount applications",
+                                    "Spreadsheet template for deadline tracking"
+                                  ],
+                                  "tips": "Utilize portal filters to isolate invention patents, always verify against the current year's table, mark deadlines on a calendar with reminders, and pre-validate company size classification for discount eligibility",
+                                  "learningObjective": "To accurately locate, interpret, and document current patent annuity deadlines and values including applicable discounts, and perform scenario-based calculations for diverse ownership structures",
+                                  "commonMistakes": [
+                                    "Consulting outdated tables from previous years",
+                                    "Applying discounts without verifying SME/institutional criteria",
+                                    "Missing grace periods for non-working day deadlines",
+                                    "Confusing patent types (invention vs utility model) when applying values",
+                                    "Failing to update records after INPI table revisions"
                                   ]
                                 },
                                 "verification: "
-                              ]
+                              ],
+                              "practicalExample": "Calcule o custo total de manutenção de uma patente de invenção para os primeiros 5 anos, considerando diferentes perfis de titular (empresa grande, MEP, instituição de ensino) usando os valores atuais do INPI. Exemplo: Para uma MEP, a 2ª anuidade de R$ 135 tem desconto de 60%, resultando em R$ 54.",
+                              "finalVerifications": [
+                                "Confirmação da consulta à tabela oficial atualizada no portal e-Marcas/e-Patentes",
+                                "Presença de cálculos verificados com exemplos para ao menos três tipos de titular",
+                                "Documentação de prazos de pagamento com referência ao mês de aniversário do depósito",
+                                "Validação cruzada dos valores com a Resolução INPI/PR nº 02/2016"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão nos valores e prazos das anuidades (40%)",
+                                "Correto aplicação de descontos conforme tipo de titular (30%)",
+                                "Clareza e completude da documentação de verificação (20%)",
+                                "Tempo gasto dentro do estimado (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Finanças (cálculo de custos, descontos e planejamento orçamentário)",
+                                "Direito (interpretação de legislação e normas técnicas)",
+                                "Negócios (gestão de portfólio de IP e tomada de decisão estratégica)",
+                                "Economia (análise de impacto de ajustes anuais nos valores)"
+                              ],
+                              "realWorldApplication": "Análise de caso prático: Um escritório de patentes recebe um cliente com 15 patentes concessionadas e precisa preparar um relatório de custos de manutenção para os próximos 3 anos, incluindo cenários com e sem descontos, e recomendar políticas de pagamento baseadas em prazos e riscos de caducidade."
                             },
                             "estimatedTime": "0.5 hora",
                             "difficulty": "beginner",
@@ -6948,11 +6991,39 @@
                                   "materials": [
                                     "Lei 9.279/96 arts. 122-176 (marcas), base de marcas INPI"
                                   ],
-                                  "tips": "Pense em identidade vs estética: marca = 'quem'; DI = 'como parece'."
+                                  "tips": "Pense em identidade vs estética: marca = 'quem'; DI = 'como parece'.",
+                                  "learningObjective": "Distinguir conceitualmente e legalmente os direitos de Desenho Industrial e marcas, identificando suas diferenças, interseções e implicações práticas na proteção de produtos e identidade visual.",
+                                  "commonMistakes": [
+                                    "Confundir o objeto protegido (achar que DI protege logotipos ou que marcas protegem o design funcional do produto inteiro)",
+                                    "Subestimar a diferença de duração (supor que ambos têm prazo limitado ou perpétuo)",
+                                    "Não reconhecer conflitos entre marcas tridimensionais e registros de DI",
+                                    "Aplicar critérios de novidade e originalidade de DI aos requisitos de distinção de marcas",
+                                    "Ignorar que marcas podem ser renovadas indefinidamente enquanto DI possui prazo fixo"
+                                  ]
                                 },
                                 "learningObjective: "
                               ],
-                              "commonMistakes": "Confundir sinal distintivo (marca) com configuração ornamental (DI)."
+                              "commonMistakes": "Confundir sinal distintivo (marca) com configuração ornamental (DI).",
+                              "practicalExample": "Analisar o design de um smartphone: forma ergonômica e padrão de cores (DI), mecanismo de foco da câmera (patente), e logo da marca (marca). Os alunos devem identificar qual proteção se aplica a cada elemento e elaborar estratégia de registro.",
+                              "finalVerifications": [
+                                "Apresentar relatório comparativo com tabela detalhada de DI vs patentes vs marcas",
+                                "Resolver caso prático de conflito entre DI e marca 3D",
+                                "Justificar por que um recurso específico deve ser protegido como DI e não como patente"
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na distinção entre proteção estética, funcional e identificatória",
+                                "Qualidade da documentação comparativa (tabelas/diagramas)",
+                                "Capacidade de aplicação dos critérios legais em cenários reais",
+                                "Profundidade na análise de sobreposições entre tipos de direitos"
+                              ],
+                              "crossCurricularConnections": [
+                                "Direito (direitos de propriedade intelectual e análise de contratos)",
+                                "Engenharia (design técnico vs ergonômico)",
+                                "Negócios (estratégia de marca e valor econômico de IP)",
+                                "Artes (teoria do design e valor ornamental)",
+                                "Economia (mercado de inovação e concorrência)"
+                              ],
+                              "realWorldApplication": "Consultoria para startups na elaboração de estratégia de proteção IP: definir quais elementos do produto devem ser registrados como DI, patentes ou marcas, considerando custos, duração e abrangência da proteção, com foco em mercados globais."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -44196,7 +44267,33 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Uma startup brasileira desenvolve software para otimização de energia solar. Usa Lei do Bem para dedução fiscal de 160-200% em P&D, registra patente acelerada via Programa Patentes Verdes no INPI, reduzindo prazo de 5 para 2 anos, fomentando inovação sustentável com ROI rápido."
+                                  "practicalExample": "Uma startup brasileira desenvolve software para otimização de energia solar. Usa Lei do Bem para dedução fiscal de 160-200% em P&D, registra patente acelerada via Programa Patentes Verdes no INPI, reduzindo prazo de 5 para 2 anos, fomentando inovação sustentável com ROI rápido.",
+                                  "stepNumber": 5,
+                                  "title": "Estratégias de Inovação Sustentável: Incentivos Fiscais e Aceleração de Patentes",
+                                  "subSteps": [
+                                    "Aplicar a Lei do Bem para obtenção de dedução fiscal de 160-200% em investimentos em P&D",
+                                    "Utilizar o Programa Patentes Verdes do INPI para reduzir o prazo de registro de patentes de 5 para 2 anos",
+                                    "Analisar o impacto do ROI rápido na sustentabilidade e crescimento da startup"
+                                  ],
+                                  "verification": "Confirmação da aprovação da dedução fiscal via Receita Federal e do número de processo acelerado no INPI",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Legislação da Lei do Bem (Lei nº 11.196/2005)",
+                                    "Guia do Programa Patentes Verdes do INPI",
+                                    "Estudo de caso da startup de energia solar",
+                                    "Planilha de cálculo de ROI"
+                                  ],
+                                  "tips": [
+                                    "Iniciar o processo de patentagem antes da comercialização para garantir proteção",
+                                    "Consultar consultor fiscal especializado em incentivos à inovação",
+                                    "Utilizar simuladores online do INPI para estimar prazos de registro"
+                                  ],
+                                  "learningObjective": "Dominar a aplicação de mecanismos institucionais para acelerar inovação tecnológica sustentável e maximizar benefícios econômicos",
+                                  "commonMistakes": [
+                                    "Subestimar requisitos técnicos para elegibilidade da Lei do Bem",
+                                    "Não preencher completamente os critérios ambientais do Programa Patentes Verdes",
+                                    "Ignorar custos indiretos associados aos processos de incentivo"
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -44218,9 +44315,59 @@
                                     "Gestão de Projetos: Ciclo de P&D acelerado",
                                     "Tecnologia da Informação: PI em software sustentável"
                                   ],
-                                  "realWorldApplication": "Empresas de cleantech utilizam incentivos fiscais e patentes aceleradas para proteger inovações como IA para agricultura regenerativa, acelerando adoção e contribuindo para metas de carbono zero nacionais."
+                                  "realWorldApplication": "Empresas de cleantech utilizam incentivos fiscais e patentes aceleradas para proteger inovações como IA para agricultura regenerativa, acelerando adoção e contribuindo para metas de carbono zero nacionais.",
+                                  "stepNumber": "5",
+                                  "title": "Mecanismos Fiscais e Inovação Sustentável",
+                                  "subSteps": [
+                                    "Analisar 3 incentivos fiscais específicos ligados a propriedade intelectual sustentável",
+                                    "Descrever o processo de patente acelerada e sua integração com políticas fiscais",
+                                    "Identificar 2 exemplos reais de inovação sustentável no Brasil utilizando esses mecanismos",
+                                    "Mapear 3 benefícios diretos para políticas ambientais nacionais"
+                                  ],
+                                  "verification": "Avaliação por relatório escrito com análise integrada, exemplos nacionais verificáveis e impacto sustentável mensurável",
+                                  "estimatedTime": "4 horas",
+                                  "materials": [
+                                    "Legislação fiscal brasileira sobre propriedade intelectual (Lei 9.279/1996)",
+                                    "Estudos de caso: Empreendimentos cleantech brasileiros (e.g., AgroInteligente, BioEnergia Verde)",
+                                    "Relatórios do MCTI sobre políticas de inovação sustentável",
+                                    "Guias do MF para incentivos fiscais a tecnologia verde"
+                                  ],
+                                  "tips": [
+                                    "Priorize exemplos pós-2020 para refletir políticas atuais",
+                                    "Relacione cada incentivo fiscal a metas específicas do PND+2030",
+                                    "Use dados de redução de emissões ou economia de recursos nos exemplos",
+                                    "Inclua referências a normas técnicas para validação de impactos"
+                                  ],
+                                  "learningObjective": "Dominar a aplicação estratégica de instrumentos fiscais e processos de patente acelerada para impulsionar inovação sustentável alinhada às metas ambientais nacionais",
+                                  "commonMistakes": [
+                                    "Confundir incentivos fiscais com financiamento público direto",
+                                    "Não distinguir entre patentes convencionais e aceleradas em contextos regulatórios",
+                                    "Citar exemplos estrangeiros sem adaptação ao contexto brasileiro",
+                                    "Subestimar a necessidade de integração entre políticas fiscais e ambientais"
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Uma startup brasileira desenvolve software para otimização de energia solar. Usa Lei do Bem para dedução fiscal de 160-200% em P&D, registra patente acelerada via Programa Patentes Verdes no INPI, reduzindo prazo de 5 para 2 anos, fomentando inovação sustentável com ROI rápido.",
+                              "finalVerifications": [
+                                "Explicar com precisão 3 incentivos fiscais ligados a PI sustentável.",
+                                "Descrever processo de patente acelerada e sua integração fiscal.",
+                                "Identificar 2 exemplos reais de inovação sustentável via esses mecanismos.",
+                                "Mapear 3 benefícios para políticas ambientais nacionais."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual e factual (30%)",
+                                "Profundidade de análise de integrações (25%)",
+                                "Uso de exemplos nacionais/reais (20%)",
+                                "Clareza na verificação de impactos sustentáveis (15%)",
+                                "Originalidade em recomendações (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Direito Ambiental: Políticas de compliance verde",
+                                "Economia: Modelos de financiamento inovação",
+                                "Gestão de Projetos: Ciclo de P&D acelerado",
+                                "Tecnologia da Informação: PI em software sustentável"
+                              ],
+                              "realWorldApplication": "Empresas de cleantech utilizam incentivos fiscais e patentes aceleradas para proteger inovações como IA para agricultura regenerativa, acelerando adoção e contribuindo para metas de carbono zero nacionais."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "advanced",
@@ -45880,7 +46027,8 @@
             "totalSkills": 361
           }
         ],
-        "totalSkills": 361
+        "totalSkills": 361,
+        "percentage": 100
       }
     ]
   }

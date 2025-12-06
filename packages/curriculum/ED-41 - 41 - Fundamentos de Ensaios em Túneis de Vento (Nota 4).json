@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-41",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 189
+      "totalAtomicSkills": 189,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "ED-41",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-41"
     },
     "areas": [
       {
@@ -6799,7 +6805,40 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um ensaio de perfis aerodinâmicos de uma asa de drone, após coleta de dados de arrasto, o aluno desliga o túnel em 20 minutos, faz backup de 5GB de dados de sensores, remove a asa sem danos, limpa resíduos de fita adesiva da seção e documenta observação de separação de fluxo em ângulo de ataque 12° para relatório."
+                                  "practicalExample": "Em um ensaio de perfis aerodinâmicos de uma asa de drone, após coleta de dados de arrasto, o aluno desliga o túnel em 20 minutos, faz backup de 5GB de dados de sensores, remove a asa sem danos, limpa resíduos de fita adesiva da seção e documenta observação de separação de fluxo em ângulo de ataque 12° para relatório.",
+                                  "stepNumber": 4,
+                                  "title": "Finalização e Limpeza do Ensaio Aerodinâmico",
+                                  "subSteps": [
+                                    "Desligue o túnel de vento gradualmente ao longo de 20 minutos para evitar tensões térmicas.",
+                                    "Realize o backup dos 5GB de dados coletados dos sensores em dispositivo externo ou nuvem.",
+                                    "Remova a asa do perfil aerodinâmico sem causar danos à superfície ou estrutura.",
+                                    "Limpe os resíduos de fita adesiva da seção de teste utilizando removedor apropriado.",
+                                    "Documente observações relevantes, como a separação de fluxo observada em ângulo de ataque de 12°, para inclusão no relatório."
+                                  ],
+                                  "verification": "Verifique o desligamento completo do túnel (sem ruídos ou vibrações), confirme integridade do backup (arquivos acessíveis e sem corrupção), inspecione a asa por danos visuais, ateste a limpeza da seção (sem resíduos) e revise a documentação das observações no relatório.",
+                                  "estimatedTime": "30-45 minutos",
+                                  "materials": [
+                                    "Disco rígido externo ou serviço de nuvem (≥5GB livres)",
+                                    "Ferramentas de remoção delicada (chaves de fenda, pinças antistáticas)",
+                                    "Removedor de adesivo ou acetona",
+                                    "Luvas de proteção e panos sem fiapos",
+                                    "Caderno de laboratório ou template de relatório digital"
+                                  ],
+                                  "tips": [
+                                    "Desligue o túnel em rampa descendente para preservar a integridade dos componentes rotativos.",
+                                    "Teste o backup imediatamente abrindo alguns arquivos para validar.",
+                                    "Fotografe a asa antes e após a remoção para registro visual.",
+                                    "Registre todas as observações com timestamps e condições ambientais.",
+                                    "Mantenha a área de trabalho organizada para agilizar o processo."
+                                  ],
+                                  "learningObjective": "Executar procedimentos de finalização segura e organizada em ensaios aerodinâmicos, garantindo preservação de dados, equipamentos e documentação para análises subsequentes.",
+                                  "commonMistakes": [
+                                    "Desligamento abrupto do túnel, podendo danificar rolamentos ou hélices.",
+                                    "Falha no backup de dados, levando à perda irreversível de medições.",
+                                    "Danos à asa por força excessiva ou ferramentas inadequadas na remoção.",
+                                    "Resíduos de adesivo não removidos completamente, contaminando testes futuros.",
+                                    "Omissão de documentação de fenômenos críticos, como separação de fluxo, prejudicando o relatório."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -6823,9 +6862,63 @@
                                     "Qualidade e Normas: conformidade com boas práticas ISO em laboratórios.",
                                     "Sustentabilidade: otimização de recursos e redução de resíduos."
                                   ],
-                                  "realWorldApplication": "Em indústrias aeroespaciais como Embraer ou NASA, essa rotina garante segurança operacional, preservação de dados caros para simulações CFD e minimiza tempo de inatividade de túneis de vento custando milhões, permitindo ciclos rápidos de prototipagem."
+                                  "realWorldApplication": "Em indústrias aeroespaciais como Embraer ou NASA, essa rotina garante segurança operacional, preservação de dados caros para simulações CFD e minimiza tempo de inatividade de túneis de vento custando milhões, permitindo ciclos rápidos de prototipagem.",
+                                  "stepNumber": 5,
+                                  "title": "Finalização e Limpeza do Experimento",
+                                  "subSteps": [
+                                    "Desligar o túnel de vento e aguardar resfriamento completo.",
+                                    "Verificar e arquivar o backup de todos os dados coletados.",
+                                    "Desmontar o modelo aerodinâmico e armazená-lo sem danos.",
+                                    "Limpar e inspecionar a seção de teste.",
+                                    "Finalizar e compartilhar o relatório de observações."
+                                  ],
+                                  "verification": "Todas as verificações finais confirmadas: túnel resfriado, backup arquivado, modelo armazenado, seção limpa e relatório compartilhado.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Ferramentas de desmontagem (chaves Allen, destornilladores)",
+                                    "Materiais de limpeza (panos sem fiapos, álcool isopropílico)",
+                                    "Pen drive ou HD externo para backup",
+                                    "Computador com software de edição de relatórios"
+                                  ],
+                                  "tips": [
+                                    "Aguarde pelo menos 10 minutos para resfriamento total antes de manipular componentes.",
+                                    "Use luvas antiestáticas ao lidar com dados e eletrônicos.",
+                                    "Fotografe cada etapa para anexar ao relatório.",
+                                    "Verifique duas vezes o backup antes de prosseguir."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de encerrar experimentos em túneis de vento de forma segura e eficiente, preservando dados, equipamentos e garantindo conformidade com normas laboratoriais.",
+                                  "commonMistakes": [
+                                    "Prosseguir sem resfriamento completo, causando riscos térmicos ou danos.",
+                                    "Esquecer backup, resultando em perda de dados experimentais.",
+                                    "Desmontar modelo com pressa, gerando danos mecânicos.",
+                                    "Deixar resíduos na seção de teste, comprometendo próximos usos.",
+                                    "Relatório incompleto ou não compartilhado timely."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um ensaio de perfis aerodinâmicos de uma asa de drone, após coleta de dados de arrasto, o aluno desliga o túnel em 20 minutos, faz backup de 5GB de dados de sensores, remove a asa sem danos, limpa resíduos de fita adesiva da seção e documenta observação de separação de fluxo em ângulo de ataque 12° para relatório.",
+                              "finalVerifications": [
+                                "Túnel desligado e resfriado completamente.",
+                                "Backup de dados verificado e arquivado.",
+                                "Modelo desmontado e armazenado sem danos.",
+                                "Seção de teste limpa e inspecionada.",
+                                "Relatório de observações finalizado e compartilhado."
+                              ],
+                              "assessmentCriteria": [
+                                "Eficiência temporal: finalização dentro de 95 minutos totais.",
+                                "Integridade: zero danos ao equipamento ou perda de dados.",
+                                "Conformidade: adesão 100% aos procedimentos do manual.",
+                                "Qualidade da documentação: relatório claro e completo com evidências.",
+                                "Segurança: ausência de riscos durante todo o processo."
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de Segurança: protocolos de desligamento e limpeza segura.",
+                                "Gestão de Informações: práticas de backup e documentação digital.",
+                                "Manutenção Industrial: desmontagem e preservação de ativos.",
+                                "Qualidade e Normas: conformidade com boas práticas ISO em laboratórios.",
+                                "Sustentabilidade: otimização de recursos e redução de resíduos."
+                              ],
+                              "realWorldApplication": "Em indústrias aeroespaciais como Embraer ou NASA, essa rotina garante segurança operacional, preservação de dados caros para simulações CFD e minimiza tempo de inatividade de túneis de vento custando milhões, permitindo ciclos rápidos de prototipagem."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "beginner",
@@ -21539,9 +21632,63 @@
                                     "Matemática (Análise de dados e testes de hipótese)",
                                     "Informática (Automação de medições)"
                                   ],
-                                  "realWorldApplication": "Em laboratórios certificados (ex: FLUENT, RWDI), redução de turbulência assegura precisão em testes para edifícios altos, turbinas eólicas e viadutos, evitando redesenhos caros e garantindo segurança normativa."
+                                  "realWorldApplication": "Em laboratórios certificados (ex: FLUENT, RWDI), redução de turbulência assegura precisão em testes para edifícios altos, turbinas eólicas e viadutos, evitando redesenhos caros e garantindo segurança normativa.",
+                                  "stepNumber": "ED-41.3",
+                                  "title": "Redução de Turbulência (Tu < 5%) em Ensaio Aerodinâmico",
+                                  "subSteps": [
+                                    "1. Quantificar Tu inicial em seções críticas do túnel (média de 10 pontos).",
+                                    "2. Otimizar fetch upstream para 40D com contraventores adicionais.",
+                                    "3. Instalar e tensionar tela de 60% porosidade a 5D da entrada.",
+                                    "4. Executar reteste com n=3 repetições e análise estatística.",
+                                    "5. Documentar configuração final com fotos e parâmetros."
+                                  ],
+                                  "verification": "Tu final <5% em toda seção, com variância <1% (n=3 testes).",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Contraventores ajustáveis (fetch 20D-40D)",
+                                    "Tela anti-turbulência (60% porosidade, 2x2m)",
+                                    "Anemômetros de fio quente (precisão ±0.1%)",
+                                    "Suportes e tensionadores",
+                                    "Software de aquisição de dados (ex: LabVIEW)"
+                                  ],
+                                  "tips": [
+                                    "Alinhe tela perpendicular ao fluxo para evitar desvios.",
+                                    "Teste em velocidades nominais (Re consistente).",
+                                    "Registre temperatura e pressão para correções.",
+                                    "Use CFD preliminar para validar posicionamento."
+                                  ],
+                                  "learningObjective": "O aluno implementará técnicas de condicionamento de fluxo para reduzir turbulência abaixo de 5%, garantindo precisão em ensaios de estruturas aerodinâmicas.",
+                                  "commonMistakes": [
+                                    "Fetch insuficiente (<30D), mantendo Tu >7%.",
+                                    "Tela mal fixada, introduzindo vibrações parasitas.",
+                                    "Amostragem insuficiente (n<3), mascarando variância.",
+                                    "Não documentar parâmetros exatos, impedindo reprodutibilidade."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Durante ensaio de modelo de ponte pênsil, Tu inicial de 10% afetava cargas. Otimizamos contraventores (fetch de 20D para 40D) e adicionamos tela de 60% porosidade, reduzindo Tu para 2.5% em reteste, permitindo dados confiáveis de flutter.",
+                              "finalVerifications": [
+                                "Tu reduzida abaixo de 5% em toda seção de teste.",
+                                "Configuração documentada e reproduzível.",
+                                "Testes repetidos (n=3) com variância <1%.",
+                                "Nenhum artefato novo introduzido (ex: vibrações).",
+                                "Relatório aprovado por supervisor."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na quantificação inicial e final de Tu (±0.5%).",
+                                "Adequação da escolha da medida (redução >40%).",
+                                "Implementação sem erros geométricos ou funcionais.",
+                                "Análise estatística rigorosa com significância p<0.05.",
+                                "Documentação completa e acionável."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física (Fluidodinâmica e estatística de turbulência)",
+                                "Engenharia Mecânica (Instrumentação e CFD)",
+                                "Engenharia Civil (Aerodinâmica de estruturas)",
+                                "Matemática (Análise de dados e testes de hipótese)",
+                                "Informática (Automação de medições)"
+                              ],
+                              "realWorldApplication": "Em laboratórios certificados (ex: FLUENT, RWDI), redução de turbulência assegura precisão em testes para edifícios altos, turbinas eólicas e viadutos, evitando redesenhos caros e garantindo segurança normativa."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -23725,7 +23872,44 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um ensaio no túnel de vento IEA-E com velocidades de até 150 km/h, o técnico João inspeciona seu macacão, botas, luvas, capacete, óculos e protetores. Veste botas e macacão ajustando sem folgas, luvas por cima, capacete com viseira, óculos vedados e protetores. Verifica no espelho e com colega, confirmando proteção total contra sucção aerodinâmica e detritos mecânicos antes de entrar na câmara."
+                                  "practicalExample": "Em um ensaio no túnel de vento IEA-E com velocidades de até 150 km/h, o técnico João inspeciona seu macacão, botas, luvas, capacete, óculos e protetores. Veste botas e macacão ajustando sem folgas, luvas por cima, capacete com viseira, óculos vedados e protetores. Verifica no espelho e com colega, confirmando proteção total contra sucção aerodinâmica e detritos mecânicos antes de entrar na câmara.",
+                                  "stepNumber": "41",
+                                  "title": "Preparação e Verificação de Equipamentos de Proteção Individual (EPI) para Ensaio em Túnel de Vento",
+                                  "subSteps": [
+                                    "Inspecione todos os EPIs: macacão, botas, luvas, capacete, óculos e protetores, verificando integridade e limpeza.",
+                                    "Veste as botas e o macacão, ajustando-os firmemente sem folgas para evitar sucção aerodinâmica.",
+                                    "Coloque as luvas por cima das mangas do macacão.",
+                                    "Ajuste o capacete com viseira abaixada.",
+                                    "Posicione os óculos vedados contra poeira e detritos.",
+                                    "Instale os protetores auriculares e outros conforme necessário.",
+                                    "Verifique a vestimenta no espelho, garantindo cobertura total.",
+                                    "Confirme com um colega a adequação de todos os EPIs."
+                                  ],
+                                  "verification": "Confirmação visual no espelho e inspeção por colega, assegurando ausência de folgas, vedação completa e proteção integral contra sucção aerodinâmica e detritos mecânicos.",
+                                  "estimatedTime": "10 minutos",
+                                  "materials": [
+                                    "Macacão de proteção aerodinâmica",
+                                    "Botas de segurança",
+                                    "Luvas resistentes",
+                                    "Capacete com viseira",
+                                    "Óculos de proteção vedados",
+                                    "Protetores auriculares",
+                                    "Espelho de corpo inteiro"
+                                  ],
+                                  "tips": [
+                                    "Priorize ajustes sem folgas para prevenir riscos de sucção em velocidades de até 150 km/h.",
+                                    "Trabalhe em dupla para verificações mútuas, aumentando a segurança.",
+                                    "Teste movimentos para garantir mobilidade sem comprometer a proteção.",
+                                    "Mantenha EPIs limpos e em bom estado para cada uso."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de preparar, vestir e verificar corretamente os Equipamentos de Proteção Individual (EPI) para ensaios em túnel de vento, garantindo proteção contra riscos aerodinâmicos, sucção e detritos mecânicos, conforme normas de segurança do IEA-E.",
+                                  "commonMistakes": [
+                                    "Deixar folgas no macacão ou mangas, permitindo sucção de ar.",
+                                    "Esquecer luvas por cima das mangas ou viseira levantada.",
+                                    "Não vedar adequadamente os óculos, expondo olhos a detritos.",
+                                    "Pular verificação com colega, perdendo inspeção externa.",
+                                    "Usar EPIs danificados ou sujos sem inspeção prévia."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -23751,9 +23935,65 @@
                                     "Higiene Ocupacional e Prevenção de Acidentes.",
                                     "Normas Técnicas Aeronáuticas (ABNT e FAA equivalentes)."
                                   ],
-                                  "realWorldApplication": "Em testes aeroespaciais, fabricação de turbinas eólicas, construção de pontes com guindastes ou operações em plataformas offshore, onde ventos fortes e detritos mecânicos exigem EPIs integralmente ajustados para prevenir lesões por impacto, sucção ou abrasão."
+                                  "realWorldApplication": "Em testes aeroespaciais, fabricação de turbinas eólicas, construção de pontes com guindastes ou operações em plataformas offshore, onde ventos fortes e detritos mecânicos exigem EPIs integralmente ajustados para prevenir lesões por impacto, sucção ou abrasão.",
+                                  "stepNumber": 6,
+                                  "title": "Verificações Finais e Aprovação por Colega",
+                                  "subSteps": [
+                                    "Ajustar capacete sem balanço na cabeça.",
+                                    "Vedar óculos e viseira sem entrada de ar ou poeira.",
+                                    "Eliminar folgas no macacão em punhos, tornozelos e pescoço.",
+                                    "Fixar luvas e botas firmes preservando mobilidade.",
+                                    "Selar protetores auriculares corretamente.",
+                                    "Conferir combinação integral sem interferências."
+                                  ],
+                                  "verification": "Inspeção visual, tátil e verbal por colega, com demonstração da sequência e razões de segurança; aprovação sem ressalvas.",
+                                  "estimatedTime": "5 minutos",
+                                  "materials": [
+                                    "Conjunto completo de EPIs já vestido",
+                                    "Parceiro treinado para verificação cruzada",
+                                    "Lista de verificação impressa (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Teste movimentos leves para detectar folgas ocultas.",
+                                    "Simule rajadas de vento soprando ar nas vedações.",
+                                    "Registre qualquer ajuste em log para rastreabilidade.",
+                                    "Priorize selagem em áreas expostas como pescoço e pulsos."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de executar verificações finais precisas no EPI integral, garantindo conformidade com normas de segurança (NR-6 e NR-33) para operações em ambientes de alta velocidade de vento.",
+                                  "commonMistakes": [
+                                    "Deixar folgas mínimas em punhos ou tornozelos.",
+                                    "Não testar vedação de viseira com poeira simulada.",
+                                    "Aprovação superficial sem verificação tátil completa.",
+                                    "Omitir demonstração verbal das razões de cada ajuste.",
+                                    "Exceder tempo total de vestimenta além de 28 minutos."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um ensaio no túnel de vento IEA-E com velocidades de até 150 km/h, o técnico João inspeciona seu macacão, botas, luvas, capacete, óculos e protetores. Veste botas e macacão ajustando sem folgas, luvas por cima, capacete com viseira, óculos vedados e protetores. Verifica no espelho e com colega, confirmando proteção total contra sucção aerodinâmica e detritos mecânicos antes de entrar na câmara.",
+                              "finalVerifications": [
+                                "Capacete ajustado sem balanço na cabeça.",
+                                "Óculos e viseira vedados sem entrada de ar ou poeira.",
+                                "Macacão sem folgas em punhos, tornozelos e pescoço.",
+                                "Luvas e botas firmes com mobilidade preservada.",
+                                "Protetores auriculares selados corretamente.",
+                                "Combinação integral sem interferências entre itens."
+                              ],
+                              "assessmentCriteria": [
+                                "Sequência de vestimenta seguida rigorosamente (100% dos passos).",
+                                "Todos EPIs inspecionados e sem defeitos reportados.",
+                                "Ajustes finais sem folgas ou desconfortos excessivos.",
+                                "Tempo total de vestimenta dentro de 28 minutos.",
+                                "Demonstração verbal da sequência e razões de segurança.",
+                                "Verificação por colega aprovada sem ressalvas."
+                              ],
+                              "crossCurricularConnections": [
+                                "Segurança e Saúde no Trabalho (NR-6 e NR-33).",
+                                "Física Aplicada: Entendendo forças aerodinâmicas em túneis de vento.",
+                                "Manutenção e Inspeção de Equipamentos Industriais.",
+                                "Higiene Ocupacional e Prevenção de Acidentes.",
+                                "Normas Técnicas Aeronáuticas (ABNT e FAA equivalentes)."
+                              ],
+                              "realWorldApplication": "Em testes aeroespaciais, fabricação de turbinas eólicas, construção de pontes com guindastes ou operações em plataformas offshore, onde ventos fortes e detritos mecânicos exigem EPIs integralmente ajustados para prevenir lesões por impacto, sucção ou abrasão."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "beginner",
@@ -26030,7 +26270,8 @@
             "totalSkills": 189
           }
         ],
-        "totalSkills": 189
+        "totalSkills": 189,
+        "percentage": 0
       }
     ]
   }

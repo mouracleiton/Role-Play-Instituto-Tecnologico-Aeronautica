@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-34",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 343
+      "totalAtomicSkills": 343,
+      "startDate": "2025-02-10",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-34"
     },
     "areas": [
       {
@@ -41659,9 +41665,63 @@
                                     "Materiais: Seleção de estruturas resistentes a vibrações.",
                                     "Eletrônica: Interfaces e barramentos de comunicação."
                                   ],
-                                  "realWorldApplication": "Na SpaceX Falcon 9, a arquitetura preliminar define integração de 9 motores Merlin com sistemas de voo autônomos, avaliando confiabilidade para reuso, permitindo iterações rápidas de design para missões comerciais."
+                                  "realWorldApplication": "Na SpaceX Falcon 9, a arquitetura preliminar define integração de 9 motores Merlin com sistemas de voo autônomos, avaliando confiabilidade para reuso, permitindo iterações rápidas de design para missões comerciais.",
+                                  "stepNumber": 4,
+                                  "title": "Design Preliminar do Estágio Propulsor e Análise de Confiabilidade via FMEA",
+                                  "subSteps": [
+                                    "1. Esboce o layout longitudinal do veículo de 5m, posicionando estágio propulsor inferior, tanques de N2O, IMU embarcada via Arduino e sistema de paraquedas.",
+                                    "2. Defina interfaces preliminares entre componentes (elétricas, mecânicas e de comunicação).",
+                                    "3. Realize análise FMEA, identificando modos de falha críticos como ignição do propulsor, priorizando por RPN (Risk Priority Number).",
+                                    "4. Proponha mitigações, como redundância no ignitor, e atualize o layout.",
+                                    "5. Estime centro de gravidade e massa total, validando viabilidade aerodinâmica."
+                                  ],
+                                  "verification": "Atenda aos critérios de finalVerifications: diagrama completo, fluxogramas, relatório FMEA, documento consolidado e estimativas de CG/massa viáveis.",
+                                  "estimatedTime": "6-8 horas",
+                                  "materials": [
+                                    "Software de desenho (SolidWorks, FreeCAD ou papel/lápis)",
+                                    "Planilha Excel/Google Sheets para FMEA",
+                                    "Arduino IDE para simulação de IMU",
+                                    "Referências: normas ABNT para FMEA e catálogos de componentes (Arduino, sensores MPU6050)"
+                                  ],
+                                  "tips": [
+                                    "Priorize layout para minimizar momento de inércia e otimizar CG abaixo do centro de pressão.",
+                                    "Use RPN = Severidade x Ocorrência x Detecção na FMEA; mire redução >50% com mitigações.",
+                                    "Simule integração embarcada com diagramas de sequência UML simples.",
+                                    "Documente assunções (ex: thrust de N2O = 500N) e trade-offs (ex: massa vs. redundância)."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de integrar componentes embarcados em um estágio propulsor de foguete sonda, realizar análise FMEA para identificar e mitigar riscos de alta criticidade, e otimizar layout preliminar considerando viabilidade técnica.",
+                                  "commonMistakes": [
+                                    "Subestimar massas de propelente, levando a CG inadequado.",
+                                    "Ignorar falhas em cascata na FMEA (ex: vibração afetando IMU).",
+                                    "Layouts não escaláveis, sem margem para iterações.",
+                                    "Falta de redundância em single points of failure como ignitor.",
+                                    "Documentação incompleta, omitindo trade-offs quantitativos."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um projeto universitário de foguete sonda, esboce um veículo de 5m com estágio propulsor inferior integrando IMU (Unidade de Medição Inercial) embarcada via Arduino, tanques de N2O, e paraquedas; avalie confiabilidade via FMEA identificando falha no ignitor como risco alto, mitigado por redundância.",
+                              "finalVerifications": [
+                                "Diagrama completo de layout com componentes posicionados.",
+                                "Fluxogramas de integração de sistemas embarcados.",
+                                "Relatório FMEA com mitigações.",
+                                "Documento consolidado com assunções e trade-offs.",
+                                "Centro de gravidade e massa estimados viáveis."
+                              ],
+                              "assessmentCriteria": [
+                                "Completude e precisão dos componentes identificados (30%).",
+                                "Coerência e viabilidade da integração (25%).",
+                                "Profundidade da análise de confiabilidade (20%).",
+                                "Clareza e profissionalismo da documentação (15%).",
+                                "Otimização preliminar de layout (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Engenharia de Software: Protocolos embarcados e programação de controle.",
+                                "Física: Dinâmica de voo e centro de massa.",
+                                "Gestão de Projetos: Análise de riscos FMEA.",
+                                "Materiais: Seleção de estruturas resistentes a vibrações.",
+                                "Eletrônica: Interfaces e barramentos de comunicação."
+                              ],
+                              "realWorldApplication": "Na SpaceX Falcon 9, a arquitetura preliminar define integração de 9 motores Merlin com sistemas de voo autônomos, avaliando confiabilidade para reuso, permitindo iterações rápidas de design para missões comerciais."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -45243,7 +45303,8 @@
             "totalSkills": 343
           }
         ],
-        "totalSkills": 343
+        "totalSkills": 343,
+        "percentage": 0
       }
     ]
   }

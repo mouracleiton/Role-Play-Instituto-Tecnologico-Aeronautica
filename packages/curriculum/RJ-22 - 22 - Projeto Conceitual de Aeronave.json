@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 352
+      "totalAtomicSkills": 352,
+      "startDate": "2025-02-01",
+      "duration": "60 meses",
+      "dailyStudyHours": 6,
+      "version": "RJ-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-22"
     },
     "areas": [
       {
@@ -8692,6 +8698,13 @@
                                     "Trade-offs enviesados por custo inicial",
                                     "Não considerar escalabilidade para variantes",
                                     "Documentação incompleta de assunções"
+                                  ],
+                                  "tips": [
+                                    "Utilize análise de sensibilidade no trade-study para identificar drivers críticos.",
+                                    "Envolva equipe multidisciplinar em revisões iterativas para evitar vieses.",
+                                    "Inclua cenários de escalabilidade e variantes no estudo de trade-offs.",
+                                    "Valide simulações com dados históricos de aeronaves similares.",
+                                    "Mantenha um registro de riscos com probabilidades e mitigações quantitativas."
                                   ]
                                 }
                               ],
@@ -29482,6 +29495,12 @@
                                     "Dados incompletos ou não verificados",
                                     "Não normalizar por escala",
                                     "Confundir empuxo estático com cruzeiro"
+                                  ],
+                                  "verification": [
+                                    "Confirme consistência dos dados cruzando ≥2 fontes por aeronave (desvio <5%).",
+                                    "Gere gráfico de empuxo/MTOW vs. MTOW e compare com Fig. 4.2 de Torenbeek (R² > 0.8).",
+                                    "Documente dataset em planilha com colunas: aeronave, fonte, valor normalizado, validação.",
+                                    "Autoavaliação: responda se todos os commonMistakes foram evitados."
                                   ]
                                 },
                                 {
@@ -39904,7 +39923,37 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Projeto conceitual de fuselagem para jato regional de 50 passageiros (ex: similar ao Embraer E175): volume cabine 120 m³, Dc=2.6m, Lfus=28m, Cd_fus=0.08, usando Torenbeek para síntese inicial, resultando em layout otimizado para arrasto mínimo."
+                                  "practicalExample": "Projeto conceitual de fuselagem para jato regional de 50 passageiros (ex: similar ao Embraer E175): volume cabine 120 m³, Dc=2.6m, Lfus=28m, Cd_fus=0.08, usando Torenbeek para síntese inicial, resultando em layout otimizado para arrasto mínimo.",
+                                  "stepNumber": 4,
+                                  "title": "Síntese Inicial da Fuselagem com Método de Torenbeek",
+                                  "subSteps": [
+                                    "1. Calcular volume da cabine (V_cab) para 50 passageiros: V_cab ≈ 120 m³, considerando espaçamento de assentos e layout típico.",
+                                    "2. Selecionar diâmetro da cabine (Dc = 2.6 m) baseado em padrões de conforto para jatos regionais.",
+                                    "3. Estimar comprimento da fuselagem (L_fus ≈ 28 m) usando relações geométricas e fineness ratio ótimo (12-15).",
+                                    "4. Aplicar equações de Torenbeek para coeficiente de arrasto da fuselagem (Cd_fus ≈ 0.08).",
+                                    "5. Otimizar layout (seções circulares/cônicas) para minimizar arrasto, verificando volume e área superficial."
+                                  ],
+                                  "verification": "Validar dimensões finais contra Embraer E175 (V_cab ≈ 120 m³, Dc ≈ 2.6 m, L_fus ≈ 28 m, Cd_fus ≈ 0.08); erro < 5% indica acerto.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Livro 'Synthesis of Subsonic Airplane Design' de E. Torenbeek",
+                                    "Planilha Excel com equações de Torenbeek",
+                                    "Dados de referência: Especificações Embraer E175",
+                                    "Software de CAD básico (opcional, ex: SolidWorks ou FreeCAD)"
+                                  ],
+                                  "tips": [
+                                    "Use fineness ratio (L_fus/Dc) entre 12-15 para mínimo arrasto.",
+                                    "Inclua nose e tail cones na otimização (30% do comprimento total).",
+                                    "Itere geometria para atender volume exato sem exceder arrasto.",
+                                    "Considere pressurização: diâmetro máximo para estrutura."
+                                  ],
+                                  "learningObjective": "Aplicar método de Torenbeek para síntese conceitual de fuselagem de jato regional, otimizando dimensões para volume, arrasto mínimo e layout realista.",
+                                  "commonMistakes": [
+                                    "Subestimar volume da cabine, ignorando bagagem e corredores.",
+                                    "Usar diâmetro constante sem taper, elevando arrasto.",
+                                    "Não validar fineness ratio, resultando em fuselagem ineficiente.",
+                                    "Esquecer contribuições de nose/tail no Cd_fus."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -39915,6 +39964,47 @@
                                     "Transições suaves sem quebras de curvatura > 10°.",
                                     "Compatibilidade com trem de pouso e asas definidas.",
                                     "Documentação completa com todas equações Torenbeek citadas."
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Verificações Finais da Fuselagem",
+                                  "subSteps": [
+                                    "Calcular o volume total da fuselagem e comparar com os requisitos (≥ 105%).",
+                                    "Avaliar o coeficiente de arrasto usando métodos empíricos (≤ 0.085).",
+                                    "Determinar o centro de gravidade preliminar (25-40% do comprimento).",
+                                    "Verificar viabilidade geométrica e estrutural (diâmetro e taper da cauda).",
+                                    "Inspecionar transições suaves (quebras de curvatura ≤ 10°).",
+                                    "Conferir compatibilidade com trem de pouso e asas.",
+                                    "Compilar documentação com equações de Torenbeek citadas."
+                                  ],
+                                  "verification": [
+                                    "Volume total da fuselagem ≥ 105% dos requisitos.",
+                                    "Coeficiente de arrasto da fuselagem ≤ limite especificado (ex: 0.085).",
+                                    "Centro de gravidade preliminar dentro de 25-40% do comprimento.",
+                                    "Geometria estrutural viável (diâmetro/cauda taper ok).",
+                                    "Transições suaves sem quebras de curvatura > 10°.",
+                                    "Compatibilidade com trem de pouso e asas definidas.",
+                                    "Documentação completa com todas equações Torenbeek citadas."
+                                  ],
+                                  "estimatedTime": "2-3 horas",
+                                  "materials": [
+                                    "Planilhas de cálculo (Excel ou similar)",
+                                    "Referência: Torenbeek 'Synthesis of Subsonic Airplane Design'",
+                                    "Software CAD para modelagem (ex: SolidWorks, CATIA)",
+                                    "Dados de requisitos do projeto RJ-22"
+                                  ],
+                                  "tips": [
+                                    "Use iterações rápidas para ajustes no centro de gravidade.",
+                                    "Valide arrasto com ferramentas como DATCOM ou CFD preliminar.",
+                                    "Garanta simetria em todas as vistas para evitar erros de curvatura.",
+                                    "Cite fontes explicitamente para facilitar revisão."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de realizar verificações finais integradas no projeto preliminar da fuselagem, garantindo conformidade com requisitos aerodinâmicos, volumétricos e estruturais conforme métodos de Torenbeek.",
+                                  "commonMistakes": [
+                                    "Subestimar o volume útil, ignorando reservas de combustível.",
+                                    "Erro no posicionamento do CG por não considerar massa distribuída.",
+                                    "Transições angulares abruptas que aumentam arrasto.",
+                                    "Omissão de compatibilidade com outros componentes (asas/trem).",
+                                    "Falta de citação de equações, invalidando a análise."
                                   ]
                                 },
                                 {
@@ -39926,6 +40016,43 @@
                                     "Uso correto de referências e normas aeronáuticas.",
                                     "Criatividade em soluções para restrições reais.",
                                     "Relatório bem estruturado e profissional."
+                                  ],
+                                  "stepNumber": "RJ-22",
+                                  "title": "Projeto Preliminar de Seção de Fuselagem com Método de Torenbeek",
+                                  "subSteps": [
+                                    "1. Realizar cálculos preliminares de dimensionamento utilizando o método de Torenbeek.",
+                                    "2. Projetar seções transversais garantindo coerência geométrica (continuidade C1).",
+                                    "3. Otimizar trade-offs entre volume, arrasto e estrutura, com quantificação numérica.",
+                                    "4. Produzir desenhos técnicos com vistas ortográficas claras.",
+                                    "5. Consultar e citar referências aeronáuticas relevantes (ex.: FAR 25, Torenbeek).",
+                                    "6. Incorporar soluções criativas para restrições reais de projeto.",
+                                    "7. Elaborar relatório estruturado e profissional."
+                                  ],
+                                  "verification": "Avaliação pelo professor com base nos critérios de assessmentCriteria: precisão (±5% erro), coerência C1, otimização quantificada, qualidade dos desenhos, uso de referências, criatividade e estrutura do relatório.",
+                                  "estimatedTime": "40 horas",
+                                  "materials": [
+                                    "Livro 'Advanced Aircraft Design' de E. Torenbeek",
+                                    "Software CAD (SolidWorks, CATIA ou equivalente)",
+                                    "Normas aeronáuticas (FAR 25, JAR 25, ABNT NBR relevantes)",
+                                    "Calculadora científica ou MATLAB/Python para cálculos",
+                                    "Papel milimetrado e régua para esboços iniciais"
+                                  ],
+                                  "tips": [
+                                    "Inicie com iterações manuais para validar cálculos antes de CAD.",
+                                    "Verifique continuidade C1 calculando derivadas nas interfaces de seções.",
+                                    "Quantifique otimizações com tabelas de sensibilidade (ex.: Δvolume vs. Δarrasto).",
+                                    "Use escalas consistentes e legendas nos desenhos.",
+                                    "Estruture o relatório com sumário, metodologia, resultados e conclusões."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de aplicar o método de Torenbeek para projetar seções de fuselagem aeronáutica, garantindo precisão nos cálculos (±5% erro), coerência geométrica C1, otimização quantificada de trade-offs, desenhos claros, uso correto de normas, criatividade em soluções reais e redação de relatório profissional.",
+                                  "commonMistakes": [
+                                    "Cálculos com erro superior a 5% devido a omissões em fatores de segurança.",
+                                    "Descontinuidades geométricas (falta de C1) nas transições de seções.",
+                                    "Otimização subjetiva sem métricas quantitativas (ex.: sem gráficos Pareto).",
+                                    "Desenhos ortográficos ilegíveis ou sem dimensões/anotações.",
+                                    "Ausência de referências a normas ou fontes como Torenbeek.",
+                                    "Falta de criatividade, copiando soluções genéricas sem adaptação a restrições.",
+                                    "Relatório desorganizado, sem seções claras ou linguagem técnica."
                                   ]
                                 },
                                 {
@@ -39935,12 +40062,98 @@
                                     "Engenharia de Materiais: Seleção de ligas para casca pressurizada.",
                                     "Computação: Modelagem paramétrica em CAD e scripts de otimização.",
                                     "Gestão de Projetos: Análise de requisitos e trade-offs multidisciplinares."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Projeto da Casca Pressurizada da Fuselagem",
+                                  "subSteps": [
+                                    "Definir requisitos de pressurização e dimensões da fuselagem com base em geometria analítica.",
+                                    "Calcular tensões e deformações usando integração de volumes e princípios de estática.",
+                                    "Selecionar materiais adequados considerando ligas resistentes à fadiga.",
+                                    "Modelar parametricamente em CAD, incorporando análise aerodinâmica de arrasto.",
+                                    "Otimizar design via scripts, avaliando trade-offs multidisciplinares."
+                                  ],
+                                  "verification": "Verificar se o modelo resiste a ΔP = 0.6 atm sem tensão acima de 50% do limite de escoamento; validar aerodinâmica com coeficiente de arrasto < 0.03; exportar relatório de otimização.",
+                                  "estimatedTime": "6 horas",
+                                  "materials": [
+                                    "Software CAD (SolidWorks ou equivalente)",
+                                    "Livro 'Aircraft Structures for Engineering Students' (Megson)",
+                                    "Planilhas de cálculo em Python/MATLAB",
+                                    "Normas FAR/CS-25 para pressurização"
+                                  ],
+                                  "tips": [
+                                    "Inicie com modelo 2D para validação analítica antes do 3D.",
+                                    "Use fatores de segurança 1.5 para cargas críticas.",
+                                    "Integre feedback de simulações CFD precoces.",
+                                    "Documente trade-offs em tabela para gestão de projetos."
+                                  ],
+                                  "learningObjective": "Integrar conceitos de geometria, física, materiais, computação e gestão para projetar uma casca pressurizada segura e otimizada.",
+                                  "commonMistakes": [
+                                    "Negligenciar efeitos de arrasto viscoso na forma externa.",
+                                    "Subestimar deformações locais em aberturas (janelas).",
+                                    "Escolha inadequada de liga sem considerar corrosão em altitude.",
+                                    "Falta de parametrização, dificultando iterações de otimização."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Aplicado na fase conceitual de aeronaves comerciais pela Boeing/Embraer, onde layouts de fuselagem iniciais de Torenbeek reduzem ciclos de design em 30%, permitindo protótipos virtuais rápidos para certificação FAA/EASA."
+                                  "realWorldApplication": "Aplicado na fase conceitual de aeronaves comerciais pela Boeing/Embraer, onde layouts de fuselagem iniciais de Torenbeek reduzem ciclos de design em 30%, permitindo protótipos virtuais rápidos para certificação FAA/EASA.",
+                                  "stepNumber": 4,
+                                  "title": "Layout Inicial de Fuselagem pelo Método de Torenbeek",
+                                  "subSteps": [
+                                    "1. Identificar requisitos de missão: número de passageiros, layout de assentos e volumes de carga/galley.",
+                                    "2. Definir dimensões da seção transversal: largura interna (baseada em assentos paralelos) e altura para conforto.",
+                                    "3. Calcular comprimento da cabine principal usando fatores de volume específico de Torenbeek.",
+                                    "4. Adicionar seções de nariz, cauda, carga e sistemas, ajustando pesos preliminares.",
+                                    "5. Validar layout com verificação de arrasto e centro de gravidade aproximado."
+                                  ],
+                                  "verification": "Gere um esboço do layout e compare os volumes calculados com os requisitos da missão (erro < 5%). Verifique se o comprimento total está entre 70-90% do da aeronave referência.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Capítulo 5 de 'Synthesis of Subsonic Airplane Design' de E. Torenbeek.",
+                                    "Planilha Excel de layout de fuselagem (disponível no portal do curso).",
+                                    "Dados de referência de aeronaves comerciais (Boeing 737, Embraer E-Jets)."
+                                  ],
+                                  "tips": [
+                                    "Use layouts modulares: comece com cabine padrão e itere para otimização.",
+                                    "Aplique fatores de Torenbeek para volume útil (ex: 0.75-0.85 para cabine).",
+                                    "Priorize seções ovais para redução de arrasto em cruzeiro.",
+                                    "Documente assunções para facilitar iterações futuras."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de aplicar o método de Torenbeek para desenvolver layouts iniciais de fuselagem em fase conceitual, atendendo requisitos de volume, peso e integração, reduzindo ciclos de design em até 30%.",
+                                  "commonMistakes": [
+                                    "Subestimar volumes auxiliares (bagagem, banheiros: +20-30% do volume de cabine).",
+                                    "Usar diâmetro constante sem considerar taper na cauda.",
+                                    "Ignorar penalidades de peso por estrutura (adicionar 25-35% ao peso vazio útil).",
+                                    "Não validar com aeronaves reais, levando a dimensões irrealistas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Projeto conceitual de fuselagem para jato regional de 50 passageiros (ex: similar ao Embraer E175): volume cabine 120 m³, Dc=2.6m, Lfus=28m, Cd_fus=0.08, usando Torenbeek para síntese inicial, resultando em layout otimizado para arrasto mínimo.",
+                              "finalVerifications": [
+                                "Volume total da fuselagem ≥ 105% dos requisitos.",
+                                "Coeficiente de arrasto da fuselagem ≤ limite especificado (ex: 0.085).",
+                                "Centro de gravidade preliminar dentro de 25-40% do comprimento.",
+                                "Geometria estrutural viável (diâmetro/cauda taper ok).",
+                                "Transições suaves sem quebras de curvatura > 10°.",
+                                "Compatibilidade com trem de pouso e asas definidas.",
+                                "Documentação completa com todas equações Torenbeek citadas."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão dos cálculos de Torenbeek (±5% erro).",
+                                "Coerência geométrica entre seções (continuidade C1).",
+                                "Otimização de trade-offs volume/arrasto/estrutura quantificada.",
+                                "Qualidade dos desenhos (vistas ortográficas claras).",
+                                "Uso correto de referências e normas aeronáuticas.",
+                                "Criatividade em soluções para restrições reais.",
+                                "Relatório bem estruturado e profissional."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Geometria analítica e integração de volumes (cálculo).",
+                                "Física: Aerodinâmica (arrasto viscoso/inviscido) e estática.",
+                                "Engenharia de Materiais: Seleção de ligas para casca pressurizada.",
+                                "Computação: Modelagem paramétrica em CAD e scripts de otimização.",
+                                "Gestão de Projetos: Análise de requisitos e trade-offs multidisciplinares."
+                              ],
+                              "realWorldApplication": "Aplicado na fase conceitual de aeronaves comerciais pela Boeing/Embraer, onde layouts de fuselagem iniciais de Torenbeek reduzem ciclos de design em 30%, permitindo protótipos virtuais rápidos para certificação FAA/EASA."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -46440,7 +46653,8 @@
             "totalSkills": 352
           }
         ],
-        "totalSkills": 352
+        "totalSkills": 352,
+        "percentage": 0
       }
     ]
   }

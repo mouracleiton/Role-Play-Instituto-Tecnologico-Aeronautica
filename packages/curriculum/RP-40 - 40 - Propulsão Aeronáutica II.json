@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RP-40",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 261
+      "totalAtomicSkills": 261,
+      "startDate": "2025-02-10",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "RP-40",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RP-40"
     },
     "areas": [
       {
@@ -33129,7 +33135,8 @@
             "totalSkills": 261
           }
         ],
-        "totalSkills": 261
+        "totalSkills": 261,
+        "percentage": 0
       }
     ]
   }

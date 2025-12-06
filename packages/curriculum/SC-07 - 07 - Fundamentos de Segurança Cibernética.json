@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SC-07",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 328
+      "totalAtomicSkills": 328,
+      "startDate": "2025-01-01",
+      "duration": "5 years",
+      "dailyStudyHours": 6,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SC-07"
     },
     "areas": [
       {
@@ -45329,7 +45335,8 @@
             "totalSkills": 328
           }
         ],
-        "totalSkills": 328
+        "totalSkills": 328,
+        "percentage": 0
       }
     ]
   }

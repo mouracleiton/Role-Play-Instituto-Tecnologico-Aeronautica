@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-82",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 326
+      "totalAtomicSkills": 326,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-82"
     },
     "areas": [
       {
@@ -34973,7 +34979,15 @@
                                     "Base errada (incluir potências > d-1).",
                                     "Confundir com extensão normal.",
                                     "Ignorar que α primitivo implica isso."
-                                  ]
+                                  ],
+                                  "tips": [
+                                    "Verifique a irredutibilidade do polinômio mínimo m_α(x) sobre ℚ antes de prosseguir.",
+                                    "Use a relação m_α(α)=0 para provar que potências ≥ d são linearmente dependentes da base {1, α, ..., α^{d-1}}.",
+                                    "Para exemplos concretos, teste com α=∛2 (grau 3) ou α=√2 (grau 2).",
+                                    "Lembre que isso vale para qualquer α algébrico; α primitivo garante maximalidade.",
+                                    "Evite calcular [ℚ(α):ℚ] sem o mínimo: sempre parta dele."
+                                  ],
+                                  "learningObjective": "Demonstrar que o grau da extensão de corpos ℚ(α)/ℚ é igual ao grau do polinômio mínimo m_α(x) de α sobre ℚ, construindo uma base {1, α, ..., α^{d-1}} e provando sua independência linear via irredutibilidade."
                                 }
                               ],
                               "practicalExample": "Para α = ∛2, o polinômio x³ - 2 é irredutível por Eisenstein (p=2), logo mínimo de grau 3, e [Q(∛2):Q] = 3. Não construtível pois 3 não é potência de 2.",
@@ -42487,7 +42501,8 @@
             "totalSkills": 326
           }
         ],
-        "totalSkills": 326
+        "totalSkills": 326,
+        "percentage": 0
       }
     ]
   }

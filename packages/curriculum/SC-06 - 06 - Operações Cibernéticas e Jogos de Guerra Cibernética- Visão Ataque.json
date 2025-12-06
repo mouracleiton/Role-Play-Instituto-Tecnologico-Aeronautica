@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SC-06",
       "lastUpdated": "2025-12-05",
-      "totalAtomicSkills": 328
+      "totalAtomicSkills": 328,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025-SC-06",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SC-06"
     },
     "areas": [
       {
@@ -38584,7 +38590,14 @@
                                   "estimatedTime": "25 minutos",
                                   "materials": "ISO de OS de teste (ex: Ubuntu), VMware instalado",
                                   "learningObjective": "Validar funcionalidade completa para labs de cibersegurança.",
-                                  "commonMistakes": "Conflitos com Hyper-V (desative via 'bcdedit /set hypervisorlaunchtype off')."
+                                  "commonMistakes": "Conflitos com Hyper-V (desative via 'bcdedit /set hypervisorlaunchtype off').",
+                                  "tips": [
+                                    "Habilite virtualização (VT-x/AMD-V) no BIOS/UEFI se VMs falharem ao iniciar.",
+                                    "Prefira rede NAT para testes iniciais, evitando conflitos de IP.",
+                                    "Crie um snapshot logo após instalar o guest OS para facilitar rollbacks.",
+                                    "Monitore uso de CPU/RAM no host via Task Manager durante testes.",
+                                    "Ative 3D acceleration apenas se necessário para o lab, para economizar recursos."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Em um lab de Red Team, baixe e instale VMware Workstation em um host Windows 11, habilite VT-x, crie VMs isoladas para simulador de ataque (Kali Linux atacante) e vítima (Windows Server vulnerável), configure rede interna para simular C2 sem expor à rede real.",
@@ -42649,9 +42662,65 @@
                                     "Programação: Integração com scripts Python/ Bash para automação",
                                     "Ética e Direito: Licenças open-source e uso legal em pentests"
                                   ],
-                                  "realWorldApplication": "Em operações de Red Team profissionais, o Nmap é instalado em VMs de ataque para mapear infraestruturas corporativas durante CTFs ou auditorias, identificando alvos para exploits simulados e fortalecendo defesas contra ameaças reais."
+                                  "realWorldApplication": "Em operações de Red Team profissionais, o Nmap é instalado em VMs de ataque para mapear infraestruturas corporativas durante CTFs ou auditorias, identificando alvos para exploits simulados e fortalecendo defesas contra ameaças reais.",
+                                  "stepNumber": "SC-06.1",
+                                  "title": "Instalação e Verificação Inicial do Nmap no Kali Linux",
+                                  "subSteps": [
+                                    "Abra o terminal no Kali Linux.",
+                                    "Atualize os repositórios: `sudo apt update`",
+                                    "Instale o Nmap: `sudo apt install nmap`",
+                                    "Verifique a instalação: `nmap --version`",
+                                    "Atualize os scripts NSE: `nmap --script-updatedb`",
+                                    "Execute um scan de teste: `nmap -sV -O scanme.nmap.org`"
+                                  ],
+                                  "verification": [
+                                    "`nmap --version` exibe versão >=7.90 sem erros",
+                                    "Scan em scanme.nmap.org retorna hosts e serviços detectados",
+                                    "Scripts NSE atualizados sem warnings"
+                                  ],
+                                  "estimatedTime": "20-30 minutos",
+                                  "materials": [
+                                    "Máquina virtual ou instalação nativa do Kali Linux",
+                                    "Conexão à internet",
+                                    "Terminal com privilégios sudo"
+                                  ],
+                                  "tips": [
+                                    "Sempre execute comandos com `sudo` para evitar erros de permissão.",
+                                    "Use `scanme.nmap.org` para testes legais; evite redes não autorizadas.",
+                                    "Documente saídas com screenshots para o relatório.",
+                                    "Se firewall bloquear, desative temporariamente com `sudo ufw disable`."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de instalar, verificar e executar scans básicos com o Nmap no Kali Linux, preparando o ambiente para operações de reconnaissance em simulações de Red Team.",
+                                  "commonMistakes": [
+                                    "Esquecer `sudo`, resultando em 'Permission denied'.",
+                                    "Não atualizar repositórios (`apt update`), causando falhas na instalação.",
+                                    "Escaneamento de redes locais sem permissão ou configuração de VM.",
+                                    "Ignorar verificação de versão, prosseguindo com instalação corrompida."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em um laboratório de Red Team no Kali Linux, baixe e instale o Nmap via 'sudo apt install nmap', execute 'nmap -sV -O 192.168.1.0/24' para descobrir serviços e OS na rede local simulando um ataque de reconhecimento.",
+                              "finalVerifications": [
+                                "'nmap --version' exibe versão >=7.90 sem erros",
+                                "Scan localhost ou scanme.nmap.org retorna hosts/uptime",
+                                "NSE scripts atualizados com 'nmap --script-updatedb'",
+                                "Instalação documentada em relatório com screenshots",
+                                "Nmap acessível de qualquer terminal/prompt"
+                              ],
+                              "assessmentCriteria": [
+                                "Processo completo sem erros fatais",
+                                "Tempo total <40 minutos",
+                                "Testes em pelo menos um SO com sucesso",
+                                "Relatório inclui checksums e outputs de comandos",
+                                "Demonstração de troubleshooting se erros ocorrerem"
+                              ],
+                              "crossCurricularConnections": [
+                                "Redes: Conceitos de portas, serviços e escaneamento",
+                                "Sistemas Operacionais: Gerenciadores de pacotes (apt, exe)",
+                                "Programação: Integração com scripts Python/ Bash para automação",
+                                "Ética e Direito: Licenças open-source e uso legal em pentests"
+                              ],
+                              "realWorldApplication": "Em operações de Red Team profissionais, o Nmap é instalado em VMs de ataque para mapear infraestruturas corporativas durante CTFs ou auditorias, identificando alvos para exploits simulados e fortalecendo defesas contra ameaças reais."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "beginner",
@@ -45232,7 +45301,8 @@
             "totalSkills": 328
           }
         ],
-        "totalSkills": 328
+        "totalSkills": 328,
+        "percentage": 0
       }
     ]
   }

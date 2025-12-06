@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ST-57",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 284
+      "totalAtomicSkills": 284,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-ST-57",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ST-57"
     },
     "areas": [
       {
@@ -25394,7 +25400,14 @@
                                   "estimatedTime": "40 minutos",
                                   "materials": "MATLAB ou Python para multiplicação matricial, papel e lápis para 2DOF.",
                                   "learningObjective": "Executar a transformação modal corretamente.",
-                                  "commonMistakes": "Esquecer transposição Φ^T; usar modos não normalizados."
+                                  "commonMistakes": "Esquecer transposição Φ^T; usar modos não normalizados.",
+                                  "tips": [
+                                    "Normalizar os modos para Φᵀ M Φ = I, facilitando cálculos.",
+                                    "Verificar ortogonalidade manualmente para sistemas pequenos (2-3 DOF).",
+                                    "Usar funções como eig(A,B) no MATLAB para [V,D] = eig(K,M).",
+                                    "Para amortecimento proporcional, C também diagonaliza.",
+                                    "Trace(M*) deve ser ≈ n se normalizado corretamente."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 4,
@@ -25410,7 +25423,14 @@
                                   "estimatedTime": "35 minutos",
                                   "materials": "Exemplo numérico de sistema com Rayleigh damping, solver simbólico (SymPy).",
                                   "learningObjective": "Aplicar ortogonalidade no amortecimento de Rayleigh para desacoplamento completo.",
-                                  "commonMistakes": "Assumir amortecimento arbitrário como proporcional; erro em fórmula de ξ_i."
+                                  "commonMistakes": "Assumir amortecimento arbitrário como proporcional; erro em fórmula de ξ_i.",
+                                  "tips": [
+                                    "Lembre-se: Rayleigh damping é proporcional por definição (C = αM + βK), garantindo C* diagonal.",
+                                    "Para determinar α e β, resolva sistema com ξ_i desejados em dois modos: [α/(2ω_i) + β ω_i/2 = ξ_i].",
+                                    "Verifique ortonormalidade: Φ^T M Φ = I e Φ^T K Φ = Λ (diagonal).",
+                                    "Em SymPy, defina símbolos para α, β, ω_i e compute ξ_i simbolicamente.",
+                                    "Comparação: para amortecimento geral, use métodos iterativos ou complexos."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 5,
@@ -36747,7 +36767,8 @@
             "totalSkills": 284
           }
         ],
-        "totalSkills": 284
+        "totalSkills": 284,
+        "percentage": 0
       }
     ]
   }

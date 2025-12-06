@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PS-76",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 326
+      "totalAtomicSkills": 326,
+      "startDate": "2025-01-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "PS-76",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PS-76"
     },
     "areas": [
       {
@@ -26240,10 +26246,52 @@
                                     "Estudar o teorema de maximização da distância de estabilidade.",
                                     "Visualizar diagramas de loop shaping em gráficos de singular values.",
                                     "Comparar com métodos clássicos de design de controladores."
+                                  ],
+                                  "verification": [
+                                    "Explique a fórmula da planta shaped P_s.",
+                                    "Descreva o objetivo principal do loop shaping.",
+                                    "Cite o teorema de maximização da distância de estabilidade."
+                                  ],
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Slides da aula (Seção Loop Shaping)",
+                                    "Livro: Multivariable Feedback Control (Skogestad e Postlethwaite), Capítulo 9",
+                                    "MATLAB/Simulink para gráficos de valores singulares"
+                                  ],
+                                  "tips": [
+                                    "Sempre visualize os valores singulares da malha aberta L(jω) para entender o shaping.",
+                                    "Escolha pesos W_p e W_r iterativamente com base nas especificações de desempenho e robustez.",
+                                    "Relacione o loop shaping com métodos clássicos via diagramas de Bode generalizados."
+                                  ],
+                                  "learningObjective": "O aluno compreenderá o conceito de formatação de malha (Loop Shaping), definindo a planta shaped P_s = W_p P_nominal W_r, o objetivo de moldar L = K P_s para atender especificações e o teorema de maximização da distância de estabilidade, comparando com métodos clássicos.",
+                                  "commonMistakes": [
+                                    "Confundir a ordem dos pesos: usar P_s = W_r P W_p em vez de W_p P W_r.",
+                                    "Ignorar a interpretação em valores singulares, focando apenas em magnitude única.",
+                                    "Não relacionar o shaping com specs de robustez (distância de estabilidade mínima)."
                                   ]
                                 },
                                 "verification`: "
-                              ]
+                              ],
+                              "practicalExample": "Projeto de controlador H∞ por loop shaping para uma planta MIMO 2x2 (ex.: modelo de uma coluna de destilação). Definir pesos W_p e W_r, moldar a malha aberta L(jω), sintetizar K via svd(L) < γI, e simular resposta a referências e perturbações no MATLAB.",
+                              "finalVerifications": [
+                                "Sintetizar um controlador que atenda especificações de desempenho e robustez (γ < 1).",
+                                "Plotar σ̄(L(jω)) e verificar distância de estabilidade.",
+                                "Simular malha fechada com planta perturbada e confirmar estabilidade."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão no cálculo de valores singulares e plotagem de Bode (30%).",
+                                "Escolha adequada de pesos W_p e W_r para shaping (25%).",
+                                "Síntese correta do controlador H∞ e γ ótimo (20%).",
+                                "Análise de robustez e simulações (15%).",
+                                "Relatório claro com interpretações (10%)."
+                              ],
+                              "crossCurricularConnections": [
+                                "Álgebra Linear: valores singulares e decomposição SVD.",
+                                "Controle Clássico: diagramas de Bode e margens de estabilidade.",
+                                "Sistemas Dinâmicos: modelagem MIMO e análise em frequência.",
+                                "Otimização: minimização de norma H∞."
+                              ],
+                              "realWorldApplication": "Controle robusto de aeronaves (ex.: flaps e lemes com incertezas aerodinâmicas), plantas químicas (colunas de destilação com variações de parâmetros) e robótica industrial, garantindo desempenho apesar de incertezas e não-linearidades."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -39169,7 +39217,26 @@
                                 "Discutir implicações para controle: necessidade de desacopladores.",
                                 "Simular resposta a degrau em uma entrada e observar efeitos cruzados.",
                                 "Explorar decomposição SVD para análise de direções principais."
-                              ]
+                              ],
+                              "practicalExample": "Simule um sistema MIMO 2x2 de um misturador químico: entradas u1 (vazão de ácido), u2 (vazão de base); saídas y1 (pH), y2 (temperatura). Construa G(s) a partir de equações lineares e analise acoplamentos via Simulink.",
+                              "finalVerifications": [
+                                "Derivar G(s) completo para um sistema 2x2 dado.",
+                                "Calcular RGA (Relative Gain Array) para um exemplo e interpretar.",
+                                "Propor estratégia de desacoplamento para reduzir interações."
+                              ],
+                              "assessmentCriteria": {
+                                "Conceitual": "Compreensão de acoplamentos (70%)",
+                                "Cálculo": "Precisão em funções de transferência e análises (20%)",
+                                "Aplicação": "Propostas de controle viáveis (10%)",
+                                "Escala": "Excelente: 90-100%; Bom: 80-89%; Regular: 70-79%; Insuficiente: <70%"
+                              },
+                              "crossCurricularConnections": [
+                                "Álgebra Linear: Matrizes, autovalores e SVD.",
+                                "Cálculo Diferencial: Equações diferenciais e Laplace.",
+                                "Controle Clássico: Extensão de SISO para MIMO.",
+                                "Programação: Uso de MATLAB/Python para simulações."
+                              ],
+                              "realWorldApplication": "Controle de flight em aeronaves (roll/pitch/yaw), processos petroquímicos (destilação multivariable) e robótica (controle de braços com múltiplos atuadores)."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -43168,7 +43235,8 @@
             "totalSkills": 326
           }
         ],
-        "totalSkills": 326
+        "totalSkills": 326,
+        "percentage": 0
       }
     ]
   }

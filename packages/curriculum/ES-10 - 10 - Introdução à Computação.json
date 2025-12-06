@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ES-10",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 334
+      "totalAtomicSkills": 334,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ES-10"
     },
     "areas": [
       {
@@ -6714,6 +6720,23 @@
                                     "Crie um algoritmo próprio simples e autoavalie suas propriedades.",
                                     "Discuta com um par ou grave uma explicação.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Apresentar: 1) Listas de propriedades para os 3 algoritmos analisados; 2) Justificativas para exemplos não-algoritmos; 3) Algoritmo próprio com autoavaliação das propriedades; 4) Registro da discussão ou gravação.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Papel e caneta",
+                                    "Exemplos de algoritmos impressos ou digitais (busca linear, ordenação borbulha, receita simples)"
+                                  ],
+                                  "tips": [
+                                    "Organize as propriedades em uma tabela para facilitar a comparação.",
+                                    "Verifique sempre as 5 propriedades essenciais: entrada, saída, definitude, finitude e efetividade.",
+                                    "Na criação do algoritmo próprio, comece com algo cotidiano como 'fazer um sanduíche'."
+                                  ],
+                                  "learningObjective": "Identificar corretamente propriedades de algoritmos em exemplos reais, distinguir o que não é algoritmo e criar um algoritmo simples com autoavaliação.",
+                                  "commonMistakes": [
+                                    "Confundir sequências infinitas ou vagas com algoritmos finitos.",
+                                    "Omitir justificativas claras para exemplos não-algoritmos.",
+                                    "Criar 'algoritmos' sem entradas/saídas definidas ou passos efetivos."
                                   ]
                                 }
                               ],
@@ -6732,7 +6755,27 @@
                                 "Classificar programas como algoritmos sem verificar propriedades.",
                                 "Não justificar ausências de propriedades.",
                                 "Overcomplicar exemplos simples."
-                              ]
+                              ],
+                              "practicalExample": "Desenvolva um algoritmo para calcular o IMC (Índice de Massa Corporal) de uma pessoa: entrada (peso e altura), processamento (cálculo: peso / (altura²)), saída (resultado e classificação). Represente em pseudocódigo e fluxograma, verificando todas as propriedades.",
+                              "finalVerifications": [
+                                "Crie um algoritmo original para um problema cotidiano e justifique suas propriedades.",
+                                "Responda a um quiz de 10 questões sobre definições, propriedades e representações.",
+                                "Autoavalie um fluxograma peer-review com checklist de propriedades."
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão conceitual (definição e propriedades): 30%",
+                                "Habilidade em representações (pseudocódigo/fluxograma): 25%",
+                                "Identificação e análise de exemplos: 20%",
+                                "Aplicação prática e verificação: 15%",
+                                "Clareza e correção nas justificativas: 10%"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Sequências lógicas e funções.",
+                                "Língua Portuguesa: Redação clara e precisa de instruções.",
+                                "Ciências: Método científico (hipótese, experimento, conclusão).",
+                                "Educação Física: Aplicação em rotinas de exercícios (ex: contagem de repetições)."
+                              ],
+                              "realWorldApplication": "Algoritmos fundamentam softwares como apps de navegação (Google Maps), recomendadores (Netflix), automação industrial e inteligência artificial, resolvendo problemas em saúde, finanças e transporte de forma eficiente e escalável."
                             },
                             "estimatedTime": "0.5 horas",
                             "difficulty": "beginner",
@@ -9808,6 +9851,27 @@
                                 "realWorldApplication realWorldApplication "
                               ],
                               ":[": [
+                                "Matemática: Cálculo de somatórios, séries aritméticas e iterações em sequências",
+                                "Estatística: Processamento de datasets iterativos para médias e somas",
+                                "Física: Simulações de movimento com passos temporais discretos",
+                                "Economia: Cálculos repetitivos em planilhas financeiras (ex: juros compostos)",
+                                "Design: Geração procedural de padrões repetitivos em gráficos"
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão completa dos componentes do loop for demonstrada por diagrama e explicação",
+                                "Implementação correta de loops para contagem simples e iteração em arrays sem erros de índice ou infinitos",
+                                "Resolução eficaz de problemas reais com integração de lógica condicional e controle de fluxo (break/continue)",
+                                "Habilidade em debugar, otimizar e tratar edge cases, comprovada por testes múltiplos",
+                                "Código limpo, comentado e eficiente, com saída exata nos cenários esperados"
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: aplicação em somatórios, séries e sequências numéricas",
+                                "Estatística: iteração sobre datasets para cálculos agregados",
+                                "Física: simulações numéricas com passos discretos",
+                                "Economia: modelagem financeira iterativa como juros compostos",
+                                "Design: geração procedural de elementos gráficos repetitivos"
+                              ],
+                              "realWorldApplication": [
                                 "Matemática: Cálculo de somatórios, séries aritméticas e iterações em sequências",
                                 "Estatística: Processamento de datasets iterativos para médias e somas",
                                 "Física: Simulações de movimento com passos temporais discretos",
@@ -43598,7 +43662,8 @@
             "totalSkills": 334
           }
         ],
-        "totalSkills": 334
+        "totalSkills": 334,
+        "percentage": 100
       }
     ]
   }

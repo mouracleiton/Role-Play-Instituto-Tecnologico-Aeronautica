@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-53",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 346
+      "totalAtomicSkills": 346,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "AT-53",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-53"
     },
     "areas": [
       {
@@ -9634,6 +9640,13 @@
                                     "Omitir não negatividade.",
                                     "Escrever lim em vez de liminf.",
                                     "Inverter a desigualdade."
+                                  ],
+                                  "tips": [
+                                    "Visualize a desigualdade como 'integral do liminf ≤ liminf das integrais' para fixar a direção.",
+                                    "Use mnemônico: 'Fatou favorece o liminf inferior' para lembrar liminf, não lim.",
+                                    "Ao recitar, pause após hipóteses para enfatizar não negatividade e mensurabilidade.",
+                                    "Varie exemplos: probabilidade (μ(X)=1), Lebesgue em ℝ, para generalizar.",
+                                    "Escreva em LaTeX no Anki: \\int liminf f_n \\leq liminf \\int f_n."
                                   ]
                                 },
                                 {
@@ -13661,6 +13674,13 @@
                                   "commonMistakes": [
                                     "Assumir continuidade implica mensurável sem prova",
                                     "Esquecer casos α ≤ 0"
+                                  ],
+                                  "verification": [
+                                    "Confira explicitamente para cada α os conjuntos {f > α} e sua mensurabilidade.",
+                                    "Para f simples: todos {f > α} são união finita de A_k ∈ Α.",
+                                    "Função contínua: {f > α} = f^{-1}((α, ∞)) é Borel (aberto).",
+                                    "Contra-exemplo: f = 1_V com V conjunto Vitali não mensurável ⇒ {f > 1/2} = V ∉ Α.",
+                                    "Exercício: prove que f(x) = 0 se x racional, 1 se irracional é mensurável."
                                   ]
                                 },
                                 {
@@ -41900,6 +41920,22 @@
                                     "Discutir o que significa boundedness: ˆf é limitada por ||f||₁.",
                                     "Mencionar continuidade: Como convolução com kernel suave, mas focar na boundedness primeiro.",
                                     "Escrever a norma supremo: sup_ξ |ˆf(ξ)| ≤ ||f||₁."
+                                  ],
+                                  "verification": "Peça ao aluno para enunciar e justificar a desigualdade ||ˆf||_∞ ≤ ||f||_1. Verifique se menciona a integral da transformada de Fourier e a desigualdade triangular.",
+                                  "estimatedTime": "5 minutos",
+                                  "materials": [
+                                    "Definição da transformada de Fourier",
+                                    "Propriedades básicas de normas L^p"
+                                  ],
+                                  "tips": [
+                                    "Aplique a desigualdade triangular diretamente na definição da transformada: |ˆf(ξ)| = |∫ f(x) e^{-iξx} dx| ≤ ∫ |f(x)| dx.",
+                                    "Lembre-se: o expoente complexo tem módulo 1, então |e^{-iξx}| = 1."
+                                  ],
+                                  "learningObjective": "Compreender e enunciar a estimativa da norma L¹ para a transformada de Fourier, reconhecendo que ela implica que ˆf é limitada por ||f||_1.",
+                                  "commonMistakes": [
+                                    "Esquecer de considerar |e^{-iξx}| = 1 ao aplicar a desigualdade triangular.",
+                                    "Confundir as normas: usar L^2 ou L^∞ para f em vez de L^1.",
+                                    "Não estender para a norma supremo: parar em |ˆf(ξ)| ≤ ||f||_1 sem implicar boundedness global."
                                   ]
                                 },
                                 "verification",
@@ -44865,7 +44901,13 @@
                                     "Esquecer que a equação é em ℝ infinito, confundindo com condições periódicas",
                                     "Não verificar integrabilidade de f(x)",
                                     "Ignorar o fator de normalização na FT"
-                                  ]
+                                  ],
+                                  "tips": [
+                                    "Lembre-se de que a equação do calor em ℝ usa difusão sem fronteiras, justificando a FT direta.",
+                                    "Verifique sempre se ∫|f(x)|dx < ∞ para garantir convergência da FT.",
+                                    "Esboce graficamente f(x) e imagine sua 'suavização' pelo kernel gaussiano e^{-ξ²t} no domínio de Fourier."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de formular corretamente a equação do calor em domínio infinito, definir condições iniciais integráveis e justificar o uso da Transformada de Fourier para sua resolução."
                                 },
                                 {
                                   "stepNumber": 2,
@@ -45360,7 +45402,8 @@
             "totalSkills": 346
           }
         ],
-        "totalSkills": 346
+        "totalSkills": 346,
+        "percentage": 0
       }
     ]
   }

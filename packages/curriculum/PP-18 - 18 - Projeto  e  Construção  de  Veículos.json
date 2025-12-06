@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PP-18",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 337
+      "totalAtomicSkills": 337,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "PP-18",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PP-18"
     },
     "areas": [
       {
@@ -7098,6 +7104,21 @@
                                     "Exportar em PDF com marca d'água e assinatura digital.",
                                     "Arquivar versão final e distribuir.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Confirmação de completude: relatório em PDF com marca d'água, assinatura digital, feedback incorporado e versão final arquivada. Checklist de revisão 100% atendido.",
+                                  "estimatedTime": "3-4 horas",
+                                  "materials": [
+                                    "Checklist de revisão (template fornecido)",
+                                    "Software de PDF (Adobe Acrobat ou similar)",
+                                    "Ferramenta de assinatura digital (Gov.br ou DocuSign)",
+                                    "Versão draft do relatório"
+                                  ],
+                                  "tips": [
+                                    "Realize a revisão em etapas: conteúdo, formatação, cálculos e linguagem.\nPeça feedback específico de pelo menos duas pessoas.\nTeste a legibilidade do PDF em diferentes dispositivos.\nMantenha um log de alterações para rastreabilidade."
+                                  ],
+                                  "learningObjective": "Capacitar o participante a revisar, validar e finalizar relatórios profissionais com precisão, clareza e conformidade aos padrões institucionais do ITA.",
+                                  "commonMistakes": [
+                                    "Pular a verificação de consistência numérica e de unidades.\nIgnorar feedback de pares por pressa.\nEsquecer marca d'água ou assinatura digital no PDF.\nNão arquivar versão final com data e versão identificadas."
                                   ]
                                 },
                                 "estimatedTime: "
@@ -7112,7 +7133,27 @@
                                 "Pular feedback externo.",
                                 "Erros tipográficos persistentes.",
                                 "Não versionar arquivos."
-                              ]
+                              ],
+                              "practicalExample": "Elaboração de relatório sobre testes metrológicos em protótipo de suspensão veicular, identificando falha por fadiga em junta esférica, com análise de deformações (desvio de 15%), fotos de fratura e recomendação de redesign com material AISI 4340.",
+                              "finalVerifications": [
+                                "Relatório final em PDF com todas as seções completas, sumário atualizado e sem erros detectados.",
+                                "Aprovação por feedback de pares/mentor com checklist 100% atendido.",
+                                "Arquivamento em repositório com versionamento e distribuição para stakeholders."
+                              ],
+                              "assessmentCriteria": [
+                                "Completude estrutural: presença de todas as seções obrigatórias (30%)",
+                                "Precisão analítica: cálculos corretos e recomendações fundamentadas (30%)",
+                                "Qualidade visual e redação: clareza, formatação e integração multimídia (20%)",
+                                "Profundidade de análise: identificação de causas raiz e priorização (20%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica dos Materiais (análise de falhas)",
+                                "Medições e Instrumentação (dados metrológicos)",
+                                "Desenho Assistido por Computador (CAD/CAE)",
+                                "Estatística e Probabilidade (análise de desvios)",
+                                "Comunicação Técnica e Científica"
+                              ],
+                              "realWorldApplication": "Na engenharia aeroespacial e automotiva, este procedimento é usado para relatórios de certificação (ABNT NBR ISO 9001, ANAC), investigações de falhas em campo (ex: recalls veiculares) e otimização de protótipos em ciclos de PDCA."
                             },
                             "estimatedTime": "4 horas",
                             "difficulty": "intermediate",
@@ -11144,6 +11185,21 @@
                                   "materials": [
                                     "Dados de teste SAE Baja, software Rainflow (MATLAB Fatigue toolbox ou Python fatigue-life)",
                                     "Acelerômetro dados de veículos off-road"
+                                  ],
+                                  "tips": [
+                                    "Pré-processe os sinais de vibração removendo offsets, ruídos e tendências lineares antes do rainflow counting.",
+                                    "Valide o algoritmo de rainflow com sinais sinusoidais simples para garantir precisão.",
+                                    "Considere cargas multiaxiais (X, Y, Z) e combine-as usando critérios equivalentes como von Mises.",
+                                    "Utilize bibliotecas open-source como `rainflow` no Python ou MATLAB toolbox para automação eficiente.",
+                                    "Documente unidades consistentemente (ex: g para aceleração, N para força) em todo o espectro."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o estudante será capaz de caracterizar cargas e condições operacionais de veículos off-road, coletando dados de vibração, aplicando rainflow counting para extrair ciclos equivalentes e documentando o histórico de carga com a regra de Miner para previsão de dano cumulativo.",
+                                  "commonMistakes": [
+                                    "Não remover componentes de baixa frequência ou DC offset, levando a ciclos espúrios no rainflow.",
+                                    "Confundir 'range' com 'amplitude' na contagem de ciclos, subestimando picos reais.",
+                                    "Aplicar Miner's rule sem normalizar fatores de dano por ciclo, resultando em soma >1 prematuramente.",
+                                    "Ignorar ajustes para severidade off-road (ex: multiplicadores para saltos), invalidando o espectro.",
+                                    "Usar dados não calibrados de acelerômetros, gerando histogramas distorcidos."
                                   ]
                                 },
                                 "tips: "
@@ -11153,7 +11209,26 @@
                                 "Subestimar picos de impacto",
                                 "Não usar rainflow para cargas variáveis",
                                 "Ignorar direção da carga"
-                              ]
+                              ],
+                              "practicalExample": "Análise de fadiga no braço de suspensão de um veículo SAE Baja: coletar dados de vibração em pista off-road, aplicar rainflow counting e prever vida útil com curva S-N do material.",
+                              "finalVerifications": [
+                                "Simular vida útil de um componente off-road usando Miner's rule com espectro de carga real.",
+                                "Comparar resultados de fadiga com dados experimentais de testes SAE Baja.",
+                                "Elaborar relatório técnico com diagramas S-N, histograma de ciclos e recomendações de design."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na interpretação de curvas S-N e aplicação de critérios de falha (30%)",
+                                "Correta extração de ciclos via rainflow e cálculo de dano cumulativo (30%)",
+                                "Qualidade da documentação e análise de fatores influenciadores (20%)",
+                                "Verificação prática e identificação de erros comuns (20%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Mecânica dos Sólidos (tensões e deformações)",
+                                "Dinâmica e Vibrações (análise de cargas dinâmicas)",
+                                "Ciência dos Materiais (propriedades de fadiga)",
+                                "Projeto Mecânico (otimização de componentes)"
+                              ],
+                              "realWorldApplication": "Dimensionamento de componentes de suspensão e chassi para veículos off-road na indústria automotiva, como caminhões de mineração, tratores agrícolas e protótipos de competições SAE, garantindo durabilidade em condições extremas."
                             },
                             "estimatedTime": "3 horas",
                             "difficulty": "intermediate",
@@ -42716,6 +42791,12 @@
                                   "commonMistakes": [
                                     "Não rodar análise em configurações móveis",
                                     "Ignorar interferências pequenas que acumulam em montagem real"
+                                  ],
+                                  "verification": [
+                                    "Ausência total de interferências confirmada no relatório.",
+                                    "Alinhamentos dimensionais dentro das tolerâncias SAE (ex: coaxialidade < 0.1mm).",
+                                    "Graus de liberdade reduzidos a zero ou valores especificados (ver análise de mobilidade).",
+                                    "Relatórios de interferência, mass properties e vistas exploded gerados e salvos."
                                   ]
                                 }
                               ],
@@ -47243,7 +47324,8 @@
             "totalSkills": 337
           }
         ],
-        "totalSkills": 337
+        "totalSkills": 337,
+        "percentage": 0
       }
     ]
   }

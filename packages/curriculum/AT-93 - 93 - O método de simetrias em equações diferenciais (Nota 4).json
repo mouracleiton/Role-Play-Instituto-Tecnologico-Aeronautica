@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-93",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 282
+      "totalAtomicSkills": 282,
+      "startDate": "2025-02-17",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 8,
+      "version": "AT-93/2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-93"
     },
     "areas": [
       {
@@ -23406,7 +23412,8 @@
                                     "Não usar a EDP para reduzir termos",
                                     "Erros de cálculo em derivadas totais",
                                     "Ignorar termos de ordem superior"
-                                  ]
+                                  ],
+                                  "verification": "Implementar em SymPy: definir o lagrangiano, computar B^μ via Noether, derivadas totais, simplificar com E-L e verificar == 0; testar numericamente com solução exata."
                                 }
                               ],
                               "practicalExample": "Para a equação de transporte u_t + c u_x = 0 com lagrangiano L = u_t u_x (exemplo didático), dada simetria de translação ξ=1, η=0, derive B^t = -c u^2, B^x = u^2, verificando D_t B^t + D_x B^x = 0.",
@@ -33088,6 +33095,13 @@
                                   "learningObjective": "Identificar hierarquia: variacional ⊂ Lie clássica.",
                                   "commonMistakes": [
                                     "Achar equivalentes; esqueça direção da implicação"
+                                  ],
+                                  "tips": [
+                                    "Lembre a hierarquia: toda simetria variacional satisfaz a condição Lie clássica (Δ=0), mas nem toda Lie é variacional.",
+                                    "Verifique variacionalismo testando se δL = dF/dx para algum F.",
+                                    "Exemplo chave: em equações sem Lagrangiano (ex: algumas EDOs lineares), simetrias Lie existem mas não são variacionais.",
+                                    "Na tabela, use colunas: Definição, Condição de preservação, Teorema associado (Noether?), Exemplos.",
+                                    "Visualize: diagrama de Venn com variacional ⊂ Lie clássica."
                                   ]
                                 },
                                 {
@@ -36587,7 +36601,8 @@
             "totalSkills": 282
           }
         ],
-        "totalSkills": 282
+        "totalSkills": 282,
+        "percentage": 0
       }
     ]
   }

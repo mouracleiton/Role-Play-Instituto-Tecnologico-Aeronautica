@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EA-01",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 351
+      "totalAtomicSkills": 351,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EA-01"
     },
     "areas": [
       {
@@ -34445,7 +34451,34 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Antes de um voo de distância de 100km em planador, identifique riscos: sink rate alto em térmicas fracas (Prob 4, Sev 3 = Amarelo), colisão com pássaros em migração (Prob 2, Sev 5 = Vermelho). Priorize colisão definindo limite: não voar abaixo 800m em área de aves; para sink, planejar margem de 1000m extra. Decida prosseguir com mitigações."
+                                  "practicalExample": "Antes de um voo de distância de 100km em planador, identifique riscos: sink rate alto em térmicas fracas (Prob 4, Sev 3 = Amarelo), colisão com pássaros em migração (Prob 2, Sev 5 = Vermelho). Priorize colisão definindo limite: não voar abaixo 800m em área de aves; para sink, planejar margem de 1000m extra. Decida prosseguir com mitigações.",
+                                  "stepNumber": 4,
+                                  "title": "Análise de Riscos Pré-Voo em Planador",
+                                  "subSteps": [
+                                    "Identifique riscos potenciais para o voo planejado (ex.: sink rate alto, colisão com aves).",
+                                    "Avalie Probabilidade (1-5) e Severidade (1-5) para cada risco e classifique pela matriz de cores.",
+                                    "Priorize riscos pelo nível (Vermelho > Amarelo > Verde).",
+                                    "Defina mitigações específicas para cada risco priorizado.",
+                                    "Decida se prossegue com o voo, registrando a análise."
+                                  ],
+                                  "verification": "Aluno preenche matriz de riscos corretamente para o exemplo dado, priorizando colisão com aves (Vermelho) e propondo mitigações viáveis, como altitude mínima de 800m.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Matriz de risco (Prob x Sev)",
+                                    "Previsão meteorológica e mapa de térmicas",
+                                    "Informações sobre migração de aves na região"
+                                  ],
+                                  "tips": [
+                                    "Use dados reais de METAR/TAF e relatórios de aves para avaliações precisas.",
+                                    "Sempre inclua margem de segurança 20-30% extra nas mitigações.",
+                                    "Documente a análise para auditoria de segurança."
+                                  ],
+                                  "learningObjective": "Aplicar matriz de risco para identificar, classificar e mitigar perigos operacionais em voo de planador, priorizando ações baseadas em níveis de risco.",
+                                  "commonMistakes": [
+                                    "Ignorar riscos de baixa probabilidade mas alta severidade (ex.: colisão com aves).",
+                                    "Não priorizar riscos adequadamente, tratando todos igualmente.",
+                                    "Definir mitigações vagas sem limites quantitativos claros."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -34469,9 +34502,64 @@
                                     "Psicologia: Gerenciamento de vieses cognitivos em decisões.",
                                     "Estatística: Uso de dados históricos para probabilidades."
                                   ],
-                                  "realWorldApplication": "Pilotos de planadores e aviadores comerciais usam análise de risco pré-voo diariamente para cumprir regulamentações ANAC/FAA, reduzindo acidentes em 70% conforme estudos NTSB, decidindo cancelamentos em 20% dos casos por riscos elevados."
+                                  "realWorldApplication": "Pilotos de planadores e aviadores comerciais usam análise de risco pré-voo diariamente para cumprir regulamentações ANAC/FAA, reduzindo acidentes em 70% conforme estudos NTSB, decidindo cancelamentos em 20% dos casos por riscos elevados.",
+                                  "stepNumber": "5",
+                                  "title": "Análise Final de Riscos e Decisão Go/No-Go",
+                                  "subSteps": [
+                                    "Completar a matriz 5x5 plotando todos os riscos identificados.",
+                                    "Definir pelo menos 3 limites pessoais claros e mensuráveis (ex: altura mínima de 100m).",
+                                    "Documentar plano de mitigação para riscos prioritários (pontuação ≥15).",
+                                    "Justificar por escrito a decisão go/no-go com base na análise.",
+                                    "Atualizar a checklist pré-voo incorporando a análise de riscos."
+                                  ],
+                                  "verification": "Submissão e aprovação dos itens listados em finalVerifications pelo tutor.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Template da matriz 5x5",
+                                    "Lista de riscos do passo anterior",
+                                    "Dados meteorológicos e históricos de voo",
+                                    "Papel, caneta e computador para documentação"
+                                  ],
+                                  "tips": [
+                                    "Seja conservador na estimativa de probabilidades, usando dados históricos.",
+                                    "Limites pessoais devem ser específicos e mensuráveis para evitar ambiguidades.",
+                                    "Para decisão go/no-go, considere cenários worst-case.",
+                                    "Integre mitigações na checklist para uso prático.",
+                                    "Revise vieses cognitivos como excesso de confiança."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de realizar uma análise quantitativa de riscos com matriz 5x5, definir limites operacionais pessoais, elaborar planos de mitigação e tomar decisões go/no-go justificadas, aplicando ferramentas de gestão de riscos em projetos aeronáuticos.",
+                                  "commonMistakes": [
+                                    "Omitir riscos de baixa probabilidade mas alta severidade na matriz.",
+                                    "Definir limites vagos ou não mensuráveis (ex: 'vento fraco').",
+                                    "Não documentar mitigações para riscos prioritários.",
+                                    "Tomar decisão go/no-go sem base quantitativa ou justificativa escrita.",
+                                    "Checklist pré-voo não atualizada com novos riscos identificados."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Antes de um voo de distância de 100km em planador, identifique riscos: sink rate alto em térmicas fracas (Prob 4, Sev 3 = Amarelo), colisão com pássaros em migração (Prob 2, Sev 5 = Vermelho). Priorize colisão definindo limite: não voar abaixo 800m em área de aves; para sink, planejar margem de 1000m extra. Decida prosseguir com mitigações.",
+                              "finalVerifications": [
+                                "Matriz 5x5 completa com todos riscos plotados.",
+                                "Pelo menos 3 limites pessoais claros definidos (ex: altura mínima).",
+                                "Plano de mitigação para riscos prioritários documentado.",
+                                "Decisão go/no-go justificada por escrito.",
+                                "Checklist pré-voo atualizada com análise."
+                              ],
+                              "assessmentCriteria": [
+                                "Identificação abrangente de riscos (≥8 itens relevantes).",
+                                "Avaliação precisa e consistente de probabilidade/severidade.",
+                                "Priorização lógica baseada na matriz.",
+                                "Limites operacionais específicos e mensuráveis.",
+                                "Documentação clara e profissional."
+                              ],
+                              "crossCurricularConnections": [
+                                "Matemática: Cálculo probabilístico e multiplicação de matrizes.",
+                                "Física: Análise de forças aerodinâmicas e dinâmica de voo.",
+                                "Gestão de Projetos: Ferramentas de risco em engenharia.",
+                                "Psicologia: Gerenciamento de vieses cognitivos em decisões.",
+                                "Estatística: Uso de dados históricos para probabilidades."
+                              ],
+                              "realWorldApplication": "Pilotos de planadores e aviadores comerciais usam análise de risco pré-voo diariamente para cumprir regulamentações ANAC/FAA, reduzindo acidentes em 70% conforme estudos NTSB, decidindo cancelamentos em 20% dos casos por riscos elevados."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -45696,7 +45784,8 @@
             "totalSkills": 351
           }
         ],
-        "totalSkills": 351
+        "totalSkills": 351,
+        "percentage": 0
       }
     ]
   }

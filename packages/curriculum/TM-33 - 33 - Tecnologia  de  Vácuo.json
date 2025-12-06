@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - TM-33",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 329
+      "totalAtomicSkills": 329,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "TM-33",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - TM-33"
     },
     "areas": [
       {
@@ -5475,6 +5481,14 @@
                                   "tips": [
                                     "Integre com análise FEA se possível.",
                                     "Foco em estabilidade dimensional para vedações."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de avaliar a estabilidade térmica de componentes em câmaras de vácuo, calculando deformações e estresses induzidos por variações de temperatura (ΔT) e propondo mitigações para garantir integridade estrutural e vedação.",
+                                  "commonMistakes": [
+                                    "Ignorar restrições mecânicas em soldas ou flanges, levando a superestimação de deformações livres.",
+                                    "Usar valores inadequados de α (coeficiente de expansão térmica) para materiais específicos do vácuo.",
+                                    "Não considerar efeitos cumulativos de ciclos térmicos em bombas ou criostatos.",
+                                    "Confundir capacidade térmica específica (c) com condutividade térmica.",
+                                    "Omitir análise de FEA, resultando em avaliações imprecisas para geometrias complexas."
                                   ]
                                 }
                               ],
@@ -38100,6 +38114,13 @@
                                   "commonMistakes": [
                                     "Misturar Pirani com ionização (para alto vácuo)",
                                     "Subestimar importância de calibração"
+                                  ],
+                                  "verification": "Demonstrar compreensão descrevendo princípio de operação de um Pirani e uma válvula.",
+                                  "estimatedTime": "35 minutos",
+                                  "materials": [
+                                    "Diagramas de válvulas e manômetros",
+                                    "Tutoriais sobre sensores de vácuo",
+                                    "Simulador online de manômetros (se disponível)"
                                   ]
                                 },
                                 {
@@ -44853,7 +44874,8 @@
             "totalSkills": 329
           }
         ],
-        "totalSkills": 329
+        "totalSkills": 329,
+        "percentage": 0
       }
     ]
   }

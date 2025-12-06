@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-02",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 279
+      "totalAtomicSkills": 279,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": "8 hours/day",
+      "version": "2025-1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-02"
     },
     "areas": [
       {
@@ -11947,6 +11953,14 @@
                                     "Lições genéricas sem ancoragem nos casos",
                                     "Falta de auto-reflexão pessoal",
                                     "Princípios irrealistas sem contexto prático"
+                                  ],
+                                  "tips": [
+                                    "Use exemplos específicos dos casos do Step 3 para ancorar cada lição (ex: 'No caso X, transparência prevaleceu sobre segredo porque...')",
+                                    "Inclua perguntas de reflexão pessoal: 'Como eu agiria se fosse o único a saber dessa informação?'",
+                                    "Compare princípios éticos de diferentes códigos (NSPE vs ABEN) para identificar nuances aplicáveis ao seu contexto",
+                                    "Para cenários hipotéticos, liste stakeholders afetados e impacto de cada opção de ação",
+                                    "Formule princípios como verbetes positivos (ex: 'Proteger dados sensíveis através de...') em vez de proibições",
+                                    "Inclua no relatório um 'plano de ação pessoal' com 3 medidas práticas para aplicar esses princípios no dia-a-dia"
                                   ]
                                 }
                               ],
@@ -26749,7 +26763,8 @@
                                     "tips**: "
                                   ],
                                   "learningObjective": "Aplicar teoria à prática para desenvolver raciocínio ético contextual",
-                                  "commonMistakes": "Descrever o caso sem conectar explicitamente às teorias"
+                                  "commonMistakes": "Descrever o caso sem conectar explicitamente às teorias",
+                                  "tips": "Sempre conecte decisões específicas do caso a princípios centrais da teoria escolhida (ex: consequências no utilitarismo). Compare como diferentes teorias avaliariam o mesmo cenário para mostrar nuances éticas. Use exemplos concretos do caso para ilustrar a aplicação de cada conceito teórico. Inclua uma análise de por que certas alternativas éticas não foram consideradas na prática. Mantenha o foco na integração teoria-prática, evitando descrições puramente narrativas do caso."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -35974,7 +35989,8 @@
             "totalSkills": 279
           }
         ],
-        "totalSkills": 279
+        "totalSkills": 279,
+        "percentage": 100
       }
     ]
   }

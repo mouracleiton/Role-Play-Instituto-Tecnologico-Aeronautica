@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - RJ-70",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 359
+      "totalAtomicSkills": 359,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "RJ-70",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - RJ-70"
     },
     "areas": [
       {
@@ -38154,9 +38160,69 @@
                                     "Gestão de Dados (Análise estatística e visualização).",
                                     "Engenharia Mecânica (Calibração de sensores e automação)."
                                   ],
-                                  "realWorldApplication": "Garante a integridade estrutural de componentes aeronáuticos como asas e fuselagens em fabricantes como Boeing e Airbus, prevenindo falhas catastróficas em voo ao validar cura uniforme de compósitos sob condições extremas de pressão e temperatura."
+                                  "realWorldApplication": "Garante a integridade estrutural de componentes aeronáuticos como asas e fuselagens em fabricantes como Boeing e Airbus, prevenindo falhas catastróficas em voo ao validar cura uniforme de compósitos sob condições extremas de pressão e temperatura.",
+                                  "stepNumber": 4,
+                                  "title": "Configuração de Sensores e Monitoramento do Ciclo de Cura em Autoclave",
+                                  "subSteps": [
+                                    "1. Posicionar sensores de temperatura (termopares tipo K), pressão e vácuo no molde do painel de fuselagem conforme layout técnico.",
+                                    "2. Calibrar sensores com padrões NIST e registrar IDs e posições no formulário de setup.",
+                                    "3. Conectar ao sistema de aquisição de dados (DAQ) e realizar teste de integridade com sinal de 1 Hz.",
+                                    "4. Iniciar ciclo: aplicar vácuo inicial de -0.9 bar, rampagem para 180°C/6 bar em 30 min, manter por 2h, resfriamento controlado.",
+                                    "5. Monitorar perfis em tempo real via software, registrar todos os dados e alertar desvios >3°C.",
+                                    "6. Ao final, validar conformidade, gerar gráficos de sobreposição e arquivar relatório."
+                                  ],
+                                  "verification": "Perfis térmicos, de pressão e vácuo registrados sem lacunas; desvios máximos <3°C em temperatura e <0.5 bar em pressão; relatório gerado e assinado.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Autoclave industrial ou piloto (capacidade para painel 1x1m).",
+                                    "Sensores: 8 termopares tipo K, 2 transdutores de pressão (0-10 bar), 1 vacuômetro.",
+                                    "Sistema DAQ (ex: NI cDAQ com LabVIEW).",
+                                    "Pré-preg de carbono/epóxi (painel de fuselagem simulado).",
+                                    "Molde de alumínio com bolsa de vácuo.",
+                                    "Luvas térmicas, EPI completo e software de análise (Excel ou MATLAB)."
+                                  ],
+                                  "tips": [
+                                    "Realize purge de ar antes do vácuo para evitar bolhas.",
+                                    "Use canais redundantes para sensores críticos.",
+                                    "Monitore bateria do DAQ e backup de dados a cada 30 min.",
+                                    "Compare perfis com curvas de referência do fabricante (ex: Hexcel).",
+                                    "Documente ambiente: umidade <50%, temperatura sala 23°C."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de configurar sensores, monitorar e validar ciclos de cura de compósitos em autoclave, garantindo rastreabilidade de dados e conformidade com especificações aeronáuticas (ex: ABNT NBR 14564).",
+                                  "commonMistakes": [
+                                    "Conexões soltas causando perda de dados (>10% lacunas).",
+                                    "Calibração inadequada levando a desvios >5°C.",
+                                    "Ignorar rampagem lenta, causando gradientes térmicos >10°C.",
+                                    "Falta de backup, perda de perfis críticos.",
+                                    "Não registrar IDs de sensores, violando rastreabilidade."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Em uma linha de produção de painéis de fuselagem de compósito de carbono para aeronaves Embraer, configure sensores para um ciclo de 180°C/6 bar/2h com vácuo inicial de -0.9 bar, registre todos os perfis e valide desvios <3°C em temperatura para aprovar a peça.",
+                              "finalVerifications": [
+                                "Perfis de temperatura, pressão e vácuo registrados integralmente sem lacunas de dados.",
+                                "Desvios máximos dentro de tolerâncias da documentação (ex: ±5°C, ±0.5 bar).",
+                                "Sensores calibrados e IDs documentados.",
+                                "Ausência de alarmes não resolvidos durante o ciclo.",
+                                "Peça inspecionada e liberada sem defeitos visíveis.",
+                                "Relatório arquivado no sistema de qualidade."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão de registros: 100% dos dados capturados em intervalos corretos.",
+                                "Resposta a anomalias: tempo <2 minutos com ação documentada.",
+                                "Conformidade com documentação: desvios médios <2%.",
+                                "Qualidade da análise: gráficos legíveis com sobreposições claras.",
+                                "Documentação completa: todos os logs assinados e rastreáveis.",
+                                "Seguridade: zero incidentes ou violações de protocolo."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física (Termodinâmica: transferência de calor e gases comprimidos).",
+                                "Química (Polimerização: cinética de cura de resinas epóxi em pré-pregs).",
+                                "Segurança Industrial (Gestão de riscos em alta pressão).",
+                                "Gestão de Dados (Análise estatística e visualização).",
+                                "Engenharia Mecânica (Calibração de sensores e automação)."
+                              ],
+                              "realWorldApplication": "Garante a integridade estrutural de componentes aeronáuticos como asas e fuselagens em fabricantes como Boeing e Airbus, prevenindo falhas catastróficas em voo ao validar cura uniforme de compósitos sob condições extremas de pressão e temperatura."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "advanced",
@@ -49267,7 +49333,8 @@
             "totalSkills": 359
           }
         ],
-        "totalSkills": 359
+        "totalSkills": 359,
+        "percentage": 0
       }
     ]
   }

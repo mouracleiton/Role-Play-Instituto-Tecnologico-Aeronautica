@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - EB-32",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 340
+      "totalAtomicSkills": 340,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - EB-32"
     },
     "areas": [
       {
@@ -11942,10 +11948,55 @@
                                     "Calcule massa de ar usando equação de vazão volumétrica e densidade.",
                                     "Registre coordenadas exatas (DBT, WBT, HR) para precisão.",
                                     "verification\": "
+                                  ],
+                                  "verification": [
+                                    "Pontos de ar externo e interno corretamente plotados no diagrama.",
+                                    "Valores de razão de umidade e entalpia lidos com precisão das curvas.",
+                                    "Cálculo de massa de ar consistente com vazão e densidade.",
+                                    "Coordenadas (DBT, WBT, HR) registradas com exatidão."
+                                  ],
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Diagrama psicrométrico em escala adequada",
+                                    "Dados de entrada (temperatura, umidade relativa, vazões)",
+                                    "Régua, lápis e calculadora",
+                                    "Folha para registros"
+                                  ],
+                                  "tips": [
+                                    "Use uma régua para interpolar valores entre curvas com precisão.",
+                                    "Confira a escala do diagrama (geralmente em °C e kJ/kg).",
+                                    "Anote referências visuais para facilitar traçados futuros."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de localizar e plotar condições iniciais de ar externo e interno no diagrama psicrométrico, extrair propriedades termodinâmicas essenciais (razão de umidade, entalpia) e calcular massa de ar para análises de ventilação e infiltração.",
+                                  "commonMistakes": [
+                                    "Confundir temperatura de bulbo seco (DBT) com bulbo úmido (WBT).",
+                                    "Ler valores incorretos das curvas devido à falta de interpolação.",
+                                    "Usar densidade errada (considere densidade do ar úmido ≈ 1,2 kg/m³).",
+                                    "Ignorar a umidade relativa ao plotar os pontos iniciais."
                                   ]
                                 },
                                 "verification\": "
-                              ]
+                              ],
+                              "practicalExample": "Exemplo prático: Calcule a carga latente para uma sala de 100 m² com temperatura interna de 24°C (50% UR), externa de 32°C (70% UR), vazão de infiltração de 0,5 ACH (air changes per hour), volume da sala 300 m³ e h_fg = 2450 kJ/kg. Passos: 1) Plote pontos no psicrômetro; 2) ΔW = 0,012 - 0,008 kg/kg; 3) m_ar = (0,5 * 300 * 1,2)/3600 kg/s; 4) Q_lat = m_ar * ΔW * h_fg ≈ 1,2 kW.",
+                              "finalVerifications": [
+                                "Plote e interprete um processo de resfriamento com desumidificação no diagrama psicrométrico.",
+                                "Calcule carga latente total considerando infiltração e ventilação para dados fornecidos.",
+                                "Responda: Qual o impacto de uma umidade relativa externa de 90% na carga latente?",
+                                "Autoavaliação: Explique 3 fontes comuns de ganho de umidade em edifícios."
+                              ],
+                              "assessmentCriteria": {
+                                "Compreensão conceitual": "80% de acerto em conceitos psicrométricos (propriedades e processos).",
+                                "Cálculos precisos": "Erro <5% em cargas térmicas calculadas.",
+                                "Aplicação prática": "Uso correto do diagrama e equações em exemplos reais.",
+                                "Análise crítica": "Identificação de erros comuns e fontes de umidade."
+                              },
+                              "crossCurricularConnections": [
+                                "Termodinâmica: Estados termodinâmicos do ar úmido.",
+                                "Mecânica dos Fluidos: Vazão e densidade de ar.",
+                                "Engenharia Arquitetônica: Cargas térmicas em edifícios.",
+                                "Eficiência Energética: Otimização de sistemas HVAC."
+                              ],
+                              "realWorldApplication": "Dimensionamento de sistemas de ar condicionado em edifícios comerciais e residenciais, controle de umidade em hospitais e indústrias farmacêuticas, conformidade com normas ABNT NBR 16401 e eficiência energética em projetos sustentáveis."
                             },
                             "estimatedTime": "1.5 horas",
                             "difficulty": "intermediate",
@@ -20099,7 +20150,8 @@
                                   "materials": "Planilha comparativa, gráficos de performance de válvulas de sites técnicos.",
                                   "tips": "Use analogia: TXV como termostato automático, EXV como app smart.",
                                   "learningObjective": "Diferenciar capacidades de controle e precisão de cada válvula sob variações de carga.",
-                                  "commonMistakes": "Ignorar que boia não responde a superheat, levando a inundações."
+                                  "commonMistakes": "Ignorar que boia não responde a superheat, levando a inundações.",
+                                  "verification": "Preencha a matriz comparativa e responda: 'Qual dispositivo oferece melhor precisão em cargas baixas e por quê?' (Resposta esperada: EXV, controle eletrônico variável permite ajustes finos independentes de superheat). Avalie acurácia ≥80%."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -23153,7 +23205,13 @@
                                   " materials ": " Tabela de propriedades termodinâmicas do refrigerante, calculadora. ",
                                   " tips ": " Use valores numéricos de exemplo para fixar (ex: R-410A a 40 bar). ",
                                   " learningObjective ": " Articular qualitativa e quantitativamente as mudanças termodinâmicas. ",
-                                  " commonMistakes ": " Dizer que pressão muda (é isobárica) ou que T aumenta. "
+                                  " commonMistakes ": " Dizer que pressão muda (é isobárica) ou que T aumenta. ",
+                                  "verification": "O aluno descreve corretamente as mudanças de T, P e h nas fases de desuperheating, condensação e subcooling, calcula Δh total e relaciona com Q rejeitado (erro < 5%).",
+                                  "estimatedTime": "25 minutos",
+                                  "materials": "Tabela de propriedades termodinâmicas do refrigerante, calculadora.",
+                                  "tips": "Use valores numéricos de exemplo para fixar (ex: R-410A a 40 bar).",
+                                  "learningObjective": "Articular qualitativa e quantitativamente as mudanças de entalpia, pressão e temperatura no condensador.",
+                                  "commonMistakes": "Dizer que pressão muda (é isobárica) ou que T aumenta."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -23496,6 +23554,23 @@
                                     "Discutir limpeza: placas removíveis para fácil manutenção.",
                                     "Comparar dimensões: ideais para chillers compactos em edifícios.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Explique a estrutura de um condensador de placa e liste duas vantagens em relação aos condensadores de casco e tubos.",
+                                  "estimatedTime": "20 minutos",
+                                  "materials": [
+                                    "Diagrama esquemático de condensador de placa",
+                                    "Texto sobre trocadores de calor de placas (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Consulte diagramas para visualizar canais alternados de refrigerante e água.",
+                                    "Compare dimensões com condensadores shell-and-tube para reforçar vantagens.",
+                                    "Anote exemplos de chillers compactos em edifícios."
+                                  ],
+                                  "learningObjective": "Compreender a estrutura, vantagens compactas, configurações de fluxo, manutenção e aplicações de condensadores de placa em sistemas de refrigeração.",
+                                  "commonMistakes": [
+                                    "Confundir fluxo contracorrente com paralelo, reduzindo compreensão de eficiência.",
+                                    "Subestimar a área superficial efetiva devido às corrugações das placas.",
+                                    "Ignorar a facilidade de limpeza como fator chave para manutenção."
                                   ]
                                 },
                                 "estimatedTime]: "
@@ -23514,7 +23589,26 @@
                                 "Casos de uso: chillers centrais em shoppings vs. unidades menores."
                               ],
                               "verification": "Criar tabela comparativa com prós/contras e explicar oralmente.",
-                              "estimatedTime": "50 minutos"
+                              "estimatedTime": "50 minutos",
+                              "practicalExample": "Montagem de um modelo reduzido de condensador casco e tubos usando tubos de PVC e água tingida para visualizar fluxos contracorrentes, medindo ΔT com termômetros.",
+                              "finalVerifications": [
+                                "Elaborar relatório comparativo dos tipos de condensadores com diagramas e cálculos de eficiência.",
+                                "Simular falha de incrustação e propor solução de manutenção.",
+                                "Apresentação oral de 5 minutos sobre integração com torres de resfriamento."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual (30%): Definições e diferenças corretas.",
+                                "Análise técnica (30%): Cálculos e diagramas precisos.",
+                                "Aplicação prática (20%): Trade-offs e casos reais bem argumentados.",
+                                "Clareza e organização (20%): Relatório e apresentação estruturados."
+                              ],
+                              "crossCurricularConnections": [
+                                "Termodinâmica: Leis de transferência de calor e ciclos de refrigeração.",
+                                "Mecânica dos Fluidos: Fluxos contracorrentes e perdas por atrito.",
+                                "Engenharia Ambiental: Consumo de água e impacto em torres de resfriamento.",
+                                "Manutenção Industrial: Prevenção de incrustações e eficiência energética."
+                              ],
+                              "realWorldApplication": "Chillers centrais em shoppings, hospitais e data centers, onde condensadores resfriados a água otimizam COP em cargas altas, reduzindo custos energéticos em comparação a sistemas ar-resfriados."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -24378,6 +24472,13 @@
                                   "commonMistakes": [
                                     "Confundir com válvulas solenoides",
                                     "Ignorar necessidade de carga de bulbo"
+                                  ],
+                                  "tips": [
+                                    "Verifique a integridade do bulbo sensor antes de qualquer teste, pois vazamentos invalidam o funcionamento.",
+                                    "Fixe o bulbo no tubo de sucção com braçadeiras adequadas para contato térmico perfeito.",
+                                    "Ajuste o super aquecimento medindo temperaturas de sucção e evaporador com termômetros precisos.",
+                                    "Evite exposições a temperaturas extremas durante armazenamento da válvula.",
+                                    "Consulte o manual do fabricante para valores exatos de super aquecimento recomendados."
                                   ]
                                 },
                                 {
@@ -28154,6 +28255,24 @@
                                     "Calcule redução: HCFC reduz ODP em 80-99% vs. CFC.",
                                     "Debata limitações: HCFC ainda fase-out por Montreal.",
                                     "verification: "
+                                  ],
+                                  "verification": "Aluno apresenta tabela comparativa completa (ODP, estabilidade, usos) e explica redução de ODP com cálculo (ex: 94,5% para CFC-12 vs. HCFC-22), além de discutir fase-out no Protocolo de Montreal.",
+                                  "estimatedTime": "20-25 minutos",
+                                  "materials": [
+                                    "Tabelas de ODP (ex: CFC-12=1.0, HCFC-22=0.055) de fontes como EPA ou UNEP",
+                                    "Resumo do Protocolo de Montreal e Emendas (fase-out de HCFC)",
+                                    "Calculadora para reduções percentuais"
+                                  ],
+                                  "tips": [
+                                    "Use dados padronizados de ODP para precisão quantitativa.",
+                                    "Destaque HCFC como 'transitórios': reduzem dano, mas não eliminam.",
+                                    "Inclua gráficos na tabela para visualização qualitativa."
+                                  ],
+                                  "learningObjective": "Comparar CFC e HCFC por ODP, estabilidade e usos, avaliando HCFC como substituto transitório no Protocolo de Montreal e calculando reduções de impacto.",
+                                  "commonMistakes": [
+                                    "Confundir ODP de HCFC como zero (é baixo, mas >0).",
+                                    "Ignorar que HCFC também estão em fase-out (até 2030 em países desenvolvidos).",
+                                    "Focar só em qualitativo, sem cálculos quantitativos de redução."
                                   ]
                                 },
                                 "verificationPreencha uma tabela comparativa com 3 pares CFC/HCFC, incluindo ODP e razões.",
@@ -28169,7 +28288,28 @@
                               "commonMistakes": [
                                 "Generalizar sem dados numéricos",
                                 "Esquecer contexto histórico de substituição"
-                              ]
+                              ],
+                              "practicalExample": "Simule a transição de um sistema de refrigeração industrial: Calcule o ODP total de 100 kg de CFC-12 (ODP=1.0) vs. substituição por HCFC-22 (ODP=0.055), demonstrando redução de 94,5% no potencial de depleção, usando dados reais de um supermercado brasileiro.",
+                              "finalVerifications": [
+                                "Preencha uma tabela comparativa com 3 pares CFC/HCFC, incluindo ODP, estruturas químicas e razões para ODP menor em HCFC.",
+                                "Desenhe um fluxograma mostrando a decomposição atmosférica de CFC vs. HCFC.",
+                                "Explique em 200 palavras por que HCFC foram substitutos transitórios no Protocolo de Montreal."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão das estruturas químicas e fórmulas (25%)",
+                                "Compreensão correta de ODP e mecanismos (30%)",
+                                "Qualidade da tabela comparativa e cálculos (20%)",
+                                "Clareza na explicação de diferenças e implicações (15%)",
+                                "Uso adequado de materiais e referências (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Química Orgânica: Estruturas halogenadas e reatividade.",
+                                "Química Ambiental: Ciclos atmosféricos e radicais livres.",
+                                "Física: Termodinâmica de refrigeração.",
+                                "História e Geopolítica: Protocolo de Montreal e acordos internacionais.",
+                                "Sustentabilidade: ODS 13 (Ação contra a Mudança Global do Clima)."
+                              ],
+                              "realWorldApplication": "Na indústria de refrigeração brasileira, a substituição de CFC por HCFC reduziu emissões de cloro na estratosfera em 90% desde 1996, contribuindo para a recuperação da camada de ozônio (relatório NASA 2023). Profissionais usam esses conceitos para cumprir metas do Protocolo de Montreal e planejar migração para HFC de baixo GWP."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -30010,7 +30150,8 @@
                                   "materials": "Diagramas P-h (software REFPROP ou CoolPack gratuito), tabelas termodinâmicas, calculadora",
                                   "tips": "Foquem em aplicações específicas: R-22 para AC split vs. R-290 para chillers pequenos",
                                   "learningObjective": "Avaliar trade-offs eficiência vs. impacto ambiental",
-                                  "commonMistakes": "Ignorar glide de temperatura em blends como HFC-410A; superestimar COP sem condições operacionais"
+                                  "commonMistakes": "Ignorar glide de temperatura em blends como HFC-410A; superestimar COP sem condições operacionais",
+                                  "verification": "Apresente tabela comparativa de propriedades termodinâmicas (Tb, COP relativo) para R-22 e HFC-410A, com cálculo de eficiência relativa em condições típicas (Te=5°C, Tc=50°C), e discuta trade-offs ambientais (GWP). Critério: variação COP >10% superior para HFC-410A, com justificativa."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -44074,7 +44215,8 @@
             "totalSkills": 340
           }
         ],
-        "totalSkills": 340
+        "totalSkills": 340,
+        "percentage": 0
       }
     ]
   }

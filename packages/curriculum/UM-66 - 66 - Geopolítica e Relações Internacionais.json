@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-66",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 367
+      "totalAtomicSkills": 367,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-UM-66",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-66"
     },
     "areas": [
       {
@@ -10432,9 +10438,60 @@
                                     "Estratégia Militar: Doutrinas de controle territorial.",
                                     "Economia: Recursos naturais do Heartland (petróleo, gás)."
                                   ],
-                                  "realWorldApplication": "A teoria explica estratégias russas na Ucrânia e chinesas na Ásia Central (Belt and Road), ajudando a prever tensões OTAN-Rússia e políticas energéticas globais."
+                                  "realWorldApplication": "A teoria explica estratégias russas na Ucrânia e chinesas na Ásia Central (Belt and Road), ajudando a prever tensões OTAN-Rússia e políticas energéticas globais.",
+                                  "stepNumber": 4,
+                                  "title": "Simulação de Jogo de Tabuleiro: Controle do Heartland",
+                                  "subSteps": [
+                                    "1. Divida a turma em grupos de 4-6 jogadores e distribua mapas da Eurásia destacando Heartland e World Island.",
+                                    "2. Explique as regras: jogadores usam peões para disputar controle territorial; quem domina Heartland controla o World Island.",
+                                    "3. Simule cenários específicos, como 'Rússia expande para Ucrânia', registrando movimentos e decisões estratégicas.",
+                                    "4. Analise resultados globais em plenária: impactos em OTAN, China e equilíbrio de poder.",
+                                    "5. Registre lições aprendidas em relatório de grupo."
+                                  ],
+                                  "verification": "Observar participação ativa nos grupos e respostas orais a perguntas como: 'Por que o Heartland é pivotal?' e 'Qual o risco de expansão russa?'",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Mapa impresso ou digital da Eurásia (Heartland destacado)",
+                                    "Peões, fichas ou dados para simulação",
+                                    "Marcadores e papel para anotações",
+                                    "Projetor para cenários (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Use um cronômetro para turnos curtos (5 min) e incentive debates acalorados mas respeitosos.",
+                                    "Adapte dificuldade: grupos avançados incluem variáveis como alianças OTAN.",
+                                    "Conecte à atualidade para engajar alunos."
+                                  ],
+                                  "learningObjective": "Aplicar a teoria do Heartland de Mackinder em simulação estratégica, compreendendo dinâmicas causais de controle territorial e suas implicações globais.",
+                                  "commonMistakes": [
+                                    "Confundir Heartland (pivot eurasiático) com World Island (totalidade terrestre).",
+                                    "Ignorar fatores navais ou econômicos além do controle territorial.",
+                                    "Focar apenas em conquistas militares sem analisar resultados de longo prazo."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Simule um jogo de tabuleiro onde jogadores competem pelo controle do Heartland usando peões para World Island; analise cenários como 'Rússia expande para Ucrânia' e resultados globais.",
+                              "finalVerifications": [
+                                "Explica com precisão Heartland vs. World Island.",
+                                "Resume lógica causal em 3 frases.",
+                                "Identifica 3 implicações para jogos de poder atuais.",
+                                "Critica pelo menos 2 limitações da tese.",
+                                "Aplica a um evento real (e.g., invasão Ucrânia 2022)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão conceitual (20%)",
+                                "Profundidade de análise causal (25%)",
+                                "Uso de evidências/mapa (20%)",
+                                "Crítica equilibrada (20%)",
+                                "Clareza e estrutura (15%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "História: Impacto em WWII e Guerra Fria.",
+                                "Geografia Física: Regiões e climas da Eurásia.",
+                                "Relações Internacionais: Teorias realistas de poder.",
+                                "Estratégia Militar: Doutrinas de controle territorial.",
+                                "Economia: Recursos naturais do Heartland (petróleo, gás)."
+                              ],
+                              "realWorldApplication": "A teoria explica estratégias russas na Ucrânia e chinesas na Ásia Central (Belt and Road), ajudando a prever tensões OTAN-Rússia e políticas energéticas globais."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -12451,7 +12508,35 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Analise como os avanços em propulsão hipersônica de Vale Rosa influenciam a estratégia da China no Mar do Sul da China, simulando respostas dos EUA via alianças como QUAD, prevendo shifts de poder naval para espacial."
+                                  "practicalExample": "Analise como os avanços em propulsão hipersônica de Vale Rosa influenciam a estratégia da China no Mar do Sul da China, simulando respostas dos EUA via alianças como QUAD, prevendo shifts de poder naval para espacial.",
+                                  "stepNumber": 5,
+                                  "title": "Análise Geopolítica: Avanços em Propulsão Hipersônica e Estratégias Indo-Pacíficas",
+                                  "subSteps": [
+                                    "Pesquise os avanços tecnológicos no projeto de propulsão hipersônica Vale Rosa e suas capacidades operacionais.",
+                                    "Avalie o impacto desses avanços na estratégia naval chinesa no Mar do Sul da China, considerando projeção de poder e dissuasão.",
+                                    "Simule respostas estratégicas dos EUA via alianças como QUAD (EUA, Japão, Índia, Austrália), incluindo exercícios conjuntos e contramedidas.",
+                                    "Preveja shifts no equilíbrio de poder, de domínio naval para superioridade espacial, com cenários alternativos."
+                                  ],
+                                  "verification": "Submissão de relatório analítico (800-1200 palavras) ou apresentação em slides (8-12), com referências bibliográficas e simulações de cenários.",
+                                  "estimatedTime": "90 minutos",
+                                  "materials": [
+                                    "Acesso à internet (fontes: CSIS, RAND, Jane's Defence, relatórios oficiais chineses/EUA)",
+                                    "Mapas interativos do Mar do Sul da China (Google Earth ou similares)",
+                                    "Documentos sobre QUAD e tecnologias hipersônicas (PDFs acadêmicos)"
+                                  ],
+                                  "tips": [
+                                    "Priorize fontes primárias e think tanks para evitar viés midiático.",
+                                    "Use frameworks como SWOT ou análise de jogos para simulações.",
+                                    "Integre variáveis não-militares: economia, diplomacia e tratados internacionais.",
+                                    "Visualize shifts com diagramas de equilíbrio de poder (naval vs. espacial)."
+                                  ],
+                                  "learningObjective": "Compreender e analisar como avanços em propulsão hipersônica influenciam estratégias geopolíticas regionais, simulando respostas de atores globais e prevendo transições de poder naval para espacial.",
+                                  "commonMistakes": [
+                                    "Ignorar capacidades defensivas existentes dos EUA em hipersônica (ex: programas AGM-183A).",
+                                    "Focar excessivamente em cenários catastróficos sem probabilidades baseadas em dados.",
+                                    "Não contextualizar historicamente disputas no Mar do Sul da China (ex: Código de Conduta ASEAN-China).",
+                                    "Subestimar o papel de aliados QUAD além dos EUA."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -12460,6 +12545,41 @@
                                     "Descreva uma estratégia proposta e por quê ela é viável.",
                                     "Simule um contra-argumento de outro ator.",
                                     "Identifique 2 conexões éticas ou riscos globais."
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Síntese Crítica: Avanços Aeroespaciais em Vale Rosa e Implicações Geopolíticas",
+                                  "subSteps": [
+                                    "Revise os principais avanços aeroespaciais identificados em Vale Rosa.",
+                                    "Analise os impactos geopolíticos desses avanços com evidências.",
+                                    "Identifique mudanças paradigmáticas e avalie estratégias propostas.",
+                                    "Simule contra-argumentos e discuta conexões éticas ou riscos globais."
+                                  ],
+                                  "verification": [
+                                    "Pode listar 3 avanços aeroespaciais chave de Vale Rosa e seu impacto geopolítico?",
+                                    "Explique uma mudança paradigmática identificada com evidências.",
+                                    "Descreva uma estratégia proposta e por quê ela é viável.",
+                                    "Simule um contra-argumento de outro ator.",
+                                    "Identifique 2 conexões éticas ou riscos globais."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Notas das etapas anteriores do módulo UM-66",
+                                    "Relatórios e artigos sobre avanços aeroespaciais em Vale Rosa",
+                                    "Referências bibliográficas do catálogo de graduação 2025"
+                                  ],
+                                  "tips": [
+                                    "Baseie respostas em evidências concretas e fontes confiáveis.",
+                                    "Estruture argumentos com introdução, desenvolvimento e conclusão.",
+                                    "Considere perspectivas múltiplas para enriquecer a análise.",
+                                    "Use linguagem técnica precisa, alinhada ao padrão ITA."
+                                  ],
+                                  "learningObjective": "Ao final desta etapa, o aluno será capaz de sintetizar avanços aeroespaciais chave de Vale Rosa, analisar seus impactos geopolíticos, identificar mudanças paradigmáticas, propor e criticar estratégias, e conectar com questões éticas e riscos globais, demonstrando pensamento crítico avançado.",
+                                  "commonMistakes": [
+                                    "Listar avanços sem explicar impactos geopolíticos específicos.",
+                                    "Omitir evidências ou fontes para mudanças paradigmáticas.",
+                                    "Propor estratégias sem justificar viabilidade técnica ou política.",
+                                    "Ignorar contra-argumentos de atores internacionais.",
+                                    "Não identificar conexões claras com ética ou riscos globais."
                                   ]
                                 },
                                 {
@@ -12469,6 +12589,38 @@
                                     "Qualidade da aplicação de frameworks (SWOT, jogos): 25%",
                                     "Criatividade e realismo nas propostas: 20%",
                                     "Clareza e estrutura do relatório final: 15%"
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Elaboração do Relatório Final de Análise Estratégica",
+                                  "subSteps": [
+                                    "Realize pesquisa aprofundada com fontes diversas e cite-as adequadamente",
+                                    "Identifique precisamente os atores envolvidos e seus interesses",
+                                    "Aplique frameworks como SWOT e teoria dos jogos de forma rigorosa",
+                                    "Desenvolva propostas criativas, realistas e viáveis",
+                                    "Estruture o relatório com clareza, incluindo introdução, análise, propostas e conclusão"
+                                  ],
+                                  "verification": "Submissão do relatório final via plataforma do curso, avaliado conforme critérios de avaliação (nota mínima 7,0)",
+                                  "estimatedTime": "20 horas",
+                                  "materials": [
+                                    "Acesso à biblioteca digital da UM",
+                                    "Templates de SWOT e matriz de jogos (disponíveis no Moodle)",
+                                    "Ferramentas de edição de texto (Word/Google Docs)",
+                                    "Fontes acadêmicas e relatórios setoriais"
+                                  ],
+                                  "tips": [
+                                    "Use pelo menos 10 fontes variadas (artigos, livros, relatórios oficiais)",
+                                    "Valide propostas com dados reais do setor analisado",
+                                    "Revise o relatório com antecedência para garantir clareza",
+                                    "Inclua gráficos e tabelas para ilustrar análises",
+                                    "Peça feedback de pares antes da submissão final"
+                                  ],
+                                  "learningObjective": "Integrar pesquisa, análise estratégica (SWOT, atores e jogos) e propostas inovadoras em um relatório profissional e estruturado.",
+                                  "commonMistakes": [
+                                    "Uso de fontes não confiáveis ou falta de citações",
+                                    "Identificação superficial de atores sem análise de interesses",
+                                    "Aplicação mecânica de frameworks sem contextualização",
+                                    "Propostas irrealistas ou genéricas",
+                                    "Relatório desorganizado ou com erros gramaticais"
                                   ]
                                 },
                                 {
@@ -12478,12 +12630,88 @@
                                     "História (Comparar com Guerra Fria espacial)",
                                     "Economia (Investimentos em Vale Rosa e comércio global)",
                                     "Ética/Filosofia (Dilemas morais em poder espacial)"
+                                  ],
+                                  "stepNumber": 6,
+                                  "title": "Conexões Interdisciplinares: Corrida Espacial no Currículo",
+                                  "subSteps": [
+                                    "Analise as conexões com Ciências: estude Física aeroespacial e tecnologias de satélites.",
+                                    "Explore Tecnologia: discuta Engenharia de foguetes e IA em estratégias espaciais.",
+                                    "Compare com História: relacione à Guerra Fria espacial.",
+                                    "Investigue Economia: examine investimentos em Vale Rosa e comércio global.",
+                                    "Debata Ética/Filosofia: discuta dilemas morais em poder espacial."
+                                  ],
+                                  "verification": "O aluno apresenta um mapa conceitual ou relatório com pelo menos 4 conexões interdisciplinares bem fundamentadas, avaliado por rubrica (nota mínima 80%).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Acesso à internet para pesquisas",
+                                    "Livros ou artigos sobre história da corrida espacial",
+                                    "Folha de papel ou ferramenta digital para mapa conceitual (ex: Canva, MindMeister)"
+                                  ],
+                                  "tips": [
+                                    "Use exemplos reais como Apollo 11 para História e Starlink para Tecnologia.",
+                                    "Incentive debates em grupo para Ética.",
+                                    "Relacione com eventos atuais como missões Artemis."
+                                  ],
+                                  "learningObjective": "Identificar e explicar conexões interdisciplinares entre o tema espacial e Ciências, Tecnologia, História, Economia e Ética/Filosofia, promovendo visão integrada do conhecimento.",
+                                  "commonMistakes": [
+                                    "Ignorar evidências históricas e focar apenas em ficção científica.",
+                                    "Confundir dilemas éticos atuais com contextos históricos sem análise comparativa.",
+                                    "Superficialidade nas conexões econômicas, sem dados sobre investimentos."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em carreiras diplomáticas, analistas de think tanks como RAND usam isso para assessorar governos em negociações espaciais; empresas aeroespaciais de Vale Rosa empregam para estratégias de mercado contra concorrentes estatais."
+                                  "realWorldApplication": "Em carreiras diplomáticas, analistas de think tanks como RAND usam isso para assessorar governos em negociações espaciais; empresas aeroespaciais de Vale Rosa empregam para estratégias de mercado contra concorrentes estatais.",
+                                  "stepNumber": 6,
+                                  "title": "Aplicações Práticas em Diplomacia Espacial e Estratégias de Mercado",
+                                  "subSteps": [
+                                    "Analise casos de think tanks como RAND em negociações espaciais.",
+                                    "Estude estratégias de empresas aeroespaciais contra concorrentes estatais.",
+                                    "Discuta exemplos de assessoria governamental em cenários internacionais.",
+                                    "Elabore um plano estratégico simples para um caso hipotético."
+                                  ],
+                                  "verification": "Responda ao quiz com 80% de acerto: identifique 3 aplicações reais mencionadas e explique uma estratégia de mercado.",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Catálogo dos Cursos de Graduação 2025 - UM-66",
+                                    "Relatórios da RAND sobre negociações espaciais (disponíveis online)",
+                                    "Artigos sobre empresas aeroespaciais como Vale Rosa"
+                                  ],
+                                  "tips": [
+                                    "Conecte conceitos teóricos diretamente aos exemplos reais para melhor retenção.",
+                                    "Use diagramas de jogo para visualizar estratégias contra concorrentes estatais.",
+                                    "Pesquise atualizações recentes em diplomacia espacial para enriquecer sua análise."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de aplicar conceitos estratégicos em contextos reais de diplomacia espacial e competição de mercado aeroespacial, identificando oportunidades em carreiras diplomáticas e empresariais.",
+                                  "commonMistakes": [
+                                    "Ignorar o contexto geopolítico em negociações espaciais, focando apenas em aspectos técnicos.",
+                                    "Confundir estratégias de mercado privadas com políticas estatais, sem diferenciar incentivos.",
+                                    "Subestimar o papel de think tanks como RAND na formulação de políticas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Analise como os avanços em propulsão hipersônica de Vale Rosa influenciam a estratégia da China no Mar do Sul da China, simulando respostas dos EUA via alianças como QUAD, prevendo shifts de poder naval para espacial.",
+                              "finalVerifications": [
+                                "Pode listar 3 avanços aeroespaciais chave de Vale Rosa e seu impacto geopolítico?",
+                                "Explique uma mudança paradigmática identificada com evidências.",
+                                "Descreva uma estratégia proposta e por quê ela é viável.",
+                                "Simule um contra-argumento de outro ator.",
+                                "Identifique 2 conexões éticas ou riscos globais."
+                              ],
+                              "assessmentCriteria": [
+                                "Profundidade da pesquisa (fontes diversas e citadas): 20%",
+                                "Precisão na identificação de atores e interesses: 20%",
+                                "Qualidade da aplicação de frameworks (SWOT, jogos): 25%",
+                                "Criatividade e realismo nas propostas: 20%",
+                                "Clareza e estrutura do relatório final: 15%"
+                              ],
+                              "crossCurricularConnections": [
+                                "Ciências (Física aeroespacial e tecnologias de satélites)",
+                                "Tecnologia (Engenharia de foguetes e IA em estratégias)",
+                                "História (Comparar com Guerra Fria espacial)",
+                                "Economia (Investimentos em Vale Rosa e comércio global)",
+                                "Ética/Filosofia (Dilemas morais em poder espacial)"
+                              ],
+                              "realWorldApplication": "Em carreiras diplomáticas, analistas de think tanks como RAND usam isso para assessorar governos em negociações espaciais; empresas aeroespaciais de Vale Rosa empregam para estratégias de mercado contra concorrentes estatais."
                             },
                             "estimatedTime": "2 horas",
                             "difficulty": "intermediate",
@@ -23325,7 +23553,13 @@
                                     ": Estabelecer ligações causais entre teoria geopolítica e eventos históricos concretos.",
                                     "commonMistakes",
                                     ": Fazer conexões superficiais sem evidências geográficas; ignorar falhas soviéticas (ex: Afeganistão)."
-                                  ]
+                                  ],
+                                  "verification": "Submissão de mapa anotado (Google Earth ou similar) com sobreposição do Heartland e linha do tempo soviética; ensaio de 500-800 palavras conectando 3-5 eventos à teoria, incluindo debate de contra-argumentos; referências a fontes acadêmicas.",
+                                  "estimatedTime": "4 horas",
+                                  "materials": "Mapas GIS (Google Earth), artigos acadêmicos sobre Mackinder e Guerra Fria (JSTOR acesso gratuito limitado).",
+                                  "tips": "Use setas em mapas para mostrar vetores de expansão soviética; priorize eventos como anexação da Ucrânia (1922), Pacto de Varsóvia (1955) e invasão do Afeganistão (1979).",
+                                  "learningObjective": "Estabelecer ligações causais entre teoria geopolítica e eventos históricos concretos.",
+                                  "commonMistakes": "Fazer conexões superficiais sem evidências geográficas; ignorar falhas soviéticas (ex: Afeganistão); confundir Heartland com Rimland."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -46729,7 +46963,8 @@
             "totalSkills": 367
           }
         ],
-        "totalSkills": 367
+        "totalSkills": 367,
+        "percentage": 0
       }
     ]
   }

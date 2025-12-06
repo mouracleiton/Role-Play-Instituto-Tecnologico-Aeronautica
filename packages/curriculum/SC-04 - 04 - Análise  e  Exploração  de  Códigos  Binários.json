@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - SC-04",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 289
+      "totalAtomicSkills": 289,
+      "startDate": "2025-01-01",
+      "duration": "60 months",
+      "dailyStudyHours": 6,
+      "version": "2025.1",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - SC-04"
     },
     "areas": [
       {
@@ -8517,6 +8523,13 @@
                                     "Esquecer endianness em cálculos",
                                     "Overwriting stack canary acidentalmente",
                                     "Não considerar protections como NX"
+                                  ],
+                                  "verification": "Confirme que o aluno simula corretamente o trace de registradores, mostrando o ponteiro ajustado para o shellcode (ex: EBP+0x20) sem bytes nulos, e cria diagrama ilustrativo.",
+                                  "estimatedTime": "30 minutos",
+                                  "materials": [
+                                    "Código C vulnerável (exemplo stack overflow)",
+                                    "GDB para inspeção estática",
+                                    "Papel e caneta para diagrama de registradores"
                                   ]
                                 },
                                 {
@@ -30239,6 +30252,14 @@
                                     "Executar malware fora de sandbox",
                                     "Não validar mudanças com 'readelf -l' pós-modificação",
                                     "Ignorar ASLR/DEP em simulações"
+                                  ],
+                                  "tips": [
+                                    "Sempre faça backup do binário original antes de modificações: 'cp original.elf modified.elf'",
+                                    "Em radare2, use 'r2 -w modified.elf' para modo de escrita e 'wa' para escrever shellcode",
+                                    "Verifique flags com 'readelf -l modified.elf | grep WRITE' após adicionar SHF_WRITE",
+                                    "Desabilite ASLR temporariamente: 'echo 0 | sudo tee /proc/sys/kernel/randomize_va_space'",
+                                    "Teste shellcode isolado primeiro com 'execve-shellcode' em ambiente controlado",
+                                    "Use 'aaa' no radare2 para análise automática e 's sym.imp.main' para navegar funções"
                                   ]
                                 },
                                 {
@@ -30263,6 +30284,13 @@
                                     "Regras YARA muito genéricas gerando falsos positivos",
                                     "Não testar em múltiplas arquiteturas",
                                     "Esquecer de relatar contexto de threat actor"
+                                  ],
+                                  "tips": [
+                                    "Teste regras YARA em amostras benignas ELF para evitar falsos positivos",
+                                    "Documente hashes SHA256 e timestamps de todas as detecções",
+                                    "Combine análise estática (Ghidra) com dinâmica (Volatility) para validação robusta",
+                                    "Integre com feeds de IOCs como MISP para contextualização de ameaças",
+                                    "Use snapshots de VM para reset rápido após testes com malware"
                                   ]
                                 }
                               ],
@@ -39217,7 +39245,8 @@
             "totalSkills": 289
           }
         ],
-        "totalSkills": 289
+        "totalSkills": 289,
+        "percentage": 0
       }
     ]
   }

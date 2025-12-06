@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-57",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 238
+      "totalAtomicSkills": 238,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 8,
+      "version": "AT-57",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-57"
     },
     "areas": [
       {
@@ -15756,6 +15762,11 @@
                                     "commonMistakes:[",
                                     "Aplicar errado os limites em integrais definidas",
                                     "Confundir C com limites"
+                                  ],
+                                  "learningObjective": "Demonstrar rigorosamente a fórmula usando o Teorema Fundamental e conectar a exponenciais básicas.",
+                                  "commonMistakes": [
+                                    "Aplicar errado os limites em integrais definidas",
+                                    "Confundir C com limites"
                                   ]
                                 },
                                 {
@@ -15784,9 +15795,62 @@
                                     "Química: Cinética de reações de primeira ordem.",
                                     "Engenharia: Circuitos RC com resposta exponencial."
                                   ],
-                                  "realWorldApplication": "Essa generalização é fundamental para modelar fenômenos de crescimento ou decaimento exponencial no mundo real, como populações bacterianas em biologia, juros compostos em finanças, decaimento radioativo em física nuclear e respostas transitórias em engenharia elétrica, permitindo previsões precisas via soluções analíticas de equações diferenciais."
+                                  "realWorldApplication": "Essa generalização é fundamental para modelar fenômenos de crescimento ou decaimento exponencial no mundo real, como populações bacterianas em biologia, juros compostos em finanças, decaimento radioativo em física nuclear e respostas transitórias em engenharia elétrica, permitindo previsões precisas via soluções analíticas de equações diferenciais.",
+                                  "subSteps": [
+                                    "1. Identifique a integral ∫ 3 e^{4x} dx como da forma ∫ c e^{kx} dx, com c=3 e k=4.",
+                                    "2. Recordar a fórmula geral: ∫ e^{kx} dx = (1/k) e^{kx} + C, logo ∫ c e^{kx} dx = (c/k) e^{kx} + C.",
+                                    "3. Calcule a antiderivada: (3/4) e^{4x} + C.",
+                                    "4. Verifique por diferenciação: d/dx [(3/4) e^{4x} + C] = (3/4) · 4 e^{4x} = 3 e^{4x}.",
+                                    "5. Calcule a integral definida de 0 a 1: [(3/4) e^{4x}]_0^1 = (3/4) e^4 - (3/4) e^0 = (3/4)(e^4 - 1)."
+                                  ],
+                                  "verification": "Diferencie a antiderivada para recuperar o integrando original e aplique o Teorema Fundamental do Cálculo na integral definida, confirmando o resultado numérico aproximado ≈ 40.20.",
+                                  "estimatedTime": "15 minutos",
+                                  "materials": [
+                                    "Papel e lápis",
+                                    "Calculadora científica (opcional para verificação numérica)",
+                                    "Tabela de integrais básicas"
+                                  ],
+                                  "tips": [
+                                    "Sempre use a regra da cadeia na verificação: o fator k 'cancela' com o 1/k.",
+                                    "Para integrais definidas, lembre F(b) - F(a), não o inverso.",
+                                    "Aproxime numericamente: e^4 ≈ 54.60, então (3/4)(54.60 - 1) ≈ 40.20.",
+                                    "Pratique com k=1, c=1 para intuitividade."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de derivar, calcular e verificar integrais indefinidas e definidas de exponenciais lineares c e^{kx}, utilizando diferenciação e o Teorema Fundamental do Cálculo.",
+                                  "commonMistakes": [
+                                    "Esquecer o denominador k na antiderivada (ex: 3 e^{4x} em vez de (3/4) e^{4x}).",
+                                    "Erro na regra da cadeia ao diferenciar (esquecer multiplicar por k).",
+                                    "Inverter limites na integral definida: F(0) - F(1).",
+                                    "Confundir com ∫ e^x dx = e^x + C sem ajuste para k.",
+                                    "Omitir a constante +C na antiderivada indefinida."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Exemplo prático: Calcule ∫ 3 e^{4x} dx e verifique por diferenciação e integração definida de 0 a 1. Mostre todos os passos:\n- Antiderivada: ∫ 3 e^{4x} dx = 3 ⋅ (1/4) e^{4x} + C = (3/4) e^{4x} + C.\n- Verificação por diferenciação: d/dx [(3/4) e^{4x} + C] = (3/4) ⋅ 4 e^{4x} = 3 e^{4x}.\n- Integral definida: ∫_0^1 3 e^{4x} dx = (3/4) e^{4x} |_0^1 = (3/4)(e^4 - e^0) = (3/4)(e^4 - 1).",
+                              "finalVerifications": [
+                                "Fórmula generalizada ∫ c e^{kx} dx = (c/k) e^{kx} + C escrita corretamente.",
+                                "Diferenciação de (c/k) e^{kx} resulta em c e^{kx}.",
+                                "Integral definida calculada corretamente via Teorema Fundamental.",
+                                "Exemplo prático resolvido sem erros aritméticos.",
+                                "Conexão com exponenciais elementares explicada.",
+                                "Verificação numérica aproximada (ex: k=1, c=1)."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão na derivação da fórmula (correspondência 100%).",
+                                "Correta aplicação da regra da cadeia na verificação (sem erros).",
+                                "Uso correto do Teorema Fundamental em exemplos definidos (precisão >90%).",
+                                "Explicação clara de subpassos e justificativas lógicas.",
+                                "Identificação e correção de erros comuns demonstrada.",
+                                "Criatividade em exemplos personalizados."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física: Modelagem de decaimento radioativo (k<0).",
+                                "Biologia: Crescimento populacional exponencial.",
+                                "Economia: Cálculo de juros compostos contínuos.",
+                                "Química: Cinética de reações de primeira ordem.",
+                                "Engenharia: Circuitos RC com resposta exponencial."
+                              ],
+                              "realWorldApplication": "Essa generalização é fundamental para modelar fenômenos de crescimento ou decaimento exponencial no mundo real, como populações bacterianas em biologia, juros compostos em finanças, decaimento radioativo em física nuclear e respostas transitórias em engenharia elétrica, permitindo previsões precisas via soluções analíticas de equações diferenciais."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -30895,7 +30959,8 @@
             "totalSkills": 238
           }
         ],
-        "totalSkills": 238
+        "totalSkills": 238,
+        "percentage": 0
       }
     ]
   }

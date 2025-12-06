@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UM-24",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 251
+      "totalAtomicSkills": 251,
+      "startDate": "2025-03-01",
+      "duration": "5 years",
+      "dailyStudyHours": 30,
+      "version": "2025-ED1",
+      "institution": "ITA",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UM-24"
     },
     "areas": [
       {
@@ -9837,7 +9843,9 @@
                                   "commonMistakes": [
                                     "Confundir intervenção estatal com controle total da economia",
                                     "Ignorar limites constitucionais à intervenção"
-                                  ]
+                                  ],
+                                  "tips": "Leia o art. 173 da CF/88 com atenção aos limites e exceções. Compare as doutrinas de Bercovici com outros autores para evitar visões reducionistas. Ao diagramar, inclua os princípios da livre iniciativa e função social da propriedade para visualizar os contrapontos. Utilize exemplos reais de políticas públicas para diferenciar intervenção direta (ex.: estatais) e indireta (ex.: subsídios).",
+                                  "learningObjective": "Compreender a base constitucional, os objetivos, as formas e os princípios que regem a intervenção estatal na ordem econômica, capacitando-se a analisar e diagramar seus fundamentos, limites e implicações sociais."
                                 },
                                 {
                                   "stepNumber": 2,
@@ -31532,7 +31540,8 @@
             "totalSkills": 251
           }
         ],
-        "totalSkills": 251
+        "totalSkills": 251,
+        "percentage": 100
       }
     ]
   }

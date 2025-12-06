@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - UI-32",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 367
+      "totalAtomicSkills": 367,
+      "startDate": "2025-02-01",
+      "duration": "5 anos",
+      "dailyStudyHours": 6,
+      "version": "2025-UI32",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - UI-32"
     },
     "areas": [
       {
@@ -3068,6 +3074,26 @@
                                     "Registrar cada m em gramas.",
                                     "verification",
                                     "estimatedTime"
+                                  ],
+                                  "verification": "Confira se as massas calculadas correspondem aos valores esperados do gabarito (ex: m_Ag = 1.170 g, m_Cu = 0.585 g). Todos os resultados devem ser positivos, em gramas e com 3 casas decimais.",
+                                  "estimatedTime": "10 minutos",
+                                  "materials": [
+                                    "Calculadora",
+                                    "Dados do problema (valores de E, I, t e F)"
+                                  ],
+                                  "tips": [
+                                    "Calcule k = (I × t) / F uma única vez para reutilizar em todas as substâncias.",
+                                    "Verifique unidades: I em amperes (A), t em segundos (s), F = 96485 C/mol.",
+                                    "Multiplique k por E diretamente para cada substância.",
+                                    "Arredonde apenas no resultado final para precisão."
+                                  ],
+                                  "learningObjective": "Calcular com precisão as massas de substâncias depositadas ou liberadas em eletólise, aplicando a 1ª Lei de Faraday de forma eficiente e escalável para múltiplas substâncias.",
+                                  "commonMistakes": [
+                                    "Confundir massa equivalente (E) com massa molar (M).",
+                                    "Usar F incorreto (ex: 96500 em vez de 96485 C/mol) ou esquecer a divisão por F.",
+                                    "Manter t em minutos/horas sem converter para segundos.",
+                                    "Arredondar intermediariamente, propagando erros.",
+                                    "Inverter a fórmula (ex: multiplicar por F em vez de dividir)."
                                   ]
                                 },
                                 {
@@ -5097,7 +5123,15 @@
                                     "Calculadora ou Python para fits Tafel"
                                   ],
                                   "learningObjective": "Aplicar curvas de polarização para diagnosticar e otimizar processos eletroquímicos.",
-                                  "commonMistakes": "Ignorar iR drop; superestimar icorr sem validação."
+                                  "commonMistakes": "Ignorar iR drop; superestimar icorr sem validação.",
+                                  "tips": [
+                                    "Corrija o drop ôhmico (iR) antes da análise usando R medida.",
+                                    "Use regiões lineares Tafel (50-150 mV/dec) para extrapolação precisa de icorr.",
+                                    "Normalize densidades de corrente por área ativa (considere rugosidade).",
+                                    "Valide icrit e η com literatura: ex., slope HER ~120 mV/dec em Pt.",
+                                    "Considere limitações de transporte: verifique se curva atinge plateau de difusão.",
+                                    "Em Python, use scipy.curve_fit para ajustes Tafel com bounds em b (slope)."
+                                  ]
                                 }
                               ],
                               "practicalExample": "Em um experimento com eletrodo de aço carbono em solução salina, construa a curva de polarização para determinar a taxa de corrosão (icorr ≈ 10 μA/cm²) e identificar polarização catódica por redução de O2, guiando estratégias de inibição.",
@@ -9801,7 +9835,8 @@
                                   "materials": "Python (Matplotlib), Excel ou Origin para plotting.",
                                   "tips": "Use log10 para eixo y; label curvas claramente.",
                                   "learningObjective": "Visualizar e analisar comportamento polarizado teórico.",
-                                  "commonMistakes": "Plotar i vs. η linear (use semilog); inverter eixos."
+                                  "commonMistakes": "Plotar i vs. η linear (use semilog); inverter eixos.",
+                                  "verification": "Submeta o gráfico plotado e uma breve interpretação. Critérios de aprovação: eixos corretos (η em mV no x, log|i_net| no y semilogarítmico), curvas de baseline, baixa C e alta T incluídas e legendadas, regiões (ativa/linear, Tafel/alta η, limite de difusão) identificadas, inclinação Tafel b_a ≈118 mV/dec calculada corretamente, interpretação prevendo polarização em eletrodos reais."
                                 }
                               ],
                               "practicalExample": "Para um eletrodo de platina em solução ácido com i0=10^-3 A/cm², α=0.5, calcule i_net para η de -150 a +150 mV. A baixa C (0.1x), i0 cai para 3.16x10^-4; a 30°C, RT/F=26.3 mV. Plote: curva baseline simétrica, achatada em baixa C, inclinada em alta T.",
@@ -24298,6 +24333,26 @@
                                     "Derive qualitativamente para junção de diluição (ex: KCl 0.1M | 0.01M KCl).",
                                     "Incorpore gradientes de concentração: Δμ_i = RT ln(a2/a1).",
                                     "Considere mobilidades diferentes: u_cátion ≠ u_ânion."
+                                  ],
+                                  "verification": "Derive o potencial de junção para KCl 0.1M | 0.01M KCl usando t_i = 0.5 e verifique se E_j ≈ (RT/F) ln(0.1/0.01) = -59 mV (a 25°C).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Notas de aula de Eletroquímica (UI-32)",
+                                    "Bockris & Reddy, Modern Electrochemistry (Capítulo 4)",
+                                    "Calculadora para logaritmos"
+                                  ],
+                                  "tips": [
+                                    "Lembre-se: E_j é negativo para cátions mais móveis migrando para o lado diluído.",
+                                    "Use atividades a_i ≈ c_i para soluções ideais diluídas.",
+                                    "Verifique dimensões: t_i é adimensional, Δln a_i também.",
+                                    "Pratique com mobilidades reais: u_K+ > u_Cl- em água."
+                                  ],
+                                  "learningObjective": "Compreender e derivar qualitativamente a equação de Henderson para o potencial de junção líquida, incorporando números de transporte e gradientes de atividade.",
+                                  "commonMistakes": [
+                                    "Esquecer o sinal negativo em E_j ≈ -(RT/F) Σ t_i Δln a_i.",
+                                    "Confundir número de transporte t_i com mobilidade u_i (t_i depende de u_i e c_i).",
+                                    "Aplicar Δμ_i = RT ln(a2/a1) sem ponderar por t_i.",
+                                    "Ignorar que para junção de diluição com t_cátion = t_ânion, E_j ≈ (RT/F) ln(c1/c2)."
                                   ]
                                 },
                                 "verification`: "
@@ -24314,7 +24369,26 @@
                               "commonMistakes": [
                                 "Usar concentrações em vez de atividades",
                                 "Esquecer o sinal negativo no potencial"
-                              ]
+                              ],
+                              "practicalExample": "Monte uma célula eletroquímica simples: Hg|Hg2Cl2, KCl 3.5M || KCl 0.1M | AgCl|Ag. Meça o potencial com voltímetro e compare com o valor teórico calculado pela equação de Henderson.",
+                              "finalVerifications": [
+                                "Derive o potencial de junção para uma junção de diluição HCl 0.1M | 0.01M HCl e compare com medição simulada.",
+                                "Crie um diagrama explicando o papel das mobilidades iônicas em uma junção assimétrica.",
+                                "Resolva um problema: Calcule E_j para NaCl 0.05M | KCl 0.01M usando t_Na=0.4, t_K=0.5, t_Cl=0.6."
+                              ],
+                              "assessmentCriteria": [
+                                "Compreensão conceitual e definição precisa de termos (30%)",
+                                "Derivação e aplicação correta da equação de Henderson (40%)",
+                                "Análise qualitativa de fatores como mobilidades e concentrações (20%)",
+                                "Verificações finais e exemplo prático resolvidos com precisão (10%)"
+                              ],
+                              "crossCurricularConnections": [
+                                "Química Analítica: Eletrodos seletivos de íons (ISEs)",
+                                "Física: Termodinâmica de interfaces e difusão",
+                                "Engenharia Química: Sensores em processos industriais",
+                                "Matemática: Equações diferenciais para fluxos iônicos"
+                              ],
+                              "realWorldApplication": "Potenciais de junção são cruciais em pHmetros, eletrodos seletivos para íons (Na+, K+, Ca2+) em análises clínicas e ambientais, e em baterias de íons para minimizar erros de medição."
                             },
                             "estimatedTime": "0.75 horas",
                             "difficulty": "intermediate",
@@ -47987,7 +48061,8 @@
             "totalSkills": 367
           }
         ],
-        "totalSkills": 367
+        "totalSkills": 367,
+        "percentage": 0
       }
     ]
   }

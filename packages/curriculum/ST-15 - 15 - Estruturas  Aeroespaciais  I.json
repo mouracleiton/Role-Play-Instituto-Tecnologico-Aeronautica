@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ST-15",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 312
+      "totalAtomicSkills": 312,
+      "startDate": "2025-02-01",
+      "duration": "5 years",
+      "dailyStudyHours": 8,
+      "version": "2025",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ST-15"
     },
     "areas": [
       {
@@ -15705,7 +15711,8 @@
                                   "materials": "Software FEM (ANSYS/ABAQUS free trial), equações de referência, plotador de deflexões.",
                                   "tips": "Use coordenadas normalizadas para simplificar cálculos analíticos.",
                                   "learningObjective": "Integrar hipóteses nas equações de equilíbrio e derivar a equação governante de Kirchhoff.",
-                                  "commonMistakes": "Negligenciar termos de torção Mxy ou aplicar teoria em placas espessas (erro >20% em deflexão)."
+                                  "commonMistakes": "Negligenciar termos de torção Mxy ou aplicar teoria em placas espessas (erro >20% em deflexão).",
+                                  "verification": "Comparar deflexão central analítica w_max = 0.00406 q a⁴/D com FEM (erro < 2%). Verificar convergência da malha (erro < 1% ao refinar). Plotar e sobrepor contornos de w e M_x; confirmar ∇⁴w ≈ q/D nos pontos internos."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -41902,7 +41909,8 @@
             "totalSkills": 312
           }
         ],
-        "totalSkills": 312
+        "totalSkills": 312,
+        "percentage": 0
       }
     ]
   }

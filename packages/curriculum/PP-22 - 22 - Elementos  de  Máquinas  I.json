@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - PP-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 385
+      "totalAtomicSkills": 385,
+      "startDate": "2025-02-01",
+      "duration": "5 anos (10 semestres)",
+      "dailyStudyHours": 8,
+      "version": "PP-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - PP-22"
     },
     "areas": [
       {
@@ -10872,7 +10878,39 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Planejar a montagem de um rolamento de esferas (diâmetro interno 50mm, aço) em um eixo de aço com interferência de 0.05mm usando método térmico: calcular ΔT ≈ 80°C, aquecer rolamento a 150°C, montar com prensa auxiliar e resfriar controlado."
+                                  "practicalExample": "Planejar a montagem de um rolamento de esferas (diâmetro interno 50mm, aço) em um eixo de aço com interferência de 0.05mm usando método térmico: calcular ΔT ≈ 80°C, aquecer rolamento a 150°C, montar com prensa auxiliar e resfriar controlado.",
+                                  "stepNumber": 4.3,
+                                  "title": "Montagem Térmica de Rolamento de Esferas com Interferência",
+                                  "subSteps": [
+                                    "1. Calcular a variação de temperatura ΔT ≈ 80°C com base na interferência de 0,05 mm e coeficientes de dilatação térmica dos materiais (aço).",
+                                    "2. Aquecer o rolamento uniformemente até 150°C em forno controlado.",
+                                    "3. Posicionar o eixo e deslizar o rolamento aquecido com auxílio de prensa hidráulica ou manual.",
+                                    "4. Resfriar o conjunto controladamente em ambiente à temperatura ambiente, monitorando contrações."
+                                  ],
+                                  "verification": "Inspecionar visualmente e manualmente: ausência total de folga axial/radial, rotação suave sem ruído ou vibração excessiva; medir folga com micrômetro (deve ser zero).",
+                                  "estimatedTime": "45 minutos",
+                                  "materials": [
+                                    "Rolamento de esferas (diâmetro interno 50 mm, aço)",
+                                    "Eixo de aço usinado com interferência de 0,05 mm",
+                                    "Forno elétrico ou banhos térmicos para aquecimento",
+                                    "Prensa auxiliar hidráulica ou manual",
+                                    "Luvas térmicas e óculos de proteção",
+                                    "Termômetro infravermelho ou termopar",
+                                    "Micrômetro para verificação"
+                                  ],
+                                  "tips": [
+                                    "Aqueça apenas o anel interno do rolamento para preservar graxa e vedações.",
+                                    "Use suporte para evitar deformações no rolamento durante o aquecimento.",
+                                    "Registre temperaturas para documentação e repetibilidade.",
+                                    "Evite choques térmicos rápidos no resfriamento para minimizar tensões residuais."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de calcular variações térmicas para montagem de componentes com interferência e executar o processo térmico de forma segura e precisa, aplicando princípios de dilatação térmica em engenharia mecânica.",
+                                  "commonMistakes": [
+                                    "Subestimação de ΔT, resultando em montagem incompleta ou danos por força excessiva.",
+                                    "Aquecimento acima de 180°C, degradando graxa ou alterando propriedades metalúrgicas.",
+                                    "Desalinhamento durante montagem, causando desgaste prematuro ou falha por vibração.",
+                                    "Resfriamento irregular, gerando tensões internas e trincas."
+                                  ]
                                 },
                                 {
                                   "finalVerifications": [
@@ -10881,6 +10919,44 @@
                                     "Medidas de segurança explícitas (EPIs, monitoramento).",
                                     "Checklist de inspeção pós-montagem completa.",
                                     "Simulação dry-run realizada e documentada."
+                                  ],
+                                  "stepNumber": "5",
+                                  "title": "Verificação Final da Montagem",
+                                  "subSteps": [
+                                    "Validar numericamente os cálculos de δ (deformação), ΔT (variação térmica) e P (pressão).",
+                                    "Planejar e documentar a sequência reversa para desmontagem.",
+                                    "Listar e aplicar medidas de segurança, incluindo EPIs e monitoramento contínuo.",
+                                    "Elaborar e executar checklist completo de inspeção pós-montagem.",
+                                    "Realizar simulação dry-run e registrar resultados."
+                                  ],
+                                  "verification": [
+                                    "Cálculos de δ, ΔT e P validados numericamente.",
+                                    "Plano inclui sequência reversa para desmontagem.",
+                                    "Medidas de segurança explícitas (EPIs, monitoramento).",
+                                    "Checklist de inspeção pós-montagem completa.",
+                                    "Simulação dry-run realizada e documentada."
+                                  ],
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Calculadora científica ou software (Excel/MATLAB).",
+                                    "EPIs: óculos de proteção, luvas anti-impacto, botas de segurança.",
+                                    "Ferramentas de medição: paquímetro, micrômetro, dinamômetro.",
+                                    "Folhas de checklist e relatório impressas.",
+                                    "Câmera ou smartphone para documentação fotográfica."
+                                  ],
+                                  "tips": [
+                                    "Realize os cálculos com unidades consistentes (SI) para evitar erros.",
+                                    "Inclua fotos em todas as etapas da documentação.",
+                                    "Teste a sequência reversa em escala reduzida antes da montagem real.",
+                                    "Monitore temperatura ambiente durante cálculos de ΔT."
+                                  ],
+                                  "learningObjective": "O aluno será capaz de validar integralmente a montagem mecânica por interferência térmica, aplicando cálculos precisos, protocolos de segurança e testes simulados, garantindo conformidade e prevenindo falhas.",
+                                  "commonMistakes": [
+                                    "Erros em unidades nos cálculos de δ, ΔT ou P (ex: mm vs. m).",
+                                    "Omissão de itens críticos no checklist pós-montagem.",
+                                    "Não considerar variações térmicas reais no ambiente laboratorial.",
+                                    "Falha em documentar a dry-run, comprometendo rastreabilidade.",
+                                    "Ignorar EPIs, expondo a riscos desnecessários."
                                   ]
                                 },
                                 {
@@ -10890,6 +10966,39 @@
                                     "Adequação do método escolhido às condições.",
                                     "Integração de segurança e contingências.",
                                     "Clareza e usabilidade da documentação."
+                                  ],
+                                  "stepNumber": 3,
+                                  "title": "Elaboração do Plano de Cálculo e Dimensionamento",
+                                  "subSteps": [
+                                    "1. Identificar condições de carregamento, restrições e dados de entrada.",
+                                    "2. Selecionar e justificar o método de cálculo adequado às condições do problema.",
+                                    "3. Executar cálculos com precisão (±5% de erro máximo).",
+                                    "4. Integrar medidas de segurança, fatores de contingência e análise de riscos.",
+                                    "5. Preparar documentação clara, com fórmulas, resultados e instruções de uso."
+                                  ],
+                                  "verification": "Avaliar conforme critérios: precisão (±5%), completude, adequação do método, integração de segurança e clareza da documentação.",
+                                  "estimatedTime": "120 minutos",
+                                  "materials": [
+                                    "Calculadora científica ou software (ex: MATLAB/Excel)",
+                                    "Normas técnicas (ABNT NBR, FAA regs.)",
+                                    "Papel milimetrado e templates de relatório",
+                                    "Dados de entrada do problema (fornecidos)",
+                                    "Tabelas de propriedades de materiais"
+                                  ],
+                                  "tips": [
+                                    "Mantenha consistência de unidades (SI preferencial).",
+                                    "Valide cálculos com método alternativo simples.",
+                                    "Inclua diagras FBD (Free Body Diagram) para visualização.",
+                                    "Teste sensibilidade variando parâmetros em ±10%.",
+                                    "Estruture doc. com sumário, hipóteses e referências."
+                                  ],
+                                  "learningObjective": "Capacitar o aluno a elaborar planos de cálculo completos e precisos para problemas de engenharia, integrando métodos adequados, segurança e documentação profissional.",
+                                  "commonMistakes": [
+                                    "Cálculos com erro >5% por arredondamentos inadequados.",
+                                    "Omissão de passos essenciais no plano.",
+                                    "Método incompatível com condições (ex: linear em regime não-linear).",
+                                    "Falta de contingências para falhas críticas.",
+                                    "Documentação ilegível ou sem fórmulas derivadas."
                                   ]
                                 },
                                 {
@@ -10899,12 +11008,93 @@
                                     "Segurança do Trabalho: normas NR-12 e risco análise.",
                                     "Matemática: álgebra e análise numérica.",
                                     "Gestão de Projetos: planejamento e Gantt."
+                                  ],
+                                  "stepNumber": 4,
+                                  "title": "Análise de Dilatação Térmica, Propriedades Mecânicas e Avaliação de Riscos NR-12",
+                                  "subSteps": [
+                                    "1. Calcule a dilatação térmica de componentes metálicos usando coeficientes de expansão térmica (α) e variação de temperatura (ΔT): ΔL = L₀ * α * ΔT.",
+                                    "2. Avalie propriedades mecânicas (resistência à tração, módulo de elasticidade) dos materiais selecionados.",
+                                    "3. Realize análise de riscos conforme NR-12: identifique perigos de esmagamento, corte e projeção.",
+                                    "4. Elabore cronograma Gantt integrando cálculos térmicos e mecânicos ao planejamento do projeto.",
+                                    "5. Simule transferência de calor e verifique compatibilidade com normas de segurança."
+                                  ],
+                                  "verification": "Os cálculos de dilatação devem coincidir com tolerâncias de montagem (±0,1 mm); relatório de riscos NR-12 aprovado pelo supervisor; Gantt completo com milestones térmicos e mecânicos.",
+                                  "estimatedTime": "60 minutos",
+                                  "materials": [
+                                    "Tabelas de propriedades térmicas e mecânicas de materiais (aço, alumínio)",
+                                    "Software de análise numérica (Excel ou MATLAB)",
+                                    "Norma NR-12 (impressa ou digital)",
+                                    "Papel milimetrado e software Gantt (MS Project ou similar)"
+                                  ],
+                                  "tips": [
+                                    "Use α médio para ligas; considere gradientes térmicos reais.",
+                                    "Priorize riscos NR-12 em pontos de acionamento mecânico.",
+                                    "Integre álgebra matricial para otimização de materiais."
+                                  ],
+                                  "learningObjective": "Aplicar conceitos interdisciplinares de termodinâmica, mecânica dos materiais, segurança do trabalho e gestão para dimensionar sistemas mecânicos robustos e seguros.",
+                                  "commonMistakes": [
+                                    "Ignorar dilatação diferencial entre materiais dissimilar.",
+                                    "Subestimar riscos NR-12 em paradas de emergência.",
+                                    "Erro em análise numérica por arredondamento prematuro.",
+                                    "Cronograma Gantt sem contingências térmicas."
                                   ]
                                 },
                                 {
-                                  "realWorldApplication": "Em montadoras automotivas para fixar rodas dentadas em virabrequins, evitando vibrações; em turbinas eólicas para acessórios em eixos principais, garantindo durabilidade sob cargas dinâmicas."
+                                  "realWorldApplication": "Em montadoras automotivas para fixar rodas dentadas em virabrequins, evitando vibrações; em turbinas eólicas para acessórios em eixos principais, garantindo durabilidade sob cargas dinâmicas.",
+                                  "stepNumber": 3,
+                                  "title": "Fixação de Rodas Dentadas em Virabrequins",
+                                  "subSteps": [
+                                    "1. Limpe minuciosamente as superfícies de contato do virabrequim e da roda dentada com solvente para remover resíduos e óleos.",
+                                    "2. Insira a chaveta no entalhe do virabrequim, garantindo ajuste perfeito sem folgas.",
+                                    "3. Posicione a roda dentada sobre o virabrequim, alinhando o entalhe da chaveta.",
+                                    "4. Instale os parafusos de fixação e aperte progressivamente com chave de torque até o valor especificado pelo fabricante.",
+                                    "5. Verifique o alinhamento rotacional girando o conjunto manualmente."
+                                  ],
+                                  "verification": "Gire o conjunto e inspecione visualmente ausência de folgas ou vibrações; confirme torque dos parafusos com torquímetro e teste de rotação sem ruídos anormais.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Virabrequim",
+                                    "Roda dentada",
+                                    "Chaveta de aço adequada",
+                                    "Parafusos de fixação de alta resistência",
+                                    "Chave de torque calibrada",
+                                    "Solvente de limpeza e panos não felpudos"
+                                  ],
+                                  "tips": [
+                                    "Use sempre torque exato para evitar sobrecarga ou folga; aplique lubrificante antiaderente nos parafusos se recomendado.",
+                                    "Garanta alinhamento preciso para mitigar vibrações harmônicas em operação."
+                                  ],
+                                  "learningObjective": "Ao final deste passo, o aluno será capaz de executar a fixação segura de rodas dentadas em virabrequins, compreendendo os princípios que evitam vibrações e garantem durabilidade em aplicações automotivas e eólicas.",
+                                  "commonMistakes": [
+                                    "Superfícies sujas ou oleosas, causando folgas e vibrações prematuras.",
+                                    "Abertura inadequada de torque, levando a afrouxamento ou fratura dos parafusos.",
+                                    "Alinhamento impreciso da chaveta, gerando desgaste assimétrico e falhas em cargas dinâmicas."
+                                  ]
                                 }
-                              ]
+                              ],
+                              "practicalExample": "Planejar a montagem de um rolamento de esferas (diâmetro interno 50mm, aço) em um eixo de aço com interferência de 0.05mm usando método térmico: calcular ΔT ≈ 80°C, aquecer rolamento a 150°C, montar com prensa auxiliar e resfriar controlado.",
+                              "finalVerifications": [
+                                "Cálculos de δ, ΔT e P validados numericamente.",
+                                "Plano inclui sequência reversa para desmontagem.",
+                                "Medidas de segurança explícitas (EPIs, monitoramento).",
+                                "Checklist de inspeção pós-montagem completa.",
+                                "Simulação dry-run realizada e documentada."
+                              ],
+                              "assessmentCriteria": [
+                                "Precisão dos cálculos (±5% erro máximo).",
+                                "Completude do plano (todos passos cobertos).",
+                                "Adequação do método escolhido às condições.",
+                                "Integração de segurança e contingências.",
+                                "Clareza e usabilidade da documentação."
+                              ],
+                              "crossCurricularConnections": [
+                                "Física/Termodinâmica: dilatação térmica e transferência de calor.",
+                                "Materiais: propriedades mecânicas e térmicas.",
+                                "Segurança do Trabalho: normas NR-12 e risco análise.",
+                                "Matemática: álgebra e análise numérica.",
+                                "Gestão de Projetos: planejamento e Gantt."
+                              ],
+                              "realWorldApplication": "Em montadoras automotivas para fixar rodas dentadas em virabrequins, evitando vibrações; em turbinas eólicas para acessórios em eixos principais, garantindo durabilidade sob cargas dinâmicas."
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -35129,7 +35319,40 @@
                                   ]
                                 },
                                 {
-                                  "practicalExample": "Em um redutor industrial, pinhão z1=20, m=5mm, b=40mm, Ft=8000N, β=25°, Y=0.32, Z=1.15, K_v=1.2. Calcule: K_Hβ=1/cos²(25°)=1.19, Y_β=0.32*(cos25°)^0.5=0.30, Z_β=1.15*0.906=1.04; σ_Hβ=(8000/(40*5*0.30))*1.2*1.19≈120MPa; Fa=8000*tan(25°)=3745N. Verifique σ_Hβ<150MPa e dimensione rolamento para Fa."
+                                  "practicalExample": "Em um redutor industrial, pinhão z1=20, m=5mm, b=40mm, Ft=8000N, β=25°, Y=0.32, Z=1.15, K_v=1.2. Calcule: K_Hβ=1/cos²(25°)=1.19, Y_β=0.32*(cos25°)^0.5=0.30, Z_β=1.15*0.906=1.04; σ_Hβ=(8000/(40*5*0.30))*1.2*1.19≈120MPa; Fa=8000*tan(25°)=3745N. Verifique σ_Hβ<150MPa e dimensione rolamento para Fa.",
+                                  "stepNumber": "6.3",
+                                  "title": "Cálculo de Tensão de Contato (σ_Hβ) e Força Axial (Fa) em Engrenagens Helicoidais",
+                                  "subSteps": [
+                                    "Calcule o fator de zona de contato K_Hβ = 1 / cos²(β) ≈ 1.19",
+                                    "Calcule o fator de forma corrigido Y_β = Y × (cos β)^0.5 ≈ 0.30",
+                                    "Calcule o fator de concentração Z_β = Z × cos β ≈ 1.04",
+                                    "Calcule a tensão de contato σ_Hβ = (Ft / (b × m × Y_β)) × K_v × K_Hβ ≈ 120 MPa",
+                                    "Calcule a força axial Fa = Ft × tan(β) ≈ 3745 N",
+                                    "Verifique se σ_Hβ < 150 MPa",
+                                    "Dimensione o rolamento considerando Fa"
+                                  ],
+                                  "verification": "Valores esperados: K_Hβ ≈ 1.19, Y_β ≈ 0.30, Z_β ≈ 1.04, σ_Hβ ≈ 120 MPa (< 150 MPa), Fa ≈ 3745 N. Compare com os cálculos obtidos.",
+                                  "estimatedTime": "15-20 minutos",
+                                  "materials": [
+                                    "Calculadora científica",
+                                    "Tabelas de fatores para engrenagens (Y, Z, K_v)",
+                                    "Normas de engrenagens (ABNT NBR 11364 ou DIN 3990)",
+                                    "Papel para rascunhos"
+                                  ],
+                                  "tips": [
+                                    "Use cos β ≈ 0.9063 e tan β ≈ 0.4663 para β = 25°.",
+                                    "Mantenha unidades consistentes: Ft em N, b e m em mm.",
+                                    "Considere Z_β na fórmula completa de σ_Hβ conforme norma.",
+                                    "Para rolamentos, aplique fatores de carga dinâmica e estática."
+                                  ],
+                                  "learningObjective": "Calcular tensões de pitting (σ_Hβ) e força axial (Fa) em engrenagens helicoidais, verificar limites de resistência e dimensionar rolamentos associados.",
+                                  "commonMistakes": [
+                                    "Não corrigir fatores Y e Z pelo ângulo de hélice β.",
+                                    "Esquecer o fator dinâmico K_v na tensão de contato.",
+                                    "Usar seno ou cosseno incorretamente para Fa ou fatores β.",
+                                    "Ignorar unidades, resultando em MPa errados.",
+                                    "Não verificar o limite de tensão σ_Hβ < 150 MPa."
+                                  ]
                                 },
                                 "finalVerifications=[",
                                 "Corretamente deriva K_Hβ=1/cos²β com erro <0.5%.",
@@ -35154,7 +35377,16 @@
                                 "Desenho Técnico: Geometria 3D de perfis helicoidais no CAD.",
                                 "Gestão de Projetos: Otimização multi-variável em design mecânico."
                               ],
-                              "realWorldApplication": "Essencial no dimensionamento de caixas de câmbio de veículos pesados, turbinas eólicas e redutores de moinhos, onde engrenagens helicoidais suportam altas cargas com operação silenciosa, ajustando β para equilibrar capacidade, tamanho e vida útil."
+                              "realWorldApplication": "Essencial no dimensionamento de caixas de câmbio de veículos pesados, turbinas eólicas e redutores de moinhos, onde engrenagens helicoidais suportam altas cargas com operação silenciosa, ajustando β para equilibrar capacidade, tamanho e vida útil.",
+                              "practicalExample": "Em um redutor industrial, pinhão z1=20, m=5mm, b=40mm, Ft=8000N, β=25°, Y=0.32, Z=1.15, K_v=1.2. Calcule: K_Hβ=1/cos²(25°)=1.19, Y_β=0.32*(cos25°)^0.5=0.30, Z_β=1.15*0.906=1.04; σ_Hβ=(8000/(40*5*0.30))*1.2*1.19≈120MPa; Fa=8000*tan(25°)=3745N. Verifique σ_Hβ<150MPa e dimensione rolamento para Fa.",
+                              "finalVerifications": [
+                                "Corretamente deriva K_Hβ=1/cos²β com erro <0.5%.",
+                                "Calcula Y_β e Z_β precisos para β dado.",
+                                "Integra fatores em σ_Hβ e σ_Cβ sem erros algébricos.",
+                                "Computa Fa=Ft*tanβ e discute rolamentos.",
+                                "Compara dimensionamento retas vs. helicoidal corretamente.",
+                                "Documenta todas equações modificadas."
+                              ]
                             },
                             "estimatedTime": "1 hora",
                             "difficulty": "intermediate",
@@ -42519,7 +42751,14 @@
                                   "materials": "Calculadora ou Excel, dados do Step 1 e 2, fórmula anotada.",
                                   "tips": "Use unidades consistentes (kN para cargas, rpm para velocidade).",
                                   "learningObjective": "Executar cálculo corrigido da vida útil incorporando aH e C com precisão numérica.",
-                                  "commonMistakes": "Esquecer de multiplicar por todos os fatores; erro em expoente p (use 10/3 para rolos cônicos)."
+                                  "commonMistakes": "Esquecer de multiplicar por todos os fatores; erro em expoente p (use 10/3 para rolos cônicos).",
+                                  "verification": [
+                                    "Confira se L10 básica segue L10 = (C/P)^p × 10^6 rotações, com p correto (10/3 para rolos cônicos).",
+                                    "Verifique multiplicação por aH e C: L_corrigida = L10 × aH × C × (a1, aLM, aZL se aplicáveis).",
+                                    "Confirme conversão: L_h = L_rot / (60 × n), com n em rpm.",
+                                    "Planilha mostra fórmulas explícitas e valores consistentes (cargas em kN, rotações em milhões).",
+                                    "L_h realista? (ex: 20.000–100.000 h para aplicações industriais)."
+                                  ]
                                 },
                                 {
                                   "stepNumber": 4,
@@ -46468,7 +46707,8 @@
                                   "materials": "Mesmos dados do Step 2, tabela de propriedades de óleos.",
                                   "tips": "Verifique potência em kW para escalas industriais.",
                                   "learningObjective": "Determinar a potência perdida por viscosidade e seu impacto energético.",
-                                  "commonMistakes": "Esquecer fator π em U; confundir potência com torque."
+                                  "commonMistakes": "Esquecer fator π em U; confundir potência com torque.",
+                                  "verification": "Confira os cálculos com a equação de Petroff para consistência. Verifique se P_f < 10% da potência útil (eficiência >90%) e ΔT < 50°C para operação segura. Exemplo com dados Step 2: P_f ≈ 20-50 W esperado."
                                 },
                                 {
                                   "stepNumber": 4,
@@ -49382,6 +49622,13 @@
                                     "Aceitar D irrealisticamente pequeno/grande",
                                     "Ignorar efeitos térmicos na lubrificação",
                                     "Não testar sensibilidade"
+                                  ],
+                                  "tips": [
+                                    "Verifique faixas típicas de D em catálogos de fabricantes (ex: SKF, FAG)",
+                                    "Número de Sommerfeld ideal: 0.1 < S < 1 para lubrificação hidrodinâmica estável",
+                                    "Aplique fator de segurança de 1.2-1.5 para cargas variáveis ou vibrações",
+                                    "Na sensibilidade, priorize variação em W (carga), pois afeta mais D",
+                                    "Registre suposições (ex: μ constante) para auditoria futura"
                                   ]
                                 }
                               ],
@@ -50531,7 +50778,8 @@
             "totalSkills": 385
           }
         ],
-        "totalSkills": 385
+        "totalSkills": 385,
+        "percentage": 0
       }
     ]
   }

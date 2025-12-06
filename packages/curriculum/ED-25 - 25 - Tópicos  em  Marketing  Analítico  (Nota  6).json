@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - ED-25",
       "lastUpdated": "2025-12-03",
-      "totalAtomicSkills": 344
+      "totalAtomicSkills": 344,
+      "startDate": "2025-02-01",
+      "duration": 5,
+      "dailyStudyHours": 8,
+      "version": "ED-25",
+      "institution": "Instituto Tecnológico de Aeronáutica",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - ED-25"
     },
     "areas": [
       {
@@ -45661,7 +45667,8 @@
             "totalSkills": 344
           }
         ],
-        "totalSkills": 344
+        "totalSkills": 344,
+        "percentage": 0
       }
     ]
   }

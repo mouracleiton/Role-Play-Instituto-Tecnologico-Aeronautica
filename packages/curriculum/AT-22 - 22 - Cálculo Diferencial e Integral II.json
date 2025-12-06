@@ -6,7 +6,13 @@
     "metadata": {
       "baseOn": "Catálogo dos Cursos de Graduação 2025 - AT-22",
       "lastUpdated": "2025-12-04",
-      "totalAtomicSkills": 344
+      "totalAtomicSkills": 344,
+      "startDate": "2025-02-01",
+      "duration": "10 semestres",
+      "dailyStudyHours": 6,
+      "version": "AT-22",
+      "institution": "Instituto Tecnológico de Aeronáutica (ITA)",
+      "basedOn": "Catálogo dos Cursos de Graduação 2025 - AT-22"
     },
     "areas": [
       {
@@ -30388,6 +30394,25 @@
                                     "Discuta primeira ordem: sem direção descendente viável.",
                                     "Conclua que paralelismo é necessário para candidato a extremo.",
                                     "verification]: "
+                                  ],
+                                  "verification": "Explique por que ∇f(x₀) deve ser paralelo a ∇g(x₀) em um extremo condicionado. Forneça argumento geométrico (normal à restrição) e de primeira ordem (ausência de direção descendente viável).",
+                                  "estimatedTime": "10-15 minutos",
+                                  "materials": [
+                                    "Papel e caneta para esboços geométricos",
+                                    "Acesso ao capítulo de otimização com restrições (opcional)"
+                                  ],
+                                  "tips": [
+                                    "Visualize ∇g como normal à superficie de nível g(x)=c.",
+                                    "Considere pequenas variações tangentes à restrição.",
+                                    "Use a definição de direção descendente: d tal que ∇f·d < 0 e ∇g·d = 0.",
+                                    "Lembre que para múltiplas restrições, ∇f está no espaço gerado pelos ∇g_i."
+                                  ],
+                                  "learningObjective": "Justificar a condição necessária de Lagrange para extremos condicionados, utilizando argumentos geométricos e de otimalidade de primeira ordem.",
+                                  "commonMistakes": [
+                                    "Confundir paralelismo com igualdade (lembre do λ).",
+                                    "Ignorar que a restrição define um conjunto não convexo.",
+                                    "Esquecer de considerar o caso λ=0 (ponto sem restrição efetiva).",
+                                    "Aplicar diretamente sem verificar regularidade de g."
                                   ]
                                 },
                                 "estimatedTime\": \"30 minutos\the",
@@ -31404,6 +31429,100 @@
                         "difficulty": "intermediate",
                         "status": "not_started",
                         "prerequisites": []
+                      }
+                    ],
+                    "individualConcepts": [
+                      {
+                        "id": "10.1.5.6.ic1",
+                        "name": "Formulação de problemas reais como otimização restrita",
+                        "description": "Identificar variáveis, função objetivo f e restrições g a partir de contextos geométricos, físicos ou econômicos para aplicação do método de Lagrange.",
+                        "specificSkills": [
+                          "Identificar variáveis de decisão em contextos geométricos, físicos ou econômicos.",
+                          "Definir a função objetivo f a partir de problemas reais de otimização restrita.",
+                          "Expressar restrições g(i) em forma matemática adequada.",
+                          "Preparar a formulação do problema para aplicação do método dos multiplicadores de Lagrange."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic2",
+                        "name": "Cálculo de gradientes para funções multivariáveis",
+                        "description": "Determinar ∇f e ∇g com precisão para funções em 2D e 3D, incluindo derivadas parciais de polinômios e funções como Cobb-Douglas.",
+                        "specificSkills": [
+                          "Calcular derivadas parciais de primeira ordem de funções polinomiais em ℝ² e ℝ³.",
+                          "Determinar o vetor gradiente ∇f para funções multivariáveis em 2D e 3D com precisão.",
+                          "Computar o gradiente ∇g de funções do tipo Cobb-Douglas, como f(x,y)=xᵃyᵇ.",
+                          "Aplicar fórmulas de derivadas parciais em exemplos concretos de funções em duas e três variáveis."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic3",
+                        "name": "Configuração do sistema de multiplicadores de Lagrange",
+                        "description": "Estabelecer ∇f = λ ∇g e g=0 para uma restrição, ou ∇f = λ ∇g1 + μ ∇g2 e g1=g2=0 para múltiplas, formando o Lagrangiano.",
+                        "specificSkills": [
+                          "Configurar o sistema de equações ∇f = λ ∇g e g(x) = 0 para otimização com uma restrição de igualdade.",
+                          "Estender a configuração para múltiplas restrições: ∇f = λ ∇g₁ + μ ∇g₂ + ... e gᵢ(x) = 0 ∀ i.",
+                          "Construir a função Lagrangiana L(x, λ, μ, ...) = f(x) - λ g₁(x) - μ g₂(x) - ... a partir do problema de otimização restrito."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic4",
+                        "name": "Resolução algébrica de sistemas não-lineares",
+                        "description": "Aplicar substituição, simetria, casos especiais (ex: variáveis zero) e eliminação de multiplicadores para encontrar pontos críticos.",
+                        "specificSkills": [
+                          "Executar substituição de variáveis em sistemas não-lineares",
+                          "Identificar e explorar simetrias para simplificar equações",
+                          "Analisar casos especiais, como variáveis iguais a zero",
+                          "Aplicar eliminação de multiplicadores para resolver sistemas",
+                          "Determinar pontos críticos por métodos algébricos exatos"
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic5",
+                        "name": "Análise de pontos críticos e fronteiras",
+                        "description": "Avaliar f nos pontos críticos, analisar limites na fronteira do domínio e determinar máximos/mínimos absolutos com interpretação geométrica.",
+                        "specificSkills": [
+                          "Identificar e avaliar pontos críticos calculando derivadas parciais e resolvendo o sistema ∇f=0",
+                          "Avaliar o valor da função f nos pontos críticos encontrados",
+                          "Analisar o comportamento de f na fronteira do domínio (contornos fechados ou limites ao infinito)",
+                          "Comparar valores de f nos pontos críticos e na fronteira para determinar máximo/mínimo absolutos",
+                          "Interpretar geometricamente os extremos usando curvas de nível ou superfícies"
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic6",
+                        "name": "Generalização para múltiplas restrições",
+                        "description": "Configurar e resolver sistemas com dois ou mais multiplicadores para problemas em 3 variáveis ou mais.",
+                        "specificSkills": [
+                          "Formular o lagrangiano para otimização com duas ou mais restrições de igualdade em funções de 3 ou mais variáveis.",
+                          "Derivar as condições de otimalidade (gradientes nulos e restrições satisfeitas).",
+                          "Montar e resolver o sistema de equações não lineares resultante.",
+                          "Interpretar os multiplicadores de Lagrange como sensibilidades das restrições.",
+                          "Aplicar o método em problemas concretos de otimização multivariável."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic7",
+                        "name": "Interpretação dos multiplicadores λ e μ",
+                        "description": "Compreender λ como sombra de preço ou taxa marginal da função objetivo em relação à restrição, com aplicações econômicas.",
+                        "specificSkills": [
+                          "Interpretar o multiplicador λ como preço sombra ou taxa marginal da função objetivo em relação à restrição de igualdade.",
+                          "Calcular e analisar o impacto de uma variação na restrição sobre o valor ótimo da função objetivo via λ.",
+                          "Aplicar a interpretação econômica de λ em problemas de alocação de recursos e otimização.",
+                          "Diferenciar o papel dos multiplicadores λ (igualdades) e μ (desigualdades) em condições de otimalidade.",
+                          "Relacionar os multiplicadores lagrangianos a dualidade e sensibilidade em programação linear e não linear."
+                        ]
+                      },
+                      {
+                        "id": "10.1.5.6.ic8",
+                        "name": "Verificação e validação de soluções",
+                        "description": "Confirmar resultados com gráficos, parametrização, exemplos numéricos, Hessiano bordered e comparação com métodos alternativos.",
+                        "specificSkills": [
+                          "Elaborar e interpretar gráficos para confirmação de resultados de otimização",
+                          "Aplicar técnicas de parametrização para verificação de soluções",
+                          "Executar exemplos numéricos para validar soluções propostas",
+                          "Calcular e analisar o Hessiano bordered para condições de otimalidade de segunda ordem",
+                          "Comparar soluções obtidas com métodos alternativos para validação cruzada"
+                        ]
                       }
                     ]
                   }
@@ -44988,7 +45107,8 @@
             "totalSkills": 344
           }
         ],
-        "totalSkills": 344
+        "totalSkills": 344,
+        "percentage": 0
       }
     ]
   }
